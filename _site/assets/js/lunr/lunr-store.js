@@ -36,7 +36,7 @@ var store = [{
         "teaser": null
       },{
         "title": "7 _config,yml 수정, 블로그 정보 수정하기",
-        "excerpt":"_config.yml에서 여러가지 정보를 수정할 수 있다.    일단 이름 및 설명부터 바꾸기.   ","categories": [],
+        "excerpt":"_config.yml에서 여러가지 정보를 수정할 수 있다.    이름, 설명, url 을 바꿔준다.   ","categories": [],
         "tags": [],
         "url": "/jekyll7/",
         "teaser": null
