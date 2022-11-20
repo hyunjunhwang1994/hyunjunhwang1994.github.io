@@ -36,8 +36,14 @@ var store = [{
         "teaser": null
       },{
         "title": "7 _config,yml 수정, 블로그 정보 수정하기",
-        "excerpt":"_config.yml에서 여러가지 정보를 수정할 수 있다.    이름, 설명, url 을 바꿔준다.   ","categories": [],
+        "excerpt":"_config.yml에서 여러가지 정보를 수정할 수 있다. skin : 원하는 스킨 선택 민트를 할경 minimal_mistakes_skin : 원하는 스킨 선택, 민트 선택할 경우 locale : “ko-KR” 할 경우 여러가지 설정된 언어가 한글로 바뀝니다 예를들면 위에 팔로우: 피드 이런부분! title : “IT 기술 블로그” title_separator : “ ” subtitle : “small positive action”...","categories": [],
         "tags": [],
         "url": "/jekyll7/",
+        "teaser": null
+      },{
+        "title": "Jekyll8",
+        "excerpt":" ","categories": [],
+        "tags": [],
+        "url": "/jekyll8/",
         "teaser": null
       }]
