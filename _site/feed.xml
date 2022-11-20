@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-20T19:55:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Site Title</title><subtitle>An amazing website.</subtitle><author><name>Your Name</name></author><entry><title type="html">맥북 M1, VS code Paste Image</title><link href="http://localhost:4000/first/" rel="alternate" type="text/html" title="맥북 M1, VS code Paste Image" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/first</id><content type="html" xml:base="http://localhost:4000/first/"><![CDATA[<h1 id="vs-code에서-markdown-이미지-쉽게-붙혀넣기">VS code에서 MarkDown 이미지 쉽게 붙혀넣기.</h1>
+<hr />
+<h2 id="paste-image란">Paste Image란?</h2>
+<p><img src="../images/vscode-paste-image.gif" alt="" /></p>
+
+<h3 id="이미지-복사---vs-code-마크다운-문서---command--option--v---이미지-파일-자동-저장및-문서에-삽입">이미지 복사 -&gt; VS code 마크다운 문서 -&gt; Command + Option + V -&gt; 이미지 파일 자동 저장및, 문서에 삽입</h3>
+<hr />
+
+<h2 id="vs-code의-확장에-들어오면-paste-image라는-앱이-존재-합니다-설치">VS Code의 확장에 들어오면 Paste Image라는 앱이 존재 합니다. 설치</h2>
+<p><img src="../images/2022-11-20-13-56-59.png" alt="" /></p>
+
+<hr />
+
+<h2 id="설정">설정.</h2>
+
+<p><img src="../images/2022-11-20-14-16-01.png" alt="" /></p>
+
+<hr />
+
+<h2 id="1-paste-image-path">1. Paste Image: Path</h2>
+<p>실제 이미지 파일이 저장될 경로에 대한 옵션입니다. ( 자동으로 폴더 생김 )</p>
+
+<p>미작성시 해당 파일이 있는 위치에 저장됩니다.
+<br /><br /></p>
+
+<ul>
+  <li>
+    <p>현재 위치에 images 폴더를 만들려면?</p>
+
+    <p>${currentFileDir}/images/</p>
+  </li>
+  <li>
+    <p>최상단 루트 디렉토리에 images 폴더를 만들려면?</p>
+
+    <p>${projectRoot}/images/</p>
+
+    <p>위 처럼 설정시 ${projectRoot}/a/b/c/d.md 에서 작업을 하더라도 ${projectRoot}/images/ 에 저장된다.</p>
+  </li>
+</ul>
+
+<p><br /><br /></p>
+
+<hr />
+
+<h2 id="2-paste-image-bass-path">2. Paste Image: Bass Path</h2>
+<p>실제 문서 작성 시 타이핑 될 주소 경로.</p>
+
+<p>${projectRoot}/a/b/c/d.md 에서 작성할 경우</p>
+
+<p>${projectRoot} 로 설정시
+images/2022-11-20-13-35-15.png</p>
+
+<p>Bass Path의 경우 실제 작성되는 부분이므로, 현재 작성중인 문서의 위치에서 참조를 한다.
+그러므로 위에처럼 images/ 가 바로나오면 루트디렉토리가아닌,
+현재 파일이있는 디렉토리에서의 images 폴더를 찾게된다.</p>
+
+<p>그러므로 현재 위치에서 참조하기때문에 아래처럼 해야 한다. 
+( ../ 이전폴더로 간다는 뜻 )
+${currentFileDir}
+../../../images/2022-11-20-13-34-50.png</p>
+
+<hr />
+<h2 id="사용을-하다보니">사용을 하다보니..</h2>
+<p>보통 블로그 글 작성시 맥북 기본 캡처를 많이 쓰는데,
+캡처한 후 바탕화면에 생긴 파일을 복사 후 마크업에 Paste Image를 이용 붙혀넣기 하면 아래 같은 아이콘이 나온다.
+<img src="../images/2022-11-20-12-33-53.png" alt="" /></p>
+
+<p>그런데.. 캡처후 파일이 저장되기전 미리보기 상태에서 붙혀넣으면 동작을 한다.
+  <img src="../images/2022-11-20-12-36-32.png" alt="" /></p>
+
+<p>그런 후에 클립보드에 있는 이미지를 바로 불러오면 사용이된다..
+<img src="../images/2022-11-20-12-35-27.png" alt="" /></p>
+
+<p>이걸 보니 맥에 저장된 파일은 동작이안되고, 클립보드에 남아 있을때만 저장이 되는 것 같다.
+( 버그인 것 같아요.. )</p>
+
+<p>그래서 이렇게 사용하기로 했다.
+맥북 부분 캡처 할 때 Shift + Command + control 4로 캡처시 파일저장이아닌
+클립보드로만 저장을 바로한고</p>
+
+<p>블로그 글을 쓰면서 바로바로 클립보드에넣어서 붙혀넣기 해서 사용하는 것이 정신건강에 좋을 듯 하다..</p>
+
+<h3 id="인터넷-상에서-있는-이미지-파일의-경우-잘-동작-합니다">인터넷 상에서 있는 이미지 파일의 경우 잘 동작 합니다.</h3>]]></content><author><name>Your Name</name></author><summary type="html"><![CDATA[VS code에서 MarkDown 이미지 쉽게 붙혀넣기. Paste Image란?]]></summary></entry><entry><title type="html">맥북 M1 깃허브 지킬 블로그 만들기 총 정리 1탄</title><link href="http://localhost:4000/jekyll/" rel="alternate" type="text/html" title="맥북 M1 깃허브 지킬 블로그 만들기 총 정리 1탄" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/"><![CDATA[<p>시작 전, 깃허브 계정을 만들어주세요.</p>
+
+<p>repositories에 들어가서 자신의 블로그로 사용할 레파지토리를 만듭니다.</p>
+
+<p>Repositroy name은 꼭 깃허브계정.github.io로 만들어주세요 ( 본인의 블로그 주소입니다. )
+<img src="../images/2022-11-20-15-49-22.png" alt="" /></p>
+
+<p>다른 지킬 테마를 fork로 가저오면서 레파지토리를 만들면 편하지만,
+그럴 경우 커밋과 같은 과정에서 잔디가 심어지지 않아요ㅜㅜ 그렇기 때문에
+이와 같이 직접 테마를 넣어줘야 합니다.</p>
+
+<hr />
+
+<p>일단 깃허브 데스크탑 깔아주세요 (터미널은 나중에 사용)
+https://desktop.github.com/</p>
+
+<p>Your Repositories에서 방금만든 레파지토리를 가저옵니다.
+<img src="../images/![](../images/2022-11-20-16-32-14.png).png" alt="" /></p>
+
+<p>초이스를 눌러 원하는 위치에 Clone해주세요.
+<img src="../images/2022-11-20-16-33-17.png" alt="" /></p>
+
+<p>이런 창이 뜨면 성공입니다.
+<img src="../images/2022-11-20-16-33-58.png" alt="" /></p>
+
+<hr />
+
+<p>테마는 현재 저도 사용중인 미니멀 미스테이크라는 테마를 이용해보겠습니다 
+<img src="../images/2022-11-20-15-46-05.png" alt="" /></p>
+
+<p>접속!
+https://github.com/mmistakes/minimal-mistakes</p>
+
+<p>이게 현재 사용하고자하는 테마의 깃허브입니다.
+Download ZIP으로 다운받아주세요.
+<img src="../images/2022-11-20-15-55-58.png" alt="" /></p>
+
+<p>그다음 
+우리가 좀전에 클론해온 username.github.io 폴더로
+minimal-mistakes 안에 있는 파일들 전부 넣어주세요.
+README.md파일은 교체해주세요</p>
+
+<p>그럼 대략 아래와 같이 됩니다.
+<img src="../images/2022-11-20-16-09-47.png" alt="" /></p>
+
+<p>다시 깃허브 데스크탑으로가면
+저절로 우리의 레파지토리에 추가된 내용이나옵니다.
+적당한 멘트써서 Commit to main 클릭!
+<img src="../images/2022-11-20-16-38-15.png" alt="" />
+—</p>
+
+<p>그런후 Push origin 버튼을 클릭해주세요 ( Push를 해야 최종적으로 깃허브 네트워크에 올라갑니다. )
+<img src="../images/2022-11-20-16-39-20.png" alt="" /></p>
+
+<hr />
+<p>그런후 자신의 아이디.github.io 에 접속하면?
+<img src="../images/2022-11-20-16-40-46.png" alt="" /></p>
+
+<p>요약</p>
+<ol>
+  <li>깃허브 레파지토리를 자신의 아이디.github.io 로 만든다.</li>
+  <li>깃허브 데스크탑으로 자신이 원하는 로컬 폴더에 레파지토리를 clone 해온다.</li>
+  <li>원하는 테마를 찾아 ZIP으로 설치후 자신의 레파지토리에 전부 붙혀넣는다.</li>
+  <li>깃허브 데스크탑으로 수정된내용을 commit, push 한다.(최종적용)</li>
+  <li>깃허브 블로그 주소로 접속해본다.</li>
+</ol>
+
+<p>짜잔  블로그 완성입니다.
+설정및 다른 기능들은 차차 기술 하겠습니다.</p>]]></content><author><name>Your Name</name></author><summary type="html"><![CDATA[시작 전, 깃허브 계정을 만들어주세요.]]></summary></entry><entry><title type="html">맥북 M1 깃허브 지킬 블로그 만들기 총 정리 2탄</title><link href="http://localhost:4000/jekyll2/" rel="alternate" type="text/html" title="맥북 M1 깃허브 지킬 블로그 만들기 총 정리 2탄" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll2</id><content type="html" xml:base="http://localhost:4000/jekyll2/"><![CDATA[<h2 id="기본적인-포스팅-방법">기본적인 포스팅 방법</h2>
+
+<p>포스팅 할 글의 경우 /posts 에 올려주면 됩니다.
+하지만 처음에 없으므로 생성합니다.</p>
+
+<p>새로운 파일생성
+<img src="../images/2022-11-20-16-47-03.png" alt="" /></p>
+
+<p>_posts/  &lt;- / 를 치면 폴더 생성입니다.
+<img src="../images/2022-11-20-16-47-52.png" alt="" /></p>
+
+<p>파일 제목은 꼭 년도-월-일-ab-cd.md 형식으로 만들어야합니다.
+<img src="../images/2022-11-20-16-49-17.png" alt="" /></p>
+
+<p>그후 커밋 뉴 파일을 하면 ?</p>
+
+<p><img src="../images/2022-11-20-16-52-16.png" alt="" />
+<img src="../images/2022-11-20-16-52-29.png" alt="" /></p>
+
+<p>이와같은식으로 글이 잘 올라오는것을 볼 수 있습니다.</p>
+
+<p>그런데 커밋후 글이올라오는데 시간이 좀 걸리네요!
+시간 지연 없이 포스팅 테스트 하는법은 다음 편에 알려드리겠습니다.</p>]]></content><author><name>Your Name</name></author><summary type="html"><![CDATA[기본적인 포스팅 방법]]></summary></entry><entry><title type="html">맥북 M1 깃허브 지킬 블로그 만들기 총 정리 3탄</title><link href="http://localhost:4000/jekyll3/" rel="alternate" type="text/html" title="맥북 M1 깃허브 지킬 블로그 만들기 총 정리 3탄" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll3</id><content type="html" xml:base="http://localhost:4000/jekyll3/"><![CDATA[<p>이번에는 터미널 활용과, 로컬서버 생성을 하기 위한 셋업등을 알려드릴게요.</p>
+
+<p>결론적으로 아래와 같은 것들을 설치해야 합니다.</p>
+<ul>
+  <li>Homebrew</li>
+  <li>rbenv</li>
+  <li>ruby (맥은 기본적으로 깔려있지만, 다른버전 설치해야함)</li>
+  <li>jekyll, bundler</li>
+</ul>
+
+<ol>
+  <li>Homebrew
+https://brew.sh/index_ko 접속 후 설치.</li>
+</ol>
+
+<p>맥 터미널에서
+/bin/bash -c “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)”</p>
+
+<p>위와 같은 명령어 실행 시 다운로드 할 수 있다.</p>
+
+<p>이때 혹시 아래와 같은 에러가 난다면 (맥북 M1의 경우 무조건 나는 듯..)
+zsh: command not found: brew</p>
+
+<p>eval $(/opt/homebrew/bin/brew shellenv) 명령어 입력후 다시</p>
+
+<p>/bin/bash -c “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)” 
+입력해주세요.</p>
+
+<hr />
+<ol>
+  <li>rbenv 설치
+brew를 이용해 설치한다.</li>
+</ol>
+
+<p>brew update
+brew install rbenv ruby-build</p>
+
+<p>rbenv versions 로 설치되었는지 버전확인</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  * system (set by /Users/yourname/.rbenv/version)
+</code></pre></div></div>
+
+<p>이런식으로 아마 나올 것이다. ( 기본 맥북 루비 )
+그렇다면 rbenv로 다른 버전을 설치해주어야한다.</p>
+
+<p>rbenv install -l</p>
+
+<p>이런식 으로 나온다면 3.1.2 버전을 설치해보겠다.
+<img src="../images/2022-11-20-17-28-26.png" alt="" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    rbenv install 3.1.2 
+</code></pre></div></div>
+
+<p>아래처럼 나온다면 설치는완료, 버전을 변경해보자.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    * system
+    3.1.2 (set by/Users/yourname/.rbenv/version)
+</code></pre></div></div>
+
+<p>rbenv global 3.1.2</p>
+
+<p>rbenv versions</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    system
+    * 3.1.2 (set by/Users/yourname/.rbenv/version)
+</code></pre></div></div>
+
+<p>위 처럼 바꼈을 것이다.</p>
+
+<p>이제 rbenv PATH를 추가해주어야한다.</p>
+
+<p>쉘 설정 파일 (.zshrc or .bashrc) 을 열어 다음의 코드를 추가 해주어야 한다.
+M1맥북 이상의경우 .zshrc에 추가하면 맞을것이다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    vi ~/.zshrc
+</code></pre></div></div>
+
+<p>맨아래에 추가</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    [[ -d ~/.rbenv  ]] &amp;&amp; \
+    export PATH=${HOME}/.rbenv/bin:${PATH} &amp;&amp; \
+    eval "$(rbenv init -)"
+</code></pre></div></div>
+
+<p>적용
+source ~/.zshrc</p>
+
+<hr />
+<ol>
+  <li>Jekyll , bundler 설치</li>
+</ol>
+
+<p>gem install jekyll bundler</p>
+
+<p>버전확인</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    MacBook-Pro ~ % jekyll -v
+    jekyll 4.3.1
+    MacBook-Pro ~ % bundler -v
+    Bundler version 2.3.26
+</code></pre></div></div>
+
+<p>끝</p>
+
+<p>결론적으로 루비에 지킬과 번들러를 설치해야하는데
+시스템 루비로 사용 하지 못해</p>
+
+<p>homebrew를 받고, brew에서 루비 관리 시스템인 rbenv를 받아 루비를 설치하고 그루비에 jekyll과 bundler를 받은것이다.</p>
+
+<p>homebrew : 맥OS용 패키지 관리자</p>
+
+<p>rbenv : 루비 버전및, 설치등을 도와주는 관리시스템</p>
+
+<p>jekyll : 깃헙 설립자 중의 한명이 Ruby 언어를 통해 개발한 프레임 워크이다. 정적웹사이트를 만들게 도와주는 프레임워크</p>
+
+<p>bundler: 정확히 필요한 gem과 그 gem의 버전을 설치하고, 추적하는 것으로 일관성 있는 Ruby 프로젝트를 제공하는 도구다.</p>
+
+<p>번들러는 종속성 관리를 위한 도구이다. RubyGems가 이미 처리한 것 아닌가라고 물을 수 있다. 하지만 RubyGems는 gem 자체만을 위해서 종속성 처리를 한다. 당신의 일반 루비 애플리케이션은 gem으로 만들어진게 아니므로 이 기능을 얻지 못한다. 이것이 번들러가 존재하는 이유이다.</p>
+
+<ul>
+  <li>
+    <p>기본적인 블로그 생성법에 대해서 도움.
+https://choijaegwon.github.io/githubblog/GithubBlog1/</p>
+  </li>
+  <li>
+    <p>맥북 M1경우 무조건 Homebrew 오류 납니다.
+Homebrew 오류시 https://designdepot.tistory.com/209</p>
+  </li>
+</ul>
+
+<p>참고 https://til.younho9.dev/docs/frontend/jekyll/jekyll-github-page%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-%EA%B0%9C%EC%9D%B8%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/</p>
+
+<p>유튜브 참조 
+https://www.youtube.com/watch?v=0TeHUqSAb6Q&amp;list=PLIMb_GuNnFwfQBZQwD-vCZENL5YLDZekr&amp;index=3</p>
+
+<p>로컬로 jekyll 돌릴 때, 포스팅 작성등 파일변경에대해서 서버에 바로 적용안되는 경우 
+서버를 실행할 때 –forece-polling 추가하기
+bundle exec jekyll serve –force-polling</p>
+
+<p>여러 블로그를 참조하며 만들었습니다.
+최종적으로 설치해야 할 것들</p>]]></content><author><name>Your Name</name></author><summary type="html"><![CDATA[이번에는 터미널 활용과, 로컬서버 생성을 하기 위한 셋업등을 알려드릴게요.]]></summary></entry></feed>
