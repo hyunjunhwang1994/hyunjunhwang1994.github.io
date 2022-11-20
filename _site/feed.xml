@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-20T21:00:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다 메롱!!!!.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">Jekyll8</title><link href="http://localhost:4000/jekyll8/" rel="alternate" type="text/html" title="Jekyll8" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll8</id><content type="html" xml:base="http://localhost:4000/jekyll8/"><![CDATA[]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">2 깃허브 블로그 포스팅 하는법</title><link href="http://localhost:4000/jekyll2/" rel="alternate" type="text/html" title="2 깃허브 블로그 포스팅 하는법" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll2</id><content type="html" xml:base="http://localhost:4000/jekyll2/"><![CDATA[<h2 id="기본적인-포스팅-방법">기본적인 포스팅 방법</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-20T21:04:23+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">Jekyll8</title><link href="http://localhost:4000/jekyll8/" rel="alternate" type="text/html" title="Jekyll8" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll8</id><content type="html" xml:base="http://localhost:4000/jekyll8/"><![CDATA[]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">2 깃허브 블로그 포스팅 하는법</title><link href="http://localhost:4000/jekyll2/" rel="alternate" type="text/html" title="2 깃허브 블로그 포스팅 하는법" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll2</id><content type="html" xml:base="http://localhost:4000/jekyll2/"><![CDATA[<h2 id="기본적인-포스팅-방법">기본적인 포스팅 방법</h2>
 
 <p>포스팅 할 글의 경우 /posts 에 올려주면 됩니다.
 하지만 처음에 없으므로 생성합니다.</p>
@@ -321,6 +321,11 @@ ${currentFileDir}
 <p><img src="../images/2022-11-20-20-51-31.png" alt="" /></p>
 
 <p><img src="../images/2022-11-20-20-51-55.png" alt="" /></p>
+
+<p>이 부분은 메타정보에만 들어가므로 바꿔도 아무런 변경이 일어나지 않는다.</p>
+
+<p>name : “Hyun Jun”
+description : “IT 기술 블로그 입니다.”</p>
 
 <p>assets -&gt; images에 사진을 넣고
 logo : “/assets/images/IMG…” 에 추가해주면 대문에 자기 사진이나온다.
