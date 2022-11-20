@@ -40,10 +40,4 @@ var store = [{
         "tags": [],
         "url": "/jekyll7/",
         "teaser": null
-      },{
-        "title": "Jekyll8",
-        "excerpt":" ","categories": [],
-        "tags": [],
-        "url": "/jekyll8/",
-        "teaser": null
       }]

@@ -1,4 +1,78 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-20T21:04:23+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">Jekyll8</title><link href="http://localhost:4000/jekyll8/" rel="alternate" type="text/html" title="Jekyll8" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll8</id><content type="html" xml:base="http://localhost:4000/jekyll8/"><![CDATA[]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">2 깃허브 블로그 포스팅 하는법</title><link href="http://localhost:4000/jekyll2/" rel="alternate" type="text/html" title="2 깃허브 블로그 포스팅 하는법" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll2</id><content type="html" xml:base="http://localhost:4000/jekyll2/"><![CDATA[<h2 id="기본적인-포스팅-방법">기본적인 포스팅 방법</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-20T21:05:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">1 맥북 M1 개발자, 깃허브 블로그 포트폴리오 만들기</title><link href="http://localhost:4000/jekyll1/" rel="alternate" type="text/html" title="1 맥북 M1 개발자, 깃허브 블로그 포트폴리오 만들기" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll1</id><content type="html" xml:base="http://localhost:4000/jekyll1/"><![CDATA[<p>시작 전, 깃허브 계정을 만들어주세요.</p>
+
+<p>repositories에 들어가서 자신의 블로그로 사용할 레파지토리를 만듭니다.</p>
+
+<p>Repositroy name은 꼭 깃허브계정.github.io로 만들어주세요 ( 본인의 블로그 주소입니다. )
+<img src="../images/2022-11-20-15-49-22.png" alt="" /></p>
+
+<p>다른 지킬 테마를 fork로 가저오면서 레파지토리를 만들면 편하지만,
+그럴 경우 커밋과 같은 과정에서 잔디가 심어지지 않아요ㅜㅜ 그렇기 때문에
+이와 같이 직접 테마를 넣어줘야 합니다.</p>
+
+<hr />
+
+<p>일단 깃허브 데스크탑 깔아주세요 (터미널은 나중에 사용)
+https://desktop.github.com/</p>
+
+<p>Your Repositories에서 방금만든 레파지토리를 가저옵니다.
+<img src="../images/![](../images/2022-11-20-16-32-14.png).png" alt="" /></p>
+
+<p>초이스를 눌러 원하는 위치에 Clone해주세요.
+<img src="../images/2022-11-20-16-33-17.png" alt="" /></p>
+
+<p>이런 창이 뜨면 성공입니다.
+<img src="../images/2022-11-20-16-33-58.png" alt="" /></p>
+
+<hr />
+
+<p>테마는 현재 저도 사용중인 미니멀 미스테이크라는 테마를 이용해보겠습니다 
+<img src="../images/2022-11-20-15-46-05.png" alt="" /></p>
+
+<p>접속!
+https://github.com/mmistakes/minimal-mistakes</p>
+
+<p>이게 현재 사용하고자하는 테마의 깃허브입니다.
+Download ZIP으로 다운받아주세요.
+<img src="../images/2022-11-20-15-55-58.png" alt="" /></p>
+
+<p>그다음 
+우리가 좀전에 클론해온 username.github.io 폴더로
+minimal-mistakes 안에 있는 파일들 전부 넣어주세요.
+README.md파일은 교체해주세요</p>
+
+<p>그럼 대략 아래와 같이 됩니다.
+<img src="../images/2022-11-20-16-09-47.png" alt="" /></p>
+
+<p>다시 깃허브 데스크탑으로가면
+저절로 우리의 레파지토리에 추가된 내용이나옵니다.
+적당한 멘트써서 Commit to main 클릭!
+<img src="../images/2022-11-20-16-38-15.png" alt="" />
+—</p>
+
+<p>그런후 Push origin 버튼을 클릭해주세요 ( Push를 해야 최종적으로 깃허브 네트워크에 올라갑니다. )
+<img src="../images/2022-11-20-16-39-20.png" alt="" /></p>
+
+<hr />
+<p>마지막으로,
+그 후, 
+_config.yml파일을 찾으셔서 url 부분을 자신의 깃허브주소(예시)처럼 바꿔주신후 커밋해주세요.
+<img src="../images/2022-11-20-19-13-05.png" alt="" /></p>
+
+<hr />
+<p>그런후 자신의 아이디.github.io 에 접속하면?
+<img src="../images/2022-11-20-16-40-46.png" alt="" /></p>
+
+<p>요약</p>
+<ol>
+  <li>깃허브 레파지토리를 자신의 아이디.github.io 로 만든다.</li>
+  <li>깃허브 데스크탑으로 자신이 원하는 로컬 폴더에 레파지토리를 clone 해온다.</li>
+  <li>원하는 테마를 찾아 ZIP으로 설치후 자신의 레파지토리에 전부 붙혀넣는다.</li>
+  <li>깃허브 데스크탑으로 수정된내용을 commit, push 한다.(최종적용)</li>
+  <li>깃허브 블로그 주소로 접속해본다.</li>
+</ol>
+
+<p>짜잔  블로그 완성입니다.
+설정및 다른 기능들은 차차 기술 하겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[시작 전, 깃허브 계정을 만들어주세요.]]></summary></entry><entry><title type="html">2 깃허브 블로그 포스팅 하는법</title><link href="http://localhost:4000/jekyll2/" rel="alternate" type="text/html" title="2 깃허브 블로그 포스팅 하는법" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll2</id><content type="html" xml:base="http://localhost:4000/jekyll2/"><![CDATA[<h2 id="기본적인-포스팅-방법">기본적인 포스팅 방법</h2>
 
 <p>포스팅 할 글의 경우 /posts 에 올려주면 됩니다.
 하지만 처음에 없으므로 생성합니다.</p>
@@ -354,78 +428,4 @@ Home으로 이동할 수 있는 링크가 생김.</p>
 
 <p>포스트에 아래처럼 작성 날짜가 나온다.</p>
 
-<p><img src="../images/2022-11-20-21-00-00.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[_config.yml에서 여러가지 정보를 수정할 수 있다.]]></summary></entry><entry><title type="html">1 맥북 M1 개발자, 깃허브 블로그 포트폴리오 만들기</title><link href="http://localhost:4000/jekyll1/" rel="alternate" type="text/html" title="1 맥북 M1 개발자, 깃허브 블로그 포트폴리오 만들기" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll1</id><content type="html" xml:base="http://localhost:4000/jekyll1/"><![CDATA[<p>시작 전, 깃허브 계정을 만들어주세요.</p>
-
-<p>repositories에 들어가서 자신의 블로그로 사용할 레파지토리를 만듭니다.</p>
-
-<p>Repositroy name은 꼭 깃허브계정.github.io로 만들어주세요 ( 본인의 블로그 주소입니다. )
-<img src="../images/2022-11-20-15-49-22.png" alt="" /></p>
-
-<p>다른 지킬 테마를 fork로 가저오면서 레파지토리를 만들면 편하지만,
-그럴 경우 커밋과 같은 과정에서 잔디가 심어지지 않아요ㅜㅜ 그렇기 때문에
-이와 같이 직접 테마를 넣어줘야 합니다.</p>
-
-<hr />
-
-<p>일단 깃허브 데스크탑 깔아주세요 (터미널은 나중에 사용)
-https://desktop.github.com/</p>
-
-<p>Your Repositories에서 방금만든 레파지토리를 가저옵니다.
-<img src="../images/![](../images/2022-11-20-16-32-14.png).png" alt="" /></p>
-
-<p>초이스를 눌러 원하는 위치에 Clone해주세요.
-<img src="../images/2022-11-20-16-33-17.png" alt="" /></p>
-
-<p>이런 창이 뜨면 성공입니다.
-<img src="../images/2022-11-20-16-33-58.png" alt="" /></p>
-
-<hr />
-
-<p>테마는 현재 저도 사용중인 미니멀 미스테이크라는 테마를 이용해보겠습니다 
-<img src="../images/2022-11-20-15-46-05.png" alt="" /></p>
-
-<p>접속!
-https://github.com/mmistakes/minimal-mistakes</p>
-
-<p>이게 현재 사용하고자하는 테마의 깃허브입니다.
-Download ZIP으로 다운받아주세요.
-<img src="../images/2022-11-20-15-55-58.png" alt="" /></p>
-
-<p>그다음 
-우리가 좀전에 클론해온 username.github.io 폴더로
-minimal-mistakes 안에 있는 파일들 전부 넣어주세요.
-README.md파일은 교체해주세요</p>
-
-<p>그럼 대략 아래와 같이 됩니다.
-<img src="../images/2022-11-20-16-09-47.png" alt="" /></p>
-
-<p>다시 깃허브 데스크탑으로가면
-저절로 우리의 레파지토리에 추가된 내용이나옵니다.
-적당한 멘트써서 Commit to main 클릭!
-<img src="../images/2022-11-20-16-38-15.png" alt="" />
-—</p>
-
-<p>그런후 Push origin 버튼을 클릭해주세요 ( Push를 해야 최종적으로 깃허브 네트워크에 올라갑니다. )
-<img src="../images/2022-11-20-16-39-20.png" alt="" /></p>
-
-<hr />
-<p>마지막으로,
-그 후, 
-_config.yml파일을 찾으셔서 url 부분을 자신의 깃허브주소(예시)처럼 바꿔주신후 커밋해주세요.
-<img src="../images/2022-11-20-19-13-05.png" alt="" /></p>
-
-<hr />
-<p>그런후 자신의 아이디.github.io 에 접속하면?
-<img src="../images/2022-11-20-16-40-46.png" alt="" /></p>
-
-<p>요약</p>
-<ol>
-  <li>깃허브 레파지토리를 자신의 아이디.github.io 로 만든다.</li>
-  <li>깃허브 데스크탑으로 자신이 원하는 로컬 폴더에 레파지토리를 clone 해온다.</li>
-  <li>원하는 테마를 찾아 ZIP으로 설치후 자신의 레파지토리에 전부 붙혀넣는다.</li>
-  <li>깃허브 데스크탑으로 수정된내용을 commit, push 한다.(최종적용)</li>
-  <li>깃허브 블로그 주소로 접속해본다.</li>
-</ol>
-
-<p>짜잔  블로그 완성입니다.
-설정및 다른 기능들은 차차 기술 하겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[시작 전, 깃허브 계정을 만들어주세요.]]></summary></entry></feed>
+<p><img src="../images/2022-11-20-21-00-00.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[_config.yml에서 여러가지 정보를 수정할 수 있다.]]></summary></entry></feed>
