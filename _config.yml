@@ -12,13 +12,13 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "mint" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "en-US"
-title                    : "Site Title"
-title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+locale                   : "ko-KR"
+title                    : "IT 기술 블로그"
+title_separator          : "|"
+subtitle                 : "small positive action"   # site tagline that appears below site title in masthead
 name                     : "Hyun Jun"
 description              : "IT 기술 블로그 입니다."
 url                      : "https://hyunjunhwang1994.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -104,11 +104,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Hyun Jun"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  bio              : "IT 기술 블로그 입니다."
+  location         : "South Korea"
+  email            : "hyunjunhwang1994@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
