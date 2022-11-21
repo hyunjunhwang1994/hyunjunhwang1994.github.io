@@ -108,11 +108,11 @@ author:
   avatar           : "/assets/images/mimo.jpeg"  # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "IT 기술 블로그 입니다."
   location         : "South Korea"
-  email            : 
+  email            : "hyunjunhwang1994@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "hyunjunhwang1994@gmail.com"
+#    - label: "Email"
+#      icon: "fas fa-fw fa-envelope-square"
+#      url: "hyunjunhwang1994@gmail.com"
 #   - label: "Website"
 #     icon: "fas fa-fw fa-link"
 #     url: "https://your-website.com"
