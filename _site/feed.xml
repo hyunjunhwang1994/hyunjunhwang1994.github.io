@@ -1,100 +1,349 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-20T23:20:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">1 맥북 M1 개발자, 깃허브 블로그 포트폴리오 만들기</title><link href="http://localhost:4000/jekyll1/" rel="alternate" type="text/html" title="1 맥북 M1 개발자, 깃허브 블로그 포트폴리오 만들기" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll1</id><content type="html" xml:base="http://localhost:4000/jekyll1/"><![CDATA[<p>시작 전, 깃허브 계정을 만들어주세요.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-21T15:54:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">9 Google analytics 추가하기</title><link href="http://localhost:4000/githubblog/jekyll9/" rel="alternate" type="text/html" title="9 Google analytics 추가하기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll9</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll9/"><![CDATA[<p>_config.yml</p>
 
-<p>repositories에 들어가서 자신의 블로그로 사용할 레파지토리를 만듭니다.</p>
+<p><img src="../../images/2022-11-21-09-37-41.png" alt="" /></p>
 
-<p>Repositroy name은 꼭 깃허브계정.github.io로 만들어주세요 ( 본인의 블로그 주소입니다. )
-<img src="../images/2022-11-20-15-49-22.png" alt="" /></p>
+<p><img src="../../images/2022-11-21-09-37-41.png" alt="" /></p>
 
-<p>다른 지킬 테마를 fork로 가저오면서 레파지토리를 만들면 편하지만,
-그럴 경우 커밋과 같은 과정에서 잔디가 심어지지 않아요ㅜㅜ 그렇기 때문에
-이와 같이 직접 테마를 넣어줘야 합니다.</p>
+<p>google analyics검색</p>
+
+<p>첫 사용자인 경우 측정시작 클릭</p>
+
+<p>이름 설정후 맨아래 다음 클릭 ( 설정은 기본 옵션대로 하기 )
+<img src="../../images/2022-11-21-09-40-36.png" alt="" /></p>
+
+<p><img src="../../images/2022-11-21-09-41-57.png" alt="" /></p>
+
+<p>업종의 경우 자신이 원하는걸로 선택.</p>
+
+<p><img src="../../images/2022-11-21-09-43-44.png" alt="" /></p>
+
+<p><img src="../../images/2022-11-21-09-44-11.png" alt="" /></p>
+
+<p>웹 클릭</p>
+
+<p><img src="../../images/2022-11-21-09-44-38.png" alt="" /></p>
+
+<p>요런식으로 자신에맞게 URL및 스트림이름 입력후 스트림만들기 클릭
+<img src="../../images/2022-11-21-09-45-47.png" alt="" /></p>
+
+<p>측정 ID복사</p>
+
+<p><img src="../../images/2022-11-21-09-46-52.png" alt="" /></p>
+
+<p><img src="../../images/2022-11-21-09-48-45.png" alt="" /></p>
+
+<p>적용되는데 시간이 좀걸린다.</p>
+
+<p>analytics -&gt; 보고서에 들어가면 각종 정보들이 확인가능하다.
+<img src="../../images/2022-11-21-09-50-33.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[_config.yml]]></summary></entry><entry><title type="html">Java 테스트 포스팅</title><link href="http://localhost:4000/java/Java-test/" rel="alternate" type="text/html" title="Java 테스트 포스팅" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/java/Java-test</id><content type="html" xml:base="http://localhost:4000/java/Java-test/"><![CDATA[]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="java" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">8 깃허브 블로그 Disqus 댓글 기능 만들기</title><link href="http://localhost:4000/githubblog/jekyll8/" rel="alternate" type="text/html" title="8 깃허브 블로그 Disqus 댓글 기능 만들기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll8</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll8/"><![CDATA[<p>아래 페이지에서 회원 가입을 해주세요.</p>
+
+<p>https://disqus.com/</p>
+
+<p>settings</p>
+
+<p><img src="../../images/2022-11-21-09-12-46.png" alt="" /></p>
+
+<p>Add Disqus To site</p>
+
+<p><img src="../../images/2022-11-21-09-13-04.png" alt="" /></p>
+
+<p>좀 내려서 Get Started</p>
+
+<p><img src="../../images/2022-11-21-09-13-20.png" alt="" /></p>
+
+<p>I want to install Disqus on my site</p>
+
+<p><img src="../../images/2022-11-21-09-13-44.png" alt="" /></p>
+
+<p>아래와 비슷하게 네임을 수정해서 만들어주세요.</p>
+
+<p><img src="../../images/2022-11-21-09-15-04.png" alt="" /></p>
+
+<p>베이직 -&gt; Subscribe Now
+<img src="../../images/2022-11-21-09-16-57.png" alt="" /></p>
+
+<p>지킬 클릭.
+<img src="../../images/2022-11-21-09-17-24.png" alt="" /></p>
+
+<p>기본적인설정이 _config.yml에 있으므로 아래 코드 복사 안해도됩니다.</p>
+
+<p>Configure클릭
+<img src="../../images/2022-11-21-09-17-58.png" alt="" /></p>
+
+<p>입력후 next</p>
+
+<p><img src="../../images/2022-11-21-09-18-52.png" alt="" /></p>
+
+<p>Complete setup</p>
+
+<p><img src="../../images/2022-11-21-09-19-28.png" alt="" /></p>
+
+<p>_config.yml 설정</p>
+
+<p>comments: true</p>
+
+<p><img src="../../images/2022-11-21-09-21-00.png" alt="" /></p>
+
+<p>provider : “disqus”</p>
+
+<p>shortname : “myshortname”</p>
+
+<p><img src="../../images/2022-11-21-09-22-22.png" alt="" /></p>
+
+<p>어드민 페이지에 나오는 저 드래그된 저부분이 숏네임 입니다.
+<img src="../../images/2022-11-21-09-23-04.png" alt="" /></p>
+
+<p>마지막으로 깃허브 데스크탑 커밋, 푸쉬해주어야 서버에 반영됩니다.</p>
+
+<p>Disqus는 실제 Disqus 쪽에서 던져주는 것이기 때문에,
+로컬서버에서는 안보이고, 깃헙 푸쉬후, 자신의 깃허브주소에서 봐야합니다.</p>
+
+<p><img src="../../images/2022-11-21-09-24-13.png" alt="" /></p>
+
+<p>Disqus 사이트 어드민에서 댓글관리및 여러기능 추가 가능합니다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[아래 페이지에서 회원 가입을 해주세요.]]></summary></entry><entry><title type="html">5 VS Code 설치, 확장팩 설치</title><link href="http://localhost:4000/githubblog/jekyll5/" rel="alternate" type="text/html" title="5 VS Code 설치, 확장팩 설치" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll5</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll5/"><![CDATA[<h1 id="포스팅을-편리하게-하기-위한-vs-code-설치">포스팅을 편리하게 하기 위한 VS code 설치</h1>
+
+<h2 id="설치">설치</h2>
+<p>https://code.visualstudio.com/</p>
+
+<p>설치 후 VS code 실행</p>
+
+<h2 id="익스텐션-설치">익스텐션 설치</h2>
+<p>확장팩을 설치하는 과정입니다. 왼쪽 맨아래 확장 메뉴에서 해당 팩들을 설치해주세요.
+(저는 설치 되어있어서 제거로나옴.)</p>
+
+<p>한글패치
+<img src="../../images/2022-11-20-19-19-18.png" alt="" /></p>
+
+<p>마크다운 언어 사용시 올인원 툴
+<img src="../../images/2022-11-20-19-20-25.png" alt="" /></p>
+
+<p>마크다운 사진 편하게 붙히는 팩
+<img src="../../images/2022-11-20-19-20-45.png" alt="" /></p>
+
+<p>폴더열기 -&gt; 자신의 블로그 레파지토리 선택
+<img src="../../images/2022-11-20-19-24-06.png" alt="" /></p>
+
+<p>이런식으로 나오면 성공입니다.
+<img src="../../images/2022-11-20-19-25-08.png" alt="" /></p>
+
+<p>그러면이제 _posts에 글을 작성하고 vs code편집기에서 저장을하면
+<img src="../../images/2022-11-20-7.27.04.png" alt="" /></p>
+
+<p>우리 로컬서버에 바로 적용되는걸 볼 수 있다.
+<img src="../../images/2022-11-20-19-31-12.png" alt="" /></p>
+
+<p>(실제 블로그에 적용하려면 깃헙 데스크탑 -&gt; 커밋, 푸쉬)</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[포스팅을 편리하게 하기 위한 VS code 설치]]></summary></entry><entry><title type="html">6 맥북 M1, VS code Paste Image</title><link href="http://localhost:4000/githubblog/jekyll6/" rel="alternate" type="text/html" title="6 맥북 M1, VS code Paste Image" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll6</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll6/"><![CDATA[<h1 id="vs-code에서-markdown-이미지-쉽게-붙혀넣기">VS code에서 MarkDown 이미지 쉽게 붙혀넣기.</h1>
+<hr />
+<h2 id="paste-image란">Paste Image란?</h2>
+<p><img src="../../images/vscode-paste-image.gif" alt="" /></p>
+
+<h3 id="이미지-복사---vs-code-마크다운-문서---command--option--v---이미지-파일-자동-저장및-문서에-삽입">이미지 복사 -&gt; VS code 마크다운 문서 -&gt; Command + Option + V -&gt; 이미지 파일 자동 저장및, 문서에 삽입</h3>
+<hr />
+
+<h2 id="vs-code의-확장에-들어오면-paste-image라는-앱이-존재-합니다-설치">VS Code의 확장에 들어오면 Paste Image라는 앱이 존재 합니다. 설치</h2>
+<p><img src="../../images/2022-11-20-13-56-59.png" alt="" /></p>
 
 <hr />
 
-<p>일단 깃허브 데스크탑 깔아주세요 (터미널은 나중에 사용)
-https://desktop.github.com/</p>
+<h2 id="설정">설정.</h2>
 
-<p>Your Repositories에서 방금만든 레파지토리를 가저옵니다.
-<img src="../images/![](../images/2022-11-20-16-32-14.png).png" alt="" /></p>
-
-<p>초이스를 눌러 원하는 위치에 Clone해주세요.
-<img src="../images/2022-11-20-16-33-17.png" alt="" /></p>
-
-<p>이런 창이 뜨면 성공입니다.
-<img src="../images/2022-11-20-16-33-58.png" alt="" /></p>
+<p><img src="../../images/2022-11-20-14-16-01.png" alt="" /></p>
 
 <hr />
 
-<p>테마는 현재 저도 사용중인 미니멀 미스테이크라는 테마를 이용해보겠습니다 
-<img src="../images/2022-11-20-15-46-05.png" alt="" /></p>
+<p>Bass Path : url 스타트를 어디서 할지 정합니다.
+Path :해당 스타트지점 부터 타겟폴더 까지 경로를지정합니다.</p>
 
-<p>접속!
-https://github.com/mmistakes/minimal-mistakes</p>
+<h2 id="1--oooo--블로그상에-예만나옴">1  OOOO  (블로그상에 예만나옴)</h2>
+<p>Bass Path  ${currentFileDir}</p>
 
-<p>이게 현재 사용하고자하는 테마의 깃허브입니다.
-Download ZIP으로 다운받아주세요.
-<img src="../images/2022-11-20-15-55-58.png" alt="" /></p>
+<p>Path       ${projectRoot}/image</p>
 
-<p>그다음 
-우리가 좀전에 클론해온 username.github.io 폴더로
-minimal-mistakes 안에 있는 파일들 전부 넣어주세요.
-README.md파일은 교체해주세요</p>
+<p><img src="../../images/2022-11-21-13-59-25.png" alt="" /></p>
 
-<p>그럼 대략 아래와 같이 됩니다.
-<img src="../images/2022-11-20-16-09-47.png" alt="" /></p>
+<h2 id="2-xxxx">2 XXXX</h2>
 
-<p>다시 깃허브 데스크탑으로가면
-저절로 우리의 레파지토리에 추가된 내용이나옵니다.
-적당한 멘트써서 Commit to main 클릭!
-<img src="../images/2022-11-20-16-38-15.png" alt="" />
-—</p>
+<p>Bass Path  ${projectRoot}</p>
 
-<p>그런후 Push origin 버튼을 클릭해주세요 ( Push를 해야 최종적으로 깃허브 네트워크에 올라갑니다. )
-<img src="../images/2022-11-20-16-39-20.png" alt="" /></p>
+<p>Path       ${projectRoot}/image             (파일이 저장되는 경로?)</p>
+
+<p><img src="images/2022-11-21-14-04-37.png" alt="" /></p>
+
+<h2 id="3-oooo">3 OOOO</h2>
+
+<p>Bass Path  ${currentFileDir}</p>
+
+<p>Path       ${currentFileDir}/image</p>
+
+<p><img src="images/2022-11-21-14-02-38.png" alt="" /></p>
+
+<h2 id="4xxx">4XXX</h2>
+
+<p>Bass Path  ${projectRoot}</p>
+
+<p>Path       ${currentFileDir}/image</p>
+
+<p><img src="_posts/githubblog/images/2022-11-21-14-07-39.png" alt="" /></p>
+
+<p>Bass Path(시작경로)에서 Path(최종 도착지점)을 정해주는 것으로
+사진은 Path경로에 저장이되며, 이미지 삽입 경로는 Bass Path -&gt; Path 까지 자동으로 잡힌다.</p>
+
+<p>이때 실제 블로그 연동시에 경로랑은 살짝 차이가 있어서</p>
+
+<h2 id="1-paste-image-path">1. Paste Image: Path</h2>
+<p>실제 이미지 파일이 저장될 경로에 대한 옵션입니다. ( 자동으로 폴더 생김 )</p>
+
+<p>미작성시 해당 파일이 있는 위치에 저장됩니다.
+<br /><br /></p>
+
+<ul>
+  <li>
+    <p>현재 위치에 images 폴더를 만들려면?</p>
+
+    <p>${currentFileDir}/images/</p>
+  </li>
+  <li>
+    <p>최상단 루트 디렉토리에 images 폴더를 만들려면?</p>
+
+    <p>${projectRoot}/images/</p>
+
+    <p>위 처럼 설정시 ${projectRoot}/a/b/c/d.md 에서 작업을 하더라도 ${projectRoot}/images/ 에 저장된다.</p>
+  </li>
+</ul>
+
+<p><br /><br /></p>
 
 <hr />
-<p>마지막으로,
-그 후, 
-_config.yml파일을 찾으셔서 url 부분을 자신의 깃허브주소(예시)처럼 바꿔주신후 커밋해주세요.
-<img src="../images/2022-11-20-19-13-05.png" alt="" /></p>
+
+<h2 id="2-paste-image-bass-path">2. Paste Image: Bass Path</h2>
+<p>실제 문서 작성 시 타이핑 될 주소 경로.</p>
+
+<p>${projectRoot}/a/b/c/d.md 에서 작성할 경우</p>
+
+<p>${projectRoot} 로 설정시
+images/2022-11-20-13-35-15.png</p>
+
+<p>Bass Path의 경우 실제 작성되는 부분이므로, 현재 작성중인 문서의 위치에서 참조를 한다.
+그러므로 위에처럼 images/ 가 바로나오면 루트디렉토리가아닌,
+현재 파일이있는 디렉토리에서의 images 폴더를 찾게된다.</p>
+
+<p>그러므로 현재 위치에서 참조하기때문에 아래처럼 해야 한다. 
+( ../ 이전폴더로 간다는 뜻 )
+${currentFileDir}
+../../../images/2022-11-20-13-34-50.png</p>
 
 <hr />
-<p>그런후 자신의 아이디.github.io 에 접속하면?
-<img src="../images/2022-11-20-16-40-46.png" alt="" /></p>
+<h2 id="사용을-하다보니">사용을 하다보니..</h2>
+<p>보통 블로그 글 작성시 맥북 기본 캡처를 많이 쓰는데,
+캡처한 후 바탕화면에 생긴 파일을 복사 후 마크업에 Paste Image를 이용 붙혀넣기 하면 아래 같은 아이콘이 나온다.
+<img src="../../images/2022-11-20-12-33-53.png" alt="" /></p>
 
-<p>요약</p>
-<ol>
-  <li>깃허브 레파지토리를 자신의 아이디.github.io 로 만든다.</li>
-  <li>깃허브 데스크탑으로 자신이 원하는 로컬 폴더에 레파지토리를 clone 해온다.</li>
-  <li>원하는 테마를 찾아 ZIP으로 설치후 자신의 레파지토리에 전부 붙혀넣는다.</li>
-  <li>깃허브 데스크탑으로 수정된내용을 commit, push 한다.(최종적용)</li>
-  <li>깃허브 블로그 주소로 접속해본다.</li>
-</ol>
+<p>그런데.. 캡처후 파일이 저장되기전 미리보기 상태에서 붙혀넣으면 동작을 한다.
+  <img src="../../images/2022-11-20-12-36-32.png" alt="" /></p>
 
-<p>짜잔  블로그 완성입니다.
-설정및 다른 기능들은 차차 기술 하겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[시작 전, 깃허브 계정을 만들어주세요.]]></summary></entry><entry><title type="html">2 깃허브 블로그 포스팅 하는법</title><link href="http://localhost:4000/jekyll2/" rel="alternate" type="text/html" title="2 깃허브 블로그 포스팅 하는법" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll2</id><content type="html" xml:base="http://localhost:4000/jekyll2/"><![CDATA[<h2 id="기본적인-포스팅-방법">기본적인 포스팅 방법</h2>
+<p>그런 후에 클립보드에 있는 이미지를 바로 불러오면 사용이된다..
+<img src="../images/2022-11-20-12-35-27.png" alt="" /></p>
+
+<p>이걸 보니 맥에 저장된 파일은 동작이안되고, 클립보드에 남아 있을때만 저장이 되는 것 같다.
+( 버그인 것 같아요.. )</p>
+
+<p>그래서 이렇게 사용하기로 했다.
+맥북 부분 캡처 할 때 Shift + Command + control 4로 캡처시 파일저장이아닌
+클립보드로만 저장을 바로한고</p>
+
+<p>블로그 글을 쓰면서 바로바로 클립보드에넣어서 붙혀넣기 해서 사용하는 것이 정신건강에 좋을 듯 하다..</p>
+
+<h3 id="인터넷-상에서-있는-이미지-파일의-경우-잘-동작-합니다">인터넷 상에서 있는 이미지 파일의 경우 잘 동작 합니다.</h3>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[VS code에서 MarkDown 이미지 쉽게 붙혀넣기. Paste Image란?]]></summary></entry><entry><title type="html">7 _config,yml 수정, 블로그 정보 수정하기</title><link href="http://localhost:4000/githubblog/jekyll7/" rel="alternate" type="text/html" title="7 _config,yml 수정, 블로그 정보 수정하기" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll7</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll7/"><![CDATA[<p>_config.yml에서 여러가지 정보를 수정할 수 있다.
+<img src="../../images/2022-11-20-19-53-26.png" alt="" /></p>
+
+<p>skin : 원하는 스킨 선택 민트를 할경
+<img src="../../images/2022-11-20-20-47-55.png" alt="" /></p>
+
+<p>minimal_mistakes_skin : 원하는 스킨 선택, 민트 선택할 경우
+<img src="../../images/2022-11-20-20-50-01.png" alt="" /></p>
+
+<p>locale : “ko-KR”  할 경우 여러가지 설정된 언어가 한글로 바뀝니다 예를들면 위에 팔로우: 피드 이런부분!</p>
+
+<hr />
+
+<p>title : “IT 기술 블로그”</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>title_separator : “</td>
+      <td>”</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>subtitle : “small positive action”</p>
+
+<p>아래 메인 부분과, 인터넷브라우저 창의 제목, 구분자가 바뀐다.</p>
+
+<p><img src="../../images/2022-11-20-20-51-31.png" alt="" /></p>
+
+<p><img src="../../images/2022-11-20-20-51-55.png" alt="" /></p>
+
+<p>이 부분은 메타정보에만 들어가므로 바꿔도 아무런 변경이 일어나지 않는다.</p>
+
+<p>name : “Hyun Jun”
+description : “IT 기술 블로그 입니다.”</p>
+
+<p>assets -&gt; images에 사진을 넣고
+logo : “/assets/images/IMG…” 에 추가해주면 대문에 자기 사진이나온다.
+<img src="../../images/2022-11-20-20-54-52.png" alt="" /></p>
+
+<p>breadcrumbs : true 할 경우 포스팅을 눌럿을 때
+Home으로 이동할 수 있는 링크가 생김.</p>
+
+<p><img src="../../images/2022-11-20-20-55-56.png" alt="" /></p>
+
+<p>words_per_minute : 50</p>
+
+<p>글마다 몇분 소요되는지 기록이되는데, 아마 50으로 해놓으면 50글자가 넘어갈때마다 1분이 추가 되는것 같음.</p>
+
+<p>실질적으로 아래 영역의 경우
+<img src="../../images/2022-11-20-20-57-49.png" alt="" /></p>
+
+<p>맨처음 Site settings 부분이 아닌!</p>
+
+<p>아래의 Site Author 부분에서 변경해야 적용된다.</p>
+
+<p><img src="../../images/2022-11-20-20-57-36.png" alt="" /></p>
+
+<p>show_date, date_formate을 저렇게 설정해 줄경우
+<img src="../../images/2022-11-20-20-59-28.png" alt="" /></p>
+
+<p>포스트에 아래처럼 작성 날짜가 나온다.</p>
+
+<p><img src="../../images/2022-11-20-21-00-00.png" alt="" /></p>
+
+<p>그외에 주석으로 되어있거나 여러 부분들은
+아래 가이드링크 참조하여 직접 테스트 해보세요.
+https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[_config.yml에서 여러가지 정보를 수정할 수 있다.]]></summary></entry><entry><title type="html">2 깃허브 블로그 포스팅 하는법</title><link href="http://localhost:4000/githubblog/jekyll2/" rel="alternate" type="text/html" title="2 깃허브 블로그 포스팅 하는법" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll2</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll2/"><![CDATA[<h2 id="기본적인-포스팅-방법">기본적인 포스팅 방법</h2>
 
 <p>포스팅 할 글의 경우 /posts 에 올려주면 됩니다.
 하지만 처음에 없으므로 생성합니다.</p>
 
 <p>새로운 파일생성
-<img src="../images/2022-11-20-16-47-03.png" alt="" /></p>
+<img src="../../images/2022-11-20-16-47-03.png" alt="" /></p>
 
 <p>_posts/  &lt;- / 를 치면 폴더 생성입니다.
-<img src="../images/2022-11-20-16-47-52.png" alt="" /></p>
+<img src="../../images/2022-11-20-16-47-52.png" alt="" /></p>
 
 <p>파일 제목은 꼭 년도-월-일-ab-cd.md 형식으로 만들어야합니다.
-<img src="../images/2022-11-20-16-49-17.png" alt="" /></p>
+<img src="../../images/2022-11-20-16-49-17.png" alt="" /></p>
 
 <p>그후 커밋 뉴 파일을 하면 ?</p>
 
-<p><img src="../images/2022-11-20-16-52-16.png" alt="" />
-<img src="../images/2022-11-20-16-52-29.png" alt="" /></p>
+<p><img src="../../images/2022-11-20-16-52-16.png" alt="" />
+<img src="../../images/2022-11-20-16-52-29.png" alt="" /></p>
 
 <p>이와같은식으로 글이 잘 올라오는것을 볼 수 있습니다.</p>
 
 <p>그런데 커밋후 글이올라오는데 시간이 좀 걸리네요!
-시간 지연 없이 포스팅 테스트 하는법은 다음 편에 알려드리겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[기본적인 포스팅 방법]]></summary></entry><entry><title type="html">3 맥북 M1 깃허브 지킬 블로그 환경 만들기</title><link href="http://localhost:4000/jekyll3/" rel="alternate" type="text/html" title="3 맥북 M1 깃허브 지킬 블로그 환경 만들기" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll3</id><content type="html" xml:base="http://localhost:4000/jekyll3/"><![CDATA[<p>이번에는 터미널 활용과, 로컬서버 생성을 하기 위한 셋업등을 알려드릴게요.</p>
+시간 지연 없이 포스팅 테스트 하는법은 다음 편에 알려드리겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[기본적인 포스팅 방법]]></summary></entry><entry><title type="html">3 맥북 M1 깃허브 지킬 블로그 환경 만들기</title><link href="http://localhost:4000/githubblog/jekyll3/" rel="alternate" type="text/html" title="3 맥북 M1 깃허브 지킬 블로그 환경 만들기" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll3</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll3/"><![CDATA[<p>이번에는 터미널 활용과, 로컬서버 생성을 하기 위한 셋업등을 알려드릴게요.</p>
 
 <p>결론적으로 아래와 같은 것들을 설치해야 합니다.</p>
 <ul>
@@ -142,7 +391,7 @@ brew install rbenv ruby-build</p>
 <p>rbenv install -l</p>
 
 <p>이런식 으로 나온다면 3.1.2 버전을 설치해보겠다.
-<img src="../images/2022-11-20-17-28-26.png" alt="" /></p>
+<img src="../../images/2022-11-20-17-28-26.png" alt="" /></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    rbenv install 3.1.2 
 </code></pre></div></div>
@@ -216,12 +465,12 @@ source ~/.zshrc</p>
 
 <p>번들러는 종속성 관리를 위한 도구이다. RubyGems가 이미 처리한 것 아닌가라고 물을 수 있다. 하지만 RubyGems는 gem 자체만을 위해서 종속성 처리를 한다. 당신의 일반 루비 애플리케이션은 gem으로 만들어진게 아니므로 이 기능을 얻지 못한다. 이것이 번들러가 존재하는 이유이다.</p>
 
-<p>참조 블로그 https://til.younho9.dev/docs/frontend/jekyll/jekyll-github-page%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-%EA%B0%9C%EC%9D%B8%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[이번에는 터미널 활용과, 로컬서버 생성을 하기 위한 셋업등을 알려드릴게요.]]></summary></entry><entry><title type="html">4 깃허브 블로그 로컬 호스팅 하기 (실시간 확인)</title><link href="http://localhost:4000/jekyll4/" rel="alternate" type="text/html" title="4 깃허브 블로그 로컬 호스팅 하기 (실시간 확인)" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll4</id><content type="html" xml:base="http://localhost:4000/jekyll4/"><![CDATA[<h1 id="3탄의-과정이-끝났다면-더욱-자유도가-높아집니다">3탄의 과정이 끝났다면 더욱 자유도가 높아집니다.</h1>
+<p>참조 블로그 https://til.younho9.dev/docs/frontend/jekyll/jekyll-github-page%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-%EA%B0%9C%EC%9D%B8%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[이번에는 터미널 활용과, 로컬서버 생성을 하기 위한 셋업등을 알려드릴게요.]]></summary></entry><entry><title type="html">4 깃허브 블로그 로컬 호스팅 하기 (실시간 확인)</title><link href="http://localhost:4000/githubblog/jekyll4/" rel="alternate" type="text/html" title="4 깃허브 블로그 로컬 호스팅 하기 (실시간 확인)" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll4</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll4/"><![CDATA[<h1 id="3탄의-과정이-끝났다면-더욱-자유도가-높아집니다">3탄의 과정이 끝났다면 더욱 자유도가 높아집니다.</h1>
 
 <h2 id="블로그-내용-수정-시-실시간으로-확인하기">블로그 내용 수정 시 실시간으로 확인하기</h2>
 
 <p>자신의 블로그 레파지토리 폴더를 터미널로 연다.
-<img src="../images/2022-11-20-18-49-07.png" alt="" /></p>
+<img src="../../images/2022-11-20-18-49-07.png" alt="" /></p>
 
 <p>해당 폴더안에서 아래의 명령어 입력으로 번들을 설치해준다.</p>
 
@@ -236,7 +485,7 @@ source ~/.zshrc</p>
 </code></pre></div></div>
 
 <p>아래처럼 나오면 성공!
-<img src="../images/2022-11-20-18-51-56.png" alt="" /></p>
+<img src="../../images/2022-11-20-18-51-56.png" alt="" /></p>
 
 <p>브라우저로 http://127.0.0.1:4000 에 접속해주면된다.</p>
 
@@ -250,186 +499,90 @@ source ~/.zshrc</p>
 
 <p>그럼 이제 포스팅 수정 시 커밋,푸쉬 나 서버재시작을 하지않아도 
 브라우저 새로고침만 하면 수정된 내용이 바로바로 보일 것이다.
-( 실제 블로그에 적용하려면, 커밋,푸쉬 필수 )</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[3탄의 과정이 끝났다면 더욱 자유도가 높아집니다.]]></summary></entry><entry><title type="html">5 VS Code 설치, 확장팩 설치</title><link href="http://localhost:4000/jekyll5/" rel="alternate" type="text/html" title="5 VS Code 설치, 확장팩 설치" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll5</id><content type="html" xml:base="http://localhost:4000/jekyll5/"><![CDATA[<h1 id="포스팅을-편리하게-하기-위한-vs-code-설치">포스팅을 편리하게 하기 위한 VS code 설치</h1>
+( 실제 블로그에 적용하려면, 커밋,푸쉬 필수 )</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[3탄의 과정이 끝났다면 더욱 자유도가 높아집니다.]]></summary></entry><entry><title type="html">1 맥북 M1 개발자, 깃허브 블로그 포트폴리오 만들기</title><link href="http://localhost:4000/githubblog/jekyll1/" rel="alternate" type="text/html" title="1 맥북 M1 개발자, 깃허브 블로그 포트폴리오 만들기" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll1</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll1/"><![CDATA[<h1 id="1">1</h1>
 
-<h2 id="설치">설치</h2>
-<p>https://code.visualstudio.com/</p>
+<h2 id="1-1">1-1</h2>
 
-<p>설치 후 VS code 실행</p>
+<h3 id="1-3">1-3</h3>
 
-<h2 id="익스텐션-설치">익스텐션 설치</h2>
-<p>확장팩을 설치하는 과정입니다. 왼쪽 맨아래 확장 메뉴에서 해당 팩들을 설치해주세요.
-(저는 설치 되어있어서 제거로나옴.)</p>
+<h1 id="2">2</h1>
 
-<p>한글패치
-<img src="../images/2022-11-20-19-19-18.png" alt="" /></p>
+<h2 id="2-1">2-1</h2>
 
-<p>마크다운 언어 사용시 올인원 툴
-<img src="../images/2022-11-20-19-20-25.png" alt="" /></p>
+<p>#3
+시작 전, 깃허브 계정을 만들어주세요.</p>
 
-<p>마크다운 사진 편하게 붙히는 팩
-<img src="../images/2022-11-20-19-20-45.png" alt="" /></p>
+<p>repositories에 들어가서 자신의 블로그로 사용할 레파지토리를 만듭니다.</p>
 
-<p>폴더열기 -&gt; 자신의 블로그 레파지토리 선택
-<img src="../images/2022-11-20-19-24-06.png" alt="" /></p>
+<p>Repositroy name은 꼭 깃허브계정.github.io로 만들어주세요 ( 본인의 블로그 주소입니다. )</p>
 
-<p>이런식으로 나오면 성공입니다.
-<img src="../images/2022-11-20-19-25-08.png" alt="" /></p>
+<p><img src="../../images/2022-11-20-15-49-22.png" alt="" /></p>
 
-<p>그러면이제 _posts에 글을 작성하고 vs code편집기에서 저장을하면
-<img src="../images/2022-11-20-7.27.04.png" alt="" /></p>
-
-<p>우리 로컬서버에 바로 적용되는걸 볼 수 있다.
-<img src="../images/2022-11-20-19-31-12.png" alt="" /></p>
-
-<p>(실제 블로그에 적용하려면 깃헙 데스크탑 -&gt; 커밋, 푸쉬)</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[포스팅을 편리하게 하기 위한 VS code 설치]]></summary></entry><entry><title type="html">6 맥북 M1, VS code Paste Image</title><link href="http://localhost:4000/jekyll6/" rel="alternate" type="text/html" title="6 맥북 M1, VS code Paste Image" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll6</id><content type="html" xml:base="http://localhost:4000/jekyll6/"><![CDATA[<h1 id="vs-code에서-markdown-이미지-쉽게-붙혀넣기">VS code에서 MarkDown 이미지 쉽게 붙혀넣기.</h1>
-<hr />
-<h2 id="paste-image란">Paste Image란?</h2>
-<p><img src="../images/vscode-paste-image.gif" alt="" /></p>
-
-<h3 id="이미지-복사---vs-code-마크다운-문서---command--option--v---이미지-파일-자동-저장및-문서에-삽입">이미지 복사 -&gt; VS code 마크다운 문서 -&gt; Command + Option + V -&gt; 이미지 파일 자동 저장및, 문서에 삽입</h3>
-<hr />
-
-<h2 id="vs-code의-확장에-들어오면-paste-image라는-앱이-존재-합니다-설치">VS Code의 확장에 들어오면 Paste Image라는 앱이 존재 합니다. 설치</h2>
-<p><img src="../images/2022-11-20-13-56-59.png" alt="" /></p>
+<p>다른 지킬 테마를 fork로 가저오면서 레파지토리를 만들면 편하지만,
+그럴 경우 커밋과 같은 과정에서 잔디가 심어지지 않아요ㅜㅜ 그렇기 때문에
+이와 같이 직접 테마를 넣어줘야 합니다.</p>
 
 <hr />
 
-<h2 id="설정">설정.</h2>
+<p>일단 깃허브 데스크탑 깔아주세요 (터미널은 나중에 사용)
+https://desktop.github.com/</p>
 
-<p><img src="../images/2022-11-20-14-16-01.png" alt="" /></p>
+<p>Your Repositories에서 방금만든 레파지토리를 가저옵니다.
+<img src="../../images/2022-11-20-16-32-14.png" alt="" /></p>
 
-<hr />
+<p>초이스를 눌러 원하는 위치에 Clone해주세요.
+<img src="../../images/2022-11-20-16-33-17.png" alt="" /></p>
 
-<h2 id="1-paste-image-path">1. Paste Image: Path</h2>
-<p>실제 이미지 파일이 저장될 경로에 대한 옵션입니다. ( 자동으로 폴더 생김 )</p>
-
-<p>미작성시 해당 파일이 있는 위치에 저장됩니다.
-<br /><br /></p>
-
-<ul>
-  <li>
-    <p>현재 위치에 images 폴더를 만들려면?</p>
-
-    <p>${currentFileDir}/images/</p>
-  </li>
-  <li>
-    <p>최상단 루트 디렉토리에 images 폴더를 만들려면?</p>
-
-    <p>${projectRoot}/images/</p>
-
-    <p>위 처럼 설정시 ${projectRoot}/a/b/c/d.md 에서 작업을 하더라도 ${projectRoot}/images/ 에 저장된다.</p>
-  </li>
-</ul>
-
-<p><br /><br /></p>
+<p>이런 창이 뜨면 성공입니다.
+<img src="../../images/2022-11-20-16-33-58.png" alt="" /></p>
 
 <hr />
 
-<h2 id="2-paste-image-bass-path">2. Paste Image: Bass Path</h2>
-<p>실제 문서 작성 시 타이핑 될 주소 경로.</p>
+<p>테마는 현재 저도 사용중인 미니멀 미스테이크라는 테마를 이용해보겠습니다 
+<img src="../../images/2022-11-20-15-46-05.png" alt="" /></p>
 
-<p>${projectRoot}/a/b/c/d.md 에서 작성할 경우</p>
+<p>접속!
+https://github.com/mmistakes/minimal-mistakes</p>
 
-<p>${projectRoot} 로 설정시
-images/2022-11-20-13-35-15.png</p>
+<p>이게 현재 사용하고자하는 테마의 깃허브입니다.
+Download ZIP으로 다운받아주세요.
+<img src="../../images/2022-11-20-15-55-58.png" alt="" /></p>
 
-<p>Bass Path의 경우 실제 작성되는 부분이므로, 현재 작성중인 문서의 위치에서 참조를 한다.
-그러므로 위에처럼 images/ 가 바로나오면 루트디렉토리가아닌,
-현재 파일이있는 디렉토리에서의 images 폴더를 찾게된다.</p>
+<p>그다음 
+우리가 좀전에 클론해온 username.github.io 폴더로
+minimal-mistakes 안에 있는 파일들 전부 넣어주세요.
+README.md파일은 교체해주세요</p>
 
-<p>그러므로 현재 위치에서 참조하기때문에 아래처럼 해야 한다. 
-( ../ 이전폴더로 간다는 뜻 )
-${currentFileDir}
-../../../images/2022-11-20-13-34-50.png</p>
+<p>그럼 대략 아래와 같이 됩니다.
+<img src="../../images/2022-11-20-16-09-47.png" alt="" /></p>
 
-<hr />
-<h2 id="사용을-하다보니">사용을 하다보니..</h2>
-<p>보통 블로그 글 작성시 맥북 기본 캡처를 많이 쓰는데,
-캡처한 후 바탕화면에 생긴 파일을 복사 후 마크업에 Paste Image를 이용 붙혀넣기 하면 아래 같은 아이콘이 나온다.
-<img src="../images/2022-11-20-12-33-53.png" alt="" /></p>
+<p>다시 깃허브 데스크탑으로가면
+저절로 우리의 레파지토리에 추가된 내용이나옵니다.
+적당한 멘트써서 Commit to main 클릭!
+<img src="../../images/2022-11-20-16-38-15.png" alt="" />
+—</p>
 
-<p>그런데.. 캡처후 파일이 저장되기전 미리보기 상태에서 붙혀넣으면 동작을 한다.
-  <img src="../images/2022-11-20-12-36-32.png" alt="" /></p>
-
-<p>그런 후에 클립보드에 있는 이미지를 바로 불러오면 사용이된다..
-<img src="../images/2022-11-20-12-35-27.png" alt="" /></p>
-
-<p>이걸 보니 맥에 저장된 파일은 동작이안되고, 클립보드에 남아 있을때만 저장이 되는 것 같다.
-( 버그인 것 같아요.. )</p>
-
-<p>그래서 이렇게 사용하기로 했다.
-맥북 부분 캡처 할 때 Shift + Command + control 4로 캡처시 파일저장이아닌
-클립보드로만 저장을 바로한고</p>
-
-<p>블로그 글을 쓰면서 바로바로 클립보드에넣어서 붙혀넣기 해서 사용하는 것이 정신건강에 좋을 듯 하다..</p>
-
-<h3 id="인터넷-상에서-있는-이미지-파일의-경우-잘-동작-합니다">인터넷 상에서 있는 이미지 파일의 경우 잘 동작 합니다.</h3>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[VS code에서 MarkDown 이미지 쉽게 붙혀넣기. Paste Image란?]]></summary></entry><entry><title type="html">7 _config,yml 수정, 블로그 정보 수정하기</title><link href="http://localhost:4000/jekyll7/" rel="alternate" type="text/html" title="7 _config,yml 수정, 블로그 정보 수정하기" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/jekyll7</id><content type="html" xml:base="http://localhost:4000/jekyll7/"><![CDATA[<p>_config.yml에서 여러가지 정보를 수정할 수 있다.
-<img src="../images/2022-11-20-19-53-26.png" alt="" /></p>
-
-<p>skin : 원하는 스킨 선택 민트를 할경
-<img src="../images/2022-11-20-20-47-55.png" alt="" /></p>
-
-<p>minimal_mistakes_skin : 원하는 스킨 선택, 민트 선택할 경우
-<img src="../images/2022-11-20-20-50-01.png" alt="" /></p>
-
-<p>locale : “ko-KR”  할 경우 여러가지 설정된 언어가 한글로 바뀝니다 예를들면 위에 팔로우: 피드 이런부분!</p>
+<p>그런후 Push origin 버튼을 클릭해주세요 ( Push를 해야 최종적으로 깃허브 네트워크에 올라갑니다. )
+<img src="../../images/2022-11-20-16-39-20.png" alt="" /></p>
 
 <hr />
+<p>마지막으로,
+그 후, 
+_config.yml파일을 찾으셔서 url 부분을 자신의 깃허브주소(예시)처럼 바꿔주신후 커밋해주세요.
+<img src="../../images/2022-11-20-19-13-05.png" alt="" /></p>
 
-<p>title : “IT 기술 블로그”</p>
+<hr />
+<p>그런후 자신의 아이디.github.io 에 접속하면?
+<img src="../../images/2022-11-20-16-40-46.png" alt="" /></p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>title_separator : “</td>
-      <td>”</td>
-    </tr>
-  </tbody>
-</table>
+<p>요약</p>
+<ol>
+  <li>깃허브 레파지토리를 자신의 아이디.github.io 로 만든다.</li>
+  <li>깃허브 데스크탑으로 자신이 원하는 로컬 폴더에 레파지토리를 clone 해온다.</li>
+  <li>원하는 테마를 찾아 ZIP으로 설치후 자신의 레파지토리에 전부 붙혀넣는다.</li>
+  <li>깃허브 데스크탑으로 수정된내용을 commit, push 한다.(최종적용)</li>
+  <li>깃허브 블로그 주소로 접속해본다.</li>
+</ol>
 
-<p>subtitle : “small positive action”</p>
-
-<p>아래 메인 부분과, 인터넷브라우저 창의 제목, 구분자가 바뀐다.</p>
-
-<p><img src="../images/2022-11-20-20-51-31.png" alt="" /></p>
-
-<p><img src="../images/2022-11-20-20-51-55.png" alt="" /></p>
-
-<p>이 부분은 메타정보에만 들어가므로 바꿔도 아무런 변경이 일어나지 않는다.</p>
-
-<p>name : “Hyun Jun”
-description : “IT 기술 블로그 입니다.”</p>
-
-<p>assets -&gt; images에 사진을 넣고
-logo : “/assets/images/IMG…” 에 추가해주면 대문에 자기 사진이나온다.
-<img src="../images/2022-11-20-20-54-52.png" alt="" /></p>
-
-<p>breadcrumbs : true 할 경우 포스팅을 눌럿을 때
-Home으로 이동할 수 있는 링크가 생김.</p>
-
-<p><img src="../images/2022-11-20-20-55-56.png" alt="" /></p>
-
-<p>words_per_minute : 50</p>
-
-<p>글마다 몇분 소요되는지 기록이되는데, 아마 50으로 해놓으면 50글자가 넘어갈때마다 1분이 추가 되는것 같음.</p>
-
-<p>실질적으로 아래 영역의 경우
-<img src="../images/2022-11-20-20-57-49.png" alt="" /></p>
-
-<p>맨처음 Site settings 부분이 아닌!</p>
-
-<p>아래의 Site Author 부분에서 변경해야 적용된다.</p>
-
-<p><img src="../images/2022-11-20-20-57-36.png" alt="" /></p>
-
-<p>show_date, date_formate을 저렇게 설정해 줄경우
-<img src="../images/2022-11-20-20-59-28.png" alt="" /></p>
-
-<p>포스트에 아래처럼 작성 날짜가 나온다.</p>
-
-<p><img src="../images/2022-11-20-21-00-00.png" alt="" /></p>
-
-<p>그외에 주석으로 되어있거나 여러 부분들은
-아래 가이드링크 참조하여 직접 테스트 해보세요.
-https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[_config.yml에서 여러가지 정보를 수정할 수 있다.]]></summary></entry></feed>
+<p>짜잔  블로그 완성입니다.
+설정및 다른 기능들은 차차 기술 하겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><category term="github" /><category term="blog" /><summary type="html"><![CDATA[1]]></summary></entry></feed>
