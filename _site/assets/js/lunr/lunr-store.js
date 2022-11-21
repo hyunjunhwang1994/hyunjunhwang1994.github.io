@@ -48,7 +48,7 @@ var store = [{
         "teaser": null
       },{
         "title": "10. 그외에 도움되는 것들",
-        "excerpt":"사이드바크기및 넓이, 하이퍼텍스트 밑줄제거   https://eona1301.github.io/github_blog/GithubBlog-Content-Width/  ","categories": ["githubblog"],
+        "excerpt":"사이드바크기및 넓이, 하이퍼텍스트 밑줄제거   https://eona1301.github.io/github_blog/GithubBlog-Content-Width/   똑같은 테마에 전반적인 내용   https://www.youtube.com/watch?v=–MMmHbSH9k  ","categories": ["githubblog"],
         "tags": ["github","blog"],
         "url": "/githubblog/jekyll10/",
         "teaser": null
