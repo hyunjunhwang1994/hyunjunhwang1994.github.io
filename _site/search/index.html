@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Portfolio | IT 기술 블로그</title>
+<!-- begin _includes/seo.html --><title>Search | IT 기술 블로그</title>
 <meta name="description" content="IT 기술 블로그 입니다.">
 
 
@@ -20,8 +20,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="IT 기술 블로그">
-<meta property="og:title" content="Portfolio">
-<meta property="og:url" content="http://localhost:4000/portfolio/">
+<meta property="og:title" content="Search">
+<meta property="og:url" content="http://localhost:4000/search/">
 
 
   <meta property="og:description" content="IT 기술 블로그 입니다.">
@@ -41,7 +41,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/portfolio/">
+<link rel="canonical" href="http://localhost:4000/search/">
 
 
 
@@ -94,7 +94,7 @@
 
   </head>
 
-  <body class="layout--single">
+  <body class="layout--search">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -139,8 +139,6 @@
       
 
 
-
-
   
     
 
@@ -160,7 +158,7 @@
         <span class="sep">/</span>
       
       
-        <li class="current">Portfolio</li>
+        <li class="current">Search</li>
       
     
   </ol>
@@ -176,87 +174,14 @@
 
 
 
-  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Portfolio">
+  <div class="archive">
     
+      <h1 id="page-title" class="page__title">Search</h1>
     
-    
-
-    <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/portfolio/" class="u-url" itemprop="url">Portfolio
-</a>
-          </h1>
-          
-
-
-        </header>
-      
-
-      <section class="page__content e-content" itemprop="text">
-        
-        <h1 id="포트폴리오">포트폴리오</h1>
-
-<p>skills</p>
-
-<hr />
-<hr />
-<hr />
-
-<p>친구는 나를 동정하는 자가 아니라 나를 돕는 자다.ddddqwdjkqwhdjkqwhdkqwjdhwkqdhjqdhwqjkdhkqhkwhkqdhqwjkdhjwqkdhjqkwdhjkqwdhjkqhdjkwqhjkwqhdjkqhdjkwdhjkqwhdjkhdw</p>
-
-<p>서로가 고통을 덜어 주지 않는다면 우리는 무엇을 위해 사는 것일까?</p>
-
-<p>우리는 모두 적막한 세계를 떠도는 나그네다.</p>
-
-<p>그 여정에서 찾을 수 있는 최고의 선물은 바로 믿음직한 벗이다.</p>
-
-<p>좋은 벗은 충격을 덜어주는 완충장치와도 같은 것이며</p>
-
-<p>인생의 길에서 충동을 피할 수 있도록 도와준다.</p>
-
-<p>우정만이 세상을 하나로 만들 수 있다.</p>
-
-<p>우정은 영혼의 결혼이다.</p>
-
-<p>간담상조(肝膽相照) 간과 쓸개를 드러내 보인다는 절친한 사이다.</p>
-
-<p>관포지교(管鮑之交) 관숙과 포숙아의 사귐,</p>
-
-<p>변함없는 돈독한 우정.</p>
-
-<p>막역지우(莫逆之友) 마음에 거슬리는 것이 없는 친구,</p>
-
-<p>더할 나위 없이 친한 친구</p>
-
-<p>문경지교(刎頸之交) 목을 베어줄 정도의 우정, 변함없는 우정</p>
-
-<p>참된 사랑이 아무리 드물다 해도 참된 우정만큼 드문 것은 아니다.</p>
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-        
-
-      </footer>
-
-      
-
-      
-    </div>
 
     
-  </article>
-
-  
-  
+<input type="text" id="search" class="search-input" placeholder="검색어를 입력하세요..." />
+        <div id="results" class="results"></div></div>
 </div>
 
     </div>
@@ -302,6 +227,10 @@
 
 
 
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

@@ -1,6 +1,6 @@
 var store = [{
         "title": "1 맥북 M1 개발자, 깃허브 블로그 포트폴리오 만들기",
-        "excerpt":"1 1-1 1-3 2 2-1 #3 시작 전, 깃허브 계정을 만들어주세요. repositories에 들어가서 자신의 블로그로 사용할 레파지토리를 만듭니다. Repositroy name은 꼭 깃허브계정.github.io로 만들어주세요 ( 본인의 블로그 주소입니다. ) 다른 지킬 테마를 fork로 가저오면서 레파지토리를 만들면 편하지만, 그럴 경우 커밋과 같은 과정에서 잔디가 심어지지 않아요ㅜㅜ 그렇기 때문에 이와 같이 직접 테마를...","categories": ["githubblog"],
+        "excerpt":"##[메롱] - 문제점 - 배워야할점 - 선행학습 1 1-1 1-3 2 2-1 #3 시작 전, 깃허브 계정을 만들어주세요. repositories에 들어가서 자신의 블로그로 사용할 레파지토리를 만듭니다. Repositroy name은 꼭 깃허브계정.github.io로 만들어주세요 ( 본인의 블로그 주소입니다. ) 다른 지킬 테마를 fork로 가저오면서 레파지토리를 만들면 편하지만, 그럴 경우 커밋과 같은 과정에서 잔디가 심어지지...","categories": ["githubblog"],
         "tags": ["github","blog"],
         "url": "/githubblog/jekyll1/",
         "teaser": null
