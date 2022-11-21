@@ -126,6 +126,7 @@ blockquote {
 /* links */
 
 a {
+  text-decoration: none;  // 하이퍼텍스트 밑줄 안보이게!
   &:focus {
     @extend %tab-focus;
   }

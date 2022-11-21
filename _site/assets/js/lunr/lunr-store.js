@@ -47,6 +47,12 @@ var store = [{
         "url": "/java/Java-test/",
         "teaser": null
       },{
+        "title": "10. 그외에 도움되는 것들",
+        "excerpt":"사이드바크기및 넓이, 하이퍼텍스트 밑줄제거   https://eona1301.github.io/github_blog/GithubBlog-Content-Width/  ","categories": ["githubblog"],
+        "tags": ["github","blog"],
+        "url": "/githubblog/jekyll10/",
+        "teaser": null
+      },{
         "title": "8 깃허브 블로그 Disqus 댓글 기능 만들기",
         "excerpt":"아래 페이지에서 회원 가입을 해주세요. https://disqus.com/ settings Add Disqus To site 좀 내려서 Get Started I want to install Disqus on my site 아래와 비슷하게 네임을 수정해서 만들어주세요. 베이직 -&gt; Subscribe Now 지킬 클릭. 기본적인설정이 _config.yml에 있으므로 아래 코드 복사 안해도됩니다. Configure클릭 입력후 next Complete setup _config.yml 설정 comments: true...","categories": ["githubblog"],
         "tags": [],

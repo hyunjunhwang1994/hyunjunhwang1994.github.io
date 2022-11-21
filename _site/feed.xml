@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-21T15:54:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">9 Google analytics 추가하기</title><link href="http://localhost:4000/githubblog/jekyll9/" rel="alternate" type="text/html" title="9 Google analytics 추가하기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll9</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll9/"><![CDATA[<p>_config.yml</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-21T16:45:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">9 Google analytics 추가하기</title><link href="http://localhost:4000/githubblog/jekyll9/" rel="alternate" type="text/html" title="9 Google analytics 추가하기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll9</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll9/"><![CDATA[<p>_config.yml</p>
 
 <p><img src="../../images/2022-11-21-09-37-41.png" alt="" /></p>
 
@@ -35,7 +35,9 @@
 <p>적용되는데 시간이 좀걸린다.</p>
 
 <p>analytics -&gt; 보고서에 들어가면 각종 정보들이 확인가능하다.
-<img src="../../images/2022-11-21-09-50-33.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[_config.yml]]></summary></entry><entry><title type="html">Java 테스트 포스팅</title><link href="http://localhost:4000/java/Java-test/" rel="alternate" type="text/html" title="Java 테스트 포스팅" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/java/Java-test</id><content type="html" xml:base="http://localhost:4000/java/Java-test/"><![CDATA[]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="java" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">8 깃허브 블로그 Disqus 댓글 기능 만들기</title><link href="http://localhost:4000/githubblog/jekyll8/" rel="alternate" type="text/html" title="8 깃허브 블로그 Disqus 댓글 기능 만들기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll8</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll8/"><![CDATA[<p>아래 페이지에서 회원 가입을 해주세요.</p>
+<img src="../../images/2022-11-21-09-50-33.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[_config.yml]]></summary></entry><entry><title type="html">Java 테스트 포스팅</title><link href="http://localhost:4000/java/Java-test/" rel="alternate" type="text/html" title="Java 테스트 포스팅" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/java/Java-test</id><content type="html" xml:base="http://localhost:4000/java/Java-test/"><![CDATA[]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="java" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">10. 그외에 도움되는 것들</title><link href="http://localhost:4000/githubblog/jekyll10/" rel="alternate" type="text/html" title="10. 그외에 도움되는 것들" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll10</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll10/"><![CDATA[<p>사이드바크기및 넓이, 하이퍼텍스트 밑줄제거</p>
+
+<p>https://eona1301.github.io/github_blog/GithubBlog-Content-Width/</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><category term="github" /><category term="blog" /><summary type="html"><![CDATA[사이드바크기및 넓이, 하이퍼텍스트 밑줄제거]]></summary></entry><entry><title type="html">8 깃허브 블로그 Disqus 댓글 기능 만들기</title><link href="http://localhost:4000/githubblog/jekyll8/" rel="alternate" type="text/html" title="8 깃허브 블로그 Disqus 댓글 기능 만들기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll8</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll8/"><![CDATA[<p>아래 페이지에서 회원 가입을 해주세요.</p>
 
 <p>https://disqus.com/</p>
 
@@ -100,39 +102,7 @@
 
 <p><img src="../../images/2022-11-21-09-24-13.png" alt="" /></p>
 
-<p>Disqus 사이트 어드민에서 댓글관리및 여러기능 추가 가능합니다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[아래 페이지에서 회원 가입을 해주세요.]]></summary></entry><entry><title type="html">5 VS Code 설치, 확장팩 설치</title><link href="http://localhost:4000/githubblog/jekyll5/" rel="alternate" type="text/html" title="5 VS Code 설치, 확장팩 설치" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll5</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll5/"><![CDATA[<h1 id="포스팅을-편리하게-하기-위한-vs-code-설치">포스팅을 편리하게 하기 위한 VS code 설치</h1>
-
-<h2 id="설치">설치</h2>
-<p>https://code.visualstudio.com/</p>
-
-<p>설치 후 VS code 실행</p>
-
-<h2 id="익스텐션-설치">익스텐션 설치</h2>
-<p>확장팩을 설치하는 과정입니다. 왼쪽 맨아래 확장 메뉴에서 해당 팩들을 설치해주세요.
-(저는 설치 되어있어서 제거로나옴.)</p>
-
-<p>한글패치
-<img src="../../images/2022-11-20-19-19-18.png" alt="" /></p>
-
-<p>마크다운 언어 사용시 올인원 툴
-<img src="../../images/2022-11-20-19-20-25.png" alt="" /></p>
-
-<p>마크다운 사진 편하게 붙히는 팩
-<img src="../../images/2022-11-20-19-20-45.png" alt="" /></p>
-
-<p>폴더열기 -&gt; 자신의 블로그 레파지토리 선택
-<img src="../../images/2022-11-20-19-24-06.png" alt="" /></p>
-
-<p>이런식으로 나오면 성공입니다.
-<img src="../../images/2022-11-20-19-25-08.png" alt="" /></p>
-
-<p>그러면이제 _posts에 글을 작성하고 vs code편집기에서 저장을하면
-<img src="../../images/2022-11-20-7.27.04.png" alt="" /></p>
-
-<p>우리 로컬서버에 바로 적용되는걸 볼 수 있다.
-<img src="../../images/2022-11-20-19-31-12.png" alt="" /></p>
-
-<p>(실제 블로그에 적용하려면 깃헙 데스크탑 -&gt; 커밋, 푸쉬)</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[포스팅을 편리하게 하기 위한 VS code 설치]]></summary></entry><entry><title type="html">6 맥북 M1, VS code Paste Image</title><link href="http://localhost:4000/githubblog/jekyll6/" rel="alternate" type="text/html" title="6 맥북 M1, VS code Paste Image" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll6</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll6/"><![CDATA[<h1 id="vs-code에서-markdown-이미지-쉽게-붙혀넣기">VS code에서 MarkDown 이미지 쉽게 붙혀넣기.</h1>
+<p>Disqus 사이트 어드민에서 댓글관리및 여러기능 추가 가능합니다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[아래 페이지에서 회원 가입을 해주세요.]]></summary></entry><entry><title type="html">6 맥북 M1, VS code Paste Image</title><link href="http://localhost:4000/githubblog/jekyll6/" rel="alternate" type="text/html" title="6 맥북 M1, VS code Paste Image" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll6</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll6/"><![CDATA[<h1 id="vs-code에서-markdown-이미지-쉽게-붙혀넣기">VS code에서 MarkDown 이미지 쉽게 붙혀넣기.</h1>
 <hr />
 <h2 id="paste-image란">Paste Image란?</h2>
 <p><img src="../../images/vscode-paste-image.gif" alt="" /></p>
@@ -499,90 +469,36 @@ source ~/.zshrc</p>
 
 <p>그럼 이제 포스팅 수정 시 커밋,푸쉬 나 서버재시작을 하지않아도 
 브라우저 새로고침만 하면 수정된 내용이 바로바로 보일 것이다.
-( 실제 블로그에 적용하려면, 커밋,푸쉬 필수 )</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[3탄의 과정이 끝났다면 더욱 자유도가 높아집니다.]]></summary></entry><entry><title type="html">1 맥북 M1 개발자, 깃허브 블로그 포트폴리오 만들기</title><link href="http://localhost:4000/githubblog/jekyll1/" rel="alternate" type="text/html" title="1 맥북 M1 개발자, 깃허브 블로그 포트폴리오 만들기" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll1</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll1/"><![CDATA[<h1 id="1">1</h1>
+( 실제 블로그에 적용하려면, 커밋,푸쉬 필수 )</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[3탄의 과정이 끝났다면 더욱 자유도가 높아집니다.]]></summary></entry><entry><title type="html">5 VS Code 설치, 확장팩 설치</title><link href="http://localhost:4000/githubblog/jekyll5/" rel="alternate" type="text/html" title="5 VS Code 설치, 확장팩 설치" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll5</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll5/"><![CDATA[<h1 id="포스팅을-편리하게-하기-위한-vs-code-설치">포스팅을 편리하게 하기 위한 VS code 설치</h1>
 
-<h2 id="1-1">1-1</h2>
+<h2 id="설치">설치</h2>
+<p>https://code.visualstudio.com/</p>
 
-<h3 id="1-3">1-3</h3>
+<p>설치 후 VS code 실행</p>
 
-<h1 id="2">2</h1>
+<h2 id="익스텐션-설치">익스텐션 설치</h2>
+<p>확장팩을 설치하는 과정입니다. 왼쪽 맨아래 확장 메뉴에서 해당 팩들을 설치해주세요.
+(저는 설치 되어있어서 제거로나옴.)</p>
 
-<h2 id="2-1">2-1</h2>
+<p>한글패치
+<img src="../../images/2022-11-20-19-19-18.png" alt="" /></p>
 
-<p>#3
-시작 전, 깃허브 계정을 만들어주세요.</p>
+<p>마크다운 언어 사용시 올인원 툴
+<img src="../../images/2022-11-20-19-20-25.png" alt="" /></p>
 
-<p>repositories에 들어가서 자신의 블로그로 사용할 레파지토리를 만듭니다.</p>
+<p>마크다운 사진 편하게 붙히는 팩
+<img src="../../images/2022-11-20-19-20-45.png" alt="" /></p>
 
-<p>Repositroy name은 꼭 깃허브계정.github.io로 만들어주세요 ( 본인의 블로그 주소입니다. )</p>
+<p>폴더열기 -&gt; 자신의 블로그 레파지토리 선택
+<img src="../../images/2022-11-20-19-24-06.png" alt="" /></p>
 
-<p><img src="../../images/2022-11-20-15-49-22.png" alt="" /></p>
+<p>이런식으로 나오면 성공입니다.
+<img src="../../images/2022-11-20-19-25-08.png" alt="" /></p>
 
-<p>다른 지킬 테마를 fork로 가저오면서 레파지토리를 만들면 편하지만,
-그럴 경우 커밋과 같은 과정에서 잔디가 심어지지 않아요ㅜㅜ 그렇기 때문에
-이와 같이 직접 테마를 넣어줘야 합니다.</p>
+<p>그러면이제 _posts에 글을 작성하고 vs code편집기에서 저장을하면
+<img src="../../images/2022-11-20-7.27.04.png" alt="" /></p>
 
-<hr />
+<p>우리 로컬서버에 바로 적용되는걸 볼 수 있다.
+<img src="../../images/2022-11-20-19-31-12.png" alt="" /></p>
 
-<p>일단 깃허브 데스크탑 깔아주세요 (터미널은 나중에 사용)
-https://desktop.github.com/</p>
-
-<p>Your Repositories에서 방금만든 레파지토리를 가저옵니다.
-<img src="../../images/2022-11-20-16-32-14.png" alt="" /></p>
-
-<p>초이스를 눌러 원하는 위치에 Clone해주세요.
-<img src="../../images/2022-11-20-16-33-17.png" alt="" /></p>
-
-<p>이런 창이 뜨면 성공입니다.
-<img src="../../images/2022-11-20-16-33-58.png" alt="" /></p>
-
-<hr />
-
-<p>테마는 현재 저도 사용중인 미니멀 미스테이크라는 테마를 이용해보겠습니다 
-<img src="../../images/2022-11-20-15-46-05.png" alt="" /></p>
-
-<p>접속!
-https://github.com/mmistakes/minimal-mistakes</p>
-
-<p>이게 현재 사용하고자하는 테마의 깃허브입니다.
-Download ZIP으로 다운받아주세요.
-<img src="../../images/2022-11-20-15-55-58.png" alt="" /></p>
-
-<p>그다음 
-우리가 좀전에 클론해온 username.github.io 폴더로
-minimal-mistakes 안에 있는 파일들 전부 넣어주세요.
-README.md파일은 교체해주세요</p>
-
-<p>그럼 대략 아래와 같이 됩니다.
-<img src="../../images/2022-11-20-16-09-47.png" alt="" /></p>
-
-<p>다시 깃허브 데스크탑으로가면
-저절로 우리의 레파지토리에 추가된 내용이나옵니다.
-적당한 멘트써서 Commit to main 클릭!
-<img src="../../images/2022-11-20-16-38-15.png" alt="" />
-—</p>
-
-<p>그런후 Push origin 버튼을 클릭해주세요 ( Push를 해야 최종적으로 깃허브 네트워크에 올라갑니다. )
-<img src="../../images/2022-11-20-16-39-20.png" alt="" /></p>
-
-<hr />
-<p>마지막으로,
-그 후, 
-_config.yml파일을 찾으셔서 url 부분을 자신의 깃허브주소(예시)처럼 바꿔주신후 커밋해주세요.
-<img src="../../images/2022-11-20-19-13-05.png" alt="" /></p>
-
-<hr />
-<p>그런후 자신의 아이디.github.io 에 접속하면?
-<img src="../../images/2022-11-20-16-40-46.png" alt="" /></p>
-
-<p>요약</p>
-<ol>
-  <li>깃허브 레파지토리를 자신의 아이디.github.io 로 만든다.</li>
-  <li>깃허브 데스크탑으로 자신이 원하는 로컬 폴더에 레파지토리를 clone 해온다.</li>
-  <li>원하는 테마를 찾아 ZIP으로 설치후 자신의 레파지토리에 전부 붙혀넣는다.</li>
-  <li>깃허브 데스크탑으로 수정된내용을 commit, push 한다.(최종적용)</li>
-  <li>깃허브 블로그 주소로 접속해본다.</li>
-</ol>
-
-<p>짜잔  블로그 완성입니다.
-설정및 다른 기능들은 차차 기술 하겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><category term="github" /><category term="blog" /><summary type="html"><![CDATA[1]]></summary></entry></feed>
+<p>(실제 블로그에 적용하려면 깃헙 데스크탑 -&gt; 커밋, 푸쉬)</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="githubblog" /><summary type="html"><![CDATA[포스팅을 편리하게 하기 위한 VS code 설치]]></summary></entry></feed>
