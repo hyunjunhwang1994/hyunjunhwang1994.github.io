@@ -48,7 +48,7 @@ var store = [{
         "teaser": null
       },{
         "title": "10. 그외에 도움되는 것들",
-        "excerpt":"사이드바크기및 넓이, 하이퍼텍스트 밑줄제거   https://eona1301.github.io/github_blog/GithubBlog-Content-Width/   똑같은 테마에 전반적인 내용   https://www.youtube.com/watch?v=–MMmHbSH9k   화이트 / 다크테마 토글 적용하기   https://etch-cure.github.io/blog/toggle-dark-mode/   스크롤바 꾸미기, 설정시 사이드바에도 스크롤바 생겨서 비추   https://ansohxxn.github.io/blog/scrollbar/   ##[메롱]    - 문제점  - 배워야할점 - 선행학습  ","categories": ["githubblog"],
+        "excerpt":"사이드바크기및 넓이, 하이퍼텍스트 밑줄제거   https://eona1301.github.io/github_blog/GithubBlog-Content-Width/   똑같은 테마에 전반적인 내용   https://www.youtube.com/watch?v=–MMmHbSH9k   화이트 / 다크테마 토글 적용하기   https://etch-cure.github.io/blog/toggle-dark-mode/   스크롤바 꾸미기, 설정시 사이드바에도 스크롤바 생겨서 비추   https://ansohxxn.github.io/blog/scrollbar/   카테고리 만들기   https://ansohxxn.github.io/blog/category/   ##[메롱]    - 문제점  - 배워야할점 - 선행학습  ","categories": ["githubblog"],
         "tags": ["github","blog"],
         "url": "/githubblog/jekyll10/",
         "teaser": null

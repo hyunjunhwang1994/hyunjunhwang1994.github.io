@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-22T21:50:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">9 Google analytics 추가하기</title><link href="http://localhost:4000/githubblog/jekyll9/" rel="alternate" type="text/html" title="9 Google analytics 추가하기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll9</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll9/"><![CDATA[<p>_config.yml</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-22T22:18:18+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">9 Google analytics 추가하기</title><link href="http://localhost:4000/githubblog/jekyll9/" rel="alternate" type="text/html" title="9 Google analytics 추가하기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll9</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll9/"><![CDATA[<p>_config.yml</p>
 
 <p><img src="../../images/2022-11-21-09-37-41.png" alt="" /></p>
 
@@ -50,6 +50,10 @@
 <p>스크롤바 꾸미기, 설정시 사이드바에도 스크롤바 생겨서 비추</p>
 
 <p>https://ansohxxn.github.io/blog/scrollbar/</p>
+
+<p>카테고리 만들기</p>
+
+<p>https://ansohxxn.github.io/blog/category/</p>
 
 <p class="notice--danger">##[메롱]</p>
 
