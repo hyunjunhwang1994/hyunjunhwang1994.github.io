@@ -463,11 +463,9 @@ body {
 .comment {
   @include clearfix();
   margin: 1em 0;
-  color : red;
 
   &:not(:last-child) {
     border-bottom: 1px solid $border-color;
-    color : red;
   }
 }
 
@@ -498,11 +496,9 @@ body {
 .comment__content-wrapper {
   float: right;
   width: calc(100% - 60px);
-  color : red;
 
   @include breakpoint($large) {
     width: calc(100% - 100px);
-    color : red;
   }
 }
 

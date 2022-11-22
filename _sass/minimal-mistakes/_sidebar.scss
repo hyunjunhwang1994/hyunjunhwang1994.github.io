@@ -124,8 +124,8 @@
 .author__avatar {
   display: table-cell;
   vertical-align: top;
-  width: 36px;
-  height: 36px;
+  width: 36px; // 프로필 넓이 default 36px
+  height: 36px; // 프로필 높이        36px
 
   @include breakpoint($large) {
     display: block;
@@ -134,8 +134,8 @@
   }
 
   img {
-    max-width: 110px;
-    border-radius: 50%;
+    max-width: 170px;   // 110px;
+    border-radius: 10%;  // 50% = 원 , 0% = 사각형    default 50%
 
     @include breakpoint($large) {
       padding: 5px;
