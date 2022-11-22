@@ -1,6 +1,6 @@
 var store = [{
-        "title": "1 맥북 M1 개발자, 깃허브 블로그 포트폴리오 만들기",
-        "excerpt":"##[메롱] - 문제점 - 배워야할점 - 선행학습 1 1-1 1-3 2 2-1 #3 시작 전, 깃허브 계정을 만들어주세요. repositories에 들어가서 자신의 블로그로 사용할 레파지토리를 만듭니다. Repositroy name은 꼭 깃허브계정.github.io로 만들어주세요 ( 본인의 블로그 주소입니다. ) 다른 지킬 테마를 fork로 가저오면서 레파지토리를 만들면 편하지만, 그럴 경우 커밋과 같은 과정에서 잔디가 심어지지...","categories": ["githubblog"],
+        "title": "개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)",
+        "excerpt":"진행 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 목표 minimal mistakes 테마 기반 깃허브 지킬 블로그 만들기 깃허브 계정 만들기. 아래의 링크에서 깃허브 계정을 만든다. 깃허브 Repository(저장소) 만들기 Repository에 들어가서 자신의 블로그로 사용 할 레퍼지토리를 만들어야 한다. 우상단 프로필클릭 -&gt; Your repositories -&gt;...","categories": ["githubblog"],
         "tags": ["github","blog"],
         "url": "/githubblog/jekyll1/",
         "teaser": null
@@ -48,7 +48,7 @@ var store = [{
         "teaser": null
       },{
         "title": "10. 그외에 도움되는 것들",
-        "excerpt":"사이드바크기및 넓이, 하이퍼텍스트 밑줄제거   https://eona1301.github.io/github_blog/GithubBlog-Content-Width/   똑같은 테마에 전반적인 내용   https://www.youtube.com/watch?v=–MMmHbSH9k  ","categories": ["githubblog"],
+        "excerpt":"사이드바크기및 넓이, 하이퍼텍스트 밑줄제거   https://eona1301.github.io/github_blog/GithubBlog-Content-Width/   똑같은 테마에 전반적인 내용   https://www.youtube.com/watch?v=–MMmHbSH9k   ##[메롱]    - 문제점  - 배워야할점 - 선행학습  ","categories": ["githubblog"],
         "tags": ["github","blog"],
         "url": "/githubblog/jekyll10/",
         "teaser": null
