@@ -14,11 +14,12 @@
 # remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
+
 # Site Settings
 locale                   : "ko-KR"
 title                    : "IT 기술 블로그"
 title_separator          : "|"
-subtitle                 : "small positive action"   # site tagline that appears below site title in masthead
+subtitle                 : ""   # site tagline that appears below site title in masthead
 name                     : "Hyun Jun"
 description              : "IT 기술 블로그 입니다."
 url                      : "https://hyunjunhwang1994.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -294,3 +295,8 @@ defaults:
       sidebar_main: true
 
 date_format: "%Y-%m-%d"
+
+# _config.yml   https://etch-cure.github.io/blog/toggle-dark-mode/#1-%EB%A9%94%EC%9D%B8-%EC%86%8C%EC%8A%A4 참조
+dark_theme_toggle        : true # 다크 모드 토글 기능 추가
+after_footer_scripts:
+  - /assets/js/custom/dark-theme.js

@@ -134,7 +134,7 @@
   }
 
   img {
-    max-width: 170px;   // 110px;
+    max-width: 160px;   // 110px;
     border-radius: 10%;  // 50% = 원 , 0% = 사각형    default 50%
 
     @include breakpoint($large) {
