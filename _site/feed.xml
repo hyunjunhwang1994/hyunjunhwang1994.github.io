@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-22T20:33:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">9 Google analytics 추가하기</title><link href="http://localhost:4000/githubblog/jekyll9/" rel="alternate" type="text/html" title="9 Google analytics 추가하기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll9</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll9/"><![CDATA[<p>_config.yml</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-22T21:02:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">9 Google analytics 추가하기</title><link href="http://localhost:4000/githubblog/jekyll9/" rel="alternate" type="text/html" title="9 Google analytics 추가하기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/jekyll9</id><content type="html" xml:base="http://localhost:4000/githubblog/jekyll9/"><![CDATA[<p>_config.yml</p>
 
 <p><img src="../../images/2022-11-21-09-37-41.png" alt="" /></p>
 
@@ -42,6 +42,10 @@
 <p>똑같은 테마에 전반적인 내용</p>
 
 <p>https://www.youtube.com/watch?v=–MMmHbSH9k</p>
+
+<p>화이트 / 다크테마 토글 적용하기</p>
+
+<p>https://etch-cure.github.io/blog/toggle-dark-mode/</p>
 
 <p class="notice--danger">##[메롱]</p>
 
