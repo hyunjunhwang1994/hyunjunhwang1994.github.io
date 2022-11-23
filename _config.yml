@@ -283,6 +283,7 @@ compress_html:
 
 # Defaults
 defaults:
+
   - 
     scope:
       path: ""
@@ -305,6 +306,18 @@ defaults:
       show_date: true
       author_profile: false
       sidebar_main: true
+
+  -
+    scope:
+      path: "_pages/categories"
+    values: 
+      read_time: true
+      show_date: true
+      author_profile: false
+      sidebar_main: true
+      
+  
+
 
     
 date_format: "%Y-%m-%d"
