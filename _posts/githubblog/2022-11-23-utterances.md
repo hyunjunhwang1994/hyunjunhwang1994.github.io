@@ -18,7 +18,7 @@ author_profile: false
 ---
 <div class="notice--info" style="text-align:center">
 목표<br>
-minimal mistakes 테마 기반 깃허브 지킬 블로그 만들기
+minimal mistakes 테마 기반 깃허브 Utterances 댓글 기능 만들기.
 </div>
 
 <br>
