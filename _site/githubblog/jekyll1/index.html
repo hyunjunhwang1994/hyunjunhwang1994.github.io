@@ -138,7 +138,7 @@
       <nav id="site-nav" class="greedy-nav">
         
         <a class="site-title" href="/">
-          IT 기술 블로그
+           
           <span class="site-subtitle">🤗</span>
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
@@ -456,6 +456,63 @@ _config.yml 파일을 찾아, url 부분을 자신의 깃허브주소(예시)처
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/githubblog/utterances/" rel="permalink">개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-11-23T00:00:00+09:00">2022-11-23</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">
+진행 환경
+- 2021, 맥북 프로 M1 Pro 14인치 모델 
+- Ventura 13.1 베타(22C5050e) 버전
+
+
+
+
+목표
+minimal mistakes 테마 기반 깃허브 지킬 블로그 만들기
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/githubblog/jekyll9/" rel="permalink">9 Google analytics 추가하기
 </a>
       
@@ -588,53 +645,6 @@ _config.yml 파일을 찾아, url 부분을 자신의 깃허브주소(예시)처
 </div>
 
         
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/java/Java-test/" rel="permalink">Java 테스트 포스팅
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-11-21T00:00:00+09:00">2022-11-21</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-</p>
-  </article>
-</div>
-
-        
       </div>
     </div>
   
@@ -688,21 +698,27 @@ _config.yml 파일을 찾아, url 부분을 자신의 깃허브주소(예시)처
 
 
 
-    
-  <script>
-    var disqus_config = function () {
-      this.page.url = "http://localhost:4000/githubblog/jekyll1/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/githubblog/jekyll1"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
-    };
-    (function() { /* DON'T EDIT BELOW THIS LINE */
-      var d = document, s = d.createElement('script');
-      s.src = 'https://hyunjun.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <script>
+  'use strict';
 
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'photon-dark');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
 
   
 
