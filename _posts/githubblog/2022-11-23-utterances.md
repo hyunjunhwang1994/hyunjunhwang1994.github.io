@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)"
+title: "깃허브 블로그 Utterances 댓글 기능 만들기"
 last_modified_at: 2022-11-22
 categories: 
     - githubblog
@@ -88,3 +88,22 @@ _config.yml에서 repository, provider, theme, issue_term 부분만 바꿔주면
 (https://utteranc.es/?installation 참조)
 
 ![](../../images/2022-11-23-10-27-31.png)
+
+
+label(optional) 의 경우 추가하고싶다면 아래처럼 만들어주면된다.
+![](../../images/2022-11-23-10-41-14.png)
+
+
+_includes/comments-providers/utterances.html 참조
+
+![](../../images/2022-11-23-10-42-04.png)
+
+
+이제 커밋, 푸쉬후 약간의 시간이 흐른뒤 본인의 깃허브 블로그에 들어가면
+
+적용되어 있을것이다.
+
+
+이렇게 댓글을 다는경우
+
+![](../../images/2022-11-23-10-45-03.png)
