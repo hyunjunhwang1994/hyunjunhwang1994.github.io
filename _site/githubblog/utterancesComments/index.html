@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>깃허브 블로그 Utterances 댓글 기능 만들기 | IT 기술 블로그</title>
-<meta name="description" content="개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델  - Ventura 13.1 베타(22C5050e) 버전     목표 minimal mistakes 테마 기반 깃허브 Utterances 댓글 기능 만들기.">
+<!-- begin _includes/seo.html --><title>minimal-mistakes 기반 Utterances 댓글 적용 | IT 기술 블로그</title>
+<meta name="description" content="개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델  - Ventura 13.1 베타(22C5050e) 버전">
 
 
   <meta name="author" content="Hyun Jun">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="IT 기술 블로그">
-<meta property="og:title" content="깃허브 블로그 Utterances 댓글 기능 만들기">
+<meta property="og:title" content="minimal-mistakes 기반 Utterances 댓글 적용">
 <meta property="og:url" content="http://localhost:4000/githubblog/utterancesComments/">
 
 
-  <meta property="og:description" content="개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델  - Ventura 13.1 베타(22C5050e) 버전     목표 minimal mistakes 테마 기반 깃허브 Utterances 댓글 기능 만들기.">
+  <meta property="og:description" content="개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델  - Ventura 13.1 베타(22C5050e) 버전">
 
 
 
@@ -192,8 +192,8 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="깃허브 블로그 Utterances 댓글 기능 만들기">
-    <meta itemprop="description" content="개발 환경- 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전목표minimal mistakes 테마 기반 깃허브 Utterances 댓글 기능 만들기.">
+    <meta itemprop="headline" content="minimal-mistakes 기반 Utterances 댓글 적용">
+    <meta itemprop="description" content="      개발 환경- 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전">
     <meta itemprop="datePublished" content="2022-11-23T00:00:00+09:00">
     <meta itemprop="dateModified" content="2022-11-23T00:00:00+09:00">
 
@@ -201,7 +201,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/githubblog/utterancesComments/" class="u-url" itemprop="url">깃허브 블로그 Utterances 댓글 기능 만들기
+            <a href="http://localhost:4000/githubblog/utterancesComments/" class="u-url" itemprop="url">minimal-mistakes 기반 Utterances 댓글 적용
 </a>
           </h1>
           
@@ -225,7 +225,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 분 소요
+          12 분 소요
         
       </span>
     
@@ -240,137 +240,297 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#파일명-변경-한-경우">파일명 변경 한 경우</a></li><li><a href="#댓글-삭제">댓글 삭제</a></li></ul>
+              <ul class="toc__menu"><li><a href="#disqus에서-ufferances로-바꾼-이유">Disqus에서 Ufferances로 바꾼 이유.</a><ul><li><a href="#disqus의-치명적인-단점">Disqus의 치명적인 단점.</a></li><li><a href="#그렇다면-장점은-없나">그렇다면 장점은 없나?</a></li></ul></li><li><a href="#utterances-장단점">Utterances 장단점</a><ul><li><a href="#장점">장점</a></li><li><a href="#단점">단점</a></li></ul></li><li><a href="#utterances-동작원리">Utterances 동작원리.</a><ul><li><a href="#github-issue-기반">Github Issue 기반.</a></li></ul></li><li><a href="#utterances-설치하기-️">Utterances 설치하기 ⭐️</a><ul><li><a href="#github-app-설치">Github App 설치</a></li><li><a href="#일반-utterances-설치">일반 Utterances 설치.</a></li><li><a href="#minimal-mistakes-사용자의-utterances-설치">minimal-mistakes 사용자의 Utterances 설치.</a></li></ul></li><li><a href="#그-외에">그 외에.</a><ul><li><a href="#포스팅-파일명을-변경-한-경우">포스팅 파일명을 변경 한 경우</a></li><li><a href="#댓글-삭제">댓글 삭제</a></li><li><a href="#알람도-온다">알람도 온다?</a></li><li><a href="#issue-number">Issue Number</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <div class="notice" style="text-align:center">
+        <div class="notice" style="text-align:center">      <!-- 개발환경에 대해 설명 -->
 개발 환경<br />
 - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
 - Ventura 13.1 베타(22C5050e) 버전
 </div>
+
 <hr />
-<div class="notice--info" style="text-align:center">
+
+<div class="notice--info" style="text-align:center">    <!-- 현재 포스팅의 목표에 대해 기술 -->
 목표<br />
-minimal mistakes 테마 기반 깃허브 Utterances 댓글 기능 만들기.
+minimal-mistakes 기반 Jekyll 블로그 Utterances 댓글 적용하기.
 </div>
+<p><br /></p>
+
+<blockquote>
+  <h1 id="disqus에서-ufferances로-바꾼-이유">Disqus에서 Ufferances로 바꾼 이유.</h1>
+</blockquote>
+
+<h2 id="disqus의-치명적인-단점">Disqus의 치명적인 단점.</h2>
+<ul>
+  <li>어느샌가 몰래 덕지덕지 붙어있는 광고들..</li>
+  <li>왠지 모르게 무겁다.</li>
+  <li>왜 나만 글자가 투명색(흰색)으로 나오는지ㅠ<br />
+Disqus 내 설정을 바꿔도, Only 흰색 글자만 나온다.<br />
+결국 이러한 점 때문에 바꾸었다. (하얀색 배경으로 된 테마를 사용 못 하기 때문.)</li>
+  <li>광고 없애려면 유료…</li>
+</ul>
+
+<h2 id="그렇다면-장점은-없나">그렇다면 장점은 없나?</h2>
+<ul>
+  <li>구글, 페이스북, 트위터, 디스쿼스 등의 다양한 로그인 종류 제공</li>
+  <li>설치가 편하다..?</li>
+</ul>
+
+<p><br />
+결론은 장단점 따지기 전에, 아예 흰색 테마에서는<br />
+사용을 못 하기 때문에 바꾸기로 마음먹었다.</p>
+
+<p>구글링 해도 전혀 나오지도 않아요…!
+<br />
+<br />
+<br />
+<br />
+<br /></p>
+
+<p><img src="../../images/2022-11-23-12-21-34.png" alt="" /></p>
+<blockquote>
+  <h1 id="utterances-장단점">Utterances 장단점</h1>
+</blockquote>
+
+<h2 id="장점">장점</h2>
+<ul>
+  <li>가볍다.</li>
+  <li>거의 실시간으로 댓글 알림을 받을 수 있다.</li>
+  <li>깔끔하며, 테마 변경 가능</li>
+  <li>깃허브랑 연동이 가능하다.</li>
+  <li>무료..🌝</li>
+</ul>
+
+<h2 id="단점">단점</h2>
+<ul>
+  <li>깃허브 계정이 있어야 구현할 수 있다.</li>
+  <li>댓글 작성 시 오직 깃허브 계정으로만 로그인이 가능하다.</li>
+  <li>댓글 삭제 기능이 없다. (깃허브 이슈 내에서만 가능)</li>
+</ul>
 
 <p><br /></p>
 
-<p>Utterances는 깃허브의 이슈</p>
+<p>결론적으로, 깃허브 계정을 가지고 있고 개발 관련 포스팅 or TIL을 위주로 올리기 때문에<br />
+댓글 다시는 분들도 깃허브 계정이 있으리라?? 판단하여 단점은 상쇄됐다.</p>
 
-<p>utterances로 사용할 댓글이 담길 레파지토리 생성 ( public로 만들기. )</p>
+<p><br />
+<br /></p>
 
-<p>저는 그냥 Utterances로 만들었습니다.</p>
+<blockquote>
+  <h1 id="utterances-동작원리">Utterances 동작원리.</h1>
+</blockquote>
 
-<p>Disqus를 사용하려고 하다가..</p>
+<h2 id="github-issue-기반">Github Issue 기반.</h2>
+<p>Utterances는 Github의 App이다.<br />
+Github의 repositroy 안의 Issue 기능으로 동작한다.</p>
 
-<p>광고는 둘째치고, 저는 아무리 배경을 바꿔도 디스쿼스의 댓글색이 흰색으로만나와</p>
+<p>예를 들어, 블로그 댓글 작성 시 -&gt; Github/repository의 Issue가 생성되며<br />
+해당 Issue의 Comment가 댓글이 되는 것이다.</p>
 
-<p>하얀배경의 테마에서는 전혀 사용할 수가 없어서.. 우터렌스로 바꿔ㅇ습니다.</p>
+<p>결국 우리의 Repository를 댓글 Database로 쓰는 셈이다.</p>
 
-<p><img src="../../images/2022-11-23-10-06-34.png" alt="" /></p>
+<ul>
+  <li>Repository : Issue, Comment를 담을 저장소.
+    <ul>
+      <li>Issue : 해당 포스팅이 대한 정보를 담고 있음, 포스팅 1개당 Issue는 1개
+        <ul>
+          <li>Comment : 실제 댓글</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-<p><img src="../../images/utterances.png" alt="" /></p>
+<p><br />
+<br /></p>
 
-<p>Ufferances전용으로 만든 레파지토리주소를 아래에 입력해준다.</p>
+<blockquote>
+  <h1 id="utterances-설치하기-️">Utterances 설치하기 ⭐️</h1>
+</blockquote>
 
-<p><img src="../../images/2022-11-23-10-17-45.png" alt="" /></p>
+<h2 id="github-app-설치">Github App 설치</h2>
+<ol>
+  <li>자신의 깃허브 계정에 Utterances를 이용, 댓글이 담길 새로운<br />
+repository를 생성 ( ⭐️ public이어야 한다. )</li>
+  <li>아래의 링크 클릭하여 install로 자신의 깃허브 계정에 Utterances 앱을 설치!</li>
+</ol>
 
-<p>https://utteranc.es/?installation_id=31487720&amp;setup_action=install</p>
+<p><a href="https://github.com/apps/utterances">Utterances 앱 설치</a>
+<img src="../../images/2022-11-23-10-06-34.png" alt="" /></p>
 
-<p><img src="../../images/2022-11-23-10-18-22.png" alt="" /></p>
+<p>1번에서 만든 repository를 주소를 선택하여 install 해준다.
+<img src="../../images/utterances.png" alt="" /></p>
 
-<p>참조 블로그
-https://computasha.github.io/etc-utterances/
-https://ansohxxn.github.io/blog/utterances/</p>
+<p><br />
+repository name으로 Utterances는 나중에 헷갈릴 것 같아.<br />
+직후에 repository name을 Utterances-comments로 변경했습니다.
+<img src="../../images/2022-11-23-14-10-26.png" alt="" /></p>
 
-<p>mapping 하기.
-깃허브 블로그 와 깃허브 이슈를 연결해줄 매핑 방식을 선택해야한다.</p>
+<p><br /></p>
 
-<p>Issue title contains page pathname 선택</p>
+<p>이제 repository에 App 설치는 끝났습니다.
+<br /></p>
 
-<p><img src="../../images/2022-11-23-10-20-00.png" alt="" /></p>
+<p><a href="#minimal-mistakes-사용자의-utterances-설치">minimal-mistakes 테마 사용 중인 경우 클릭⭐️</a></p>
 
-<p>Issue Label 설정
+<p><br /></p>
+
+<h2 id="일반-utterances-설치">일반 Utterances 설치.</h2>
+
+<p>아래에 경우 이 과정을 진행해 주세요.</p>
+<ul>
+  <li>minimal-mistakes 테마를 사용하지 않음.</li>
+  <li>_config.yml에 댓글 추가 기능이 없는 경우</li>
+  <li>새로운 플랫폼이나, 기초부터 Utterances를 생성하고 싶은 경우</li>
+</ul>
+
+<p>아래의 링크로 이동!<br />
+<a href="https://utteranc.es/?installation">Utterances 설정</a></p>
+
+<p>그럼 이런 화면이 나오실 겁니다!<br />
+repo에 자신의 repository name을 넣어주세요.
+<img src="../../images/2022-11-23-10-18-22.png" alt="" /></p>
+
+<p>아래의 주소 복사해서 넣으면 됩니다.
+<img src="../../images/2022-11-23-10-17-45.png" alt="" /></p>
+
+<p><br />
+해당 댓글을 repository에서
+어떤 기준으로 매핑할 건지 정하는 옵션입니다.</p>
+
+<p>블로그 포스팅 시 파일명은 잘 수정하지 않으므로<br />
+Issue title contains page pathname으로 선택해 주세요.
+<img src="../../images/2022-11-23-10-20-00.png" alt="" /></p>
+
+<p>Issue Label 설정 (Comment 시 달릴 라벨)
 <img src="../../images/2022-11-23-10-21-13.png" alt="" /></p>
 
-<p>Theme 설정
+<p>Theme 설정 (원하는 테마로 설정하세요.)
 <img src="../../images/2022-11-23-10-21-58.png" alt="" /></p>
 
-<p>이제 옵션입력으로 만들어진 아래의 소스코드를 복사한다!</p>
+<p>이제 방금 선택한 옵션들을 포함한 소스코드가 만들어집니다. (Copy 클릭)
+<img src="../../images/2022-11-23-10-22-37.png" alt="" /></p>
 
-<p><img src="../../images/2022-11-23-10-22-37.png" alt="" /></p>
+<p>이제 댓글을 추가하고 싶은 html 파일에<br />
+복사한 소스코드를 붙여넣기 해주면 돼요!</p>
 
-<p>다른 테마를 쓰시는분은 위의 코드를 댓글창 만드는 html 파일에 바로 넣어주시면되고..</p>
+<p><br />
+<br /></p>
 
-<p>사실 minimal-mistakes  의 경우 이미 포스팅 레이아웃에 utterances html 파일이 만들어져있으므로</p>
+<h2 id="minimal-mistakes-사용자의-utterances-설치">minimal-mistakes 사용자의 Utterances 설치.</h2>
 
-<p>_config.yml에서 repository, provider, theme, issue_term 부분만 바꿔주면된다.</p>
+<p>minimal-mistakes를 테마로 쓰시는 경우,<br />
+_config.yml에 utterances 관련 설정이 있는 경우</p>
 
-<p>(https://utteranc.es/?installation 참조)</p>
+<p>사실 minimal-mistakes의 경우 이미 포스팅 할 때<br />
+참조되는 레이아웃에 utterances 관련 파일이 만들어져있으므로</p>
 
-<p><img src="../../images/2022-11-23-10-27-31.png" alt="" /></p>
+<p>설정 파일인 _config.yml만 바꿔주면 됩니다.</p>
 
-<p>label(optional) 의 경우 추가하고싶다면 아래처럼 만들어주면된다.
+<p><a href="#일반-utterances-설치">이 과정을 진행할 필요가 없다.</a></p>
+<ul>
+  <li>repository: Utterances 앱 설치한 repository 주소를 사진의 형태와 맞게 입력.</li>
+  <li>provider: “utterances”</li>
+  <li>theme: 옆에 주석 참조하여 테마 설정</li>
+  <li>issue_term: “pathname” 
+<img src="../../images/2022-11-23-10-27-31.png" alt="" /></li>
+</ul>
+
+<p>label(optional)의 경우 추가하고 싶다면 아래처럼 만들어주면 된다.
 <img src="../../images/2022-11-23-10-41-14.png" alt="" /></p>
 
-<p>_includes/comments-providers/utterances.html 참조</p>
+<p>아래처럼 utterances를 만들어주는 코드가 이미<br />
+_includes/comments-providers/utterances.html에 숨어있다.
+<img src="../../images/2022-11-23-10-42-04.png" alt="" /></p>
 
-<p><img src="../../images/2022-11-23-10-42-04.png" alt="" /></p>
+<p>이제 커밋, 푸쉬 후 약간의 시간이 흐른 뒤 본인의 깃허브 블로그에 들어가면<br />
+적용되어 있을 것이다.</p>
 
-<p>이제 커밋, 푸쉬후 약간의 시간이 흐른뒤 본인의 깃허브 블로그에 들어가면</p>
+<p><br />
+<br /></p>
 
-<p>적용되어 있을것이다.</p>
+<blockquote>
+  <h1 id="그-외에">그 외에.</h1>
+</blockquote>
 
-<p>이렇게 댓글을 다는경우</p>
+<h2 id="포스팅-파일명을-변경-한-경우">포스팅 파일명을 변경 한 경우</h2>
 
-<p><img src="../../images/2022-11-23-10-45-03.png" alt="" /></p>
+<p><br /></p>
 
-<p>실제 레파지토리에 이슈로 달리고 그 이슈가 댓글로 연동되는것!
+<p>실제 댓글을 달면?
+<img src="../../images/2022-11-23-10-45-03.png" alt="" /></p>
+
+<p>실제 레파지토리에 이슈 생성 -&gt; comment 생성 과정이 진행된다.
 <img src="../../images/2022-11-23-11-07-40.png" alt="" /></p>
 
-<p>이때,
-URL path 기반으로 돌아가기때문에 
-단순히 댓글이달린 해당 포스트 글의 내용 변경시에는 동작하지만
-포스팅 파일이름을 변경하면 URL주소가 바뀌므로 댓글이 사라집니다.</p>
+<p>이때, Isuue가 포스트의 파일명인 /Utterances를 참조하고 있으므로<br />
+해당 글의 포스트 내용은 변경해도 되지만,</p>
 
-<p>글의 파일명을 바꾼경우 (기존 댓글이 많아서 댓글을 옮겨야 하는경우)
+<p>아래처럼 포스팅의 파일 이름을 변경하면 댓글에서 참조하고 있는<br />
+URL 주소가 바뀌므로 댓글이 사라집니다.<br />
 <img src="../../images/2022-11-23-11-09-04.png" alt="" /></p>
 
 <p>파일명 변경하자 댓글이 삭제됨.
 <img src="../../images/2022-11-23-11-11-07.png" alt="" /></p>
 
-<ul>
-  <li>이슈명, 이슈내용안 링크를 두개다 바꿔줘야 적용됩니다.
-일단 이슈명 부터 바꿔줍니다.
-<img src="../../images/2022-11-23-11-12-36.png" alt="" /></li>
-</ul>
+<p><br /></p>
+
+<p>이때는 issue, issue 안 내용을 바꿔주면 된다.</p>
+
+<p>일단 issue 이름부터 바꿔줍니다.
+<img src="../../images/2022-11-23-11-12-36.png" alt="" /></p>
 
 <p><img src="../../images/2022-11-23-11-11-57.png" alt="" /></p>
 
-<p>이슈명 말고 안에 내용에서 경로를 바꿔주어야해요.
+<p>그리고 안에 내용에서 경로도 바꿔주어야 합니다.
 <img src="../../images/2022-11-23-11-22-15.png" alt="" /></p>
 
-<p><img src="../../images/2022-11-23-11-22-43.png" alt="" /></p>
+<p><br /></p>
 
-<p>바꾼뒤 업데이트!
+<p>바꾼 뒤 업데이트!
 <img src="../../images/2022-11-23-11-23-02.png" alt="" /></p>
 
-<p>댓글 삭제의 경우 직접 레파지토리에서 해당 이슈를 삭제하면 됩니다.</p>
+<p>Issue 이름, 내용 둘 다 바꾸면 댓글이 복구됩니다.</p>
 
-<p>해당 게시물의 댓글 통째로 삭제하시려면 (이슈 통으로 삭제)</p>
+<p><br /></p>
 
-<p>해당이슈들어가서 오른쪽아래의 Delete issue를 하면 됩니다.
-<img src="../../images/2022-11-23-11-31-35.png" alt="" /></p>
+<h2 id="댓글-삭제">댓글 삭제</h2>
 
-<p>특정 댓글 삭제 시
+<p>특정 댓글 삭제의 경우 직접 레파지토리에서<br />
+해당 Issue(글) -&gt; Comment(댓글)를 삭제하면 됩니다.
 <img src="../../images/2022-11-23-11-32-36.png" alt="" /></p>
 
-<h1 id="파일명-변경-한-경우">파일명 변경 한 경우</h1>
+<p><br /></p>
 
-<h1 id="댓글-삭제">댓글 삭제</h1>
+<p>해당 게시물의 댓글 통째로 삭제하시려면 (이슈 통으로 삭제)<br />
+해당 이슈 들어가서 오른쪽 아래의 Delete issue를 하면 됩니다.
+<img src="../../images/2022-11-23-11-31-35.png" alt="" /></p>
+
+<p><br /></p>
+
+<h2 id="알람도-온다">알람도 온다?</h2>
+<p>알람은 다음과 같은 경우 옵니다.</p>
+
+<ul>
+  <li>첫 댓글이 달려 Issue가 생성된 경우</li>
+  <li>댓글이 달린 경우 (자신의 댓글은 알람 오지 않습니다.)</li>
+</ul>
+
+<p>거의 실시간으로 빠르게 오네요.
+<img src="../../images/2022-11-23-12-51-14.png" alt="" /></p>
+
+<h2 id="issue-number">Issue Number</h2>
+<p>repository에서 이슈 삭제 재생성 시 Issue Number가 1번이 아닌<br />
+그전 번호가 쌓여서 2, 3처럼 진행되는데</p>
+
+<p>댓글 기능엔 이상이 없으므로 그다지 신경 안 써도 될듯합니다.</p>
+
+<p>참조 블로그<br />
+https://computasha.github.io/etc-utterances/
+https://ansohxxn.github.io/blog/utterances/</p>
 
         
       </section>
@@ -387,9 +547,9 @@ URL path 기반으로 돌아가기때문에
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#blog" class="page__taxonomy-item p-category" rel="tag">blog</a><span class="sep">, </span>
+      <a href="/tags/#utterances" class="page__taxonomy-item p-category" rel="tag">Utterances</a><span class="sep">, </span>
     
-      <a href="/tags/#github" class="page__taxonomy-item p-category" rel="tag">github</a>
+      <a href="/tags/#%EB%8C%93%EA%B8%80-%EA%B8%B0%EB%8A%A5" class="page__taxonomy-item p-category" rel="tag">댓글 기능</a>
     
     </span>
   </p>
@@ -423,7 +583,7 @@ URL path 기반으로 돌아가기때문에
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%EA%B9%83%ED%97%88%EB%B8%8C+%EB%B8%94%EB%A1%9C%EA%B7%B8+Utterances+%EB%8C%93%EA%B8%80+%EA%B8%B0%EB%8A%A5+%EB%A7%8C%EB%93%A4%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fgithubblog%2FutterancesComments%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=minimal-mistakes+%EA%B8%B0%EB%B0%98+Utterances+%EB%8C%93%EA%B8%80+%EC%A0%81%EC%9A%A9%20http%3A%2F%2Flocalhost%3A4000%2Fgithubblog%2FutterancesComments%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fgithubblog%2FutterancesComments%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -581,7 +741,7 @@ URL path 기반으로 돌아가기때문에
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     

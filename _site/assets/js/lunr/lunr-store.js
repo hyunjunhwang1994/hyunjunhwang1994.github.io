@@ -48,7 +48,7 @@ var store = [{
         "teaser": null
       },{
         "title": "깃헙블로그 참조링크, 설정파일 설명 정리",
-        "excerpt":"사이드바크기및 넓이, 하이퍼텍스트 밑줄제거   https://eona1301.github.io/github_blog/GithubBlog-Content-Width/   똑같은 테마에 전반적인 내용   https://www.youtube.com/watch?v=–MMmHbSH9k   화이트 / 다크테마 토글 적용하기   https://etch-cure.github.io/blog/toggle-dark-mode/   스크롤바 꾸미기, 설정시 사이드바에도 스크롤바 생겨서 비추   https://ansohxxn.github.io/blog/scrollbar/   카테고리 만들기   https://ansohxxn.github.io/blog/category/   _date/ui-text.yml   영어 -&gt; 한글 번역될때 실제 한글을 지정가능한 설정파일   ##[메롱]    - 문제점  - 배워야할점 - 선행학습  ","categories": ["githubblog"],
+        "excerpt":"사이드바크기및 넓이, 하이퍼텍스트 밑줄제거 https://eona1301.github.io/github_blog/GithubBlog-Content-Width/ 똑같은 테마에 전반적인 내용 https://www.youtube.com/watch?v=–MMmHbSH9k 화이트 / 다크테마 토글 적용하기 https://etch-cure.github.io/blog/toggle-dark-mode/ 스크롤바 꾸미기, 설정시 사이드바에도 스크롤바 생겨서 비추 https://ansohxxn.github.io/blog/scrollbar/ 카테고리 만들기 https://ansohxxn.github.io/blog/category/ _date/ui-text.yml 영어 -&gt; 한글 번역될때 실제 한글을 지정가능한 설정파일 아래의 경우 접기안에 들어간내용은 TOC 클릭시 오류가나므로 왠만하면 코드블록만 넣기를 추천! &lt;details&gt; &lt;!--markdown=\"1\" html내...","categories": ["githubblog"],
         "tags": ["github","blog"],
         "url": "/githubblog/jekyll10/",
         "teaser": null
@@ -65,9 +65,9 @@ var store = [{
         "url": "/githubblog/jekyll9/",
         "teaser": null
       },{
-        "title": "깃허브 블로그 Utterances 댓글 기능 만들기",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 목표 minimal mistakes 테마 기반 깃허브 Utterances 댓글 기능 만들기. Utterances는 깃허브의 이슈 utterances로 사용할 댓글이 담길 레파지토리 생성 ( public로 만들기. ) 저는 그냥 Utterances로 만들었습니다. Disqus를 사용하려고 하다가.. 광고는 둘째치고, 저는 아무리 배경을...","categories": ["githubblog"],
-        "tags": ["github","blog"],
+        "title": "minimal-mistakes 기반 Utterances 댓글 적용",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 목표 minimal-mistakes 기반 Jekyll 블로그 Utterances 댓글 적용하기. Disqus에서 Ufferances로 바꾼 이유. Disqus의 치명적인 단점. 어느샌가 몰래 덕지덕지 붙어있는 광고들.. 왠지 모르게 무겁다. 왜 나만 글자가 투명색(흰색)으로 나오는지ㅠ Disqus 내 설정을 바꿔도, Only 흰색 글자만...","categories": ["githubblog"],
+        "tags": ["Utterances","댓글 기능"],
         "url": "/githubblog/utterancesComments/",
         "teaser": null
       }]
