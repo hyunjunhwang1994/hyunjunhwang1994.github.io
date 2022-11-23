@@ -279,10 +279,12 @@ compress_html:
     envs: development
 
 
+
+
 # Defaults
 defaults:
-  # _posts
-  - scope:
+  - 
+    scope:
       path: ""
       type: posts
     values:
@@ -293,8 +295,18 @@ defaults:
       share: true
       related: true
       show_date: true
+      sidebar_main: false
+  - 
+    scope:
+      path: "_posts"
+      type: posts
+    values:
+      read_time: true
+      show_date: true
+      author_profile: false
       sidebar_main: true
 
+    
 date_format: "%Y-%m-%d"
 
 # _config.yml   https://etch-cure.github.io/blog/toggle-dark-mode/#1-%EB%A9%94%EC%9D%B8-%EC%86%8C%EC%8A%A4 참조
