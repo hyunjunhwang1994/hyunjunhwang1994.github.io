@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-23T10:31:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)</title><link href="http://localhost:4000/githubblog/utterances/" rel="alternate" type="text/html" title="개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)" /><published>2022-11-23T00:00:00+09:00</published><updated>2022-11-22T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/utterances</id><content type="html" xml:base="http://localhost:4000/githubblog/utterances/"><![CDATA[<div class="notice" style="text-align:center">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-23T10:42:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">IT 기술 블로그</title><subtitle>IT 기술 블로그 입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)</title><link href="http://localhost:4000/githubblog/utterances/" rel="alternate" type="text/html" title="개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)" /><published>2022-11-23T00:00:00+09:00</published><updated>2022-11-22T00:00:00+09:00</updated><id>http://localhost:4000/githubblog/utterances</id><content type="html" xml:base="http://localhost:4000/githubblog/utterances/"><![CDATA[<div class="notice" style="text-align:center">
 진행 환경<br />
 - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
 - Ventura 13.1 베타(22C5050e) 버전
@@ -16,6 +16,12 @@ minimal mistakes 테마 기반 깃허브 지킬 블로그 만들기
 <p>utterances로 사용할 댓글이 담길 레파지토리 생성 ( public로 만들기. )</p>
 
 <p>저는 그냥 Utterances로 만들었습니다.</p>
+
+<p>Disqus를 사용하려고 하다가..</p>
+
+<p>광고는 둘째치고, 저는 아무리 배경을 바꿔도 디스쿼스의 댓글색이 흰색으로만나와</p>
+
+<p>하얀배경의 테마에서는 전혀 사용할 수가 없어서.. 우터렌스로 바꿔ㅇ습니다.</p>
 
 <p><img src="../../images/2022-11-23-10-06-34.png" alt="" /></p>
 

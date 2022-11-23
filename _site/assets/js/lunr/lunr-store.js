@@ -66,7 +66,7 @@ var store = [{
         "teaser": null
       },{
         "title": "개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)",
-        "excerpt":"진행 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 목표 minimal mistakes 테마 기반 깃허브 지킬 블로그 만들기 Utterances는 깃허브의 이슈 utterances로 사용할 댓글이 담길 레파지토리 생성 ( public로 만들기. ) 저는 그냥 Utterances로 만들었습니다. Ufferances전용으로 만든 레파지토리주소를 아래에 입력해준다. https://utteranc.es/?installation_id=31487720&amp;setup_action=install 참조 블로그 https://computasha.github.io/etc-utterances/...","categories": ["githubblog"],
+        "excerpt":"진행 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 목표 minimal mistakes 테마 기반 깃허브 지킬 블로그 만들기 Utterances는 깃허브의 이슈 utterances로 사용할 댓글이 담길 레파지토리 생성 ( public로 만들기. ) 저는 그냥 Utterances로 만들었습니다. Disqus를 사용하려고 하다가.. 광고는 둘째치고, 저는 아무리 배경을 바꿔도...","categories": ["githubblog"],
         "tags": ["github","blog"],
         "url": "/githubblog/utterances/",
         "teaser": null
