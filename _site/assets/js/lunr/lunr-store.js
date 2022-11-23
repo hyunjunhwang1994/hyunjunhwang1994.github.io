@@ -48,7 +48,7 @@ var store = [{
         "teaser": null
       },{
         "title": "깃헙블로그 참조링크, 설정파일 설명 정리",
-        "excerpt":"사이드바크기및 넓이, 하이퍼텍스트 밑줄제거 https://eona1301.github.io/github_blog/GithubBlog-Content-Width/ 똑같은 테마에 전반적인 내용 https://www.youtube.com/watch?v=–MMmHbSH9k 화이트 / 다크테마 토글 적용하기 https://etch-cure.github.io/blog/toggle-dark-mode/ 스크롤바 꾸미기, 설정시 사이드바에도 스크롤바 생겨서 비추 https://ansohxxn.github.io/blog/scrollbar/ 카테고리 만들기 https://ansohxxn.github.io/blog/category/ _date/ui-text.yml 영어 -&gt; 한글 번역될때 실제 한글을 지정가능한 설정파일 아래의 경우 접기안에 들어간내용은 TOC 클릭시 오류가나므로 왠만하면 코드블록만 넣기를 추천! &lt;details&gt; &lt;!--markdown=\"1\" html내...","categories": ["githubblog"],
+        "excerpt":"사이드바크기및 넓이, 하이퍼텍스트 밑줄제거 https://eona1301.github.io/github_blog/GithubBlog-Content-Width/ 똑같은 테마에 전반적인 내용 https://www.youtube.com/watch?v=–MMmHbSH9k 화이트 / 다크테마 토글 적용하기 (Utterances자동색상변경) https://etch-cure.github.io/blog/toggle-dark-mode/ 스크롤바 꾸미기, 설정시 사이드바에도 스크롤바 생겨서 비추 https://ansohxxn.github.io/blog/scrollbar/ 카테고리 만들기 https://ansohxxn.github.io/blog/category/ _data/ui-text.yml 영어 -&gt; 한글 번역될때 실제 한글을 지정가능한 설정파일 아래의 경우 접기안에 들어간내용은 TOC 클릭시 오류가나므로 왠만하면 코드블록만 넣기를 추천! &lt;details&gt; &lt;!--markdown=\"1\"...","categories": ["githubblog"],
         "tags": ["github","blog"],
         "url": "/githubblog/jekyll10/",
         "teaser": null
