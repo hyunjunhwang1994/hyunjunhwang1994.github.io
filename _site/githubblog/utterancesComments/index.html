@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>깃허브 블로그 Utterances 댓글 기능 만들기 | IT 기술 블로그</title>
-<meta name="description" content="진행 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델  - Ventura 13.1 베타(22C5050e) 버전     목표 minimal mistakes 테마 기반 깃허브 Utterances 댓글 기능 만들기.">
+<meta name="description" content="개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델  - Ventura 13.1 베타(22C5050e) 버전     목표 minimal mistakes 테마 기반 깃허브 Utterances 댓글 기능 만들기.">
 
 
   <meta name="author" content="Hyun Jun">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/githubblog/utterancesComments/">
 
 
-  <meta property="og:description" content="진행 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델  - Ventura 13.1 베타(22C5050e) 버전     목표 minimal mistakes 테마 기반 깃허브 Utterances 댓글 기능 만들기.">
+  <meta property="og:description" content="개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델  - Ventura 13.1 베타(22C5050e) 버전     목표 minimal mistakes 테마 기반 깃허브 Utterances 댓글 기능 만들기.">
 
 
 
@@ -38,7 +38,7 @@
 
 
 
-  <meta property="article:modified_time" content="2022-11-22T00:00:00+09:00">
+  <meta property="article:modified_time" content="2022-11-23T00:00:00+09:00">
 
 
 
@@ -193,9 +193,9 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="깃허브 블로그 Utterances 댓글 기능 만들기">
-    <meta itemprop="description" content="진행 환경- 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전목표minimal mistakes 테마 기반 깃허브 Utterances 댓글 기능 만들기.">
+    <meta itemprop="description" content="개발 환경- 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전목표minimal mistakes 테마 기반 깃허브 Utterances 댓글 기능 만들기.">
     <meta itemprop="datePublished" content="2022-11-23T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2022-11-22T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2022-11-23T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -225,7 +225,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          4 분 소요
         
       </span>
     
@@ -240,13 +240,13 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#파일명-변경-한-경우">파일명 변경 한 경우</a></li><li><a href="#댓글-삭제">댓글 삭제</a></li></ul>
 
             </nav>
           </aside>
         
         <div class="notice" style="text-align:center">
-진행 환경<br />
+개발 환경<br />
 - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
 - Ventura 13.1 베타(22C5050e) 버전
 </div>
@@ -336,7 +336,41 @@ URL path 기반으로 돌아가기때문에
 단순히 댓글이달린 해당 포스트 글의 내용 변경시에는 동작하지만
 포스팅 파일이름을 변경하면 URL주소가 바뀌므로 댓글이 사라집니다.</p>
 
-<p>삭제의 경우 직접 레파지토리에서 이슈를 삭제해야 하는것 같네요</p>
+<p>글의 파일명을 바꾼경우 (기존 댓글이 많아서 댓글을 옮겨야 하는경우)
+<img src="../../images/2022-11-23-11-09-04.png" alt="" /></p>
+
+<p>파일명 변경하자 댓글이 삭제됨.
+<img src="../../images/2022-11-23-11-11-07.png" alt="" /></p>
+
+<ul>
+  <li>이슈명, 이슈내용안 링크를 두개다 바꿔줘야 적용됩니다.
+일단 이슈명 부터 바꿔줍니다.
+<img src="../../images/2022-11-23-11-12-36.png" alt="" /></li>
+</ul>
+
+<p><img src="../../images/2022-11-23-11-11-57.png" alt="" /></p>
+
+<p>이슈명 말고 안에 내용에서 경로를 바꿔주어야해요.
+<img src="../../images/2022-11-23-11-22-15.png" alt="" /></p>
+
+<p><img src="../../images/2022-11-23-11-22-43.png" alt="" /></p>
+
+<p>바꾼뒤 업데이트!
+<img src="../../images/2022-11-23-11-23-02.png" alt="" /></p>
+
+<p>댓글 삭제의 경우 직접 레파지토리에서 해당 이슈를 삭제하면 됩니다.</p>
+
+<p>해당 게시물의 댓글 통째로 삭제하시려면 (이슈 통으로 삭제)</p>
+
+<p>해당이슈들어가서 오른쪽아래의 Delete issue를 하면 됩니다.
+<img src="../../images/2022-11-23-11-31-35.png" alt="" /></p>
+
+<p>특정 댓글 삭제 시
+<img src="../../images/2022-11-23-11-32-36.png" alt="" /></p>
+
+<h1 id="파일명-변경-한-경우">파일명 변경 한 경우</h1>
+
+<h1 id="댓글-삭제">댓글 삭제</h1>
 
         
       </section>
@@ -380,7 +414,7 @@ URL path 기반으로 돌아가기때문에
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-11-22">2022-11-22</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-11-23">2022-11-23</time></p>
 
       </footer>
 
@@ -674,7 +708,7 @@ URL path 기반으로 돌아가기때문에
     script.setAttribute('src', 'https://utteranc.es/client.js');
     script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
     script.setAttribute('issue-term', 'pathname');
-    
+    script.setAttribute('label', 'utterances');
     script.setAttribute('theme', 'photon-dark');
     script.setAttribute('crossorigin', 'anonymous');
 
