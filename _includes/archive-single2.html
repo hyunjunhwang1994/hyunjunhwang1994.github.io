@@ -33,6 +33,7 @@
             
             <small> <!-- 카테고리, 태그 -->
               {% if site.category_archive.type and post.categories[0] and site.tag_archive.type and post.tags[0] %}
+              <br>
               📒 {%- include post__taxonomy.html -%}
             {% endif %}
             </small>
