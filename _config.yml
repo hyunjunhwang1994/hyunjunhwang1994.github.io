@@ -17,11 +17,11 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "IT 기술 블로그"
+title                    : "기술 블로그"
 title_separator          : "|"
 subtitle                 :   # site tagline that appears below site title in masthead
 name                     : "Hyun Jun"
-description              : "공부한 것들을 정리하고, 소통하기 위한 IT 기술 블로그입니다."
+description              : "공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다."
 url                      : "https://hyunjunhwang1994.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "hyunjunhwang1994/Utterances-comments" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -108,7 +108,7 @@ analytics:
 author:
   name             : "Hyun Jun"
   avatar           : "/assets/images/mimo.jpeg"  # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "공부한 것들을 정리하고, 소통하기 위한 IT 기술 블로그입니다."
+  bio              : "공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다."
   location         : "South Korea"
   email            : "hyunjunhwang1994@gmail.com"
   links:
@@ -283,7 +283,6 @@ compress_html:
 
 # Defaults
 defaults:
-
   - 
     scope:
       path: ""
@@ -296,17 +295,20 @@ defaults:
       share: true
       related: true
       show_date: true
-      sidebar_main: false
+      sidebar_main: false   # 사이드바에 카테고리메뉴
   - 
     scope:
       path: "_posts"
       type: posts
     values:
+      latouy: single
       read_time: true
       show_date: true
       author_profile: false
       sidebar_main: true
-
+      toc: true
+      toc_label: "목차"
+      toc_sticky: true
   -
     scope:
       path: "_pages/categories"

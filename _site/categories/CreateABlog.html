@@ -1,0 +1,589 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>블로그 만들기 🛠️ | 기술 블로그</title>
+<meta name="description" content="공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.">
+
+
+  <meta name="author" content="Hyun Jun">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술 블로그">
+<meta property="og:title" content="블로그 만들기 🛠️">
+<meta property="og:url" content="http://localhost:4000/categories/CreateABlog">
+
+
+  <meta property="og:description" content="공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/categories/CreateABlog">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hyun Jun",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="843d72a8e4b20f1a8ae8e971f19c34cb128b6c8b">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+
+    <style> 
+    /*스크롤바 꾸며주는 코드*/
+      ::-webkit-scrollbar{width: 17px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: rgb(25, 56, 109);}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      
+      {
+        width:12px;height:12px;background:transparent;
+      }
+
+        /*사이드바에는 적용하지않는다.*/
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+
+    </style>
+  </head>
+
+  <body class="layout--archive">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          기술 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li></ul>
+        
+
+                <!-- 다크 모드 토글 버튼 -->
+                
+                <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+                <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">👇</span>
+                    <div class="navicon"></div>
+                </button>
+
+
+                
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">👇</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+
+
+        
+        
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+
+    
+  <div class="sidebar sticky">
+  
+  
+  
+  
+    
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">👇</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">14</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <span class="nav__sub-title">Jekyll Blog Dev</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                
+                    
+                        <li><a href="/categories/CreateABlog" class="">블로그 만들기 (7)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ImplementingFeatures" class="">기능 구현하기 (4)</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Java</span>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/BasicOfJava" class="">Basic of java (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Spring" class="">Spring (1)</a></li>
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+
+  
+
+</div>
+
+
+
+
+
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">블로그 만들기 🛠️</h1>  
+    
+    
+<!-- 사이드바 카테고리 눌렀을 때 나오는 화면 -->
+<div>
+  <small> <!-- 포스트 생성일, 포스트 수정일-->
+    <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Written:  2022.11.20 &nbsp;&nbsp;&nbsp; 
+    
+  </small>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>  <!--포스트 이름-->
+              <a href="/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll7/">7 _config,yml 수정, 블로그 정보 수정하기</a>    
+            </span>
+            
+            <small> <!-- 카테고리, 태그 -->
+              
+              <br />
+              📒<!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+<!--this is custom page-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords">
+                &nbsp;카테고리: <a href="/categories/#%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" class="page__taxonomy-item-category" rel="tag" style="color: rgb(189, 61, 61);">블로그 만들기</a>&nbsp;&nbsp;
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+      <br />
+</div>
+
+<!-- 사이드바 카테고리 눌렀을 때 나오는 화면 -->
+<div>
+  <small> <!-- 포스트 생성일, 포스트 수정일-->
+    <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Written:  2022.11.20 &nbsp;&nbsp;&nbsp; 
+    
+  </small>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>  <!--포스트 이름-->
+              <a href="/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll6/">6 맥북 M1, VS code Paste Image</a>    
+            </span>
+            
+            <small> <!-- 카테고리, 태그 -->
+              
+              <br />
+              📒<!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+<!--this is custom page-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords">
+                &nbsp;카테고리: <a href="/categories/#%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" class="page__taxonomy-item-category" rel="tag" style="color: rgb(189, 61, 61);">블로그 만들기</a>&nbsp;&nbsp;
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+      <br />
+</div>
+
+<!-- 사이드바 카테고리 눌렀을 때 나오는 화면 -->
+<div>
+  <small> <!-- 포스트 생성일, 포스트 수정일-->
+    <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Written:  2022.11.20 &nbsp;&nbsp;&nbsp; 
+    
+  </small>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>  <!--포스트 이름-->
+              <a href="/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll5/">5 VS Code 설치, 확장팩 설치</a>    
+            </span>
+            
+            <small> <!-- 카테고리, 태그 -->
+              
+              <br />
+              📒<!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+<!--this is custom page-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords">
+                &nbsp;카테고리: <a href="/categories/#%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" class="page__taxonomy-item-category" rel="tag" style="color: rgb(189, 61, 61);">블로그 만들기</a>&nbsp;&nbsp;
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+      <br />
+</div>
+
+<!-- 사이드바 카테고리 눌렀을 때 나오는 화면 -->
+<div>
+  <small> <!-- 포스트 생성일, 포스트 수정일-->
+    <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Written:  2022.11.20 &nbsp;&nbsp;&nbsp; 
+    
+  </small>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>  <!--포스트 이름-->
+              <a href="/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll4/">4 깃허브 블로그 로컬 호스팅 하기 (실시간 확인)</a>    
+            </span>
+            
+            <small> <!-- 카테고리, 태그 -->
+              
+              <br />
+              📒<!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+<!--this is custom page-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords">
+                &nbsp;카테고리: <a href="/categories/#%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" class="page__taxonomy-item-category" rel="tag" style="color: rgb(189, 61, 61);">블로그 만들기</a>&nbsp;&nbsp;
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+      <br />
+</div>
+
+<!-- 사이드바 카테고리 눌렀을 때 나오는 화면 -->
+<div>
+  <small> <!-- 포스트 생성일, 포스트 수정일-->
+    <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Written:  2022.11.20 &nbsp;&nbsp;&nbsp; 
+    
+  </small>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>  <!--포스트 이름-->
+              <a href="/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll3/">3 맥북 M1 깃허브 지킬 블로그 환경 만들기</a>    
+            </span>
+            
+            <small> <!-- 카테고리, 태그 -->
+              
+              <br />
+              📒<!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+<!--this is custom page-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords">
+                &nbsp;카테고리: <a href="/categories/#%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" class="page__taxonomy-item-category" rel="tag" style="color: rgb(189, 61, 61);">블로그 만들기</a>&nbsp;&nbsp;
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+      <br />
+</div>
+
+<!-- 사이드바 카테고리 눌렀을 때 나오는 화면 -->
+<div>
+  <small> <!-- 포스트 생성일, 포스트 수정일-->
+    <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Written:  2022.11.20 &nbsp;&nbsp;&nbsp; 
+    
+  </small>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>  <!--포스트 이름-->
+              <a href="/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll2/">2 깃허브 블로그 포스팅 하는법</a>    
+            </span>
+            
+            <small> <!-- 카테고리, 태그 -->
+              
+              <br />
+              📒<!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+<!--this is custom page-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords">
+                &nbsp;카테고리: <a href="/categories/#%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" class="page__taxonomy-item-category" rel="tag" style="color: rgb(189, 61, 61);">블로그 만들기</a>&nbsp;&nbsp;
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+      <br />
+</div>
+
+<!-- 사이드바 카테고리 눌렀을 때 나오는 화면 -->
+<div>
+  <small> <!-- 포스트 생성일, 포스트 수정일-->
+    <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Written:  2022.11.20 &nbsp;&nbsp;&nbsp; 
+    
+      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.11.22
+    
+  </small>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>  <!--포스트 이름-->
+              <a href="/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll1/">개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)</a>    
+            </span>
+            
+            <small> <!-- 카테고리, 태그 -->
+              
+              <br />
+              📒<!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+<!--this is custom page-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords">
+                &nbsp;카테고리: <a href="/categories/#%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0" class="page__taxonomy-item-category" rel="tag" style="color: rgb(189, 61, 61);">블로그 만들기</a>&nbsp;&nbsp;
+                
+                    
+                    
+                    태그: <a href="/tags/#blog" class="page__taxonomy-item-tag" rel="tag" style="color: rgb(81, 81, 208);">blog</a><span class="sep"> </span>                
+                    &nbsp;
+                
+                    
+                    
+                    태그: <a href="/tags/#github" class="page__taxonomy-item-tag" rel="tag" style="color: rgb(81, 81, 208);">github</a>                
+                    &nbsp;
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+      <br />
+</div>
+
+    
+  </div>
+  
+</div>
+
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/hyunjunhwang1994" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/hyunjuuuuun/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Hyun Jun. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>

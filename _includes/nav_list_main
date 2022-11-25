@@ -1,5 +1,7 @@
-<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
 
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
 {% assign sum = site.posts | size %}
 
 <nav class="nav__list">
@@ -12,37 +14,37 @@
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
-        <span class="nav__sub-title">Git</span>
+        <span class="nav__sub-title">Jekyll Blog Dev</span>
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             <ul>
                 <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
                 <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
                 {% for category in site.categories %}
-                    {% if category[0] == "깃허브 블로그 만들기" %}
-                        <li><a href="/categories/githubblog" class="">깃허브 블로그 만들기 ({{category[1].size}})</a></li>
+                    {% if category[0] == "블로그 만들기" %}
+                        <li><a href="/categories/CreateABlog" class="">블로그 만들기 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "STL" %}
-                        <li><a href="/categories/stl" class="">C++ STL & 표준 ({{category[1].size}})</a></li>
+                    {% if category[0] == "기능 구현하기" %}
+                        <li><a href="/categories/ImplementingFeatures" class="">기능 구현하기 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
 
-        <span class="nav__sub-title">Language</span>
+        <span class="nav__sub-title">Java</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "java" %}
-                        <li><a href="/categories/java" class="">Java ({{category[1].size}})</a></li>
+                    {% if category[0] == "Basic of java" %}
+                        <li><a href="/categories/BasicOfJava" class="">Basic of java ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Programmers" %}
-                        <li><a href="/categories/programmers" class="">프로그래머스 ({{category[1].size}})</a></li>
+                    {% if category[0] == "Spring" %}
+                        <li><a href="/categories/Spring" class="">Spring ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
