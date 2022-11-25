@@ -29,10 +29,6 @@
 <lastmod>2022-11-20T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/basic%20of%20java/Java-test/</loc>
-<lastmod>2022-11-21T00:00:00+09:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll10/</loc>
 <lastmod>2022-11-21T00:00:00+09:00</lastmod>
 </url>
@@ -49,7 +45,11 @@
 <lastmod>2022-11-23T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/Java1/</loc>
+<loc>http://localhost:4000/basic%20of%20java/Java1/</loc>
+<lastmod>2022-11-25T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/basic%20of%20java/Java2/</loc>
 <lastmod>2022-11-25T00:00:00+09:00</lastmod>
 </url>
 <url>

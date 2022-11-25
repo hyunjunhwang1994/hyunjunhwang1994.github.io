@@ -41,12 +41,6 @@ var store = [{
         "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll7/",
         "teaser": null
       },{
-        "title": "Java의 객체지향",
-        "excerpt":"            개발 환경            - 2021, 맥북 프로 M1 Pro 14인치 모델             - Ventura 13.1 베타(22C5050e) 버전                버전            JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08)            IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition)    ","categories": ["Basic of java"],
-        "tags": ["자바의 객체지향"],
-        "url": "/basic%20of%20java/Java-test/",
-        "teaser": null
-      },{
         "title": "깃헙블로그 참조링크, 설정파일 설명 정리",
         "excerpt":"사이드바크기및 넓이, 하이퍼텍스트 밑줄제거 https://eona1301.github.io/github_blog/GithubBlog-Content-Width/ 똑같은 테마에 전반적인 내용 https://www.youtube.com/watch?v=–MMmHbSH9k 화이트 / 다크테마 토글 적용하기 (Utterances자동색상변경) https://etch-cure.github.io/blog/toggle-dark-mode/ 스크롤바 꾸미기, 설정시 사이드바에도 스크롤바 생겨서 비추 https://ansohxxn.github.io/blog/scrollbar/ 카테고리 만들기 https://ansohxxn.github.io/blog/category/ 카테고리 글안에 다음 이전 넣기. https://ansohxxn.github.io/blog/prevnext/ _data/ui-text.yml 영어 -&gt; 한글 번역될때 실제 한글을 지정가능한 설정파일 아래의 경우 접기안에 들어간내용은 TOC 클릭시 오류가나므로...","categories": ["기능 구현하기"],
         "tags": ["github","blog"],
@@ -71,10 +65,16 @@ var store = [{
         "url": "/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/utterancesComments/",
         "teaser": null
       },{
-        "title": "Java1",
-        "excerpt":"자바의 객체지향에 대해서. class Phone { String model; String color; int price; } public class Main { public static void main(String[] args) { Phone galaxy = new Phone(); galaxy.model = \"Galaxy10\"; galaxy.color = \"Black\"; galaxy.price = 100; Phone iphone =new Phone(); iphone.model = \"iPhoneX\"; iphone.color = \"Black\"; iphone.price = 200;...","categories": [],
-        "tags": [],
-        "url": "/Java1/",
+        "title": "객체지향 프로그래밍과 절차적 프로그래밍",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 절차적 프로그래밍과 객체지향 프로그래밍. 절차적 프로그래밍 ‘절차적 프로그래밍’이라는 한국어 번역은 오해의 여지가 크다. Procedural Programming에서 Procedural를 ‘절차적’으로 번역해버려서 마치 절차적으로...","categories": ["Basic of java"],
+        "tags": ["자바의 객체지향","객체지향 프로그래밍","절차적 프로그래밍"],
+        "url": "/basic%20of%20java/Java1/",
+        "teaser": null
+      },{
+        "title": "객체, 클래스, 인스턴스",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 객체지향특징, 객체 클래스, 인스턴스 상속과 오버라이딩 오버로딩 추상클래스와 인터페이스 패키지와 제어자 객체지향의 특징 추상화 (Abstraction) 공통적인 속성이나 기능을 묶어서 이름을...","categories": ["Basic of java"],
+        "tags": ["객체","클래스","인스턴스"],
+        "url": "/basic%20of%20java/Java2/",
         "teaser": null
       },{
         "title": "스프링 기초",
