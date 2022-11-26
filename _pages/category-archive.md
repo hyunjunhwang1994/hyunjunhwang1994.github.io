@@ -1,6 +1,6 @@
 ---
-title: "Search"
-layout: search
+title: ""
+layout: categories
 permalink: /categories/
 author_profile: false
 sidebar_main: true

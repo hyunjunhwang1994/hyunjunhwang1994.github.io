@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-26T00:21:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">객체지향 프로그래밍과 절차적 프로그래밍</title><link href="http://localhost:4000/basic%20of%20java/Java1/" rel="alternate" type="text/html" title="객체지향 프로그래밍과 절차적 프로그래밍" /><published>2022-11-25T00:00:00+09:00</published><updated>2022-11-25T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20java/Java1</id><content type="html" xml:base="http://localhost:4000/basic%20of%20java/Java1/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-26T08:43:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">객체지향 프로그래밍과 절차적 프로그래밍</title><link href="http://localhost:4000/basic%20of%20java/Java1/" rel="alternate" type="text/html" title="객체지향 프로그래밍과 절차적 프로그래밍" /><published>2022-11-25T00:00:00+09:00</published><updated>2022-11-25T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20java/Java1</id><content type="html" xml:base="http://localhost:4000/basic%20of%20java/Java1/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
 <div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
@@ -687,7 +687,7 @@ https://ansohxxn.github.io/blog/prevnext/</p>
 - 문제점 
 - 배워야할점
 - 선행학습
-</div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><category term="github" /><category term="blog" /><summary type="html"><![CDATA[사이드바크기및 넓이, 하이퍼텍스트 밑줄제거]]></summary></entry><entry><title type="html">8 깃허브 블로그 Disqus 댓글 기능 만들기</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll8/" rel="alternate" type="text/html" title="8 깃허브 블로그 Disqus 댓글 기능 만들기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll8</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll8/"><![CDATA[<p>아래 페이지에서 회원 가입을 해주세요.</p>
+</div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><category term="github" /><category term="blog" /><summary type="html"><![CDATA[사이드바크기및 넓이, 하이퍼텍스트 밑줄제거]]></summary></entry><entry><title type="html">깃허브 블로그 Disqus 댓글 기능 만들기</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll8/" rel="alternate" type="text/html" title="깃허브 블로그 Disqus 댓글 기능 만들기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll8</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll8/"><![CDATA[<p>아래 페이지에서 회원 가입을 해주세요.</p>
 
 <p>https://disqus.com/</p>
 
@@ -752,7 +752,7 @@ https://ansohxxn.github.io/blog/prevnext/</p>
 
 <p><img src="../../images/2022-11-21-09-24-13.png" alt="" /></p>
 
-<p>Disqus 사이트 어드민에서 댓글관리및 여러기능 추가 가능합니다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><category term="github" /><category term="blog" /><category term="test" /><summary type="html"><![CDATA[아래 페이지에서 회원 가입을 해주세요.]]></summary></entry><entry><title type="html">9 Google analytics 추가하기</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll9/" rel="alternate" type="text/html" title="9 Google analytics 추가하기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll9</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll9/"><![CDATA[<p>_config.yml</p>
+<p>Disqus 사이트 어드민에서 댓글관리및 여러기능 추가 가능합니다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><category term="github" /><category term="blog" /><category term="test" /><summary type="html"><![CDATA[아래 페이지에서 회원 가입을 해주세요.]]></summary></entry><entry><title type="html">Google analytics 추가하기</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll9/" rel="alternate" type="text/html" title="Google analytics 추가하기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll9</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll9/"><![CDATA[<p>_config.yml</p>
 
 <p><img src="../../images/2022-11-21-09-37-41.png" alt="" /></p>
 
@@ -789,7 +789,22 @@ https://ansohxxn.github.io/blog/prevnext/</p>
 <p>적용되는데 시간이 좀걸린다.</p>
 
 <p>analytics -&gt; 보고서에 들어가면 각종 정보들이 확인가능하다.
-<img src="../../images/2022-11-21-09-50-33.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><summary type="html"><![CDATA[_config.yml]]></summary></entry><entry><title type="html">2 깃허브 블로그 포스팅 하는법</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll2/" rel="alternate" type="text/html" title="2 깃허브 블로그 포스팅 하는법" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll2</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll2/"><![CDATA[<h2 id="기본적인-포스팅-방법">기본적인 포스팅 방법</h2>
+<img src="../../images/2022-11-21-09-50-33.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><summary type="html"><![CDATA[_config.yml]]></summary></entry><entry><title type="html">깃허브 블로그 포스팅 하는법</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll2/" rel="alternate" type="text/html" title="깃허브 블로그 포스팅 하는법" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll2</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll2/"><![CDATA[<hr />
+<p>title: “개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)”
+last_modified_at: 2022-11-22
+categories: 
+    - 블로그 만들기</p>
+
+<hr />
+
+<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1 베타(22C5050e) 버전
+          </div>
+<hr />
+
+<h2 id="기본적인-포스팅-방법">기본적인 포스팅 방법</h2>
 
 <p>포스팅 할 글의 경우 /posts 에 올려주면 됩니다.
 하지만 처음에 없으므로 생성합니다.</p>
@@ -811,7 +826,7 @@ https://ansohxxn.github.io/blog/prevnext/</p>
 <p>이와같은식으로 글이 잘 올라오는것을 볼 수 있습니다.</p>
 
 <p>그런데 커밋후 글이올라오는데 시간이 좀 걸리네요!
-시간 지연 없이 포스팅 테스트 하는법은 다음 편에 알려드리겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="블로그 만들기" /><summary type="html"><![CDATA[기본적인 포스팅 방법]]></summary></entry><entry><title type="html">3 맥북 M1 깃허브 지킬 블로그 환경 만들기</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll3/" rel="alternate" type="text/html" title="3 맥북 M1 깃허브 지킬 블로그 환경 만들기" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll3</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll3/"><![CDATA[<p>이번에는 터미널 활용과, 로컬서버 생성을 하기 위한 셋업등을 알려드릴게요.</p>
+시간 지연 없이 포스팅 테스트 하는법은 다음 편에 알려드리겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="블로그 만들기" /><category term="github" /><category term="blog" /><summary type="html"><![CDATA[title: “개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)” last_modified_at: 2022-11-22 categories: - 블로그 만들기]]></summary></entry><entry><title type="html">맥북 M1 깃허브 지킬 블로그 환경 만들기</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll3/" rel="alternate" type="text/html" title="맥북 M1 깃허브 지킬 블로그 환경 만들기" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll3</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll3/"><![CDATA[<p>이번에는 터미널 활용과, 로컬서버 생성을 하기 위한 셋업등을 알려드릴게요.</p>
 
 <p>결론적으로 아래와 같은 것들을 설치해야 합니다.</p>
 <ul>
@@ -933,7 +948,7 @@ source ~/.zshrc</p>
 
 <p>번들러는 종속성 관리를 위한 도구이다. RubyGems가 이미 처리한 것 아닌가라고 물을 수 있다. 하지만 RubyGems는 gem 자체만을 위해서 종속성 처리를 한다. 당신의 일반 루비 애플리케이션은 gem으로 만들어진게 아니므로 이 기능을 얻지 못한다. 이것이 번들러가 존재하는 이유이다.</p>
 
-<p>참조 블로그 https://til.younho9.dev/docs/frontend/jekyll/jekyll-github-page%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-%EA%B0%9C%EC%9D%B8%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="블로그 만들기" /><summary type="html"><![CDATA[이번에는 터미널 활용과, 로컬서버 생성을 하기 위한 셋업등을 알려드릴게요.]]></summary></entry><entry><title type="html">4 깃허브 블로그 로컬 호스팅 하기 (실시간 확인)</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll4/" rel="alternate" type="text/html" title="4 깃허브 블로그 로컬 호스팅 하기 (실시간 확인)" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll4</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll4/"><![CDATA[<h1 id="3탄의-과정이-끝났다면-더욱-자유도가-높아집니다">3탄의 과정이 끝났다면 더욱 자유도가 높아집니다.</h1>
+<p>참조 블로그 https://til.younho9.dev/docs/frontend/jekyll/jekyll-github-page%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%B4-%EA%B0%9C%EC%9D%B8%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0/</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="블로그 만들기" /><summary type="html"><![CDATA[이번에는 터미널 활용과, 로컬서버 생성을 하기 위한 셋업등을 알려드릴게요.]]></summary></entry><entry><title type="html">깃허브 블로그 로컬 호스팅 하기 (실시간 확인)</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll4/" rel="alternate" type="text/html" title="깃허브 블로그 로컬 호스팅 하기 (실시간 확인)" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-20T00:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll4</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll4/"><![CDATA[<h1 id="3탄의-과정이-끝났다면-더욱-자유도가-높아집니다">3탄의 과정이 끝났다면 더욱 자유도가 높아집니다.</h1>
 
 <h2 id="블로그-내용-수정-시-실시간으로-확인하기">블로그 내용 수정 시 실시간으로 확인하기</h2>
 
