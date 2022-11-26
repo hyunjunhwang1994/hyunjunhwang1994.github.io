@@ -31,10 +31,10 @@
                     카테고리: <a href="{{ category_word | slugify | prepend: path_type | prepend: site.category_archive.path | relative_url }}" class="page__taxonomy-item-category" rel="tag" style="color: rgb(189, 61, 61);">{{ category_word }}</a>{%- unless forloop.last -%}<span class="sep"> </span>{%- endunless -%}
                 {%- endfor -%}
                 &nbsp;&nbsp;
-        
-                {%- if hash in tag_hashes -%}
-                    태그: 
-                {%- endif -%}
+
+                {% if tag_hashes[0] %}
+                    태그:
+                {% endif %}
 
                 {% for hash in tag_hashes %}
                     {% assign keyValue = hash | split: '|' %}
