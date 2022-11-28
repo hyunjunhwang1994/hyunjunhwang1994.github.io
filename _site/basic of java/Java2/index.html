@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>객체, 클래스, 인스턴스 | 기술 블로그</title>
+<!-- begin _includes/seo.html --><title>이클립스 내 JDK 버전 변경, JDK 1.8 버전 변경 에러 | 기술 블로그</title>
 <meta name="description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1 베타(22C5050e) 버전">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="기술 블로그">
-<meta property="og:title" content="객체, 클래스, 인스턴스">
-<meta property="og:url" content="http://localhost:4000/basic%20of%20java/Java2/">
+<meta property="og:title" content="이클립스 내 JDK 버전 변경, JDK 1.8 버전 변경 에러">
+<meta property="og:url" content="http://localhost:4000/basic%20of%20java/java2/">
 
 
   <meta property="og:description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1 베타(22C5050e) 버전">
@@ -34,11 +34,11 @@
 
 
 
-  <meta property="article:published_time" content="2022-11-25T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-11-16T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2022-11-27T00:00:00+09:00">
+  <meta property="article:modified_time" content="2022-11-28T00:00:00+09:00">
 
 
 
@@ -47,7 +47,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/basic%20of%20java/Java2/">
+<link rel="canonical" href="http://localhost:4000/basic%20of%20java/java2/">
 
 
 
@@ -218,7 +218,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">18</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">19</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -261,7 +261,7 @@
             <ul>
                 
                     
-                        <li><a href="/categories/BasicOfJava" class="">Basic of java (5)</a></li>
+                        <li><a href="/categories/BasicOfJava" class="">Basic of java (6)</a></li>
                     
                 
                     
@@ -320,16 +320,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="객체, 클래스, 인스턴스">
+    <meta itemprop="headline" content="이클립스 내 JDK 버전 변경, JDK 1.8 버전 변경 에러">
     <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1 베타(22C5050e) 버전">
-    <meta itemprop="datePublished" content="2022-11-25T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2022-11-27T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-11-16T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2022-11-28T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/basic%20of%20java/Java2/" class="u-url" itemprop="url">객체, 클래스, 인스턴스
+            <a href="http://localhost:4000/basic%20of%20java/java2/" class="u-url" itemprop="url">이클립스 내 JDK 버전 변경, JDK 1.8 버전 변경 에러
 </a>
           </h1>
           
@@ -340,7 +340,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-11-25T00:00:00+09:00">2022-11-25</time>
+        <time datetime="2022-11-16T00:00:00+09:00">2022-11-16</time>
       </span>
     
 
@@ -353,7 +353,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          8 분 소요
+          3 분 소요
         
       </span>
     
@@ -368,7 +368,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#객체지향-프로그래밍">객체지향 프로그래밍?</a></li><li><a href="#클래스">클래스</a><ul><li><a href="#클래스-란">클래스 란?</a></li><li><a href="#클래스의-구조">클래스의 구조</a></li><li><a href="#객체인스턴스">객체(인스턴스)</a></li><li><a href="#코드로-확인해-보자">코드로 확인해 보자.</a></li></ul></li></ul>
+              
 
             </nav>
           </aside>
@@ -384,159 +384,84 @@
 <!-- 자바 포스팅시 JDK, IDE버전 등-->
 <div class="notice--info" style="text-align:center">
           버전<br />
-          JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08)<br />
-          IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition)
+          JDK: openjdk version 1.8.0_352
+<br />
+          Eclipse: Version: 2022-09 (4.25.0)
 </div>
 <hr />
 
-<ol>
-  <li>클래스, 객체</li>
-  <li>상속과 오버라이딩 오버로딩</li>
-  <li>추상클래스와 인터페이스</li>
-  <li>패키지와 제어자</li>
-</ol>
-
-<blockquote>
-  <h1 id="객체지향-프로그래밍">객체지향 프로그래밍?</h1>
-</blockquote>
-
-<ul>
-  <li>ex) 자동차(프로그램)은 바퀴(객체), 엔진(객체), 핸들(객체)등을 조합하여 만든다.</li>
-  <li>그러한 바퀴, 엔진, 핸들등은 설계도인 클래스를 통하여 만든다.</li>
-  <li>객체들을 조합하여 전체 프로그램을 만드는것!</li>
-  <li>객체는 클래스를 이용하여 만들어진 프로그램의 구성 요소이다.</li>
-</ul>
-
 <p><br /></p>
 
-<blockquote>
-  <h1 id="클래스">클래스</h1>
-</blockquote>
-
-<h2 id="클래스-란">클래스 란?</h2>
-<p>사물의 특성을 소프트웨어적으로 추상화하여 모델링 한 것으로<br />
-객체를 만들 수 있는 틀(Template)로써 오브젝트의 정적인 상태를 나타냅니다.</p>
-
-<h2 id="클래스의-구조">클래스의 구조</h2>
 <ul>
-  <li>Fields : 정보와 상태를 나타냄</li>
-  <li>Methods() : 기능과 동작을 나타냄.</li>
+  <li>
+    <p>JDK 버전 변경 시 JDK 설치와 환경 변수 적용 등이 미리 되어 있어야 합니다.</p>
+  </li>
+  <li>
+    <p>JDK 설치 참조</p>
+  </li>
 </ul>
 
-<p>즉, 필드(field)란 클래스에 포함된 변수(variable)를 의미합니다.<br />
-또한, 메소드(method)란 어떠한 특정 작업을 수행하기 위한 명령문의 집합이라 할 수 있습니다.</p>
+<p>https://jshwang94.tistory.com/3</p>
 
-<p><br /></p>
+<ul>
+  <li>이클립스 설치 참조</li>
+</ul>
 
-<p>ex) 자동차 클래스</p>
+<p>https://jshwang94.tistory.com/4</p>
 
-<p>정보/상태 (Fields)<br />
-이름, 최고속도, 가격, 브랜드</p>
+<ul>
+  <li>프로젝트 JDK 버전 확인
+Properties -&gt; ProjectFacets -&gt; Convert to faceted form…</li>
+</ul>
 
-<p>기능 / 동작 / 행동 (Methods())<br />
-시동켜기, 악셀, 브레이크</p>
+<p><img src="../../images/2022-11-28-15-48-20.png" alt="" />
+<img src="../../images/2022-11-28-15-48-25.png" alt="" />
+<img src="../../images/2022-11-28-15-48-29.png" alt="" /></p>
 
-<h2 id="객체인스턴스">객체(인스턴스)</h2>
+<p>이클립스와 연결된 JRE (JDK) 버전 확인
+<img src="../../images/2022-11-28-15-48-34.png" alt="" /></p>
 
-<p>객체란 클래스를 실제 사용할 수 있도록 만든 것으로<br />
-메모리 공간을 할당해 놓은 인스턴스(Instance)라고도 하며</p>
+<p>이클립스와 연결된 컴파일러 버전 확인</p>
 
-<p>클래스의 동적인 상태를 의미합니다. (new 명령어를 통해 생성) 
-자바에서 클래스를 사용하기 위해서는 우선 해당 클래스 타입의 객체(object)를 선언해야 합니다.</p>
+<p><img src="../../images/2022-11-28-15-48-39.png" alt="" /></p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">car</span> <span class="n">avante</span> <span class="o">=</span> <span class="k">new</span> <span class="n">car</span><span class="o">();</span>
-</code></pre></div></div>
+<p>JDK 17 -&gt; JDK 8 (1.8) 변경으로 가정해 보겠습니다.</p>
 
-<p>이렇게 클래스로부터 객체를 선언하는 과정을 클래스의 인스턴스 화라고 합니다.<br />
-또한, 이렇게 선언된 해당 클래스 타입의 객체를 인스턴스(instance)라고 합니다.</p>
+<p><img src="../../images/2022-11-28-15-48-44.png" alt="" /></p>
 
-<p>즉, 인스턴스란 메모리에 할당된 객체를 의미합니다.<br />
-자바에서는 하나의 클래스로부터 여러 개의 인스턴스를 생성할 수 있습니다.</p>
+<p>버전 변경할 프로젝트 Properties -&gt; Project Facets -&gt; Convert to faceted form…</p>
 
-<p>이렇게 생성된 인스턴스는 독립된 메모리 공간에 저장된 자신만의 필드를 가질 수 있습니다.<br />
-하지만 해당 클래스의 모든 메소드(method)는<br />
-해당 클래스에서 생성된 모든 인스턴스가 공유하게 됩니다.</p>
+<p><img src="../../images/2022-11-28-15-48-48.png" alt="" /></p>
 
-<hr />
+<p>17 -&gt; 1.8 변경 후 Apply
+<img src="../../images/2022-11-28-15-48-53.png" alt="" />
+<img src="../../images/2022-11-28-15-48-56.png" alt="" /></p>
 
-<h2 id="코드로-확인해-보자">코드로 확인해 보자.</h2>
+<p>Java Build Path -&gt; JavaSE - 17 더블클릭 -&gt; JDK1.8 변경 후 Finish -&gt; Apply</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+<p><img src="../../images/2022-11-28-15-49-00.png" alt="" /></p>
 
+<p><img src="../../images/2022-11-28-15-49-03.png" alt="" /></p>
 
-    <span class="c1">// 자바의 경우 암묵적으로 클래스이름은 무조건 대문자로 시작.</span>
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
+<p>Java Compiler -&gt; 17 -&gt; 1.8로 변경 및 Apply</p>
 
-        <span class="c1">// 멤버 변수 (속성), camel case로 네이밍하기.</span>
-        <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
+<p><img src="../../images/2022-11-28-15-49-07.png" alt="" /></p>
 
-        <span class="c1">// 기본 생성자 ( 메모리에 객체를 생성하는 역할 )</span>
-        <span class="kd">public</span> <span class="nf">Car</span><span class="o">(){</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"car constructor"</span><span class="o">);</span>
-        <span class="o">}</span>
+<p>+
+통상 많이 쓰이는 1.8 버전으로 변경할 경우</p>
 
-        <span class="c1">// 생성자와 메소드의차이 맨앞에 대문자인지 소문자인지</span>
+<p>그전 프로젝트가 JDK 9버전 이상의 버전으로 작성되었다면 
+JDK 9버전부터는 모듈이라는 기능 및 파일 (module-info.java) 추가됩니다.</p>
 
-        <span class="c1">// 메소드 (기능), camel case로 네이밍하기.</span>
-        <span class="kt">void</span> <span class="nf">showInfo</span><span class="o">(){</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"최고 속도는"</span> <span class="o">+</span> <span class="n">maxSpeed</span><span class="o">);</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"가격은"</span> <span class="o">+</span> <span class="n">price</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+<p>그렇기 때문에
+JDK 1.8 버전에는 모듈 기능이 없으므로
+Syntax error on token “module”, module expected” error가 발생합니다.</p>
 
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//car타입인 avante에넣는다. &lt;--car()객체를 생성</span>
-        <span class="n">car</span> <span class="n">avante</span> <span class="o">=</span> <span class="k">new</span> <span class="n">car</span><span class="o">();</span>
-        <span class="c1">// new car() : 메모리 내에 객체생성, 이때 객체를 생성하기 위한 메소드로 사용하기 위해 만들어진 것이 기본 생성자</span>
-        <span class="c1">// car avante : car타입의 avante인스턴스 생성</span>
-        
+<p>하여, module.info.java를 제거해 줘야 에러가 발생하지 않습니다.</p>
 
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p>① 멤버 변수: 클래스의 속성<br />
-② 생성자: 객체의 초기화를 담당<br />
-③ 메소드: 클래스의 속성을 조작<br />
-④ 내포 클래스(Nested Class): 클래스안에 클래스 존재 가능</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
- <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
-
-        <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span><span class="c1">// 전역변수</span>
-        <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
-
-        <span class="c1">// 이런식으로 만들면 이 바로아래 변수는 지역 변수이므로</span>
-        <span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">,</span> <span class="kt">int</span> <span class="n">price</span><span class="o">){</span>
-            <span class="c1">// 전역변수랑 이름이 겹친다.</span>
-            <span class="n">maxSpeed</span> <span class="o">=</span> <span class="n">maxSpeed</span><span class="o">;</span>
-            <span class="n">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;</span>
-        <span class="o">}</span>
-
-
-    <span class="o">}</span>
-</code></pre></div></div>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
- <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
-
-        <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span>   
-        <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
-
-        
-        <span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">,</span> <span class="kt">int</span> <span class="n">price</span><span class="o">){</span>
-        <span class="c1">// 그레서 이렇게 this를 붙혀 이 객체의 전역변수라는 것을 알려주어 생성자를 사용한다.</span>
-            <span class="k">this</span><span class="o">.</span><span class="na">maxSpeed</span> <span class="o">=</span> <span class="n">maxSpeed</span><span class="o">;</span>
-            <span class="k">this</span><span class="o">.</span><span class="na">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="c1">// 기본 생성자가 있어야 위와 같은 생성자를 만들 수 있다.</span>
-
-
-    <span class="o">}</span>
-</code></pre></div></div>
-
-<p><a href="https://danmilife.tistory.com/19">참조 블로그</a></p>
+<p><img src="../../images/2022-11-28-15-49-12.png" alt="" />
+<img src="../../images/2022-11-28-15-49-16.png" alt="" />
+<img src="../../images/2022-11-28-15-49-24.png" alt="" /></p>
  <!--실제 페이지 글 부분-->
         
       </section>
@@ -553,11 +478,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#%EA%B0%9D%EC%B2%B4" class="page__taxonomy-item p-category" rel="tag">객체</a><span class="sep">, </span>
+      <a href="/tags/#syntax-error-on-token-module-module-expected-error" class="page__taxonomy-item p-category" rel="tag">Syntax error on token module module expected error</a><span class="sep">, </span>
     
-      <a href="/tags/#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4" class="page__taxonomy-item p-category" rel="tag">인스턴스</a><span class="sep">, </span>
-    
-      <a href="/tags/#%ED%81%B4%EB%9E%98%EC%8A%A4" class="page__taxonomy-item p-category" rel="tag">클래스</a>
+      <a href="/tags/#%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4-jdk-%EB%B2%84%EC%A0%84-%EB%B3%80%EA%B2%BD" class="page__taxonomy-item p-category" rel="tag">이클립스 JDK 버전 변경</a>
     
     </span>
   </p>
@@ -582,7 +505,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-11-27">2022-11-27</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-11-28">2022-11-28</time></p>
 
       </footer>
 
@@ -591,16 +514,20 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%EA%B0%9D%EC%B2%B4%2C+%ED%81%B4%EB%9E%98%EC%8A%A4%2C+%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%20http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FJava2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4+%EB%82%B4+JDK+%EB%B2%84%EC%A0%84+%EB%B3%80%EA%B2%BD%2C+JDK+1.8+%EB%B2%84%EC%A0%84+%EB%B3%80%EA%B2%BD+%EC%97%90%EB%9F%AC%20http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2Fjava2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FJava2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2Fjava2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FJava2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2Fjava2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
 
+
+  
+
+  
 
   
 
@@ -614,10 +541,10 @@
 
   <nav class="pagination_prev_next">
     
-      <a href="/basic%20of%20java/Java1/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>객체지향 프로그래밍과 절차적 프로그래밍</a>
+      <a href="/basic%20of%20java/Java1/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>맥북 M1 이클립스 설치하는 법</a>
     
     
-      <a href="/basic%20of%20java/Java3/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>맥북 이클립스 자동완성, Contents Assist 사용하기</a>
+      <a href="/basic%20of%20java/Java3/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>객체지향 프로그래밍과 절차적 프로그래밍</a>
     
   </nav>
 
@@ -671,7 +598,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/basic%20of%20java/Java3/" rel="permalink">맥북 이클립스 자동완성, Contents Assist 사용하기
+        <a href="/basic%20of%20java/Java5/" rel="permalink">맥북 이클립스 자동완성, Contents Assist 사용하기
 </a>
       
     </h2>
@@ -729,7 +656,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/basic%20of%20java/Java1/" rel="permalink">객체지향 프로그래밍과 절차적 프로그래밍
+        <a href="/basic%20of%20java/Java4/" rel="permalink">객체, 클래스, 인스턴스
 </a>
       
     </h2>

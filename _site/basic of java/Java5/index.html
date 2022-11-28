@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>맥북 M1 이클립스 설치하는 법 | 기술 블로그</title>
+<!-- begin _includes/seo.html --><title>맥북 이클립스 자동완성, Contents Assist 사용하기 | 기술 블로그</title>
 <meta name="description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1 베타(22C5050e) 버전">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="기술 블로그">
-<meta property="og:title" content="맥북 M1 이클립스 설치하는 법">
-<meta property="og:url" content="http://localhost:4000/basic%20of%20java/Java0-1/">
+<meta property="og:title" content="맥북 이클립스 자동완성, Contents Assist 사용하기">
+<meta property="og:url" content="http://localhost:4000/basic%20of%20java/Java5/">
 
 
   <meta property="og:description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1 베타(22C5050e) 버전">
@@ -34,11 +34,9 @@
 
 
 
-  <meta property="article:published_time" content="2022-11-16T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-11-28T00:00:00+09:00">
 
 
-
-  <meta property="article:modified_time" content="2022-11-28T00:00:00+09:00">
 
 
 
@@ -47,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/basic%20of%20java/Java0-1/">
+<link rel="canonical" href="http://localhost:4000/basic%20of%20java/Java5/">
 
 
 
@@ -218,7 +216,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">18</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">19</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -261,7 +259,7 @@
             <ul>
                 
                     
-                        <li><a href="/categories/BasicOfJava" class="">Basic of java (5)</a></li>
+                        <li><a href="/categories/BasicOfJava" class="">Basic of java (6)</a></li>
                     
                 
                     
@@ -320,16 +318,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="맥북 M1 이클립스 설치하는 법">
+    <meta itemprop="headline" content="맥북 이클립스 자동완성, Contents Assist 사용하기">
     <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1 베타(22C5050e) 버전">
-    <meta itemprop="datePublished" content="2022-11-16T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2022-11-28T00:00:00+09:00">
+    <meta itemprop="datePublished" content="2022-11-28T00:00:00+09:00">
+    
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/basic%20of%20java/Java0-1/" class="u-url" itemprop="url">맥북 M1 이클립스 설치하는 법
+            <a href="http://localhost:4000/basic%20of%20java/Java5/" class="u-url" itemprop="url">맥북 이클립스 자동완성, Contents Assist 사용하기
 </a>
           </h1>
           
@@ -340,7 +338,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-11-16T00:00:00+09:00">2022-11-16</time>
+        <time datetime="2022-11-28T00:00:00+09:00">2022-11-28</time>
       </span>
     
 
@@ -353,7 +351,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          5 분 소요
+          1 분 소요
         
       </span>
     
@@ -368,7 +366,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#spotlight-단축키-변경">Spotlight 단축키 변경</a></li><li><a href="#이클립스-에서-변경-방법">이클립스 에서 변경 방법</a></li></ul>
 
             </nav>
           </aside>
@@ -384,84 +382,38 @@
 <!-- 자바 포스팅시 JDK, IDE버전 등-->
 <div class="notice--info" style="text-align:center">
           버전<br />
-          JDK: openjdk version 1.8.0_352
-<br />
-          Eclipse: Version: 2022-09 (4.25.0)
+          JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08)<br />
+          IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition)
 </div>
 <hr />
 
-<p><br /></p>
+<p>Mac에서 이클립스 자동완성으로 사용하는 단축키 Control + Space는
+맥에서 이미 한글/영어변환 키에 사용되고 있다.</p>
 
-<ul>
-  <li>2021, 맥북 프로 M1 Pro 14인치 모델</li>
-  <li>
-    <p>Ventura 13.1 베타(22C5050e) 버전</p>
-  </li>
-  <li>JDK 1.8 설치 과정은 아래 링크 참조해 주세요.</li>
-</ul>
+<p>맥 단축키를 변경하거나,
+이클립스에서 단축키를 변경하면된다.</p>
 
-<p><a href="https://jshwang94.tistory.com/3">JDK 1.8 설치</a></p>
+<p>기본적으로 한/영변환을 ctl + space로 잘 안쓰긴 하지만,
+그래도 기본 단축키이므로 이클립스 변경을 추천합니다.</p>
 
-<p>문제점.</p>
-<ol>
-  <li>JDK 1.8 ( ARM ), 최신 이클립스 ( ARM ) 돌리면
-이클립스는 2020 09 버전부터 JDK11 이상 버전만 지원하므로…</li>
-  <li>JDK 1.8 ( ARM ), 예전 이클립스 ( x64 ) 실행 시 에러 발생.</li>
-  <li>JDK 1.8 x64, 예전 이클립스 ( x64 ) 실행 시 작동하나 비정상적 로딩이라든지
-거의 사용 불가.</li>
-</ol>
+<h2 id="spotlight-단축키-변경">Spotlight 단축키 변경</h2>
 
-<p>결론적으로 이클립스 최신 ARM 버전을 JDK17로 일단 설치한 뒤
-설정에서 JRE, 컴파일러를 1.8로 변경하여 사용하고 있습니다.</p>
+<p>아래의 위치에서 키보드 단축키 클릭.
+<img src="../../images/2022-11-28-10-36-35.png" alt="" /></p>
 
-<ul>
-  <li>이클립스 설치</li>
-</ul>
+<p>단축키 부분 더블클릭해서 수정하면된다.!
+<img src="../../images/2022-11-28-10-36-08.png" alt="" /></p>
 
-<p>https://www.eclipse.org/downloads/</p>
+<h2 id="이클립스-에서-변경-방법">이클립스 에서 변경 방법</h2>
+<p><img src="../../images/2022-11-28-10-31-10.png" alt="" /></p>
 
-<p>최신 버전의 AArch64로 받은 후, 실행시켜 줍니다.</p>
+<p>아래에 Binding: 부분에 클릭하고 단축키를 입력하면 된다.! 
+<img src="../../images/2022-11-28-10-38-04.png" alt="" /></p>
 
-<p>일단 17.0.05로 되어 있는 상태로 설치폴더 놔두고 그대로 설치 및 LAUNCH(실행)까지 시켜 줍니다.</p>
+<p>Shift + space bar로 변경하였다.</p>
 
-<ul>
-  <li>이클립스는 아래처럼 자신의 계정명 폴더에 저장되므로 끌어다가 쓰시면 됩니다.</li>
-</ul>
-
-<p>워크스페이스를 설정하시고,</p>
-
-<p>바로 셋팅으로 들어가줍니다.</p>
-
-<p>컴파일러 버전 변경입니다.
-해당 위치로 가셔서 17 -&gt; 1.8로 변경 후 Apply까지 시켜줍니다.</p>
-
-<p>JDK (JRE) 버전 변경입니다.</p>
-
-<p>처음 들어가시면 아마도 아래와 비슷하게 되어있으실 건데요 (17.0.5의 경우 이클립스 설치 시 같이 설치 및 적용됩니다.)
-오른쪽에 Add 버튼을 눌러주세요!</p>
-
-<p>우리가 설치할 Open JDK1.8 JRE Home의 경로를 찾아줘야 합니다.</p>
-
-<p>Dircetory 버튼 클릭 후, MacOS X VM, Next 클릭</p>
-
-<p>아래와 같이 설정해 줍니다.</p>
-
-<p>그다음 아래처럼 JRE name을 원하시는 대로 설정해 준 뒤 Finish.</p>
-
-<p>방금 추가한 OpenJDK1.8 체크박스에 체크한 다음 Apply and Close 클릭.</p>
-
-<p>프로젝트를 만드실 때 아래처럼 JRE 부분에 Use a project specific JRE:로 해주시고 만들면 됩니다.</p>
-
-<p>해당 프로젝트의 JRE, 컴파일러 버전 확인</p>
-
-<p>기본적으로 JDK 17 버전 기반으로 설치하였으나, 
-설치 후에 설정으로 1.8버전 변경은 가능한 것 같습니다.</p>
-
-<p>혹 JDK 9버전 이상에서 1.8 버전으로 변경하실 때 에러 나시는 경우
-아래 글 참조해 주세요.</p>
-
-<p>https://jshwang94.tistory.com/5</p>
-
+<p>잘됨…
+<img src="../../images/2022-11-28-10-38-48.png" alt="" /></p>
  <!--실제 페이지 글 부분-->
         
       </section>
@@ -478,9 +430,11 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#m1-jdk-%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4-%EC%84%A4%EC%B9%98" class="page__taxonomy-item p-category" rel="tag">M1 JDK 이클립스 설치</a><span class="sep">, </span>
+      <a href="/tags/#%EB%A7%A5%EB%B6%81-contents-assist" class="page__taxonomy-item p-category" rel="tag">맥북 Contents Assist</a><span class="sep">, </span>
     
-      <a href="/tags/#%EB%A7%A5%EB%B6%81-m1-jdk-1-8-%EC%9D%B4%ED%81%AC%EB%A6%BD%EC%8A%A4-%EC%84%A4%EC%B9%98" class="page__taxonomy-item p-category" rel="tag">맥북 M1 JDK 1.8 이크립스 설치</a>
+      <a href="/tags/#%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4" class="page__taxonomy-item p-category" rel="tag">이클립스</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EB%A7%A5%EB%B6%81" class="page__taxonomy-item p-category" rel="tag">이클립스 자동완성 맥북</a>
     
     </span>
   </p>
@@ -505,7 +459,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-11-28">2022-11-28</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-11-28T00:00:00+09:00">2022-11-28</time></p>
 
       </footer>
 
@@ -514,24 +468,16 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%EB%A7%A5%EB%B6%81+M1+%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4+%EC%84%A4%EC%B9%98%ED%95%98%EB%8A%94+%EB%B2%95%20http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FJava0-1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EB%A7%A5%EB%B6%81+%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4+%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1%2C+Contents+Assist+%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FJava5%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FJava0-1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FJava5%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FJava0-1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FJava5%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
 
-
-  
-
-  
-
-  
-
-  
 
   
   	
@@ -543,10 +489,10 @@
 
   <nav class="pagination_prev_next">
     
-      <a href="#" class="pagination_prev_next--pager disabled">첫 번째 글입니다</a>
+      <a href="/basic%20of%20java/Java4/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>객체, 클래스, 인스턴스</a>
     
     
-      <a href="/basic%20of%20java/Java0/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>맥북 M1 JDK 1.8 (Java 8) 설치하는 법</a>
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
     
   </nav>
 
@@ -572,35 +518,6 @@
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
         <a href="/%EC%9D%B8%ED%94%84%EB%9F%B0%20%EC%8B%A4%EC%A0%84%20%EC%9E%90%EB%B0%94/%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-1/" rel="permalink">Java 프로그래밍이란?, Hellow Java
-</a>
-      
-    </h2>
-    <!-- comment는 주석. -->
-    
-
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/basic%20of%20java/Java3/" rel="permalink">맥북 이클립스 자동완성, Contents Assist 사용하기
 </a>
       
     </h2>
@@ -658,7 +575,36 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/basic%20of%20java/Java2/" rel="permalink">객체, 클래스, 인스턴스
+        <a href="/basic%20of%20java/Java4/" rel="permalink">객체, 클래스, 인스턴스
+</a>
+      
+    </h2>
+    <!-- comment는 주석. -->
+    
+
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/basic%20of%20java/Java3/" rel="permalink">객체지향 프로그래밍과 절차적 프로그래밍
 </a>
       
     </h2>

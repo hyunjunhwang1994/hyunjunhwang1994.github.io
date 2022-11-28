@@ -1,14 +1,20 @@
 var store = [{
-        "title": "맥북 M1 이클립스 설치하는 법",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 Eclipse: Version: 2022-09 (4.25.0) 2021, 맥북 프로 M1 Pro 14인치 모델 Ventura 13.1 베타(22C5050e) 버전 JDK 1.8 설치 과정은 아래 링크 참조해 주세요. JDK 1.8 설치 문제점. JDK 1.8 (...","categories": ["Basic of java"],
-        "tags": ["맥북 M1 JDK 1.8 이크립스 설치","M1 JDK 이클립스 설치"],
-        "url": "/basic%20of%20java/Java0-1/",
-        "teaser": null
-      },{
         "title": "맥북 M1 JDK 1.8 (Java 8) 설치하는 법",
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 라이선스 비용 및 안정성 등 여러 가지 이유로 현업에서는 1.8 버전을 많이 사용합니다. Oracle JDK의 경우 M1, ARM 방식의 JDK 8버전은 지원하지 않으므로.. Open JDK인 Azul Zulu를 받아야 한다. Open JDK 다운로드 된 설치 파일...","categories": ["Basic of java"],
         "tags": ["맥북 M1 JDK 1.8 설치","M1 JDK 환경변수 설정"],
         "url": "/basic%20of%20java/Java0/",
+        "teaser": null
+      },{
+        "title": "맥북 M1 이클립스 설치하는 법",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 Eclipse: Version: 2022-09 (4.25.0) JDK 1.8 설치 과정은 아래 링크 참조해 주세요. JDK 1.8 설치 이클립스 설치. 문제점. JDK 1.8 ( ARM ), 최신 이클립스 ( ARM ) 돌리면 이클립스는...","categories": ["Basic of java"],
+        "tags": ["맥북 M1 JDK 1.8 이크립스 설치","M1 JDK 이클립스 설치"],
+        "url": "/basic%20of%20java/Java1/",
+        "teaser": null
+      },{
+        "title": "이클립스 내 JDK 버전 변경, JDK 1.8 버전 변경 에러",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 Eclipse: Version: 2022-09 (4.25.0) JDK 버전 변경 시 JDK 설치와 환경 변수 적용 등이 미리 되어 있어야 합니다. JDK 설치 참조 https://jshwang94.tistory.com/3 이클립스 설치 참조 https://jshwang94.tistory.com/4 프로젝트 JDK 버전 확인...","categories": ["Basic of java"],
+        "tags": ["이클립스 JDK 버전 변경","Syntax error on token module module expected error"],
+        "url": "/basic%20of%20java/java2/",
         "teaser": null
       },{
         "title": "개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)",
@@ -80,13 +86,13 @@ var store = [{
         "title": "객체지향 프로그래밍과 절차적 프로그래밍",
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 절차적 프로그래밍과 객체지향 프로그래밍. 절차적 프로그래밍 ‘절차적 프로그래밍’이라는 한국어 번역은 오해의 여지가 크다. Procedural Programming에서 Procedural를 ‘절차적’으로 번역해버려서 마치 절차적으로...","categories": ["Basic of java"],
         "tags": ["자바의 객체지향","객체지향 프로그래밍","절차적 프로그래밍"],
-        "url": "/basic%20of%20java/Java1/",
+        "url": "/basic%20of%20java/Java3/",
         "teaser": null
       },{
         "title": "객체, 클래스, 인스턴스",
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 클래스, 객체 상속과 오버라이딩 오버로딩 추상클래스와 인터페이스 패키지와 제어자 객체지향 프로그래밍? ex) 자동차(프로그램)은 바퀴(객체), 엔진(객체), 핸들(객체)등을 조합하여 만든다. 그러한 바퀴,...","categories": ["Basic of java"],
         "tags": ["객체","클래스","인스턴스"],
-        "url": "/basic%20of%20java/Java2/",
+        "url": "/basic%20of%20java/Java4/",
         "teaser": null
       },{
         "title": "스프링 기초",
@@ -98,11 +104,11 @@ var store = [{
         "title": "맥북 이클립스 자동완성, Contents Assist 사용하기",
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) Mac에서 이클립스 자동완성으로 사용하는 단축키 Control + Space는 맥에서 이미 한글/영어변환 키에 사용되고 있다. 맥 단축키를 변경하거나, 이클립스에서 단축키를 변경하면된다....","categories": ["Basic of java"],
         "tags": ["이클립스","이클립스 자동완성 맥북","맥북 Contents Assist"],
-        "url": "/basic%20of%20java/Java3/",
+        "url": "/basic%20of%20java/Java5/",
         "teaser": null
       },{
         "title": "Java 프로그래밍이란?, Hellow Java",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 IntelliJ: Version: 2022-09 (4.25.0) 해당 포스팅의 전반적인 내용 및 사진은 인프런의 자바 강의에서 가지고 왔습니다. https://www.inflearn.com/course/%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94_java-renew/dashboard 프로그래밍이란? 각 나라들의 언어가 다른 것처럼 우리가 생성한 코드(인간의 언어)는 컴파일러를 통해 컴퓨터의 언어로...","categories": ["인프런 실전 자바"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 Eclipse: Version: 2022-09 (4.25.0) 해당 포스팅의 전반적인 내용 및 사진은 인프런의 자바 강의에서 가지고 왔습니다. https://www.inflearn.com/course/%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94_java-renew/dashboard 프로그래밍이란? 각 나라들의 언어가 다른 것처럼 우리가 생성한 코드(인간의 언어)는 컴파일러를 통해 컴퓨터의 언어로...","categories": ["인프런 실전 자바"],
         "tags": ["프로그래밍이란?","Java 언어의 탄생","Java 언어의 특징","JDK","JRE"],
         "url": "/%EC%9D%B8%ED%94%84%EB%9F%B0%20%EC%8B%A4%EC%A0%84%20%EC%9E%90%EB%B0%94/%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-1/",
         "teaser": null

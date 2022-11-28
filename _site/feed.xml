@@ -1,46 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-28T14:16:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">맥북 이클립스 자동완성, Contents Assist 사용하기</title><link href="http://localhost:4000/basic%20of%20java/Java3/" rel="alternate" type="text/html" title="맥북 이클립스 자동완성, Contents Assist 사용하기" /><published>2022-11-28T00:00:00+09:00</published><updated>2022-11-28T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20java/Java3</id><content type="html" xml:base="http://localhost:4000/basic%20of%20java/Java3/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
-<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1 베타(22C5050e) 버전
-</div>
-<hr />
-
-<!-- 자바 포스팅시 JDK, IDE버전 등-->
-<div class="notice--info" style="text-align:center">
-          버전<br />
-          JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08)<br />
-          IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition)
-</div>
-<hr />
-
-<p>Mac에서 이클립스 자동완성으로 사용하는 단축키 Control + Space는
-맥에서 이미 한글/영어변환 키에 사용되고 있다.</p>
-
-<p>맥 단축키를 변경하거나,
-이클립스에서 단축키를 변경하면된다.</p>
-
-<p>기본적으로 한/영변환을 ctl + space로 잘 안쓰긴 하지만,
-그래도 기본 단축키이므로 이클립스 변경을 추천합니다.</p>
-
-<h2 id="spotlight-단축키-변경">Spotlight 단축키 변경</h2>
-
-<p>아래의 위치에서 키보드 단축키 클릭.
-<img src="../../images/2022-11-28-10-36-35.png" alt="" /></p>
-
-<p>단축키 부분 더블클릭해서 수정하면된다.!
-<img src="../../images/2022-11-28-10-36-08.png" alt="" /></p>
-
-<h2 id="이클립스-에서-변경-방법">이클립스 에서 변경 방법</h2>
-<p><img src="../../images/2022-11-28-10-31-10.png" alt="" /></p>
-
-<p>아래에 Binding: 부분에 클릭하고 단축키를 입력하면 된다.! 
-<img src="../../images/2022-11-28-10-38-04.png" alt="" /></p>
-
-<p>Shift + space bar로 변경하였다.</p>
-
-<p>잘됨…
-<img src="../../images/2022-11-28-10-38-48.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Basic of java" /><category term="이클립스" /><category term="이클립스 자동완성 맥북" /><category term="맥북 Contents Assist" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">Java 프로그래밍이란?, Hellow Java</title><link href="http://localhost:4000/%EC%9D%B8%ED%94%84%EB%9F%B0%20%EC%8B%A4%EC%A0%84%20%EC%9E%90%EB%B0%94/%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-1/" rel="alternate" type="text/html" title="Java 프로그래밍이란?, Hellow Java" /><published>2022-11-28T00:00:00+09:00</published><updated>2022-11-28T00:00:00+09:00</updated><id>http://localhost:4000/%EC%9D%B8%ED%94%84%EB%9F%B0%20%EC%8B%A4%EC%A0%84%20%EC%9E%90%EB%B0%94/%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-1</id><content type="html" xml:base="http://localhost:4000/%EC%9D%B8%ED%94%84%EB%9F%B0%20%EC%8B%A4%EC%A0%84%20%EC%9E%90%EB%B0%94/%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-1/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-28T15:49:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">Java 프로그래밍이란?, Hellow Java</title><link href="http://localhost:4000/%EC%9D%B8%ED%94%84%EB%9F%B0%20%EC%8B%A4%EC%A0%84%20%EC%9E%90%EB%B0%94/%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-1/" rel="alternate" type="text/html" title="Java 프로그래밍이란?, Hellow Java" /><published>2022-11-28T00:00:00+09:00</published><updated>2022-11-28T00:00:00+09:00</updated><id>http://localhost:4000/%EC%9D%B8%ED%94%84%EB%9F%B0%20%EC%8B%A4%EC%A0%84%20%EC%9E%90%EB%B0%94/%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-1</id><content type="html" xml:base="http://localhost:4000/%EC%9D%B8%ED%94%84%EB%9F%B0%20%EC%8B%A4%EC%A0%84%20%EC%9E%90%EB%B0%94/%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-1/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
 <div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
@@ -53,7 +11,7 @@
           버전<br />
           JDK: openjdk version 1.8.0_352
 <br />
-          IntelliJ: Version: 2022-09 (4.25.0)
+          Eclipse: Version: 2022-09 (4.25.0)
 </div>
 <hr />
 
@@ -151,7 +109,7 @@ bin : 컴파일 후 컴퓨터가 이해할 수 있는 파일들이 모여있는 
 
 <span class="o">}</span>
 
-</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="인프런 실전 자바" /><category term="프로그래밍이란?" /><category term="Java 언어의 탄생" /><category term="Java 언어의 특징" /><category term="JDK" /><category term="JRE" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">객체, 클래스, 인스턴스</title><link href="http://localhost:4000/basic%20of%20java/Java2/" rel="alternate" type="text/html" title="객체, 클래스, 인스턴스" /><published>2022-11-25T00:00:00+09:00</published><updated>2022-11-27T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20java/Java2</id><content type="html" xml:base="http://localhost:4000/basic%20of%20java/Java2/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
+</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="인프런 실전 자바" /><category term="프로그래밍이란?" /><category term="Java 언어의 탄생" /><category term="Java 언어의 특징" /><category term="JDK" /><category term="JRE" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">맥북 이클립스 자동완성, Contents Assist 사용하기</title><link href="http://localhost:4000/basic%20of%20java/Java5/" rel="alternate" type="text/html" title="맥북 이클립스 자동완성, Contents Assist 사용하기" /><published>2022-11-28T00:00:00+09:00</published><updated>2022-11-28T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20java/Java5</id><content type="html" xml:base="http://localhost:4000/basic%20of%20java/Java5/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
 <div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
@@ -167,168 +125,33 @@ bin : 컴파일 후 컴퓨터가 이해할 수 있는 파일들이 모여있는 
 </div>
 <hr />
 
-<ol>
-  <li>클래스, 객체</li>
-  <li>상속과 오버라이딩 오버로딩</li>
-  <li>추상클래스와 인터페이스</li>
-  <li>패키지와 제어자</li>
-</ol>
+<p>Mac에서 이클립스 자동완성으로 사용하는 단축키 Control + Space는
+맥에서 이미 한글/영어변환 키에 사용되고 있다.</p>
 
-<blockquote>
-  <h1 id="객체지향-프로그래밍">객체지향 프로그래밍?</h1>
-</blockquote>
+<p>맥 단축키를 변경하거나,
+이클립스에서 단축키를 변경하면된다.</p>
 
-<ul>
-  <li>ex) 자동차(프로그램)은 바퀴(객체), 엔진(객체), 핸들(객체)등을 조합하여 만든다.</li>
-  <li>그러한 바퀴, 엔진, 핸들등은 설계도인 클래스를 통하여 만든다.</li>
-  <li>객체들을 조합하여 전체 프로그램을 만드는것!</li>
-  <li>객체는 클래스를 이용하여 만들어진 프로그램의 구성 요소이다.</li>
-</ul>
+<p>기본적으로 한/영변환을 ctl + space로 잘 안쓰긴 하지만,
+그래도 기본 단축키이므로 이클립스 변경을 추천합니다.</p>
 
-<p><br /></p>
+<h2 id="spotlight-단축키-변경">Spotlight 단축키 변경</h2>
 
-<blockquote>
-  <h1 id="클래스">클래스</h1>
-</blockquote>
+<p>아래의 위치에서 키보드 단축키 클릭.
+<img src="../../images/2022-11-28-10-36-35.png" alt="" /></p>
 
-<h2 id="클래스-란">클래스 란?</h2>
-<p>사물의 특성을 소프트웨어적으로 추상화하여 모델링 한 것으로<br />
-객체를 만들 수 있는 틀(Template)로써 오브젝트의 정적인 상태를 나타냅니다.</p>
+<p>단축키 부분 더블클릭해서 수정하면된다.!
+<img src="../../images/2022-11-28-10-36-08.png" alt="" /></p>
 
-<h2 id="클래스의-구조">클래스의 구조</h2>
-<ul>
-  <li>Fields : 정보와 상태를 나타냄</li>
-  <li>Methods() : 기능과 동작을 나타냄.</li>
-</ul>
+<h2 id="이클립스-에서-변경-방법">이클립스 에서 변경 방법</h2>
+<p><img src="../../images/2022-11-28-10-31-10.png" alt="" /></p>
 
-<p>즉, 필드(field)란 클래스에 포함된 변수(variable)를 의미합니다.<br />
-또한, 메소드(method)란 어떠한 특정 작업을 수행하기 위한 명령문의 집합이라 할 수 있습니다.</p>
+<p>아래에 Binding: 부분에 클릭하고 단축키를 입력하면 된다.! 
+<img src="../../images/2022-11-28-10-38-04.png" alt="" /></p>
 
-<p><br /></p>
+<p>Shift + space bar로 변경하였다.</p>
 
-<p>ex) 자동차 클래스</p>
-
-<p>정보/상태 (Fields)<br />
-이름, 최고속도, 가격, 브랜드</p>
-
-<p>기능 / 동작 / 행동 (Methods())<br />
-시동켜기, 악셀, 브레이크</p>
-
-<h2 id="객체인스턴스">객체(인스턴스)</h2>
-
-<p>객체란 클래스를 실제 사용할 수 있도록 만든 것으로<br />
-메모리 공간을 할당해 놓은 인스턴스(Instance)라고도 하며</p>
-
-<p>클래스의 동적인 상태를 의미합니다. (new 명령어를 통해 생성) 
-자바에서 클래스를 사용하기 위해서는 우선 해당 클래스 타입의 객체(object)를 선언해야 합니다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">car</span> <span class="n">avante</span> <span class="o">=</span> <span class="k">new</span> <span class="n">car</span><span class="o">();</span>
-</code></pre></div></div>
-
-<p>이렇게 클래스로부터 객체를 선언하는 과정을 클래스의 인스턴스 화라고 합니다.<br />
-또한, 이렇게 선언된 해당 클래스 타입의 객체를 인스턴스(instance)라고 합니다.</p>
-
-<p>즉, 인스턴스란 메모리에 할당된 객체를 의미합니다.<br />
-자바에서는 하나의 클래스로부터 여러 개의 인스턴스를 생성할 수 있습니다.</p>
-
-<p>이렇게 생성된 인스턴스는 독립된 메모리 공간에 저장된 자신만의 필드를 가질 수 있습니다.<br />
-하지만 해당 클래스의 모든 메소드(method)는<br />
-해당 클래스에서 생성된 모든 인스턴스가 공유하게 됩니다.</p>
-
-<hr />
-
-<h2 id="코드로-확인해-보자">코드로 확인해 보자.</h2>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
-
-
-    <span class="c1">// 자바의 경우 암묵적으로 클래스이름은 무조건 대문자로 시작.</span>
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
-
-        <span class="c1">// 멤버 변수 (속성), camel case로 네이밍하기.</span>
-        <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
-
-        <span class="c1">// 기본 생성자 ( 메모리에 객체를 생성하는 역할 )</span>
-        <span class="kd">public</span> <span class="nf">Car</span><span class="o">(){</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"car constructor"</span><span class="o">);</span>
-        <span class="o">}</span>
-
-        <span class="c1">// 생성자와 메소드의차이 맨앞에 대문자인지 소문자인지</span>
-
-        <span class="c1">// 메소드 (기능), camel case로 네이밍하기.</span>
-        <span class="kt">void</span> <span class="nf">showInfo</span><span class="o">(){</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"최고 속도는"</span> <span class="o">+</span> <span class="n">maxSpeed</span><span class="o">);</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"가격은"</span> <span class="o">+</span> <span class="n">price</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//car타입인 avante에넣는다. &lt;--car()객체를 생성</span>
-        <span class="n">car</span> <span class="n">avante</span> <span class="o">=</span> <span class="k">new</span> <span class="n">car</span><span class="o">();</span>
-        <span class="c1">// new car() : 메모리 내에 객체생성, 이때 객체를 생성하기 위한 메소드로 사용하기 위해 만들어진 것이 기본 생성자</span>
-        <span class="c1">// car avante : car타입의 avante인스턴스 생성</span>
-        
-
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p>① 멤버 변수: 클래스의 속성<br />
-② 생성자: 객체의 초기화를 담당<br />
-③ 메소드: 클래스의 속성을 조작<br />
-④ 내포 클래스(Nested Class): 클래스안에 클래스 존재 가능</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
- <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
-
-        <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span><span class="c1">// 전역변수</span>
-        <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
-
-        <span class="c1">// 이런식으로 만들면 이 바로아래 변수는 지역 변수이므로</span>
-        <span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">,</span> <span class="kt">int</span> <span class="n">price</span><span class="o">){</span>
-            <span class="c1">// 전역변수랑 이름이 겹친다.</span>
-            <span class="n">maxSpeed</span> <span class="o">=</span> <span class="n">maxSpeed</span><span class="o">;</span>
-            <span class="n">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;</span>
-        <span class="o">}</span>
-
-
-    <span class="o">}</span>
-</code></pre></div></div>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
- <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
-
-        <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span>   
-        <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
-
-        
-        <span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">,</span> <span class="kt">int</span> <span class="n">price</span><span class="o">){</span>
-        <span class="c1">// 그레서 이렇게 this를 붙혀 이 객체의 전역변수라는 것을 알려주어 생성자를 사용한다.</span>
-            <span class="k">this</span><span class="o">.</span><span class="na">maxSpeed</span> <span class="o">=</span> <span class="n">maxSpeed</span><span class="o">;</span>
-            <span class="k">this</span><span class="o">.</span><span class="na">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="c1">// 기본 생성자가 있어야 위와 같은 생성자를 만들 수 있다.</span>
-
-
-    <span class="o">}</span>
-</code></pre></div></div>
-
-<p><a href="https://danmilife.tistory.com/19">참조 블로그</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Basic of java" /><category term="객체" /><category term="클래스" /><category term="인스턴스" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">스프링 기초</title><link href="http://localhost:4000/spring/Spring/" rel="alternate" type="text/html" title="스프링 기초" /><published>2022-11-25T00:00:00+09:00</published><updated>2022-11-25T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring</id><content type="html" xml:base="http://localhost:4000/spring/Spring/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
-<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1 베타(22C5050e) 버전
-</div>
-<hr />
-
-<!-- 자바 포스팅시 JDK, IDE버전 등-->
-<div class="notice--info" style="text-align:center">
-          버전<br />
-          JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08)<br />
-          IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition)
-</div>
-<hr />]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring 기초" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">객체지향 프로그래밍과 절차적 프로그래밍</title><link href="http://localhost:4000/basic%20of%20java/Java1/" rel="alternate" type="text/html" title="객체지향 프로그래밍과 절차적 프로그래밍" /><published>2022-11-25T00:00:00+09:00</published><updated>2022-11-25T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20java/Java1</id><content type="html" xml:base="http://localhost:4000/basic%20of%20java/Java1/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
+<p>잘됨…
+<img src="../../images/2022-11-28-10-38-48.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Basic of java" /><category term="이클립스" /><category term="이클립스 자동완성 맥북" /><category term="맥북 Contents Assist" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">객체지향 프로그래밍과 절차적 프로그래밍</title><link href="http://localhost:4000/basic%20of%20java/Java3/" rel="alternate" type="text/html" title="객체지향 프로그래밍과 절차적 프로그래밍" /><published>2022-11-25T00:00:00+09:00</published><updated>2022-11-25T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20java/Java3</id><content type="html" xml:base="http://localhost:4000/basic%20of%20java/Java3/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
 <div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
@@ -630,7 +453,184 @@ OOP를 사용하면 코드의 중복을 어느 정도 줄일 수 있고</p>
   <li>객체(클래스)들은 동일한 메소드명을 사용하며 같은 의미의 응답을 합니다.</li>
   <li>응용 프로그램 상에서 하나의 함수나 연산자가 두개 이상의 서로 다른 클래스의<br />
 인스턴스들을 같은 클래스에 속한 인스턴스처럼 수행할 수 있도록 하는것을 말합니다.</li>
-</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Basic of java" /><category term="자바의 객체지향" /><category term="객체지향 프로그래밍" /><category term="절차적 프로그래밍" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">minimal-mistakes 기반 Utterances 댓글 적용</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/utterancesComments/" rel="alternate" type="text/html" title="minimal-mistakes 기반 Utterances 댓글 적용" /><published>2022-11-23T00:00:00+09:00</published><updated>2022-11-23T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/utterancesComments</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/utterancesComments/"><![CDATA[<blockquote>
+</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Basic of java" /><category term="자바의 객체지향" /><category term="객체지향 프로그래밍" /><category term="절차적 프로그래밍" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">스프링 기초</title><link href="http://localhost:4000/spring/Spring/" rel="alternate" type="text/html" title="스프링 기초" /><published>2022-11-25T00:00:00+09:00</published><updated>2022-11-25T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring</id><content type="html" xml:base="http://localhost:4000/spring/Spring/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
+<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1 베타(22C5050e) 버전
+</div>
+<hr />
+
+<!-- 자바 포스팅시 JDK, IDE버전 등-->
+<div class="notice--info" style="text-align:center">
+          버전<br />
+          JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08)<br />
+          IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition)
+</div>
+<hr />]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring 기초" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">객체, 클래스, 인스턴스</title><link href="http://localhost:4000/basic%20of%20java/Java4/" rel="alternate" type="text/html" title="객체, 클래스, 인스턴스" /><published>2022-11-25T00:00:00+09:00</published><updated>2022-11-27T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20java/Java4</id><content type="html" xml:base="http://localhost:4000/basic%20of%20java/Java4/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
+<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1 베타(22C5050e) 버전
+</div>
+<hr />
+
+<!-- 자바 포스팅시 JDK, IDE버전 등-->
+<div class="notice--info" style="text-align:center">
+          버전<br />
+          JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08)<br />
+          IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition)
+</div>
+<hr />
+
+<ol>
+  <li>클래스, 객체</li>
+  <li>상속과 오버라이딩 오버로딩</li>
+  <li>추상클래스와 인터페이스</li>
+  <li>패키지와 제어자</li>
+</ol>
+
+<blockquote>
+  <h1 id="객체지향-프로그래밍">객체지향 프로그래밍?</h1>
+</blockquote>
+
+<ul>
+  <li>ex) 자동차(프로그램)은 바퀴(객체), 엔진(객체), 핸들(객체)등을 조합하여 만든다.</li>
+  <li>그러한 바퀴, 엔진, 핸들등은 설계도인 클래스를 통하여 만든다.</li>
+  <li>객체들을 조합하여 전체 프로그램을 만드는것!</li>
+  <li>객체는 클래스를 이용하여 만들어진 프로그램의 구성 요소이다.</li>
+</ul>
+
+<p><br /></p>
+
+<blockquote>
+  <h1 id="클래스">클래스</h1>
+</blockquote>
+
+<h2 id="클래스-란">클래스 란?</h2>
+<p>사물의 특성을 소프트웨어적으로 추상화하여 모델링 한 것으로<br />
+객체를 만들 수 있는 틀(Template)로써 오브젝트의 정적인 상태를 나타냅니다.</p>
+
+<h2 id="클래스의-구조">클래스의 구조</h2>
+<ul>
+  <li>Fields : 정보와 상태를 나타냄</li>
+  <li>Methods() : 기능과 동작을 나타냄.</li>
+</ul>
+
+<p>즉, 필드(field)란 클래스에 포함된 변수(variable)를 의미합니다.<br />
+또한, 메소드(method)란 어떠한 특정 작업을 수행하기 위한 명령문의 집합이라 할 수 있습니다.</p>
+
+<p><br /></p>
+
+<p>ex) 자동차 클래스</p>
+
+<p>정보/상태 (Fields)<br />
+이름, 최고속도, 가격, 브랜드</p>
+
+<p>기능 / 동작 / 행동 (Methods())<br />
+시동켜기, 악셀, 브레이크</p>
+
+<h2 id="객체인스턴스">객체(인스턴스)</h2>
+
+<p>객체란 클래스를 실제 사용할 수 있도록 만든 것으로<br />
+메모리 공간을 할당해 놓은 인스턴스(Instance)라고도 하며</p>
+
+<p>클래스의 동적인 상태를 의미합니다. (new 명령어를 통해 생성) 
+자바에서 클래스를 사용하기 위해서는 우선 해당 클래스 타입의 객체(object)를 선언해야 합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">car</span> <span class="n">avante</span> <span class="o">=</span> <span class="k">new</span> <span class="n">car</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>이렇게 클래스로부터 객체를 선언하는 과정을 클래스의 인스턴스 화라고 합니다.<br />
+또한, 이렇게 선언된 해당 클래스 타입의 객체를 인스턴스(instance)라고 합니다.</p>
+
+<p>즉, 인스턴스란 메모리에 할당된 객체를 의미합니다.<br />
+자바에서는 하나의 클래스로부터 여러 개의 인스턴스를 생성할 수 있습니다.</p>
+
+<p>이렇게 생성된 인스턴스는 독립된 메모리 공간에 저장된 자신만의 필드를 가질 수 있습니다.<br />
+하지만 해당 클래스의 모든 메소드(method)는<br />
+해당 클래스에서 생성된 모든 인스턴스가 공유하게 됩니다.</p>
+
+<hr />
+
+<h2 id="코드로-확인해-보자">코드로 확인해 보자.</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+
+
+    <span class="c1">// 자바의 경우 암묵적으로 클래스이름은 무조건 대문자로 시작.</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
+
+        <span class="c1">// 멤버 변수 (속성), camel case로 네이밍하기.</span>
+        <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
+
+        <span class="c1">// 기본 생성자 ( 메모리에 객체를 생성하는 역할 )</span>
+        <span class="kd">public</span> <span class="nf">Car</span><span class="o">(){</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"car constructor"</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="c1">// 생성자와 메소드의차이 맨앞에 대문자인지 소문자인지</span>
+
+        <span class="c1">// 메소드 (기능), camel case로 네이밍하기.</span>
+        <span class="kt">void</span> <span class="nf">showInfo</span><span class="o">(){</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"최고 속도는"</span> <span class="o">+</span> <span class="n">maxSpeed</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"가격은"</span> <span class="o">+</span> <span class="n">price</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//car타입인 avante에넣는다. &lt;--car()객체를 생성</span>
+        <span class="n">car</span> <span class="n">avante</span> <span class="o">=</span> <span class="k">new</span> <span class="n">car</span><span class="o">();</span>
+        <span class="c1">// new car() : 메모리 내에 객체생성, 이때 객체를 생성하기 위한 메소드로 사용하기 위해 만들어진 것이 기본 생성자</span>
+        <span class="c1">// car avante : car타입의 avante인스턴스 생성</span>
+        
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>① 멤버 변수: 클래스의 속성<br />
+② 생성자: 객체의 초기화를 담당<br />
+③ 메소드: 클래스의 속성을 조작<br />
+④ 내포 클래스(Nested Class): 클래스안에 클래스 존재 가능</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
+
+        <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span><span class="c1">// 전역변수</span>
+        <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
+
+        <span class="c1">// 이런식으로 만들면 이 바로아래 변수는 지역 변수이므로</span>
+        <span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">,</span> <span class="kt">int</span> <span class="n">price</span><span class="o">){</span>
+            <span class="c1">// 전역변수랑 이름이 겹친다.</span>
+            <span class="n">maxSpeed</span> <span class="o">=</span> <span class="n">maxSpeed</span><span class="o">;</span>
+            <span class="n">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;</span>
+        <span class="o">}</span>
+
+
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
+
+        <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span>   
+        <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
+
+        
+        <span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">,</span> <span class="kt">int</span> <span class="n">price</span><span class="o">){</span>
+        <span class="c1">// 그레서 이렇게 this를 붙혀 이 객체의 전역변수라는 것을 알려주어 생성자를 사용한다.</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">maxSpeed</span> <span class="o">=</span> <span class="n">maxSpeed</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="c1">// 기본 생성자가 있어야 위와 같은 생성자를 만들 수 있다.</span>
+
+
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p><a href="https://danmilife.tistory.com/19">참조 블로그</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Basic of java" /><category term="객체" /><category term="클래스" /><category term="인스턴스" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">minimal-mistakes 기반 Utterances 댓글 적용</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/utterancesComments/" rel="alternate" type="text/html" title="minimal-mistakes 기반 Utterances 댓글 적용" /><published>2022-11-23T00:00:00+09:00</published><updated>2022-11-23T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/utterancesComments</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/utterancesComments/"><![CDATA[<blockquote>
   <h1 id="disqus에서-ufferances로-바꾼-이유">Disqus에서 Ufferances로 바꾼 이유.</h1>
 </blockquote>
 
@@ -944,44 +944,7 @@ https://ansohxxn.github.io/blog/prevnext/</p>
 - 문제점 
 - 배워야할점
 - 선행학습
-</div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><category term="github" /><category term="blog" /><summary type="html"><![CDATA[사이드바크기및 넓이, 하이퍼텍스트 밑줄제거]]></summary></entry><entry><title type="html">Google analytics 추가하기</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll9/" rel="alternate" type="text/html" title="Google analytics 추가하기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll9</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll9/"><![CDATA[<p>_config.yml</p>
-
-<p><img src="../../images/2022-11-21-09-37-41.png" alt="" /></p>
-
-<p><img src="../../images/2022-11-21-09-37-41.png" alt="" /></p>
-
-<p>google analyics검색</p>
-
-<p>첫 사용자인 경우 측정시작 클릭</p>
-
-<p>이름 설정후 맨아래 다음 클릭 ( 설정은 기본 옵션대로 하기 )
-<img src="../../images/2022-11-21-09-40-36.png" alt="" /></p>
-
-<p><img src="../../images/2022-11-21-09-41-57.png" alt="" /></p>
-
-<p>업종의 경우 자신이 원하는걸로 선택.</p>
-
-<p><img src="../../images/2022-11-21-09-43-44.png" alt="" /></p>
-
-<p><img src="../../images/2022-11-21-09-44-11.png" alt="" /></p>
-
-<p>웹 클릭</p>
-
-<p><img src="../../images/2022-11-21-09-44-38.png" alt="" /></p>
-
-<p>요런식으로 자신에맞게 URL및 스트림이름 입력후 스트림만들기 클릭
-<img src="../../images/2022-11-21-09-45-47.png" alt="" /></p>
-
-<p>측정 ID복사</p>
-
-<p><img src="../../images/2022-11-21-09-46-52.png" alt="" /></p>
-
-<p><img src="../../images/2022-11-21-09-48-45.png" alt="" /></p>
-
-<p>적용되는데 시간이 좀걸린다.</p>
-
-<p>analytics -&gt; 보고서에 들어가면 각종 정보들이 확인가능하다.
-<img src="../../images/2022-11-21-09-50-33.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><summary type="html"><![CDATA[_config.yml]]></summary></entry><entry><title type="html">깃허브 블로그 Disqus 댓글 기능 만들기</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll8/" rel="alternate" type="text/html" title="깃허브 블로그 Disqus 댓글 기능 만들기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll8</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll8/"><![CDATA[<p>아래 페이지에서 회원 가입을 해주세요.</p>
+</div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><category term="github" /><category term="blog" /><summary type="html"><![CDATA[사이드바크기및 넓이, 하이퍼텍스트 밑줄제거]]></summary></entry><entry><title type="html">깃허브 블로그 Disqus 댓글 기능 만들기</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll8/" rel="alternate" type="text/html" title="깃허브 블로그 Disqus 댓글 기능 만들기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll8</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll8/"><![CDATA[<p>아래 페이지에서 회원 가입을 해주세요.</p>
 
 <p>https://disqus.com/</p>
 
@@ -1046,7 +1009,44 @@ https://ansohxxn.github.io/blog/prevnext/</p>
 
 <p><img src="../../images/2022-11-21-09-24-13.png" alt="" /></p>
 
-<p>Disqus 사이트 어드민에서 댓글관리및 여러기능 추가 가능합니다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><category term="github" /><category term="blog" /><category term="test" /><summary type="html"><![CDATA[아래 페이지에서 회원 가입을 해주세요.]]></summary></entry><entry><title type="html">개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll1/" rel="alternate" type="text/html" title="개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-22T00:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll1</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll1/"><![CDATA[<div class="notice" style="text-align:center">
+<p>Disqus 사이트 어드민에서 댓글관리및 여러기능 추가 가능합니다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><category term="github" /><category term="blog" /><category term="test" /><summary type="html"><![CDATA[아래 페이지에서 회원 가입을 해주세요.]]></summary></entry><entry><title type="html">Google analytics 추가하기</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll9/" rel="alternate" type="text/html" title="Google analytics 추가하기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-11-21T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll9</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll9/"><![CDATA[<p>_config.yml</p>
+
+<p><img src="../../images/2022-11-21-09-37-41.png" alt="" /></p>
+
+<p><img src="../../images/2022-11-21-09-37-41.png" alt="" /></p>
+
+<p>google analyics검색</p>
+
+<p>첫 사용자인 경우 측정시작 클릭</p>
+
+<p>이름 설정후 맨아래 다음 클릭 ( 설정은 기본 옵션대로 하기 )
+<img src="../../images/2022-11-21-09-40-36.png" alt="" /></p>
+
+<p><img src="../../images/2022-11-21-09-41-57.png" alt="" /></p>
+
+<p>업종의 경우 자신이 원하는걸로 선택.</p>
+
+<p><img src="../../images/2022-11-21-09-43-44.png" alt="" /></p>
+
+<p><img src="../../images/2022-11-21-09-44-11.png" alt="" /></p>
+
+<p>웹 클릭</p>
+
+<p><img src="../../images/2022-11-21-09-44-38.png" alt="" /></p>
+
+<p>요런식으로 자신에맞게 URL및 스트림이름 입력후 스트림만들기 클릭
+<img src="../../images/2022-11-21-09-45-47.png" alt="" /></p>
+
+<p>측정 ID복사</p>
+
+<p><img src="../../images/2022-11-21-09-46-52.png" alt="" /></p>
+
+<p><img src="../../images/2022-11-21-09-48-45.png" alt="" /></p>
+
+<p>적용되는데 시간이 좀걸린다.</p>
+
+<p>analytics -&gt; 보고서에 들어가면 각종 정보들이 확인가능하다.
+<img src="../../images/2022-11-21-09-50-33.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><summary type="html"><![CDATA[_config.yml]]></summary></entry><entry><title type="html">개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll1/" rel="alternate" type="text/html" title="개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-22T00:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll1</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll1/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1 베타(22C5050e) 버전

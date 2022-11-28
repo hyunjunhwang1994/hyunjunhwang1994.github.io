@@ -1,0 +1,849 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>객체, 클래스, 인스턴스 | 기술 블로그</title>
+<meta name="description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1 베타(22C5050e) 버전">
+
+
+  <meta name="author" content="Hyun Jun">
+  
+  <meta property="article:author" content="Hyun Jun">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술 블로그">
+<meta property="og:title" content="객체, 클래스, 인스턴스">
+<meta property="og:url" content="http://localhost:4000/basic%20of%20java/Java4/">
+
+
+  <meta property="og:description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1 베타(22C5050e) 버전">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-11-25T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2022-11-27T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/basic%20of%20java/Java4/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hyun Jun",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="843d72a8e4b20f1a8ae8e971f19c34cb128b6c8b">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+
+    <style> 
+    /*스크롤바 꾸며주는 코드*/
+      ::-webkit-scrollbar{width: 17px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: rgb(25, 56, 109);}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      
+      {
+        width:12px;height:12px;background:transparent;
+      }
+
+        /*사이드바에는 적용하지않는다.*/
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          기술 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li></ul>
+        
+
+                <!-- 다크 모드 토글 버튼 -->
+                
+                <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+                <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">카테고리👇</span>
+                    <div class="navicon"></div>
+                </button>
+
+
+                
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리👇</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+
+
+        
+        
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+  
+  
+    
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리👇</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">19</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <span class="nav__sub-title">Jekyll Blog Dev</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                
+                    
+                
+                    
+                        <li><a href="/categories/CreateABlog" class="">블로그 만들기 (7)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/ImplementingFeatures" class="">기능 구현하기 (4)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Java</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/BasicOfJava" class="">Basic of java (6)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/Spring" class="">Spring (1)</a></li>
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/PracticeJava" class="">인프런 실전 자바 (1)</a></li>
+                    
+                
+            </ul>
+            
+      </li>
+  </ul>
+</nav>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="객체, 클래스, 인스턴스">
+    <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1 베타(22C5050e) 버전">
+    <meta itemprop="datePublished" content="2022-11-25T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2022-11-27T00:00:00+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/basic%20of%20java/Java4/" class="u-url" itemprop="url">객체, 클래스, 인스턴스
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    <!-- 
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-11-25T00:00:00+09:00">2022-11-25</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span> -->
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#객체지향-프로그래밍">객체지향 프로그래밍?</a></li><li><a href="#클래스">클래스</a><ul><li><a href="#클래스-란">클래스 란?</a></li><li><a href="#클래스의-구조">클래스의 구조</a></li><li><a href="#객체인스턴스">객체(인스턴스)</a></li><li><a href="#코드로-확인해-보자">코드로 확인해 보자.</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
+<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1 베타(22C5050e) 버전
+</div>
+<hr />
+
+<!-- 자바 포스팅시 JDK, IDE버전 등-->
+<div class="notice--info" style="text-align:center">
+          버전<br />
+          JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08)<br />
+          IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition)
+</div>
+<hr />
+
+<ol>
+  <li>클래스, 객체</li>
+  <li>상속과 오버라이딩 오버로딩</li>
+  <li>추상클래스와 인터페이스</li>
+  <li>패키지와 제어자</li>
+</ol>
+
+<blockquote>
+  <h1 id="객체지향-프로그래밍">객체지향 프로그래밍?</h1>
+</blockquote>
+
+<ul>
+  <li>ex) 자동차(프로그램)은 바퀴(객체), 엔진(객체), 핸들(객체)등을 조합하여 만든다.</li>
+  <li>그러한 바퀴, 엔진, 핸들등은 설계도인 클래스를 통하여 만든다.</li>
+  <li>객체들을 조합하여 전체 프로그램을 만드는것!</li>
+  <li>객체는 클래스를 이용하여 만들어진 프로그램의 구성 요소이다.</li>
+</ul>
+
+<p><br /></p>
+
+<blockquote>
+  <h1 id="클래스">클래스</h1>
+</blockquote>
+
+<h2 id="클래스-란">클래스 란?</h2>
+<p>사물의 특성을 소프트웨어적으로 추상화하여 모델링 한 것으로<br />
+객체를 만들 수 있는 틀(Template)로써 오브젝트의 정적인 상태를 나타냅니다.</p>
+
+<h2 id="클래스의-구조">클래스의 구조</h2>
+<ul>
+  <li>Fields : 정보와 상태를 나타냄</li>
+  <li>Methods() : 기능과 동작을 나타냄.</li>
+</ul>
+
+<p>즉, 필드(field)란 클래스에 포함된 변수(variable)를 의미합니다.<br />
+또한, 메소드(method)란 어떠한 특정 작업을 수행하기 위한 명령문의 집합이라 할 수 있습니다.</p>
+
+<p><br /></p>
+
+<p>ex) 자동차 클래스</p>
+
+<p>정보/상태 (Fields)<br />
+이름, 최고속도, 가격, 브랜드</p>
+
+<p>기능 / 동작 / 행동 (Methods())<br />
+시동켜기, 악셀, 브레이크</p>
+
+<h2 id="객체인스턴스">객체(인스턴스)</h2>
+
+<p>객체란 클래스를 실제 사용할 수 있도록 만든 것으로<br />
+메모리 공간을 할당해 놓은 인스턴스(Instance)라고도 하며</p>
+
+<p>클래스의 동적인 상태를 의미합니다. (new 명령어를 통해 생성) 
+자바에서 클래스를 사용하기 위해서는 우선 해당 클래스 타입의 객체(object)를 선언해야 합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">car</span> <span class="n">avante</span> <span class="o">=</span> <span class="k">new</span> <span class="n">car</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>이렇게 클래스로부터 객체를 선언하는 과정을 클래스의 인스턴스 화라고 합니다.<br />
+또한, 이렇게 선언된 해당 클래스 타입의 객체를 인스턴스(instance)라고 합니다.</p>
+
+<p>즉, 인스턴스란 메모리에 할당된 객체를 의미합니다.<br />
+자바에서는 하나의 클래스로부터 여러 개의 인스턴스를 생성할 수 있습니다.</p>
+
+<p>이렇게 생성된 인스턴스는 독립된 메모리 공간에 저장된 자신만의 필드를 가질 수 있습니다.<br />
+하지만 해당 클래스의 모든 메소드(method)는<br />
+해당 클래스에서 생성된 모든 인스턴스가 공유하게 됩니다.</p>
+
+<hr />
+
+<h2 id="코드로-확인해-보자">코드로 확인해 보자.</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+
+
+    <span class="c1">// 자바의 경우 암묵적으로 클래스이름은 무조건 대문자로 시작.</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
+
+        <span class="c1">// 멤버 변수 (속성), camel case로 네이밍하기.</span>
+        <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
+
+        <span class="c1">// 기본 생성자 ( 메모리에 객체를 생성하는 역할 )</span>
+        <span class="kd">public</span> <span class="nf">Car</span><span class="o">(){</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"car constructor"</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="c1">// 생성자와 메소드의차이 맨앞에 대문자인지 소문자인지</span>
+
+        <span class="c1">// 메소드 (기능), camel case로 네이밍하기.</span>
+        <span class="kt">void</span> <span class="nf">showInfo</span><span class="o">(){</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"최고 속도는"</span> <span class="o">+</span> <span class="n">maxSpeed</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"가격은"</span> <span class="o">+</span> <span class="n">price</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//car타입인 avante에넣는다. &lt;--car()객체를 생성</span>
+        <span class="n">car</span> <span class="n">avante</span> <span class="o">=</span> <span class="k">new</span> <span class="n">car</span><span class="o">();</span>
+        <span class="c1">// new car() : 메모리 내에 객체생성, 이때 객체를 생성하기 위한 메소드로 사용하기 위해 만들어진 것이 기본 생성자</span>
+        <span class="c1">// car avante : car타입의 avante인스턴스 생성</span>
+        
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>① 멤버 변수: 클래스의 속성<br />
+② 생성자: 객체의 초기화를 담당<br />
+③ 메소드: 클래스의 속성을 조작<br />
+④ 내포 클래스(Nested Class): 클래스안에 클래스 존재 가능</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
+
+        <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span><span class="c1">// 전역변수</span>
+        <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
+
+        <span class="c1">// 이런식으로 만들면 이 바로아래 변수는 지역 변수이므로</span>
+        <span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">,</span> <span class="kt">int</span> <span class="n">price</span><span class="o">){</span>
+            <span class="c1">// 전역변수랑 이름이 겹친다.</span>
+            <span class="n">maxSpeed</span> <span class="o">=</span> <span class="n">maxSpeed</span><span class="o">;</span>
+            <span class="n">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;</span>
+        <span class="o">}</span>
+
+
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
+
+        <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span>   
+        <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
+
+        
+        <span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">,</span> <span class="kt">int</span> <span class="n">price</span><span class="o">){</span>
+        <span class="c1">// 그레서 이렇게 this를 붙혀 이 객체의 전역변수라는 것을 알려주어 생성자를 사용한다.</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">maxSpeed</span> <span class="o">=</span> <span class="n">maxSpeed</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">price</span> <span class="o">=</span> <span class="n">price</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="c1">// 기본 생성자가 있어야 위와 같은 생성자를 만들 수 있다.</span>
+
+
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p><a href="https://danmilife.tistory.com/19">참조 블로그</a></p>
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#%EA%B0%9D%EC%B2%B4" class="page__taxonomy-item p-category" rel="tag">객체</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4" class="page__taxonomy-item p-category" rel="tag">인스턴스</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%81%B4%EB%9E%98%EC%8A%A4" class="page__taxonomy-item p-category" rel="tag">클래스</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#basic-of-java" class="page__taxonomy-item p-category" rel="tag">Basic of java</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-11-27">2022-11-27</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EA%B0%9D%EC%B2%B4%2C+%ED%81%B4%EB%9E%98%EC%8A%A4%2C+%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%20http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FJava4%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FJava4%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FJava4%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/basic%20of%20java/Java3/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>객체지향 프로그래밍과 절차적 프로그래밍</a>
+    
+    
+      <a href="/basic%20of%20java/Java5/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>맥북 이클립스 자동완성, Contents Assist 사용하기</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EC%9D%B8%ED%94%84%EB%9F%B0%20%EC%8B%A4%EC%A0%84%20%EC%9E%90%EB%B0%94/%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-1/" rel="permalink">Java 프로그래밍이란?, Hellow Java
+</a>
+      
+    </h2>
+    <!-- comment는 주석. -->
+    
+
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/basic%20of%20java/Java5/" rel="permalink">맥북 이클립스 자동완성, Contents Assist 사용하기
+</a>
+      
+    </h2>
+    <!-- comment는 주석. -->
+    
+
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring/" rel="permalink">스프링 기초
+</a>
+      
+    </h2>
+    <!-- comment는 주석. -->
+    
+
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/basic%20of%20java/Java3/" rel="permalink">객체지향 프로그래밍과 절차적 프로그래밍
+</a>
+      
+    </h2>
+    <!-- comment는 주석. -->
+    
+
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/hyunjunhwang1994" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/hyunjuuuuun/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Hyun Jun. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <!-- start custom comments scripts -->
+
+<!-- end custom comments scripts -->
+
+<script>
+    'use strict';
+
+    window.customUtterances = {
+      theme: 'github-light',
+      darkTheme: 'github-dark',
+      onChange: (theme) => {
+        var commentContainer = document.querySelector('#utterances-comments');
+  
+        if (!commentContainer) {
+          return;
+        }
+  
+        while ( commentContainer.hasChildNodes() ) { 
+          commentContainer.removeChild( commentContainer.firstChild );
+        }
+  
+        var script = document.createElement('script');
+        script.setAttribute('src', 'https://utteranc.es/client.js');
+        script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
+        script.setAttribute('label', 'utterances');
+        script.setAttribute('issue-term', 'pathname');
+        script.setAttribute('theme', theme);
+        script.setAttribute('crossorigin', 'anonymous');
+  
+        commentContainer.appendChild(script);
+      }
+    };
+  </script>
+
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>
