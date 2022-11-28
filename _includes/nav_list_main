@@ -48,6 +48,14 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "인프런 실전 자바" %}
+                        <li><a href="/categories/PracticeJava" class="">인프런 실전 자바 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            
       </li>
   </ul>
 </nav>
