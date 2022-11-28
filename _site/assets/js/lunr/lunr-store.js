@@ -18,32 +18,32 @@ var store = [{
         "teaser": null
       },{
         "title": "개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 깃허브 계정 만들기. 아래의 링크에서 깃허브 계정을 만든다. 깃허브 Repository(저장소) 만들기 Repository에 들어가서 자신의 블로그로 사용 할 레퍼지토리를 만들어야 한다. 우상단 프로필클릭 -&gt; Your repositories -&gt; New를 눌러 새 레파지토리 생성 Repository name은 꼭 깃허브계정.github.io로...","categories": ["블로그 만들기"],
-        "tags": ["github","blog"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 깃허브 깃허브 계정 만들기. 아래의 링크에서 깃허브 계정을 만든다. 깃허브 Repository(저장소) 만들기 Repository에 들어가서 자신의 블로그로 사용 할 레퍼지토리를 만들어야 한다. 우상단 프로필클릭 -&gt; Your repositories -&gt; New를 눌러 새 레파지토리 생성 Repository name은 꼭...","categories": ["블로그 만들기"],
+        "tags": ["Github blog","개발자 블로그 포트폴리오","Jekyll blog","Minimal Mistakes 설치"],
         "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll1/",
         "teaser": null
       },{
-        "title": "깃허브 블로그 포스팅 하는법",
-        "excerpt":"title: “개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)” last_modified_at: 2022-11-22 categories: - 블로그 만들기 개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 기본적인 포스팅 방법 포스팅 할 글의 경우 /posts 에 올려주면 됩니다. 하지만 처음에 없으므로 생성합니다. 새로운 파일생성 _posts/ &lt;- / 를 치면...","categories": ["블로그 만들기"],
-        "tags": ["github","blog"],
+        "title": "포스팅 하는법",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 기본적인 포스팅 방법 포스팅할 글의 경우 /posts에 올려주면 됩니다. 하지만 처음에 없으므로 생성합니다. 새로운 파일 생성 _posts/ &lt;- / 를 치면 폴더 생성입니다. 파일 제목은 꼭 년도-월-일-ab-cd.md 형식으로 만들어야 합니다. Commit new file을 해주세요. 이와...","categories": ["블로그 만들기"],
+        "tags": ["Github blog 포스팅","Jekyll 포스팅 하는 법"],
         "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll2/",
         "teaser": null
       },{
-        "title": "맥북 M1 깃허브 지킬 블로그 환경 만들기",
-        "excerpt":"이번에는 터미널 활용과, 로컬서버 생성을 하기 위한 셋업등을 알려드릴게요. 결론적으로 아래와 같은 것들을 설치해야 합니다. Homebrew rbenv ruby (맥은 기본적으로 깔려있지만, 다른버전 설치해야함) jekyll, bundler Homebrew https://brew.sh/index_ko 접속 후 설치. 맥 터미널에서 /bin/bash -c “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)” 위와 같은 명령어 실행 시 다운로드 할 수 있다. 이때 혹시 아래와 같은...","categories": ["블로그 만들기"],
-        "tags": [],
+        "title": "지킬 블로그 로컬 환경 만들기",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 설치 목록. 이번에는 터미널 활용과, 로컬 서버 생성을 하기 위한 셋업 등을 알려드릴게요. 결론적으로 아래와 같은 것들을 설치해야 합니다. Homebrew rbenv ruby (맥은 기본적으로 깔려있지만, 다른 버전 설치해야 함) jekyll, bundler Homebrew 설치 아래 링크에서...","categories": ["블로그 만들기"],
+        "tags": ["Jekyll blog 로컬 환경 만들기","homebrew 설치","rbenv 설치","루비 설치","Jekyll과 Bundler 설치"],
         "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll3/",
         "teaser": null
       },{
         "title": "깃허브 블로그 로컬 호스팅 하기 (실시간 확인)",
-        "excerpt":"3탄의 과정이 끝났다면 더욱 자유도가 높아집니다. 블로그 내용 수정 시 실시간으로 확인하기 자신의 블로그 레파지토리 폴더를 터미널로 연다. 해당 폴더안에서 아래의 명령어 입력으로 번들을 설치해준다. bundle install 그럼 번들이 우리의 블로그에 설치 되었을 것이다. 그렇다면 아래의 명령어로 서버를 실행시켜준다. bundle exec jekyll serve 아래처럼 나오면 성공! 브라우저로 http://127.0.0.1:4000 에 접속해주면된다....","categories": ["블로그 만들기"],
-        "tags": [],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 블로그 로컬 호스팅 하기 자신의 블로그 레파지토리 폴더를 터미널로 연다. 해당 폴더 안에서 아래의 명령어 입력으로 번들을 설치해 준다. bundle install 그럼 번들이 우리의 블로그에 설치되었을 것이다. 그렇다면 아래의 명령어로 서버를 실행시켜준다. bundle exec jekyll...","categories": ["블로그 만들기"],
+        "tags": ["Jekyll blog 로컬 환경 만들기","Jekyll blog 실시간 확인"],
         "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll4/",
         "teaser": null
       },{
         "title": "VS Code 설치, 확장팩 설치",
-        "excerpt":"포스팅을 편리하게 하기 위한 VS code 설치 설치 https://code.visualstudio.com/ 설치 후 VS code 실행 익스텐션 설치 확장팩을 설치하는 과정입니다. 왼쪽 맨아래 확장 메뉴에서 해당 팩들을 설치해주세요. (저는 설치 되어있어서 제거로나옴.) 한글패치 마크다운 언어 사용시 올인원 툴 마크다운 사진 편하게 붙히는 팩 폴더열기 -&gt; 자신의 블로그 레파지토리 선택 이런식으로 나오면 성공입니다....","categories": ["블로그 만들기"],
-        "tags": [],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 포스팅을 편리하게 하기 위한 VS code 설치 설치 아래의 링크에서 설치해 주세요. VS Code 익스텐션 설치 확장팩을 설치하는 과정입니다. 왼쪽 맨 아래 확장 메뉴에서 해당 팩들을 설치해 주세요. (저는 설치되어 있어서 제거로 나오고 있네요.) 한글...","categories": ["블로그 만들기"],
+        "tags": ["VS code 설치","Paste image 설치","VS code 한글 패치"],
         "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll5/",
         "teaser": null
       },{
