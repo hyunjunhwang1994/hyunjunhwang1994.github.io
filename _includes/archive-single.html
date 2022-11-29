@@ -24,13 +24,11 @@
         <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
       {% endif %}
     </h2>
-    <!-- comment는 주석. -->
+    {% include page__meta.html type=include.type %}
+    
     {% comment %}
-    {% include page__meta.html type=include.type %}  시간및 읽는시간 표시.
-    페이지 내용 요약
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
     {% endcomment %}
-
   </article>
 </div>
 

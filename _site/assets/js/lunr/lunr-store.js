@@ -47,15 +47,15 @@ var store = [{
         "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll5/",
         "teaser": null
       },{
-        "title": "맥북 M1, VS code Paste Image",
-        "excerpt":"VS code에서 MarkDown 이미지 쉽게 붙혀넣기. Paste Image란? 이미지 복사 -&gt; VS code 마크다운 문서 -&gt; Command + Option + V -&gt; 이미지 파일 자동 저장및, 문서에 삽입 VS Code의 확장에 들어오면 Paste Image라는 앱이 존재 합니다. 설치 설정. Bass Path : url 스타트를 어디서 할지 정합니다. Path :해당 스타트지점...","categories": ["블로그 만들기"],
-        "tags": [],
+        "title": "매우 편리한 이미지 넣기 VS code Paste Image",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 Paste Image? 공식 움짤인데..? 참 설명도 헷갈리게 해 놓았다.. Paste Image 앱은 VS Code 내에서 돌아가며, 인터넷상 존재하는 혹은 캡처한 이미지 파일을 VS Code에서 간단하게 저장 및 Markdown 자동 작성까지 해준다. (여기서 포인트는 문법 작성뿐...","categories": ["블로그 만들기"],
+        "tags": ["Paste image 사용법"],
         "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll6/",
         "teaser": null
       },{
         "title": "_config,yml 수정, 블로그 정보 수정하기",
-        "excerpt":"_config.yml에서 여러가지 정보를 수정할 수 있다. skin : 원하는 스킨 선택 민트를 할경 minimal_mistakes_skin : 원하는 스킨 선택, 민트 선택할 경우 locale : “ko-KR” 할 경우 여러가지 설정된 언어가 한글로 바뀝니다 예를들면 위에 팔로우: 피드 이런부분! title : “IT 기술 블로그” title_separator : “ ” subtitle : “small positive action”...","categories": ["블로그 만들기"],
-        "tags": [],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 _config.yml이 뭐지? _config.yml은 Jekyll 블로그 생성시 만들어지는 파일로 여러가지 블로그 관련 정보를 설정 할 수 있다. 스킨 선택 minimal_mistakes_skin : 설정 하고싶은 스킨을 선택해 보자. Mint를 선택 할 경우 언어 변경 locale : “ko-KR” 할...","categories": ["블로그 만들기"],
+        "tags": ["_config.yml 설정하기"],
         "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll7/",
         "teaser": null
       },{
