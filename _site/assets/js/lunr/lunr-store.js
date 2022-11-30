@@ -54,7 +54,7 @@ var store = [{
         "teaser": null
       },{
         "title": "_config,yml 수정, 블로그 정보 수정하기",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 _config.yml이 뭐지? _config.yml은 Jekyll 블로그 생성시 만들어지는 파일로 여러가지 블로그 관련 정보를 설정 할 수 있다. 스킨 선택 minimal_mistakes_skin : 설정 하고싶은 스킨을 선택해 보자. Mint를 선택 할 경우 언어 변경 locale : “ko-KR” 할...","categories": ["블로그 만들기"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 _config.yml? _config.yml은 Jekyll 블로그 생성시 만들어지는 파일로 여러가지 블로그 관련 정보를 설정 할 수 있다. 스킨 선택 minimal_mistakes_skin : 설정 하고싶은 스킨을 선택해 보자. Mint를 선택 할 경우 언어 변경 locale : “ko-KR” 할 경우...","categories": ["블로그 만들기"],
         "tags": ["_config.yml 설정하기"],
         "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/jekyll7/",
         "teaser": null
@@ -66,14 +66,14 @@ var store = [{
         "teaser": null
       },{
         "title": "깃허브 블로그 Disqus 댓글 기능 만들기",
-        "excerpt":"아래 페이지에서 회원 가입을 해주세요. https://disqus.com/ settings Add Disqus To site 좀 내려서 Get Started I want to install Disqus on my site 아래와 비슷하게 네임을 수정해서 만들어주세요. 베이직 -&gt; Subscribe Now 지킬 클릭. 기본적인설정이 _config.yml에 있으므로 아래 코드 복사 안해도됩니다. Configure클릭 입력후 next Complete setup _config.yml 설정 comments: true...","categories": ["기능 구현하기"],
-        "tags": ["github","blog","test"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 Disqus Disqus란 댓글 API를 제공하는 회사이다. 보통 네이버나, 티스토리 등 블로그에는 댓글 기능이 달려 있지만, Jekyll 기반 블로그, 개인 블로그 등에 댓글 기능을 추가할 때 사용하면 된다. 회원 가입. 아래 페이지에서 회원 가입을 해주세요. Disqus...","categories": ["기능 구현하기"],
+        "tags": ["Disqus","Jekyll 블로그 댓글 기능"],
         "url": "/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll8/",
         "teaser": null
       },{
         "title": "Google analytics 추가하기",
-        "excerpt":"_config.yml         google analyics검색   첫 사용자인 경우 측정시작 클릭   이름 설정후 맨아래 다음 클릭 ( 설정은 기본 옵션대로 하기 )       업종의 경우 자신이 원하는걸로 선택.         웹 클릭      요런식으로 자신에맞게 URL및 스트림이름 입력후 스트림만들기 클릭    측정 ID복사         적용되는데 시간이 좀걸린다.   analytics -&gt; 보고서에 들어가면 각종 정보들이 확인가능하다.   ","categories": ["기능 구현하기"],
-        "tags": [],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 Google analytics ? 웹사이트 방문자 데이터를 수집, 분석할 수 있게 도와주는 앱이다. _config.yml 설정하기. Google analytics 첫 사용자인 경우 측정시작 클릭 후 진행. 계정 이름, 속성 이름 설정 후 다음. 업종의 경우 자신이 원하는걸로 선택....","categories": ["기능 구현하기"],
+        "tags": ["Disqus","Jekyll 블로그 댓글 기능"],
         "url": "/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/jekyll9/",
         "teaser": null
       },{
@@ -111,5 +111,11 @@ var store = [{
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 Eclipse: Version: 2022-09 (4.25.0) 해당 포스팅의 전반적인 내용 및 사진은 인프런의 자바 강의에서 가지고 왔습니다. https://www.inflearn.com/course/%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94_java-renew/dashboard 프로그래밍이란? 각 나라들의 언어가 다른 것처럼 우리가 생성한 코드(인간의 언어)는 컴파일러를 통해 컴퓨터의 언어로...","categories": ["인프런 실전 자바"],
         "tags": ["프로그래밍이란?","Java 언어의 탄생","Java 언어의 특징","JDK","JRE"],
         "url": "/%EC%9D%B8%ED%94%84%EB%9F%B0%20%EC%8B%A4%EC%A0%84%20%EC%9E%90%EB%B0%94/%EC%9D%B8%ED%94%84%EB%9F%B0-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-1/",
+        "teaser": null
+      },{
+        "title": "맥에서 이클립스 오류나는 경우.",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 맥에서 아래와 같은 오류나는 경우?? 이클립스 워크스페이스 폴더 경로에 맥에서 사용하는 특수문자가 들어가 있다면 지워 주면 잘 실행 될 것이다....","categories": ["Basic of java"],
+        "tags": ["Error: A JNI error has occurred, please check your installation and try again","Exception in thread main java.lang.IllegalArgumentException: Error decoding percent encoded characters"],
+        "url": "/basic%20of%20java/Java6/",
         "teaser": null
       }]
