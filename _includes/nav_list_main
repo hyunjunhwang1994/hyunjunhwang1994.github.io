@@ -41,21 +41,17 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Spring" %}
-                        <li><a href="/categories/Spring" class="">Spring ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "인프런 실전 자바" %}
-                        <li><a href="/categories/PracticeJava" class="">인프런 실전 자바 ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
+
+           
             
+            <span class="nav__sub-title">Java-Spring</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Basic of spring" %}
+                        <li><a href="/categories/BasicOfSpring" class="">Basic of spring ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
       </li>
   </ul>
 </nav>
