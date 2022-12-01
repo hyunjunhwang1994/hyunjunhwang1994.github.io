@@ -1,9 +1,9 @@
 ---
-title: "Spring"
+title: "Basic of spring"
 layout: archive
-permalink: categories/Spring
+permalink: categories/BasicOfSpring
 ---
 
 
-{% assign posts = site.categories.Spring %}
+{% assign posts = site.categories.["Basic of spring"] %}
 {% for post in posts %} {% include archive-single2.html type=page.entries_layout %} {% endfor %}

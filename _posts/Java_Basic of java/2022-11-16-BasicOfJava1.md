@@ -1,12 +1,12 @@
 ---
-title: "맥북 M1 JDK 1.8 (Java 8) 설치하는 법" 
-last_modified_at: 2022-11-28
+title: "맥북 M1 JDK 1.8 (Java 8) 설치하는 법, 버전 변경하는 법" 
+last_modified_at: 2022-12-01
 categories: 
     - Basic of java
-tag: ["맥북 M1 JDK 1.8 설치", "M1 JDK 환경변수 설정"]
+tag: [맥북 M1 JDK 1.8 설치, M1 JDK 환경변수 설정, M1 JDK 버전 변경 ]
 ---
 
-<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
+
 <div class="notice" style="text-align:center">
           개발 환경<br>
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br>
@@ -86,5 +86,12 @@ vi ~/.zshrc
     source ~/.zshrc  
 
 ![](../../images/2022-11-28-14-02-37.png)
+
+JDK 버전 변경의 경우 (위의 포스팅 내용 참고하여 파일및 경로만 수정해주면 됩니다.)
+- 해당 버전의 JDK 설치
+- /usr/libexec/java_home -V  (설치된 JDK 리스트 확인)
+- .bash_profile, .zshrc 2개의 파일 경로 새로운 버전 경로로 변경
+- source로 .bash_profile, .zshrc 적용
+- java -version, javac -version 으로 버전 확인
 
 JDK 1.8 ( ARM )과 이클립스 최신 버전과 같이 쓰실 분은 아래 링크 글 참조하세요.

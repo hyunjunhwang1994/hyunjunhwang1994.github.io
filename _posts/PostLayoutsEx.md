@@ -6,7 +6,7 @@ categories:                         # 카테고리 생성
 tag: [study, program, My Dream]     # 태그이름 설정
 ---
 
-<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
+<!-- 컴퓨터 및 컴퓨터 버전 -->
 <div class="notice" style="text-align:center">
           개발 환경<br>
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br>
@@ -14,7 +14,7 @@ tag: [study, program, My Dream]     # 태그이름 설정
 </div>
 <hr>
 
-<!-- 자바 포스팅시 JDK, IDE버전 등-->
+<!-- JDK, IDE버전 등-->
 <div class="notice--info" style="text-align:center">
           버전<br>
           JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08)<br>

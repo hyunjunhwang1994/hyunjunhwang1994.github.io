@@ -1,7 +1,7 @@
 var store = [{
-        "title": "맥북 M1 JDK 1.8 (Java 8) 설치하는 법",
+        "title": "맥북 M1 JDK 1.8 (Java 8) 설치하는 법, 버전 변경하는 법",
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 라이선스 비용 및 안정성 등 여러 가지 이유로 현업에서는 1.8 버전을 많이 사용합니다. Oracle JDK의 경우 M1, ARM 방식의 JDK 8버전은 지원하지 않으므로.. Open JDK인 Azul Zulu를 받아야 한다. Open JDK 다운로드 된 설치 파일...","categories": ["Basic of java"],
-        "tags": ["맥북 M1 JDK 1.8 설치","M1 JDK 환경변수 설정"],
+        "tags": ["맥북 M1 JDK 1.8 설치","M1 JDK 환경변수 설정","M1 JDK 버전 변경"],
         "url": "/basic%20of%20java/BasicOfJava1/",
         "teaser": null
       },{
@@ -113,9 +113,15 @@ var store = [{
         "url": "/basic%20of%20java/BasicOfJava14/",
         "teaser": null
       },{
-        "title": "스프링 기초",
-        "excerpt":"            개발 환경            - 2021, 맥북 프로 M1 Pro 14인치 모델             - Ventura 13.1 베타(22C5050e) 버전                버전            JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08)            IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition)    ","categories": ["Basic of spring"],
-        "tags": ["Spring 기초"],
-        "url": "/basic%20of%20spring/BasicOfSpring/",
+        "title": "스프링 부트 기초",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version \"11.0.17\" 2022-10-18 LTS IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 해당 포스팅의 전반적인 내용 및 사진은 인프런의 스프링 시리즈 강의 중 하나인 \"스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB...","categories": ["Basic of spring"],
+        "tags": ["Spring 기초","Spring Boot 시작하기"],
+        "url": "/basic%20of%20spring/BasicOfSpring1/",
+        "teaser": null
+      },{
+        "title": "스프링 부트 기초2",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version \"11.0.17\" 2022-10-18 LTS IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 해당 포스팅의 전반적인 내용 및 사진은 인프런의 스프링 시리즈 강의 중 하나인 \"스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB...","categories": ["Basic of spring"],
+        "tags": ["Spring 기초","Spring Boot 시작하기"],
+        "url": "/basic%20of%20spring/BasicOfSpring2/",
         "teaser": null
       }]

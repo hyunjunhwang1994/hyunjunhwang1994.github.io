@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>맥북 M1 JDK 1.8 (Java 8) 설치하는 법 | 기술 블로그</title>
+<!-- begin _includes/seo.html --><title>맥북 M1 JDK 1.8 (Java 8) 설치하는 법, 버전 변경하는 법 | 기술 블로그</title>
 <meta name="description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1 베타(22C5050e) 버전">
 
 
@@ -22,7 +22,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="기술 블로그">
-<meta property="og:title" content="맥북 M1 JDK 1.8 (Java 8) 설치하는 법">
+<meta property="og:title" content="맥북 M1 JDK 1.8 (Java 8) 설치하는 법, 버전 변경하는 법">
 <meta property="og:url" content="http://localhost:4000/basic%20of%20java/BasicOfJava1/">
 
 
@@ -38,7 +38,7 @@
 
 
 
-  <meta property="article:modified_time" content="2022-11-28T00:00:00+09:00">
+  <meta property="article:modified_time" content="2022-12-01T00:00:00+09:00">
 
 
 
@@ -220,7 +220,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">20</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">21</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -282,7 +282,7 @@
                     
                 
                     
-                        <li><a href="/categories/BasicOfSpring" class="">Basic of spring (1)</a></li>
+                        <li><a href="/categories/BasicOfSpring" class="">Basic of spring (2)</a></li>
                     
                 
             </ul>
@@ -302,16 +302,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="맥북 M1 JDK 1.8 (Java 8) 설치하는 법">
+    <meta itemprop="headline" content="맥북 M1 JDK 1.8 (Java 8) 설치하는 법, 버전 변경하는 법">
     <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1 베타(22C5050e) 버전">
     <meta itemprop="datePublished" content="2022-11-16T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2022-11-28T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2022-12-01T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/basic%20of%20java/BasicOfJava1/" class="u-url" itemprop="url">맥북 M1 JDK 1.8 (Java 8) 설치하는 법
+            <a href="http://localhost:4000/basic%20of%20java/BasicOfJava1/" class="u-url" itemprop="url">맥북 M1 JDK 1.8 (Java 8) 설치하는 법, 버전 변경하는 법
 </a>
           </h1>
           
@@ -335,7 +335,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          4 분 소요
         
       </span>
     
@@ -355,8 +355,7 @@
             </nav>
           </aside>
         
-        <!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
-<div class="notice" style="text-align:center">
+        <div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1 베타(22C5050e) 버전
@@ -433,6 +432,15 @@ source ~/.zshrc
 
 <p><img src="../../images/2022-11-28-14-02-37.png" alt="" /></p>
 
+<p>JDK 버전 변경의 경우 (위의 포스팅 내용 참고하여 파일및 경로만 수정해주면 됩니다.)</p>
+<ul>
+  <li>해당 버전의 JDK 설치</li>
+  <li>/usr/libexec/java_home -V  (설치된 JDK 리스트 확인)</li>
+  <li>.bash_profile, .zshrc 2개의 파일 경로 새로운 버전 경로로 변경</li>
+  <li>source로 .bash_profile, .zshrc 적용</li>
+  <li>java -version, javac -version 으로 버전 확인</li>
+</ul>
+
 <p>JDK 1.8 ( ARM )과 이클립스 최신 버전과 같이 쓰실 분은 아래 링크 글 참조하세요.</p>
  <!--실제 페이지 글 부분-->
         
@@ -449,6 +457,8 @@ source ~/.zshrc
   <p class="page__taxonomy">
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
+    
+      <a href="/tags/#m1-jdk-%EB%B2%84%EC%A0%84-%EB%B3%80%EA%B2%BD" class="page__taxonomy-item p-category" rel="tag">M1 JDK 버전 변경</a><span class="sep">, </span>
     
       <a href="/tags/#m1-jdk-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98-%EC%84%A4%EC%A0%95" class="page__taxonomy-item p-category" rel="tag">M1 JDK 환경변수 설정</a><span class="sep">, </span>
     
@@ -477,7 +487,7 @@ source ~/.zshrc
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-11-28">2022-11-28</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-01">2022-12-01</time></p>
 
       </footer>
 
@@ -486,7 +496,7 @@ source ~/.zshrc
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%EB%A7%A5%EB%B6%81+M1+JDK+1.8+%28Java+8%29+%EC%84%A4%EC%B9%98%ED%95%98%EB%8A%94+%EB%B2%95%20http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FBasicOfJava1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%EB%A7%A5%EB%B6%81+M1+JDK+1.8+%28Java+8%29+%EC%84%A4%EC%B9%98%ED%95%98%EB%8A%94+%EB%B2%95%2C+%EB%B2%84%EC%A0%84+%EB%B3%80%EA%B2%BD%ED%95%98%EB%8A%94+%EB%B2%95%20http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FBasicOfJava1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbasic%2520of%2520java%2FBasicOfJava1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -549,7 +559,7 @@ source ~/.zshrc
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/basic%20of%20spring/BasicOfSpring/" rel="permalink">스프링 기초
+        <a href="/basic%20of%20spring/BasicOfSpring2/" rel="permalink">스프링 부트 기초2
 </a>
       
     </h2>
@@ -561,7 +571,7 @@ source ~/.zshrc
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-11-25T00:00:00+09:00">2022-11-25</time>
+        <time datetime="2022-12-01T00:00:00+09:00">2022-12-01</time>
       </span>
     
 
@@ -574,7 +584,63 @@ source ~/.zshrc
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/basic%20of%20spring/BasicOfSpring1/" rel="permalink">스프링 부트 기초
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-01T00:00:00+09:00">2022-12-01</time>
+      </span>
+    
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          9 분 소요
         
       </span>
     
@@ -687,62 +753,6 @@ source ~/.zshrc
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           30 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures3/" rel="permalink">minimal-mistakes 기반 Utterances 댓글 적용
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-11-23T00:00:00+09:00">2022-11-23</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          13 분 소요
         
       </span>
     
