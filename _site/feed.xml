@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-01T13:30:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 부트 기초2</title><link href="http://localhost:4000/basic%20of%20spring/BasicOfSpring2/" rel="alternate" type="text/html" title="스프링 부트 기초2" /><published>2022-12-01T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20spring/BasicOfSpring2</id><content type="html" xml:base="http://localhost:4000/basic%20of%20spring/BasicOfSpring2/"><![CDATA[<div class="notice" style="text-align:center">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-02T22:00:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 부트 기초2</title><link href="http://localhost:4000/basic%20of%20spring/BasicOfSpring2/" rel="alternate" type="text/html" title="스프링 부트 기초2" /><published>2022-12-01T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20spring/BasicOfSpring2</id><content type="html" xml:base="http://localhost:4000/basic%20of%20spring/BasicOfSpring2/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1 베타(22C5050e) 버전
@@ -31,45 +31,45 @@ thymeleaf, web 2가지 밖에 안된다.
 <img src="../../images/2022-12-01-12-50-07.png" alt="" /></p>
 
 <p>하지만 설치된 라이브러리들을 표시해 주는 External Libraries 폴더를 클릭하면,<br />
-라이브러리들이 많이 나온다. 아파치..톰캣.. junit 스프링부트.. 등등
+라이브러리들이 많이 나온다. 아파치, 톰캣, junit 스프링 부트.. 등등
 <img src="../../images/2022-12-01-12-52-45.png" alt="" /></p>
 
-<p>반대로 얘기해보면, 요즈음 웹 애플리케이션을 만들려면 기본적으로 수많은 라이브러리가 필요하다.<br />
-(빌드 시 몇십메가 정도가 나옴.)</p>
+<p>반대로 얘기해 보면, 요즈음 웹 애플리케이션을 만들려면 기본적으로 수많은 라이브러리가 필요하다.<br />
+(빌드 시 몇십 메가 정도가 나옴.)</p>
 
 <p>Gradle이 의존관계에 있는 여러 라이브러리들을 알아서 설치해 준 것이다.
-( 그래들이라 메이븐 같은 .. )</p>
+( 그래들이나 메이븐 같은 .. )</p>
 
-<p>이렇게 타고타고 가서 스프링 코어 까지 가저온다.</p>
+<p>이렇게 의존관계를 타고 타고 가서 스프링 코어까지 가져온다.</p>
 
 <p>인텔리제이 화면 왼쪽 최하단에 네모 버튼 클릭<br />
 <img src="../../images/2022-12-01-12-54-51.png" alt="" /></p>
 
-<p>화면 오른쪽 위쪽에 그레이들 클릭 ( 의존관계를 볼 수 있다. )
-<img src="../../images/2022-12-01-12-55-21.png" alt="" /></p>
+<p><img src="../../images/2022-12-01-12-55-21.png" alt="" />
+&lt;- 화면 오른쪽 위쪽에 그레이들 클릭 ( 의존관계를 볼 수 있다. )</p>
 
-<p>thymeleaf, spring-boot-starter-web등을 가지고 올때<br />
-있어야만 하는 라이브러리들 (의존관계이 있는.)을 자동으로 가지고 와준다.
+<p>thymeleaf, spring-boot-starter-web 등을 가지고 올 때<br />
+있어야만 하는 라이브러리들 (의존관계의 있는)을 자동으로 가지고 와준다.
 <img src="../../images/2022-12-01-12-55-59.png" alt="" /></p>
 
-<p>*은 중복된 의존관계로 한 라이브러리에 표시 되었다면<br />
-다른 라이브러리의 의존관계라도 열지 못하고 *로 나온다.</p>
+<p>*은 중복된 의존관계로 한 라이브러리에 표시되었다면<br />
+다른 라이브러리의 의존관계라도 표시하지 않고 *로 나온다.</p>
 
 <p><br /></p>
 
 <p>고대의 선배님들은 웹서버와 톰캣이 분리되어 있어서,<br />
 웹서버 안에 톰캣을 깔고, 자바 패키지를 업로드하고 사용했지만,</p>
 
-<p>요즘은 임베디드(내장)형식으로 라이브러리에<br />
+<p>요즘은 임베디드(내장) 형식으로 라이브러리에<br />
 웹서버를 포함하고 있다.</p>
 
-<p>요즈음에는 다 이런식으로 진행을 한다.</p>
+<p>요즈음에는 다 이런 식으로 진행을 한다.</p>
 
-<p>라이브러리 하나 잘 빌드해서 웹서버에 올리면 끝나는 것<br />
-예전처럼 톰캣서버 깔고 이러지 않는다!</p>
+<p>라이브러리 하나 잘 빌드 해서 웹서버에 올리면 끝나는 것<br />
+예전처럼 톰캣 서버 깔고 이러지 않는다!</p>
 
-<p>-&gt; 스프링부트 라이브러리를 쓰면 스프링 코어 까지 다 포함되어있어서 <br />
-스프링의 왠만한 셋팅이 되어서 사용가능하다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Basic of spring" /><category term="Spring 기초" /><category term="Spring Boot 시작하기" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">스프링 부트 기초</title><link href="http://localhost:4000/basic%20of%20spring/BasicOfSpring1/" rel="alternate" type="text/html" title="스프링 부트 기초" /><published>2022-12-01T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20spring/BasicOfSpring1</id><content type="html" xml:base="http://localhost:4000/basic%20of%20spring/BasicOfSpring1/"><![CDATA[<div class="notice" style="text-align:center">
+<p>-&gt; 스프링 부트 라이브러리를 쓰면 스프링 코어까지 다 포함되어 있어서 <br />
+스프링의 웬만한 세팅이 되어서 사용 가능하다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Basic of spring" /><category term="Spring 기초" /><category term="Spring Boot 시작하기" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">스프링 부트 기초</title><link href="http://localhost:4000/basic%20of%20spring/BasicOfSpring1/" rel="alternate" type="text/html" title="스프링 부트 기초" /><published>2022-12-01T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20spring/BasicOfSpring1</id><content type="html" xml:base="http://localhost:4000/basic%20of%20spring/BasicOfSpring1/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1 베타(22C5050e) 버전
