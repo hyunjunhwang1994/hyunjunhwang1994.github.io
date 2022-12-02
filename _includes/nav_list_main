@@ -33,25 +33,38 @@
                 {% endfor %}
             </ul>
 
-        <span class="nav__sub-title">Java</span>
+        <span class="nav__sub-title">Programming language</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Basic of java" %}
-                        <li><a href="/categories/BasicOfJava" class="">Basic of java ({{category[1].size}})</a></li>
+                    {% if category[0] == "Java" %}
+                        <li><a href="/categories/Java" class="">Java ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
 
-           
-            
-            <span class="nav__sub-title">Java-Spring</span>
+
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Basic of spring" %}
-                        <li><a href="/categories/BasicOfSpring" class="">Basic of spring ({{category[1].size}})</a></li>
+                    {% if category[0] == "HTML" %}
+                        <li><a href="/categories/HTML" class="">HTML ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
+
+
+        <span class="nav__sub-title">Framework</span>   
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Spring" %}
+                        <li><a href="/categories/Spring" class="">Spring ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+
       </li>
+
+
+
   </ul>
 </nav>

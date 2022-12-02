@@ -1,4 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-02T22:00:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 부트 기초2</title><link href="http://localhost:4000/basic%20of%20spring/BasicOfSpring2/" rel="alternate" type="text/html" title="스프링 부트 기초2" /><published>2022-12-01T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20spring/BasicOfSpring2</id><content type="html" xml:base="http://localhost:4000/basic%20of%20spring/BasicOfSpring2/"><![CDATA[<div class="notice" style="text-align:center">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-02T23:53:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">div, span, p 태그의 차이</title><link href="http://localhost:4000/html/HTML01/" rel="alternate" type="text/html" title="div, span, p 태그의 차이" /><published>2022-12-02T00:00:00+09:00</published><updated>2022-12-02T00:00:00+09:00</updated><id>http://localhost:4000/html/HTML01</id><content type="html" xml:base="http://localhost:4000/html/HTML01/"><![CDATA[<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1 베타
+</div>
+<hr />
+
+<div class="notice--info" style="text-align:center">
+          버전<br />
+          PyCharm 2022.2.3 (Professional Edition)<br />
+</div>
+<hr />
+
+<blockquote>
+  <h1 id="블록요소와-인라인-요소">블록요소와 인라인 요소</h1>
+</blockquote>
+
+<ol>
+  <li>
+    <p>div, span, p 태그의 차이는 블록 요소와 인라인 요소에 있습니다.<br />
+div와 p 태그는 블록요소이고, span 태그는 인라인 요소입니다.</p>
+  </li>
+  <li>
+    <p>div 태그는 레이아웃 계층 나누기 용도,<br />
+span 태그는 특정 문단에 색을 준다던지 강조하기 위해,<br />
+p 태그는 실제 문단(paragraph)을 작성하는 용도이다.</p>
+  </li>
+  <li>
+    <p>블록 요소는 해당 요소의 영역이 브라우저의 한 줄을 모두 차지한다.<br />
+인라인 요소의 경우 태그안 내용의 길이만큼만 영역을 차지한다.</p>
+  </li>
+</ol>
+
+<p><img src="../../images/2022-12-02-23-28-15.png" alt="" /></p>
+
+<blockquote>
+  <h1 id="포함-관계">포함 관계</h1>
+</blockquote>
+
+<p>span은 div, p 태그를 포함할 수 없다.</p>
+
+<p>인라인 요소인 span 태그는 블록 요소인 div, p 태그를 자식 요소로 포함시킬 수 없다.</p>
+
+<p>기본적으로 span 안 내용이 짧을경우 작은 요소로 큰 요소를 포함 시킬 수 없으므로</p>
+
+<p>span 안에는 블록요소를 넣지 않습니다.</p>
+
+<p>반대로, div와 p태그는 span 태그를 포함할 수 있습니다.</p>
+
+<p>p 태그는 div 태그를 포함할 수 없습니다. 
+p태그는 기본적으로 문단을 입력하는 용도이므로,<br />
+p태그안에는 블록요소인 div요소는 포함할 수 없습니다.</p>
+
+<p>p태그의 자식요소로써는 span, a, strong등과 같은 인라인 요소만 올 수 있습니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;&lt;div&gt;</span>테스트<span class="nt">&lt;/div&gt;&lt;/p&gt;</span>와 같은 형태가 있다면,
+<span class="nt">&lt;div&gt;&lt;p&gt;</span>테스트<span class="nt">&lt;/p&gt;&lt;/div&gt;</span>와 같은 형태로 바꾸어야 합니다.
+</code></pre></div></div>
+
+<p>div 태그는 p 태그를 포함할 수 있다.</p>
+
+<p>div태그는 p태그처럼 문자를 입력할 수 있지만 실제용도는 HTML문서의 영역 구분을 하기 위한 요소입니다.
+각영역의 용도를 구분하는 기능이므로 다른 블록요소가 하위에 포함될 수 있습니다.</p>
+
+<p>결론적으로,<br />
+단순 텍스트 정보일 경우 p 태그에 사용하고,<br />
+구역을 나누기 위한 용도일 경우 div 태그를 사용합니다.<br />
+또한, 특정 요소를 강조하고 싶은경우 span 태그를 사용하는 것으로,</p>
+
+<p>쓰이는 용도에따라 구분해서 태그를 사용하여야 합니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="HTML" /><category term="div 태그" /><category term="span 태그" /><category term="p 태그" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타]]></summary></entry><entry><title type="html">스프링 부트 기초2</title><link href="http://localhost:4000/spring/Spring2/" rel="alternate" type="text/html" title="스프링 부트 기초2" /><published>2022-12-01T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring2</id><content type="html" xml:base="http://localhost:4000/spring/Spring2/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1 베타(22C5050e) 버전
@@ -69,7 +138,7 @@ thymeleaf, web 2가지 밖에 안된다.
 예전처럼 톰캣 서버 깔고 이러지 않는다!</p>
 
 <p>-&gt; 스프링 부트 라이브러리를 쓰면 스프링 코어까지 다 포함되어 있어서 <br />
-스프링의 웬만한 세팅이 되어서 사용 가능하다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Basic of spring" /><category term="Spring 기초" /><category term="Spring Boot 시작하기" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">스프링 부트 기초</title><link href="http://localhost:4000/basic%20of%20spring/BasicOfSpring1/" rel="alternate" type="text/html" title="스프링 부트 기초" /><published>2022-12-01T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20spring/BasicOfSpring1</id><content type="html" xml:base="http://localhost:4000/basic%20of%20spring/BasicOfSpring1/"><![CDATA[<div class="notice" style="text-align:center">
+스프링의 웬만한 세팅이 되어서 사용 가능하다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring 기초" /><category term="Spring Boot 시작하기" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">스프링 부트 기초</title><link href="http://localhost:4000/spring/Spring1/" rel="alternate" type="text/html" title="스프링 부트 기초" /><published>2022-12-01T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring1</id><content type="html" xml:base="http://localhost:4000/spring/Spring1/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1 베타(22C5050e) 버전
@@ -218,7 +287,7 @@ kill $(lsof -t -i:8080) // 해당 포트 내리기
 
 <p>그 외 오류 시 아래 링크 참조</p>
 
-<p><a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/unit/49605">강의 자료</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Basic of spring" /><category term="Spring 기초" /><category term="Spring Boot 시작하기" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">객체, 클래스, 인스턴스</title><link href="http://localhost:4000/basic%20of%20java/BasicOfJava14/" rel="alternate" type="text/html" title="객체, 클래스, 인스턴스" /><published>2022-11-25T00:00:00+09:00</published><updated>2022-11-27T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20java/BasicOfJava14</id><content type="html" xml:base="http://localhost:4000/basic%20of%20java/BasicOfJava14/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
+<p><a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/unit/49605">강의 자료</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring 기초" /><category term="Spring Boot 시작하기" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">객체, 클래스, 인스턴스</title><link href="http://localhost:4000/java/Java14/" rel="alternate" type="text/html" title="객체, 클래스, 인스턴스" /><published>2022-11-25T00:00:00+09:00</published><updated>2022-11-27T00:00:00+09:00</updated><id>http://localhost:4000/java/Java14</id><content type="html" xml:base="http://localhost:4000/java/Java14/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
 <div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
@@ -381,7 +450,7 @@ kill $(lsof -t -i:8080) // 해당 포트 내리기
     <span class="o">}</span>
 </code></pre></div></div>
 
-<p><a href="https://danmilife.tistory.com/19">참조 블로그</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Basic of java" /><category term="객체" /><category term="클래스" /><category term="인스턴스" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">객체지향 프로그래밍과 절차적 프로그래밍</title><link href="http://localhost:4000/basic%20of%20java/BasicOfJava13/" rel="alternate" type="text/html" title="객체지향 프로그래밍과 절차적 프로그래밍" /><published>2022-11-25T00:00:00+09:00</published><updated>2022-11-25T00:00:00+09:00</updated><id>http://localhost:4000/basic%20of%20java/BasicOfJava13</id><content type="html" xml:base="http://localhost:4000/basic%20of%20java/BasicOfJava13/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
+<p><a href="https://danmilife.tistory.com/19">참조 블로그</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Java" /><category term="객체" /><category term="클래스" /><category term="인스턴스" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">객체지향 프로그래밍과 절차적 프로그래밍</title><link href="http://localhost:4000/java/Java13/" rel="alternate" type="text/html" title="객체지향 프로그래밍과 절차적 프로그래밍" /><published>2022-11-25T00:00:00+09:00</published><updated>2022-11-25T00:00:00+09:00</updated><id>http://localhost:4000/java/Java13</id><content type="html" xml:base="http://localhost:4000/java/Java13/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
 <div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
@@ -683,7 +752,7 @@ OOP를 사용하면 코드의 중복을 어느 정도 줄일 수 있고</p>
   <li>객체(클래스)들은 동일한 메소드명을 사용하며 같은 의미의 응답을 합니다.</li>
   <li>응용 프로그램 상에서 하나의 함수나 연산자가 두개 이상의 서로 다른 클래스의<br />
 인스턴스들을 같은 클래스에 속한 인스턴스처럼 수행할 수 있도록 하는것을 말합니다.</li>
-</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Basic of java" /><category term="자바의 객체지향" /><category term="객체지향 프로그래밍" /><category term="절차적 프로그래밍" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">minimal-mistakes 기반 Utterances 댓글 적용</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures3/" rel="alternate" type="text/html" title="minimal-mistakes 기반 Utterances 댓글 적용" /><published>2022-11-23T00:00:00+09:00</published><updated>2022-11-23T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures3</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures3/"><![CDATA[<blockquote>
+</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Java" /><category term="자바의 객체지향" /><category term="객체지향 프로그래밍" /><category term="절차적 프로그래밍" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">minimal-mistakes 기반 Utterances 댓글 적용</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures3/" rel="alternate" type="text/html" title="minimal-mistakes 기반 Utterances 댓글 적용" /><published>2022-11-23T00:00:00+09:00</published><updated>2022-11-23T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures3</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures3/"><![CDATA[<blockquote>
   <h1 id="disqus에서-ufferances로-바꾼-이유">Disqus에서 Ufferances로 바꾼 이유.</h1>
 </blockquote>
 
@@ -1002,7 +1071,47 @@ https://ansohxxn.github.io/blog/utterances/</p>]]></content><author><name>Hyun J
 <p>적용되는데 시간이 좀 걸린다.</p>
 
 <p>analytics -&gt; 보고서에 들어가면 각종 정보들이 확인 가능하다.
-<img src="../../images/2022-11-21-09-50-33.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><category term="Google analytics" /><category term="웹 로그 분석 도구" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">깃허브 블로그 Disqus 댓글 기능 만들기</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures1/" rel="alternate" type="text/html" title="깃허브 블로그 Disqus 댓글 기능 만들기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures1</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures1/"><![CDATA[<div class="notice" style="text-align:center">
+<img src="../../images/2022-11-21-09-50-33.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><category term="Google analytics" /><category term="웹 로그 분석 도구" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">Jekyll 블로그 총 정보</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog8/" rel="alternate" type="text/html" title="Jekyll 블로그 총 정보" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog8</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog8/"><![CDATA[<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1 베타(22C5050e) 버전
+          </div>
+<hr />
+<p><br /></p>
+
+<blockquote>
+  <h1 id="jekyll-블로그-참조-블로그-링크">Jekyll 블로그 참조 블로그 링크</h1>
+</blockquote>
+
+<p><a href="https://eona1301.github.io/github_blog/GithubBlog-Content-Width/">사이드바 크기 및 넓이, 하이퍼텍스트 밑줄제거</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=--MMmHbSH9k">Minimal-Mistakes 기반 튜토리얼</a></p>
+
+<p><a href="https://etch-cure.github.io/blog/toggle-dark-mode/">화이트 / 다크 테마 토글 적용하기 (Utterances 자동 색상 변경)</a></p>
+
+<p><a href="https://ansohxxn.github.io/blog/scrollbar/">스크롤바 꾸미기</a></p>
+
+<p><a href="https://ansohxxn.github.io/blog/category/">사이드바 카테고리 만들기</a></p>
+
+<p><a href="https://ansohxxn.github.io/blog/prevnext/">사이드바 카테고리 포스팅 안에 이전 글, 다음 글 Nav 넣기</a></p>
+
+<blockquote>
+  <h1 id="설정-파일">설정 파일</h1>
+</blockquote>
+
+<h2>/</h2>
+<p>_config.yml 블로그 전반적인 내용을 담고 있다.</p>
+
+<h2 id="_data">/_data/</h2>
+
+<p>navigation.yml  우측 상단 메뉴 여부와, 클릭 시 이동 URL을 설정 가능.<br />
+ui-text.yml     영어 -&gt; 한글 번역 시 번역될 한글을 설정 가능.</p>
+
+<h2 id="_includes">/_includes/</h2>
+<p>사이드바, 카테고리 등 부분 부분 기능들을 가지고 있는 폴더.</p>
+
+<h2 id="_posts">/_posts/</h2>
+<p>실제로 포스팅을 작성하는 부분.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="블로그 만들기" /><category term="Jekyll 블로그 참조 링크" /><category term="Jekyll 설정 파일" /><category term="Jekyll 설정 폴더" /><category term="Jekyll 블로그 특징" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">깃허브 블로그 Disqus 댓글 기능 만들기</title><link href="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures1/" rel="alternate" type="text/html" title="깃허브 블로그 Disqus 댓글 기능 만들기" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures1</id><content type="html" xml:base="http://localhost:4000/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures1/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1 베타(22C5050e) 버전
@@ -1080,47 +1189,7 @@ shortname : “myshortname”
 
 <p><img src="../../images/2022-11-21-09-24-13.png" alt="" /></p>
 
-<p>Disqus 사이트 어드민에서 댓글 관리 및 여러 기능 추가 가능합니다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><category term="Disqus" /><category term="Jekyll 블로그 댓글 기능" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">Jekyll 블로그 총 정보</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog8/" rel="alternate" type="text/html" title="Jekyll 블로그 총 정보" /><published>2022-11-21T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog8</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog8/"><![CDATA[<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1 베타(22C5050e) 버전
-          </div>
-<hr />
-<p><br /></p>
-
-<blockquote>
-  <h1 id="jekyll-블로그-참조-블로그-링크">Jekyll 블로그 참조 블로그 링크</h1>
-</blockquote>
-
-<p><a href="https://eona1301.github.io/github_blog/GithubBlog-Content-Width/">사이드바 크기 및 넓이, 하이퍼텍스트 밑줄제거</a></p>
-
-<p><a href="https://www.youtube.com/watch?v=--MMmHbSH9k">Minimal-Mistakes 기반 튜토리얼</a></p>
-
-<p><a href="https://etch-cure.github.io/blog/toggle-dark-mode/">화이트 / 다크 테마 토글 적용하기 (Utterances 자동 색상 변경)</a></p>
-
-<p><a href="https://ansohxxn.github.io/blog/scrollbar/">스크롤바 꾸미기</a></p>
-
-<p><a href="https://ansohxxn.github.io/blog/category/">사이드바 카테고리 만들기</a></p>
-
-<p><a href="https://ansohxxn.github.io/blog/prevnext/">사이드바 카테고리 포스팅 안에 이전 글, 다음 글 Nav 넣기</a></p>
-
-<blockquote>
-  <h1 id="설정-파일">설정 파일</h1>
-</blockquote>
-
-<h2>/</h2>
-<p>_config.yml 블로그 전반적인 내용을 담고 있다.</p>
-
-<h2 id="_data">/_data/</h2>
-
-<p>navigation.yml  우측 상단 메뉴 여부와, 클릭 시 이동 URL을 설정 가능.<br />
-ui-text.yml     영어 -&gt; 한글 번역 시 번역될 한글을 설정 가능.</p>
-
-<h2 id="_includes">/_includes/</h2>
-<p>사이드바, 카테고리 등 부분 부분 기능들을 가지고 있는 폴더.</p>
-
-<h2 id="_posts">/_posts/</h2>
-<p>실제로 포스팅을 작성하는 부분.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="블로그 만들기" /><category term="Jekyll 블로그 참조 링크" /><category term="Jekyll 설정 파일" /><category term="Jekyll 설정 폴더" /><category term="Jekyll 블로그 특징" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog1/" rel="alternate" type="text/html" title="개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-28T00:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog1</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog1/"><![CDATA[<div class="notice" style="text-align:center">
+<p>Disqus 사이트 어드민에서 댓글 관리 및 여러 기능 추가 가능합니다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="기능 구현하기" /><category term="Disqus" /><category term="Jekyll 블로그 댓글 기능" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog1/" rel="alternate" type="text/html" title="개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-28T00:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog1</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog1/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1 베타(22C5050e) 버전
@@ -1206,35 +1275,4 @@ _config.yml 파일을 찾아, url 부분을 자신의 깃허브주소(예시)처
 <p>그런후 자신의 아이디.github.io 에 접속하면?<br />
 <img src="../../images/2022-11-20-16-40-46.png" alt="" /></p>
 
-<p>기본적인 블로그 형태가 나올 것이다👍</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="블로그 만들기" /><category term="Github blog" /><category term="개발자 블로그 포트폴리오" /><category term="Jekyll blog" /><category term="Minimal Mistakes 설치" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry><entry><title type="html">포스팅 하는법</title><link href="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog2/" rel="alternate" type="text/html" title="포스팅 하는법" /><published>2022-11-20T00:00:00+09:00</published><updated>2022-11-28T00:00:00+09:00</updated><id>http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog2</id><content type="html" xml:base="http://localhost:4000/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog2/"><![CDATA[<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1 베타(22C5050e) 버전
-          </div>
-<hr />
-
-<blockquote>
-  <h1 id="기본적인-포스팅-방법">기본적인 포스팅 방법</h1>
-</blockquote>
-
-<p>포스팅할 글의 경우 /posts에 올려주면 됩니다.<br />
-하지만 처음에 없으므로 생성합니다.</p>
-
-<p>새로운 파일 생성
-<img src="../../images/2022-11-20-16-47-03.png" alt="" /></p>
-
-<p>_posts/  &lt;- / 를 치면 폴더 생성입니다.
-<img src="../../images/2022-11-20-16-47-52.png" alt="" class="align-center" /></p>
-
-<p>파일 제목은 꼭 년도-월-일-ab-cd.md 형식으로 만들어야 합니다.
-<img src="../../images/2022-11-20-16-49-17.png" alt="" /></p>
-
-<p><br />
-Commit new file을 해주세요.
-<img src="../../images/2022-11-20-16-52-16.png" alt="" class="align-center" />
-<img src="../../images/2022-11-20-16-52-29.png" alt="" class="align-center" /></p>
-
-<p>이와 같은 식으로 글이 잘 올라오는 것을 볼 수 있습니다.</p>
-
-<p>그런데 커밋 후 글이 올라오는데 시간이 좀 걸리네요!<br />
-시간 지연 없이 포스팅 테스트하는 법은 다음 편에 알려드리겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="블로그 만들기" /><category term="Github blog 포스팅" /><category term="Jekyll 포스팅 하는 법" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry></feed>
+<p>기본적인 블로그 형태가 나올 것이다👍</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="블로그 만들기" /><category term="Github blog" /><category term="개발자 블로그 포트폴리오" /><category term="Jekyll blog" /><category term="Minimal Mistakes 설치" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전]]></summary></entry></feed>

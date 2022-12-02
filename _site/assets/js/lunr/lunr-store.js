@@ -1,38 +1,38 @@
 var store = [{
         "title": "맥북 M1 JDK 1.8 (Java 8) 설치하는 법, 버전 변경하는 법",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 라이선스 비용 및 안정성 등 여러 가지 이유로 현업에서는 1.8 버전을 많이 사용합니다. Oracle JDK의 경우 M1, ARM 방식의 JDK 8버전은 지원하지 않으므로.. Open JDK인 Azul Zulu를 받아야 한다. Open JDK 다운로드 된 설치 파일...","categories": ["Basic of java"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 라이선스 비용 및 안정성 등 여러 가지 이유로 현업에서는 1.8 버전을 많이 사용합니다. Oracle JDK의 경우 M1, ARM 방식의 JDK 8버전은 지원하지 않으므로.. Open JDK인 Azul Zulu를 받아야 한다. Open JDK 다운로드 된 설치 파일...","categories": ["Java"],
         "tags": ["맥북 M1 JDK 1.8 설치","M1 JDK 환경변수 설정","M1 JDK 버전 변경"],
-        "url": "/basic%20of%20java/BasicOfJava1/",
+        "url": "/java/Java1/",
         "teaser": null
       },{
         "title": "맥북 M1 이클립스 설치하는 법",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 Eclipse: Version: 2022-09 (4.25.0) JDK 1.8 설치 과정은 아래 링크 참조해 주세요. JDK 1.8 설치 이클립스 설치. 문제점. JDK 1.8 ( ARM ), 최신 이클립스 ( ARM ) 돌리면 이클립스는...","categories": ["Basic of java"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 Eclipse: Version: 2022-09 (4.25.0) JDK 1.8 설치 과정은 아래 링크 참조해 주세요. JDK 1.8 설치 이클립스 설치. 문제점. JDK 1.8 ( ARM ), 최신 이클립스 ( ARM ) 돌리면 이클립스는...","categories": ["Java"],
         "tags": ["맥북 M1 JDK 1.8 이크립스 설치","M1 JDK 이클립스 설치"],
-        "url": "/basic%20of%20java/BasicOfJava2/",
+        "url": "/java/Java2/",
         "teaser": null
       },{
         "title": "이클립스 내 JDK 버전 변경, JDK 1.8 버전 변경 에러",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 Eclipse: Version: 2022-09 (4.25.0) JDK 버전 변경 시 JDK 설치와 환경 변수 적용 등이 미리 되어 있어야 합니다. JDK 설치 참조 https://jshwang94.tistory.com/3 이클립스 설치 참조 https://jshwang94.tistory.com/4 프로젝트 JDK 버전 확인...","categories": ["Basic of java"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 Eclipse: Version: 2022-09 (4.25.0) JDK 버전 변경 시 JDK 설치와 환경 변수 적용 등이 미리 되어 있어야 합니다. JDK 설치 참조 https://jshwang94.tistory.com/3 이클립스 설치 참조 https://jshwang94.tistory.com/4 프로젝트 JDK 버전 확인...","categories": ["Java"],
         "tags": ["이클립스 JDK 버전 변경","Syntax error on token module module expected error"],
-        "url": "/basic%20of%20java/BasicOfJava3/",
+        "url": "/java/Java3/",
         "teaser": null
       },{
         "title": "맥에서 이클립스 오류나는 경우.",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 맥에서 아래와 같은 오류나는 경우?? 이클립스 워크스페이스 폴더 경로에 맥에서 사용하는 특수문자가 들어가 있다면 지워 주면 잘 실행 될 것이다....","categories": ["Basic of java"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 맥에서 아래와 같은 오류나는 경우?? 이클립스 워크스페이스 폴더 경로에 맥에서 사용하는 특수문자가 들어가 있다면 지워 주면 잘 실행 될 것이다....","categories": ["Java"],
         "tags": ["Error: A JNI error has occurred, please check your installation and try again","Exception in thread main java.lang.IllegalArgumentException: Error decoding percent encoded characters"],
-        "url": "/basic%20of%20java/BasicOfJava4/",
+        "url": "/java/Java4/",
         "teaser": null
       },{
         "title": "맥북 이클립스 자동완성, Contents Assist 사용하기",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) Mac에서 이클립스 자동완성으로 사용하는 단축키 Control + Space는 맥에서 이미 한글/영어변환 키에 사용되고 있다. 맥 단축키를 변경하거나, 이클립스에서 단축키를 변경하면된다....","categories": ["Basic of java"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) Mac에서 이클립스 자동완성으로 사용하는 단축키 Control + Space는 맥에서 이미 한글/영어변환 키에 사용되고 있다. 맥 단축키를 변경하거나, 이클립스에서 단축키를 변경하면된다....","categories": ["Java"],
         "tags": ["이클립스","이클립스 자동완성 맥북","맥북 Contents Assist"],
-        "url": "/basic%20of%20java/BasicOfJava5/",
+        "url": "/java/Java5/",
         "teaser": null
       },{
         "title": "Java 프로그래밍이란?, Hellow Java",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 Eclipse: Version: 2022-09 (4.25.0) 해당 포스팅의 전반적인 내용 및 사진은 인프런의 자바 강의에서 가지고 왔습니다. https://www.inflearn.com/course/%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94_java-renew/dashboard 프로그래밍이란? 각 나라들의 언어가 다른 것처럼 우리가 생성한 코드(인간의 언어)는 컴파일러를 통해 컴퓨터의 언어로...","categories": ["Basic of java"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 Eclipse: Version: 2022-09 (4.25.0) 해당 포스팅의 전반적인 내용 및 사진은 인프런의 자바 강의에서 가지고 왔습니다. https://www.inflearn.com/course/%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94_java-renew/dashboard 프로그래밍이란? 각 나라들의 언어가 다른 것처럼 우리가 생성한 코드(인간의 언어)는 컴파일러를 통해 컴퓨터의 언어로...","categories": ["Java"],
         "tags": ["프로그래밍이란?","Java 언어의 탄생","Java 언어의 특징","JDK","JRE"],
-        "url": "/basic%20of%20java/BasicOfJava6/",
+        "url": "/java/Java6/",
         "teaser": null
       },{
         "title": "개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)",
@@ -102,26 +102,32 @@ var store = [{
         "teaser": null
       },{
         "title": "객체지향 프로그래밍과 절차적 프로그래밍",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 절차적 프로그래밍과 객체지향 프로그래밍. 절차적 프로그래밍 ‘절차적 프로그래밍’이라는 한국어 번역은 오해의 여지가 크다. Procedural Programming에서 Procedural를 ‘절차적’으로 번역해버려서 마치 절차적으로...","categories": ["Basic of java"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 절차적 프로그래밍과 객체지향 프로그래밍. 절차적 프로그래밍 ‘절차적 프로그래밍’이라는 한국어 번역은 오해의 여지가 크다. Procedural Programming에서 Procedural를 ‘절차적’으로 번역해버려서 마치 절차적으로...","categories": ["Java"],
         "tags": ["자바의 객체지향","객체지향 프로그래밍","절차적 프로그래밍"],
-        "url": "/basic%20of%20java/BasicOfJava13/",
+        "url": "/java/Java13/",
         "teaser": null
       },{
         "title": "객체, 클래스, 인스턴스",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 클래스, 객체 상속과 오버라이딩 오버로딩 추상클래스와 인터페이스 패키지와 제어자 객체지향 프로그래밍? ex) 자동차(프로그램)은 바퀴(객체), 엔진(객체), 핸들(객체)등을 조합하여 만든다. 그러한 바퀴,...","categories": ["Basic of java"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 클래스, 객체 상속과 오버라이딩 오버로딩 추상클래스와 인터페이스 패키지와 제어자 객체지향 프로그래밍? ex) 자동차(프로그램)은 바퀴(객체), 엔진(객체), 핸들(객체)등을 조합하여 만든다. 그러한 바퀴,...","categories": ["Java"],
         "tags": ["객체","클래스","인스턴스"],
-        "url": "/basic%20of%20java/BasicOfJava14/",
+        "url": "/java/Java14/",
         "teaser": null
       },{
         "title": "스프링 부트 기초",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version \"11.0.17\" 2022-10-18 LTS IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 해당 포스팅의 전반적인 내용 및 사진은 인프런의 스프링 시리즈 강의 중 하나인 \"스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB...","categories": ["Basic of spring"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version \"11.0.17\" 2022-10-18 LTS IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 해당 포스팅의 전반적인 내용 및 사진은 인프런의 스프링 시리즈 강의 중 하나인 \"스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB...","categories": ["Spring"],
         "tags": ["Spring 기초","Spring Boot 시작하기"],
-        "url": "/basic%20of%20spring/BasicOfSpring1/",
+        "url": "/spring/Spring1/",
         "teaser": null
       },{
         "title": "스프링 부트 기초2",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version \"11.0.17\" 2022-10-18 LTS IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 해당 포스팅의 전반적인 내용 및 사진은 인프런의 스프링 시리즈 강의 중 하나인 \"스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB...","categories": ["Basic of spring"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version \"11.0.17\" 2022-10-18 LTS IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 해당 포스팅의 전반적인 내용 및 사진은 인프런의 스프링 시리즈 강의 중 하나인 \"스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB...","categories": ["Spring"],
         "tags": ["Spring 기초","Spring Boot 시작하기"],
-        "url": "/basic%20of%20spring/BasicOfSpring2/",
+        "url": "/spring/Spring2/",
+        "teaser": null
+      },{
+        "title": "div, span, p 태그의 차이",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타 버전 PyCharm 2022.2.3 (Professional Edition) 블록요소와 인라인 요소 div, span, p 태그의 차이는 블록 요소와 인라인 요소에 있습니다. div와 p 태그는 블록요소이고, span 태그는 인라인 요소입니다. div 태그는 레이아웃 계층 나누기 용도, span 태그는 특정 문단에...","categories": ["HTML"],
+        "tags": ["div 태그","span 태그","p 태그"],
+        "url": "/html/HTML01/",
         "teaser": null
       }]
