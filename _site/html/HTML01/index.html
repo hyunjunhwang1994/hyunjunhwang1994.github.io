@@ -38,6 +38,8 @@
 
 
 
+  <meta property="article:modified_time" content="2022-12-03T00:00:00+09:00">
+
 
 
   
@@ -218,11 +220,11 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">22</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">23</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
-        <span class="nav__sub-title">Jekyll Blog Dev</span>
+        <span class="nav__sub-title">etc</span>
             <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
             <ul>
                 <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
@@ -231,7 +233,7 @@
                     
                 
                     
-                        <li><a href="/categories/CreateABlog" class="">블로그 만들기 (8)</a></li>
+                        <li><a href="/categories/jekyllblogdev" class="">Jekyll Blog Dev (11)</a></li>
                     
                 
                     
@@ -241,6 +243,7 @@
                     
                 
             </ul>
+
             <ul>
                 
                     
@@ -248,20 +251,22 @@
                     
                 
                     
-                        <li><a href="/categories/ImplementingFeatures" class="">기능 구현하기 (3)</a></li>
-                    
                 
                     
                 
+                    
+                        <li style="color: rgb(90, 127, 133);"><a href="/categories/hanghae99" class="">항해99 (1)</a></li>
                     
                 
             </ul>
+
+
 
         <span class="nav__sub-title">Programming language</span>
             <ul>
                 
                     
-                        <li><a href="/categories/Java" class="">Java (8)</a></li>
+                        <li><a href="/categories/java" class="">Java (8)</a></li>
                     
                 
                     
@@ -284,9 +289,9 @@
                     
                 
                     
-                
+                        <li><a href="/categories/html" class="">HTML (1)</a></li>
                     
-                        <li><a href="/categories/HTML" class="">HTML (1)</a></li>
+                
                     
                 
             </ul>
@@ -300,14 +305,17 @@
                     
                 
                     
-                
+                        <li><a href="/categories/spring" class="">Spring (2)</a></li>
                     
-                        <li><a href="/categories/Spring" class="">Spring (2)</a></li>
+                
                     
                 
                     
                 
             </ul>
+
+
+ 
 
 
       </li>
@@ -332,7 +340,7 @@
     <meta itemprop="headline" content="div, span, p 태그의 차이">
     <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1 베타">
     <meta itemprop="datePublished" content="2022-12-02T00:00:00+09:00">
-    
+    <meta itemprop="dateModified" content="2022-12-03T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -353,6 +361,14 @@
       </span>
     
 
+                 
+                
+                
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.03
+                
+                
+                 
+
     <span class="page__meta-sep"></span>
 
     
@@ -362,7 +378,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 분 소요
+          5 분 소요
         
       </span>
     
@@ -377,7 +393,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#블록요소와-인라인-요소">블록요소와 인라인 요소</a></li><li><a href="#포함-관계">포함 관계</a></li></ul>
+              <ul class="toc__menu"><li><a href="#div-span-p-태그의-차이">div, span, p 태그의 차이.</a><ul><li><a href="#1블록-요소와-인라인-요소">1.블록 요소와 인라인 요소</a></li><li><a href="#2실제-해당-태그의-역할">2.실제 해당 태그의 역할.</a></li><li><a href="#3포함-관계">3.포함 관계</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -396,62 +412,75 @@
 <hr />
 
 <blockquote>
-  <h1 id="블록요소와-인라인-요소">블록요소와 인라인 요소</h1>
+  <h1 id="div-span-p-태그의-차이">div, span, p 태그의 차이.</h1>
 </blockquote>
 
-<ol>
+<h2 id="1블록-요소와-인라인-요소">1.블록 요소와 인라인 요소</h2>
+
+<ul>
   <li>
-    <p>div, span, p 태그의 차이는 블록 요소와 인라인 요소에 있습니다.<br />
-div와 p 태그는 블록요소이고, span 태그는 인라인 요소입니다.</p>
+    <p>div, p 태그 : 블록 요소
+span 태그 : 인라인 요소</p>
   </li>
-  <li>
-    <p>div 태그는 레이아웃 계층 나누기 용도,<br />
-span 태그는 특정 문단에 색을 준다던지 강조하기 위해,<br />
-p 태그는 실제 문단(paragraph)을 작성하는 용도이다.</p>
-  </li>
-  <li>
-    <p>블록 요소는 해당 요소의 영역이 브라우저의 한 줄을 모두 차지한다.<br />
-인라인 요소의 경우 태그안 내용의 길이만큼만 영역을 차지한다.</p>
-  </li>
-</ol>
+  <li>블록 요소 :</li>
+  <li>표현 가능한 최대의 가로 너비를 사용함.</li>
+  <li>width, height, margin, padding 등 사용하여 블록의 크기 변경이 가능.</li>
+  <li>모든 인라인 요소를 포함할 수 있다.</li>
+  <li>다른 블록 요소도 일부 포함 가능.</li>
+  <li>레이아웃을 나누는 용도로 사용함.</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>인라인 요소:</li>
+  <li>컨텐츠 길이만큼의 사용 중인 영역만 표현 가능.</li>
+  <li>한 줄에 여러 인라인 요소를 배치 가능.</li>
+  <li>height, width가 적용되지 않는다.</li>
+  <li>항상 블록 요소 안에 포함되어 있다.</li>
+  <li>인라인 요소 안에 다른 인라인 요소가 포함될 수 있다.</li>
+  <li>텍스트를 작성하는 요소로 적합하다.</li>
+</ul>
 
 <p><img src="../../images/2022-12-02-23-28-15.png" alt="" /></p>
 
-<blockquote>
-  <h1 id="포함-관계">포함 관계</h1>
-</blockquote>
+<h2 id="2실제-해당-태그의-역할">2.실제 해당 태그의 역할.</h2>
+<ul>
+  <li>div 태그는 레이아웃 계층 분할(division) 하는 용도,</li>
+  <li>span 태그는 특정 문단(span, 폭)에 색을 준다든지 강조하기 위해,</li>
+  <li>p 태그는 실제 문단(paragraph)을 작성하는 용도로 사용된다.</li>
+</ul>
 
-<p>span은 div, p 태그를 포함할 수 없다.</p>
+<h2 id="3포함-관계">3.포함 관계</h2>
 
-<p>인라인 요소인 span 태그는 블록 요소인 div, p 태그를 자식 요소로 포함시킬 수 없다.</p>
+<p><strong>span은 자식 요소로 div, p 태그를 포함할 수 없다.</strong></p>
 
-<p>기본적으로 span 안 내용이 짧을경우 작은 요소로 큰 요소를 포함 시킬 수 없으므로</p>
+<p>기본적으로 span 안 내용이 짧을 경우 해당 요소의 영역은 div, p 태그 보다 작으므로,<br />
+span 안에는 블록 요소를 넣지 않습니다.</p>
 
-<p>span 안에는 블록요소를 넣지 않습니다.</p>
+<p><strong>반대로, div와 p 태그는 span 태그를 포함할 수 있다.</strong></p>
 
-<p>반대로, div와 p태그는 span 태그를 포함할 수 있습니다.</p>
+<p>p 태그는 div 태그를 포함할 수 없습니다.<br />
+p 태그는 기본적으로 문단을 입력하는 용도이므로,<br />
+p 태그 안에는 레이아웃을 나누는 용도인 div 요소는 포함할 수 없습니다.</p>
 
-<p>p 태그는 div 태그를 포함할 수 없습니다. 
-p태그는 기본적으로 문단을 입력하는 용도이므로,<br />
-p태그안에는 블록요소인 div요소는 포함할 수 없습니다.</p>
-
-<p>p태그의 자식요소로써는 span, a, strong등과 같은 인라인 요소만 올 수 있습니다.</p>
+<p>p 태그의 자식 요소로써는 span, a, strong 등과 같은 인라인 요소만 올 수 있습니다.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;&lt;div&gt;</span>테스트<span class="nt">&lt;/div&gt;&lt;/p&gt;</span>와 같은 형태가 있다면,
 <span class="nt">&lt;div&gt;&lt;p&gt;</span>테스트<span class="nt">&lt;/p&gt;&lt;/div&gt;</span>와 같은 형태로 바꾸어야 합니다.
 </code></pre></div></div>
 
-<p>div 태그는 p 태그를 포함할 수 있다.</p>
+<p><strong>div 태그는 p 태그를 포함할 수 있다.</strong></p>
 
-<p>div태그는 p태그처럼 문자를 입력할 수 있지만 실제용도는 HTML문서의 영역 구분을 하기 위한 요소입니다.
-각영역의 용도를 구분하는 기능이므로 다른 블록요소가 하위에 포함될 수 있습니다.</p>
+<p>div 태그는 p 태그처럼 문자를 입력할 수 있지만 실제 용도는 HTML 문서의 영역 구분을 하기 위한 요소입니다.
+각 영역의 용도를 구분하는 기능이므로 다른 블록 요소가 하위에 포함될 수 있습니다.</p>
 
 <p>결론적으로,<br />
 단순 텍스트 정보일 경우 p 태그에 사용하고,<br />
 구역을 나누기 위한 용도일 경우 div 태그를 사용합니다.<br />
-또한, 특정 요소를 강조하고 싶은경우 span 태그를 사용하는 것으로,</p>
+또한, 특정 요소를 강조하고 싶은 경우 span 태그를 사용하는 것으로,</p>
 
-<p>쓰이는 용도에따라 구분해서 태그를 사용하여야 합니다.</p>
+<p>쓰이는 용도에 따라 구분해서 태그를 사용하여야 합니다.</p>
  <!--실제 페이지 글 부분-->
         
       </section>
@@ -472,7 +501,11 @@ p태그안에는 블록요소인 div요소는 포함할 수 없습니다.</p>
     
       <a href="/tags/#p-%ED%83%9C%EA%B7%B8" class="page__taxonomy-item p-category" rel="tag">p 태그</a><span class="sep">, </span>
     
-      <a href="/tags/#span-%ED%83%9C%EA%B7%B8" class="page__taxonomy-item p-category" rel="tag">span 태그</a>
+      <a href="/tags/#span-%ED%83%9C%EA%B7%B8" class="page__taxonomy-item p-category" rel="tag">span 태그</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EB%B8%94%EB%A1%9D-%EC%9A%94%EC%86%8C" class="page__taxonomy-item p-category" rel="tag">블록 요소</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EC%9D%B8%EB%9D%BC%EC%9D%B8-%EC%9A%94%EC%86%8C" class="page__taxonomy-item p-category" rel="tag">인라인 요소</a>
     
     </span>
   </p>
@@ -497,7 +530,7 @@ p태그안에는 블록요소인 div요소는 포함할 수 없습니다.</p>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-02T00:00:00+09:00">2022-12-02</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-03">2022-12-03</time></p>
 
       </footer>
 
@@ -555,6 +588,68 @@ p태그안에는 블록요소인 div요소는 포함할 수 없습니다.</p>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/%ED%95%AD%ED%95%B499/%ED%95%AD%ED%95%B499/" rel="permalink">항해99 선택 이유와 준비 과정
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-03T00:00:00+09:00">2022-12-03</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/spring/Spring2/" rel="permalink">스프링 부트 기초2
 </a>
       
@@ -570,6 +665,12 @@ p태그안에는 블록요소인 div요소는 포함할 수 없습니다.</p>
         <time datetime="2022-12-01T00:00:00+09:00">2022-12-01</time>
       </span>
     
+
+                 
+                
+                
+                
+                 
 
     <span class="page__meta-sep"></span>
 
@@ -627,6 +728,12 @@ p태그안에는 블록요소인 div요소는 포함할 수 없습니다.</p>
       </span>
     
 
+                 
+                
+                
+                
+                 
+
     <span class="page__meta-sep"></span>
 
     
@@ -683,6 +790,14 @@ p태그안에는 블록요소인 div요소는 포함할 수 없습니다.</p>
       </span>
     
 
+                 
+                
+                
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.11.27
+                
+                
+                 
+
     <span class="page__meta-sep"></span>
 
     
@@ -693,62 +808,6 @@ p태그안에는 블록요소인 div요소는 포함할 수 없습니다.</p>
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           8 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/java/Java13/" rel="permalink">객체지향 프로그래밍과 절차적 프로그래밍
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-11-25T00:00:00+09:00">2022-11-25</time>
-      </span>
-    
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          30 분 소요
         
       </span>
     

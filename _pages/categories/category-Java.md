@@ -1,7 +1,7 @@
 ---
 title: "Java"
 layout: archive
-permalink: categories/Java
+permalink: categories/java
 ---
 
 

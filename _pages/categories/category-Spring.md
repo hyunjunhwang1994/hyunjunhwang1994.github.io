@@ -1,7 +1,7 @@
 ---
 title: "Spring"
 layout: archive
-permalink: categories/Spring
+permalink: categories/spring
 ---
 
 

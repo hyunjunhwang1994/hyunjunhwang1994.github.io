@@ -28,10 +28,12 @@
                 {%- for hash in category_hashes -%}
                     {%- assign keyValue = hash | split: '|' -%}
                     {%- capture category_word -%}{{ keyValue[1] | strip_newlines }}{%- endcapture -%}
-                    카테고리: <a href="{{ category_word | slugify | prepend: path_type | prepend: site.category_archive.path | relative_url }}" class="page__taxonomy-item-category" rel="tag" style="color: rgb(189, 61, 61);">{{ category_word }}</a>{%- unless forloop.last -%}<span class="sep"> </span>{%- endunless -%}
+                    <a href="{{ category_word | slugify | prepend: path_type | prepend: site.category_archive.path | relative_url }}" class="page__taxonomy-item-category" rel="tag" style="color: rgb(189, 61, 61);">{{ category_word }}</a>{%- unless forloop.last -%}<span class="sep"> </span>{%- endunless -%}
                 {%- endfor -%}
                 &nbsp;&nbsp;
-
+                
+                {% comment %}
+                태그 넣을 시 주석 해제.
                 {% if tag_hashes[0] %}
                     태그:
                 {% endif %}
@@ -42,6 +44,7 @@
                     <a href="{{ tag_word | slugify | prepend: path_type | prepend: site.tag_archive.path | relative_url }}" class="page__taxonomy-item-tag" rel="tag" style="color: rgb(81, 81, 208);">{{ tag_word }}</a>{% unless forloop.last %}<span class="sep"> </span>{% endunless %}                
                     &nbsp;
                 {% endfor %}
+                {% endcomment %}
             </span>
         </span>
     {%- endif -%}

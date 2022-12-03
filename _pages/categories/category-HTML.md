@@ -1,7 +1,7 @@
 ---
 title: "HTML"
 layout: archive
-permalink: categories/HTML
+permalink: categories/html
 ---
 
 

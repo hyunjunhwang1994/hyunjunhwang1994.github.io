@@ -12,31 +12,30 @@
 
 
 
-<!-- 사이드바 카테고리 눌렀을 때 나오는 화면 -->
-<div>
-  <small> <!-- 포스트 생성일, 포스트 수정일-->
-    <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Written: {{ post.date | date: " %Y.%m.%d" }} &nbsp;&nbsp;&nbsp; 
-    {% if post.last_modified_at %}
-      <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated: {{ post.last_modified_at | date: " %Y.%m.%d" }}
-    {% endif %}
-  </small>
-</div>
 
 
-
-<div class="{{ include.type | default: "list" }}__item">
+<div class="{{ include.type | default: 'list' }}__item" style="height: 30px;">
     <article class="archive-item">
         <div>
-            <span>  <!--포스트 이름-->
-              <a href="{{ post.url }}">{{post.title}}</a>  
-            </span>
-            
-            <small> <!-- 카테고리, 태그 -->
+          <small> <!-- 포스트 생성일, 포스트 수정일-->
+            <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>{{ post.date | date: " %Y.%m.%d" }}                 
+          </small>
+              <span>  <!--포스트 이름-->
+                <a href="{{ post.url }}">{{post.title}}</a>  
+              </span>
+
+      
+          <!--
+            {% comment %}
+            <small> 
               {% if site.category_archive.type and post.categories[0] or site.tag_archive.type and post.tags[0] %}
               <br>
               📒 {%- include post__taxonomy.html -%}
             {% endif %}
             </small>
+             {% endcomment %}
+           -->
+      
         </div>
       </article>
       <br>

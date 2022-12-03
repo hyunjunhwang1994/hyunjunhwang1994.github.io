@@ -36,69 +36,69 @@ var store = [{
         "teaser": null
       },{
         "title": "개발자, 깃허브 블로그 포트폴리오 만들기(맥북 M1)",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 깃허브 깃허브 계정 만들기. 아래의 링크에서 깃허브 계정을 만든다. 깃허브 Repository(저장소) 만들기 Repository에 들어가서 자신의 블로그로 사용 할 레퍼지토리를 만들어야 한다. 우상단 프로필클릭 -&gt; Your repositories -&gt; New를 눌러 새 레파지토리 생성 Repository name은 꼭...","categories": ["블로그 만들기"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 깃허브 깃허브 계정 만들기. 아래의 링크에서 깃허브 계정을 만든다. 깃허브 Repository(저장소) 만들기 Repository에 들어가서 자신의 블로그로 사용 할 레퍼지토리를 만들어야 한다. 우상단 프로필클릭 -&gt; Your repositories -&gt; New를 눌러 새 레파지토리 생성 Repository name은 꼭...","categories": ["Jekyll Blog Dev"],
         "tags": ["Github blog","개발자 블로그 포트폴리오","Jekyll blog","Minimal Mistakes 설치"],
-        "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog1/",
+        "url": "/jekyll%20blog%20dev/Jekyll-Blog-Dev1/",
         "teaser": null
       },{
         "title": "포스팅 하는법",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 기본적인 포스팅 방법 포스팅할 글의 경우 /posts에 올려주면 됩니다. 하지만 처음에 없으므로 생성합니다. 새로운 파일 생성 _posts/ &lt;- / 를 치면 폴더 생성입니다. 파일 제목은 꼭 년도-월-일-ab-cd.md 형식으로 만들어야 합니다. Commit new file을 해주세요. 이와...","categories": ["블로그 만들기"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 기본적인 포스팅 방법 포스팅할 글의 경우 /posts에 올려주면 됩니다. 하지만 처음에 없으므로 생성합니다. 새로운 파일 생성 _posts/ &lt;- / 를 치면 폴더 생성입니다. 파일 제목은 꼭 년도-월-일-ab-cd.md 형식으로 만들어야 합니다. Commit new file을 해주세요. 이와...","categories": ["Jekyll Blog Dev"],
         "tags": ["Github blog 포스팅","Jekyll 포스팅 하는 법"],
-        "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog2/",
+        "url": "/jekyll%20blog%20dev/Jekyll-Blog-Dev2/",
         "teaser": null
       },{
         "title": "지킬 블로그 로컬 환경 만들기",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 설치 목록. 이번에는 터미널 활용과, 로컬 서버 생성을 하기 위한 셋업 등을 알려드릴게요. 결론적으로 아래와 같은 것들을 설치해야 합니다. Homebrew rbenv ruby (맥은 기본적으로 깔려있지만, 다른 버전 설치해야 함) jekyll, bundler Homebrew 설치 아래 링크에서...","categories": ["블로그 만들기"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 설치 목록. 이번에는 터미널 활용과, 로컬 서버 생성을 하기 위한 셋업 등을 알려드릴게요. 결론적으로 아래와 같은 것들을 설치해야 합니다. Homebrew rbenv ruby (맥은 기본적으로 깔려있지만, 다른 버전 설치해야 함) jekyll, bundler Homebrew 설치 아래 링크에서...","categories": ["Jekyll Blog Dev"],
         "tags": ["Jekyll blog 로컬 환경 만들기","homebrew 설치","rbenv 설치","루비 설치","Jekyll과 Bundler 설치"],
-        "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog3/",
+        "url": "/jekyll%20blog%20dev/Jekyll-Blog-Dev3/",
         "teaser": null
       },{
         "title": "깃허브 블로그 로컬 호스팅 하기 (실시간 확인)",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 블로그 로컬 호스팅 하기 자신의 블로그 레파지토리 폴더를 터미널로 연다. 해당 폴더 안에서 아래의 명령어 입력으로 번들을 설치해 준다. bundle install 그럼 번들이 우리의 블로그에 설치되었을 것이다. 그렇다면 아래의 명령어로 서버를 실행시켜준다. bundle exec jekyll...","categories": ["블로그 만들기"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 블로그 로컬 호스팅 하기 자신의 블로그 레파지토리 폴더를 터미널로 연다. 해당 폴더 안에서 아래의 명령어 입력으로 번들을 설치해 준다. bundle install 그럼 번들이 우리의 블로그에 설치되었을 것이다. 그렇다면 아래의 명령어로 서버를 실행시켜준다. bundle exec jekyll...","categories": ["Jekyll Blog Dev"],
         "tags": ["Jekyll blog 로컬 환경 만들기","Jekyll blog 실시간 확인"],
-        "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog4/",
+        "url": "/jekyll%20blog%20dev/Jekyll-Blog-Dev4/",
         "teaser": null
       },{
         "title": "VS Code 설치, 확장팩 설치",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 포스팅을 편리하게 하기 위한 VS code 설치 설치 아래의 링크에서 설치해 주세요. VS Code 익스텐션 설치 확장팩을 설치하는 과정입니다. 왼쪽 맨 아래 확장 메뉴에서 해당 팩들을 설치해 주세요. (저는 설치되어 있어서 제거로 나오고 있네요.) 한글...","categories": ["블로그 만들기"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 포스팅을 편리하게 하기 위한 VS code 설치 설치 아래의 링크에서 설치해 주세요. VS Code 익스텐션 설치 확장팩을 설치하는 과정입니다. 왼쪽 맨 아래 확장 메뉴에서 해당 팩들을 설치해 주세요. (저는 설치되어 있어서 제거로 나오고 있네요.) 한글...","categories": ["Jekyll Blog Dev"],
         "tags": ["VS code 설치","Paste image 설치","VS code 한글 패치"],
-        "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog5/",
+        "url": "/jekyll%20blog%20dev/Jekyll-Blog-Dev5/",
         "teaser": null
       },{
         "title": "매우 편리한 이미지 넣기 VS code Paste Image",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 Paste Image? 공식 움짤인데..? 참 설명도 헷갈리게 해 놓았다.. Paste Image 앱은 VS Code 내에서 돌아가며, 인터넷상 존재하는 혹은 캡처한 이미지 파일을 VS Code에서 간단하게 저장 및 Markdown 자동 작성까지 해준다. (여기서 포인트는 문법 작성뿐...","categories": ["블로그 만들기"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 Paste Image? 공식 움짤인데..? 참 설명도 헷갈리게 해 놓았다.. Paste Image 앱은 VS Code 내에서 돌아가며, 인터넷상 존재하는 혹은 캡처한 이미지 파일을 VS Code에서 간단하게 저장 및 Markdown 자동 작성까지 해준다. (여기서 포인트는 문법 작성뿐...","categories": ["Jekyll Blog Dev"],
         "tags": ["Paste image 사용법"],
-        "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog6/",
+        "url": "/jekyll%20blog%20dev/Jekyll-Blog-Dev6/",
         "teaser": null
       },{
         "title": "_config,yml 수정, 블로그 정보 수정하기",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 _config.yml? _config.yml은 Jekyll 블로그 생성시 만들어지는 파일로 여러가지 블로그 관련 정보를 설정 할 수 있다. 스킨 선택 minimal_mistakes_skin : 설정 하고싶은 스킨을 선택해 보자. Mint를 선택 할 경우 언어 변경 locale : “ko-KR” 할 경우...","categories": ["블로그 만들기"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 _config.yml? _config.yml은 Jekyll 블로그 생성시 만들어지는 파일로 여러가지 블로그 관련 정보를 설정 할 수 있다. 스킨 선택 minimal_mistakes_skin : 설정 하고싶은 스킨을 선택해 보자. Mint를 선택 할 경우 언어 변경 locale : “ko-KR” 할 경우...","categories": ["Jekyll Blog Dev"],
         "tags": ["_config.yml 설정하기"],
-        "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog7/",
-        "teaser": null
-      },{
-        "title": "깃허브 블로그 Disqus 댓글 기능 만들기",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 Disqus Disqus란 댓글 API를 제공하는 회사이다. 보통 네이버나, 티스토리 등 블로그에는 댓글 기능이 달려 있지만, Jekyll 기반 블로그, 개인 블로그 등에 댓글 기능을 추가할 때 사용하면 된다. 회원 가입. 아래 페이지에서 회원 가입을 해주세요. Disqus...","categories": ["기능 구현하기"],
-        "tags": ["Disqus","Jekyll 블로그 댓글 기능"],
-        "url": "/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures1/",
+        "url": "/jekyll%20blog%20dev/Jekyll-Blog-Dev7/",
         "teaser": null
       },{
         "title": "Google analytics 추가하기",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 Google analytics ? 웹사이트 방문자 데이터를 수집, 분석할 수 있게 도와주는 앱이다. _config.yml 설정하기. Google analytics 첫 사용자인 경우 측정 시작 클릭 후 진행. 계정 이름, 속성 이름 설정 후 다음. 업종의 경우 자신이 원하는...","categories": ["기능 구현하기"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 Google analytics ? 웹사이트 방문자 데이터를 수집, 분석할 수 있게 도와주는 앱이다. _config.yml 설정하기. Google analytics 첫 사용자인 경우 측정 시작 클릭 후 진행. 계정 이름, 속성 이름 설정 후 다음. 업종의 경우 자신이 원하는...","categories": ["Jekyll Blog Dev"],
         "tags": ["Google analytics","웹 로그 분석 도구"],
-        "url": "/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures2/",
+        "url": "/jekyll%20blog%20dev/Jekyll-Blog-Dev10/",
         "teaser": null
       },{
         "title": "Jekyll 블로그 총 정보",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 Jekyll 블로그 참조 블로그 링크 사이드바 크기 및 넓이, 하이퍼텍스트 밑줄제거 Minimal-Mistakes 기반 튜토리얼 화이트 / 다크 테마 토글 적용하기 (Utterances 자동 색상 변경) 스크롤바 꾸미기 사이드바 카테고리 만들기 사이드바 카테고리 포스팅 안에 이전 글,...","categories": ["블로그 만들기"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 Jekyll 블로그 참조 블로그 링크 사이드바 크기 및 넓이, 하이퍼텍스트 밑줄제거 Minimal-Mistakes 기반 튜토리얼 화이트 / 다크 테마 토글 적용하기 (Utterances 자동 색상 변경) 스크롤바 꾸미기 사이드바 카테고리 만들기 사이드바 카테고리 포스팅 안에 이전 글,...","categories": ["Jekyll Blog Dev"],
         "tags": ["Jekyll 블로그 참조 링크","Jekyll 설정 파일","Jekyll 설정 폴더","Jekyll 블로그 특징"],
-        "url": "/%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0/CreateABlog8/",
+        "url": "/jekyll%20blog%20dev/Jekyll-Blog-Dev8/",
+        "teaser": null
+      },{
+        "title": "깃허브 블로그 Disqus 댓글 기능 만들기",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 Disqus Disqus란 댓글 API를 제공하는 회사이다. 보통 네이버나, 티스토리 등 블로그에는 댓글 기능이 달려 있지만, Jekyll 기반 블로그, 개인 블로그 등에 댓글 기능을 추가할 때 사용하면 된다. 회원 가입. 아래 페이지에서 회원 가입을 해주세요. Disqus...","categories": ["Jekyll Blog Dev"],
+        "tags": ["Disqus","Jekyll 블로그 댓글 기능"],
+        "url": "/jekyll%20blog%20dev/Jekyll-Blog-Dev9/",
         "teaser": null
       },{
         "title": "minimal-mistakes 기반 Utterances 댓글 적용",
-        "excerpt":"Disqus에서 Ufferances로 바꾼 이유. Disqus의 치명적인 단점. 어느샌가 몰래 덕지덕지 붙어있는 광고들.. 왠지 모르게 무겁다. 왜 나만 글자가 투명색(흰색)으로 나오는지ㅠ Disqus 내 설정을 바꿔도, Only 흰색 글자만 나온다. 결국 이러한 점 때문에 바꾸었다. (하얀색 배경으로 된 테마를 사용 못 하기 때문.) 광고 없애려면 유료… 그렇다면 장점은 없나? 구글, 페이스북, 트위터,...","categories": ["기능 구현하기"],
+        "excerpt":"Disqus에서 Ufferances로 바꾼 이유. Disqus의 치명적인 단점. 어느샌가 몰래 덕지덕지 붙어있는 광고들.. 왠지 모르게 무겁다. 왜 나만 글자가 투명색(흰색)으로 나오는지ㅠ Disqus 내 설정을 바꿔도, Only 흰색 글자만 나온다. 결국 이러한 점 때문에 바꾸었다. (하얀색 배경으로 된 테마를 사용 못 하기 때문.) 광고 없애려면 유료… 그렇다면 장점은 없나? 구글, 페이스북, 트위터,...","categories": ["Jekyll Blog Dev"],
         "tags": ["Utterances","댓글 기능"],
-        "url": "/%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0/ImplementingFeatures3/",
+        "url": "/jekyll%20blog%20dev/Jekyll-Blog-Dev11/",
         "teaser": null
       },{
         "title": "객체지향 프로그래밍과 절차적 프로그래밍",
@@ -126,8 +126,14 @@ var store = [{
         "teaser": null
       },{
         "title": "div, span, p 태그의 차이",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타 버전 PyCharm 2022.2.3 (Professional Edition) 블록요소와 인라인 요소 div, span, p 태그의 차이는 블록 요소와 인라인 요소에 있습니다. div와 p 태그는 블록요소이고, span 태그는 인라인 요소입니다. div 태그는 레이아웃 계층 나누기 용도, span 태그는 특정 문단에...","categories": ["HTML"],
-        "tags": ["div 태그","span 태그","p 태그"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타 버전 PyCharm 2022.2.3 (Professional Edition) div, span, p 태그의 차이. 1.블록 요소와 인라인 요소 div, p 태그 : 블록 요소 span 태그 : 인라인 요소 블록 요소 : 표현 가능한 최대의 가로 너비를 사용함. width, height,...","categories": ["HTML"],
+        "tags": ["div 태그","span 태그","p 태그","블록 요소","인라인 요소"],
         "url": "/html/HTML01/",
+        "teaser": null
+      },{
+        "title": "항해99 선택 이유와 준비 과정",
+        "excerpt":"gk  ","categories": ["항해99"],
+        "tags": ["div 태그","span 태그","p 태그","블록 요소","인라인 요소"],
+        "url": "/%ED%95%AD%ED%95%B499/%ED%95%AD%ED%95%B499/",
         "teaser": null
       }]
