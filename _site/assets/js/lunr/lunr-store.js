@@ -136,4 +136,10 @@ var store = [{
         "tags": ["항해99","항해99 준비 과정","내돈내산"],
         "url": "/%ED%95%AD%ED%95%B499/%ED%95%AD%ED%95%B499/",
         "teaser": null
+      },{
+        "title": "Dimension",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타 버전 PyCharm 2022.2.3 (Professional Edition) TCP School에서 참조하고 쓰는 포스팅입니다. TCP School 크기 (Dimension) CSS를 이용해서 HTML 요소의 크기를 설정할 수 있습니다. 크기를 설정하기 위해서 사용하는 속성들은 다음과 같다. height width max-width min-width max-height min-height height,...","categories": ["CSS"],
+        "tags": ["css dimension","css 크기","max-width","min-width"],
+        "url": "/css/CSS01/",
+        "teaser": null
       }]

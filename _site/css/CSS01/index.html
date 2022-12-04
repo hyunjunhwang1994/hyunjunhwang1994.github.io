@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>맥에서 이클립스 오류나는 경우. | 기술 블로그</title>
-<meta name="description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1 베타(22C5050e) 버전">
+<!-- begin _includes/seo.html --><title>Dimension | 기술 블로그</title>
+<meta name="description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1 베타">
 
 
   <meta name="author" content="Hyun Jun">
@@ -22,21 +22,23 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="기술 블로그">
-<meta property="og:title" content="맥에서 이클립스 오류나는 경우.">
-<meta property="og:url" content="http://localhost:4000/java/Java4/">
+<meta property="og:title" content="Dimension">
+<meta property="og:url" content="http://localhost:4000/css/CSS01/">
 
 
-  <meta property="og:description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1 베타(22C5050e) 버전">
-
-
-
+  <meta property="og:description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1 베타">
 
 
 
 
-  <meta property="article:published_time" content="2022-11-17T00:00:00+09:00">
 
 
+
+  <meta property="article:published_time" content="2022-12-04T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2022-12-03T00:00:00+09:00">
 
 
 
@@ -45,7 +47,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/java/Java4/">
+<link rel="canonical" href="http://localhost:4000/css/CSS01/">
 
 
 
@@ -363,16 +365,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="맥에서 이클립스 오류나는 경우.">
-    <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1 베타(22C5050e) 버전">
-    <meta itemprop="datePublished" content="2022-11-17T00:00:00+09:00">
-    
+    <meta itemprop="headline" content="Dimension">
+    <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1 베타">
+    <meta itemprop="datePublished" content="2022-12-04T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2022-12-03T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/java/Java4/" class="u-url" itemprop="url">맥에서 이클립스 오류나는 경우.
+            <a href="http://localhost:4000/css/CSS01/" class="u-url" itemprop="url">Dimension
 </a>
           </h1>
           
@@ -382,209 +384,6 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-11-17T00:00:00+09:00">2022-11-17</time>
-      </span>
-    
-
-                 
-                
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 분 소요
-        
-      </span>
-    
-  </p>
-
-
-        </header>
-      
-
-      <section class="page__content e-content" itemprop="text">
-        
-          <aside class="sidebar__right sticky">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              
-
-            </nav>
-          </aside>
-        
-        <!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
-<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1 베타(22C5050e) 버전
-</div>
-<hr />
-
-<!-- 자바 포스팅시 JDK, IDE버전 등-->
-<div class="notice--info" style="text-align:center">
-          버전<br />
-          JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08)<br />
-          IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition)
-</div>
-<hr />
-
-<p>맥에서 아래와 같은 오류나는 경우??</p>
-
-<p><img src="../../images/2022-11-29-10-47-20.png" alt="" /></p>
-
-<p>이클립스 워크스페이스 폴더 경로에 맥에서 사용하는 특수문자가 들어가 있다면 지워 주면 잘 실행 될 것이다.</p>
-
-<p><img src="../../images/2022-11-29-10-49-14.png" alt="" /></p>
-
-<p>Error: A JNI error has occurred, please check your installation and try again
-Exception in thread “main” java.lang.IllegalArgumentException: Error decoding percent encoded characters
-	at sun.net.www.ParseUtil.decode(ParseUtil.java:216)
-	at sun.misc.URLClassPath$FileLoader.<init>(URLClassPath.java:1366)
-	at sun.misc.URLClassPath$3.run(URLClassPath.java:574)
-	at sun.misc.URLClassPath$3.run(URLClassPath.java:569)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at sun.misc.URLClassPath.getLoader(URLClassPath.java:568)
-	at sun.misc.URLClassPath.getLoader(URLClassPath.java:533)
-	at sun.misc.URLClassPath.getNextLoader(URLClassPath.java:498)
-	at sun.misc.URLClassPath.getResource(URLClassPath.java:252)
-	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
-	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:419)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:352)
-	at sun.launcher.LauncherHelper.checkAndLoadMain(LauncherHelper.java:601)</init></p>
- <!--실제 페이지 글 부분-->
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#error-a-jni-error-has-occurred-please-check-your-installation-and-try-again" class="page__taxonomy-item p-category" rel="tag">Error: A JNI error has occurred, please check your installation and try again</a><span class="sep">, </span>
-    
-      <a href="/tags/#exception-in-thread-main-java-lang-illegalargumentexception-error-decoding-percent-encoded-characters" class="page__taxonomy-item p-category" rel="tag">Exception in thread main java.lang.IllegalArgumentException: Error decoding percent encoded characters</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#java" class="page__taxonomy-item p-category" rel="tag">Java</a>
-    
-    </span>
-  </p>
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-11-17T00:00:00+09:00">2022-11-17</time></p>
-
-      </footer>
-
-      <section class="page__share">
-  
-    <h4 class="page__share-title">공유하기</h4>
-  
-
-  <a href="https://twitter.com/intent/tweet?text=%EB%A7%A5%EC%97%90%EC%84%9C+%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4+%EC%98%A4%EB%A5%98%EB%82%98%EB%8A%94+%EA%B2%BD%EC%9A%B0.%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJava4%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJava4%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJava4%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-</section>
-
-
-      
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  	
-  	
-  	
-  	
-  	
-
-
-  <nav class="pagination_prev_next">
-    
-      <a href="/java/Java3/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>이클립스 내 JDK 버전 변경, JDK 1.8 버전 변경 에러</a>
-    
-    
-      <a href="/java/Java5/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>맥북 이클립스 자동완성, Contents Assist 사용하기</a>
-    
-  </nav>
-
-
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h2 class="page__related-title">참고</h2>
-      <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/css/CSS01/" rel="permalink">Dimension
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
         <time datetime="2022-12-04T00:00:00+09:00">2022-12-04</time>
       </span>
@@ -605,7 +404,7 @@ Exception in thread “main” java.lang.IllegalArgumentException: Error decodin
       
 
       <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        <i class="far fa-clock" aria-hidden="true"></i>
         
           6 분 소요
         
@@ -614,20 +413,187 @@ Exception in thread “main” java.lang.IllegalArgumentException: Error decodin
   </p>
 
 
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#크기-dimension">크기 (Dimension)</a><ul><li><a href="#height-width">height, width</a></li><li><a href="#max-width">max-width</a></li><li><a href="#min-width">min-width</a></li><li><a href="#max-height">max-height</a></li><li><a href="#min-height">min-height</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1 베타
+</div>
+<hr />
+
+<div class="notice--info" style="text-align:center">
+          버전<br />
+          PyCharm 2022.2.3 (Professional Edition)<br />
+</div>
+<hr />
+
+<p>TCP School에서 참조하고 쓰는 포스팅입니다.<br />
+<a href="http://www.tcpschool.com/css/css_boxmodel_dimension">TCP School</a></p>
+
+<h1 id="크기-dimension">크기 (Dimension)</h1>
+<p>CSS를 이용해서 HTML 요소의 크기를 설정할 수 있습니다.</p>
+
+<p>크기를 설정하기 위해서 사용하는 속성들은 다음과 같다.</p>
+
+<ol>
+  <li>height</li>
+  <li>width</li>
+  <li>max-width</li>
+  <li>min-width</li>
+  <li>max-height</li>
+  <li>min-height</li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="height-width">height, width</h2>
+
+<p>height는 html 요소의 높이를 결정하며,<br />
+width는 html 요소의 너비를 결정한다.</p>
+
+<p>이 속성의 기본값은 auto이고, 웹 브라우저가 각 HTML 요소에 맞게 자동으로 높이와 너비를 설정해 준다.</p>
+
+<h2 id="max-width">max-width</h2>
+<p>해당 HTML 요소가 가질 수 있는 최대 너비를 설정하는 값이다.<br />
+이 속성의 기본값은 none이며, 해당 HTML 요소의 너비에 제한을 두지 않겠다는 의미이다.</p>
+
+<p>-&gt; width 속성으로 너비를 설정하면, 설정된 너비 이하로 브라우저의 크기가 줄어들 때 해당 요소에 스크롤 바를 생성하게 된다.<br />
+하지만 max-width 속성으로 너비를 설정하면 줄어드는 웹 브라우저의 크기에 맞춰 해당 HTML 요소의 너비도 자동으로 줄어든다.
+( 반응형 웹 만들 때 사용할 수 있다.)</p>
+
+<h2 id="min-width">min-width</h2>
+<p>해당 HTML 요소가 가질 수 있는 최소 너비를 설정하는 값이다.
+이 속성의 기본값은 0이며, 해당 HTML 요소의 너비에 제한을 두지 않겠다는 의미이다.</p>
+
+<p>min-width 속성이 설정된 요소에 width 속성값을 따로 설정하지 않으면 초기 너비는 100%를 가지게 된다.</p>
+
+<p>이때 웹 브라우저의 크기가 줄어들면 거기에 맞춰 HTML 요소의 너비도 자동으로 줄어든다.
+하지만 웹 브라우저가 min-width 속성으로 설정된 너비 이하로 줄어들면, HTML 요소의 너비는 더는 줄어들지 않고 수평 스크롤 바를 생성하게 된다.</p>
+
+<h2 id="max-height">max-height</h2>
+<p>해당 HTML 요소가 가질 수 있는 최대 높이(height)를 설정합니다.<br />
+이 속성의 기본 설정값은 none이며, 해당 HTML 요소의 크기에 따라 높이가 자동으로 설정된다.</p>
+
+<p>max-height 속성으로 최대 높이를 설정하면, 해당 HTML 요소의 높이를 설정된 높이 이하로 제한합니다.<br />
+만약 해당 요소의 높이가 설정된 최대 높이보다 클 경우에는 수직 스크롤 바를 생성하게 됩니다.</p>
+
+<h2 id="min-height">min-height</h2>
+<p>해당 HTML 요소가 가질 수 있는 최소 높이(height)를 설정합니다.
+이 속성의 기본 설정값은 0이며, 해당 HTML 요소의 높이에 제한을 두지 않겠다는 의미입니다.</p>
+
+<p>min-height 속성을 설정하면 해당 HTML 요소의 높이를 설정된 높이 이하로 제한합니다.
+즉 height 속성값이 min-height 속성값 이하로 낮아지지 않도록 합니다.
+이러한 min-height 속성값은 max-height 속성값과 height 속성값보다 먼저 적용됩니다.</p>
+
+<p>이러한 속성들을 사용하여 반응형 웹을 만들고 싶다면 아래 블로그 링크를 참조해 주세요.<br />
+<a href="https://studiomeal.com/archives/1004">1분 코딩</a></p>
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
     
+      <a href="/tags/#css-dimension" class="page__taxonomy-item p-category" rel="tag">css dimension</a><span class="sep">, </span>
+    
+      <a href="/tags/#css-%ED%81%AC%EA%B8%B0" class="page__taxonomy-item p-category" rel="tag">css 크기</a><span class="sep">, </span>
+    
+      <a href="/tags/#max-width" class="page__taxonomy-item p-category" rel="tag">max-width</a><span class="sep">, </span>
+    
+      <a href="/tags/#min-width" class="page__taxonomy-item p-category" rel="tag">min-width</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#css" class="page__taxonomy-item p-category" rel="tag">CSS</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-03">2022-12-03</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Dimension%20http%3A%2F%2Flocalhost%3A4000%2Fcss%2FCSS01%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcss%2FCSS01%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcss%2FCSS01%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="#" class="pagination_prev_next--pager disabled">첫 번째 글입니다</a>
+    
+    
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
+    
+  </nav>
+
+
+    </div>
+
     
   </article>
-</div>
 
-
-
-
-
-
-
-
-
-
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
         
           
 
@@ -735,7 +701,7 @@ Exception in thread “main” java.lang.IllegalArgumentException: Error decodin
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          6 분 소요
+          5 분 소요
         
       </span>
     
@@ -798,6 +764,68 @@ Exception in thread “main” java.lang.IllegalArgumentException: Error decodin
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring1/" rel="permalink">스프링 부트 기초
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-01T00:00:00+09:00">2022-12-01</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          9 분 소요
         
       </span>
     
