@@ -1,0 +1,1010 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>항해99 TIL 1일차 | 기술 블로그</title>
+<meta name="description" content="">
+
+
+  <meta name="author" content="Hyun Jun">
+  
+  <meta property="article:author" content="Hyun Jun">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술 블로그">
+<meta property="og:title" content="항해99 TIL 1일차">
+<meta property="og:url" content="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL01/">
+
+
+  <meta property="og:description" content="">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-04T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL01/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hyun Jun",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="843d72a8e4b20f1a8ae8e971f19c34cb128b6c8b">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+
+    <style> 
+    /*스크롤바 꾸며주는 코드*/
+      ::-webkit-scrollbar{width: 17px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: rgb(25, 56, 109);}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      
+      {
+        width:12px;height:12px;background:transparent;
+      }
+
+        /*사이드바에는 적용하지않는다.*/
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          기술 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+
+                <!-- 다크 모드 토글 버튼 -->
+                
+                <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+                <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">카테고리👇</span>
+                    <div class="navicon"></div>
+                </button>
+
+
+                
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리👇</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+
+
+        
+        
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+  
+  
+    
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리👇</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">25</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <span class="nav__sub-title">etc</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                
+                    
+                
+                    
+                        <li><a href="/categories/jekyllblogdev" class="">Jekyll Blog Dev (11)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li style="color: rgb(90, 127, 133);"><a href="/categories/hanghae99" class="">항해99 (2)</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+
+
+        <span class="nav__sub-title">Programming language</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/java" class="">Java (8)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (1)</a></li>
+                    
+                
+            </ul>
+
+
+        <span class="nav__sub-title">Framework</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/spring" class="">Spring (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+ 
+
+
+      </li>
+
+
+
+  </ul>
+</nav>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="항해99 TIL 1일차">
+    <meta itemprop="description" content="">
+    <meta itemprop="datePublished" content="2022-12-04T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL01/" class="u-url" itemprop="url">항해99 TIL 1일차
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-04T00:00:00+09:00">2022-12-04</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          11 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#항해99-첫-날">항해99 첫 날</a></li><li><a href="#웹-메모-사이트">웹 메모 사이트</a><ul><li><a href="#목표">목표</a></li><li><a href="#문제점">문제점</a></li><li><a href="#input과-label">input과 label?</a></li><li><a href="#indexhtml에-너무-많은-스크립트">index.html에 너무 많은 스크립트</a></li><li><a href="#로그인-시-쿠키-세션-무엇을-이용하며-어떻게-사용할까">로그인 시 쿠키, 세션 무엇을 이용하며 어떻게 사용할까?</a><ul><li><a href="#문제점-1">문제점.</a></li><li><a href="#해결">해결</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><br /></p>
+
+<blockquote>
+  <h1 id="항해99-첫-날">항해99 첫 날</h1>
+</blockquote>
+
+<p>오늘은 항해99 첫날이다.
+자신의 선택에 따라, 웹 개발 종합반 강의 완주 팀과 토이 프로젝트 2가지 팀으로 나누어지었고,</p>
+
+<p>나는 웹 개발 목표치인 2회독을 완강하여 토이 프로젝트에 도전해 보고 싶어 토이 프로젝트에 참여하였다.
+팀플레이가 이렇게 어려웠던가?</p>
+
+<p>토이 프로젝트 회의 결과,
+3일 밖에 시간이 없기 때문에 사이즈가 큰 프로젝트는 하지 못하고,</p>
+
+<p>목요일이 시험인 관계로 복습 겸, 각자 프로젝트를 만들기로 하였다.
+항해 진행 중 강민철 튜터님의 “TIL/WIL(회고)” 특강에 감동받아</p>
+
+<p>최소한 항해를 하는 99일 동안은 TIL을 매일 작성하기로 마음먹고 쓰게 되었다.</p>
+
+<blockquote>
+  <h1 id="웹-메모-사이트">웹 메모 사이트</h1>
+</blockquote>
+
+<h2 id="목표">목표</h2>
+<p>Python, flask, mongodb를 이용한 로그인 기능이 있는 웹 메모장을 만들어보자!</p>
+
+<h2 id="문제점">문제점</h2>
+<p>웹 개발 종합반이라는 강의에서 웹 사이클을 경험하여, 실제 ec2 환경에서 배포해 본 것은 맞지만<br />
+이것들을 이용해 처음부터 프로젝트를 만들려고 하니, 퍼즐을 맞추는 것처럼 생각보다 어려웠다.
+그래도 어려운 점이 나올 때마다 다시 강의를 보고, 정리를 해보자는 마음으로 프로젝트를 시작하였다.</p>
+
+<h2 id="input과-label">input과 label?</h2>
+<p>그러던 중 회원가입 기능을 구현하던 중,<br />
+버튼을 누를 때 아이디, 비밀번호 값을 .val()로<br />
+가져와야 하는데 이상하게 잘 동작하지 않는다<br />
+<img src="../../images/2022-12-05-16-22-29.png" alt="" /></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c">&lt;!-- 동작하지 않던 코드 --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-floating mb-3 w-25"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"floatingInput"</span> <span class="na">placeholder=</span><span class="s">"name@example.com"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"floatingInput"</span> <span class="na">id=</span><span class="s">"inputId"</span><span class="nt">&gt;</span>아이디<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-floating w-25"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span>  <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"floatingPassword"</span> <span class="na">placeholder=</span><span class="s">"Password"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"floatingPassword"</span><span class="na">id=</span><span class="s">"inputPw"</span><span class="nt">&gt;</span>비밀번호<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>왜 안될까 하고 한참 생각해 보았다.
+그리고 input 태그와 label 태그에 대해서도 더 찾아보았다.</p>
+
+<p>label은 폼의 양식에 이름 붙이는 태그이다.
+주요 속성은 for이다. label의 for의 값과 양식의 id의 값이 같으면 연결된다.
+label을 클릭하면, 연결된 양식에 입력할 수 있도록 하거나, 체크를 하거나, 체크를 해제한다.</p>
+
+<p>결과적으로 값 자체는 input 태그의 값을 가저와 한다는 것을 알았다.
+라벨 태그는 아이디, 비밀번호 같은 글자를 인풋 태그 안에 넣기 위해서 사용한 말 그대로 라벨인 것이다.</p>
+
+<p>이런 기본적인 input 태그도 틀리다니..<br />
+한 가지를 집중적으로 파지 않고, 여러 가지를 단시간 안에 공부한 역효과 같다.</p>
+
+<h2 id="indexhtml에-너무-많은-스크립트">index.html에 너무 많은 스크립트</h2>
+<p>index.html을 만들고 자바 스크립트 함수 등을 작성하려는 순간 이런 생각이 들었다.<br />
+이런 식으로 함수들을 만들면 너무 길고 복잡해지겠는데??</p>
+
+<p>그래서 폭풍 검색하였다.<br />
+결론적으로 아래 블로그를 참조해서 static에 js 폴더를 만들어 따로 보관하기로 하였다.</p>
+
+<p><a href="https://infinitt.tistory.com/119">참조한 블로그</a></p>
+
+<p><img src="../../images/2022-12-05-16-33-03.png" alt="" /></p>
+
+<p><img src="../../images/2022-12-05-23-37-18.png" alt="" /></p>
+
+<h2 id="로그인-시-쿠키-세션-무엇을-이용하며-어떻게-사용할까">로그인 시 쿠키, 세션 무엇을 이용하며 어떻게 사용할까?</h2>
+
+<p>기본적으로 로그인, 회원가입의 경우 DB 연동해  만들었지만 플라스크에서<br />
+얼핏 들어본 쿠키나 세션 처리는 어떻게 하며</p>
+
+<p>비밀번호 같은 중요 정보에 대한 암호화는 어떻게 할까?에 대해서 고민해 보았다.</p>
+
+<p>일단 쿠키와 세션에 대해서 파본 결과,</p>
+
+<p>보안면에서는 세션이 뛰어나지만 서버에 저장되는 관계로 메모리 부하가 있을 수 있고
+쿠키는 보안면에서 살짝 떨어지지만 클라이언트 로컬에 저장되기 때문에 서버에 부하가 없다.</p>
+
+<p>사실상 SSL 인증도 없고, 이러한 개인 토이 프로젝트에 누가 실제 비밀번호를 입력할까..<br />
+싶어 쿠키로 해보려고 하다가, 그래도 로그인 기능은 세션에서 하는 게 맞는다고 해서 세션으로<br />
+진행해 보았다.</p>
+
+<h3 id="문제점-1">문제점.</h3>
+
+<p>세션으로 하던 중 문제를 맞닥뜨렸다.</p>
+
+<p>index.html에서 세션 여부에 따라<br />
+로그아웃 버튼이 보일지 혹은 로그인, 회원가입 화면이 보일지<br />
+플라스크에 있는 Jinja2라는 템플릿 엔진을 이용하여 설정해 놓고,
+<img src="../../images/2022-12-05-18-33-19.png" alt="" />
+<img src="../../images/2022-12-05-18-40-01.png" alt="" /></p>
+
+<p>로그인 버튼을 누르면 login ajax가 동작하고<br />
+<img src="../../images/2022-12-05-18-36-34.png" alt="" /></p>
+
+<p>로그인 성공이 되어도 index.html이 렌더링 되지 않는다…<br />
+<img src="../../images/2022-12-05-18-36-56.png" alt="" /></p>
+
+<p>return render_template(‘index.html’)와<br />
+return redirect(url_for(‘index’))다 써봐도 되지 않는다.</p>
+
+<p>redirect의 경우 무조건 경로를 /로 보내 app.route /가 받게 된다.<br />
+그럼 Jinja2의 문제인가?</p>
+
+<p>심지어 바보같이.. ajax가 비동기 방식이라 그런가? 해서 ajax를 동기방식으로 바꿔도 보았다.<br />
+뭐 이러면서 알아 가는 거지!<br />
+<img src="../../images/2022-12-05-19-22-36.png" alt="" /></p>
+
+<h3 id="해결">해결</h3>
+<p>바보같이, 왜 안되는지 디버깅을 해보지 않고,<br />
+플라스크가 알아서 렌더링 해서 띄워 주겠지?라는 생각을 하고 있었다…</p>
+
+<p>에이잭스로 보냈기에 응답이 리스폰스로 오는 것을 모르고, 왜 안 되나.. 계속 생각하다가
+콘솔로 찍은 response를 개발자 도구로 직접 확인하고 나서야 알게 됐다…</p>
+
+<p>response에 생 HTML 코드가 다 담겨 있었다.
+–&gt; 당연하지.. ajax로 보냈으니 ajax에 rsponse에다가 렌더링을 하지…</p>
+
+<p>그래서 ajax에서 따로 링크를 걸어 주었다.<br />
+로그인에 성공하여 response에 success가 담긴다면 페이지를 리로딩 하도록 해줬다.<br />
+<img src="../../images/2022-12-05-23-42-50.png" alt="" /></p>
+
+<p>app.py도 이렇게 바꿔 주었다.
+<img src="../../images/2022-12-05-23-43-47.png" alt="" /></p>
+
+<p>배운 점</p>
+<ul>
+  <li>input 태그와 label 태그의 차이</li>
+  <li>flask의 전반적인 구조</li>
+  <li>CSS, JS 파일의 분리로 깔끔한 코드 작성</li>
+  <li>플라스크에서의 세션 구조!</li>
+</ul>
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-04T00:00:00+09:00">2022-12-04</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%ED%95%AD%ED%95%B499+TIL+1%EC%9D%BC%EC%B0%A8%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL01%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL01%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL01%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/%ED%95%AD%ED%95%B499/%ED%95%AD%ED%95%B499/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>항해99 선택 이유와 준비 과정</a>
+    
+    
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/css/CSS01/" rel="permalink">Dimension
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-04T00:00:00+09:00">2022-12-04</time>
+      </span>
+    
+
+                 
+                
+                
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.03
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/%ED%95%AD%ED%95%B499/" rel="permalink">항해99 선택 이유와 준비 과정
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-03T00:00:00+09:00">2022-12-03</time>
+      </span>
+    
+
+                 
+                
+                
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.04
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/html/HTML01/" rel="permalink">div, span, p 태그의 차이
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-02T00:00:00+09:00">2022-12-02</time>
+      </span>
+    
+
+                 
+                
+                
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.03
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring2/" rel="permalink">스프링 부트 기초2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-01T00:00:00+09:00">2022-12-01</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/hyunjunhwang1994" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/hyunjuuuuun/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Hyun Jun. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <!-- start custom comments scripts -->
+
+<!-- end custom comments scripts -->
+
+<script>
+    'use strict';
+
+    window.customUtterances = {
+      theme: 'github-light',
+      darkTheme: 'github-dark',
+      onChange: (theme) => {
+        var commentContainer = document.querySelector('#utterances-comments');
+  
+        if (!commentContainer) {
+          return;
+        }
+  
+        while ( commentContainer.hasChildNodes() ) { 
+          commentContainer.removeChild( commentContainer.firstChild );
+        }
+  
+        var script = document.createElement('script');
+        script.setAttribute('src', 'https://utteranc.es/client.js');
+        script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
+        script.setAttribute('label', 'utterances');
+        script.setAttribute('issue-term', 'pathname');
+        script.setAttribute('theme', theme);
+        script.setAttribute('crossorigin', 'anonymous');
+  
+        commentContainer.appendChild(script);
+      }
+    };
+  </script>
+
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>
