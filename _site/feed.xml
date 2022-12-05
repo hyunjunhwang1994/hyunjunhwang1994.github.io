@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-05T23:57:23+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">Dimension</title><link href="http://localhost:4000/css/CSS01/" rel="alternate" type="text/html" title="Dimension" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-03T00:00:00+09:00</updated><id>http://localhost:4000/css/CSS01</id><content type="html" xml:base="http://localhost:4000/css/CSS01/"><![CDATA[<div class="notice" style="text-align:center">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-05T23:58:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">Dimension</title><link href="http://localhost:4000/css/CSS01/" rel="alternate" type="text/html" title="Dimension" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-03T00:00:00+09:00</updated><id>http://localhost:4000/css/CSS01</id><content type="html" xml:base="http://localhost:4000/css/CSS01/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1 베타
@@ -208,7 +208,7 @@ return redirect(url_for(‘index’))다 써봐도 되지 않는다.</p>
 <p>app.py도 이렇게 바꿔 주었다.<br />
 <img src="../../images/2022-12-05-19-22-36.png" alt="" /></p>
 
-<p>배운 점</p>
+<h2 id="배운-점">배운 점</h2>
 <ul>
   <li>input 태그와 label 태그의 차이</li>
   <li>flask의 전반적인 구조</li>
