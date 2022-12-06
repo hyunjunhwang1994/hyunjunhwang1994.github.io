@@ -144,19 +144,19 @@ var store = [{
         "teaser": null
       },{
         "title": "항해99 TIL 1일차",
-        "excerpt":"항해99 첫 날 오늘은 항해99 첫날이다. 자신의 선택에 따라, 웹 개발 종합반 강의 완주 팀과 토이 프로젝트 2가지 팀으로 나누어지었고, 나는 웹 개발 목표치인 2회독을 완강하여 토이 프로젝트에 도전해 보고 싶어 토이 프로젝트에 참여하였다. 팀플레이가 이렇게 어려웠던가? 토이 프로젝트 회의 결과, 3일 밖에 시간이 없기 때문에 사이즈가 큰 프로젝트는 하지...","categories": ["항해99"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 PyCharm 2022.2.3 (Professional Edition) 항해99 첫 날 오늘은 항해99 첫날이다. 자신의 선택에 따라, 웹 개발 종합반 강의 완주 팀과 토이 프로젝트 2가지 팀으로 나누어지었고, 나는 웹 개발 목표치인 2회독을 완강하여 토이 프로젝트에...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL01/",
         "teaser": null
       },{
         "title": "Flask 기초 (test)",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 PyCharm 2022.2.3 (Professional Edition) Flask란 무엇 일까. 파이썬 기반의 웹 개발용으로 나온 프레임워크이다. 자바 기반의 스프링과 비슷하다고 보면 된다. Flask의 Controller from flask import Flask app = Flask(__name__) . # flask 객체...","categories": ["Flask"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 PyCharm 2022.2.3 (Professional Edition) Flask란 무엇 일까. 파이썬 기반의 웹 개발용으로 나온 프레임워크이다. 자바 기반의 스프링과 비슷하다고 보면 된다. 우리나라에서는 자바 스프링, 노드js가 많이 쓰이고 있지만, 외국에서는 사이트마다 다르지만 스프링보다 랭킹이 높은...","categories": ["Flask"],
         "tags": ["Flask 기초","Flask 시작하기"],
         "url": "/flask/Flask01/",
         "teaser": null
       },{
         "title": "항해99 TIL 2일차",
-        "excerpt":"    팀플아닌 팀 개인전?을 하다가 튜터님들의 조언등을 통해 하루 남은 시점에서 다시 팀플레이로 바뀌었다.  ","categories": ["항해99"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 bcrypt 4.0.1 PyCharm 2022.2.3 (Professional Edition) 고생길.. 토이 프로젝트하라고 팀을 만들어 줬건만, 개인플레이를 하는 우리 팀(나 포함)… 오늘 다시 회의를 하고, 튜터님들의 조언 등을 통해 하루 이틀 남은 시점에서 다시 팀플레이로 바뀌었다....","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL02/",
         "teaser": null
