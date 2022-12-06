@@ -6,6 +6,13 @@ categories:                         # 카테고리 생성
 tag: [Utterances, "댓글 기능"]     # 태그이름 설정
 ---
 
+<div class="notice" style="text-align:center">
+          개발 환경<br>
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br>
+          - Ventura 13.1
+          </div>
+<hr><br>
+
 ># Disqus에서 Ufferances로 바꾼 이유.
 
 ## Disqus의 치명적인 단점.

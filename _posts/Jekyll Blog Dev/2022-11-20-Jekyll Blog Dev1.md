@@ -9,7 +9,7 @@ tag: [Github blog, 개발자 블로그 포트폴리오, Jekyll blog, Minimal Mis
 <div class="notice" style="text-align:center">
           개발 환경<br>
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br>
-          - Ventura 13.1 베타(22C5050e) 버전
+          - Ventura 13.1
           </div>
 <hr>
 

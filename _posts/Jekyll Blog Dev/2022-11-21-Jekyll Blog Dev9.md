@@ -13,7 +13,7 @@ tag: [Disqus, Jekyll 블로그 댓글 기능]
 <div class="notice" style="text-align:center">
           개발 환경<br>
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br>
-          - Ventura 13.1 베타(22C5050e) 버전
+          - Ventura 13.1
           </div>
 <hr><br>
 

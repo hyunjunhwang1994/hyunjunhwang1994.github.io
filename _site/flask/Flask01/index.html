@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>항해99 TIL 2일차 | 기술 블로그</title>
-<meta name="description" content="">
+<!-- begin _includes/seo.html --><title>Flask 기초 (test) | 기술 블로그</title>
+<meta name="description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1">
 
 
   <meta name="author" content="Hyun Jun">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="기술 블로그">
-<meta property="og:title" content="항해99 TIL 2일차">
-<meta property="og:url" content="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL02/">
+<meta property="og:title" content="Flask 기초 (test)">
+<meta property="og:url" content="http://localhost:4000/flask/Flask01/">
 
 
-  <meta property="og:description" content="">
+  <meta property="og:description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL02/">
+<link rel="canonical" href="http://localhost:4000/flask/Flask01/">
 
 
 
@@ -395,8 +395,8 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="항해99 TIL 2일차">
-    <meta itemprop="description" content="">
+    <meta itemprop="headline" content="Flask 기초 (test)">
+    <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1">
     <meta itemprop="datePublished" content="2022-12-06T00:00:00+09:00">
     
 
@@ -404,7 +404,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL02/" class="u-url" itemprop="url">항해99 TIL 2일차
+            <a href="http://localhost:4000/flask/Flask01/" class="u-url" itemprop="url">Flask 기초 (test)
 </a>
           </h1>
           
@@ -434,7 +434,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -449,15 +449,41 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#flask란-무엇-일까">Flask란 무엇 일까.</a><ul><li><a href="#flask의-controller">Flask의 Controller</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <p><br /></p>
+        <div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1
+</div>
+<hr />
 
-<p>팀플아닌 팀 개인전?을 하다가 튜터님들의 조언등을 통해
-하루 남은 시점에서 다시 팀플레이로 바뀌었다.</p>
+<div class="notice--info" style="text-align:center">
+          버전<br />
+          Python 3.9
+          Flask 2.2.2<br />
+          PyCharm 2022.2.3 (Professional Edition)
+</div>
+<hr />
+
+<h1 id="flask란-무엇-일까">Flask란 무엇 일까.</h1>
+
+<p>파이썬 기반의 웹 개발용으로 나온 프레임워크이다.
+자바 기반의 스프링과 비슷하다고 보면 된다.</p>
+
+<h2 id="flask의-controller">Flask의 Controller</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span> 
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span> <span class="p">.</span> <span class="c1"># flask 객체 생성
+</span>
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>         <span class="c1"># 홈페이지 입장 시 바로 보여줄 페이지
+</span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">'Hello world'</span>
+</code></pre></div></div>
+
  <!--실제 페이지 글 부분-->
         
       </section>
@@ -474,9 +500,9 @@
     <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
     <span itemprop="keywords">
     
-      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a><span class="sep">, </span>
+      <a href="/tags/#flask-%EA%B8%B0%EC%B4%88" class="page__taxonomy-item p-category" rel="tag">Flask 기초</a><span class="sep">, </span>
     
-      <a href="/tags/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+      <a href="/tags/#flask-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0" class="page__taxonomy-item p-category" rel="tag">Flask 시작하기</a>
     
     </span>
   </p>
@@ -493,7 +519,7 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+      <a href="/categories/#flask" class="page__taxonomy-item p-category" rel="tag">Flask</a>
     
     </span>
   </p>
@@ -510,11 +536,11 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%ED%95%AD%ED%95%B499+TIL+2%EC%9D%BC%EC%B0%A8%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL02%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Flask+%EA%B8%B0%EC%B4%88+%28test%29%20http%3A%2F%2Flocalhost%3A4000%2Fflask%2FFlask01%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL02%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fflask%2FFlask01%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL02%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fflask%2FFlask01%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
@@ -531,7 +557,7 @@
 
   <nav class="pagination_prev_next">
     
-      <a href="/%ED%95%AD%ED%95%B499/TIL01/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>항해99 TIL 1일차</a>
+      <a href="#" class="pagination_prev_next--pager disabled">첫 번째 글입니다</a>
     
     
       <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
@@ -559,7 +585,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/flask/Flask01/" rel="permalink">Flask 기초 (test)
+        <a href="/%ED%95%AD%ED%95%B499/TIL02/" rel="permalink">항해99 TIL 2일차
 </a>
       
     </h2>
@@ -590,7 +616,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          최대 1 분 소요
         
       </span>
     
