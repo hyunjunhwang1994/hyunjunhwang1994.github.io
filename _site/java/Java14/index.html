@@ -38,7 +38,7 @@
 
 
 
-  <meta property="article:modified_time" content="2022-11-27T00:00:00+09:00">
+  <meta property="article:modified_time" content="2022-12-06T00:00:00+09:00">
 
 
 
@@ -220,7 +220,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">25</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">26</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -257,7 +257,7 @@
                     
                 
                     
-                        <li style="color: rgb(90, 127, 133);"><a href="/categories/hanghae99" class="">항해99 (2)</a></li>
+                        <li style="color: rgb(90, 127, 133);"><a href="/categories/hanghae99" class="">항해99 (3)</a></li>
                     
                 
                     
@@ -368,7 +368,7 @@
     <meta itemprop="headline" content="객체, 클래스, 인스턴스">
     <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1 베타(22C5050e) 버전">
     <meta itemprop="datePublished" content="2022-11-25T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2022-11-27T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2022-12-06T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -392,7 +392,7 @@
                  
                 
                 
-                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.11.27
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.06
                 
                 
                  
@@ -406,7 +406,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          8 분 소요
+          9 분 소요
         
       </span>
     
@@ -444,8 +444,8 @@
 
 <ol>
   <li>클래스, 객체</li>
-  <li>상속과 오버라이딩 오버로딩</li>
-  <li>추상클래스와 인터페이스</li>
+  <li>상속과 오버라이딩 오버 로딩</li>
+  <li>추상 클래스와 인터페이스</li>
   <li>패키지와 제어자</li>
 </ol>
 
@@ -454,9 +454,9 @@
 </blockquote>
 
 <ul>
-  <li>ex) 자동차(프로그램)은 바퀴(객체), 엔진(객체), 핸들(객체)등을 조합하여 만든다.</li>
-  <li>그러한 바퀴, 엔진, 핸들등은 설계도인 클래스를 통하여 만든다.</li>
-  <li>객체들을 조합하여 전체 프로그램을 만드는것!</li>
+  <li>ex) 자동차(프로그램)은 바퀴(객체), 엔진(객체), 핸들(객체) 등을 조합하여 만든다.</li>
+  <li>그러한 바퀴, 엔진, 핸들 등은 설계도인 클래스를 통하여 만든다.</li>
+  <li>객체들을 조합하여 전체 프로그램을 만드는 것!</li>
   <li>객체는 클래스를 이용하여 만들어진 프로그램의 구성 요소이다.</li>
 </ul>
 
@@ -484,17 +484,17 @@
 <p>ex) 자동차 클래스</p>
 
 <p>정보/상태 (Fields)<br />
-이름, 최고속도, 가격, 브랜드</p>
+이름, 최고 속도, 가격, 브랜드</p>
 
 <p>기능 / 동작 / 행동 (Methods())<br />
-시동켜기, 악셀, 브레이크</p>
+시동 켜기, 악셀, 브레이크</p>
 
 <h2 id="객체인스턴스">객체(인스턴스)</h2>
 
 <p>객체란 클래스를 실제 사용할 수 있도록 만든 것으로<br />
 메모리 공간을 할당해 놓은 인스턴스(Instance)라고도 하며</p>
 
-<p>클래스의 동적인 상태를 의미합니다. (new 명령어를 통해 생성) 
+<p>클래스의 동적인 상태를 의미합니다. (new 명령어를 통해 생성)<br />
 자바에서 클래스를 사용하기 위해서는 우선 해당 클래스 타입의 객체(object)를 선언해야 합니다.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">car</span> <span class="n">avante</span> <span class="o">=</span> <span class="k">new</span> <span class="n">car</span><span class="o">();</span>
@@ -517,10 +517,10 @@
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
 
 
-    <span class="c1">// 자바의 경우 암묵적으로 클래스이름은 무조건 대문자로 시작.</span>
+    <span class="c1">// 자바의 경우 암묵적으로 클래스 이름은 무조건 대문자로 시작.</span>
     <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
 
-        <span class="c1">// 멤버 변수 (속성), camel case로 네이밍하기.</span>
+        <span class="c1">// 멤버 변수 (속성), camel case로 네이밍 하기.</span>
         <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span>
         <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
 
@@ -529,9 +529,9 @@
             <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"car constructor"</span><span class="o">);</span>
         <span class="o">}</span>
 
-        <span class="c1">// 생성자와 메소드의차이 맨앞에 대문자인지 소문자인지</span>
+        <span class="c1">// 생성자와 메소드의 차이 맨 앞에 대문자인지 소문자인지</span>
 
-        <span class="c1">// 메소드 (기능), camel case로 네이밍하기.</span>
+        <span class="c1">// 메소드 (기능), camel case로 네이밍 하기.</span>
         <span class="kt">void</span> <span class="nf">showInfo</span><span class="o">(){</span>
             <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"최고 속도는"</span> <span class="o">+</span> <span class="n">maxSpeed</span><span class="o">);</span>
             <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"가격은"</span> <span class="o">+</span> <span class="n">price</span><span class="o">);</span>
@@ -539,10 +539,10 @@
     <span class="o">}</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//car타입인 avante에넣는다. &lt;--car()객체를 생성</span>
+        <span class="c1">//car 타입인 avante에 넣는다. &lt;--car() 객체를 생성</span>
         <span class="n">car</span> <span class="n">avante</span> <span class="o">=</span> <span class="k">new</span> <span class="n">car</span><span class="o">();</span>
-        <span class="c1">// new car() : 메모리 내에 객체생성, 이때 객체를 생성하기 위한 메소드로 사용하기 위해 만들어진 것이 기본 생성자</span>
-        <span class="c1">// car avante : car타입의 avante인스턴스 생성</span>
+        <span class="c1">// new car() : 메모리 내에 객체 생성, 이때 객체를 생성하기 위한 메소드로 사용하기 위해 만들어진 것이 기본 생성자</span>
+        <span class="c1">// car avante : car 타입의 avante 인스턴스 생성</span>
         
 
     <span class="o">}</span>
@@ -552,7 +552,7 @@
 <p>① 멤버 변수: 클래스의 속성<br />
 ② 생성자: 객체의 초기화를 담당<br />
 ③ 메소드: 클래스의 속성을 조작<br />
-④ 내포 클래스(Nested Class): 클래스안에 클래스 존재 가능</p>
+④ 내포 클래스(Nested Class): 클래스 안에 클래스 존재 가능</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span><span class="o">{</span>
@@ -560,7 +560,7 @@
         <span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">;</span><span class="c1">// 전역변수</span>
         <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
 
-        <span class="c1">// 이런식으로 만들면 이 바로아래 변수는 지역 변수이므로</span>
+        <span class="c1">// 이런 식으로 만들면 이 바로 아래 변수는 지역 변수이므로</span>
         <span class="kd">public</span> <span class="nf">Car</span><span class="o">(</span><span class="kt">int</span> <span class="n">maxSpeed</span><span class="o">,</span> <span class="kt">int</span> <span class="n">price</span><span class="o">){</span>
             <span class="c1">// 전역변수랑 이름이 겹친다.</span>
             <span class="n">maxSpeed</span> <span class="o">=</span> <span class="n">maxSpeed</span><span class="o">;</span>
@@ -635,7 +635,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-11-27">2022-11-27</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-06">2022-12-06</time></p>
 
       </footer>
 
@@ -693,6 +693,68 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/%ED%95%AD%ED%95%B499/TIL02/" rel="permalink">항해99 TIL 2일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-06T00:00:00+09:00">2022-12-06</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/%ED%95%AD%ED%95%B499/TIL01/" rel="permalink">항해99 TIL 1일차
 </a>
       
@@ -705,7 +767,7 @@
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-12-04T00:00:00+09:00">2022-12-04</time>
+        <time datetime="2022-12-05T00:00:00+09:00">2022-12-05</time>
       </span>
     
 
@@ -839,70 +901,6 @@
                 
                 
                 <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.04
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          6 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/html/HTML01/" rel="permalink">div, span, p 태그의 차이
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-12-02T00:00:00+09:00">2022-12-02</time>
-      </span>
-    
-
-                 
-                
-                
-                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.03
                 
                 
                  

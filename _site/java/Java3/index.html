@@ -38,7 +38,7 @@
 
 
 
-  <meta property="article:modified_time" content="2022-11-28T00:00:00+09:00">
+  <meta property="article:modified_time" content="2022-12-06T00:00:00+09:00">
 
 
 
@@ -220,7 +220,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">25</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">26</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -257,7 +257,7 @@
                     
                 
                     
-                        <li style="color: rgb(90, 127, 133);"><a href="/categories/hanghae99" class="">항해99 (2)</a></li>
+                        <li style="color: rgb(90, 127, 133);"><a href="/categories/hanghae99" class="">항해99 (3)</a></li>
                     
                 
                     
@@ -368,7 +368,7 @@
     <meta itemprop="headline" content="이클립스 내 JDK 버전 변경, JDK 1.8 버전 변경 에러">
     <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1 베타(22C5050e) 버전">
     <meta itemprop="datePublished" content="2022-11-16T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2022-11-28T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2022-12-06T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -392,7 +392,7 @@
                  
                 
                 
-                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.11.28
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.06
                 
                 
                  
@@ -421,7 +421,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#프로젝트-jdk-버전-확인">프로젝트 JDK 버전 확인</a></li><li><a href="#버전-변경">버전 변경</a></li><li><a href="#module-error">module error</a></li></ul>
 
             </nav>
           </aside>
@@ -449,18 +449,15 @@
 
 <p>JDK 설치 참조</p>
 
-<p>https://jshwang94.tistory.com/3</p>
+<p><a href="https://hyunjunhwang1994.github.io/java/Java1/">참조</a></p>
 
-<ul>
-  <li>이클립스 설치 참조</li>
-</ul>
+<p>이클립스 설치 참조</p>
 
-<p>https://jshwang94.tistory.com/4</p>
+<p><a href="https://hyunjunhwang1994.github.io/java/Java2/">참조</a></p>
 
-<ul>
-  <li>프로젝트 JDK 버전 확인
-Properties -&gt; ProjectFacets -&gt; Convert to faceted form…</li>
-</ul>
+<h2 id="프로젝트-jdk-버전-확인">프로젝트 JDK 버전 확인</h2>
+
+<p>Properties -&gt; ProjectFacets -&gt; Convert to faceted form…</p>
 
 <p><img src="../../images/2022-11-28-15-48-20.png" alt="" class="align-center" />
 <img src="../../images/2022-11-28-15-48-25.png" alt="" class="align-center" />
@@ -472,6 +469,8 @@ Properties -&gt; ProjectFacets -&gt; Convert to faceted form…</li>
 <p>이클립스와 연결된 컴파일러 버전 확인</p>
 
 <p><img src="../../images/2022-11-28-15-48-39.png" alt="" class="align-center" /></p>
+
+<h2 id="버전-변경">버전 변경</h2>
 
 <p>JDK 17 -&gt; JDK 8 (1.8) 변경으로 가정해 보겠습니다.</p>
 
@@ -495,8 +494,9 @@ Properties -&gt; ProjectFacets -&gt; Convert to faceted form…</li>
 
 <p><img src="../../images/2022-11-28-15-49-07.png" alt="" /></p>
 
-<p>+
-통상 많이 쓰이는 1.8 버전으로 변경할 경우</p>
+<h2 id="module-error">module error</h2>
+
+<p>통상 많이 쓰이는 1.8 버전으로 변경할 경우</p>
 
 <p>그전 프로젝트가 JDK 9버전 이상의 버전으로 작성되었다면 
 JDK 9버전부터는 모듈이라는 기능 및 파일 (module-info.java) 추가됩니다.</p>
@@ -554,7 +554,7 @@ Syntax error on token “module”, module expected” error가 발생합니다.
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-11-28">2022-11-28</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-06">2022-12-06</time></p>
 
       </footer>
 
@@ -622,6 +622,68 @@ Syntax error on token “module”, module expected” error가 발생합니다.
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/%ED%95%AD%ED%95%B499/TIL02/" rel="permalink">항해99 TIL 2일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-06T00:00:00+09:00">2022-12-06</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/%ED%95%AD%ED%95%B499/TIL01/" rel="permalink">항해99 TIL 1일차
 </a>
       
@@ -634,7 +696,7 @@ Syntax error on token “module”, module expected” error가 발생합니다.
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-12-04T00:00:00+09:00">2022-12-04</time>
+        <time datetime="2022-12-05T00:00:00+09:00">2022-12-05</time>
       </span>
     
 
@@ -768,70 +830,6 @@ Syntax error on token “module”, module expected” error가 발생합니다.
                 
                 
                 <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.04
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          6 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/html/HTML01/" rel="permalink">div, span, p 태그의 차이
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-12-02T00:00:00+09:00">2022-12-02</time>
-      </span>
-    
-
-                 
-                
-                
-                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.03
                 
                 
                  

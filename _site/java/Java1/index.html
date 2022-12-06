@@ -38,7 +38,7 @@
 
 
 
-  <meta property="article:modified_time" content="2022-12-01T00:00:00+09:00">
+  <meta property="article:modified_time" content="2022-12-06T00:00:00+09:00">
 
 
 
@@ -220,7 +220,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">25</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">26</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -257,7 +257,7 @@
                     
                 
                     
-                        <li style="color: rgb(90, 127, 133);"><a href="/categories/hanghae99" class="">항해99 (2)</a></li>
+                        <li style="color: rgb(90, 127, 133);"><a href="/categories/hanghae99" class="">항해99 (3)</a></li>
                     
                 
                     
@@ -368,7 +368,7 @@
     <meta itemprop="headline" content="맥북 M1 JDK 1.8 (Java 8) 설치하는 법, 버전 변경하는 법">
     <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1 베타(22C5050e) 버전">
     <meta itemprop="datePublished" content="2022-11-16T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2022-12-01T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2022-12-06T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -392,7 +392,7 @@
                  
                 
                 
-                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.01
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.06
                 
                 
                  
@@ -406,7 +406,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 분 소요
+          5 분 소요
         
       </span>
     
@@ -421,7 +421,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#jdk란">JDK란?</a><ul><li><a href="#jdk-18-설치">JDK 1.8 설치</a></li><li><a href="#환경-변수-적용">환경 변수 적용</a></li><li><a href="#jdk-버전-변경">JDK 버전 변경</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -435,6 +435,18 @@
 
 <p><br /></p>
 
+<h1 id="jdk란">JDK란?</h1>
+<p>JDK는 자바 가상 머신(Java Virtual Machine, JVM),<br />
+그리고 자바 런타임 환경(Java Runtime Environment, JRE)과<br />
+함께 자바 프로그래밍에 사용되는 3대 핵심 기술 패키지 가운데 하나다.</p>
+
+<ul>
+  <li>JVM은 프로그램을 실행하는 자바 플랫폼 구성요소다.</li>
+  <li>JRE는 JVM을 생성하는 디스크 상의 부분이다.</li>
+  <li>JDK는 개발자들이 JVM과 JRE에 의해 실행되고 구동될 수 있는 자바 프로그램을 생성할 수 있게 해준다.</li>
+</ul>
+
+<h2 id="jdk-18-설치">JDK 1.8 설치</h2>
 <p>라이선스 비용 및 안정성 등 여러 가지 이유로 현업에서는 1.8 버전을 많이 사용합니다.</p>
 
 <p>Oracle JDK의 경우 M1, ARM 방식의 JDK 8버전은 지원하지 않으므로..<br />
@@ -495,6 +507,8 @@ export PATH=${PATH}:$JAVA_HOME/bin
 
 <p><img src="../../images/2022-11-28-14-02-31.png" alt="" /></p>
 
+<h2 id="환경-변수-적용">환경 변수 적용</h2>
+
 <p>수정한 환경 변수 들을 적용시켜줍니다.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source ~/.bash_profile
@@ -502,6 +516,8 @@ source ~/.zshrc
 </code></pre></div></div>
 
 <p><img src="../../images/2022-11-28-14-02-37.png" alt="" /></p>
+
+<h2 id="jdk-버전-변경">JDK 버전 변경</h2>
 
 <p>JDK 버전 변경의 경우 (위의 포스팅 내용 참고하여 파일및 경로만 수정해주면 됩니다.)</p>
 <ul>
@@ -512,7 +528,8 @@ source ~/.zshrc
   <li>java -version, javac -version 으로 버전 확인</li>
 </ul>
 
-<p>JDK 1.8 ( ARM )과 이클립스 최신 버전과 같이 쓰실 분은 아래 링크 글 참조하세요.</p>
+<p>JDK 1.8 ( ARM )과 이클립스 최신 버전과 같이 쓰실 분은 아래 링크 글 참조하세요.<br />
+<a href="https://hyunjunhwang1994.github.io/java/Java2/">참조</a></p>
  <!--실제 페이지 글 부분-->
         
       </section>
@@ -558,7 +575,7 @@ source ~/.zshrc
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-01">2022-12-01</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-06">2022-12-06</time></p>
 
       </footer>
 
@@ -630,6 +647,68 @@ source ~/.zshrc
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/%ED%95%AD%ED%95%B499/TIL02/" rel="permalink">항해99 TIL 2일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-06T00:00:00+09:00">2022-12-06</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/%ED%95%AD%ED%95%B499/TIL01/" rel="permalink">항해99 TIL 1일차
 </a>
       
@@ -642,7 +721,7 @@ source ~/.zshrc
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-12-04T00:00:00+09:00">2022-12-04</time>
+        <time datetime="2022-12-05T00:00:00+09:00">2022-12-05</time>
       </span>
     
 
@@ -776,70 +855,6 @@ source ~/.zshrc
                 
                 
                 <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.04
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          6 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/html/HTML01/" rel="permalink">div, span, p 태그의 차이
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-12-02T00:00:00+09:00">2022-12-02</time>
-      </span>
-    
-
-                 
-                
-                
-                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.03
                 
                 
                  

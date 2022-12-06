@@ -1,6 +1,6 @@
 var store = [{
         "title": "맥북 M1 JDK 1.8 (Java 8) 설치하는 법, 버전 변경하는 법",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 라이선스 비용 및 안정성 등 여러 가지 이유로 현업에서는 1.8 버전을 많이 사용합니다. Oracle JDK의 경우 M1, ARM 방식의 JDK 8버전은 지원하지 않으므로.. Open JDK인 Azul Zulu를 받아야 한다. Open JDK 다운로드 된 설치 파일...","categories": ["Java"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 JDK란? JDK는 자바 가상 머신(Java Virtual Machine, JVM), 그리고 자바 런타임 환경(Java Runtime Environment, JRE)과 함께 자바 프로그래밍에 사용되는 3대 핵심 기술 패키지 가운데 하나다. JVM은 프로그램을 실행하는 자바 플랫폼 구성요소다. JRE는 JVM을 생성하는 디스크...","categories": ["Java"],
         "tags": ["맥북 M1 JDK 1.8 설치","M1 JDK 환경변수 설정","M1 JDK 버전 변경"],
         "url": "/java/Java1/",
         "teaser": null
@@ -12,19 +12,19 @@ var store = [{
         "teaser": null
       },{
         "title": "이클립스 내 JDK 버전 변경, JDK 1.8 버전 변경 에러",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 Eclipse: Version: 2022-09 (4.25.0) JDK 버전 변경 시 JDK 설치와 환경 변수 적용 등이 미리 되어 있어야 합니다. JDK 설치 참조 https://jshwang94.tistory.com/3 이클립스 설치 참조 https://jshwang94.tistory.com/4 프로젝트 JDK 버전 확인...","categories": ["Java"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: openjdk version 1.8.0_352 Eclipse: Version: 2022-09 (4.25.0) JDK 버전 변경 시 JDK 설치와 환경 변수 적용 등이 미리 되어 있어야 합니다. JDK 설치 참조 참조 이클립스 설치 참조 참조 프로젝트 JDK 버전 확인...","categories": ["Java"],
         "tags": ["이클립스 JDK 버전 변경","Syntax error on token module module expected error"],
         "url": "/java/Java3/",
         "teaser": null
       },{
         "title": "맥에서 이클립스 오류나는 경우.",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 맥에서 아래와 같은 오류나는 경우?? 이클립스 워크스페이스 폴더 경로에 맥에서 사용하는 특수문자가 들어가 있다면 지워 주면 잘 실행 될 것이다....","categories": ["Java"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) Eclipse: Version: 2022-09 (4.25.0) 맥에서 이클립스 오류 위와 같은 오류가 발생할 경우 일단 터미널에서 자바 버전과 이클립스 버전이 맞는지 확인하고 이상이 없다면 마지막으로! 이클립스 워크스페이스 폴더...","categories": ["Java"],
         "tags": ["Error: A JNI error has occurred, please check your installation and try again","Exception in thread main java.lang.IllegalArgumentException: Error decoding percent encoded characters"],
         "url": "/java/Java4/",
         "teaser": null
       },{
         "title": "맥북 이클립스 자동완성, Contents Assist 사용하기",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) Mac에서 이클립스 자동완성으로 사용하는 단축키 Control + Space는 맥에서 이미 한글/영어변환 키에 사용되고 있다. 맥 단축키를 변경하거나, 이클립스에서 단축키를 변경하면된다....","categories": ["Java"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) Eclipse: Version: 2022-09 (4.25.0) Mac에서 이클립스 자동완성으로 사용하는 단축키 Control + Space는 맥에서 이미 한글/영어 변환 키에 사용되고 있다. 맥 단축키를 변경하거나, 이클립스에서 단축키를 변경하면 된다....","categories": ["Java"],
         "tags": ["이클립스","이클립스 자동완성 맥북","맥북 Contents Assist"],
         "url": "/java/Java5/",
         "teaser": null
@@ -108,7 +108,7 @@ var store = [{
         "teaser": null
       },{
         "title": "객체, 클래스, 인스턴스",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 클래스, 객체 상속과 오버라이딩 오버로딩 추상클래스와 인터페이스 패키지와 제어자 객체지향 프로그래밍? ex) 자동차(프로그램)은 바퀴(객체), 엔진(객체), 핸들(객체)등을 조합하여 만든다. 그러한 바퀴,...","categories": ["Java"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 베타(22C5050e) 버전 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 클래스, 객체 상속과 오버라이딩 오버 로딩 추상 클래스와 인터페이스 패키지와 제어자 객체지향 프로그래밍? ex) 자동차(프로그램)은 바퀴(객체), 엔진(객체), 핸들(객체) 등을 조합하여...","categories": ["Java"],
         "tags": ["객체","클래스","인스턴스"],
         "url": "/java/Java14/",
         "teaser": null
@@ -147,5 +147,11 @@ var store = [{
         "excerpt":"항해99 첫 날 오늘은 항해99 첫날이다. 자신의 선택에 따라, 웹 개발 종합반 강의 완주 팀과 토이 프로젝트 2가지 팀으로 나누어지었고, 나는 웹 개발 목표치인 2회독을 완강하여 토이 프로젝트에 도전해 보고 싶어 토이 프로젝트에 참여하였다. 팀플레이가 이렇게 어려웠던가? 토이 프로젝트 회의 결과, 3일 밖에 시간이 없기 때문에 사이즈가 큰 프로젝트는 하지...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL01/",
+        "teaser": null
+      },{
+        "title": "항해99 TIL 2일차",
+        "excerpt":"    팀플아닌 팀 개인전?을 하다가 튜터님들의 조언등을 통해 하루 남은 시점에서 다시 팀플레이로 바뀌었다.  ","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL02/",
         "teaser": null
       }]

@@ -38,6 +38,8 @@
 
 
 
+  <meta property="article:modified_time" content="2022-12-06T00:00:00+09:00">
+
 
 
   
@@ -218,7 +220,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">25</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">26</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -255,7 +257,7 @@
                     
                 
                     
-                        <li style="color: rgb(90, 127, 133);"><a href="/categories/hanghae99" class="">항해99 (2)</a></li>
+                        <li style="color: rgb(90, 127, 133);"><a href="/categories/hanghae99" class="">항해99 (3)</a></li>
                     
                 
                     
@@ -366,7 +368,7 @@
     <meta itemprop="headline" content="Java 프로그래밍이란?, Hellow Java">
     <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1 베타(22C5050e) 버전">
     <meta itemprop="datePublished" content="2022-11-18T00:00:00+09:00">
-    
+    <meta itemprop="dateModified" content="2022-12-06T00:00:00+09:00">
 
     <div class="page__inner-wrap">
       
@@ -389,6 +391,8 @@
 
                  
                 
+                
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.06
                 
                 
                  
@@ -417,7 +421,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#프로그래밍이란">프로그래밍이란?</a></li><li><a href="#java-언어의-탄생">Java 언어의 탄생</a><ul><li><a href="#java-언어의-특징">Java 언어의 특징</a></li><li><a href="#java-프로그래밍을-위한-기본-준비물">Java 프로그래밍을 위한 기본 준비물</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#프로그래밍이란">프로그래밍이란?</a></li><li><a href="#java-언어의-탄생">Java 언어의 탄생</a><ul><li><a href="#java-언어의-특징">Java 언어의 특징</a></li><li><a href="#java-프로그래밍을-위한-기본-준비물">Java 프로그래밍을 위한 기본 준비물</a></li><li><a href="#src-bin">src, bin</a></li><li><a href="#hellow-java">Hellow Java</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -474,7 +478,7 @@
   <li>원래 목적은 가전제품에 탑재할 수 있는 프로그램을 개발하기 위한 목적으로 탄생.</li>
   <li>1995년도에만 해도 가전제품에 프로그램이 거의 들어가 있지 않았다.</li>
   <li>실제로 가전제품 용도로 큰 성공은 얻지 못했다.</li>
-  <li>1990년대 말 2000년대 초 인터넷이 활성화 될 때 자바 언어를 기본으로 한 웹 프로그래밍 JSP, servlet이 유행하면서 유명해졌다.</li>
+  <li>1990년대 말 2000년대 초 인터넷이 활성화될 때 자바 언어를 기본으로 한 웹 프로그래밍 JSP, servlet이 유행하면서 유명해졌다.</li>
 </ul>
 
 <h2 id="java-언어의-특징">Java 언어의 특징</h2>
@@ -503,28 +507,28 @@
 <p><img src="../../images/2022-11-28-13-23-27.png" alt="" /></p>
 <ul>
   <li>JDK (Java Development Kit) 개발자만 설치하여 사용하면 된다.</li>
-  <li>JRE java 실행자의 경우는 JRE만 있으면 된다. ( 자바 프로그램이 실행될 수 있는 환경을 만들어준다. )</li>
+  <li>JRE java 실행자의 경우는 JRE만 있으면 된다.<br />
+(자바 프로그램이 실행될 수 있는 환경을 만들어준다.)</li>
   <li>API (Application Programming Interface), 프로그램에서 자주 사용되는 클래스 및 인터페이스의 모음이다.</li>
   <li>JVM (Java Virtual Machine) 자바 프로그램이 실행될 때 실제로 JVM 안에서 실행된다.</li>
 </ul>
 
-<p>개발자는 JDK가 있어야 개발을 할 수 있고,
+<p>개발자는 JDK가 있어야 개발을 할 수 있고,<br />
 단지 프로그램만을 사용하는 사용자라면 JRE만 설치되어 있으면 된다.</p>
 
-<p>자바 및 이클립스 설치 아래 링크 참조
-()[]</p>
-
-<p>src : 실제로 자신이 만든 코드들이 저장되어 있는 폴더
+<h2 id="src-bin">src, bin</h2>
+<p>src : 실제로 자신이 만든 코드들이 저장되어 있는 폴더<br />
 bin : 컴파일 후 컴퓨터가 이해할 수 있는 파일들이 모여있는 폴더</p>
 
-<p>자바는 여러가지 클래스가 많아도,<br />
-무조건 Main 메소드 부터 실행된다.</p>
+<p>자바는 여러 가지 클래스가 많아도,<br />
+무조건 Main 메서드부터 실행된다.</p>
 
-<p>아래처럼 사용가능
+<p>System.out.println을 아래처럼 사용 가능하다.
 <img src="../../images/2022-11-28-10-43-47.png" alt="" /></p>
 
 <p><img src="../../images/2022-11-28-10-44-03.png" alt="" /></p>
 
+<h2 id="hellow-java">Hellow Java</h2>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainClass</span> <span class="o">{</span>
 	
 	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
@@ -583,7 +587,7 @@ bin : 컴파일 후 컴퓨터가 이해할 수 있는 파일들이 모여있는 
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-11-18T00:00:00+09:00">2022-11-18</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-06">2022-12-06</time></p>
 
       </footer>
 
@@ -645,6 +649,68 @@ bin : 컴파일 후 컴퓨터가 이해할 수 있는 파일들이 모여있는 
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/%ED%95%AD%ED%95%B499/TIL02/" rel="permalink">항해99 TIL 2일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-06T00:00:00+09:00">2022-12-06</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/%ED%95%AD%ED%95%B499/TIL01/" rel="permalink">항해99 TIL 1일차
 </a>
       
@@ -657,7 +723,7 @@ bin : 컴파일 후 컴퓨터가 이해할 수 있는 파일들이 모여있는 
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-12-04T00:00:00+09:00">2022-12-04</time>
+        <time datetime="2022-12-05T00:00:00+09:00">2022-12-05</time>
       </span>
     
 
@@ -791,70 +857,6 @@ bin : 컴파일 후 컴퓨터가 이해할 수 있는 파일들이 모여있는 
                 
                 
                 <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.04
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          6 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/html/HTML01/" rel="permalink">div, span, p 태그의 차이
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-12-02T00:00:00+09:00">2022-12-02</time>
-      </span>
-    
-
-                 
-                
-                
-                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.03
                 
                 
                  
