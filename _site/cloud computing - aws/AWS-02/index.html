@@ -1,0 +1,990 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>AWS EC2 MFA 보안 설정 하기 | 기술 블로그</title>
+<meta name="description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1">
+
+
+  <meta name="author" content="Hyun Jun">
+  
+  <meta property="article:author" content="Hyun Jun">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술 블로그">
+<meta property="og:title" content="AWS EC2 MFA 보안 설정 하기">
+<meta property="og:url" content="http://localhost:4000/cloud%20computing%20-%20aws/AWS-02/">
+
+
+  <meta property="og:description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-07T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/cloud%20computing%20-%20aws/AWS-02/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hyun Jun",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="843d72a8e4b20f1a8ae8e971f19c34cb128b6c8b">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+
+    <style> 
+    /*스크롤바 꾸며주는 코드*/
+      ::-webkit-scrollbar{width: 17px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: rgb(25, 56, 109);}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      
+      {
+        width:12px;height:12px;background:transparent;
+      }
+
+        /*사이드바에는 적용하지않는다.*/
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          기술 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+
+                <!-- 다크 모드 토글 버튼 -->
+                
+                <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+                <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">카테고리👇</span>
+                    <div class="navicon"></div>
+                </button>
+
+
+                
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리👇</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+
+
+        
+        
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+  
+  
+    
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리👇</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">31</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <span class="nav__sub-title">etc</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                
+                    
+                
+                    
+                        <li><a href="/categories/jekyllblogdev" class="">Jekyll Blog Dev (11)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/hanghae99" class="">항해99 (4)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/cloudcomputingaws" class="">Cloud computing - AWS (3)</a></li>
+                    
+                
+            </ul>
+
+            
+
+
+
+        <span class="nav__sub-title">Programming language</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/java" class="">Java (8)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+        <span class="nav__sub-title">Framework</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/spring" class="">Spring (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/flask" class="">Flask (1)</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+
+ 
+
+
+      </li>
+
+
+
+  </ul>
+</nav>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="AWS EC2 MFA 보안 설정 하기">
+    <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1">
+    <meta itemprop="datePublished" content="2022-12-07T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/cloud%20computing%20-%20aws/AWS-02/" class="u-url" itemprop="url">AWS EC2 MFA 보안 설정 하기
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-07T00:00:00+09:00">2022-12-07</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#aws-보안의-중요성">AWS 보안의 중요성</a><ul><li><a href="#google-otp">google otp</a></li><li><a href="#mfa">MFA</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1
+</div>
+<hr />
+
+<h1 id="aws-보안의-중요성">AWS 보안의 중요성</h1>
+
+<p>AWS는 전세계에서 사용하는 만큼, 보안에 유의해야 합니다.<br />
+강의 수강, 실습 시에도 모두 MFA 계정으로만 사용해 주시고,<br />
+쓰지 않는 인스턴스는 꼭 모두 종료해 주세요.</p>
+
+<p>실행 중 인스턴스가 0일 경우, 종료할 인스턴스가 없는 것입니다!<br />
+AWS를 사용하지 않을 계획이시라면 ‘계정 해지’를 권해드려요:)</p>
+
+<p>OTP를 걸지 않고 키 파일을 털릴 경우 해킹의 먹잇감이 되며 몇억의 요금이 청구된다는 안타까운 사례들도 있습니다.</p>
+
+<p><a href="https://www.clien.net/service/board/park/17225662">해킹 사례</a></p>
+
+<h2 id="google-otp">google otp</h2>
+<p>본인의 휴대폰에 google otp 앱을 설치해 주세요.</p>
+
+<h2 id="mfa">MFA</h2>
+<p>아래 콘솔 접속 후<br />
+<a href="https://ap-northeast-2.console.aws.amazon.com/console/home?region=ap-northeast-2#">콘솔 홈 접속</a></p>
+
+<p>보안 자격 증명 클릭
+<img src="../../images/2022-12-07-14-27-23.png" alt="" /></p>
+
+<p>MFA 활성화 클릭
+<img src="../../images/2022-12-07-14-27-45.png" alt="" /></p>
+
+<p>가상 MFA 디바이스 -&gt; 계속
+<img src="../../images/2022-12-07-14-28-13.png" alt="" /></p>
+
+<p>핸드폰으로 google OTP(Authenticator) 접속</p>
+
+<ul>
+  <li>클릭 후 QR코드 스캔 터치</li>
+</ul>
+
+<p>QR 코드 표시 클릭 후 핸드폰으로 QR 스캔
+<img src="../../images/2022-12-07-14-29-36.png" alt="" /></p>
+
+<p>핸드폰에 뜨는 6자리 숫자키를 코드 1에 넣고, 다음 번 6자리 숫자키를 코드 2에 넣고 MFA 할당 클릭<br />
+<img src="../../images/2022-12-07-14-31-16.png" alt="" /></p>
+
+<p><img src="../../images/2022-12-07-14-31-43.png" alt="" /></p>
+
+<p>-&gt; 이제 로그인할 때 핸드폰 앱에서 숫자 6자리를 입력해 주면 된다.
+<img src="../../images/2022-12-07-00.png" alt="" /></p>
+
+<p><a href="https://aws.amazon.com/ko/premiumsupport/knowledge-center/close-aws-account/">AWS 계정 해지 방법</a></p>
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#aws" class="page__taxonomy-item p-category" rel="tag">aws</a><span class="sep">, </span>
+    
+      <a href="/tags/#aws-google-otp-%EC%84%A4%EC%A0%95" class="page__taxonomy-item p-category" rel="tag">aws google otp 설정</a><span class="sep">, </span>
+    
+      <a href="/tags/#aws-mfa-%EC%84%A4%EC%A0%95" class="page__taxonomy-item p-category" rel="tag">aws MFA 설정</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#cloud-computing-aws" class="page__taxonomy-item p-category" rel="tag">Cloud computing - AWS</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-07T00:00:00+09:00">2022-12-07</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=AWS+EC2+MFA+%EB%B3%B4%EC%95%88+%EC%84%A4%EC%A0%95+%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fcloud%2520computing%2520-%2520aws%2FAWS-02%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fcloud%2520computing%2520-%2520aws%2FAWS-02%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fcloud%2520computing%2520-%2520aws%2FAWS-02%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/cloud%20computing%20-%20aws/AWS-01/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>AWS EC2 가입 및 인스턴스 생성하기</a>
+    
+    
+      <a href="/cloud%20computing%20-%20aws/AWS-03/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>AWS EC2 원격 접속하기</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL03/" rel="permalink">항해99 TIL 3일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-07T00:00:00+09:00">2022-12-07</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cloud%20computing%20-%20aws/AWS-03/" rel="permalink">AWS EC2 원격 접속하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-07T00:00:00+09:00">2022-12-07</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cloud%20computing%20-%20aws/AWS-01/" rel="permalink">AWS EC2 가입 및 인스턴스 생성하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-07T00:00:00+09:00">2022-12-07</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL02/" rel="permalink">항해99 TIL 2일차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-06T00:00:00+09:00">2022-12-06</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          10 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/hyunjunhwang1994" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/hyunjuuuuun/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Hyun Jun. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <!-- start custom comments scripts -->
+
+<!-- end custom comments scripts -->
+
+<script>
+    'use strict';
+
+    window.customUtterances = {
+      theme: 'github-light',
+      darkTheme: 'github-dark',
+      onChange: (theme) => {
+        var commentContainer = document.querySelector('#utterances-comments');
+  
+        if (!commentContainer) {
+          return;
+        }
+  
+        while ( commentContainer.hasChildNodes() ) { 
+          commentContainer.removeChild( commentContainer.firstChild );
+        }
+  
+        var script = document.createElement('script');
+        script.setAttribute('src', 'https://utteranc.es/client.js');
+        script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
+        script.setAttribute('label', 'utterances');
+        script.setAttribute('issue-term', 'pathname');
+        script.setAttribute('theme', theme);
+        script.setAttribute('crossorigin', 'anonymous');
+  
+        commentContainer.appendChild(script);
+      }
+    };
+  </script>
+
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>

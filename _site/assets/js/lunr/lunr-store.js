@@ -150,7 +150,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Flask 기초 (test)",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 PyCharm 2022.2.3 (Professional Edition) Flask란 무엇 일까. 파이썬 기반의 웹 개발용으로 나온 프레임워크이다. 자바 기반의 스프링과 비슷하다고 보면 된다. 우리나라에서는 자바 스프링, 노드js가 많이 쓰이고 있지만, 외국에서는 사이트마다 다르지만 스프링보다 랭킹이 높은...","categories": ["Flask"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 PyCharm 2022.2.3 (Professional Edition) Flask란 무엇 일까. 파이썬 기반의 웹 개발용으로 나온 프레임워크이다. 자바 기반의 스프링과 비슷하지만, 좀 더 쉽고, 가벼운 프레임워크라고 생각하면 된다. 우리나라에서는 자바 스프링, 노드js가 많이 쓰이고 있지만, 외국에서는...","categories": ["Flask"],
         "tags": ["Flask 기초","Flask 시작하기"],
         "url": "/flask/Flask01/",
         "teaser": null
@@ -159,5 +159,29 @@ var store = [{
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 bcrypt 4.0.1 PyCharm 2022.2.3 (Professional Edition) 고생길.. 토이 프로젝트하라고 팀을 만들어 줬건만, 개인플레이를 하는 우리 팀(나 포함)… 오늘 다시 회의를 하고, 튜터님들의 조언 등을 통해 하루 이틀 남은 시점에서 다시 팀플레이로 바뀌었다....","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL02/",
+        "teaser": null
+      },{
+        "title": "AWS EC2 가입 및 인스턴스 생성하기",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 AWS? Amazon Web Services의 줄임말이다. 아마존에서 클라우드 컴퓨팅으로 서버를 제공하며, 우리는 간단하게 서버 컴퓨터를 쓸 수 있다. 여러 가지 운영체제로 운영할 수 있으며, 보안 설정도 자유롭고, 규모에 따라 서버 성능을 자유자재로 바꿀 수 있다. (물론 비싸지긴 하지만..)...","categories": ["Cloud computing - AWS"],
+        "tags": ["aws"],
+        "url": "/cloud%20computing%20-%20aws/AWS-01/",
+        "teaser": null
+      },{
+        "title": "AWS EC2 MFA 보안 설정 하기",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 AWS 보안의 중요성 AWS는 전세계에서 사용하는 만큼, 보안에 유의해야 합니다. 강의 수강, 실습 시에도 모두 MFA 계정으로만 사용해 주시고, 쓰지 않는 인스턴스는 꼭 모두 종료해 주세요. 실행 중 인스턴스가 0일 경우, 종료할 인스턴스가 없는 것입니다! AWS를 사용하지...","categories": ["Cloud computing - AWS"],
+        "tags": ["aws","aws MFA 설정","aws google otp 설정"],
+        "url": "/cloud%20computing%20-%20aws/AWS-02/",
+        "teaser": null
+      },{
+        "title": "AWS EC2 원격 접속하기",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 AWS 인스턴스에 접속해 보기. .pem 파일 권한 설정 터미널 실행 후 아래의 코드를 입력한다. ( 400까지 입력 후 키 페어 파일을 터미널로 드래그 앤 드랍하면 키 페어 파일의 경로가 자동으로 등록된다. ) sudo chmod 400 /Users/honggildong/Downloads/gildong_mykey.pem 키...","categories": ["Cloud computing - AWS"],
+        "tags": ["aws","EC2 원격 접속하기"],
+        "url": "/cloud%20computing%20-%20aws/AWS-03/",
+        "teaser": null
+      },{
+        "title": "항해99 TIL 3일차",
+        "excerpt":"           개발 환경            - 2021, 맥북 프로 M1 Pro 14인치 모델             - Ventura 13.1               버전            Python 3.9            Flask 2.2.2            bcrypt 4.0.1            PyCharm 2022.2.3 (Professional Edition)                    오늘의 목표     회원 수정 : 비밀번호, 이름, 닉네임, 이메일 수정 기능 넣기.   시간이 남을 경우 이메일 인증 절차 집어넣기.  ","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL03/",
         "teaser": null
       }]

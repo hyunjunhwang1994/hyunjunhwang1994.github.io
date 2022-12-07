@@ -29,10 +29,20 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "항해99" %}
-                        <li style="color: rgb(90, 127, 133);"><a href="/categories/hanghae99" class="">항해99 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/hanghae99" class="">항해99 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
+
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Cloud computing - AWS" %}
+                        <li><a href="/categories/cloudcomputingaws" class="">Cloud computing - AWS ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            
 
 
 
