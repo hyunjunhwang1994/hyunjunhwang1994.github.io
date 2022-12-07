@@ -472,7 +472,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          6 분 소요
         
       </span>
     
@@ -487,7 +487,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#오늘의-목표">오늘의 목표</a></li></ul>
+              <ul class="toc__menu"><li><a href="#오늘의-목표">오늘의 목표</a><ul><li><a href="#회원-수정-로직-구현-과정">회원 수정 로직 구현 과정</a></li><li><a href="#마무으리">마무으~리</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -505,17 +505,100 @@
           Flask 2.2.2<br />
           bcrypt 4.0.1<br />
           PyCharm 2022.2.3 (Professional Edition)<br />
-          
-
 </div>
 <hr />
 <p><br /></p>
 
-<h2 id="오늘의-목표">오늘의 목표</h2>
+<h1 id="오늘의-목표">오늘의 목표</h1>
 <ul>
-  <li>회원 수정 : 비밀번호, 이름, 닉네임, 이메일 수정 기능 넣기.</li>
-  <li>시간이 남을 경우 이메일 인증 절차 집어넣기.</li>
+  <li>회원 수정 : 비밀번호, 닉네임, 이메일 수정 기능 넣기.</li>
+  <li>코드 수정</li>
 </ul>
+
+<h2 id="회원-수정-로직-구현-과정">회원 수정 로직 구현 과정</h2>
+<p>회원 수정, 특히 비밀번호 수정에서 살짝 헤맸는데 키보드를 떼고 일단 생각 정리를 해보았다.</p>
+
+<p>비밀번호 같은 경우 암호화가 되어있고,</p>
+
+<p>똑같은 비밀번호 1234라도 암호화 시 매번 다르게,<br />
+특정한 알고리즘으로 돌아가는 salt 값에 의해 암호화된 값이 나오기 때문에,</p>
+
+<p>현재 비밀번호와 수정할 비밀번호를 입력 시<br />
+현재 비밀번호를, 다시 암호화를 해서 DB의 원본 비밀번호와 맞춰 보겠다는 방식은 X</p>
+
+<p>그렇다면 어떻게 해야 할까..?<br />
+회원가입, 로그인 방식을 이미 구현해 놨기 때문에 사실 크게 어렵지 않았다.</p>
+
+<p>회원가입이 비밀번호 암호화 -&gt; DB 저장 방식이었다면,</p>
+
+<p>로그인은 입력된 비밀번호와 DB에 저장된 비밀번호를<br />
+인코딩하여 복호화 함수에 같이 넣어서 체크하여 True, False를 리턴 받는 방식이었다.</p>
+
+<p>그렇기에, 현재 비밀번호, 바꿀 비밀번호, 현재 유저 id(세션 값)만 있다면 구현 가능하다.<br />
+물론 바꿀 비밀번호를 다시 DB 저장 시에는 회원가입에서처럼 암호화를 해서 넣어야 한다.</p>
+
+<details>
+<summary>비밀번호 변경 서버단</summary>
+
+<div>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">id</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span>
+
+   <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="nb">id</span><span class="p">},</span> <span class="p">{</span><span class="s">'_id'</span><span class="p">:</span> <span class="bp">False</span><span class="p">})</span>
+
+   <span class="n">currentPassword</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'currentPassword_give'</span><span class="p">]</span>
+   <span class="n">changedPassword</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'changedPassword_give'</span><span class="p">]</span>
+
+   <span class="n">result</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">checkpw</span><span class="p">(</span><span class="n">currentPassword</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">),</span> <span class="n">user</span><span class="p">[</span><span class="s">'pw'</span><span class="p">].</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
+
+   <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="bp">False</span><span class="p">):</span>
+       <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'failed_current_Password'</span><span class="p">})</span>
+
+   <span class="n">pw</span> <span class="o">=</span> <span class="n">changedPassword</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+   <span class="n">pwSalt</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">gensalt</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+   <span class="n">pwHash</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">hashpw</span><span class="p">(</span><span class="n">pw</span><span class="p">,</span> <span class="n">pwSalt</span><span class="p">)</span>
+
+   <span class="n">insertPwHash</span> <span class="o">=</span> <span class="n">pwHash</span><span class="p">.</span><span class="n">decode</span><span class="p">()</span>
+
+   <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">update_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="nb">id</span><span class="p">},</span> <span class="p">{</span><span class="s">'$set'</span><span class="p">:</span> <span class="p">{</span><span class="s">'pw'</span><span class="p">:</span> <span class="n">insertPwHash</span><span class="p">}})</span>
+
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'success'</span><span class="p">})</span>
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<h2 id="마무으리">마무으~리</h2>
+
+<p>하다 보니, 회원 가입 시 id가 한글로도 만들어지길래<br />
+정규 표현식을 이용해서 한글을 체크하는 함수를 만들어 주었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">function</span> <span class="nx">checkKorean</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+        <span class="kd">const</span> <span class="nx">korean</span> <span class="o">=</span> <span class="sr">/</span><span class="se">[</span><span class="sr">ㄱ-ㅎ|ㅏ-ㅣ|가-힣</span><span class="se">]</span><span class="sr">/</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">korean</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>확실히 첫날과 두 번째 날 삽질을 많이 하며, 플라스크의 대략적인 구조를 알게 되니<br />
+셋째 날에는 점점 삽질하는 횟수나 시간이 줄어들었다!</p>
+
+<p>시간이 좀 남아 플라스크에서의 세션에 대해서 공부해 보았다.</p>
+
+<p>쿠키, 세션, JWT(Json Web Token)</p>
+
+<p>쿠키의 경우 보안 상 이유로 보안이 필요한 서비스에는 잘 사용하지 않고,
+세션의 경우에는 많이 사용되지만, 아무래도 서버에 저장하는 만큼 사용자의 수가</p>
+
+<p>많을 경우 서버에 부담이 될 수도 있다고 한다.</p>
+
+<p>JWT는?
+데이터 위변조를 막을 수도있고,
+인증 정보에대한 별도의 서버 저장소가 필요하지도 않다고 한다.</p>
+
+<p>다만 토큰자체의 길이가 길어 인증 요청이 많아질수록 네트워크 자체의 부하가 심해진다.</p>
+
+<p><a href="https://tecoble.techcourse.co.kr/post/2021-05-22-cookie-session-jwt/">참조 블로그</a></p>
  <!--실제 페이지 글 부분-->
         
       </section>

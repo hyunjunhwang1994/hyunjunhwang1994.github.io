@@ -163,7 +163,7 @@ var store = [{
       },{
         "title": "AWS EC2 가입 및 인스턴스 생성하기",
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 AWS? Amazon Web Services의 줄임말이다. 아마존에서 클라우드 컴퓨팅으로 서버를 제공하며, 우리는 간단하게 서버 컴퓨터를 쓸 수 있다. 여러 가지 운영체제로 운영할 수 있으며, 보안 설정도 자유롭고, 규모에 따라 서버 성능을 자유자재로 바꿀 수 있다. (물론 비싸지긴 하지만..)...","categories": ["Cloud computing - AWS"],
-        "tags": ["aws"],
+        "tags": ["aws","EC2 인스턴스 생성"],
         "url": "/cloud%20computing%20-%20aws/AWS-01/",
         "teaser": null
       },{
@@ -180,7 +180,7 @@ var store = [{
         "teaser": null
       },{
         "title": "항해99 TIL 3일차",
-        "excerpt":"           개발 환경            - 2021, 맥북 프로 M1 Pro 14인치 모델             - Ventura 13.1               버전            Python 3.9            Flask 2.2.2            bcrypt 4.0.1            PyCharm 2022.2.3 (Professional Edition)                    오늘의 목표     회원 수정 : 비밀번호, 이름, 닉네임, 이메일 수정 기능 넣기.   시간이 남을 경우 이메일 인증 절차 집어넣기.  ","categories": ["항해99"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 bcrypt 4.0.1 PyCharm 2022.2.3 (Professional Edition) 오늘의 목표 회원 수정 : 비밀번호, 닉네임, 이메일 수정 기능 넣기. 코드 수정 회원 수정 로직 구현 과정 회원 수정, 특히 비밀번호 수정에서 살짝 헤맸는데 키보드를...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL03/",
         "teaser": null
