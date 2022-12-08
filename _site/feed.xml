@@ -1,4 +1,531 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-07T23:46:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">AWS EC2 MFA 보안 설정 하기</title><link href="http://localhost:4000/cloud%20computing%20-%20aws/AWS-02/" rel="alternate" type="text/html" title="AWS EC2 MFA 보안 설정 하기" /><published>2022-12-07T00:00:00+09:00</published><updated>2022-12-07T00:00:00+09:00</updated><id>http://localhost:4000/cloud%20computing%20-%20aws/AWS-02</id><content type="html" xml:base="http://localhost:4000/cloud%20computing%20-%20aws/AWS-02/"><![CDATA[<div class="notice" style="text-align:center">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-08T21:31:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">항해99 TIL 4일차 입학시험</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL04/" rel="alternate" type="text/html" title="항해99 TIL 4일차 입학시험" /><published>2022-12-08T00:00:00+09:00</published><updated>2022-12-08T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL04</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL04/"><![CDATA[<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1
+</div>
+<hr />
+
+<h1 id="항해-99-입학시험">항해 99 입학시험</h1>
+
+<p>오늘은 대망의 입학시험을 보는 날이다.  <br />
+시험 문제는 웹 개발 종합반 강의를 어느 정도 숙달했다면 충분히 쉽게 나왔다.</p>
+
+<p>사실 전날 CRUD 중 Delete 과정을 미리 연습해 보았는데,<br />
+Update가 나와서 코드만 살짝 수정 후 테스트하고 바로 제출해서 한 30분 걸린 것 같다!</p>
+
+<p>강의를 많이 듣지 않았거나 뼈대를 미리 만들어 놓지 않았다면 
+살짝 어려웠을 수도 있을 것 같은 수준의 난이도인 것 같다.</p>
+
+<p>사실 이런 입학시험 가지고 탈락 시킬 것 같진 않다.<br />
+정말 시험을 안 보거나, 의지가 없는 사람만 골라내려고 하는 것 같다.</p>
+
+<h1 id="지금까지-돌아보자면">지금까지 돌아보자면.</h1>
+
+<p>항해를 시작하고 웹 개발 강의를 처음 받았을 때는, 솔직히<br />
+파이썬과 플라스크 기반에 NoSQL인 mongo DB로 강의를 하기에,</p>
+
+<p>자바는 언제 배우고, 스프링은 언제 배우지?라는 생각을 했다.</p>
+
+<p>하지만 아직 초반이고, 플라스크를 썼기에 어느 정도 웹 사이클을 빨리 경험한 것뿐만 아니라<br />
+빨리 플라스크의 구조를 조금이라도 익혔기에</p>
+
+<p>웹에 있어 중요한 기능들 예를 들면 세션, 암호화, MVC 구조, JWT 등을<br />
+파보려고 하고, 어느 정도는 파본 것 같아 지금에 와서는 만족하고 있다.</p>
+
+<p>이러한 경험을 토대로 다른 언어, 프레임워크 들도 파고들 수 있는 실력을 기른 것 같아 뿌듯해졌다.<br />
+앞으로 포스팅은 계속하는 걸로… 개념 정리에 있어서 정말 도움이 되는 것 같다.</p>
+
+<p>글을 쓰고 정리하면서, 더 검색해 보고 문서를 읽으면서, 정말 추상적으로만 그려졌던 개념이<br />
+어느 정도는 확실하게 그려지는 경험을 짧은 시간에 많이 해 본 것 같아 기분이 좋다.</p>
+
+<h2 id="앞으로-어떻게-해야-할까">앞으로 어떻게 해야 할까?</h2>
+<p>입학시험을 보고 리액트, 스프링, 노드 js 3가지 중의 주특기를 골라야 했다.<br />
+나는 애초에 스프링을 배우고 싶기에 스프링을 골랐고 후회하지 않는다.</p>
+
+<p>앞으로도 지금처럼 모르는 것이 나왔을 때 대충 넘기지 않고<br />
+정리하면서 글로써 남기는 습관을 들이면 좋을 것 같고 이제부터는 자바 공부도 좀 많이 해야 할 것 같다!!</p>
+
+<p>node.js , react, spring 시니어 개발자 님들의 주특기 세션을 들어본 결과<br />
+결국 회사에서는 당장 실력이 조금 떨어지더라도 (물론 기본은..?) 더욱 발전할 수 있는 사람과</p>
+
+<p>커뮤니케이션을 잘할 수 있는 사람을 원하는 것 같았다.</p>
+
+<p>글을 쓰고 보니 TIL인데 그냥 일기처럼 썼다 ..ㅎㅎ</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">Flask Session</title><link href="http://localhost:4000/flask/Flask02/" rel="alternate" type="text/html" title="Flask Session" /><published>2022-12-08T00:00:00+09:00</published><updated>2022-12-08T00:00:00+09:00</updated><id>http://localhost:4000/flask/Flask02</id><content type="html" xml:base="http://localhost:4000/flask/Flask02/"><![CDATA[<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1
+</div>
+<hr />
+
+<div class="notice--info" style="text-align:center">
+          버전<br />
+          Python 3.9<br />
+          Flask 2.2.2<br />
+          PyCharm 2022.2.3 (Professional Edition)
+</div>
+<hr />
+
+<p><a href="https://thecodinglog.github.io/web/2020/08/11/what-is-session.html">세션의 기본 원리 참조</a></p>
+
+<p>기본적으로 session, escape는 falsk 패키지에 포함되어 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">session</span><span class="p">,</span> <span class="n">escape</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>세션 생성하기</p>
+<ul>
+  <li>세션 패키지를 임포트 해오고 서버를 킬 때 이미 세션이 생성되므로<br />
+세션에 값을 넣는다는 게 더 맞는 표현인 것 같다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/&lt;id&gt;'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">users</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+
+    <span class="c1"># 세션에 'username'이라는 Key에 id라는 value를 추가했다.
+</span>    <span class="n">session</span><span class="p">[</span><span class="s">'username'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">id</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s">'&lt;p&gt;세션에 저장된 당신의 id : %s&lt;/p&gt;'</span> <span class="o">%</span> <span class="nb">id</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>클라이언트 측 브라우저의 개발자 도구로 확인해 보면 쿠키에<br />
+세션 정보가 담긴 데이터가 하나 오는데,<br />
+<img src="../../images/2022-12-08-12-25-40.png" alt="" /></p>
+
+<p>이 Value 값은 (session[’’] = a)처럼 값을 담을 때 바뀌며<br />
+응답받은 페이지 하나당 하나의 세션 쿠키만을 가지고,</p>
+
+<p>서버 측에서 같은 세션을 공유하는 경우 (a = session[’’])에는 바뀌지 않는다.<br />
+이 Value 값은 개발자 도구에서 바꿀 수 있는데</p>
+
+<p>바꾸는 경우 서버에 가지고 갈 열쇠의 모양이 바뀌었다고 생각해도<br />
+되기 때문에 서버에 있는 세션 안 데이터를 가저 오지 못할 것이다.</p>
+
+<p>서버에서 본 세션에 담긴 정보
+<img src="../../images/2022-12-08-12-27-04.png" alt="" /></p>
+
+<p>클라이언트 측 -&gt; 서버에 가지고 갈 열쇠, 세션 안 데이터가 아닌 세션을 가리키고 있는 정보인 쿠키를 들고 서버에 간다.<br />
+서버 측 -&gt; 클라이언트가 들고 온 열쇠가 서버에 세션과 맞는지 확인 후 서버의 세션에 저장된 데이터를 사용한다.</p>
+
+<p>index page</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s">'username'</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="s">'&lt;p&gt;hello world : %s&lt;/p&gt;'</span> <span class="o">%</span> <span class="nb">id</span>
+</code></pre></div></div>
+
+<p><br /> 
+이미 저장되어 있기 때문에 어떠한 url로 접속해도 username이 남아있다.<br />
+(세션 생성되는 부분에서 스크린샷을 찍고 여러 번 생성을 해서 세션 쿠키 Value 값이 다릅니다.)<br />
+<img src="../../images/2022-12-08-12-32-32.png" alt="" /></p>
+
+<p>세션 정보를 삭제해 보았다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/delete'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">user_delete</span><span class="p">():</span>
+
+    <span class="n">session</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'username'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s">'세션 정보가 삭제되었습니다.'</span>
+</code></pre></div></div>
+
+<p><img src="../../images/2022-12-08-12-36-51.png" alt="" /></p>
+
+<p><br /></p>
+
+<p>이후 세션이 남아있나 확인을 하려고 /  &lt;- url로 들어가면? 아래와 같은 에러가 발생한다.
+<img src="../../images/2022-12-08-12-37-48.png" alt="" /></p>
+
+<p>에러가 난 이유는??<br />
+세션을 삭제했기 때문에, 
+session[‘username’]에서 ‘username’을 찾을 수 없어 나는 에러이다.</p>
+
+<p>그러므로 세션 값이 존재하는지 안 하는지부터 확인을 하고 다음 로직으로 넘겨야 한다!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+    <span class="k">if</span><span class="p">(</span><span class="s">'username'</span> <span class="ow">in</span> <span class="n">session</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"세션 있음"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s">'&lt;p&gt;{}님 안녕하세요.'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">escape</span><span class="p">(</span><span class="n">session</span><span class="p">[</span><span class="s">'username'</span><span class="p">]))</span> <span class="o">+</span> <span class="s">'&lt;/p&gt;'</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"세션 없음"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s">'&lt;p&gt;로그인해 주세요.&lt;/p&gt;'</span>
+
+</code></pre></div></div>
+
+<h2 id="pop과-clear의-차이">pop()과 clear()의 차이?</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/&lt;id&gt;/&lt;name&gt;'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">users</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+
+    <span class="n">session</span><span class="p">[</span><span class="s">'username'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">id</span>
+    <span class="n">session</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s">'완료'</span>
+</code></pre></div></div>
+
+<p><img src="../../images/2022-12-08-13-14-02.png" alt="" /></p>
+
+<p><img src="../../images/2022-12-08-13-14-37.png" alt="" /></p>
+
+<p>위와 같이 사용한다고 치면! ( 세션에 여러 데이터가 담긴 경우 )</p>
+
+<p>pop으로  username을 삭제한 경우</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">## session.clear()와 차이는?
+</span>    <span class="n">session</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'username'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>아래처럼 pop으로 제거한 내용만 제거되고 나머지 값은 남아있지만<br />
+<img src="../../images/2022-12-08-13-15-25.png" alt="" /></p>
+
+<p>clear()로 삭제한 경우</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/delete'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">user_delete</span><span class="p">():</span>
+
+    <span class="n">session</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s">'세션 정보가 삭제되었습니다.'</span>
+</code></pre></div></div>
+
+<p>clear의 경우 세션 안 모든 값을 삭제한다.</p>
+
+<p><img src="../../images/2022-12-08-13-49-56.png" alt="" /></p>
+
+<p><br /><br /></p>
+
+<p>++ 여러 url에서 세션에 값을 담는 경우</p>
+
+<p>예를 들어 A라는 페이지는 유저의 ID, Name을 세션에 담고
+B라는 페이지는 유저의 Age를 담는 경우</p>
+
+<p>클라이언트는 응답받은 하나의 페이지(A)에서 한 개의 세션 벨류 값을 가지고,<br />
+B라는 페이지에 접속 시 다른 벨류 값을 가진 세션 쿠키를 가지고 오지만,</p>
+
+<p>서버에서의 세션 데이터인 ID, Name, Age는 변하지 않는다.
+-&gt; B 페이지의 쿠키 값만 가지고 있어도 ID, Name, Age 사용 가능</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Flask" /><category term="Flask Session" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">JWT - Json Web Token</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/JWT/" rel="alternate" type="text/html" title="JWT - Json Web Token" /><published>2022-12-08T00:00:00+09:00</published><updated>2022-12-08T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/JWT</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/JWT/"><![CDATA[<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1
+</div>
+<hr />
+
+<h1 id="jwt란">JWT란?</h1>
+
+<p>JSON Web Token의 약자로 Json 포맷을 이용하여 유저를 인증하고 식별하기 위한 토큰(Token) 기반 인증 방식입니다. <br />
+토큰 자체는 클라이언트에 저장되기 때문에, 서버에서 따로 세션 DB라든지, 메모리 소모를 없앨 수 있습니다.</p>
+
+<p>이렇게할 수 있는 이유는, 토큰 자체에 사용자의 권한정보나,<br />
+서비스를 사용하기 위한 정보 자체가 포함(Self-contained) 되어있기 때문이다.</p>
+
+<p>데이터가 많아지면 토큰이 커질 수 있으며 토큰이 한 번 발급되면,<br />
+사용자의 정보를 바꾸더라도 토큰을 재발급하지 않는 이상 반영되지 않는다.</p>
+
+<h2 id="jwt-토큰-구조">JWT 토큰 구조</h2>
+
+<p>JWT는 세 파트로 나누어지고, 각 파트는 .(점)으로 구분하여 aaaaa.bbbbb.ccccc 이런 식으로 표현됩니다.<br />
+JWT는 URL에서 파라미터로 사용할 수 있도록 URL_Safe 한 Base64url 인코딩을 사용합니다.</p>
+
+<p>3파트는 각각 HEADER.PAYLOAD.SIGNATURE 파트이다.</p>
+
+<p>아래의 사이트를 들어가 보자.<br />
+<a href="https://jwt.io/">jwt.io</a></p>
+
+<p>JWT의 기본 구조를 볼 수 있다.
+<img src="../../images/2022-12-08-20-03-15.png" alt="" /></p>
+
+<h3 id="header">Header</h3>
+<p>JWT를 검증하는데 필요한 정보를 가진 JSON 객체는 Base64 URL-Safe 인코딩된 문자열이다.<br />
+헤더(Header)는 JWT를 어떻게 검증(Verify) 하는가에 대한 내용을 담고 있다.</p>
+
+<p><img src="../../images/2022-12-08-20-01-50.png" alt="" /></p>
+
+<p>alg : 해싱 알고리즘을 지정합니다.  해싱 알고리즘으로는 보통 HMAC SHA256 혹은 RSA 가 사용되며,<br />
+이 알고리즘은, 토큰을 검증할 때 사용되는 signature 부분에서 사용됩니다.<br />
+typ : 토큰의 타입을 지정합니다.</p>
+
+<h2 id="payload">PAYLOAD</h2>
+<p>JWT의 실질적인 데이터 부분으로써 사용될 정보가 담겨있습니다.<br />
+여기에 담는 name / value 한 쌍의 데이터를 클레임(claim)이라고 부릅니다.</p>
+
+<p><img src="../../images/2022-12-08-20-07-22.png" alt="" /></p>
+
+<p>이 클레임의 종류는 3가지로 나누어집니다.</p>
+
+<p>등록된 (registered) 클레임,<br />
+공개 (public) 클레임,<br />
+비공개 (private) 클레임</p>
+
+<h1 id="1-등록된-registered-클레임">1. 등록된 (registered) 클레임</h1>
+<p>등록된 클레임들은 서비스에서 필요한 정보들이 아닌,<br />
+토큰에 대한 정보들을 담기 위하여 이름이 이미 정해진 클레임들입니다.</p>
+
+<p>등록된 클레임의 사용은 모두 선택적 (optional)이며,<br />
+이에 포함된 클레임 이름들은 다음과 같습니다:</p>
+
+<p>iss: 토큰 발급자 (issuer)<br />
+sub: 토큰 제목 (subject)<br />
+aud: 토큰 대상자 (audience)<br />
+exp: 토큰의 만료시간 (expiraton), 시간은 NumericDate 형식으로 되어있어야 하며 (예: 1480849147370) 언제나 현재 시간보다 이후로 설정되어 있어야 합니다.<br />
+nbf: Not Before를 의미하며, 토큰의 활성 날짜와 비슷한 개념입니다. 여기에도 NumericDate 형식으로 날짜를 지정하며, 이 날짜가 지나기 전까지는 토큰이 처리되지 않습니다.<br />
+iat: 토큰이 발급된 시간 (issued at), 이 값을 사용하여 토큰의 age 가 얼마나 되었는지 판단할 수 있습니다.<br />
+jti: JWT의 고유 식별자로서, 주로 중복적인 처리를 방지하기 위하여 사용됩니다. 일회용 토큰에 사용하면 유용합니다.</p>
+
+<p>페이로드(Payload)에 있는 속성들을 클레임 셋(Claim Set)이라 부릅니다.</p>
+
+<h1 id="2-공개-public-클레임">2. 공개 (public) 클레임</h1>
+<p>공개 클레임들은 충돌이 방지된 (collision-resistant) 이름을 가지고 있어야 합니다.<br />
+충돌을 방지하기 위해서는, 클레임 이름을 URI 형식으로 짓습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{  
+    "https://www.naver.com": true  
+}
+</code></pre></div></div>
+
+<h1 id="3-비공개-private-클레임">3. 비공개 (private) 클레임</h1>
+<p>등록된 클레임도 아니고, 공개된 클레임들도 아닙니다.<br />
+양 측간에 (보통 클라이언트 &lt;-&gt;서버) 협의하에 사용되는 클레임 이름들입니다.</p>
+
+<p>공개 클레임과는 달리 이름이 중복되어 충돌이 될 수 있으니 사용할 때에 유의해야 합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "username": "honggildong"
+}
+</code></pre></div></div>
+
+<hr />
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>예제 Payload
+{
+    "iss": "naver.com",
+    "exp": "1485270000000",
+    "https://naver.com/users/is_admin": true,
+    "userId": "gildong1234",
+    "username": "honggildong"
+}
+</code></pre></div></div>
+
+<h2 id="signature">SIGNATURE</h2>
+
+<ul>
+  <li>헤더의 인코딩 값과, 정보의 인코딩 값을 합친 후 주어진 비밀키로 해쉬를 하여 생성합니다.</li>
+  <li>서명은 헤더의 alg에 정의된 알고리즘과 비밀 키를 이용해 성성하고 Base64 URL-Safe로 인코딩한다.</li>
+  <li>각 요청 시 서명이 확인됩니다. 헤더 또는 페이로드의 정보가 클라이언트에 의해 변경된 경우 서명이 무효화됩니다.</li>
+</ul>
+
+<p><img src="../../images/2022-12-08-20-22-12.png" alt="" /></p>
+
+<p>JWT를 만들 때 서명(signature)을 하기 위해서는 인코딩된 헤더와 페이로드, 시크릿 키, 알고리즘이 필요하다.<br />
+서명을 통해 토큰을 인코딩 될 때의 환경과 대조할 수 있으며, 진위 여부를 확인할 수 있다.</p>
+
+<p>헤더 base64 + 페이로드 base64 + 임의의 시크릿 키(your-256-bit-secret 자체가 시크릿 키입니다.)<br />
+를 합친 값입니다.</p>
+
+<p>서명 부분을 만드는 슈도코드(pseudocode)의 구조는 다음과 같습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HMACSHA256(
+base64UrlEncode(header) + "." +
+base64UrlEncode(payload),
+secret)
+</code></pre></div></div>
+
+<p>이렇게 만든 해쉬를, base64 형태로 나타내면 됩니다.<br />
+(문자열을 인코딩 하는 게 아닌 hex → base64 인코딩을 해야 합니다.)</p>
+
+<p><br /><br /></p>
+<h2 id="jwt-동작-순서">JWT 동작 순서</h2>
+
+<ol>
+  <li>클라이언트 사용자가 로그인 성공</li>
+  <li>서버에서 서명된(Signed) JWT를 생성하여 클라이언트에 응답하여 돌려준다.</li>
+  <li>클라이언트가 서버에 데이터를 추가적으로 요구할 때 JWT를 HTTP Header에 실어 보낸다.</li>
+  <li>서버에서 클라이언트로부터 온 JWT 토큰을 검증 후, 데이터를 처리해 응답한다.</li>
+</ol>
+
+<h2 id="jwt의-장점">JWT의 장점</h2>
+<p>Statelesee 하며, 별도로 세션을 저장해야 할 db나 메모리가 필요 없습니다.</p>
+
+<h2 id="jwt의-단점">JWT의 단점</h2>
+<p>해당 사용자를 로그아웃 시킨다든지, 사용자가 얼마나 접속해 있는지 이런 정보들을 알 수 없습니다.<br />
+해당 사용자가 접속해 있는지? 뭐 이런 부가기능 같은 것을 JWT로는 구현할 수 없습니다.</p>
+
+<p><br />
+<br /></p>
+
+<h1 id="파이썬-jwt-맛보기">파이썬 JWT 맛보기</h1>
+
+<h2 id="jwt-토큰을-만들어서-발급">JWT 토큰을 만들어서 발급</h2>
+
+<p>payload에는 사용자의 id와 만료시간을 넣었다.<br />
+이때 이 payload 안의 값은 쉽게 디코딩 가능하므로 비밀번호 같은 중요한 데이터를 넣어서는 안 된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">jwt</span>
+
+<span class="c1"># 토큰 만료시간용
+</span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="s">'mysecretkey1@31##~'</span>
+
+    <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'id'</span><span class="p">:</span> <span class="n">id_receive</span><span class="p">,</span>
+        <span class="s">'exp'</span><span class="p">:</span> <span class="n">datetime</span><span class="p">.</span><span class="n">datetime</span><span class="p">.</span><span class="n">utcnow</span><span class="p">()</span> <span class="o">+</span> <span class="n">datetime</span><span class="p">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">jwt</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">SECRET_KEY</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="s">'HS256'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>jwt.encode라는 함수에 payload(유저 데이터), SecretKey, 알고리즘을 넣어주면<br />
+내부적으로 아래와 같이 알아서 JWT를 만들어준다</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExMTEiLCJleHAiOjE2NzA0OTU1MDR9.JZ0JQMxDql-jWOELTeguh8yMGQPaDBtN8tGh2dzjB0o
+</code></pre></div></div>
+
+<p>위의 토큰 값을 아래 사이트에 들어가서 디코딩 해보자.</p>
+
+<p><a href="https://jwt.io/">jwt.io</a></p>
+
+<p>그러면 base64로 인코딩 되어있기 때문에 아래처럼 쉽게 안의 내용물을 볼 수 있다.<br />
+(base64는 암호화가 아니다, Base64 Encoding은 Binary Data를 Text로 변경하는 Encoding이다.)</p>
+
+<p><img src="../../images/2022-12-08-19-34-05.png" alt="" /></p>
+
+<p>물론 저안의 시크릿 키는 알 수가 없다 -&gt; 아마  Invalid Signature라고 나올 것이고,<br />
+시크릿키 변경 시에 Signature Verified라고 뜨는 것은</p>
+
+<p>인코딩된 JWT SIGNATURE 부분 자체가 시크릿 키에 맞춰서 바뀌기 때문이다.</p>
+
+<p>JWT의 쓰임은 이 토큰이 서버로 갔을 때 그 토큰의 진위를 판별할 수 있는 키를 서버가 가지고 있음에 있다.<br />
+-&gt; 그 말인즉슨 이 토큰(쿠키)를 탈취하면 이 안에 들어있는 정보는 쉽게 다 볼 수 있다는 말.</p>
+
+<p>그 후, 아래쪽 프론트단 Ajax에서 토큰에 JWT를 저장해 주면 완성</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">.</span><span class="nx">cookie</span><span class="p">(</span><span class="dl">'</span><span class="s1">mytoken</span><span class="dl">'</span><span class="p">,</span> <span class="nx">response</span><span class="p">[</span><span class="dl">'</span><span class="s1">token</span><span class="dl">'</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<h2 id="jwt-디코딩-과정">JWT 디코딩 과정</h2>
+
+<p>위의 프론트단에서 mytoken이라는 이름으로 쿠키에 JWT를 저장했다면<br />
+아래처럼 클라이언트가 요청 시 request.cookies.get(‘mytoken’)으로 불러올 수 있다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="n">token_receive</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">cookies</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'mytoken'</span><span class="p">)</span>
+
+        <span class="c1"># token을 시크릿키로 디코딩 합니다.
+</span>        <span class="n">payload</span> <span class="o">=</span> <span class="n">jwt</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="n">token_receive</span><span class="p">,</span> <span class="n">SECRET_KEY</span><span class="p">,</span> <span class="n">algorithms</span><span class="o">=</span><span class="p">[</span><span class="s">'HS256'</span><span class="p">])</span>
+
+        <span class="c1"># payload의 id 값으로 유저를 특징하고 데이터를 활용할 수 있다.
+</span>        <span class="n">userinfo</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">user</span><span class="p">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="n">payload</span><span class="p">[</span><span class="s">'id'</span><span class="p">]},</span> <span class="p">{</span><span class="s">'_id'</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'success'</span><span class="p">,</span> <span class="s">'nickname'</span><span class="p">:</span> <span class="n">userinfo</span><span class="p">[</span><span class="s">'nickname'</span><span class="p">]})</span>
+
+</code></pre></div></div>
+
+<p><a href="https://pronist.dev/143">참조 블로그</a><br />
+<a href="https://tech.toktokhan.dev/2021/04/30/JWT/">참조 블로그</a><br />
+<a href="https://velog.io/@hahan/JWT%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80">참조 블로그</a><br />
+<a href="https://inpa.tistory.com/entry/WEB-%F0%9F%93%9A-JWTjson-web-token-%EB%9E%80-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC">참조 블로그</a><br />
+<a href="https://walkingplow.tistory.com/88">참조 블로그</a><br />
+<a href="https://velog.io/@junghyeonsu/  %ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%90%EC%84%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8%EC%9D%84-%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95">참조 블로그</a><br />
+<a href="https://velopert.com/2389">참조 블로그</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="JWT" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 3일차</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03/" rel="alternate" type="text/html" title="항해99 TIL 3일차" /><published>2022-12-07T00:00:00+09:00</published><updated>2022-12-07T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03/"><![CDATA[<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1
+</div>
+<hr />
+
+<div class="notice--info" style="text-align:center">
+          버전<br />
+          Python 3.9<br />
+          Flask 2.2.2<br />
+          bcrypt 4.0.1<br />
+          PyCharm 2022.2.3 (Professional Edition)<br />
+</div>
+<hr />
+<p><br /></p>
+
+<h1 id="오늘의-목표">오늘의 목표</h1>
+<ul>
+  <li>회원 수정 : 비밀번호, 닉네임, 이메일 수정 기능 넣기.</li>
+  <li>코드 수정</li>
+</ul>
+
+<h2 id="회원-수정-로직-구현-과정">회원 수정 로직 구현 과정</h2>
+<p>회원 수정, 특히 비밀번호 수정에서 살짝 헤맸는데 키보드를 떼고 일단 생각 정리를 해보았다.</p>
+
+<p>비밀번호 같은 경우 암호화가 되어있고,</p>
+
+<p>똑같은 비밀번호 1234라도 암호화 시 매번 다르게,<br />
+특정한 알고리즘으로 돌아가는 salt 값에 의해 암호화된 값이 나오기 때문에,</p>
+
+<p>현재 비밀번호와 수정할 비밀번호를 입력 시<br />
+현재 비밀번호를, 다시 암호화를 해서 DB의 원본 비밀번호와 맞춰 보겠다는 방식은 X</p>
+
+<p>그렇다면 어떻게 해야 할까..?<br />
+회원가입, 로그인 방식을 이미 구현해 놨기 때문에 사실 크게 어렵지 않았다.</p>
+
+<p>회원가입이 비밀번호 암호화 -&gt; DB 저장 방식이었다면,</p>
+
+<p>로그인은 입력된 비밀번호와 DB에 저장된 비밀번호를<br />
+인코딩하여 복호화 함수에 같이 넣어서 체크하여 True, False를 리턴 받는 방식이었다.</p>
+
+<p>그렇기에, 현재 비밀번호, 바꿀 비밀번호, 현재 유저 id(세션 값)만 있다면 구현 가능하다.<br />
+물론 바꿀 비밀번호를 다시 DB 저장 시에는 회원가입에서처럼 암호화를 해서 넣어야 한다.</p>
+
+<details>
+<summary>비밀번호 변경 서버단</summary>
+
+<div>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">id</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span>
+
+   <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="nb">id</span><span class="p">},</span> <span class="p">{</span><span class="s">'_id'</span><span class="p">:</span> <span class="bp">False</span><span class="p">})</span>
+
+   <span class="n">currentPassword</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'currentPassword_give'</span><span class="p">]</span>
+   <span class="n">changedPassword</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'changedPassword_give'</span><span class="p">]</span>
+
+   <span class="n">result</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">checkpw</span><span class="p">(</span><span class="n">currentPassword</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">),</span> <span class="n">user</span><span class="p">[</span><span class="s">'pw'</span><span class="p">].</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
+
+   <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="bp">False</span><span class="p">):</span>
+       <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'failed_current_Password'</span><span class="p">})</span>
+
+   <span class="n">pw</span> <span class="o">=</span> <span class="n">changedPassword</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+   <span class="n">pwSalt</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">gensalt</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+   <span class="n">pwHash</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">hashpw</span><span class="p">(</span><span class="n">pw</span><span class="p">,</span> <span class="n">pwSalt</span><span class="p">)</span>
+
+   <span class="n">insertPwHash</span> <span class="o">=</span> <span class="n">pwHash</span><span class="p">.</span><span class="n">decode</span><span class="p">()</span>
+
+   <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">update_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="nb">id</span><span class="p">},</span> <span class="p">{</span><span class="s">'$set'</span><span class="p">:</span> <span class="p">{</span><span class="s">'pw'</span><span class="p">:</span> <span class="n">insertPwHash</span><span class="p">}})</span>
+
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'success'</span><span class="p">})</span>
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<h2 id="마무으리">마무으~리</h2>
+
+<p>하다 보니, 회원 가입 시 id가 한글로도 만들어지길래<br />
+정규 표현식을 이용해서 한글을 체크하는 함수를 만들어 주었다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">function</span> <span class="nx">checkKorean</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+        <span class="kd">const</span> <span class="nx">korean</span> <span class="o">=</span> <span class="sr">/</span><span class="se">[</span><span class="sr">ㄱ-ㅎ|ㅏ-ㅣ|가-힣</span><span class="se">]</span><span class="sr">/</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">korean</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>확실히 첫날과 두 번째 날 삽질을 많이 하며, 플라스크의 대략적인 구조를 알게 되니<br />
+셋째 날에는 점점 삽질하는 횟수나 시간이 줄어들었다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">AWS EC2 MFA 보안 설정 하기</title><link href="http://localhost:4000/cloud%20computing%20-%20aws/AWS-02/" rel="alternate" type="text/html" title="AWS EC2 MFA 보안 설정 하기" /><published>2022-12-07T00:00:00+09:00</published><updated>2022-12-07T00:00:00+09:00</updated><id>http://localhost:4000/cloud%20computing%20-%20aws/AWS-02</id><content type="html" xml:base="http://localhost:4000/cloud%20computing%20-%20aws/AWS-02/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
@@ -208,96 +735,7 @@ yes라고 입력하면 된다.</p>
 <p>키 페어 파일이 서버에 접속할 수 있는 열쇠가 되는 것!</p>
 
 <p>그럼 아래와 같이 기본적인 서버 정보가 나온다!
-<img src="../../images/2022-12-07-13-29-39.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Cloud computing - AWS" /><category term="aws" /><category term="EC2 원격 접속하기" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 3일차</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03/" rel="alternate" type="text/html" title="항해99 TIL 3일차" /><published>2022-12-07T00:00:00+09:00</published><updated>2022-12-07T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03/"><![CDATA[<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1
-</div>
-<hr />
-
-<div class="notice--info" style="text-align:center">
-          버전<br />
-          Python 3.9<br />
-          Flask 2.2.2<br />
-          bcrypt 4.0.1<br />
-          PyCharm 2022.2.3 (Professional Edition)<br />
-</div>
-<hr />
-<p><br /></p>
-
-<h1 id="오늘의-목표">오늘의 목표</h1>
-<ul>
-  <li>회원 수정 : 비밀번호, 닉네임, 이메일 수정 기능 넣기.</li>
-  <li>코드 수정</li>
-</ul>
-
-<h2 id="회원-수정-로직-구현-과정">회원 수정 로직 구현 과정</h2>
-<p>회원 수정, 특히 비밀번호 수정에서 살짝 헤맸는데 키보드를 떼고 일단 생각 정리를 해보았다.</p>
-
-<p>비밀번호 같은 경우 암호화가 되어있고,</p>
-
-<p>똑같은 비밀번호 1234라도 암호화 시 매번 다르게,<br />
-특정한 알고리즘으로 돌아가는 salt 값에 의해 암호화된 값이 나오기 때문에,</p>
-
-<p>현재 비밀번호와 수정할 비밀번호를 입력 시<br />
-현재 비밀번호를, 다시 암호화를 해서 DB의 원본 비밀번호와 맞춰 보겠다는 방식은 X</p>
-
-<p>그렇다면 어떻게 해야 할까..?<br />
-회원가입, 로그인 방식을 이미 구현해 놨기 때문에 사실 크게 어렵지 않았다.</p>
-
-<p>회원가입이 비밀번호 암호화 -&gt; DB 저장 방식이었다면,</p>
-
-<p>로그인은 입력된 비밀번호와 DB에 저장된 비밀번호를<br />
-인코딩하여 복호화 함수에 같이 넣어서 체크하여 True, False를 리턴 받는 방식이었다.</p>
-
-<p>그렇기에, 현재 비밀번호, 바꿀 비밀번호, 현재 유저 id(세션 값)만 있다면 구현 가능하다.<br />
-물론 바꿀 비밀번호를 다시 DB 저장 시에는 회원가입에서처럼 암호화를 해서 넣어야 한다.</p>
-
-<details>
-<summary>비밀번호 변경 서버단</summary>
-
-<div>
-
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">id</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span>
-
-   <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="nb">id</span><span class="p">},</span> <span class="p">{</span><span class="s">'_id'</span><span class="p">:</span> <span class="bp">False</span><span class="p">})</span>
-
-   <span class="n">currentPassword</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'currentPassword_give'</span><span class="p">]</span>
-   <span class="n">changedPassword</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'changedPassword_give'</span><span class="p">]</span>
-
-   <span class="n">result</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">checkpw</span><span class="p">(</span><span class="n">currentPassword</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">),</span> <span class="n">user</span><span class="p">[</span><span class="s">'pw'</span><span class="p">].</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
-
-   <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="bp">False</span><span class="p">):</span>
-       <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'failed_current_Password'</span><span class="p">})</span>
-
-   <span class="n">pw</span> <span class="o">=</span> <span class="n">changedPassword</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
-   <span class="n">pwSalt</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">gensalt</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
-   <span class="n">pwHash</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">hashpw</span><span class="p">(</span><span class="n">pw</span><span class="p">,</span> <span class="n">pwSalt</span><span class="p">)</span>
-
-   <span class="n">insertPwHash</span> <span class="o">=</span> <span class="n">pwHash</span><span class="p">.</span><span class="n">decode</span><span class="p">()</span>
-
-   <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">update_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="nb">id</span><span class="p">},</span> <span class="p">{</span><span class="s">'$set'</span><span class="p">:</span> <span class="p">{</span><span class="s">'pw'</span><span class="p">:</span> <span class="n">insertPwHash</span><span class="p">}})</span>
-
-    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'success'</span><span class="p">})</span>
-</code></pre></div>    </div>
-
-  </div>
-</details>
-
-<h2 id="마무으리">마무으~리</h2>
-
-<p>하다 보니, 회원 가입 시 id가 한글로도 만들어지길래<br />
-정규 표현식을 이용해서 한글을 체크하는 함수를 만들어 주었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">function</span> <span class="nx">checkKorean</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
-        <span class="kd">const</span> <span class="nx">korean</span> <span class="o">=</span> <span class="sr">/</span><span class="se">[</span><span class="sr">ㄱ-ㅎ|ㅏ-ㅣ|가-힣</span><span class="se">]</span><span class="sr">/</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="nx">korean</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
-    <span class="p">}</span>
-</code></pre></div></div>
-
-<p>확실히 첫날과 두 번째 날 삽질을 많이 하며, 플라스크의 대략적인 구조를 알게 되니<br />
-셋째 날에는 점점 삽질하는 횟수나 시간이 줄어들었다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 2일차</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL02/" rel="alternate" type="text/html" title="항해99 TIL 2일차" /><published>2022-12-06T00:00:00+09:00</published><updated>2022-12-06T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL02</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL02/"><![CDATA[<div class="notice" style="text-align:center">
+<img src="../../images/2022-12-07-13-29-39.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Cloud computing - AWS" /><category term="aws" /><category term="EC2 원격 접속하기" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 2일차</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL02/" rel="alternate" type="text/html" title="항해99 TIL 2일차" /><published>2022-12-06T00:00:00+09:00</published><updated>2022-12-06T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL02</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL02/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
@@ -500,7 +938,7 @@ ajax만 썼는데.. 그래도 이렇게 하다 보니 틀렸던 점이 기억에
   <li>유효성 검사의 중요성</li>
   <li>form 태그 get, post 방식 - ajax get, post 방식</li>
   <li>암호화/복호화, 세션 찍먹</li>
-</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">Flask 기초 (test)</title><link href="http://localhost:4000/flask/Flask01/" rel="alternate" type="text/html" title="Flask 기초 (test)" /><published>2022-12-06T00:00:00+09:00</published><updated>2022-12-06T00:00:00+09:00</updated><id>http://localhost:4000/flask/Flask01</id><content type="html" xml:base="http://localhost:4000/flask/Flask01/"><![CDATA[<div class="notice" style="text-align:center">
+</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">Flask 기초</title><link href="http://localhost:4000/flask/Flask01/" rel="alternate" type="text/html" title="Flask 기초" /><published>2022-12-06T00:00:00+09:00</published><updated>2022-12-08T00:00:00+09:00</updated><id>http://localhost:4000/flask/Flask01</id><content type="html" xml:base="http://localhost:4000/flask/Flask01/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
@@ -515,32 +953,250 @@ ajax만 썼는데.. 그래도 이렇게 하다 보니 틀렸던 점이 기억에
 </div>
 <hr />
 
-<h1 id="flask란-무엇-일까">Flask란 무엇 일까.</h1>
+<h1 id="flask란-무엇일까">Flask란 무엇일까.</h1>
 
-<p>파이썬 기반의 웹 개발용으로 나온 프레임워크이다.
+<p>파이썬 기반의 웹 개발용으로 나온 프레임워크이다.<br />
 자바 기반의 스프링과 비슷하지만, 좀 더 쉽고, 가벼운 프레임워크라고 생각하면 된다.</p>
 
-<p>우리나라에서는 자바 스프링, 노드js가 많이 쓰이고 있지만,
+<p>“마이크로 프레임워크”라고도 한다.</p>
+
+<p>우리나라에서는 자바 스프링, 노드 js가 많이 쓰이고 있지만,<br />
 외국에서는 사이트마다 다르지만 스프링보다 랭킹이 높은 곳도 있다.</p>
 
+<p>플라스크는 WSGI 프레임워크로서 가볍고, 빠르고,  쉽게 시작할 수 있습니다.<br />
+필요하다면, Jinja2를 사용하여 프론트엔드에서 동적인 기능을 구현할 수도 있습니다</p>
+
+<ul>
+  <li>장점</li>
+  <li>
+    <p>매우 빠른 속도로, 간편하게 웹 개발을 시작할 수 있다.</p>
+  </li>
+  <li>단점</li>
+  <li>WSGI 방식은 구조적으로 한 번에 많은 트래픽을 처리하기엔 느리다는 단점이 있습니다.</li>
+  <li>가벼운 프레임워크라는 말은 개발자가 하나부터 열까지 다 해야 한다는 말이라고도 볼 수 있습니다.</li>
+</ul>
+
+<p><br /></p>
+
+<h1 id="mvc-패턴">mvc 패턴</h1>
+<p>웹 서비스를 구축할 때, insert, select, update, delete (CRUD)기능을 구현하며 동작하게 되는데,<br />
+이러한 구조는 MVC 패턴 즉, Model, View, Controller에 의해 구조화가 된다.</p>
+
+<p>Model : DB(Data Base)를 처리하는 곳<br />
+View : HTML을 화면에 띄워주는 것 <br />
+Controller : 클라이언트와 서버의 상황을 제어 관리하는 것</p>
+
 <h2 id="flask-설치">Flask 설치</h2>
-<p>자신이 사용하는 환경에 맞춰 설치하면된다.</p>
+<p>자신이 사용하는 환경에 맞춰 터미널 혹은 IDE 패키지 관리자에서 설치하면 된다.</p>
 
 <p>파이참의 경우<br />
 <img src="../../images/2022-12-06-15-55-44.png" alt="" /></p>
 
-<h2 id="flask의-controller">Flask의 Controller</h2>
+<h2 id="초기화">초기화</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span> 
-<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span> <span class="p">.</span> <span class="c1"># flask 객체 생성
-</span>
-<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>         <span class="c1"># 홈페이지 입장 시 바로 보여줄 페이지
-</span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+<ul>
+  <li>모든 플라스크 애플리케이션은 인스턴스를 생성해야 사용할 수 있다.</li>
+  <li>웹 서버는 클라이언트로부터 수신한 모든 request를 이 오브젝트에서 처리하는데<br />
+이때 웹 서버 게이트웨이 인터페이스 WSGI라는 프로토콜을 사용한다.</li>
+</ul>
+
+<p>애플리케이션 인스턴스는 Flask 클래스의 오브젝트이며 다음과 같이 생성된다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span> <span class="c1"># Flask 모듈을 import 하고 Flask 웹 서버를 생성한다.
+</span><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span> <span class="c1"># __name__은 현재 파일을 의미함. filename.py가 된다. app이라고 하는 Flask 인스턴스를 생성한다. 새로운 웹 앱이 생성된다.
+</span></code></pre></div></div>
+
+<h2 id="라우트와-뷰-함수">라우트와 뷰 함수</h2>
+<ul>
+  <li>웹 브라우저 같은 클라이언트는 웹 서버에 request를 전송하며 애플리케이션 인스턴스에 교대로 전송한다.</li>
+  <li>애플리케이션 인스턴스는 각 URL request 실행을 위해 어떤 코드가 필요한지 알아야 하며, 따라서 URL을 파이썬 함수에 mappingg 하는 기능이 필요하다.</li>
+  <li>이 URL과 이 URL을 처리하는 함수의 관련성을 라우트(route)라고 한다.</li>
+  <li>플라스크 앱(애플리케이션)에서 라우트를 정의하는 가장 손쉬운 방법은 앱 인스턴스에서 app.route 데코레이터를 사용하는 것이다.</li>
+  <li>데코레이터 함수를 라우트로 등록한다.</li>
+  <li>다음은 라우트가 데코레이터를 이용하여 어떻게 선언되는지 보여준다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>   
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">'Hello world'</span>
+</code></pre></div></div>
+
+<ul>
+  <li>설정한 로컬 IP로 브라우저(클라이언트)에서 접속하면, 서버에서 hello()가 실행된다.</li>
+  <li>이 함수의 return 값은 응답(response)이라고 하는데 클라이언트가 받는 값이다.</li>
+  <li>클라이언트가 웹 브라우저면 응답은 사용자가 보게 되는 문서이다.</li>
+  <li>
+    <p>hello()와 같은 함수를 뷰 함수(view function)라고 한다.</p>
+  </li>
+  <li>우리가 사용하는 URL은 다음과 같이 되어 있다.</li>
+  <li>http://www.facebook.com/your-name</li>
+  <li>플라스크는 이러한 여러 가지 타입의 URL을 route 데코레이터에 있는 특별한 문법을 사용해서 지원한다.</li>
+  <li>다음 코드는 동적 이름 컴포넌트를 갖는 라우트를 정의한다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/&lt;name&gt;'</span><span class="p">)</span>   
+<span class="k">def</span> <span class="nf">user</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">'Hi %s'</span> <span class="o">%</span> <span class="n">name</span>
+</code></pre></div></div>
+
+<ul>
+  <li>꺾쇠괄호로 닫혀 있는 부분이 동적 부분이며 정적 부분과 매칭되는 URL이 이 라우트에 매핑된다.</li>
+  <li>뷰 함수가 실행되면 플라스크는 동적 컴포넌트를 인수로 전송한다.</li>
+  <li>뷰 함수의 이전 예제에서 이 인수는 응답으로 ‘Hello World’를 생성하였다.</li>
+  <li>라우트에 있는 동적 컴포넌트는 기본적으로 문자열이지만 타입에 의해 정의될 수도 있다.</li>
+  <li>예를 들어 라우트 /user/<int:id>는 id 동적 세그먼트에서 정숫값을 찾는 URL에만 매칭된다.</int:id></li>
+  <li>플라스크는 라우트에 대해 int, float, path를 지원한다.</li>
+</ul>
+
+<h2 id="서버-시작">서버 시작</h2>
+<ul>
+  <li>애플리케이션 인스턴스는 run 메소드를 갖고 있는데 이 메소드는 플라스크의 통합 개발 웹 서버를 실행한다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">'0.0.0.0'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li><strong>name</strong> == ‘<strong>main</strong>’ 은 스크립트가 직접 실행될 때만 개발 웹 서버가 실행된다는 것을 알려준다.</li>
+  <li>스크립트가 다른 스크립트에 의해 임포트 되며 부모 스크립트는 다른 서버를 실행할 수 있으며 따라서 app.run() 호출은 건너뛰게 된다.</li>
+  <li>서버가 실행되고 나면 서버는 루프를 진행하며 리퀘스트를 기다리고 리퀘스트를 서비스하게 된다.</li>
+  <li>
+    <p>Ctrl+C로 중지 가능하다.</p>
+  </li>
+  <li>app.run()에 주어진 여러 가지 옵션 인수를 사용하여 웹 서버의 오퍼레이션 모드를 설정할 수 있다.</li>
+  <li>
+    <p>개발 과정에서 이러한 기능은 디버그 모드를 사용할 수 있도록 하기 때문에 편리하며 디버거(debugger)와 리로더(reloader)를 활성화할 수도 있다. 이것은 debug 인수를 True로 설정하면 된다.</p>
+  </li>
+  <li>debug=True : 파일 변경 시 서버를 자동으로 재시작 해준다.</li>
+</ul>
+
+<h2 id="해보기">해보기</h2>
+
+<p>정적 라우팅, 동적 라우팅해보기</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
     <span class="k">return</span> <span class="s">'Hello world'</span>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>  
-    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">'0.0.0.0'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="c1">## 서버 포트 설정 debug=True -&gt; 파일 변경시 서버를 자동으로 재시작 해준다.
-</span></code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Flask" /><category term="Flask 기초" /><category term="Flask 시작하기" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 1일차</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL01/" rel="alternate" type="text/html" title="항해99 TIL 1일차" /><published>2022-12-05T00:00:00+09:00</published><updated>2022-12-05T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL01</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL01/"><![CDATA[<div class="notice" style="text-align:center">
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/&lt;name&gt;'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">user</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">'Hi %s'</span> <span class="o">%</span> <span class="n">name</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">'0.0.0.0'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="정적-라우팅">정적 라우팅</h3>
+<p><img src="../../images/2022-12-08-09-27-42.png" alt="" /></p>
+
+<h3 id="동적-라우팅">동적 라우팅</h3>
+<p><img src="../../images/2022-12-08-09-28-08.png" alt="" /></p>
+
+<p><br /><br /></p>
+
+<h1 id="리퀘스트-응답-사이클">리퀘스트-응답 사이클</h1>
+
+<h2 id="애플리케이션과-리퀘스트-컨텍스트">애플리케이션과 리퀘스트 컨텍스트</h2>
+
+<ul>
+  <li>플라스크가 클라이언트에서 리퀘스트를 수신하면 이 리퀘스트를 처리하기 위해 뷰 함수에서는 사용 가능한 몇 개의 오브젝트를 생성해야 한다.</li>
+  <li>좋은 예는 Request Object인데 이 오브젝트는 클라이언트에 의해 송신된 HTTP 리퀘스트를 캡슐화한다.</li>
+  <li>플라스크에서 뷰 함수가 Request Object를 액세스할 수 있도록 하는 확실한 방법은 인수로서 리퀘스트 오브젝트를 전송하는 것이다. 그러나 이 방법은 애플리케이션의 모든 뷰 함수가 각각 여분의 인수를 갖도록 요구한다.</li>
+  <li>리퀘스트 오브젝트만이 뷰 함수가 리퀘스트를 액세스해야 하는 오브젝트가 아니라는 사실을 고려해 보면 좀 더 복잡해진다.</li>
+  <li>뷰 함수가 필요하지도 않은 너무 많은 인수를 갖는 것을 피하기 위해 플라스크는 컨텍스트(Context)를 사용하여 임시적으로 오브젝트를 글로벌하게 액세스하도록 한다.</li>
+  <li>뷰 함수는 다음과 같이 작성할 수 있다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="n">user_agent</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">headers</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'User-Agent'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s">'&lt;p&gt;Your browser is %s&lt;/p&gt;'</span> <span class="o">%</span> <span class="n">user_agent</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">'0.0.0.0'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    
+</code></pre></div></div>
+
+<ul>
+  <li>스레드들이 동시에 서로 다른 클라이언트가 요청하는 서로 다른 리퀘스트를 처리하는 멀티 스레드 서버를 고려한다면 실제로 request는 전역변수가 될 수는 없다.</li>
+  <li>따라서 각 스레드는 request에 있는 다른 오브젝트를 처리하게 된다.</li>
+  <li>컨텍스트를 사용하면 플라스크는 다른 스레드의 개입 없이 임의의 변수들이 전역적으로 스레드에 액세스 될 수 있도록 해 준다.</li>
+  <li>플라스크에는 두 가지 컨텍스트가 있다. 하나는 애플리케이션 컨텍스트이고 다른 하나는 리퀘스트 컨텍스트이다.</li>
+</ul>
+
+<h2 id="리퀘스트-디스패치">리퀘스트 디스패치</h2>
+<ul>
+  <li>애플리케이션의 클라이언트에서 리퀘스트를 수신하면, 그것을 서비스하기 위해 실행할 뷰 함수가 무엇인지 검색해야 한다.</li>
+  <li>이를 위해 플라스크는 애플리케이션 URL 맵에서 리퀘스트에 주어진 URL을 검토하고 그것을 처리할 뷰 함수에 URL의 매핑을 포함하고 있는지 찾는다.</li>
+  <li>플라스크는 이 맵을 app.route데코레이터나 데코레이터를 사용하지 않은 버전인 app.add_url_rule()를 사용하여 빌드한다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="o">&gt;&gt;&gt;</span> <span class="n">app</span><span class="p">.</span><span class="n">url_map</span>
+    <span class="n">Map</span><span class="p">([</span><span class="o">&lt;</span><span class="n">Rule</span> <span class="s">'/'</span> <span class="p">(</span><span class="n">HEAD</span><span class="p">,</span> <span class="n">GET</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">index</span><span class="o">&gt;</span><span class="p">,</span>
+    <span class="o">&lt;</span><span class="n">Rule</span> <span class="s">'/static/&lt;filename&gt;'</span> <span class="p">(</span><span class="n">HEAD</span><span class="p">,</span> <span class="n">GET</span><span class="p">,</span> <span class="n">OPTIONS</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">static</span><span class="o">&gt;</span><span class="p">])</span>
+</code></pre></div></div>
+
+<ul>
+  <li>URL 맵에 있는 HEAD, GET, OPTIONS 항목은 라우트에 의해 처리되는 리퀘스트 메소드(Reuest method)다.</li>
+  <li>플라스크는 각 라우트에 대한 메소드를 부착(attach)하며, 따라서 같은 URL에 서로 다른 리퀘스트 메소드라고 하더라도 다른 뷰 함수에 의해 처리된다.</li>
+</ul>
+
+<h2 id="리퀘스트-후크">리퀘스트 후크</h2>
+<ul>
+  <li>때로는 각각의 리퀘스트를 처리하기 전후에 코드를 실행하는 것이 유용하다.</li>
+  <li>예를 들어, 각 리퀘스트의 시작 부분에서 Database Connection을 해야 하는 경우, 리퀘스트를 생성하는 사용자를 인증해야 하는 경우 등이 있다.</li>
+  <li>모든 뷰 함수에서 이러한 작업을 처리하는 코드를 중복하여 생성하는 대신에 플라스크에서는 옵션을 제공하여 공통 함수를 등록하고 리퀘스트가 뷰 함수에 디스패치되는 전후에 실행되도록 한다.</li>
+  <li>리퀘스트 후크는 데코레이터를 사용하여 구현하며 플라스크에서 제공하는 네 개의 후크는 다음과 같다.</li>
+  <li>before_first_request, before_request, after_request, teardown_request</li>
+  <li>리퀘스트 후크 함수와 뷰 함수 사이에 데이터를 공유하기 위한 공통 패턴은 g 컨텍스트 전역 변수를 사용하는 것이다.</li>
+  <li>예를 들어, before_request 핸들러는 데이터베이스에서 사용자에 대한 로그를 로드하여 g.user에 저장한다.</li>
+  <li>이후에 뷰 함수가 호출되었을 때 그 저장된 곳에서 사용자를 액세스하게 된다.</li>
+</ul>
+
+<h3 id="응답">응답</h3>
+<ul>
+  <li>플라스크가 뷰 함수를 호출할 때 리퀘스트에 대한 응답(response)으로 값을 리턴하게 된다.</li>
+  <li>대부분의 경우 응답은 간단한 문자열이며 HTML 페이지로 클라이언트에 전송된다.</li>
+  <li>그러나 HTTP 프로토콜은 리퀘스트에 대한 응답으로 문자열 이상의 것을 요구한다.</li>
+  <li>HTTP 응답의 가장 중요한 부분은 상태 코드(Status Code)이며 플라스크에서는 기본적으로 200으로 설정한다.</li>
+  <li>이 코드는 리퀘스트가 올바르게 처리되었는지 알려준다.</li>
+  <li>뷰 함수가 다른 상태 코드를 갖는 응답을 필요로 할 때, 응답 텍스트 이후에 두 번째 리턴 값으로 뉴메릭(numeric) 코드를 추가할 수 있다.</li>
+  <li>예를 들어 다음의 뷰 함수는 400 상태 코드를 리턴하는데 이는 잘못된 리퀘스트 에러 코드이다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">'&lt;p&gt;Hello world&lt;/p&gt;'</span><span class="p">,</span> <span class="mi">400</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="n">app</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">'0.0.0.0'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>플라스크 뷰 함수는 하나, 두 개 혹은 세 개의 값을 튜플(tuple)로 리턴하는 대신 Repsonse 오브젝트를 리턴하는 옵션을 갖는다.</li>
+  <li>make_response() 함수는 한 개, 두 개 혹은 세 개의 인수를 가지는데 이는 뷰 함수에서 리턴되는 것과 같은 값이며 Response 오브젝트를 리턴한다.</li>
+</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Flask" /><category term="Flask 기초" /><category term="Flask 시작하기" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 1일차</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL01/" rel="alternate" type="text/html" title="항해99 TIL 1일차" /><published>2022-12-05T00:00:00+09:00</published><updated>2022-12-05T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL01</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL01/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
@@ -699,226 +1355,4 @@ return redirect(url_for(‘index’))다 써봐도 되지 않는다.</p>
   <li>flask의 전반적인 구조</li>
   <li>CSS, JS 파일의 분리로 깔끔한 코드 작성</li>
   <li>플라스크에서의 세션 구조!</li>
-</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">Dimension</title><link href="http://localhost:4000/css/CSS01/" rel="alternate" type="text/html" title="Dimension" /><published>2022-12-04T00:00:00+09:00</published><updated>2022-12-03T00:00:00+09:00</updated><id>http://localhost:4000/css/CSS01</id><content type="html" xml:base="http://localhost:4000/css/CSS01/"><![CDATA[<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1
-</div>
-<hr />
-
-<div class="notice--info" style="text-align:center">
-          버전<br />
-          PyCharm 2022.2.3 (Professional Edition)<br />
-</div>
-<hr />
-
-<p>TCP School에서 참조하고 쓰는 포스팅입니다.<br />
-<a href="http://www.tcpschool.com/css/css_boxmodel_dimension">TCP School</a></p>
-
-<h1 id="크기-dimension">크기 (Dimension)</h1>
-<p>CSS를 이용해서 HTML 요소의 크기를 설정할 수 있습니다.</p>
-
-<p>크기를 설정하기 위해서 사용하는 속성들은 다음과 같다.</p>
-
-<ol>
-  <li>height</li>
-  <li>width</li>
-  <li>max-width</li>
-  <li>min-width</li>
-  <li>max-height</li>
-  <li>min-height</li>
-</ol>
-
-<p><br /></p>
-
-<h2 id="height-width">height, width</h2>
-
-<p>height는 html 요소의 높이를 결정하며,<br />
-width는 html 요소의 너비를 결정한다.</p>
-
-<p>이 속성의 기본값은 auto이고, 웹 브라우저가 각 HTML 요소에 맞게 자동으로 높이와 너비를 설정해 준다.</p>
-
-<h2 id="max-width">max-width</h2>
-<p>해당 HTML 요소가 가질 수 있는 최대 너비를 설정하는 값이다.<br />
-이 속성의 기본값은 none이며, 해당 HTML 요소의 너비에 제한을 두지 않겠다는 의미이다.</p>
-
-<p>-&gt; width 속성으로 너비를 설정하면, 설정된 너비 이하로 브라우저의 크기가 줄어들 때 해당 요소에 스크롤 바를 생성하게 된다.<br />
-하지만 max-width 속성으로 너비를 설정하면 줄어드는 웹 브라우저의 크기에 맞춰 해당 HTML 요소의 너비도 자동으로 줄어든다.
-( 반응형 웹 만들 때 사용할 수 있다.)</p>
-
-<h2 id="min-width">min-width</h2>
-<p>해당 HTML 요소가 가질 수 있는 최소 너비를 설정하는 값이다.
-이 속성의 기본값은 0이며, 해당 HTML 요소의 너비에 제한을 두지 않겠다는 의미이다.</p>
-
-<p>min-width 속성이 설정된 요소에 width 속성값을 따로 설정하지 않으면 초기 너비는 100%를 가지게 된다.</p>
-
-<p>이때 웹 브라우저의 크기가 줄어들면 거기에 맞춰 HTML 요소의 너비도 자동으로 줄어든다.
-하지만 웹 브라우저가 min-width 속성으로 설정된 너비 이하로 줄어들면, HTML 요소의 너비는 더는 줄어들지 않고 수평 스크롤 바를 생성하게 된다.</p>
-
-<h2 id="max-height">max-height</h2>
-<p>해당 HTML 요소가 가질 수 있는 최대 높이(height)를 설정합니다.<br />
-이 속성의 기본 설정값은 none이며, 해당 HTML 요소의 크기에 따라 높이가 자동으로 설정된다.</p>
-
-<p>max-height 속성으로 최대 높이를 설정하면, 해당 HTML 요소의 높이를 설정된 높이 이하로 제한합니다.<br />
-만약 해당 요소의 높이가 설정된 최대 높이보다 클 경우에는 수직 스크롤 바를 생성하게 됩니다.</p>
-
-<h2 id="min-height">min-height</h2>
-<p>해당 HTML 요소가 가질 수 있는 최소 높이(height)를 설정합니다.
-이 속성의 기본 설정값은 0이며, 해당 HTML 요소의 높이에 제한을 두지 않겠다는 의미입니다.</p>
-
-<p>min-height 속성을 설정하면 해당 HTML 요소의 높이를 설정된 높이 이하로 제한합니다.
-즉 height 속성값이 min-height 속성값 이하로 낮아지지 않도록 합니다.
-이러한 min-height 속성값은 max-height 속성값과 height 속성값보다 먼저 적용됩니다.</p>
-
-<p>이러한 속성들을 사용하여 반응형 웹을 만들고 싶다면 아래 블로그 링크를 참조해 주세요.<br />
-<a href="https://studiomeal.com/archives/1004">1분 코딩</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="CSS" /><category term="css dimension" /><category term="css 크기" /><category term="max-width" /><category term="min-width" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 선택 이유와 준비 과정</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/%ED%95%AD%ED%95%B499/" rel="alternate" type="text/html" title="항해99 선택 이유와 준비 과정" /><published>2022-12-03T00:00:00+09:00</published><updated>2022-12-04T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/%ED%95%AD%ED%95%B499</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/%ED%95%AD%ED%95%B499/"><![CDATA[<p><br /></p>
-
-<blockquote>
-  <h1 id="항해99">항해99</h1>
-</blockquote>
-
-<p>항해99는 99일 동안, 9to9 주 6일 동안 진행되는 개발 부트 캠프 프로그램입니다.</p>
-
-<p><img src="../../images/2022-12-04-09-17-12.png" alt="" /></p>
-
-<p>커리큘럼은 Java 기본기부터,<br />
-React, Node.js, Spring 중 자신의 주특기를 골라 더욱 실력을 업그레이드할 수 있으며,</p>
-
-<p>항해 진행 중 여러 프로젝트를 각기 다른 팀원과 진행해
-커뮤니케이션 능력까지 기를 수 있다고 합니다.</p>
-
-<p><img src="../../images/2022-12-04-09-12-02.png" alt="" /></p>
-
-<h2 id="항해99를-선택한-이유">항해99를 선택한 이유.</h2>
-<p>하던 일을 그만두고, 나이 30이 되기 전에 하고 싶었던 것을 해보자는 생각을 하게 되었고,</p>
-
-<p>국비과정 혹은 부트 캠프를 알아보던 도중,
-3가지 조건 정도를 보고 진행하였는데,</p>
-
-<ol>
-  <li>최대한 빨리 시작하는 프로그램 일 것</li>
-  <li>비용은 크게 상관없으나 부담이 되지 않으면 좋겠다.</li>
-  <li>취업률이 높았으면 좋겠다.</li>
-</ol>
-
-<p>제가 알아볼 당시 2022년 안에 제일 빨리 시작할 수 있던 프로그램은 항해99였습니다.<br />
-또한 항해99는 선불제와 후불제가 있는데, 후불제를 선택할 경우 선불제 보다 살짝 가격이 비싸긴 하지만,</p>
-
-<p>취업을 한 후에, 3~4달에 걸쳐 돈을 지불해도 된다는 점도 좋았습니다.</p>
-
-<p>그리고 취업률 또한 괜찮다고 평가받고 있었으며,
-<img src="../../images/2022-12-04-09-19-02.png" alt="" /></p>
-
-<p>이력서 코칭이나 전용 채용 플랫폼, 다수 협력사 보유 등등 이 괜찮다고 생각되었습니다.
-<img src="../../images/2022-12-04-09-16-56.png" alt="" /></p>
-
-<p><img src="../../images/2022-12-04-09-17-45.png" alt="" /></p>
-
-<p>그리고 가장 마음에 들었던 점은, 현재 내가 가지고 있는 열정을 쏟아붓기에<br />
-항해 99의 커리큘럼이 좋겠다고 생각했습니다.</p>
-
-<p>현재 일을 안 하고 있기에, 이 시간을 최대한 활용해야 한다고 생각하였고,<br />
-그 결정에 9to9이라는 점은 제일 크게 와닿았습니다.</p>
-
-<p>그리고 9to9이지만, 사실 거의 밤 11시 ~ 12시까지는 진행한다고 하네요!</p>
-
-<p><img src="../../images/2022-12-04-09-18-47.png" alt="" /></p>
-
-<h2 id="항해99-준비-과정">항해99 준비 과정</h2>
-<p>항해99 홈페이지를 통해 참여 의사를 밝히면, 하루 이틀 내에 
-담당관? 분과 면접 겸 상담을 받게 됩니다.</p>
-
-<p>이러면 하루 정도 내에 합격인지 불합격인지 연락이 오는데,<br />
-사실상 돈 내고 다니는 학원과 같기에, 인성에 큰 문제가 없다면 합격이 될 것 같습니다…<br />
-<img src="../../images/2022-12-04-09-39-35.png" alt="" /></p>
-
-<p>그렇게 합격을 하게 되면, 각종 언어 문법 강의와, 웹 개발 종합반이라는 인터넷 강의를 받게 되고,<br />
-슬랙, 노션, Zep 등 각종 메신저, 메타버스 플랫폼 등을 사용할 수 있게 준비합니다.</p>
-
-<p>그리고 신청자에 한하여 사전 스터디를 만들어주고, 같이 나아갈 수 있도록 방향을 제시해 줍니다.<br />
-그래서 항해가 시작하기 전 목표는 웹 개발 종합반(5주 분량 강의)이라는 강의 2회 완강을 목표로 해서</p>
-
-<p>전반적으로 웹이 돌아가는 사이클을 빠르게 맛볼 수 있게 해주는 것 같습니다.<br />
-참고로! 웹 개발 강의를 기준으로 OT 주차에는 입학시험도 있다고 하네요.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="항해99 준비 과정" /><category term="내돈내산" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">div, span, p 태그의 차이</title><link href="http://localhost:4000/html/HTML01/" rel="alternate" type="text/html" title="div, span, p 태그의 차이" /><published>2022-12-02T00:00:00+09:00</published><updated>2022-12-03T00:00:00+09:00</updated><id>http://localhost:4000/html/HTML01</id><content type="html" xml:base="http://localhost:4000/html/HTML01/"><![CDATA[<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1
-</div>
-<hr />
-
-<div class="notice--info" style="text-align:center">
-          버전<br />
-          PyCharm 2022.2.3 (Professional Edition)<br />
-</div>
-<hr />
-
-<blockquote>
-  <h1 id="div-span-p-태그의-차이">div, span, p 태그의 차이.</h1>
-</blockquote>
-
-<h2 id="1블록-요소와-인라인-요소">1.블록 요소와 인라인 요소</h2>
-
-<ul>
-  <li>
-    <p>div, p 태그 : 블록 요소
-span 태그 : 인라인 요소</p>
-  </li>
-  <li>블록 요소 :</li>
-  <li>표현 가능한 최대의 가로 너비를 사용함.</li>
-  <li>width, height, margin, padding 등 사용하여 블록의 크기 변경이 가능.</li>
-  <li>모든 인라인 요소를 포함할 수 있다.</li>
-  <li>다른 블록 요소도 일부 포함 가능.</li>
-  <li>레이아웃을 나누는 용도로 사용함.</li>
-</ul>
-
-<p><br /></p>
-
-<ul>
-  <li>인라인 요소:</li>
-  <li>컨텐츠 길이만큼의 사용 중인 영역만 표현 가능.</li>
-  <li>한 줄에 여러 인라인 요소를 배치 가능.</li>
-  <li>height, width가 적용되지 않는다.</li>
-  <li>항상 블록 요소 안에 포함되어 있다.</li>
-  <li>인라인 요소 안에 다른 인라인 요소가 포함될 수 있다.</li>
-  <li>텍스트를 작성하는 요소로 적합하다.</li>
-</ul>
-
-<p><img src="../../images/2022-12-02-23-28-15.png" alt="" /></p>
-
-<h2 id="2실제-해당-태그의-역할">2.실제 해당 태그의 역할.</h2>
-<ul>
-  <li>div 태그는 레이아웃 계층 분할(division) 하는 용도,</li>
-  <li>span 태그는 특정 문단(span, 폭)에 색을 준다든지 강조하기 위해,</li>
-  <li>p 태그는 실제 문단(paragraph)을 작성하는 용도로 사용된다.</li>
-</ul>
-
-<h2 id="3포함-관계">3.포함 관계</h2>
-
-<p><strong>span은 자식 요소로 div, p 태그를 포함할 수 없다.</strong></p>
-
-<p>기본적으로 span 안 내용이 짧을 경우 해당 요소의 영역은 div, p 태그 보다 작으므로,<br />
-span 안에는 블록 요소를 넣지 않습니다.</p>
-
-<p><strong>반대로, div와 p 태그는 span 태그를 포함할 수 있다.</strong></p>
-
-<p>p 태그는 div 태그를 포함할 수 없습니다.<br />
-p 태그는 기본적으로 문단을 입력하는 용도이므로,<br />
-p 태그 안에는 레이아웃을 나누는 용도인 div 요소는 포함할 수 없습니다.</p>
-
-<p>p 태그의 자식 요소로써는 span, a, strong 등과 같은 인라인 요소만 올 수 있습니다.</p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;&lt;div&gt;</span>테스트<span class="nt">&lt;/div&gt;&lt;/p&gt;</span>와 같은 형태가 있다면,
-<span class="nt">&lt;div&gt;&lt;p&gt;</span>테스트<span class="nt">&lt;/p&gt;&lt;/div&gt;</span>와 같은 형태로 바꾸어야 합니다.
-</code></pre></div></div>
-
-<p><strong>div 태그는 p 태그를 포함할 수 있다.</strong></p>
-
-<p>div 태그는 p 태그처럼 문자를 입력할 수 있지만 실제 용도는 HTML 문서의 영역 구분을 하기 위한 요소입니다.
-각 영역의 용도를 구분하는 기능이므로 다른 블록 요소가 하위에 포함될 수 있습니다.</p>
-
-<p>결론적으로,<br />
-단순 텍스트 정보일 경우 p 태그에 사용하고,<br />
-구역을 나누기 위한 용도일 경우 div 태그를 사용합니다.<br />
-또한, 특정 요소를 강조하고 싶은 경우 span 태그를 사용하는 것으로,</p>
-
-<p>쓰이는 용도에 따라 구분해서 태그를 사용하여야 합니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="HTML" /><category term="div 태그" /><category term="span 태그" /><category term="p 태그" /><category term="블록 요소" /><category term="인라인 요소" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry></feed>
+</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry></feed>

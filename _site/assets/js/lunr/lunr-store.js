@@ -149,8 +149,8 @@ var store = [{
         "url": "/%ED%95%AD%ED%95%B499/TIL01/",
         "teaser": null
       },{
-        "title": "Flask 기초 (test)",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 PyCharm 2022.2.3 (Professional Edition) Flask란 무엇 일까. 파이썬 기반의 웹 개발용으로 나온 프레임워크이다. 자바 기반의 스프링과 비슷하지만, 좀 더 쉽고, 가벼운 프레임워크라고 생각하면 된다. 우리나라에서는 자바 스프링, 노드js가 많이 쓰이고 있지만, 외국에서는...","categories": ["Flask"],
+        "title": "Flask 기초",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 PyCharm 2022.2.3 (Professional Edition) Flask란 무엇일까. 파이썬 기반의 웹 개발용으로 나온 프레임워크이다. 자바 기반의 스프링과 비슷하지만, 좀 더 쉽고, 가벼운 프레임워크라고 생각하면 된다. “마이크로 프레임워크”라고도 한다. 우리나라에서는 자바 스프링, 노드 js가 많이...","categories": ["Flask"],
         "tags": ["Flask 기초","Flask 시작하기"],
         "url": "/flask/Flask01/",
         "teaser": null
@@ -183,5 +183,23 @@ var store = [{
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 bcrypt 4.0.1 PyCharm 2022.2.3 (Professional Edition) 오늘의 목표 회원 수정 : 비밀번호, 닉네임, 이메일 수정 기능 넣기. 코드 수정 회원 수정 로직 구현 과정 회원 수정, 특히 비밀번호 수정에서 살짝 헤맸는데 키보드를...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL03/",
+        "teaser": null
+      },{
+        "title": "Flask Session",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 PyCharm 2022.2.3 (Professional Edition) 세션의 기본 원리 참조 기본적으로 session, escape는 falsk 패키지에 포함되어 있다. from flask import Flask from flask import session, escape 세션 생성하기 세션 패키지를 임포트 해오고 서버를 킬...","categories": ["Flask"],
+        "tags": ["Flask Session"],
+        "url": "/flask/Flask02/",
+        "teaser": null
+      },{
+        "title": "JWT - Json Web Token",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 JWT란? JSON Web Token의 약자로 Json 포맷을 이용하여 유저를 인증하고 식별하기 위한 토큰(Token) 기반 인증 방식입니다. 토큰 자체는 클라이언트에 저장되기 때문에, 서버에서 따로 세션 DB라든지, 메모리 소모를 없앨 수 있습니다. 이렇게할 수 있는 이유는, 토큰 자체에 사용자의...","categories": ["항해99"],
+        "tags": ["항해99","JWT"],
+        "url": "/%ED%95%AD%ED%95%B499/JWT/",
+        "teaser": null
+      },{
+        "title": "항해99 TIL 4일차 입학시험",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 항해 99 입학시험 오늘은 대망의 입학시험을 보는 날이다. 시험 문제는 웹 개발 종합반 강의를 어느 정도 숙달했다면 충분히 쉽게 나왔다. 사실 전날 CRUD 중 Delete 과정을 미리 연습해 보았는데, Update가 나와서 코드만 살짝 수정 후 테스트하고 바로...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL04/",
         "teaser": null
       }]
