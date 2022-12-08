@@ -143,7 +143,7 @@ var store = [{
         "url": "/css/CSS01/",
         "teaser": null
       },{
-        "title": "항해99 TIL 1일차",
+        "title": "항해99 TIL 1일차, 안 되는 것 천지..",
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 PyCharm 2022.2.3 (Professional Edition) 항해99 첫 날 오늘은 항해99 첫날이다. 자신의 선택에 따라, 웹 개발 종합반 강의 완주 팀과 토이 프로젝트 2가지 팀으로 나누어지었고, 나는 웹 개발 목표치인 2회독을 완강하여 토이 프로젝트에...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL01/",
@@ -155,7 +155,7 @@ var store = [{
         "url": "/flask/Flask01/",
         "teaser": null
       },{
-        "title": "항해99 TIL 2일차",
+        "title": "항해99 TIL 2일차, form 태그는 뭐고 세션은 뭐야?..",
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 bcrypt 4.0.1 PyCharm 2022.2.3 (Professional Edition) 고생길.. 토이 프로젝트하라고 팀을 만들어 줬건만, 개인플레이를 하는 우리 팀(나 포함)… 오늘 다시 회의를 하고, 튜터님들의 조언 등을 통해 하루 이틀 남은 시점에서 다시 팀플레이로 바뀌었다....","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL02/",
@@ -179,7 +179,7 @@ var store = [{
         "url": "/cloud%20computing%20-%20aws/AWS-03/",
         "teaser": null
       },{
-        "title": "항해99 TIL 3일차",
+        "title": "항해99 TIL 3일차, 암호화를 할 수 있을까?",
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 bcrypt 4.0.1 PyCharm 2022.2.3 (Professional Edition) 오늘의 목표 회원 수정 : 비밀번호, 닉네임, 이메일 수정 기능 넣기. 코드 수정 회원 수정 로직 구현 과정 회원 수정, 특히 비밀번호 수정에서 살짝 헤맸는데 키보드를...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL03/",
