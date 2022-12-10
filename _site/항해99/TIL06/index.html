@@ -1,0 +1,1145 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>항해99 TIL 6일차 Jinja2, 친구 기능 | 기술 블로그</title>
+<meta name="description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1">
+
+
+  <meta name="author" content="Hyun Jun">
+  
+  <meta property="article:author" content="Hyun Jun">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술 블로그">
+<meta property="og:title" content="항해99 TIL 6일차 Jinja2, 친구 기능">
+<meta property="og:url" content="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06/">
+
+
+  <meta property="og:description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-10T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hyun Jun",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="843d72a8e4b20f1a8ae8e971f19c34cb128b6c8b">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+
+    <style> 
+    /*스크롤바 꾸며주는 코드*/
+      ::-webkit-scrollbar{width: 17px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: rgb(25, 56, 109);}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      
+      {
+        width:12px;height:12px;background:transparent;
+      }
+
+        /*사이드바에는 적용하지않는다.*/
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          기술 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+
+                <!-- 다크 모드 토글 버튼 -->
+                
+                <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+                <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">카테고리👇</span>
+                    <div class="navicon"></div>
+                </button>
+
+
+                
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리👇</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+
+
+        
+        
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+  
+  
+    
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리👇</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">36</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <span class="nav__sub-title">etc</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                
+                    
+                
+                    
+                        <li><a href="/categories/jekyllblogdev" class="">Jekyll Blog Dev (11)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/hanghae99" class="">항해99 (8)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/cloudcomputingaws" class="">Cloud computing - AWS (3)</a></li>
+                    
+                
+            </ul>
+
+            
+
+
+
+        <span class="nav__sub-title">Programming language</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/java" class="">Java (8)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+        <span class="nav__sub-title">Framework</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/spring" class="">Spring (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/flask" class="">Flask (2)</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+
+ 
+
+
+      </li>
+
+
+
+  </ul>
+</nav>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="항해99 TIL 6일차 Jinja2, 친구 기능">
+    <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1">
+    <meta itemprop="datePublished" content="2022-12-10T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06/" class="u-url" itemprop="url">항해99 TIL 6일차 Jinja2, 친구 기능
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-10T00:00:00+09:00">2022-12-10</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          15 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#생각-먼저-하기">생각 먼저 하기!</a><ul><li><a href="#친구-기능">친구 기능</a></li><li><a href="#jinja2-헤매었던-점">Jinja2 헤매었던 점</a></li><li><a href="#그래-값은-넘어왔지만">그래 값은 넘어왔지만..?</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1
+</div>
+<hr />
+
+<h1 id="생각-먼저-하기">생각 먼저 하기!</h1>
+<p>어느덧 항해 6일차이다.</p>
+
+<p>짧은 시간이지만 밤낮을 고생하며 했기에 나도 모르게 빨리 성장을 하고 있는 것 같다.<br />
+그리고, 프로젝트 및 세션을 진행해오면서 느낀 점이 크게 2가지가 있는데,</p>
+
+<ol>
+  <li>생각 먼저 하기</li>
+</ol>
+
+<p>무엇을 뭉뚱그려 생각하고 코딩을 먼저 하게 되면 오히려 중간에 막혀서 다시 코딩-&gt; 구글링의 반복이 된다.<br />
+애초에 어느 정도는 틀을 잡고 생각을 하고 진행하고, 중간에 막힐 경우 그냥 막 하지 말고 로그 등을 잘 띄우거나 개발자 도구를 사용하여 에러가 나는 부분의 앞단 뒷단을 잘 확인하며 진행하면 금방 에러를 찾고 고칠 수 있게 되는 것 같다.</p>
+
+<ol>
+  <li>피곤하면 그냥 자기..</li>
+</ol>
+
+<p>위의 1번에서 생각 먼저 하기는 곧 작업시간을 단축할 수 있는 지름길이다.. 그런데<br />
+너무 피곤하면 위의 생각하기가 멈추고 그냥 키보드만 두들기게 돼서 오히려 시간만 버리고 효율은 없게 된다.
+그래서 휴식도 중요하다는 것을 깨달았다!</p>
+
+<h2 id="친구-기능">친구 기능</h2>
+<p>친구 기능을 만들어 보고 싶었다.<br />
+그래서 내 머리는 장식이 아니니… 생각이라는 걸 해보았다.</p>
+
+<p>일단 유저 테이블은 건드리지 않고 구현하고 싶었고,</p>
+<ol>
+  <li>친구 신청 중</li>
+  <li>친구 수락 대기 중</li>
+  <li>친구인 상태</li>
+</ol>
+
+<p>위의 3가지 기능을 구현하고 싶었다.</p>
+
+<p>지금까지 개발을 해보며 느낀 것은 데이터(DB)의 활용이 매우 중요하고 데이터만 잘 꺼내오면 
+나름.. 쉽다?라는 걸 느꼈다.</p>
+
+<p>그래서 저위의 기능을 데이터베이스에 어떻게 넣을까 하고 생각해 보았다.</p>
+
+<p>결과적으로 친구를 신청한 사람과 친구 신청을 받는 사람이 나누어져야 수락 대기 중, 신청 중이 구현 가능할 거라고 생각하여 아래처럼 짜보았고, 친구 상태를 나타내기 위해 isFriend를 넣어보았다.</p>
+
+<p>======하나의 테이블===================<br />
+friend_currentUser      “userA”<br />
+friends_targetUser      “userB”<br />
+friends_isFriend        “0 or 1”</p>
+
+<p>위처럼 계획하게 되면<br />
+4가지의 경우의수로 (userA가 나의 계정이라고 치면)</p>
+
+<p>userA –친구 신청 중–&gt; userB<br />
+currentUser userA, targetUser userB isFriend 0</p>
+
+<p>userA –친구신청 완–&gt; userB<br />
+currentUser userA, targetUser userB isFriend 1</p>
+
+<p>userB –친구 수락 대기 중–&gt; userA<br />
+currentUser userB, targetUser userA isFriend 0</p>
+
+<p>userB –친구신청 완–&gt; userA<br />
+currentUser userB, targetUser userA isFriend 1</p>
+
+<p>위처럼 동작할 수 있겠다는 생각을 했다.<br />
+( 친구 삭제 시 테이블 통째로 날리기 )</p>
+
+<p>정확한 기능 설명이 아니라 내가 어떻게 이 문제를 해결했고 생각했는지 만을 적겠다..!<br />
+그래서 현재 위의 기능은 다 구현을 했고,</p>
+
+<p>유저 테이블에서 유저들을 뽑아와 버튼만 옮겨 사용할 수 있게 해놓았다.</p>
+
+<h2 id="jinja2-헤매었던-점">Jinja2 헤매었던 점</h2>
+
+<p>아래와 같이 만약에 2개의 온 클릭이 있다고 하면,
+onclick 옆 deleteFriend 안의 매개변수의 순서는 다르지만,</p>
+
+<p>실제로 ajax로 도착할 때는 순서 상관없이 변수 이름에 맞추어들어간다…
+(자바스크립트 함수 매개변수 이름이 달라도 동작 안 함)</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onclick</span><span class="o">=</span><span class="dl">"</span><span class="s2">deleteFriend(${currentUser}, ${targetUser})</span><span class="dl">"</span><span class="o">&gt;</span> <span class="nx">절교</span><span class="o">&lt;</span><span class="sr">/button&gt;&lt;br&gt;</span><span class="err">`
+</span>
+<span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onclick</span><span class="o">=</span><span class="dl">"</span><span class="s2">deleteFriend(${targetUser}, ${currentUser})</span><span class="dl">"</span><span class="o">&gt;</span> <span class="nx">절교</span><span class="o">&lt;</span><span class="sr">/button&gt;&lt;br&gt;</span><span class="err">`
+</span>
+
+    <span class="kd">function</span> <span class="nx">deleteFriend</span><span class="p">(</span><span class="nx">currentUser</span><span class="p">,</span> <span class="nx">targetUser</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+            <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+             <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/api/deletefriend</span><span class="dl">"</span><span class="p">,</span>
+             <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">currentUser_give</span><span class="p">:</span> <span class="nx">currentUser</span><span class="p">,</span>
+                <span class="na">targetUser_give</span><span class="p">:</span> <span class="nx">targetUser</span>
+              <span class="p">},</span>
+              <span class="na">success</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+                   <span class="nx">alert</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+              <span class="p">}</span>
+           <span class="p">});</span>
+
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="그래-값은-넘어왔지만">그래 값은 넘어왔지만..?</h2>
+
+<p>여차여차해서 userA, userB가 넘어왔지만 또 아래처럼 에러가 발생한다.<br />
+이런 에러가 뜨는 것일까?<br />
+<img src="../../images/2022-12-10-14-00-14.png" alt="" /></p>
+
+<p><img src="../../images/2022-12-10-14-00-23.png" alt="" /></p>
+
+<p>값은 넘어오지만 뭔가 정의 가 안 돼있다는 것 같다?<br />
+저기 안의 글자가 ““가 안 감싸진 문자열이다? -&gt; 문자열이 아닌 변수로 인식하는 것일까 해서</p>
+
+<p>toString() String()을 써봐도 Uncaught ReferenceError: userA is not defined만 뜬다..
+아예 변수로 인식해서 안 되는 것 같다.</p>
+
+<p>currentUser를 type of로 확인해 봐도 스트링이라 나오는데 왜 안 되는 것일까?</p>
+
+<p>한참 찾아보다가 아래의 글을 보고 해결하였다.
+<img src="../../images/2022-12-10-14-21-58.png" alt="" /></p>
+
+<p>아.. 자바스크립트란 이런 것이구나.. 혹시 유튜브 댓글에서나 봤던
+자바스크립트가 타입에 자유로워 안 좋은 언어라는 게 이런 뜻일까?라고 생각해 봤다.</p>
+
+<p>왜냐 나는 스트링 타입인 걸 확인하고 보냈는데 갔더니 변수가 돼있네..?</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"deleteFriend('${currentUser}', '${targetUser_give}')"</span><span class="nt">&gt;</span> 절교<span class="nt">&lt;/button&gt;&lt;br&gt;</span>`
+
+  <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"deleteFriend('${targetUser_give}', '${currentUser}')"</span><span class="nt">&gt;</span> 절교<span class="nt">&lt;/button&gt;&lt;br&gt;</span>`
+</code></pre></div></div>
+
+<p>그리고 아까 위에서도 말했지만 위처럼<br />
+‘${currentUser}’, ‘${targetUser_give}’ 와<br />
+‘${targetUser_give}’, ‘${currentUser}’ 가 있으면</p>
+
+<p>나는 아래 함수에서 순서에 따라 a, b 혹은 b, a로 받을 줄 알았지만${} 안의 똑같은 이름으로 받는다..
+결국 위의 2개씩 구분해 놓은 것이 의미 가 없는 것.</p>
+
+<p>매개변수의 순서가 상관이 없다.. ㅜㅜ 실제로 함수의 매개변수 이름만 바꿔도 동작하지 않음.
+Jinja2에서 이렇게 만들어놨나 보다.</p>
+
+<p><img src="../../images/2022-12-10-23-01-09.png" alt="" /></p>
+
+<p>그래서 매개변수의 순서가 다르게 사용하고 싶다면,<br />
+자바스크립트 내의 매개변수 순서를 변경하여 함수를 하나 더 만들어줘야 한다.</p>
+
+<p>그래서 그냥 A, B로 이름을 바꾸고 매개변수 순서만 달리하여 두 개의 함수를 만들었다.</p>
+
+<p>어차피 뭐 함수 하나 더 있다고 해서 엄청난 부담이 될 것 같진 않다!</p>
+
+<p>근데 또 문제점이 있다. 여기서 데이터를 구분하기 위해 보낸다 해도<br />
+서버에서는 누가 누군지 인식하지 못한다 json 타입의 앞에 key 값이 currentUser, targetUser로 같기에!</p>
+
+<p>그래서 아래처럼 어떤 유저가 어떤 유저에게 친구 신청을 하는지 같은 것들을 구분하기 위해 방향 ab, ba를 넣어주었다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    function deleteFriendA(currentUser, targetUser) {
+
+        $.ajax({
+            type: "POST",
+            url: "/api/deletefriend",
+            data: {
+                currentUser_give: currentUser,
+                targetUser_give: targetUser,
+                order:"ab"
+            },
+            success: function (response) {
+                location.reload();
+            }
+        });
+
+    }
+
+            function deleteFriendB(targetUser, currentUser) {
+
+        $.ajax({
+            type: "POST",
+            url: "/api/deletefriend",
+            data: {
+                currentUser_give: targetUser,
+                targetUser_give: currentUser,
+                order:"ba"
+            },
+            success: function (response) {
+                location.reload();
+
+            }
+        });
+
+    }
+</code></pre></div></div>
+
+<p>굳이 이렇게 해야 하나 싶겠지만 A, B 중 누가 삭제하는지 모르면<br />
+해당 사용자의 친구가 다 지워지거나 할 수 있기 때문에</p>
+
+<p>정확히 누가 누구를 삭제하는지를 알아야 하기 때문에 저런 식으로 만들었다.<br />
+플라스크 백엔드단의 경우 아래처럼 짜봤다.. ( 이게 맞는진 모르겠다 ..)</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">currentUser_receive</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'currentUser_give'</span><span class="p">]</span> <span class="c1">## 나
+</span>    <span class="n">targetUser_receive</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'targetUser_give'</span><span class="p">]</span>
+    <span class="n">order</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">"order"</span><span class="p">]</span>
+
+
+    <span class="k">if</span><span class="p">(</span><span class="n">order</span> <span class="o">==</span> <span class="s">"ab"</span><span class="p">):</span>
+        <span class="n">db</span><span class="p">.</span><span class="n">friends</span><span class="p">.</span><span class="n">delete_one</span><span class="p">({</span><span class="s">'friends_currentUser'</span><span class="p">:</span> <span class="n">currentUser_receive</span><span class="p">,</span> <span class="s">'friends_targetUser'</span><span class="p">:</span> <span class="n">targetUser_receive</span><span class="p">})</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">order</span> <span class="o">==</span> <span class="s">"ba"</span><span class="p">):</span>
+        <span class="n">db</span><span class="p">.</span><span class="n">friends</span><span class="p">.</span><span class="n">delete_one</span><span class="p">({</span><span class="s">'friends_targetUser'</span><span class="p">:</span> <span class="n">currentUser_receive</span><span class="p">,</span> <span class="s">'friends_currentUser'</span><span class="p">:</span><span class="n">targetUser_receive</span> <span class="p">})</span>
+</code></pre></div></div>
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-10T00:00:00+09:00">2022-12-10</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%ED%95%AD%ED%95%B499+TIL+6%EC%9D%BC%EC%B0%A8+Jinja2%2C+%EC%B9%9C%EA%B5%AC+%EA%B8%B0%EB%8A%A5%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL06%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL06%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL06%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/%ED%95%AD%ED%95%B499/TIL05/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>항해99 TIL 5일차 협업</a>
+    
+    
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL05/" rel="permalink">항해99 TIL 5일차 협업
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-09T00:00:00+09:00">2022-12-09</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          10 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL04/" rel="permalink">항해99 TIL 4일차 입학시험
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-08T00:00:00+09:00">2022-12-08</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/JWT/" rel="permalink">JWT - Json Web Token
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-08T00:00:00+09:00">2022-12-08</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          16 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/flask/Flask02/" rel="permalink">Flask Session
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-08T00:00:00+09:00">2022-12-08</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          8 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/hyunjunhwang1994" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/hyunjuuuuun/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Hyun Jun. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <!-- start custom comments scripts -->
+
+<!-- end custom comments scripts -->
+
+<script>
+    'use strict';
+
+    window.customUtterances = {
+      theme: 'github-light',
+      darkTheme: 'github-dark',
+      onChange: (theme) => {
+        var commentContainer = document.querySelector('#utterances-comments');
+  
+        if (!commentContainer) {
+          return;
+        }
+  
+        while ( commentContainer.hasChildNodes() ) { 
+          commentContainer.removeChild( commentContainer.firstChild );
+        }
+  
+        var script = document.createElement('script');
+        script.setAttribute('src', 'https://utteranc.es/client.js');
+        script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
+        script.setAttribute('label', 'utterances');
+        script.setAttribute('issue-term', 'pathname');
+        script.setAttribute('theme', theme);
+        script.setAttribute('crossorigin', 'anonymous');
+  
+        commentContainer.appendChild(script);
+      }
+    };
+  </script>
+
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>
