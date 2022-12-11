@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-11T10:39:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">항해99 WIL 7일차 한 주 회고</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL01/" rel="alternate" type="text/html" title="항해99 WIL 7일차 한 주 회고" /><published>2022-12-11T00:00:00+09:00</published><updated>2022-12-11T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL01</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL01/"><![CDATA[<div class="notice" style="text-align:center">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-11T10:48:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">항해99 WIL 7일차 한 주 회고</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL01/" rel="alternate" type="text/html" title="항해99 WIL 7일차 한 주 회고" /><published>2022-12-11T00:00:00+09:00</published><updated>2022-12-11T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL01</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL01/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
@@ -83,11 +83,20 @@ Application Programming Interface <br />
 API인 것 같다. (제 생각입니다…)<br />
 <img src="../../images/2022-12-11-10-37-46.png" alt="" /></p>
 
-<h1 id="앞으로">앞으로</h1>
-<p>앞으로도 지금처럼 꾸준히 공부해야 할 것 같고,<br />
-블로그 포스팅을 하면서 공부한 것을 정리하니 도움이 많이 되는 것 같다.</p>
+<h2 id="내게-아쉬웠던-점">내게 아쉬웠던 점</h2>
+<p>지금까지 공부하면서 내게 아쉬웠던 점은<br />
+어떠한 기능 구현을 한다고 했을 때, 어느 부분에서 막힌다면 그 부분을</p>
 
-<p>TIL은 매일 쓰는 걸로!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 6일차 Jinja2, 친구 기능</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06/" rel="alternate" type="text/html" title="항해99 TIL 6일차 Jinja2, 친구 기능" /><published>2022-12-10T00:00:00+09:00</published><updated>2022-12-10T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06/"><![CDATA[<div class="notice" style="text-align:center">
+<p>구글링을 하더라도 정확히 구글링하고, 개념부터 잡아가며 해결했어야 하는데<br />
+아무 생각 없이 삽질만 한 경향이 좀 있는 것 같아 아쉽고, 앞으로는 생각을 많이 하고,</p>
+
+<p>개념부터 잡아가는 방향으로 가면 더 좋을 것 같다.<br />
+앞으로도 지금처럼 꾸준히 공부해야 할 것 같고,</p>
+
+<p>특히 블로그에 TIL이라든지 기능 구현 등 포스팅을 하면서<br />
+공부한 것을 정리하니 도움이 많이 되는 것 같다.</p>
+
+<p>TIL은 매일 쓰는 걸로!📝</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 6일차 Jinja2, 친구 기능</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06/" rel="alternate" type="text/html" title="항해99 TIL 6일차 Jinja2, 친구 기능" /><published>2022-12-10T00:00:00+09:00</published><updated>2022-12-10T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
