@@ -1,4 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-10T23:25:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">항해99 TIL 6일차 Jinja2, 친구 기능</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06/" rel="alternate" type="text/html" title="항해99 TIL 6일차 Jinja2, 친구 기능" /><published>2022-12-10T00:00:00+09:00</published><updated>2022-12-10T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06/"><![CDATA[<div class="notice" style="text-align:center">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-11T10:39:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">항해99 WIL 7일차 한 주 회고</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL01/" rel="alternate" type="text/html" title="항해99 WIL 7일차 한 주 회고" /><published>2022-12-11T00:00:00+09:00</published><updated>2022-12-11T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL01</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL01/"><![CDATA[<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1
+</div>
+<hr />
+
+<h1 id="항해-일주일">항해 일주일</h1>
+<p>항해99를 시작했던 것이 엊그제 같은데 벌써 7일차가 되어서 Week i learned를 쓰고 있다.</p>
+
+<p>사실 시작하기 전에 걱정했던 점은, 내가 9to9을 잘 실행할 수 있을까?,
+강의 수준을 잘 따라갈 수 있을까라는 내용이었지만,</p>
+
+<p>오히려, 집중을 하게 되니 9시보다 일찍 들어와서 11시쯤 나가고 자고의 반복인 생활을 하고 있다.
+또 시간을 투자하니 그만큼 실력이 빨리 느는 것 같기도 하다.</p>
+
+<p>아직까지는 큰 실수 없이 잘 하고 있는 것 같다.</p>
+
+<p><br /></p>
+
+<h1 id="이번-wil의-키워드-jwt-api">이번 WIL의 키워드 JWT, API</h1>
+
+<h2 id="jwt">JWT</h2>
+<p><a href="https://hyunjunhwang1994.github.io/%ED%95%AD%ED%95%B499/JWT/">JWT 자세히</a>
+JWT에 대한 자세한 포스팅은 링크의 글에 있습니다.</p>
+
+<p>사실 처음에 세션, 쿠키에 대해서는 어느 정도 알고 있었지만,<br />
+JWT라는 토큰에 대해서는 잘 알지 못하고 있었다.</p>
+
+<p>JWT .. 존맛탱 처럼 생겼다.</p>
+
+<p>그래서 토큰 안에 정보가 다 담겨 있는데 이게 어떤 식으로 사용되는 건지 감이 잘 잡히지 않았고
+포스팅과, 직접 코딩을 통해 공부해 보았다.</p>
+
+<p>일단 내가 생각했을 때 JWT를 사용하는 이유는,</p>
+<ol>
+  <li>서버의 메모리나, 따로 Database를 필요로 하지 않는다.</li>
+  <li>사실 안의 Header와 PAYLOAD는 Base64로 인코딩 되어 있기 때문에,
+쉽게 안의 내용을 디코딩 해서 볼 수 있지만, Signature 부분의 경우 
+header(base64) + “.” + payload(base64)을 Secret Key로 해쉬하기 때문에</li>
+  <li>서버에서만 검증(Secret Key를 알아야만) 할 수 있다는 점에 장점이 있는 것 같다. 
+(payload 안의 데이터는 서버에서의 활용도만 중요하고 밖에서는 아무 의미 없는 데이터여야 하는 것 같다.)</li>
+  <li>토큰의 크기가 커질수록 데이터베이스의 용량은 차지하지 않지만
+네트워크에 부하는 올 수 있다 한다.</li>
+</ol>
+
+<p>내가 생각한 단점</p>
+<ol>
+  <li>토큰 탈취 시 해당 홈페이지에서 사용자인 척할 수 있음<br />
+ㄴ 이러한 단점들의 보완을 위해 jwt refresh token이라는 것이 있다고 한다.</li>
+  <li>해당 사용자를 강제 로그아웃 시킨다든지, 해당 사용자의 로그인 관련 정보를 수집한다든지의
+기능을 사용하지 못함</li>
+</ol>
+
+<h2 id="api">API</h2>
+
+<p>사실 API라는 용어는 많이 들어봤지만, 정확히 개념이 잡히진 않았었기에 WIL을 쓰며,
+회고해 보도록 했다.</p>
+
+<p><a href="https://namu.wiki/w/API">나무위키</a>
+Application Programming Interface <br />
+응용 프로그램 프로그래밍 인터페이스. 프로그래밍에서,</p>
+
+<p>프로그램을 작성하기 위한 일련의 부(Sub) 프로그램,<br />
+프로토콜 등을 정의하여 상호 작용을 하기 위한 인터페이스 사양을 말한다.</p>
+
+<p>API는 흔히 function, method 또는 operation 등으로 다양하게 불리는<br />
+‘소프트웨어 컴포넌트’의 기능, 입력, 출력, 그리고 이에 사용되는 자료형으로 표현된다.</p>
+
+<p>API 자체는 어디까지나 사양(specification)만을 정의하기 때문에 구현(Implementation)과는 독립적이다. 
+앞서 언급했다시피 이를 실제로 구현한 것은 ‘라이브러리(library)’라고 부른다.</p>
+
+<p>잘 설계된 API는 프로그램 개발을 보다 쉽게 해준다. API는 다양한 형태로 존재하며,<br />
+유닉스의 POSIX 표준, 윈도우의 MFC나 Win32, C++의 표준 템플릿 라이브러리(STL), Java SE API 등이 이에 해당한다.</p>
+
+<p>—&gt; 뭔소린지 하나도 모르겠다..</p>
+
+<p>내가 느낀 API?
+서버단에서 일련의 기능들을 만들고 클라이언트가 해당 URL로 접근할 때
+특정 서비스를 제공하는 것이라고 느꼈다.</p>
+
+<p>예를 들면 아래와 같이 특정 로직을 수행하고 request 데이터 response 데이터를 활용하면
+API인 것 같다. (제 생각입니다…)<br />
+<img src="../../images/2022-12-11-10-37-46.png" alt="" /></p>
+
+<h1 id="앞으로">앞으로</h1>
+<p>앞으로도 지금처럼 꾸준히 공부해야 할 것 같고,<br />
+블로그 포스팅을 하면서 공부한 것을 정리하니 도움이 많이 되는 것 같다.</p>
+
+<p>TIL은 매일 쓰는 걸로!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 6일차 Jinja2, 친구 기능</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06/" rel="alternate" type="text/html" title="항해99 TIL 6일차 Jinja2, 친구 기능" /><published>2022-12-10T00:00:00+09:00</published><updated>2022-12-10T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL06/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
@@ -319,225 +408,7 @@ A라는 페이지 HTML로드 시에 ajax를 통하여 비동기로 데이터를 
 
 <p>ajax로 불러오지 말고 서버단에서 처음 페이지 네이션을 미리 계산해서 가지고 오고,<br />
 버튼 클릭 시 url로 접근하여  다시 가지고 오는 방식으로 하니 잘 진행되었습니다.<br />
-(버튼 클릭 시 url_for로 이동합니다.)</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 4일차 입학시험</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL04/" rel="alternate" type="text/html" title="항해99 TIL 4일차 입학시험" /><published>2022-12-08T00:00:00+09:00</published><updated>2022-12-08T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL04</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL04/"><![CDATA[<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1
-</div>
-<hr />
-
-<h1 id="항해-99-입학시험">항해 99 입학시험</h1>
-
-<p>오늘은 대망의 입학시험을 보는 날이다.  <br />
-시험 문제는 웹 개발 종합반 강의를 어느 정도 숙달했다면 충분히 쉽게 나왔다.</p>
-
-<p>사실 전날 CRUD 중 Delete 과정을 미리 연습해 보았는데,<br />
-Update가 나와서 코드만 살짝 수정 후 테스트하고 바로 제출해서 한 30분 걸린 것 같다!</p>
-
-<p>강의를 많이 듣지 않았거나 뼈대를 미리 만들어 놓지 않았다면 
-살짝 어려웠을 수도 있을 것 같은 수준의 난이도인 것 같다.</p>
-
-<p>사실 이런 입학시험 가지고 탈락 시킬 것 같진 않다.<br />
-정말 시험을 안 보거나, 의지가 없는 사람만 골라내려고 하는 것 같다.</p>
-
-<h1 id="지금까지-돌아보자면">지금까지 돌아보자면.</h1>
-
-<p>항해를 시작하고 웹 개발 강의를 처음 받았을 때는, 솔직히<br />
-파이썬과 플라스크 기반에 NoSQL인 mongo DB로 강의를 하기에,</p>
-
-<p>자바는 언제 배우고, 스프링은 언제 배우지?라는 생각을 했다.</p>
-
-<p>하지만 아직 초반이고, 플라스크를 썼기에 어느 정도 웹 사이클을 빨리 경험한 것뿐만 아니라<br />
-빨리 플라스크의 구조를 조금이라도 익혔기에</p>
-
-<p>웹에 있어 중요한 기능들 예를 들면 세션, 암호화, MVC 구조, JWT 등을<br />
-파보려고 하고, 어느 정도는 파본 것 같아 지금에 와서는 만족하고 있다.</p>
-
-<p>이러한 경험을 토대로 다른 언어, 프레임워크 들도 파고들 수 있는 실력을 기른 것 같아 뿌듯해졌다.<br />
-앞으로 포스팅은 계속하는 걸로… 개념 정리에 있어서 정말 도움이 되는 것 같다.</p>
-
-<p>글을 쓰고 정리하면서, 더 검색해 보고 문서를 읽으면서, 정말 추상적으로만 그려졌던 개념이<br />
-어느 정도는 확실하게 그려지는 경험을 짧은 시간에 많이 해 본 것 같아 기분이 좋다.</p>
-
-<h2 id="앞으로-어떻게-해야-할까">앞으로 어떻게 해야 할까?</h2>
-<p>입학시험을 보고 리액트, 스프링, 노드 js 3가지 중의 주특기를 골라야 했다.<br />
-나는 애초에 스프링을 배우고 싶기에 스프링을 골랐고 후회하지 않는다.</p>
-
-<p>앞으로도 지금처럼 모르는 것이 나왔을 때 대충 넘기지 않고<br />
-정리하면서 글로써 남기는 습관을 들이면 좋을 것 같고 이제부터는 자바 공부도 좀 많이 해야 할 것 같다!!</p>
-
-<p>node.js , react, spring 시니어 개발자 님들의 주특기 세션을 들어본 결과<br />
-결국 회사에서는 당장 실력이 조금 떨어지더라도 (물론 기본은..?) 더욱 발전할 수 있는 사람과</p>
-
-<p>커뮤니케이션을 잘할 수 있는 사람을 원하는 것 같았다.</p>
-
-<p>글을 쓰고 보니 TIL인데 그냥 일기처럼 썼다 ..ㅎㅎ</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">Flask Session</title><link href="http://localhost:4000/flask/Flask02/" rel="alternate" type="text/html" title="Flask Session" /><published>2022-12-08T00:00:00+09:00</published><updated>2022-12-08T00:00:00+09:00</updated><id>http://localhost:4000/flask/Flask02</id><content type="html" xml:base="http://localhost:4000/flask/Flask02/"><![CDATA[<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1
-</div>
-<hr />
-
-<div class="notice--info" style="text-align:center">
-          버전<br />
-          Python 3.9<br />
-          Flask 2.2.2<br />
-          PyCharm 2022.2.3 (Professional Edition)
-</div>
-<hr />
-
-<p><a href="https://thecodinglog.github.io/web/2020/08/11/what-is-session.html">세션의 기본 원리 참조</a></p>
-
-<p>기본적으로 session, escape는 falsk 패키지에 포함되어 있다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">session</span><span class="p">,</span> <span class="n">escape</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<p>세션 생성하기</p>
-<ul>
-  <li>세션 패키지를 임포트 해오고 서버를 킬 때 이미 세션이 생성되므로<br />
-세션에 값을 넣는다는 게 더 맞는 표현인 것 같다.</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/&lt;id&gt;'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">users</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
-
-    <span class="c1"># 세션에 'username'이라는 Key에 id라는 value를 추가했다.
-</span>    <span class="n">session</span><span class="p">[</span><span class="s">'username'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">id</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="s">'&lt;p&gt;세션에 저장된 당신의 id : %s&lt;/p&gt;'</span> <span class="o">%</span> <span class="nb">id</span>
-</code></pre></div></div>
-
-<p><br /></p>
-
-<p>클라이언트 측 브라우저의 개발자 도구로 확인해 보면 쿠키에<br />
-세션 정보가 담긴 데이터가 하나 오는데,<br />
-<img src="../../images/2022-12-08-12-25-40.png" alt="" /></p>
-
-<p>이 Value 값은 (session[’’] = a)처럼 값을 담을 때 바뀌며<br />
-응답받은 페이지 하나당 하나의 세션 쿠키만을 가지고,</p>
-
-<p>서버 측에서 같은 세션을 공유하는 경우 (a = session[’’])에는 바뀌지 않는다.<br />
-이 Value 값은 개발자 도구에서 바꿀 수 있는데</p>
-
-<p>바꾸는 경우 서버에 가지고 갈 열쇠의 모양이 바뀌었다고 생각해도<br />
-되기 때문에 서버에 있는 세션 안 데이터를 가저 오지 못할 것이다.</p>
-
-<p>서버에서 본 세션에 담긴 정보
-<img src="../../images/2022-12-08-12-27-04.png" alt="" /></p>
-
-<p>클라이언트 측 -&gt; 서버에 가지고 갈 열쇠, 세션 안 데이터가 아닌 세션을 가리키고 있는 정보인 쿠키를 들고 서버에 간다.<br />
-서버 측 -&gt; 클라이언트가 들고 온 열쇠가 서버에 세션과 맞는지 확인 후 서버의 세션에 저장된 데이터를 사용한다.</p>
-
-<p>index page</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
-
-    <span class="nb">id</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s">'username'</span><span class="p">]</span>
-
-    <span class="k">return</span> <span class="s">'&lt;p&gt;hello world : %s&lt;/p&gt;'</span> <span class="o">%</span> <span class="nb">id</span>
-</code></pre></div></div>
-
-<p><br /> 
-이미 저장되어 있기 때문에 어떠한 url로 접속해도 username이 남아있다.<br />
-(세션 생성되는 부분에서 스크린샷을 찍고 여러 번 생성을 해서 세션 쿠키 Value 값이 다릅니다.)<br />
-<img src="../../images/2022-12-08-12-32-32.png" alt="" /></p>
-
-<p>세션 정보를 삭제해 보았다.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/delete'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">user_delete</span><span class="p">():</span>
-
-    <span class="n">session</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'username'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="s">'세션 정보가 삭제되었습니다.'</span>
-</code></pre></div></div>
-
-<p><img src="../../images/2022-12-08-12-36-51.png" alt="" /></p>
-
-<p><br /></p>
-
-<p>이후 세션이 남아있나 확인을 하려고 /  &lt;- url로 들어가면? 아래와 같은 에러가 발생한다.
-<img src="../../images/2022-12-08-12-37-48.png" alt="" /></p>
-
-<p>에러가 난 이유는??<br />
-세션을 삭제했기 때문에, 
-session[‘username’]에서 ‘username’을 찾을 수 없어 나는 에러이다.</p>
-
-<p>그러므로 세션 값이 존재하는지 안 하는지부터 확인을 하고 다음 로직으로 넘겨야 한다!</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-
-    <span class="k">if</span><span class="p">(</span><span class="s">'username'</span> <span class="ow">in</span> <span class="n">session</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"세션 있음"</span><span class="p">)</span>
-        <span class="k">return</span> <span class="s">'&lt;p&gt;{}님 안녕하세요.'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">escape</span><span class="p">(</span><span class="n">session</span><span class="p">[</span><span class="s">'username'</span><span class="p">]))</span> <span class="o">+</span> <span class="s">'&lt;/p&gt;'</span>
-
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"세션 없음"</span><span class="p">)</span>
-        <span class="k">return</span> <span class="s">'&lt;p&gt;로그인해 주세요.&lt;/p&gt;'</span>
-
-</code></pre></div></div>
-
-<h2 id="pop과-clear의-차이">pop()과 clear()의 차이?</h2>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/&lt;id&gt;/&lt;name&gt;'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">users</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-
-
-    <span class="n">session</span><span class="p">[</span><span class="s">'username'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">id</span>
-    <span class="n">session</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="s">'완료'</span>
-</code></pre></div></div>
-
-<p><img src="../../images/2022-12-08-13-14-02.png" alt="" /></p>
-
-<p><img src="../../images/2022-12-08-13-14-37.png" alt="" /></p>
-
-<p>위와 같이 사용한다고 치면! ( 세션에 여러 데이터가 담긴 경우 )</p>
-
-<p>pop으로  username을 삭제한 경우</p>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">## session.clear()와 차이는?
-</span>    <span class="n">session</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'username'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>아래처럼 pop으로 제거한 내용만 제거되고 나머지 값은 남아있지만<br />
-<img src="../../images/2022-12-08-13-15-25.png" alt="" /></p>
-
-<p>clear()로 삭제한 경우</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/delete'</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">user_delete</span><span class="p">():</span>
-
-    <span class="n">session</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="s">'세션 정보가 삭제되었습니다.'</span>
-</code></pre></div></div>
-
-<p>clear의 경우 세션 안 모든 값을 삭제한다.</p>
-
-<p><img src="../../images/2022-12-08-13-49-56.png" alt="" /></p>
-
-<p><br /><br /></p>
-
-<p>++ 여러 url에서 세션에 값을 담는 경우</p>
-
-<p>예를 들어 A라는 페이지는 유저의 ID, Name을 세션에 담고
-B라는 페이지는 유저의 Age를 담는 경우</p>
-
-<p>클라이언트는 응답받은 하나의 페이지(A)에서 한 개의 세션 벨류 값을 가지고,<br />
-B라는 페이지에 접속 시 다른 벨류 값을 가진 세션 쿠키를 가지고 오지만,</p>
-
-<p>서버에서의 세션 데이터인 ID, Name, Age는 변하지 않는다.
--&gt; B 페이지의 쿠키 값만 가지고 있어도 ID, Name, Age 사용 가능</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Flask" /><category term="Flask Session" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">JWT - Json Web Token</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/JWT/" rel="alternate" type="text/html" title="JWT - Json Web Token" /><published>2022-12-08T00:00:00+09:00</published><updated>2022-12-08T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/JWT</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/JWT/"><![CDATA[<div class="notice" style="text-align:center">
+(버튼 클릭 시 url_for로 이동합니다.)</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">JWT - Json Web Token</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/JWT/" rel="alternate" type="text/html" title="JWT - Json Web Token" /><published>2022-12-08T00:00:00+09:00</published><updated>2022-12-08T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/JWT</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/JWT/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
@@ -757,7 +628,7 @@ secret)
 <a href="https://inpa.tistory.com/entry/WEB-%F0%9F%93%9A-JWTjson-web-token-%EB%9E%80-%F0%9F%92%AF-%EC%A0%95%EB%A6%AC">참조 블로그</a><br />
 <a href="https://walkingplow.tistory.com/88">참조 블로그</a><br />
 <a href="https://velog.io/@junghyeonsu/  %ED%94%84%EB%A1%A0%ED%8A%B8%EC%97%90%EC%84%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8%EC%9D%84-%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95">참조 블로그</a><br />
-<a href="https://velopert.com/2389">참조 블로그</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="JWT" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 3일차, 암호화를 할 수 있을까?</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03/" rel="alternate" type="text/html" title="항해99 TIL 3일차, 암호화를 할 수 있을까?" /><published>2022-12-07T00:00:00+09:00</published><updated>2022-12-07T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03/"><![CDATA[<div class="notice" style="text-align:center">
+<a href="https://velopert.com/2389">참조 블로그</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="JWT" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">Flask Session</title><link href="http://localhost:4000/flask/Flask02/" rel="alternate" type="text/html" title="Flask Session" /><published>2022-12-08T00:00:00+09:00</published><updated>2022-12-08T00:00:00+09:00</updated><id>http://localhost:4000/flask/Flask02</id><content type="html" xml:base="http://localhost:4000/flask/Flask02/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
@@ -768,85 +639,214 @@ secret)
           버전<br />
           Python 3.9<br />
           Flask 2.2.2<br />
-          bcrypt 4.0.1<br />
-          PyCharm 2022.2.3 (Professional Edition)<br />
+          PyCharm 2022.2.3 (Professional Edition)
 </div>
 <hr />
-<p><br /></p>
 
-<h1 id="오늘의-목표">오늘의 목표</h1>
-<ul>
-  <li>회원 수정 : 비밀번호, 닉네임, 이메일 수정 기능 넣기.</li>
-  <li>코드 수정</li>
-</ul>
+<p><a href="https://thecodinglog.github.io/web/2020/08/11/what-is-session.html">세션의 기본 원리 참조</a></p>
 
-<h2 id="회원-수정-로직-구현-과정">회원 수정 로직 구현 과정</h2>
-<p>회원 수정, 특히 비밀번호 수정에서 살짝 헤맸는데 키보드를 떼고 일단 생각 정리를 해보았다.</p>
+<p>기본적으로 session, escape는 falsk 패키지에 포함되어 있다.</p>
 
-<p>비밀번호 같은 경우 암호화가 되어있고,</p>
-
-<p>똑같은 비밀번호 1234라도 암호화 시 매번 다르게,<br />
-특정한 알고리즘으로 돌아가는 salt 값에 의해 암호화된 값이 나오기 때문에,</p>
-
-<p>현재 비밀번호와 수정할 비밀번호를 입력 시<br />
-현재 비밀번호를, 다시 암호화를 해서 DB의 원본 비밀번호와 맞춰 보겠다는 방식은 X</p>
-
-<p>그렇다면 어떻게 해야 할까..?<br />
-회원가입, 로그인 방식을 이미 구현해 놨기 때문에 사실 크게 어렵지 않았다.</p>
-
-<p>회원가입이 비밀번호 암호화 -&gt; DB 저장 방식이었다면,</p>
-
-<p>로그인은 입력된 비밀번호와 DB에 저장된 비밀번호를<br />
-인코딩하여 복호화 함수에 같이 넣어서 체크하여 True, False를 리턴 받는 방식이었다.</p>
-
-<p>그렇기에, 현재 비밀번호, 바꿀 비밀번호, 현재 유저 id(세션 값)만 있다면 구현 가능하다.<br />
-물론 바꿀 비밀번호를 다시 DB 저장 시에는 회원가입에서처럼 암호화를 해서 넣어야 한다.</p>
-
-<details>
-<summary>비밀번호 변경 서버단</summary>
-
-<div>
-
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">id</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span>
-
-   <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="nb">id</span><span class="p">},</span> <span class="p">{</span><span class="s">'_id'</span><span class="p">:</span> <span class="bp">False</span><span class="p">})</span>
-
-   <span class="n">currentPassword</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'currentPassword_give'</span><span class="p">]</span>
-   <span class="n">changedPassword</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'changedPassword_give'</span><span class="p">]</span>
-
-   <span class="n">result</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">checkpw</span><span class="p">(</span><span class="n">currentPassword</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">),</span> <span class="n">user</span><span class="p">[</span><span class="s">'pw'</span><span class="p">].</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
-
-   <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="bp">False</span><span class="p">):</span>
-       <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'failed_current_Password'</span><span class="p">})</span>
-
-   <span class="n">pw</span> <span class="o">=</span> <span class="n">changedPassword</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
-   <span class="n">pwSalt</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">gensalt</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
-   <span class="n">pwHash</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">hashpw</span><span class="p">(</span><span class="n">pw</span><span class="p">,</span> <span class="n">pwSalt</span><span class="p">)</span>
-
-   <span class="n">insertPwHash</span> <span class="o">=</span> <span class="n">pwHash</span><span class="p">.</span><span class="n">decode</span><span class="p">()</span>
-
-   <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">update_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="nb">id</span><span class="p">},</span> <span class="p">{</span><span class="s">'$set'</span><span class="p">:</span> <span class="p">{</span><span class="s">'pw'</span><span class="p">:</span> <span class="n">insertPwHash</span><span class="p">}})</span>
-
-    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'success'</span><span class="p">})</span>
-</code></pre></div>    </div>
-
-  </div>
-</details>
-
-<h2 id="마무으리">마무으~리</h2>
-
-<p>하다 보니, 회원 가입 시 id가 한글로도 만들어지길래<br />
-정규 표현식을 이용해서 한글을 체크하는 함수를 만들어 주었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">function</span> <span class="nx">checkKorean</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
-        <span class="kd">const</span> <span class="nx">korean</span> <span class="o">=</span> <span class="sr">/</span><span class="se">[</span><span class="sr">ㄱ-ㅎ|ㅏ-ㅣ|가-힣</span><span class="se">]</span><span class="sr">/</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="nx">korean</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
-    <span class="p">}</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">session</span><span class="p">,</span> <span class="n">escape</span>
 </code></pre></div></div>
 
-<p>확실히 첫날과 두 번째 날 삽질을 많이 하며, 플라스크의 대략적인 구조를 알게 되니<br />
-셋째 날에는 점점 삽질하는 횟수나 시간이 줄어들었다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">AWS EC2 원격 접속하기</title><link href="http://localhost:4000/cloud%20computing%20-%20aws/AWS-03/" rel="alternate" type="text/html" title="AWS EC2 원격 접속하기" /><published>2022-12-07T00:00:00+09:00</published><updated>2022-12-07T00:00:00+09:00</updated><id>http://localhost:4000/cloud%20computing%20-%20aws/AWS-03</id><content type="html" xml:base="http://localhost:4000/cloud%20computing%20-%20aws/AWS-03/"><![CDATA[<div class="notice" style="text-align:center">
+<p><br /></p>
+
+<p>세션 생성하기</p>
+<ul>
+  <li>세션 패키지를 임포트 해오고 서버를 킬 때 이미 세션이 생성되므로<br />
+세션에 값을 넣는다는 게 더 맞는 표현인 것 같다.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/&lt;id&gt;'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">users</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+
+    <span class="c1"># 세션에 'username'이라는 Key에 id라는 value를 추가했다.
+</span>    <span class="n">session</span><span class="p">[</span><span class="s">'username'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">id</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s">'&lt;p&gt;세션에 저장된 당신의 id : %s&lt;/p&gt;'</span> <span class="o">%</span> <span class="nb">id</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<p>클라이언트 측 브라우저의 개발자 도구로 확인해 보면 쿠키에<br />
+세션 정보가 담긴 데이터가 하나 오는데,<br />
+<img src="../../images/2022-12-08-12-25-40.png" alt="" /></p>
+
+<p>이 Value 값은 (session[’’] = a)처럼 값을 담을 때 바뀌며<br />
+응답받은 페이지 하나당 하나의 세션 쿠키만을 가지고,</p>
+
+<p>서버 측에서 같은 세션을 공유하는 경우 (a = session[’’])에는 바뀌지 않는다.<br />
+이 Value 값은 개발자 도구에서 바꿀 수 있는데</p>
+
+<p>바꾸는 경우 서버에 가지고 갈 열쇠의 모양이 바뀌었다고 생각해도<br />
+되기 때문에 서버에 있는 세션 안 데이터를 가저 오지 못할 것이다.</p>
+
+<p>서버에서 본 세션에 담긴 정보
+<img src="../../images/2022-12-08-12-27-04.png" alt="" /></p>
+
+<p>클라이언트 측 -&gt; 서버에 가지고 갈 열쇠, 세션 안 데이터가 아닌 세션을 가리키고 있는 정보인 쿠키를 들고 서버에 간다.<br />
+서버 측 -&gt; 클라이언트가 들고 온 열쇠가 서버에 세션과 맞는지 확인 후 서버의 세션에 저장된 데이터를 사용한다.</p>
+
+<p>index page</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s">'username'</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="s">'&lt;p&gt;hello world : %s&lt;/p&gt;'</span> <span class="o">%</span> <span class="nb">id</span>
+</code></pre></div></div>
+
+<p><br /> 
+이미 저장되어 있기 때문에 어떠한 url로 접속해도 username이 남아있다.<br />
+(세션 생성되는 부분에서 스크린샷을 찍고 여러 번 생성을 해서 세션 쿠키 Value 값이 다릅니다.)<br />
+<img src="../../images/2022-12-08-12-32-32.png" alt="" /></p>
+
+<p>세션 정보를 삭제해 보았다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/delete'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">user_delete</span><span class="p">():</span>
+
+    <span class="n">session</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'username'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s">'세션 정보가 삭제되었습니다.'</span>
+</code></pre></div></div>
+
+<p><img src="../../images/2022-12-08-12-36-51.png" alt="" /></p>
+
+<p><br /></p>
+
+<p>이후 세션이 남아있나 확인을 하려고 /  &lt;- url로 들어가면? 아래와 같은 에러가 발생한다.
+<img src="../../images/2022-12-08-12-37-48.png" alt="" /></p>
+
+<p>에러가 난 이유는??<br />
+세션을 삭제했기 때문에, 
+session[‘username’]에서 ‘username’을 찾을 수 없어 나는 에러이다.</p>
+
+<p>그러므로 세션 값이 존재하는지 안 하는지부터 확인을 하고 다음 로직으로 넘겨야 한다!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+    <span class="k">if</span><span class="p">(</span><span class="s">'username'</span> <span class="ow">in</span> <span class="n">session</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"세션 있음"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s">'&lt;p&gt;{}님 안녕하세요.'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">escape</span><span class="p">(</span><span class="n">session</span><span class="p">[</span><span class="s">'username'</span><span class="p">]))</span> <span class="o">+</span> <span class="s">'&lt;/p&gt;'</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"세션 없음"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s">'&lt;p&gt;로그인해 주세요.&lt;/p&gt;'</span>
+
+</code></pre></div></div>
+
+<h2 id="pop과-clear의-차이">pop()과 clear()의 차이?</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/&lt;id&gt;/&lt;name&gt;'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">users</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+
+    <span class="n">session</span><span class="p">[</span><span class="s">'username'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">id</span>
+    <span class="n">session</span><span class="p">[</span><span class="s">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s">'완료'</span>
+</code></pre></div></div>
+
+<p><img src="../../images/2022-12-08-13-14-02.png" alt="" /></p>
+
+<p><img src="../../images/2022-12-08-13-14-37.png" alt="" /></p>
+
+<p>위와 같이 사용한다고 치면! ( 세션에 여러 데이터가 담긴 경우 )</p>
+
+<p>pop으로  username을 삭제한 경우</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1">## session.clear()와 차이는?
+</span>    <span class="n">session</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'username'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>아래처럼 pop으로 제거한 내용만 제거되고 나머지 값은 남아있지만<br />
+<img src="../../images/2022-12-08-13-15-25.png" alt="" /></p>
+
+<p>clear()로 삭제한 경우</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/users/delete'</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">user_delete</span><span class="p">():</span>
+
+    <span class="n">session</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">session</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="s">'세션 정보가 삭제되었습니다.'</span>
+</code></pre></div></div>
+
+<p>clear의 경우 세션 안 모든 값을 삭제한다.</p>
+
+<p><img src="../../images/2022-12-08-13-49-56.png" alt="" /></p>
+
+<p><br /><br /></p>
+
+<p>++ 여러 url에서 세션에 값을 담는 경우</p>
+
+<p>예를 들어 A라는 페이지는 유저의 ID, Name을 세션에 담고
+B라는 페이지는 유저의 Age를 담는 경우</p>
+
+<p>클라이언트는 응답받은 하나의 페이지(A)에서 한 개의 세션 벨류 값을 가지고,<br />
+B라는 페이지에 접속 시 다른 벨류 값을 가진 세션 쿠키를 가지고 오지만,</p>
+
+<p>서버에서의 세션 데이터인 ID, Name, Age는 변하지 않는다.
+-&gt; B 페이지의 쿠키 값만 가지고 있어도 ID, Name, Age 사용 가능</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Flask" /><category term="Flask Session" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 4일차 입학시험</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL04/" rel="alternate" type="text/html" title="항해99 TIL 4일차 입학시험" /><published>2022-12-08T00:00:00+09:00</published><updated>2022-12-08T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL04</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL04/"><![CDATA[<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1
+</div>
+<hr />
+
+<h1 id="항해-99-입학시험">항해 99 입학시험</h1>
+
+<p>오늘은 대망의 입학시험을 보는 날이다.  <br />
+시험 문제는 웹 개발 종합반 강의를 어느 정도 숙달했다면 충분히 쉽게 나왔다.</p>
+
+<p>사실 전날 CRUD 중 Delete 과정을 미리 연습해 보았는데,<br />
+Update가 나와서 코드만 살짝 수정 후 테스트하고 바로 제출해서 한 30분 걸린 것 같다!</p>
+
+<p>강의를 많이 듣지 않았거나 뼈대를 미리 만들어 놓지 않았다면 
+살짝 어려웠을 수도 있을 것 같은 수준의 난이도인 것 같다.</p>
+
+<p>사실 이런 입학시험 가지고 탈락 시킬 것 같진 않다.<br />
+정말 시험을 안 보거나, 의지가 없는 사람만 골라내려고 하는 것 같다.</p>
+
+<h1 id="지금까지-돌아보자면">지금까지 돌아보자면.</h1>
+
+<p>항해를 시작하고 웹 개발 강의를 처음 받았을 때는, 솔직히<br />
+파이썬과 플라스크 기반에 NoSQL인 mongo DB로 강의를 하기에,</p>
+
+<p>자바는 언제 배우고, 스프링은 언제 배우지?라는 생각을 했다.</p>
+
+<p>하지만 아직 초반이고, 플라스크를 썼기에 어느 정도 웹 사이클을 빨리 경험한 것뿐만 아니라<br />
+빨리 플라스크의 구조를 조금이라도 익혔기에</p>
+
+<p>웹에 있어 중요한 기능들 예를 들면 세션, 암호화, MVC 구조, JWT 등을<br />
+파보려고 하고, 어느 정도는 파본 것 같아 지금에 와서는 만족하고 있다.</p>
+
+<p>이러한 경험을 토대로 다른 언어, 프레임워크 들도 파고들 수 있는 실력을 기른 것 같아 뿌듯해졌다.<br />
+앞으로 포스팅은 계속하는 걸로… 개념 정리에 있어서 정말 도움이 되는 것 같다.</p>
+
+<p>글을 쓰고 정리하면서, 더 검색해 보고 문서를 읽으면서, 정말 추상적으로만 그려졌던 개념이<br />
+어느 정도는 확실하게 그려지는 경험을 짧은 시간에 많이 해 본 것 같아 기분이 좋다.</p>
+
+<h2 id="앞으로-어떻게-해야-할까">앞으로 어떻게 해야 할까?</h2>
+<p>입학시험을 보고 리액트, 스프링, 노드 js 3가지 중의 주특기를 골라야 했다.<br />
+나는 애초에 스프링을 배우고 싶기에 스프링을 골랐고 후회하지 않는다.</p>
+
+<p>앞으로도 지금처럼 모르는 것이 나왔을 때 대충 넘기지 않고<br />
+정리하면서 글로써 남기는 습관을 들이면 좋을 것 같고 이제부터는 자바 공부도 좀 많이 해야 할 것 같다!!</p>
+
+<p>node.js , react, spring 시니어 개발자 님들의 주특기 세션을 들어본 결과<br />
+결국 회사에서는 당장 실력이 조금 떨어지더라도 (물론 기본은..?) 더욱 발전할 수 있는 사람과</p>
+
+<p>커뮤니케이션을 잘할 수 있는 사람을 원하는 것 같았다.</p>
+
+<p>글을 쓰고 보니 TIL인데 그냥 일기처럼 썼다 ..ㅎㅎ</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">AWS EC2 원격 접속하기</title><link href="http://localhost:4000/cloud%20computing%20-%20aws/AWS-03/" rel="alternate" type="text/html" title="AWS EC2 원격 접속하기" /><published>2022-12-07T00:00:00+09:00</published><updated>2022-12-07T00:00:00+09:00</updated><id>http://localhost:4000/cloud%20computing%20-%20aws/AWS-03</id><content type="html" xml:base="http://localhost:4000/cloud%20computing%20-%20aws/AWS-03/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
@@ -1056,7 +1056,7 @@ Ubuntu로 선택하기 ( 웬만하면 LTS 버전 사용 )
 
 <p>AWS 해킹 방지를 위한 google OTP 등록하는 방법은 다음 글에 있습니다!</p>
 
-<p><a href="https://buw.medium.com/aws-ec2%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B4%EB%A9%B0-%EC%99%9C-%EA%B8%B0%EC%97%85%EB%93%A4%EC%9D%B4-ec2%EB%A5%BC-%EC%84%A0%ED%83%9D%ED%95%A0%EA%B9%8C%EC%9A%94-e4c4d6b419b4">AWS EC2 관련 문서</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Cloud computing - AWS" /><category term="aws" /><category term="EC2 인스턴스 생성" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 2일차, form 태그는 뭐고 세션은 뭐야?..</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL02/" rel="alternate" type="text/html" title="항해99 TIL 2일차, form 태그는 뭐고 세션은 뭐야?.." /><published>2022-12-06T00:00:00+09:00</published><updated>2022-12-06T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL02</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL02/"><![CDATA[<div class="notice" style="text-align:center">
+<p><a href="https://buw.medium.com/aws-ec2%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B4%EB%A9%B0-%EC%99%9C-%EA%B8%B0%EC%97%85%EB%93%A4%EC%9D%B4-ec2%EB%A5%BC-%EC%84%A0%ED%83%9D%ED%95%A0%EA%B9%8C%EC%9A%94-e4c4d6b419b4">AWS EC2 관련 문서</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Cloud computing - AWS" /><category term="aws" /><category term="EC2 인스턴스 생성" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 3일차, 암호화를 할 수 있을까?</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03/" rel="alternate" type="text/html" title="항해99 TIL 3일차, 암호화를 할 수 있을까?" /><published>2022-12-07T00:00:00+09:00</published><updated>2022-12-07T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
@@ -1069,194 +1069,80 @@ Ubuntu로 선택하기 ( 웬만하면 LTS 버전 사용 )
           Flask 2.2.2<br />
           bcrypt 4.0.1<br />
           PyCharm 2022.2.3 (Professional Edition)<br />
-          
-
 </div>
 <hr />
 <p><br /></p>
 
-<h2 id="고생길">고생길..</h2>
-<p>토이 프로젝트하라고 팀을 만들어 줬건만, 개인플레이를 하는 우리 팀(나 포함)…<br />
-오늘 다시 회의를 하고, 튜터님들의 조언 등을 통해 하루 이틀 남은 시점에서 다시 팀플레이로 바뀌었다.</p>
-
-<p>그래서 해당 와이어 프레임과 계획으로 다시 목표를 짰고<br />
-노션에 깔끔하게 작성해 준 팀장님과 팀원님들.</p>
-
-<p><img src="../../images/2022-12-06-19-29-32.png" alt="" /></p>
-
-<p><img src="../../images/2022-12-06-19-28-13.png" alt="" /></p>
-
-<p><img src="../../images/2022-12-06-19-28-35.png" alt="" /></p>
-
-<h2 id="내-역할">내 역할</h2>
-<p>나는 이전 프로젝트에서 메모 기능보다 로그인 기능을 먼저 만들고 있고,<br />
-다른 사람들은 메모 관련 로직을 만들고 있어서 내가 로그인, 회원가입 기능 등을 맡게 되었다.</p>
-
-<h2 id="목표">목표</h2>
+<h1 id="오늘의-목표">오늘의 목표</h1>
 <ul>
-  <li>회원가입, 로그인 구현</li>
-  <li>세션 구현.</li>
-  <li>비밀번호 암, 복호화 구현하기</li>
+  <li>회원 수정 : 비밀번호, 닉네임, 이메일 수정 기능 넣기.</li>
+  <li>코드 수정</li>
 </ul>
 
-<p>확실히 먼젓번 만들었던 혼자 한 프로젝트에서 로그인 구현을 혼자 어느 정도 해보고 나니 프로젝트에 표현하기가 한결 쉬워졌다.</p>
+<h2 id="회원-수정-로직-구현-과정">회원 수정 로직 구현 과정</h2>
+<p>회원 수정, 특히 비밀번호 수정에서 살짝 헤맸는데 키보드를 떼고 일단 생각 정리를 해보았다.</p>
 
-<h2 id="문제점">문제점</h2>
+<p>비밀번호 같은 경우 암호화가 되어있고,</p>
 
-<p>이렇게 보냈는데<br />
-<img src="../../images/2022-12-06-18-01-58.png" alt="" /></p>
+<p>똑같은 비밀번호 1234라도 암호화 시 매번 다르게,<br />
+특정한 알고리즘으로 돌아가는 salt 값에 의해 암호화된 값이 나오기 때문에,</p>
 
-<p>서버 단 로그인 성공 시<br />
-<img src="../../images/2022-12-06-18-01-49.png" alt="" /></p>
+<p>현재 비밀번호와 수정할 비밀번호를 입력 시<br />
+현재 비밀번호를, 다시 암호화를 해서 DB의 원본 비밀번호와 맞춰 보겠다는 방식은 X</p>
 
-<p>왜 도대체 alert나, log가 안될까? 응답이 안 오나?</p>
+<p>그렇다면 어떻게 해야 할까..?<br />
+회원가입, 로그인 방식을 이미 구현해 놨기 때문에 사실 크게 어렵지 않았다.</p>
 
-<p>..한참 동안 해본 결과</p>
+<p>회원가입이 비밀번호 암호화 -&gt; DB 저장 방식이었다면,</p>
 
-<p>이 부분을 작업한 사람이 여기서 왜 이렇게 해놨을까를 한 번 더 생각해 보았다.<br />
-저 폼 action을 왜 해놨고 사용하라는 듯이 “” 큰따옴표까지 써놔주었다.<br />
-계속 찾아보고 생각해 보니 form 태그라는 게 있으며,<br />
-get과 post 방식으로 간단하게 폼을 보낼 수 있다고 한다!</p>
+<p>로그인은 입력된 비밀번호와 DB에 저장된 비밀번호를<br />
+인코딩하여 복호화 함수에 같이 넣어서 체크하여 True, False를 리턴 받는 방식이었다.</p>
 
-<p><img src="../../images/2022-12-06-18-19-12.png" alt="" />
-<img src="../../images/2022-12-06-18-21-42.png" alt="" /></p>
-
-<p>안 됐던 이유는,<br />
-원래 시도한 방식은 이런 방식인데<br />
-input 태그 id -&gt; 에이잭스(id, pw) -&gt; post 요청 -&gt; 플라스크 백단(로그인 처리) -&gt; response 응답</p>
-
-<p>id 태그 + onclick=”function()” 조합으로 에이잭스에서 불러와도 form에 action 태그가 먼저 처리되어
-get으로 요청하고 있어서 안 되는 것이었다.</p>
-
-<p>그래서 아래와 같이 바꾸었다.</p>
-
-<p>form 태그 ( input에서 id가 아닌 name으로) -&gt; post 요청 -&gt; 플라스크 백단(로그인 처리) -&gt; 템플릿 뿌려주기로 바꾸었다.<br />
-<img src="../../images/2022-12-06-18-41-56.png" alt="" /><br />
-<img src="../../images/2022-12-06-19-39-17.png" alt="" /></p>
-
-<p><a href="https://goodsgoods.tistory.com/240">참조 블로그</a></p>
-
-<p>그래서 굳이 가져올 데이터가 없으면 ajax로 안 보내고,<br />
-fomr 태그로 보내면 되겠다는 것을 깨달았다.</p>
-
-<p>결론적으로 이런 생각을 해 보았다.<br />
-프론트 단에서 유효성 검사 -&gt; 백엔드 유효성 검사 (화면 변화 없이) 하려면 에이잭스
-프론트 단에서 유효성 검사를 하지 않고 간단하게 보낼 시 form 태그로</p>
-
-<h2 id="이것-역시-주입식-교육의-폐해">이것 역시 주입식 교육의 폐해??</h2>
-<p>처음에 보라고 던져준 웹 개발 종합반 강의에서는 form 태그는 보지 못하고<br />
-ajax만 썼는데.. 그래도 이렇게 하다 보니 틀렸던 점이 기억에 남는 것 같다.</p>
-
-<h2 id="암호화복호화">암호화/복호화</h2>
-
-<p>또 다른 목표였던 세션과 암호화/복호화는 순조롭게 진행이 되었다.<br />
-암호화는 파이썬 패키지로 있는 bcrypt 방식을 이용하였고,<br />
-세션은 flask에서 지원하는 session을 이용하였다.</p>
+<p>그렇기에, 현재 비밀번호, 바꿀 비밀번호, 현재 유저 id(세션 값)만 있다면 구현 가능하다.<br />
+물론 바꿀 비밀번호를 다시 DB 저장 시에는 회원가입에서처럼 암호화를 해서 넣어야 한다.</p>
 
 <details>
-<summary>암호화</summary>
+<summary>비밀번호 변경 서버단</summary>
 
 <div>
 
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">def</span> <span class="nf">signUpFunction</span><span class="p">():</span>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">id</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span>
 
-    <span class="n">id_receive</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'id_give'</span><span class="p">]</span>
-    <span class="n">pw_receive</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'pw_give'</span><span class="p">]</span>
-    <span class="n">name_receive</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'name_give'</span><span class="p">]</span>
-    <span class="n">nickname_receive</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'nickname_give'</span><span class="p">]</span>
-    <span class="n">email_receive</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'email_give'</span><span class="p">]</span>
+   <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="nb">id</span><span class="p">},</span> <span class="p">{</span><span class="s">'_id'</span><span class="p">:</span> <span class="bp">False</span><span class="p">})</span>
 
-    <span class="c1"># 비밀번호 암호화
-</span>    <span class="n">pw</span> <span class="o">=</span> <span class="n">pw_receive</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+   <span class="n">currentPassword</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'currentPassword_give'</span><span class="p">]</span>
+   <span class="n">changedPassword</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'changedPassword_give'</span><span class="p">]</span>
 
-    <span class="n">pwSalt</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">gensalt</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
-    <span class="n">pwHash</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">hashpw</span><span class="p">(</span><span class="n">pw</span><span class="p">,</span> <span class="n">pwSalt</span><span class="p">)</span>
-
-    <span class="n">insertPwHash</span> <span class="o">=</span> <span class="n">pwHash</span><span class="p">.</span><span class="n">decode</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">insertPwHash</span><span class="p">)</span>
-
-    <span class="n">id_check</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span><span class="n">id_receive</span><span class="p">})</span>
-    <span class="c1"># ID 중복 체크
-</span>    <span class="k">if</span><span class="p">(</span><span class="n">id_check</span> <span class="o">!=</span> <span class="bp">None</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"해당 ID 존재합니다."</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'failed'</span><span class="p">})</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">doc</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s">'id'</span><span class="p">:</span> <span class="n">id_receive</span><span class="p">,</span>
-        <span class="s">'pw'</span><span class="p">:</span> <span class="n">insertPwHash</span><span class="p">,</span>
-        <span class="s">'name'</span><span class="p">:</span> <span class="n">name_receive</span><span class="p">,</span>
-        <span class="s">'nickName'</span><span class="p">:</span> <span class="n">nickname_receive</span><span class="p">,</span>
-        <span class="s">'email'</span><span class="p">:</span> <span class="n">email_receive</span>
-    <span class="p">}</span>
-        <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">insert_one</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'success'</span><span class="p">})</span>
-
-</code></pre></div>    </div>
-
-  </div>
-</details>
-
-<details>
-<summary>복호화</summary>
-
-<div>
-
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s">'/login'</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s">'POST'</span><span class="p">])</span>
-<span class="k">def</span> <span class="nf">loginFunction</span><span class="p">():</span>
-   <span class="n">id_receive</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'userName'</span><span class="p">]</span>
-   <span class="n">pw_receive</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'userPassword'</span><span class="p">]</span>
-
-   <span class="c1"># 비밀번호 복호화
-</span>   <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="n">id_receive</span><span class="p">},</span> <span class="p">{</span><span class="s">'_id'</span><span class="p">:</span> <span class="bp">False</span><span class="p">})</span>
-
-   <span class="k">if</span><span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="bp">None</span><span class="p">):</span>
-      <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">'signInPage.html'</span><span class="p">)</span>
-
-   <span class="n">result</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">checkpw</span><span class="p">(</span><span class="n">pw_receive</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">),</span> <span class="n">user</span><span class="p">[</span><span class="s">'pw'</span><span class="p">].</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
+   <span class="n">result</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">checkpw</span><span class="p">(</span><span class="n">currentPassword</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">),</span> <span class="n">user</span><span class="p">[</span><span class="s">'pw'</span><span class="p">].</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
 
    <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="bp">False</span><span class="p">):</span>
-      <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">'signInPage.html'</span><span class="p">)</span>
+       <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'failed_current_Password'</span><span class="p">})</span>
 
-   <span class="k">elif</span><span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="bp">True</span><span class="p">):</span>
-      <span class="n">session</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span> <span class="o">=</span> <span class="n">id_receive</span>
+   <span class="n">pw</span> <span class="o">=</span> <span class="n">changedPassword</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+   <span class="n">pwSalt</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">gensalt</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+   <span class="n">pwHash</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">hashpw</span><span class="p">(</span><span class="n">pw</span><span class="p">,</span> <span class="n">pwSalt</span><span class="p">)</span>
 
-      <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">'memo.html'</span><span class="p">)</span>
+   <span class="n">insertPwHash</span> <span class="o">=</span> <span class="n">pwHash</span><span class="p">.</span><span class="n">decode</span><span class="p">()</span>
 
+   <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">update_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="nb">id</span><span class="p">},</span> <span class="p">{</span><span class="s">'$set'</span><span class="p">:</span> <span class="p">{</span><span class="s">'pw'</span><span class="p">:</span> <span class="n">insertPwHash</span><span class="p">}})</span>
 
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'success'</span><span class="p">})</span>
 </code></pre></div>    </div>
 
   </div>
 </details>
 
-<details>
-<summary>세션</summary>
+<h2 id="마무으리">마무으~리</h2>
 
-<div>
+<p>하다 보니, 회원 가입 시 id가 한글로도 만들어지길래<br />
+정규 표현식을 이용해서 한글을 체크하는 함수를 만들어 주었다.</p>
 
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">session</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">function</span> <span class="nx">checkKorean</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
+        <span class="kd">const</span> <span class="nx">korean</span> <span class="o">=</span> <span class="sr">/</span><span class="se">[</span><span class="sr">ㄱ-ㅎ|ㅏ-ㅣ|가-힣</span><span class="se">]</span><span class="sr">/</span><span class="p">;</span>
 
-<span class="c1"># 중요한 키, 유출되면 안 됨
-</span><span class="n">app</span><span class="p">.</span><span class="n">secret_key</span> <span class="o">=</span> <span class="sa">b</span><span class="s">'aaa!111/'</span>
+    <span class="k">return</span> <span class="nx">korean</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div></div>
 
-
-    <span class="c1">#세션의 user에 로그인한 아이디가 담긴다.
-</span>    <span class="c1">#id_receive 로그인 성공 시 해당 id 담기
-</span>    <span class="n">session</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span> <span class="o">=</span> <span class="n">id_receive</span>
-
-    <span class="c1">#세션 삭제
-</span>    <span class="n">session</span><span class="p">.</span><span class="n">pop</span><span class="p">(</span><span class="s">'user'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
-
-</code></pre></div>    </div>
-
-  </div>
-</details>
-
-<p>배운 점</p>
-<ul>
-  <li>js 공백, 메일, 단어 등등 체크 시 정규 표현식을 쓰는구나</li>
-  <li>유효성 검사의 중요성</li>
-  <li>form 태그 get, post 방식 - ajax get, post 방식</li>
-  <li>암호화/복호화, 세션 찍먹</li>
-</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry></feed>
+<p>확실히 첫날과 두 번째 날 삽질을 많이 하며, 플라스크의 대략적인 구조를 알게 되니<br />
+셋째 날에는 점점 삽질하는 횟수나 시간이 줄어들었다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry></feed>
