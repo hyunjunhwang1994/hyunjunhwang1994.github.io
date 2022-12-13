@@ -220,4 +220,16 @@ var store = [{
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/WIL01/",
         "teaser": null
+      },{
+        "title": "항해99 TIL 8일차 좋아요 기능 구현하기.",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 PyCharm 2022.2.3 (Professional Edition) 오늘 만들어 볼 기능 좋아요 기능 계획 오늘은 좋아요 기능을 만들어보려고 합니다. 좋아요를 단순히 게시글에 좋아요 수만 표기할 경우 어떤 유저가 좋아요를 누른지 파악하지 못하므로 좋아요 DB를 만들고,...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL07/",
+        "teaser": null
+      },{
+        "title": "항해99 TIL 9일차 각종 버그, 프로젝트 발표",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 Python 3.9 Flask 2.2.2 PyCharm 2022.2.3 (Professional Edition) 5일간에 걸친 프로젝트 완성! 엄청난 버그 프로젝트 발표 전까지도 버그가 많이 있었습니다… 깃을 통한 버전 관리도 깃허브로 하고 있었는데 사실, 각자의 브랜치에서 대부분 작업을 하고, 마지막에 합쳐서 충돌도...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL08/",
+        "teaser": null
       }]

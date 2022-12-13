@@ -1,0 +1,1241 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>항해99 TIL 8일차 좋아요 기능 구현하기. | 기술 블로그</title>
+<meta name="description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1">
+
+
+  <meta name="author" content="Hyun Jun">
+  
+  <meta property="article:author" content="Hyun Jun">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술 블로그">
+<meta property="og:title" content="항해99 TIL 8일차 좋아요 기능 구현하기.">
+<meta property="og:url" content="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL07/">
+
+
+  <meta property="og:description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-12T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL07/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hyun Jun",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="843d72a8e4b20f1a8ae8e971f19c34cb128b6c8b">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+
+    <style> 
+    /*스크롤바 꾸며주는 코드*/
+      ::-webkit-scrollbar{width: 17px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: rgb(25, 56, 109);}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      
+      {
+        width:12px;height:12px;background:transparent;
+      }
+
+        /*사이드바에는 적용하지않는다.*/
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          기술 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+
+                <!-- 다크 모드 토글 버튼 -->
+                
+                <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+                <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">카테고리👇</span>
+                    <div class="navicon"></div>
+                </button>
+
+
+                
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리👇</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+
+
+        
+        
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+  
+  
+    
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리👇</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">39</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <span class="nav__sub-title">etc</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                
+                    
+                
+                    
+                        <li><a href="/categories/jekyllblogdev" class="">Jekyll Blog Dev (11)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/hanghae99" class="">항해99 (11)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/cloudcomputingaws" class="">Cloud computing - AWS (3)</a></li>
+                    
+                
+            </ul>
+
+            
+
+
+
+        <span class="nav__sub-title">Programming language</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/java" class="">Java (8)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+        <span class="nav__sub-title">Framework</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/spring" class="">Spring (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/flask" class="">Flask (2)</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+
+ 
+
+
+      </li>
+
+
+
+  </ul>
+</nav>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="항해99 TIL 8일차 좋아요 기능 구현하기.">
+    <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1">
+    <meta itemprop="datePublished" content="2022-12-12T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL07/" class="u-url" itemprop="url">항해99 TIL 8일차 좋아요 기능 구현하기.
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-12T00:00:00+09:00">2022-12-12</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          22 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#오늘-만들어-볼-기능">오늘 만들어 볼 기능</a><ul><li><a href="#좋아요-기능-계획">좋아요 기능 계획</a></li><li><a href="#실행">실행.</a></li><li><a href="#좋아요-보여주기">좋아요 보여주기</a><ul><li><a href="#오늘의-삽질-리스트">오늘의 삽질 리스트</a></li><li><a href="#느낀점">느낀점</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1
+</div>
+<hr />
+
+<div class="notice--info" style="text-align:center">
+          버전<br />
+          Python 3.9<br />
+          Flask 2.2.2<br />
+          PyCharm 2022.2.3 (Professional Edition)<br />
+          
+</div>
+<hr />
+<p><br /></p>
+
+<h1 id="오늘-만들어-볼-기능">오늘 만들어 볼 기능</h1>
+
+<h2 id="좋아요-기능-계획">좋아요 기능 계획</h2>
+<p>오늘은 좋아요 기능을 만들어보려고 합니다.</p>
+
+<p>좋아요를 단순히 게시글에 좋아요 수만 표기할 경우<br />
+어떤 유저가 좋아요를 누른지 파악하지 못하므로</p>
+
+<p>좋아요 DB를 만들고, 유저 id와 post id를 넣어<br />
+좋아요 클릭 시 post_id에 인덱스 추가<br />
+좋아요 해제 시 post_id 인덱스 해제</p>
+
+<ul>
+  <li>좋아요 클릭 시 -&gt; 포스트의 좋아요 컬럼에 1추가 하는 방식으로.<br />
+해당 사용자의 모든 좋아요 해제 시 해당 유저의 컬럼 삭제로 해보려고 합니다.</li>
+</ul>
+
+<p>하기 전에  mongo DB를 구글링해 보니<br />
+post_id의 벨류 값에 배열을 넣을 수 있는 것 같고,<br />
+배열 안의 데이터로 좋아요 된 포스트의 uid를 활용하여 좋아요 기능을 구현해 보려고 한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Likes DB  
+id          post_id  
+A              [1, 3]  
+B              [3]
+
+
+Post DB ( 게시글의 Likes가 몇인지만 확인 )  
+post_id      Likes  
+1               1  
+2               0  
+3               2
+</code></pre></div></div>
+
+<h2 id="실행">실행.</h2>
+<p>일단 데이터 삽입으로 배열 데이터가 가능한지 몽고디비로 확인부터 했다.<br />
+네임, 벨류를 넣어야 한다</p>
+
+<p>일단 파이썬 플라스크 기준으로 아래의 쿼리문으로</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>doc = {"id":"honggildong", "likes_post":[2, 3, 4]}
+
+db.likes.insert_one(doc)
+</code></pre></div></div>
+
+<p>아래와 같이 만들었다.</p>
+
+<p>-&gt; 사실 데이터베이스에 배열이 들어간다는 건 잘 몰랐지만,<br />
+이것을 활용하는 게 더 어려울 거 같기도 하고<br />
+새로운 방법으로 사용해 보고 싶어서 배열로 사용했다.</p>
+
+<p><img src="../../images/2022-12-11-22-25-47.png" alt="" /></p>
+
+<p><a href="https://cionman.tistory.com/46">참조한 글</a></p>
+
+<p>그리고 나중에 가서 기능이 안돼서 빽 할 일이 없도록
+미리 배열 안 데이터 수정 및 배열 제거 등등 
+쿼리 작성 및 기능을 먼저 테스트를 해보고 진행하려고 합니다.</p>
+
+<p>좋아요 클릭 기능 쿼리문 만들어보기.<br />
+$push 연산자를 사용해 보았다.<br />
+$push는 배열이 이미 존재하면 배열 끝에 요소를 추가하고,</p>
+
+<p>존재하지 않으면 새로운 배열을 생성한다.<br />
+어찌어찌 쿼리를 만들어 아래와 같이 넣었지만</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>query = {"id":"human"}
+new_values = {
+    "$push": {"likes_post": [3]}
+}
+db.likes.update_one(query, new_values)
+</code></pre></div></div>
+
+<p>아래처럼 나와서 왜 안될까 하고 생각했다.</p>
+
+<p><img src="../../images/2022-12-11-22-53-46.png" alt="" /></p>
+
+<p>그래서 지금 현재 방금 추가한 likes_post: [3]이
+사진상 배열의 인덱스에 한 번 더 들어가 있으니,</p>
+
+<p>일단 배열을 제거하고 처음 앞단부터 테스트해 보자 하고
+아래처럼 넣었더니 바로 되어버렸다..!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>query = {"id":"human"}
+new_values = {
+    "$push": {"likes_post": 3}
+}
+</code></pre></div></div>
+
+<p><img src="../../images/2022-12-11-22-59-46.png" alt="" /></p>
+
+<p>아마 likes_post가 이미 배열이니 그냥 값만 넣으면 배열에 들어가는 것이었다…</p>
+
+<p>좋아요 해제 시 배열에서 값을 꺼낼 쿼리를 만들어보기</p>
+
+<p>아래 글을 참조하였습니다.<br />
+<a href="https://www.delftstack.com/ko/howto/mongodb/mongodb-remove-element-from-array/">pull 참조</a></p>
+
+<p>push를 이용하여 배열의 추가를 업데이트로 구현하였기 때문에 사실 배열 삭제의 경우 크게 어렵지 않았다.
+pull을 이용하여 배열의 삭제를 하면 된다. ( 위의 push 코드랑 바뀐 건 pull밖에 없다.)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>query = {"id":"human"}
+new_values = {
+    "$pull": {"likes_post": 3}
+}
+db.likes.update_one(query, new_values)
+</code></pre></div></div>
+
+<p>아래처럼 벨류 값이 3인 녀석만 잘 삭제된다. 
+<img src="../../images/2022-12-11-23-05-21.png" alt="" /></p>
+
+<p>아까 배열 안의 배열로 들어갔던 데이터도 처음에 잘못 입력한 쿼리에 pull만 바꾸어 삭제하였다.</p>
+
+<p>그리고 안의 데이터를 다 뽑아도 아래처럼 배열은 남아있는 것 같다.
+<img src="../../images/2022-12-11-23-09-16.png" alt="" /></p>
+
+<p>갑자기 궁금한 게 생겼다.
+push의 경우 배열 추가를 하면 배열이 존재하지 않아도 배열이 추가된다고 하였다.</p>
+
+<p>그렇다면 업데이트 문에서 아래와 같이 human2 아이디가 없을 때 업데이트 쿼리를 날린다면
+과연 human2를 만들어줄까? ( 이게 된다면 굳이 사용자가 처음 이용할 때의 insert_one 문은 필요 없을 것이다.)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>query = {"id":"human2"}
+new_values = {
+    "$push": {"likes_post": 3}
+}
+
+db.likes.update_one(query, new_values)
+</code></pre></div></div>
+
+<p>아쉽게도 업데이트할 값이 존재하지 않는다면 값은 추가해 주지 않는다..
+( 당연히 업데이트니까 추가는 안 해주는 게 맞는 것 같다.)</p>
+
+<ol>
+  <li>
+    <p>그럼 사용자의 첫 좋아요를 눌렀을 때 -&gt; 테이블 생성, 두 번째 좋아요부터 -&gt; 업데이트 push가 이루어져야 하고,</p>
+  </li>
+  <li>
+    <p>또한 사용자의 좋아요를 삭제하다가, 사용자의 좋아요가 다 삭제됐을 때?(모든 글에 좋아요 없음) 그 사용자의 테이블을 날려야 하나?
+(안 날리면 데이터가 계속 차기에..)</p>
+  </li>
+</ol>
+
+<p>1번 같은 경우 
+if문을 사용하여 해당 사용자의 id를 likes 테이블에 검색해서 있다면 push 하고
+못 찾았다면 insert하면 될 것이다.</p>
+
+<p>2번 같은 경우
+like_post  배열 안의 index 0 번의 존재 유무 확인 후 없다면 해당 테이블 날리기,<br />
+0번이 있다면 해당 포스트의 좋아요만 삭제 정도로 구현하면 될 것이다.!</p>
+
+<p>일단 위의 것들을 if문과 쿼리로 먼저 표현해 보고 진행해야지!</p>
+
+<p>++ insert의 경우 회원 데이터 자체를 likes db에 다 집어놓고 시작하지 않는 이상<br />
+++ 무조건 첫 좋아요의 경우 insert를 해야 한다.</p>
+
+<p>하지만 좋아요 해제의 경우 마지막 좋아요를 해제해도 배열 자체는 삭제가 안되므로,<br />
+테이블을 날릴 것이 아니라면 사실 좋아요를 최종적으로 삭제하는 건지 검사할 필요가 없다.</p>
+
+<p>여기서 문득 데이터 저장방법에 대해서 생각해 보았다.</p>
+<ol>
+  <li>
+    <p>좋아요 기능을 post_user_id, post_uid로 구성하여 테이블을 1.생성 2.삭제. 1.생성 반복 -&gt; 하며 데이터베이스의 용량을 관리해야 할까?</p>
+  </li>
+  <li>
+    <p>아니면, 테이블을 post_user_id, post_uid[n1,n2, …]<br />
+1.생성 2.유지~~~~~ 3.삭제 1.생성하며 속도를 관리해야 할까?<br />
+(사실 배열이 속도가 빠른지는 잘 모르겠다.. 왠지 그럴 거 같아서.)</p>
+  </li>
+</ol>
+
+<p>안 해본 방법으로 구현을 해보고 싶어서 2번의 배열을 이용하여 구현을 해 보았다.</p>
+
+<p>-&gt; 어차피 삭제에서 좋아요가 없다면 테이블 삭제를 할 것이므로,<br />
+-&gt; 테이블 존재하지 않는다?는 곧 좋아요를 누른 적이 없다 가 된다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>id = "human5"
+
+find_user = db.likes.find_one({'id': id})
+
+# 좋아요를 한 적 있다면 push로 배열에 값 추가
+if(find_user != None):
+    query = {"id": id}
+    new_values = {
+        "$push": {"likes_post": 6}
+    }
+    db.likes.update_one(query, new_values)
+# 좋아요를 한 적이 없다면 insert로 테이블 구조 생성
+else:
+    doc_array1 = {"id":id, "likes_post":[1]}
+    db.likes.insert_one(doc_array1)
+</code></pre></div></div>
+
+<p><img src="../../images/2022-12-11-23-32-45.png" alt="" /></p>
+
+<p>삭제의 경우 테이블 안의 배열 값에 대해서 존재하나 확인해야 한다.</p>
+
+<p>이때 마지막 좋아요 버튼을 클릭할 때 빈 배열인지 확인하고
+해당 테이블을 삭제해야 하므로 사이즈는 1로 준다.</p>
+
+<p>-&gt; 마지막 좋아요 해제 시 좋아요 해제(배열 삭제) 쿼리가 아닌<br />
+테이블 삭제 쿼리를 날림.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>id = "honggildong"
+post_id = 2
+find_user = db.likes.find_one({"$and": [{'id':id},{"likes_post":{"$size":1}}]})
+
+if(find_user == None):
+    query = {"id": id}
+    new_values = {
+        "$pull": {"likes_post": post_id}
+    }
+    db.likes.update_one(query, new_values)
+else:
+    doc_array1 = {"id":id}
+    db.likes.delete_one(doc_array1)
+</code></pre></div></div>
+
+<p><a href="https://koonsland.tistory.com/120">참조블로그</a><br />
+<a href="https://honeystorage.tistory.com/194">참조블로그-빈 배열 확인하는 법</a></p>
+
+<p>size가 0이라면? -&gt; 어차피 여기서 size가 1인 것들의 <br />
+테이블을 다 삭제하기에 size0인 테이블이 생길 수 없음.</p>
+
+<h2 id="좋아요-보여주기">좋아요 보여주기</h2>
+<p>좋아요 보여주기 같은 경우<br />
+해당 사용자(JWT or 세션) 체크 -&gt; likes_post의 해당 유저의 likes 목록 불러오기</p>
+
+<p>-&gt; 글 리스팅 할 때 if문으로 일치한다면 꽉 찬 하트 -&gt; 불일치 시 빈 하트 보여주기<br />
+(이때 글 리스팅 할 때 post_uid 순으로 리스팅 해야 함.)</p>
+
+<p>좋아요 보여주기의 경우 글 보기 페이지에서 페이지 네이션 할 때 같이 동작하므로,<br />
+페이지 네이션 기능이랑 섞여서 동작해야 한다.</p>
+
+<h3 id="오늘의-삽질-리스트">오늘의 삽질 리스트</h3>
+
+<p>for문과 배열 , remove() 함수를 이용 아래처럼 값을 빼내는데</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for post in likes_array:
+    print(post)
+    if i &lt; post:
+        likes_array.remove(post)
+        print("post: " + str(post))
+        print("likes array: " + str(likes_array))
+</code></pre></div></div>
+
+<p>[1,2,3,4,5] 가 있을 때 2를 삭제해 [1,3,4,5] 가 남는다면
+4번 삭제 시, 처음의 [1,2,3,4,5]의 배열 순서를 기억해
+[1,3,4] 이런 식으로 5번을 삭제하는 것이다….</p>
+
+<p>아래 블로그 참조하여 해결하였다.<br />
+<a href="https://velog.io/@ohwani/Python-for%EB%AC%B8%EC%97%90%EC%84%9C-remove-%EC%93%B8%EB%95%8C-%EC%A3%BC%EC%9D%98%EC%A0%90">참조한블로그</a></p>
+
+<p>–&gt; 어찌어찌하다 아래의 식을 만들고 페이지 네이션 관련, 계산식으로 잘 이용하고 있다..<br />
+–&gt; 원리가 뭔지 공부하기<br />
+    skip = (nowPage_receive * 4 + 4 * (nowPage_receive % 10)) - postsLimit</p>
+
+<p>nowPage_receive = 해당 유저의 페이지 클릭 값<br />
+postsLimit = 한 페이지당 보여줄 포스트 수</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1페이지 클릭 경우 :  0  
+2페이지 클릭 경우 :  8  
+3페이지 클릭 경우 :  16  
+4페이지 클릭 경우 :  24  
+5페이지 클릭 경우 :  32      
+6페이지 클릭 경우 :  40
+</code></pre></div></div>
+
+<p>얼핏 보면 그냥 8의 배수지만 유저가 어떤 페이지를 누를지 모르는 상태이고,<br />
+클릭한 페이지 -&gt; 변수 기준으로 동작하기 때문에 만들었다.</p>
+
+<ul>
+  <li>n을 기준으로 8의 배수를 만든 것.</li>
+</ul>
+
+<p>Ex)<br />
+4라는 수를 5로 바꾸면 2 -&gt; 12 -&gt; 22<br />
+6으로 바꾸면 4 -&gt; 16 -&gt; 28로 돌아간다.</p>
+
+<hr />
+
+<h3 id="느낀점">느낀점</h3>
+<p>정말 확실히 느낀 것<br />
+기능 구현 시 -&gt; Database 관계? 쿼리문 등을 미리 계획 및 잡아보고,<br />
+쿼리문 먼저 다 구현해 본 뒤 view를 만들고 하는 게 훨씬 빠르고 미리 생각하고 시작하는 것 같아 좋다!</p>
+
+<p>그리고 생성 추가 삭제 가져오기 등의 기능을 먼저 한 곳에서 쿼리 위주로 정리를 하면<br />
+생각보다 기능이 겹치는 부분이 많아서 더 빠르게 작업 가능! -&gt;</p>
+
+<p>물론 나중에 실력이 늘게 되면, 로직대로 안 막히고 할 수 있을지도..?</p>
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-12T00:00:00+09:00">2022-12-12</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%ED%95%AD%ED%95%B499+TIL+8%EC%9D%BC%EC%B0%A8+%EC%A2%8B%EC%95%84%EC%9A%94+%EA%B8%B0%EB%8A%A5+%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0.%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL07%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL07%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL07%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/%ED%95%AD%ED%95%B499/WIL01/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>항해99 WIL 7일차 Week OT 회고</a>
+    
+    
+      <a href="/%ED%95%AD%ED%95%B499/TIL08/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>항해99 TIL 9일차 각종 버그, 프로젝트 발표</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL08/" rel="permalink">항해99 TIL 9일차 각종 버그, 프로젝트 발표
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-13T00:00:00+09:00">2022-12-13</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/WIL01/" rel="permalink">항해99 WIL 7일차 Week OT 회고
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-11T00:00:00+09:00">2022-12-11</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          9 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL06/" rel="permalink">항해99 TIL 6일차 Jinja2, 친구 기능
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-10T00:00:00+09:00">2022-12-10</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          15 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL05/" rel="permalink">항해99 TIL 5일차 협업
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-09T00:00:00+09:00">2022-12-09</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          10 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/hyunjunhwang1994" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/hyunjuuuuun/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Hyun Jun. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <!-- start custom comments scripts -->
+
+<!-- end custom comments scripts -->
+
+<script>
+    'use strict';
+
+    window.customUtterances = {
+      theme: 'github-light',
+      darkTheme: 'github-dark',
+      onChange: (theme) => {
+        var commentContainer = document.querySelector('#utterances-comments');
+  
+        if (!commentContainer) {
+          return;
+        }
+  
+        while ( commentContainer.hasChildNodes() ) { 
+          commentContainer.removeChild( commentContainer.firstChild );
+        }
+  
+        var script = document.createElement('script');
+        script.setAttribute('src', 'https://utteranc.es/client.js');
+        script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
+        script.setAttribute('label', 'utterances');
+        script.setAttribute('issue-term', 'pathname');
+        script.setAttribute('theme', theme);
+        script.setAttribute('crossorigin', 'anonymous');
+  
+        commentContainer.appendChild(script);
+      }
+    };
+  </script>
+
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>
