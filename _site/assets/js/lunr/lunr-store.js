@@ -232,4 +232,16 @@ var store = [{
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL08/",
         "teaser": null
+      },{
+        "title": "IntelliJ Git 정리",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 JDK: java version \"11.0.17\" 2022-10-18 LTS IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 인텔리 제이 프로젝트 생성 및 Git 연동하기. 인텔리 제이로 프로젝트 생성 후, Share Project on Github 클릭 생성할 repo 네임과, 리모트, Description을 설정 후...","categories": ["Git"],
+        "tags": ["맥북 M1 JDK 1.8 설치","M1 JDK 환경변수 설정","M1 JDK 버전 변경"],
+        "url": "/git/Git01/",
+        "teaser": null
+      },{
+        "title": "항해99 TIL 10일차 언어 기본기 주차(자바)",
+        "excerpt":"2-0 주차 언어 기본기 주차 프로그래밍 기초와, 주특기(스프링)을 배우기 전, 짤막하고, 빡…세게 언어 기본기인 자바를 배울 시간 2일을 준다. 오전 9시 언어 기본기 주차의 발제가 이루어졌고, 짧은 시간 동안 프로젝트를 같이했던 5조를 떠나 이번에는 8조에 팀장으로 바뀌었다. 아마 실력은 안되지만, 팀원들과 커뮤니케이션을 나름 하려고 노력해서? 또 시켜주신 것 같다. 자바...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL09/",
+        "teaser": null
       }]

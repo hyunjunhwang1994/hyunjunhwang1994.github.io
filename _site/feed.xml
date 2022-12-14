@@ -1,4 +1,190 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-13T23:07:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">항해99 TIL 9일차 각종 버그, 프로젝트 발표</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL08/" rel="alternate" type="text/html" title="항해99 TIL 9일차 각종 버그, 프로젝트 발표" /><published>2022-12-13T00:00:00+09:00</published><updated>2022-12-13T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL08</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL08/"><![CDATA[<div class="notice" style="text-align:center">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-14T23:26:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">IntelliJ Git 정리</title><link href="http://localhost:4000/git/Git01/" rel="alternate" type="text/html" title="IntelliJ Git 정리" /><published>2022-12-14T00:00:00+09:00</published><updated>2022-12-14T00:00:00+09:00</updated><id>http://localhost:4000/git/Git01</id><content type="html" xml:base="http://localhost:4000/git/Git01/"><![CDATA[<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1
+</div>
+
+<div class="notice--info" style="text-align:center">
+          버전<br />
+          JDK: java version "11.0.17" 2022-10-18 LTS<br />
+          IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition)
+</div>
+<hr />
+
+<p><br /></p>
+
+<h1 id="인텔리-제이-프로젝트-생성-및-git-연동하기">인텔리 제이 프로젝트 생성 및 Git 연동하기.</h1>
+
+<p>인텔리 제이로 프로젝트 생성 후, Share Project on Github 클릭<br />
+<img src="../../images/2022-12-14-12-13-30.png" alt="" /></p>
+
+<p>생성할 repo 네임과, 리모트, Description을 설정 후 Share 클릭
+<img src="../../images/2022-12-14-12-13-52.png" alt="" /></p>
+
+<p>최초 커밋  add 클릭
+<img src="../../images/2022-12-14-12-14-15.png" alt="" /></p>
+
+<p>아래처럼 나오면 성공!<br />
+<img src="../../images/2022-12-14-12-14-30.png" alt="" /></p>
+
+<p>– 전, 후 과정 중 아래 에러 발생한다면 목차에 core.autocrlf 참조해 주세요 –
+<img src="../../images/2022-12-14-11-02-17.png" alt="" /></p>
+
+<p>깃허브 로그인 관련 인증이 나온다면 아래 과정을 진행해 주면 된다.</p>
+
+<h2 id="github-인증">Github 인증</h2>
+
+<p>Log in via Github 클릭
+<img src="../../images/2022-12-14-11-29-45.png" alt="" /></p>
+
+<p>Authorize In Github 클릭
+<img src="../../images/2022-12-14-11-30-47.png" alt="" /></p>
+
+<p>인텔리 제이는 열심히 로딩 중..<br />
+<img src="../../images/2022-12-14-11-31-03.png" alt="" /></p>
+
+<p>그럼 아래와 같이 젯브레인 IDE(인텔리 제이)랑 자신의 깃이랑 인증하는<br />
+절차가 나오는데 (아마 로그인 안 되어있으면 로그인하시고) Authorize JetBrains 클릭<br />
+<img src="../../images/2022-12-14-11-32-05.png" alt="" /></p>
+
+<p>Use GitHub Mobile 클릭<br />
+<img src="../../images/2022-12-14-11-33-03.png" alt="" /></p>
+
+<p>자신의 인증 방식에 따라 인증 진행!<br />
+<img src="../../images/2022-12-14-11-35-12.png" alt="" /></p>
+
+<p>그럼 다시 젯브레인 화면에 아래와 같이 성공 메세지가 뜨고<br />
+<img src="../../images/2022-12-14-11-35-49.png" alt="" /></p>
+
+<p>다시 인텔리 제이로 돌아와서, 그럼 이제 레파지토리는 만들어진 것이다!!<br />
+자신의 깃허브 레포지토리를 들어가 보면?<br />
+<img src="../../images/2022-12-14-12-14-56.png" alt="" /></p>
+
+<p>인텔리 제이에서 바로 깃허브로 올라간다.
+<img src="../../images/2022-12-14-12-15-21.png" alt="" /></p>
+
+<p>브랜치 확인<br />
+<img src="../../images/2022-12-14-12-17-07.png" alt="" /></p>
+
+<p>origin/main이 있어야 한다!<br />
+<img src="../../images/2022-12-14-12-17-27.png" alt="" /></p>
+
+<h2 id="coreautocrlf">core.autocrlf</h2>
+<p><a href="https://uxicode.tistory.com/entry/git-%EC%A4%84%EB%B0%94%EA%BF%88-%EB%AC%B8%EC%9E%90-%EB%AC%B8%EC%A0%9C-If-you-choose-Fix-and-Commit-git-config-global-coreautocrlf-input-will-be-executed-%EC%96%B4%EC%A9%8C%EA%B5%AC">core.autocrlf 참조 블로그</a></p>
+
+<p>You are about to commit CRLF line separators to the Git repository.<br />
+It is recommended to set the core. autocrlf Git attribute to input to avoid line separator issues.</p>
+
+<p>If you choose Fix and Commit, git config –global core.autocrlf input will be executed.<br />
+If you choose Commit As Is, the config value won’t be changed.</p>
+
+<p>이와 같은 에러는 윈도우에서는 줄바꿈 문자로 CR(Carriage-Return)과 LF(Line Feed) 문자를 둘 다 사용하지만, 
+Mac, Linux는 LF 문자만 사용한다.</p>
+
+<p>Git은 커밋 시 자동으로 CRLF를 LF로 변환해 주고 반대로 Checkout할 때 LF를 CRLF로 변환해 주는 기능이 있다.</p>
+
+<p>core.autocrlf 설정으로 이 기능을 켤 수 있다. 윈도우에서 이 값을 true로 설정하면 Checkout할 때 LF 문자가 CRLF 문자로 변환된다.</p>
+
+<p>줄 바꿈 문자로 LF를 사용하는 Linux와 Mac에서는 Checkout할 때<br />
+Git이 LF를 CRLF로 변환할 필요가 없다.</p>
+
+<p>게다가 우연히 CRLF가 들어간 파일이 저장소에 들어 있어도 Git이 알아서 고쳐주면 좋을 것이다.<br />
+core.autocrlf 값을 input으로 설정하면 커밋 할 때만 CRLF를 LF로 변환한다.</p>
+
+<p>이 설정을 이용하면 윈도에서는 CRLF를 사용하고 Mac, Linux, 저장소에서는 LF를 사용할 수 있다.<br />
+윈도 플랫폼에서만 개발하면 이 기능이 필요 없다. 이 옵션을 false라고 설정하면 이 기능이 꺼지고 CR 문자도 저장소에도 저장된다:</p>
+
+<hr />
+
+<p>다시 인텔리 제이로 넘어와서 아래처럼 뜬다면
+<img src="../../images/2022-12-14-11-02-17.png" alt="" /></p>
+
+<p>Fix and commit 클릭하면, 깃이 알아서 CRLF를 변환해 준다.</p>
+<hr />
+
+<h2 id="깃허브에-있는-레포-로컬로-가지고-오는-법">깃허브에 있는 레포 로컬로 가지고 오는 법</h2>
+<p>애초에 파일을 생성 시 아래의 방법으로 생성합니다.<br />
+<img src="../../images/2022-12-14-13-23-35.png" alt="" /></p>
+
+<p>아까 우리의 레파지토리 code에서 링크를 복사 후.
+<img src="../../images/2022-12-14-13-35-31.png" alt="" /></p>
+
+<p>링크 붙이고, 담을 폴더 선택 후 클론!
+<img src="../../images/2022-12-14-13-25-53.png" alt="" /></p>
+
+<p>그럼 아래와 같이 잘 나오며,
+<img src="../../images/2022-12-14-13-26-39.png" alt="" /></p>
+
+<p>클론을 받은 것과, 해당 깃허브 레파지토리의 브랜치 권한을 가지고 파일을 수정하는 건 다른 얘기이다.</p>
+
+<p>클론은 그냥 단순히 파일만 가지고 왔다?라고 보면 된다.</p>
+
+<p>깃허브 레포안 메인 브렌치 및 여타 다른 브렌치가 중요 브렌치라 보시면 되고<br />
+사실상 클론 해온 로컬 레포안 브렌치는 깃허브와 연결이 되지 않는다면 깃허브랑 크게 상관없습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Git" /><category term="맥북 M1 JDK 1.8 설치" /><category term="M1 JDK 환경변수 설정" /><category term="M1 JDK 버전 변경" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 10일차 언어 기본기 주차(자바)</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL09/" rel="alternate" type="text/html" title="항해99 TIL 10일차 언어 기본기 주차(자바)" /><published>2022-12-14T00:00:00+09:00</published><updated>2022-12-14T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL09</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL09/"><![CDATA[<h1 id="2-0-주차-언어-기본기-주차">2-0 주차 언어 기본기 주차</h1>
+<p>프로그래밍 기초와, 주특기(스프링)을 배우기 전,<br />
+짤막하고, 빡…세게 언어 기본기인 자바를 배울 시간 2일을 준다.</p>
+
+<p>오전 9시 언어 기본기 주차의 발제가 이루어졌고,<br />
+<img src="../../images/2022-12-14-09-18-29.png" alt="" /></p>
+
+<p>짧은 시간 동안 프로젝트를 같이했던 5조를 떠나 이번에는<br />
+8조에 팀장으로 바뀌었다.<br />
+<img src="../../images/2022-12-14-21-53-30.png" alt="" /></p>
+
+<p>아마 실력은 안되지만, 팀원들과 커뮤니케이션을 나름 하려고 노력해서?<br />
+또 시켜주신 것 같다.</p>
+
+<h2 id="자바-공부-시작">자바 공부 시작.</h2>
+<p>자.. 이제 2일이라는 시간 동안 자바라는 언어를 공부해야 한다..<br />
+혼자 공부하는 자바라는 책을 항해에서 받게 되었고,</p>
+
+<p>교재가 670 페이지… 정도 되는데 자바에 관하여 아주 세세한 부분까지 설명이 잘되어 있다.</p>
+
+<p>정말 몰랐던 부분까지 알게 될 정도로 세세하게 잘 나와있다.</p>
+
+<p>항해에서는 2일간 chapter5, 210page +알파까지 보면서 익히도록 권장(필수) 하고 있지만,</p>
+
+<p>나는 2일 동안 이 책 670페이지를 다 읽어 보려고 한다!!!</p>
+
+<p>그리고 해당 서적에는 윈도우 - 이클립스 - 자바11 환경으로 진행하는 것 같은데<br />
+맥에서는 이상하게 이클립스에서 한글이 지워지는 현상이 발생하여, 검색해 본 결과<br />
+단순 인코딩이나 설정 문제가 아니고 따로 앱을 받고 해야 해서,</p>
+
+<p>그냥 인텔리 제이 쓰기로 했습니다…<br />
+맥에서의 인텔리 제이 단축키를 많이 공부해야겠습니다.<br />
+<a href="https://gmlwjd9405.github.io/2019/05/21/intellij-shortkey.html">IntelliJ 단축키 정리 블로그</a></p>
+
+<p>사실 인텔리 제이는 웬만한 건 지정 단어 입력 시 자동완성을 바로 띄워주므로 너무 편리한 것 같습니다.</p>
+
+<p>sout -&gt; System.out.println();<br />
+main, psvm 등등</p>
+
+<p>그리고 잔디도 채울 겸.. 자바 실습 폴더를 깃레파지토리에 연결했습니다.  <br />
+깃이 생각보다 편하고? 필수라는 것을 알고 깃도 많이 사용해 보려고 합니다.</p>
+
+<h2 id="항해99의-큰-그림">항해99의 큰 그림</h2>
+<p>사실 초반 항해의 커리큘럼은 파이썬의 플라스크, Mongo DB로 구성되어 진행됐습니다.<br />
+사실 그때는 빨리 자바가 배우고 싶고 했지만, 지금 돌이켜보면</p>
+
+<p>왜 초반에 파이썬으로 간편하게(그나마..) 웹 사이클을 공부할 수 있게 돌렸는지 알 것 같습니다.</p>
+
+<p>확실이 타입이라든지 문법이라든지 조금은 간편한 파이썬에서 빨리빨리 기능들을 조금이라도 익히게 되니</p>
+
+<p>자바에서는 조금 익숙한? 느낌이 들어 크게 부담스럽게 다가오지 않았습니다.<br />
+if abc :  -&gt; if(abc){} 로만 바뀌고, 기능 자체는 똑같으니 프로그래밍에는 문제없음.</p>
+
+<h2 id="마무리">마무리</h2>
+<p>결국 오늘은 267페이지까지 책을 보며 공부하였고, 사실상 발제와 팀 편성으로 조금 늦게 시작한 부분과,</p>
+
+<p>앞 시간에 깃 관련 블로그 글 정리를 하느라 시간을 살짝 허비해서 아마 내일은 670페이지를 다 볼 수 있지 않을까 싶습니다.</p>
+
+<p>오늘 이 책을 읽으면서 한 가지 정리를 해보고, 깨달았던 부분은 변수에는 프리미티브 타입과 레퍼런스 타입이 있고,</p>
+
+<p>프리미티브 타입은 String 제외, int, char, double 등 기본 메모리 스택 영역에 FILO 순서로 쌓여서 실제 값을 저장하게 되고,</p>
+
+<p>레퍼런스 타입은 힙 영역에 실제 객체가 생기고, 스택 영역에 변수에는 그 객체의 주소만 참조한다는 것이라는 것을 배웠습니다.</p>
+
+<p>사실 어느 정도 알고는 있었지만, 세세하게 다시 복습하게 되니 좋았던 것 같습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[2-0 주차 언어 기본기 주차 프로그래밍 기초와, 주특기(스프링)을 배우기 전, 짤막하고, 빡…세게 언어 기본기인 자바를 배울 시간 2일을 준다.]]></summary></entry><entry><title type="html">항해99 TIL 9일차 각종 버그, 프로젝트 발표</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL08/" rel="alternate" type="text/html" title="항해99 TIL 9일차 각종 버그, 프로젝트 발표" /><published>2022-12-13T00:00:00+09:00</published><updated>2022-12-13T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL08</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL08/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
@@ -1241,129 +1427,4 @@ B라는 페이지는 유저의 Age를 담는 경우</p>
 B라는 페이지에 접속 시 다른 벨류 값을 가진 세션 쿠키를 가지고 오지만,</p>
 
 <p>서버에서의 세션 데이터인 ID, Name, Age는 변하지 않는다.
--&gt; B 페이지의 쿠키 값만 가지고 있어도 ID, Name, Age 사용 가능</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Flask" /><category term="Flask Session" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 3일차, 암호화를 할 수 있을까?</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03/" rel="alternate" type="text/html" title="항해99 TIL 3일차, 암호화를 할 수 있을까?" /><published>2022-12-07T00:00:00+09:00</published><updated>2022-12-07T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL03/"><![CDATA[<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1
-</div>
-<hr />
-
-<div class="notice--info" style="text-align:center">
-          버전<br />
-          Python 3.9<br />
-          Flask 2.2.2<br />
-          bcrypt 4.0.1<br />
-          PyCharm 2022.2.3 (Professional Edition)<br />
-</div>
-<hr />
-<p><br /></p>
-
-<h1 id="오늘의-목표">오늘의 목표</h1>
-<ul>
-  <li>회원 수정 : 비밀번호, 닉네임, 이메일 수정 기능 넣기.</li>
-  <li>코드 수정</li>
-</ul>
-
-<h2 id="회원-수정-로직-구현-과정">회원 수정 로직 구현 과정</h2>
-<p>회원 수정, 특히 비밀번호 수정에서 살짝 헤맸는데 키보드를 떼고 일단 생각 정리를 해보았다.</p>
-
-<p>비밀번호 같은 경우 암호화가 되어있고,</p>
-
-<p>똑같은 비밀번호 1234라도 암호화 시 매번 다르게,<br />
-특정한 알고리즘으로 돌아가는 salt 값에 의해 암호화된 값이 나오기 때문에,</p>
-
-<p>현재 비밀번호와 수정할 비밀번호를 입력 시<br />
-현재 비밀번호를, 다시 암호화를 해서 DB의 원본 비밀번호와 맞춰 보겠다는 방식은 X</p>
-
-<p>그렇다면 어떻게 해야 할까..?<br />
-회원가입, 로그인 방식을 이미 구현해 놨기 때문에 사실 크게 어렵지 않았다.</p>
-
-<p>회원가입이 비밀번호 암호화 -&gt; DB 저장 방식이었다면,</p>
-
-<p>로그인은 입력된 비밀번호와 DB에 저장된 비밀번호를<br />
-인코딩하여 복호화 함수에 같이 넣어서 체크하여 True, False를 리턴 받는 방식이었다.</p>
-
-<p>그렇기에, 현재 비밀번호, 바꿀 비밀번호, 현재 유저 id(세션 값)만 있다면 구현 가능하다.<br />
-물론 바꿀 비밀번호를 다시 DB 저장 시에는 회원가입에서처럼 암호화를 해서 넣어야 한다.</p>
-
-<details>
-<summary>비밀번호 변경 서버단</summary>
-
-<div>
-
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">id</span> <span class="o">=</span> <span class="n">session</span><span class="p">[</span><span class="s">'user'</span><span class="p">]</span>
-
-   <span class="n">user</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">find_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="nb">id</span><span class="p">},</span> <span class="p">{</span><span class="s">'_id'</span><span class="p">:</span> <span class="bp">False</span><span class="p">})</span>
-
-   <span class="n">currentPassword</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'currentPassword_give'</span><span class="p">]</span>
-   <span class="n">changedPassword</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">form</span><span class="p">[</span><span class="s">'changedPassword_give'</span><span class="p">]</span>
-
-   <span class="n">result</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">checkpw</span><span class="p">(</span><span class="n">currentPassword</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">),</span> <span class="n">user</span><span class="p">[</span><span class="s">'pw'</span><span class="p">].</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
-
-   <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="o">==</span> <span class="bp">False</span><span class="p">):</span>
-       <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'failed_current_Password'</span><span class="p">})</span>
-
-   <span class="n">pw</span> <span class="o">=</span> <span class="n">changedPassword</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
-   <span class="n">pwSalt</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">gensalt</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
-   <span class="n">pwHash</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="p">.</span><span class="n">hashpw</span><span class="p">(</span><span class="n">pw</span><span class="p">,</span> <span class="n">pwSalt</span><span class="p">)</span>
-
-   <span class="n">insertPwHash</span> <span class="o">=</span> <span class="n">pwHash</span><span class="p">.</span><span class="n">decode</span><span class="p">()</span>
-
-   <span class="n">db</span><span class="p">.</span><span class="n">users</span><span class="p">.</span><span class="n">update_one</span><span class="p">({</span><span class="s">'id'</span><span class="p">:</span> <span class="nb">id</span><span class="p">},</span> <span class="p">{</span><span class="s">'$set'</span><span class="p">:</span> <span class="p">{</span><span class="s">'pw'</span><span class="p">:</span> <span class="n">insertPwHash</span><span class="p">}})</span>
-
-    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s">'result'</span><span class="p">:</span> <span class="s">'success'</span><span class="p">})</span>
-</code></pre></div>    </div>
-
-  </div>
-</details>
-
-<h2 id="마무으리">마무으~리</h2>
-
-<p>하다 보니, 회원 가입 시 id가 한글로도 만들어지길래<br />
-정규 표현식을 이용해서 한글을 체크하는 함수를 만들어 주었다.</p>
-
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">function</span> <span class="nx">checkKorean</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>
-        <span class="kd">const</span> <span class="nx">korean</span> <span class="o">=</span> <span class="sr">/</span><span class="se">[</span><span class="sr">ㄱ-ㅎ|ㅏ-ㅣ|가-힣</span><span class="se">]</span><span class="sr">/</span><span class="p">;</span>
-
-    <span class="k">return</span> <span class="nx">korean</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
-    <span class="p">}</span>
-</code></pre></div></div>
-
-<p>확실히 첫날과 두 번째 날 삽질을 많이 하며, 플라스크의 대략적인 구조를 알게 되니<br />
-셋째 날에는 점점 삽질하는 횟수나 시간이 줄어들었다!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">AWS EC2 원격 접속하기</title><link href="http://localhost:4000/cloud%20computing%20-%20aws/AWS-03/" rel="alternate" type="text/html" title="AWS EC2 원격 접속하기" /><published>2022-12-07T00:00:00+09:00</published><updated>2022-12-07T00:00:00+09:00</updated><id>http://localhost:4000/cloud%20computing%20-%20aws/AWS-03</id><content type="html" xml:base="http://localhost:4000/cloud%20computing%20-%20aws/AWS-03/"><![CDATA[<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1
-</div>
-<hr />
-
-<h1 id="aws-인스턴스에-접속해-보기">AWS 인스턴스에 접속해 보기.</h1>
-
-<h2 id="pem-파일-권한-설정">.pem 파일 권한 설정</h2>
-<p>터미널 실행 후 아래의 코드를 입력한다.  <br />
-( 400까지 입력 후 키 페어 파일을 터미널로 드래그 앤 드랍하면
-키 페어 파일의 경로가 자동으로 등록된다. )</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo chmod 400 /Users/honggildong/Downloads/gildong_mykey.pem 
-</code></pre></div></div>
-
-<p>키 페어 파일에 대한 권한을 나에 한해서 읽기 권한 4로 사용할 수 있게 해주는 것이다.</p>
-
-<h2 id="ssh를-이용하여-접속">ssh를 이용하여 접속</h2>
-
-<p>일단 ec2 인스턴스를 접속해 자신의 퍼블릭 주소를 복사한다.<br />
-<img src="../../images/2022-12-07-13-26-30.png" alt="" /></p>
-
-<p>pem 파일 경로에는 pem 파일을 드래그 앤 드랍 하면 된다. (IP 주소는 예시 주소)<br />
-ssh를 통하여 우리의 서버에 원격 접속하게 되는 것이다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -i pem 파일 경로 ubuntu@3.44.122.122 
-</code></pre></div></div>
-
-<p>Are you sure you want to continue connecting (yes/no) 같은 말이 나온다면<br />
-yes라고 입력하면 된다.</p>
-
-<p>키 페어 파일이 서버에 접속할 수 있는 열쇠가 되는 것!</p>
-
-<p>그럼 아래와 같이 기본적인 서버 정보가 나온다!
-<img src="../../images/2022-12-07-13-29-39.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Cloud computing - AWS" /><category term="aws" /><category term="EC2 원격 접속하기" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry></feed>
+-&gt; B 페이지의 쿠키 값만 가지고 있어도 ID, Name, Age 사용 가능</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Flask" /><category term="Flask Session" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry></feed>
