@@ -235,7 +235,7 @@ var store = [{
       },{
         "title": "IntelliJ Git 정리",
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 JDK: java version \"11.0.17\" 2022-10-18 LTS IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 인텔리 제이 프로젝트 생성 및 Git 연동하기. 인텔리 제이로 프로젝트 생성 후, Share Project on Github 클릭 생성할 repo 네임과, 리모트, Description을 설정 후...","categories": ["Git"],
-        "tags": ["맥북 M1 JDK 1.8 설치","M1 JDK 환경변수 설정","M1 JDK 버전 변경"],
+        "tags": ["IntelliJ Github","Java Git 연동"],
         "url": "/git/Git01/",
         "teaser": null
       },{
