@@ -101,6 +101,16 @@
             </ul>
 
 
+            <span class="nav__sub-title">Algorithm</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Algorithm - Basic" %}
+                        <li><a href="/categories/algorithmbasic" class="">Algorithm - Basic ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul> 
+
+
  
 
 

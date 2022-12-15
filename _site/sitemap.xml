@@ -89,7 +89,7 @@
 <lastmod>2022-12-03T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/%ED%95%AD%ED%95%B499/%ED%95%AD%ED%95%B499/</loc>
+<loc>http://localhost:4000/%ED%95%AD%ED%95%B499/Hanghae99/</loc>
 <lastmod>2022-12-04T00:00:00+09:00</lastmod>
 </url>
 <url>
@@ -163,6 +163,17 @@
 <url>
 <loc>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL09/</loc>
 <lastmod>2022-12-14T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/algorithm%20-%20basic/algorithm-basic01/</loc>
+<lastmod>2022-12-15T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL10/</loc>
+<lastmod>2022-12-15T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/categories/algorithmbasic</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/css</loc>
