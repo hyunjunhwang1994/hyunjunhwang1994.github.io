@@ -19,7 +19,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "항해99" %}
-                        <li><a href="/categories/hanghae99" class="">항해99 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/hanghae99" class="">항해99 🚢({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -106,6 +106,14 @@
                 {% for category in site.categories %}
                     {% if category[0] == "Algorithm - Basic" %}
                         <li><a href="/categories/algorithmbasic" class="">Algorithm - Basic ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul> 
+
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Algorithm - Hanghae99" %}
+                        <li><a href="/categories/algorithmhanghae99" class="">Algorithm - Hanghae99🚢 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul> 
