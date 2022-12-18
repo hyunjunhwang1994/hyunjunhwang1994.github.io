@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-18T22:14:19+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">항해99 WIL 2주 차 회고</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL02/" rel="alternate" type="text/html" title="항해99 WIL 2주 차 회고" /><published>2022-12-18T00:00:00+09:00</published><updated>2022-12-18T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL02</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL02/"><![CDATA[<p>항해99를 시작한 지 2주가 되어간다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-19T01:14:02+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">항해99 WIL 2주 차 회고</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL02/" rel="alternate" type="text/html" title="항해99 WIL 2주 차 회고" /><published>2022-12-18T00:00:00+09:00</published><updated>2022-12-18T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL02</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL02/"><![CDATA[<p>항해99를 시작한 지 2주가 되어간다.</p>
 
 <p>이번 주는 첫 풀스택 프로젝트가 끝나고 2일간의 언어 기본기(자바) 주 차를 보내고,<br />
 프로그래밍 기초 주 차가 시작되었다.</p>
@@ -99,95 +99,98 @@
 <p>-&gt; 개발자는 소스코드만 잘 작성하면<br />
 -&gt; JVM 위에서 개발자가 만든 코드가 돌아가므로,<br />
 -&gt; 어떤 OS가 생기고, 없어지던 해당 OS에 맞는 JVM만 나오면<br />
--&gt; 자바로 만들어진 코드는 전부 동작한다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="WIL" /><summary type="html"><![CDATA[항해99를 시작한 지 2주가 되어간다.]]></summary></entry><entry><title type="html">Git02</title><link href="http://localhost:4000/Git02/" rel="alternate" type="text/html" title="Git02" /><published>2022-12-16T00:00:00+09:00</published><updated>2022-12-16T00:00:00+09:00</updated><id>http://localhost:4000/Git02</id><content type="html" xml:base="http://localhost:4000/Git02/"><![CDATA[<p>Git Flow</p>
+-&gt; 자바로 만들어진 코드는 전부 동작한다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="WIL" /><summary type="html"><![CDATA[항해99를 시작한 지 2주가 되어간다.]]></summary></entry><entry><title type="html">항해99 TIL 13일 차 프로그래밍 주 차</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL12/" rel="alternate" type="text/html" title="항해99 TIL 13일 차 프로그래밍 주 차" /><published>2022-12-17T00:00:00+09:00</published><updated>2022-12-17T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL12</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL12/"><![CDATA[<p>오늘은 알고리즘 문제를 더 풀고 정리해 보는 시간을 가졌다.</p>
 
-<p><a href="http://blog.hwahae.co.kr/all/tech/tech-tech/9507/">참조 블로그</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">이상한 문자 만들기</title><link href="http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-05/" rel="alternate" type="text/html" title="이상한 문자 만들기" /><published>2022-12-16T00:00:00+09:00</published><updated>2022-12-16T00:00:00+09:00</updated><id>http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-05</id><content type="html" xml:base="http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-05/"><![CDATA[<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1
-</div>
-<hr />
+<p>알고리즘 풀이 공부를 하다 보니, 정확성으로는 통과를 하더라도,<br />
+효율성을 측정해서 너무 오래 걸리거나 하면 통과되지 못하는 문제들도 있다는 것을 확인하고.</p>
 
-<div class="notice--info" style="text-align:center">
-        해당 풀이는 자바로 이루어져 있고,<br />
-        프로그래머스의 문제를 토대로 포스팅했습니다.
-</div>
-<hr />
+<p>공부해 보다가 시간 복잡도라는 것을 알게 됐다.</p>
 
-<h1 id="이상한-문자-만들기">이상한 문자 만들기</h1>
+<p><a href="https://hanamon.kr/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-time-complexity-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/">시간 복잡도 참조 블로그</a></p>
 
-<h2 id="문제-설명">문제 설명</h2>
-<p>문자열 s는 한 개 이상의 단어로 구성되어 있습니다.<br />
-각 단어는 하나 이상의 공백문자로 구분되어 있습니다.<br />
-각 단어의 짝수번째 알파벳은 대문자로,<br />
-홀수번째 알파벳은 소문자로 바꾼 문자열을 리턴하는 함수, solution을 완성하세요.</p>
+<p>예를 들어 아래의 문제 같은 경우<br />
+<a href="https://school.programmers.co.kr/learn/courses/30/lessons/42576">완주하지 못한 선수</a></p>
 
-<h2 id="제한-조건">제한 조건</h2>
-<ul>
-  <li>문자열 전체의 짝/홀수 인덱스가 아니라, 단어(공백을 기준)별로 짝/홀수 인덱스를 판단해야합니다.</li>
-  <li>첫 번째 글자는 0번째 인덱스로 보아 짝수번째 알파벳으로 처리해야 합니다.</li>
-</ul>
+<p>제출 후 채점 시 정확성 테스트 후,<br />
+효율성 테스트를 하게 되는데 원래 처음의 풀이는 아래처럼 풀었다.</p>
 
-<h2 id="입출력-예">입출력 예</h2>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">solution</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">participant</span><span class="o">,</span> <span class="nc">String</span><span class="o">[]</span> <span class="n">completion</span><span class="o">){</span>
 
-<table>
-  <thead>
-    <tr>
-      <th>s</th>
-      <th>return</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>“try hello world”</td>
-      <td>“TrY HeLlO WoRlD</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-설명">입출력 예 설명</h2>
-<p>“try hello world”는 세 단어 “try”, “hello”, “world”로 구성되어 있습니다.</p>
-
-<p>각 단어의 짝수번째 문자를 대문자로, 홀수번째 문자를 소문자로 바꾸면 
-“TrY”, “HeLlO”, “WoRlD”입니다.<br />
-따라서 “TrY HeLlO WoRlD” 를 리턴합니다.</p>
-
-<h2 id="풀이">풀이</h2>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">solution</span><span class="o">(</span><span class="nc">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
-<span class="nc">String</span> <span class="n">answer</span><span class="o">=</span><span class="s">""</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">cnt</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
-
-
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span><span class="n">i</span><span class="o">++){</span>
-            <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-
-            <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">' '</span><span class="o">){</span>
-                <span class="n">answer</span> <span class="o">+=</span> <span class="s">" "</span><span class="o">;</span>
-                <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="nc">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">participant</span><span class="o">);</span>
+        <span class="nc">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">completion</span><span class="o">);</span>
+        
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">completion</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            
+            <span class="k">if</span><span class="o">(</span><span class="n">participant</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">equals</span><span class="o">(</span><span class="n">completion</span><span class="o">[</span><span class="n">i</span><span class="o">])){</span>
                 <span class="k">continue</span><span class="o">;</span>
-            <span class="o">}</span>
-
-            <span class="k">if</span><span class="o">((</span><span class="n">cnt</span><span class="o">%</span><span class="mi">2</span><span class="o">)==</span><span class="mi">0</span><span class="o">){</span>
-                <span class="n">answer</span> <span class="o">+=</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="nc">Character</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">(</span><span class="n">c</span><span class="o">));</span>
-                <span class="n">cnt</span><span class="o">++;</span>
             <span class="o">}</span><span class="k">else</span><span class="o">{</span>
-                <span class="n">answer</span> <span class="o">+=</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="nc">Character</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">(</span><span class="n">c</span><span class="o">));</span>
-                <span class="n">cnt</span><span class="o">++;</span>
+                <span class="k">return</span> <span class="n">participant</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
             <span class="o">}</span>
         <span class="o">}</span>
-        <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">participant</span><span class="o">[</span><span class="n">participant</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
+
     <span class="o">}</span>
-<span class="o">}</span>
 </code></pre></div></div>
 
-<h2 id="사용된-중요-함수">사용된 중요 함수</h2>
+<p>효율성은 아래와 같이 나왔고,
+<img src="../../images/2022-12-19-00-44-34.png" alt="" /></p>
+
+<p>Array.sort에서 아마 내부적으로 배열을 일일이 정렬하기 때문에<br />
+효율성을 떨어뜨리지는 않을까라고 생각했고</p>
+
+<p>애초에 이 알고리즘의 경우 해시라는 카테고리 안에 들어가 있어서<br />
+해시가 뭐지? 해시 맵으로 풀어야 하나?라는 생각이 들었다.</p>
+
+<p>그래서 다른 방법으로 찾아본 뒤에 또 풀어보았다.<br />
+아마 정석 풀이? 정도로 생각되는</p>
+
+<p>HashMap을 통하여 또 풀어보았다.<br />
+hash로 풀었을 경우 효율성은 아래처럼 나왔고
+<img src="../../images/2022-12-19-00-54-50.png" alt="" /></p>
+
+<p>단순 배열로 풀었을 때 보다 3~4배는 속도 면에서 효율성이 좋다고 나온다!</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">public</span> <span class="kd">static</span> <span class="nc">String</span> <span class="nf">solution</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">participant</span><span class="o">,</span> <span class="nc">String</span><span class="o">[]</span> <span class="n">completion</span><span class="o">){</span>
+
+            <span class="nc">String</span> <span class="n">answer</span> <span class="o">=</span><span class="s">""</span><span class="o">;</span>
+
+            <span class="nc">HashMap</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+
+            <span class="k">for</span><span class="o">(</span><span class="nc">String</span> <span class="n">p</span> <span class="o">:</span> <span class="n">participant</span><span class="o">)</span>
+                <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">p</span><span class="o">,</span> <span class="n">map</span><span class="o">.</span><span class="na">getOrDefault</span><span class="o">(</span><span class="n">p</span><span class="o">,</span><span class="mi">0</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+            <span class="k">for</span><span class="o">(</span><span class="nc">String</span> <span class="n">c</span> <span class="o">:</span> <span class="n">completion</span><span class="o">)</span>
+                <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">c</span><span class="o">,</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">);</span>
+
+            <span class="nc">Iterator</span><span class="o">&lt;</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;&gt;</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">map</span><span class="o">.</span><span class="na">entrySet</span><span class="o">().</span><span class="na">iterator</span><span class="o">();</span>
+
+            <span class="k">while</span> <span class="o">(</span><span class="n">iter</span><span class="o">.</span><span class="na">hasNext</span><span class="o">()){</span>
+                <span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">=</span> <span class="n">iter</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="o">){</span>
+                    <span class="n">answer</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">();</span>
+                    <span class="k">break</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+
+        <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
+
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="마무리">마무리</h2>
+<p>계속 문제들을 풀다 보니,<br />
+초반에는 갖가지 이상한 방법으로 풀이를 해 코드량이 생각보다 길었는데</p>
+
+<p>이제는 조금씩 깔끔해지고 있는 것 같다.</p>
+
+<p>그리고 한 시간? 정도 풀어보고 아예 어떻게 구현해야 할지 감이 안 온다면<br />
+차라리 답을 본 후 해석을 하고 자기 것으로 만드는 게 좋은 방법인 것 같다!</p>
+
+<p>생각해 봐야 할 것들</p>
 <ul>
-  <li>charAt();</li>
-  <li>String.valueOf();</li>
-  <li>Character.toUpperCase();</li>
-</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Algorithm - Hanghae99" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">완주하지 못한 선수</title><link href="http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-04/" rel="alternate" type="text/html" title="완주하지 못한 선수" /><published>2022-12-16T00:00:00+09:00</published><updated>2022-12-16T00:00:00+09:00</updated><id>http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-04</id><content type="html" xml:base="http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-04/"><![CDATA[<div class="notice" style="text-align:center">
+  <li>시간 복잡도</li>
+  <li>메소드를 많이 사용해서 할지, 일일이 코딩할지
+(어찌 됐건 메소드를 사용해서 풀어도 내부적으로는 똑같이 동작한다.)</li>
+  <li>어떤 컬렉션, 알고리즘을 쓰냐에 따라 속도가 천차만별이다.</li>
+</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 알고리즘 문제를 더 풀고 정리해 보는 시간을 가졌다.]]></summary></entry><entry><title type="html">완주하지 못한 선수</title><link href="http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-04/" rel="alternate" type="text/html" title="완주하지 못한 선수" /><published>2022-12-16T00:00:00+09:00</published><updated>2022-12-16T00:00:00+09:00</updated><id>http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-04</id><content type="html" xml:base="http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-04/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
@@ -537,8 +540,9 @@ solution을 완성하세요.</p>
         <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Algorithm - Hanghae99" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 12일 차 프로그래밍 주차</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL11/" rel="alternate" type="text/html" title="항해99 TIL 12일 차 프로그래밍 주차" /><published>2022-12-16T00:00:00+09:00</published><updated>2022-12-16T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL11</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL11/"><![CDATA[<h1 id="프로그래밍-주차-시작">프로그래밍 주차 시작!</h1>
-<p>오늘 아침엔 프로그래밍 주차 발제가 있었다.<br />
+</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Algorithm - Hanghae99" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">Git02</title><link href="http://localhost:4000/Git02/" rel="alternate" type="text/html" title="Git02" /><published>2022-12-16T00:00:00+09:00</published><updated>2022-12-16T00:00:00+09:00</updated><id>http://localhost:4000/Git02</id><content type="html" xml:base="http://localhost:4000/Git02/"><![CDATA[<p>Git Flow</p>
+
+<p><a href="http://blog.hwahae.co.kr/all/tech/tech-tech/9507/">참조 블로그</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">항해99 TIL 12일 차 프로그래밍 주 차 시작</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL11/" rel="alternate" type="text/html" title="항해99 TIL 12일 차 프로그래밍 주 차 시작" /><published>2022-12-16T00:00:00+09:00</published><updated>2022-12-16T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL11</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL11/"><![CDATA[<p>오늘 아침엔 프로그래밍 주 차 발제가 있었다.<br />
 2일간 자바 공부를 했던 팀과는 언어 스터디 팀으로 되어</p>
 
 <p>항해99가 끝날 때까지 매주 금요일 9시에 보기로 하였고,<br />
@@ -571,7 +575,93 @@ solution을 완성하세요.</p>
 <p>많이 풀어 보는 것이 답인 것 같다..</p>
 
 <p>오늘 풀었던 문제는 깃에 정리 후 블로그에 정리해 보려고 한다.
-<a href="https://github.com/hyunjunhwang1994/hanghage99-algorithm-java">깃허브</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[프로그래밍 주차 시작! 오늘 아침엔 프로그래밍 주차 발제가 있었다. 2일간 자바 공부를 했던 팀과는 언어 스터디 팀으로 되어]]></summary></entry><entry><title type="html">항해99 TIL 11일 차 언어 기본기 주차(자바)</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL10/" rel="alternate" type="text/html" title="항해99 TIL 11일 차 언어 기본기 주차(자바)" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL10</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL10/"><![CDATA[<p>오늘은 드디어 혼자 공부하는 자바라는 책을 다 읽고,<br />
+<a href="https://github.com/hyunjunhwang1994/hanghage99-algorithm-java">깃허브</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘 아침엔 프로그래밍 주 차 발제가 있었다. 2일간 자바 공부를 했던 팀과는 언어 스터디 팀으로 되어]]></summary></entry><entry><title type="html">이상한 문자 만들기</title><link href="http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-05/" rel="alternate" type="text/html" title="이상한 문자 만들기" /><published>2022-12-16T00:00:00+09:00</published><updated>2022-12-16T00:00:00+09:00</updated><id>http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-05</id><content type="html" xml:base="http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-05/"><![CDATA[<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.1
+</div>
+<hr />
+
+<div class="notice--info" style="text-align:center">
+        해당 풀이는 자바로 이루어져 있고,<br />
+        프로그래머스의 문제를 토대로 포스팅했습니다.
+</div>
+<hr />
+
+<h1 id="이상한-문자-만들기">이상한 문자 만들기</h1>
+
+<h2 id="문제-설명">문제 설명</h2>
+<p>문자열 s는 한 개 이상의 단어로 구성되어 있습니다.<br />
+각 단어는 하나 이상의 공백문자로 구분되어 있습니다.<br />
+각 단어의 짝수번째 알파벳은 대문자로,<br />
+홀수번째 알파벳은 소문자로 바꾼 문자열을 리턴하는 함수, solution을 완성하세요.</p>
+
+<h2 id="제한-조건">제한 조건</h2>
+<ul>
+  <li>문자열 전체의 짝/홀수 인덱스가 아니라, 단어(공백을 기준)별로 짝/홀수 인덱스를 판단해야합니다.</li>
+  <li>첫 번째 글자는 0번째 인덱스로 보아 짝수번째 알파벳으로 처리해야 합니다.</li>
+</ul>
+
+<h2 id="입출력-예">입출력 예</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>s</th>
+      <th>return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>“try hello world”</td>
+      <td>“TrY HeLlO WoRlD</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="입출력-예-설명">입출력 예 설명</h2>
+<p>“try hello world”는 세 단어 “try”, “hello”, “world”로 구성되어 있습니다.</p>
+
+<p>각 단어의 짝수번째 문자를 대문자로, 홀수번째 문자를 소문자로 바꾸면 
+“TrY”, “HeLlO”, “WoRlD”입니다.<br />
+따라서 “TrY HeLlO WoRlD” 를 리턴합니다.</p>
+
+<h2 id="풀이">풀이</h2>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">solution</span><span class="o">(</span><span class="nc">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+<span class="nc">String</span> <span class="n">answer</span><span class="o">=</span><span class="s">""</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">cnt</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+
+
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span><span class="n">i</span><span class="o">++){</span>
+            <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+
+            <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">' '</span><span class="o">){</span>
+                <span class="n">answer</span> <span class="o">+=</span> <span class="s">" "</span><span class="o">;</span>
+                <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+                <span class="k">continue</span><span class="o">;</span>
+            <span class="o">}</span>
+
+            <span class="k">if</span><span class="o">((</span><span class="n">cnt</span><span class="o">%</span><span class="mi">2</span><span class="o">)==</span><span class="mi">0</span><span class="o">){</span>
+                <span class="n">answer</span> <span class="o">+=</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="nc">Character</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">(</span><span class="n">c</span><span class="o">));</span>
+                <span class="n">cnt</span><span class="o">++;</span>
+            <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                <span class="n">answer</span> <span class="o">+=</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="nc">Character</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">(</span><span class="n">c</span><span class="o">));</span>
+                <span class="n">cnt</span><span class="o">++;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="사용된-중요-함수">사용된 중요 함수</h2>
+<ul>
+  <li>charAt();</li>
+  <li>String.valueOf();</li>
+  <li>Character.toUpperCase();</li>
+</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Algorithm - Hanghae99" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">항해99 TIL 11일 차 언어 기본기 주 차(자바)</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL10/" rel="alternate" type="text/html" title="항해99 TIL 11일 차 언어 기본기 주 차(자바)" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL10</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL10/"><![CDATA[<p>오늘은 드디어 혼자 공부하는 자바라는 책을 다 읽고,<br />
 인상 깊었던 부분과, 앞으로의 방향을 좀 잡아보려고 한다.</p>
 
 <h2 id="오늘의-배움-포인트-정리">오늘의 배움 포인트 정리.</h2>
@@ -614,20 +704,4 @@ solution을 완성하세요.</p>
 익히고 알고리즘 주차를 맞이할 준비를 해야겠다.</p>
 
 <p>혼자 공부하는 자바에서 남긴 기록들은 깃허브에 Repository로 저장해 놓았다.
-<a href="https://github.com/hyunjunhwang1994/BasicOfJava">깃허브</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 드디어 혼자 공부하는 자바라는 책을 다 읽고, 인상 깊었던 부분과, 앞으로의 방향을 좀 잡아보려고 한다.]]></summary></entry><entry><title type="html">알고리즘은 무엇이고 왜 중요한가?</title><link href="http://localhost:4000/algorithm%20-%20basic/algorithm-basic01/" rel="alternate" type="text/html" title="알고리즘은 무엇이고 왜 중요한가?" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/algorithm%20-%20basic/algorithm-basic01</id><content type="html" xml:base="http://localhost:4000/algorithm%20-%20basic/algorithm-basic01/"><![CDATA[<p>이 카테고리에는 알고리즘의 종류에 대해서만 기술할려고한다.</p>
-
-<h1 id="알고리즘의-정의">알고리즘의 정의</h1>
-<p>주어진 문제를 해결하기 위한 절차로써, 정해진 입력에 정해진 출력이 나와야 하고,<br />
-무한히 반복되어서는 안된다.</p>
-
-<p>주어진 문제를 단위 작업으로 나누고, 최대한 효율적으로,<br />
-문제를 해결하기 위한 처리 순서를 정하는 과정</p>
-
-<h2 id="알고리즘의-종류">알고리즘의 종류</h2>
-
-<ol>
-  <li>정렬(Sort) : 한 줄로 모여 있는 데이터를 오름차순이나 내림차순으로 배치하는 방법.</li>
-  <li>검색(Search) : 데이터 중에서 원하는 것을 찾아내는 방법.</li>
-  <li>문자열 패턴 매칭 (SPM:String Pattern Matching): 주어진 문자열에서 지정한 문자열과 일치하는 부분을 찾아내는 방법</li>
-  <li>계산(Calculation): 수학이나 공학의 문제 해결을 위한 방법.</li>
-</ol>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Algorithm - Basic" /><summary type="html"><![CDATA[이 카테고리에는 알고리즘의 종류에 대해서만 기술할려고한다.]]></summary></entry></feed>
+<a href="https://github.com/hyunjunhwang1994/BasicOfJava">깃허브</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 드디어 혼자 공부하는 자바라는 책을 다 읽고, 인상 깊었던 부분과, 앞으로의 방향을 좀 잡아보려고 한다.]]></summary></entry></feed>
