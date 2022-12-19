@@ -310,4 +310,22 @@ var store = [{
         "tags": ["항해99","WIL"],
         "url": "/%ED%95%AD%ED%95%B499/WIL02/",
         "teaser": null
+      },{
+        "title": "브루트 포스, 완전 탐색 알고리즘",
+        "excerpt":"Brute: 무식한, 짐승… force: 힘 즉, 무식하게 힘으로만 무언가를 한다는 뜻이 된다. 한글로는 완전 탐색 알고리즘 즉, 가능한 모든 경우의 수를 모두 탐색하면서 요구 조건에 충족되는 결과만을 찾는 것이다. 이 브루트 포스 알고리즘의 강력한 점은 예외 없이 100%의 확률로 정답만을 출력할 수 있다는 것이다. 브루트 포스 참조 유튜브 장점 알고리즘...","categories": ["Algorithm - Basic"],
+        "tags": ["Brute Force","완전 탐색 알고리즘"],
+        "url": "/algorithm%20-%20basic/algorithm-basic02/",
+        "teaser": null
+      },{
+        "title": "Github Readme.md 잔디 먹는 뱀 만들기",
+        "excerpt":"일정 시간마다 자신의 잔디 정보를 기준으로 이미지 형태가 자동으로 만들어지고, 연한 색 -&gt; 진한 색 잔디 순서로 먹고 원위치로 돌아갑니다. 참조한 블로그 repo, directory 만들기 본인 계정명 Repo 생성 및, .gihub/workflows를 생성해 줍니다. repository 생성 시 readme.md 포함해서 만들어주세요! 자신 본인 id로 레파지토리를 만들고 Readme.md를 만들고 수정하면 자신의 계정 프로필...","categories": ["Git"],
+        "tags": ["깃허브 잔디 먹는 뱀"],
+        "url": "/git/Git03/",
+        "teaser": null
+      },{
+        "title": "항해99 TIL 15일 차 프로그래밍 주 차, 효율성 문제",
+        "excerpt":"유..클리드 호제법? 오늘은 최대공약수와 최소공배수에서 유클리드 호제법이란걸 이용해서 풀어보았다.. 최대공약수와 최소공배수 생각해 봐야 할 효율성 문제 소수 찾기 1~n까지의 소수의 개수를 반환하는 문제이다. 1은 제외하고 2부터 시작하여 n까지 모두 나누어서 나누어떨어지는 게 자기 자신(count == 1)이라면 소수로 판별하게 만들어놨는데.. 내가 생각해 봐도 너무 무식한 방법 같다.. public static int solution(int...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL13/",
+        "teaser": null
       }]

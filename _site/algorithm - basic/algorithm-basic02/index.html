@@ -1,0 +1,1113 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>브루트 포스, 완전 탐색 알고리즘 | 기술 블로그</title>
+<meta name="description" content="Brute: 무식한, 짐승… force: 힘 즉, 무식하게 힘으로만 무언가를 한다는 뜻이 된다.">
+
+
+  <meta name="author" content="Hyun Jun">
+  
+  <meta property="article:author" content="Hyun Jun">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술 블로그">
+<meta property="og:title" content="브루트 포스, 완전 탐색 알고리즘">
+<meta property="og:url" content="http://localhost:4000/algorithm%20-%20basic/algorithm-basic02/">
+
+
+  <meta property="og:description" content="Brute: 무식한, 짐승… force: 힘 즉, 무식하게 힘으로만 무언가를 한다는 뜻이 된다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-19T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/algorithm%20-%20basic/algorithm-basic02/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hyun Jun",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="843d72a8e4b20f1a8ae8e971f19c34cb128b6c8b">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+
+    <style> 
+    /*스크롤바 꾸며주는 코드*/
+      ::-webkit-scrollbar{width: 17px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: rgb(25, 56, 109);}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      
+      {
+        width:12px;height:12px;background:transparent;
+      }
+
+        /*사이드바에는 적용하지않는다.*/
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          기술 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+
+                <!-- 다크 모드 토글 버튼 -->
+                
+                <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+                <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">카테고리👇</span>
+                    <div class="navicon"></div>
+                </button>
+
+
+                
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리👇</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+
+
+        
+        
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+  
+  
+    
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리👇</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">55</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <span class="nav__sub-title">etc</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/hanghae99" class="">항해99 🚢(17)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                
+                    
+                
+                    
+                        <li><a href="/categories/jekyllblogdev" class="">Jekyll Blog Dev (11)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/cloudcomputingaws" class="">Cloud computing - AWS (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/git" class="">Git (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            
+
+
+
+        <span class="nav__sub-title">Programming language</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/java" class="">Java (8)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+        <span class="nav__sub-title">Framework</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/spring" class="">Spring (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/flask" class="">Flask (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <span class="nav__sub-title">Algorithm</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmbasic" class="">Algorithm - Basic (2)</a></li>
+                    
+                
+                    
+                
+            </ul> 
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmhanghae99" class="">Algorithm - Hanghae99🚢 (5)</a></li>
+                    
+                
+            </ul> 
+
+
+ 
+
+
+      </li>
+
+
+
+  </ul>
+</nav>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="브루트 포스, 완전 탐색 알고리즘">
+    <meta itemprop="description" content="Brute: 무식한, 짐승… force: 힘 즉, 무식하게 힘으로만 무언가를 한다는 뜻이 된다.">
+    <meta itemprop="datePublished" content="2022-12-19T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/algorithm%20-%20basic/algorithm-basic02/" class="u-url" itemprop="url">브루트 포스, 완전 탐색 알고리즘
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-19T00:00:00+09:00">2022-12-19</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#장점">장점</a></li><li><a href="#단점">단점</a></li><li><a href="#종류">종류</a></li><li><a href="#brute-force의-예">Brute Force의 예</a></li><li><a href="#브루트-포스-풀어보기">브루트 포스 풀어보기</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Brute: 무식한, 짐승… force: 힘 즉, 무식하게 힘으로만 무언가를 한다는 뜻이 된다.</p>
+
+<p>한글로는 완전 탐색 알고리즘 즉, 가능한 모든 경우의 수를 모두 탐색하면서 요구 조건에 충족되는 결과만을
+찾는 것이다.</p>
+
+<p>이 브루트 포스 알고리즘의 강력한 점은 예외 없이 100%의 확률로 정답만을 출력할 수 있다는 것이다.</p>
+
+<p><a href="https://www.youtube.com/watch?v=ZNa9-86uVEA&amp;list=PLlV7zJmoG4XJMkxuBRgkpdX89tL6aXl6q&amp;index=1">브루트 포스 참조 유튜브</a></p>
+<h2 id="장점">장점</h2>
+<ul>
+  <li>알고리즘 설계 시 해가 하나 이상 존재한다는 가정을 세우고 모든 범위를 탐색하기 때문에 무조건 정답을 찾을 수 있다.</li>
+  <li>구현하기가 쉬운 편에 속한다.</li>
+</ul>
+
+<h2 id="단점">단점</h2>
+<ul>
+  <li>간단한 로직이면 시간 복잡도가 오래 걸리지 않으면서 확실한 방법이지만, 
+복잡한 문제일수록 시간 복잡도가 기하급수적으로 늘어난다.</li>
+  <li>메모리 효율 면에서 매우 비효율적이다.</li>
+</ul>
+
+<h2 id="종류">종류</h2>
+<ul>
+  <li>선형 구조 : 순차 탐색</li>
+  <li>비선형 구조 : 백트래킹, DFS(깊이 우선 탐색), BFS(너비 우선 탐색)</li>
+</ul>
+
+<p><a href="https://velog.io/@lucky-korma/DFS-BFS%EC%9D%98-%EC%84%A4%EB%AA%85-%EC%B0%A8%EC%9D%B4%EC%A0%90">DFS, BFS 차이점</a></p>
+
+<h2 id="brute-force의-예">Brute Force의 예</h2>
+<p>한 자물쇠의 비밀번호가 1부터 20억까지의 숫자 중 하나라고 생각해 보자.</p>
+
+<p>이 비밀번호를 1부터 20억까지 사이의 숫자를 대입해서 일일이 풀다 보면
+중간에 if, for 문 등을 사용하다 보면 시간이 어느 정도 걸릴 것이다.</p>
+
+<p>사실 이렇게 무작위, 아무런 부가 설명이 없는 문제의 경우
+브루트 포스 방식을 써야 할 것 같긴 한데.</p>
+
+<p>어쨌든 예를 들면 그렇다는 것이다.</p>
+
+<h2 id="브루트-포스-풀어보기">브루트 포스 풀어보기</h2>
+<p>브루트 포스의 경우 보통 레벨이 낮은 문제에 많이 나오며, 아래의 링크에서 풀어볼 수 있다.</p>
+
+<p><a href="https://school.programmers.co.kr/learn/courses/30/parts/12230">프로그래머스 완전 탐색</a></p>
+
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#brute-force" class="page__taxonomy-item p-category" rel="tag">Brute Force</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EC%99%84%EC%A0%84-%ED%83%90%EC%83%89-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" class="page__taxonomy-item p-category" rel="tag">완전 탐색 알고리즘</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#algorithm-basic" class="page__taxonomy-item p-category" rel="tag">Algorithm - Basic</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-19T00:00:00+09:00">2022-12-19</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EB%B8%8C%EB%A3%A8%ED%8A%B8+%ED%8F%AC%EC%8A%A4%2C+%EC%99%84%EC%A0%84+%ED%83%90%EC%83%89+%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2520-%2520basic%2Falgorithm-basic02%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2520-%2520basic%2Falgorithm-basic02%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2520-%2520basic%2Falgorithm-basic02%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/algorithm%20-%20basic/algorithm-basic01/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>알고리즘은 무엇이고 왜 중요한가?</a>
+    
+    
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL13/" rel="permalink">항해99 TIL 15일 차 프로그래밍 주 차, 효율성 문제
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-19T00:00:00+09:00">2022-12-19</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/git/Git03/" rel="permalink">Github Readme.md 잔디 먹는 뱀 만들기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-19T00:00:00+09:00">2022-12-19</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/WIL02/" rel="permalink">항해99 WIL 2주 차 회고
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-18T00:00:00+09:00">2022-12-18</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          8 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL12/" rel="permalink">항해99 TIL 13일 차 프로그래밍 주 차
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-17T00:00:00+09:00">2022-12-17</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/hyunjunhwang1994" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/hyunjuuuuun/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Hyun Jun. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <!-- start custom comments scripts -->
+
+<!-- end custom comments scripts -->
+
+<script>
+    'use strict';
+
+    window.customUtterances = {
+      theme: 'github-light',
+      darkTheme: 'github-dark',
+      onChange: (theme) => {
+        var commentContainer = document.querySelector('#utterances-comments');
+  
+        if (!commentContainer) {
+          return;
+        }
+  
+        while ( commentContainer.hasChildNodes() ) { 
+          commentContainer.removeChild( commentContainer.firstChild );
+        }
+  
+        var script = document.createElement('script');
+        script.setAttribute('src', 'https://utteranc.es/client.js');
+        script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
+        script.setAttribute('label', 'utterances');
+        script.setAttribute('issue-term', 'pathname');
+        script.setAttribute('theme', theme);
+        script.setAttribute('crossorigin', 'anonymous');
+  
+        commentContainer.appendChild(script);
+      }
+    };
+  </script>
+
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>
