@@ -340,4 +340,10 @@ var store = [{
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL14/",
         "teaser": null
+      },{
+        "title": "TIL 17일 차 프로그래밍 주 차, 알고리즘 공부",
+        "excerpt":"내일 있을 알고리즘 시험 대비 연습을 위해 연습문제 3가지를 풀어보았다. 1. 별 찍기 피라미드 형식으로 1,3,5,7 개수만큼의 별 모양 찍기 사실 알고리즘 입문(옛날에 많이 하던..)의 대표적인 문제인 별찍기를 해보았다. // 난이도 하 public class quiz2 { public void solution(int star) { for(int i=0; i&lt;star; i++){ for(int j=1; j&lt;star-i; j++){ System.out.print(\"...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL15/",
+        "teaser": null
       }]
