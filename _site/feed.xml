@@ -1,4 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-21T21:51:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 17일 차 프로그래밍 주 차, 알고리즘 공부</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL15/" rel="alternate" type="text/html" title="TIL 17일 차 프로그래밍 주 차, 알고리즘 공부" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL15</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL15/"><![CDATA[<p>내일 있을 알고리즘 시험 대비 연습을 위해 연습문제 3가지를 풀어보았다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-22T16:18:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 18일 차 프로그래밍 주 차, 알고리즘 테스트</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16/" rel="alternate" type="text/html" title="TIL 18일 차 프로그래밍 주 차, 알고리즘 테스트" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16/"><![CDATA[<p>오늘은 알고리즘 테스트가 있는 날이었다.<br />
+4가지 정도의 문제가 나왔고 4번 문제 난이도 상의 문제 빼고는 다 푼 것 같다..</p>
+
+<p>내일이면 처음 해봤기에 너무나 어려웠던 알고리즘 주차가 끝나고,<br />
+주특기로 결정한 스프링의 주특기 입문 주 차가 시작되는데,</p>
+
+<h2 id="알고리즘-주-차에서-힘들었던-점">알고리즘 주 차에서 힘들었던 점</h2>
+
+<p>사실 알고리즘이나 코딩 테스트는 처음 해보는지라…
+솔직히 처음에는 너무 어려웠다.</p>
+
+<p>별찍기도 힘들고, 별을 왜 찍어야 하나라는 생각도들고…ㅋㅋ<br />
+초반에는 문제를 푸는 것 자체가 어려워,</p>
+
+<p>짧으면 30분 길면 1시간 정도 투자를 해보고 구현하기가 힘들면
+문제의 정답을 보고 이해해서 내 것으로 만드는 과정부터 시작하였다.</p>
+
+<p>예를 들어 피라미드 별찍기라면,<br />
+-&gt; 도저히 못하겠는데..?<br />
+-&gt; 정답 확인 후 이해 및 재코딩으로 내 것으로 만들기<br />
+-&gt; 비슷한 느낌의 문제가 나올 시 하나하나 풀어짐<br />
+의 반복으로 진행을 했던 것 같다.</p>
+
+<p>왜냐하면 시간 자체도 일주일 정도로 한정되어 있기 때문에,<br />
+정말 알고리즘 공부를 처음 해보는 경우 이 문제들을 처음부터 실력으로<br />
+풀지는 못할 것이다..</p>
+
+<h2 id="배워야-할-점---개선해야-할-부분">배워야 할 점 -&gt; 개선해야 할 부분</h2>
+<p>지금까지는 답을 어느 정도 보고 그러한 습득을 통해<br />
+경험을 살려서 문제에 대한 이해도나 개념 없이, 무작정 풀어왔다면</p>
+
+<p>이제부터는 알고리즘 공부하는 시간을 2일에 한 번씩 1~2시간씩 잡아,<br />
+스택, 큐, 탐색, 그래프 알고리즘 등 주요 알고리즘 종류를 포스팅하면서, 정리를 하고 <br />
+공부하는 시간을 가져보면 좋을 것 같다.</p>
+
+<p><a href="https://namu.wiki/w/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98">나무위키 알고리즘 참조</a></p>
+
+<p>이제부터 배운 것의 종류는 많고, 앞으로 배울 것은 더 어려워지는 시기이기 때문에
+공부 스케줄 관리 및 효율성, 집중도를 더 높여야 할 것 같다.</p>
+
+<h2 id="java">Java</h2>
+
+<p>내일 금요일 자바의 객체지향을 주제로 한 자바 스터디 모임이 있다.</p>
+
+<p>그렇기도 하고, 스프링을 공부하기 전 자바의 객채지향(클래스, 인터페이스 등)에 대해서 완벽하게 익히고자</p>
+
+<p>혼자 공부하는 자바라는 책을 6챕터부터 한 번 더 필독하였다.</p>
+
+<p>오늘 공부한 내용 중 간단하게 정리해 보자면</p>
+
+<ul>
+  <li>객체 지향 프로그래밍
+객체는 속성(필드)과 동작(메소드)으로 구성되어 있음,</li>
+</ul>
+
+<p>객체관의 관계 -&gt; 집합 관계, 사용 관계, 상속 관계를 사용하여<br />
+현실 세계의 객체를 소프트웨어 객체로 설계 (객체 모델링)하여 구현하는 프로그래밍 방법</p>
+
+<p>클래스(객체)의 구성 맴버<br />
+필드, 생성자, 메소드</p>
+
+<ul>
+  <li>
+    <p>필드
+일부 사람들은 클래스 멤버 변수라고 부르기도 하는데,
+될 수 있으면 필드라는 용어를 그대로 사용하는 게 좋다.</p>
+  </li>
+  <li>필드는 초기화를 해주지 않고 생성 시 알아서 초깃값이 기본값으로 들어간다.</li>
+  <li>
+    <p>필드를 사용한다는 것? 필드값을 읽고 변경한다는 것</p>
+  </li>
+  <li>생성자</li>
+  <li>new 연산자로 호출되는 중괄호{}안 블록.</li>
+  <li>객체 생성 시 초기화를 담당한다.</li>
+  <li>모든 클래스에 반드시 하나 이상 존재</li>
+  <li>객체 초기화란 필드를 초기화하거나 메소드를 호출해서 객체를 사용할 준비를 하는 것을 말한다.</li>
+  <li>new 연산자에 의해 생성자가 성공적으로 실행되면 Heap 영역에 객체가 생성되고 객체의 번지가 리턴된다.</li>
+  <li>모든 클래스는 생성자가 반드시 존재하며, 하나 이상 가질 수 있고</li>
+  <li>명시적으로 선언한 생성자가 1개라도 있을 경우 컴파일러는 기본 생성자를 추가하지 않음.</li>
+  <li>생성자 간 오버 로딩이 가능 (매개변수의 타입과 개수 그리고 선언된 순서가 달라야지만 가능)</li>
+</ul>
+
+<p>더 자세한 내용은 따로 포스팅으로 정리해 보려고 한다.</p>
+
+<h2 id="spring">Spring</h2>
+<p>스프링을 공부하기 전 인프런에 있는 김영한 님의 스프링 핵심 원리 기본편이라는 강의를 보며 예습을 하고 있다.
+DI, 스프링 컨테이너 등을 공부했고 하나씩 정리하여 내 것으로 만들어야 할 것 같다.</p>
+
+<p>-&gt; 스프링을 공부하던 중 특히 인터페이스나, 구현체 등 객체지향적 관점 얘기가 많이 나와서
+-&gt; 스프링 주 차가 오기 전까지는 자바에 조금 더 집중하여 공부하기로 했다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 알고리즘 테스트가 있는 날이었다. 4가지 정도의 문제가 나왔고 4번 문제 난이도 상의 문제 빼고는 다 푼 것 같다..]]></summary></entry><entry><title type="html">TIL 17일 차 프로그래밍 주 차, 알고리즘 공부</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL15/" rel="alternate" type="text/html" title="TIL 17일 차 프로그래밍 주 차, 알고리즘 공부" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL15</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL15/"><![CDATA[<p>내일 있을 알고리즘 시험 대비 연습을 위해 연습문제 3가지를 풀어보았다.</p>
 
 <h2 id="1-별-찍기">1. 별 찍기</h2>
 
@@ -829,90 +918,4 @@ hash로 풀었을 경우 효율성은 아래처럼 나왔고
   <li>어떤 컬렉션, 알고리즘을 쓰냐에 따라 속도가 천차만별이다.</li>
 </ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 알고리즘 문제를 더 풀고 정리해 보는 시간을 가졌다.]]></summary></entry><entry><title type="html">Git02</title><link href="http://localhost:4000/Git02/" rel="alternate" type="text/html" title="Git02" /><published>2022-12-16T00:00:00+09:00</published><updated>2022-12-16T00:00:00+09:00</updated><id>http://localhost:4000/Git02</id><content type="html" xml:base="http://localhost:4000/Git02/"><![CDATA[<p>Git Flow</p>
 
-<p><a href="http://blog.hwahae.co.kr/all/tech/tech-tech/9507/">참조 블로그</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">이상한 문자 만들기</title><link href="http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-05/" rel="alternate" type="text/html" title="이상한 문자 만들기" /><published>2022-12-16T00:00:00+09:00</published><updated>2022-12-16T00:00:00+09:00</updated><id>http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-05</id><content type="html" xml:base="http://localhost:4000/algorithm%20-%20hanghae99/algorithm-hanghae99-05/"><![CDATA[<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1
-</div>
-<hr />
-
-<div class="notice--info" style="text-align:center">
-        해당 풀이는 자바로 이루어져 있고,<br />
-        프로그래머스의 문제를 토대로 포스팅했습니다.
-</div>
-<hr />
-
-<h1 id="이상한-문자-만들기">이상한 문자 만들기</h1>
-
-<h2 id="문제-설명">문제 설명</h2>
-<p>문자열 s는 한 개 이상의 단어로 구성되어 있습니다.<br />
-각 단어는 하나 이상의 공백문자로 구분되어 있습니다.<br />
-각 단어의 짝수번째 알파벳은 대문자로,<br />
-홀수번째 알파벳은 소문자로 바꾼 문자열을 리턴하는 함수, solution을 완성하세요.</p>
-
-<h2 id="제한-조건">제한 조건</h2>
-<ul>
-  <li>문자열 전체의 짝/홀수 인덱스가 아니라, 단어(공백을 기준)별로 짝/홀수 인덱스를 판단해야합니다.</li>
-  <li>첫 번째 글자는 0번째 인덱스로 보아 짝수번째 알파벳으로 처리해야 합니다.</li>
-</ul>
-
-<h2 id="입출력-예">입출력 예</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>s</th>
-      <th>return</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>“try hello world”</td>
-      <td>“TrY HeLlO WoRlD</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="입출력-예-설명">입출력 예 설명</h2>
-<p>“try hello world”는 세 단어 “try”, “hello”, “world”로 구성되어 있습니다.</p>
-
-<p>각 단어의 짝수번째 문자를 대문자로, 홀수번째 문자를 소문자로 바꾸면 
-“TrY”, “HeLlO”, “WoRlD”입니다.<br />
-따라서 “TrY HeLlO WoRlD” 를 리턴합니다.</p>
-
-<h2 id="풀이">풀이</h2>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">solution</span><span class="o">(</span><span class="nc">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
-<span class="nc">String</span> <span class="n">answer</span><span class="o">=</span><span class="s">""</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">cnt</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
-
-
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span><span class="n">i</span><span class="o">++){</span>
-            <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-
-            <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">' '</span><span class="o">){</span>
-                <span class="n">answer</span> <span class="o">+=</span> <span class="s">" "</span><span class="o">;</span>
-                <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-                <span class="k">continue</span><span class="o">;</span>
-            <span class="o">}</span>
-
-            <span class="k">if</span><span class="o">((</span><span class="n">cnt</span><span class="o">%</span><span class="mi">2</span><span class="o">)==</span><span class="mi">0</span><span class="o">){</span>
-                <span class="n">answer</span> <span class="o">+=</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="nc">Character</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">(</span><span class="n">c</span><span class="o">));</span>
-                <span class="n">cnt</span><span class="o">++;</span>
-            <span class="o">}</span><span class="k">else</span><span class="o">{</span>
-                <span class="n">answer</span> <span class="o">+=</span> <span class="nc">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="nc">Character</span><span class="o">.</span><span class="na">toLowerCase</span><span class="o">(</span><span class="n">c</span><span class="o">));</span>
-                <span class="n">cnt</span><span class="o">++;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<h2 id="사용된-중요-함수">사용된 중요 함수</h2>
-<ul>
-  <li>charAt();</li>
-  <li>String.valueOf();</li>
-  <li>Character.toUpperCase();</li>
-</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Algorithm - Hanghae99" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry></feed>
+<p><a href="http://blog.hwahae.co.kr/all/tech/tech-tech/9507/">참조 블로그</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry></feed>
