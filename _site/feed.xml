@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-22T16:18:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 18일 차 프로그래밍 주 차, 알고리즘 테스트</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16/" rel="alternate" type="text/html" title="TIL 18일 차 프로그래밍 주 차, 알고리즘 테스트" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16/"><![CDATA[<p>오늘은 알고리즘 테스트가 있는 날이었다.<br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-22T16:29:33+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 18일 차 프로그래밍 주 차, 알고리즘 테스트</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16/" rel="alternate" type="text/html" title="TIL 18일 차 프로그래밍 주 차, 알고리즘 테스트" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16/"><![CDATA[<p>오늘은 알고리즘 테스트가 있는 날이었다.<br />
 4가지 정도의 문제가 나왔고 4번 문제 난이도 상의 문제 빼고는 다 푼 것 같다..</p>
 
 <p>내일이면 처음 해봤기에 너무나 어려웠던 알고리즘 주차가 끝나고,<br />
@@ -83,10 +83,11 @@
 <p>더 자세한 내용은 따로 포스팅으로 정리해 보려고 한다.</p>
 
 <h2 id="spring">Spring</h2>
-<p>스프링을 공부하기 전 인프런에 있는 김영한 님의 스프링 핵심 원리 기본편이라는 강의를 보며 예습을 하고 있다.
-DI, 스프링 컨테이너 등을 공부했고 하나씩 정리하여 내 것으로 만들어야 할 것 같다.</p>
+<p>스프링을 공부하기 전 인프런에 있는 김영한 님의 스프링 핵심 원리 기본편이라는 강의를 보며 예습을 하고 있다.</p>
 
-<p>-&gt; 스프링을 공부하던 중 특히 인터페이스나, 구현체 등 객체지향적 관점 얘기가 많이 나와서
+<p>DI, 스프링 컨테이너 등을 공부했고 하나씩 정리하여 내 것으로 만들어야 할 것 같다.</p>
+
+<p>-&gt; 스프링을 공부하던 중 특히 인터페이스나, 구현체 등 객체지향적 관점 얘기가 많이 나와서<br />
 -&gt; 스프링 주 차가 오기 전까지는 자바에 조금 더 집중하여 공부하기로 했다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 알고리즘 테스트가 있는 날이었다. 4가지 정도의 문제가 나왔고 4번 문제 난이도 상의 문제 빼고는 다 푼 것 같다..]]></summary></entry><entry><title type="html">TIL 17일 차 프로그래밍 주 차, 알고리즘 공부</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL15/" rel="alternate" type="text/html" title="TIL 17일 차 프로그래밍 주 차, 알고리즘 공부" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL15</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL15/"><![CDATA[<p>내일 있을 알고리즘 시험 대비 연습을 위해 연습문제 3가지를 풀어보았다.</p>
 
 <h2 id="1-별-찍기">1. 별 찍기</h2>
