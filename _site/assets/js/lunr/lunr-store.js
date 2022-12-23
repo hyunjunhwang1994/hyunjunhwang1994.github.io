@@ -101,15 +101,21 @@ var store = [{
         "url": "/jekyll%20blog%20dev/Jekyll-Blog-Dev11/",
         "teaser": null
       },{
-        "title": "객체지향 프로그래밍과 절차적 프로그래밍",
+        "title": "자바의 소스파일과 컴파일 과정",
+        "excerpt":"자바로 작성된 모든 프로그램은 모든 운영체제에서 실행 가능하다. 윈도우에서 자바로 프로그램을 만들더라도 개발자가 아무런 조치를 취하지 않아도 맥, 리눅스 …에서 바로 사용이 가능하다. 객체지향 프로그래밍 메모리 자동 정리 라이브러리 풍부 컴퓨터는 0, 1로 이루어진 이진 코드인 기계어만 이해합니다. 사람의 언어와 컴퓨터의 언어는 다르기 때문에, 컴퓨터가 이해하도록 하려면 프로그래밍 언어를 사용해야...","categories": ["Java"],
+        "tags": ["자바 소스 파일","자바 컴파일"],
+        "url": "/java/Java15/",
+        "teaser": null
+      },{
+        "title": "객체 지향 프로그래밍 - 절차적 프로그래밍",
         "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 절차적 프로그래밍과 객체지향 프로그래밍. 절차적 프로그래밍 ‘절차적 프로그래밍’이라는 한국어 번역은 오해의 여지가 크다. Procedural Programming에서 Procedural를 ‘절차적’으로 번역해버려서 마치 절차적으로 실행하는 것이...","categories": ["Java"],
         "tags": ["자바의 객체지향","객체지향 프로그래밍","절차적 프로그래밍"],
         "url": "/java/Java13/",
         "teaser": null
       },{
-        "title": "객체, 클래스, 인스턴스",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 클래스, 객체 상속과 오버라이딩 오버 로딩 추상 클래스와 인터페이스 패키지와 제어자 객체지향 프로그래밍? ex) 자동차(프로그램)은 바퀴(객체), 엔진(객체), 핸들(객체) 등을 조합하여 만든다. 그러한...","categories": ["Java"],
-        "tags": ["객체","클래스","인스턴스"],
+        "title": "객체 지향 프로그래밍 - 객체, 클래스, 인스턴스, 생성자",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 객체지향 프로그래밍? ex) 자동차(프로그램)은 바퀴(객체), 엔진(객체), 핸들(객체) 등을 조합하여 만든다. 그러한 바퀴, 엔진, 핸들 등은 설계도인 클래스를 통하여 만든다. 객체들을 조합하여 전체...","categories": ["Java"],
+        "tags": ["객체","클래스","인스턴스","생성자"],
         "url": "/java/Java14/",
         "teaser": null
       },{
@@ -323,12 +329,6 @@ var store = [{
         "url": "/git/Git03/",
         "teaser": null
       },{
-        "title": "자바의 소스파일과 컴파일 과정",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 JDK: java version \"11.0.17\" 2022-10-18 LTS IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 자바의 특징 자바로 작성된 모든 프로그램은 모든 운영체제에서 실행 가능하다. 윈도우에서 자바로 프로그램을 만들더라도 개발자가 아무런 조치를 취하지 않아도 맥, 리눅스 …에서 바로 사용이...","categories": ["Java"],
-        "tags": ["자바 소스 파일","자바 컴파일"],
-        "url": "/java/Java15/",
-        "teaser": null
-      },{
         "title": "TIL 15일 차 프로그래밍 주 차, 효율성 문제",
         "excerpt":"유..클리드 호제법? 오늘은 최대공약수와 최소공배수에서 유클리드 호제법이란걸 이용해서 풀어보았다.. 최대공약수와 최소공배수 생각해 봐야 할 효율성 문제 소수 찾기 1~n까지의 소수의 개수를 반환하는 문제이다. 1은 제외하고 2부터 시작하여 n까지 모두 나누어서 나누어떨어지는 게 자기 자신(count == 1)이라면 소수로 판별하게 만들어놨는데.. 내가 생각해 봐도 너무 무식한 방법 같다.. public static int solution(int...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
@@ -351,5 +351,23 @@ var store = [{
         "excerpt":"오늘은 알고리즘 테스트가 있는 날이었다. 4가지 정도의 문제가 나왔고 4번 문제 난이도 상의 문제 빼고는 다 푼 것 같다.. 내일이면 처음 해봤기에 너무나 어려웠던 알고리즘 주차가 끝나고, 주특기로 결정한 스프링의 주특기 입문 주 차가 시작되는데, 알고리즘 주 차에서 힘들었던 점 사실 알고리즘이나 코딩 테스트는 처음 해보는지라… 솔직히 처음에는 너무 어려웠다....","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL16/",
+        "teaser": null
+      },{
+        "title": "객체 지향 프로그래밍 - 메소드, 정적 멤버, 접근 제한자, Getter/Setter",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 버전 JDK: OpenJDK Runtime Environment (Zulu 8.66.0.15-CA-macos-aarch64) (build 1.8.0_352-b08) IntelliJ: IntelliJ IDEA 2022.2.3 (Community Edition) 메소드 메소드 선언은 선언부와 실행 블록으로 구성된다. 메소드 선언부를 메소드 시그니처(signature)라고 한다. 메소드의 구조 리턴 타입 메소드 이름 (매개변수 선언, ...){ 실행...","categories": ["Java"],
+        "tags": ["메소드","정적 멤버","접근 제한자","Getter/Setter"],
+        "url": "/java/Java16/",
+        "teaser": null
+      },{
+        "title": "객체 지향 프로그래밍 - SOLID 원칙",
+        "excerpt":"객체 지향 프로그래밍 객체 지향이란 쉽게 말하면 현실 세계에서 착안해온 개념으로, 상태(요금)와 동작(출발)을 가진 객체(버스)들을 만들어 유기적으로 연결시켜 구현하는 프로그래밍 패러다임을 말한다. 김영한 님의 스프링 입문 강의를 보던 중 SOLID 원칙이 강조되어 한번 정리해 보았습니다. 스프링 사용 시 스프링은 객체지향의 5가지 원칙 solid를 더욱더 편하게 지킬 수 있게 해준다. solid...","categories": ["Java"],
+        "tags": ["객체 지향 SOLID 원칙"],
+        "url": "/java/Java17/",
+        "teaser": null
+      },{
+        "title": "TIL 19일 차 주특기 입문 주 차 발제",
+        "excerpt":"오늘은 주특기 입문 주 차 발제가 있었다. 스프링을 배우기 앞서 전반적인 내용과 조언, 스케줄, 팀 배정 등이 이루어졌고, 주특기(스프링) 입문 주 차는, 일주일 동안 진행된다. 발표실에서 나와 스터디룸에 와보니 크리스마스를 맞이하여 스터디룸이 예쁘게 꾸며져있다.. (크리스마스 때도 공부하라는 무언의 압박인가요ㅠㅠ) 계획 이제부터는 스프링을 위한 기초과정으로 Http protocol, 자바 객체지향, 스프링, RDBMS...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL17/",
         "teaser": null
       }]
