@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-23T21:19:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">객체 지향 프로그래밍 - 메소드, 정적 멤버, 접근 제한자, Getter/Setter</title><link href="http://localhost:4000/java/Java16/" rel="alternate" type="text/html" title="객체 지향 프로그래밍 - 메소드, 정적 멤버, 접근 제한자, Getter/Setter" /><published>2022-12-23T00:00:00+09:00</published><updated>2022-12-23T00:00:00+09:00</updated><id>http://localhost:4000/java/Java16</id><content type="html" xml:base="http://localhost:4000/java/Java16/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-23T21:27:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">객체 지향 프로그래밍 - 메소드, 정적 멤버, 접근 제한자, Getter/Setter</title><link href="http://localhost:4000/java/Java16/" rel="alternate" type="text/html" title="객체 지향 프로그래밍 - 메소드, 정적 멤버, 접근 제한자, Getter/Setter" /><published>2022-12-23T00:00:00+09:00</published><updated>2022-12-23T00:00:00+09:00</updated><id>http://localhost:4000/java/Java16</id><content type="html" xml:base="http://localhost:4000/java/Java16/"><![CDATA[<!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
 <div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
@@ -247,17 +247,15 @@ public void setStop(boolean stop){
 <p><img src="../../images/2022-12-23-16-35-33.png" alt="" /></p>
 
 <p>.. 객체지향프로그래밍에 대한 개념과 클래스, 메소드, 상속 관계, 인터페이스 등을 완벽하게
- 익히고 있어야 스프링에서 헤매지 않을 것 같다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Java" /><category term="객체 지향 SOLID 원칙" /><summary type="html"><![CDATA[객체 지향 프로그래밍 객체 지향이란 쉽게 말하면 현실 세계에서 착안해온 개념으로,]]></summary></entry><entry><title type="html">TIL 19일 차 주특기 입문 주 차 발제</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17/" rel="alternate" type="text/html" title="TIL 19일 차 주특기 입문 주 차 발제" /><published>2022-12-23T00:00:00+09:00</published><updated>2022-12-23T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17/"><![CDATA[<p>오늘은 주특기 입문 주 차 발제가 있었다.</p>
-
-<p>스프링을 배우기 앞서 전반적인 내용과 조언, 스케줄, 팀 배정 등이 이루어졌고,</p>
-
-<p>주특기(스프링) 입문 주 차는, 일주일 동안 진행된다.</p>
+ 익히고 있어야 스프링에서 헤매지 않을 것 같다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Java" /><category term="객체 지향 SOLID 원칙" /><summary type="html"><![CDATA[객체 지향 프로그래밍 객체 지향이란 쉽게 말하면 현실 세계에서 착안해온 개념으로,]]></summary></entry><entry><title type="html">TIL 19일 차 주특기 입문 주 차 발제</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17/" rel="alternate" type="text/html" title="TIL 19일 차 주특기 입문 주 차 발제" /><published>2022-12-23T00:00:00+09:00</published><updated>2022-12-23T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17/"><![CDATA[<p>오늘은 주특기 입문 주 차 발제가 있었다.<br />
+스프링을 배우기 앞서 전반적인 내용과 조언, 스케줄, 팀 배정 등이 이루어졌고,<br />
+주특기(스프링) 입문 주 차는, 일주일 동안 진행된다.</p>
 
 <p><img src="../../images/2022-12-23-09-27-40.png" alt="" /></p>
 
 <p>발표실에서 나와 스터디룸에 와보니</p>
 
-<p>크리스마스를 맞이하여 스터디룸이 예쁘게 꾸며져있다..
+<p>크리스마스를 맞이하여 스터디룸이 예쁘게 꾸며져있다..<br />
 (크리스마스 때도 공부하라는 무언의 압박인가요ㅠㅠ)</p>
 
 <p><img src="../../images/2022-12-23-09-32-14.png" alt="" /></p>
@@ -272,47 +270,46 @@ public void setStop(boolean stop){
 
 <h2 id="객체지향-객체-모델링-연습">객체지향 객체 모델링 연습</h2>
 
-<p>본격적으로 스프링을 공부하기 전 S.A 과제로
-객체 모델링을 연습해 보는 과정이 있었다.
-자바의 객체지향을 업그레이드하기 위한 대중교통 객체지향 만들기 문제를 풀었다.</p>
+<p>본격적으로 스프링을 공부하기 전 S.A 과제로 객체 모델링을 연습해 보는 과정이 있었다.</p>
 
-<p>강의자료 일지도 몰라서 올리진 못하지만,
-추상 클래스, 오버라이딩, 인터페이스, 상속 등을 이용해</p>
+<p>자바의 객체지향을 업그레이드하기 위한 대중교통 객체지향 만들기 문제를 풀었다.</p>
 
-<p>상속관계에 있는 객체 모델링을 연습하는 문제였다.</p>
+<p>강의자료 일지도 몰라서 올리진 못하지만, 추상 클래스, 오버라이딩, 인터페이스, 상속 등을 이용해
+상속관계에 있는 객체 모델링을 연습하는 문제였다.</p>
 
-<p>일단 열심히 해서 풀고, 시간이 조금 남아</p>
+<p>일단 열심히 해서 풀고, 시간이 조금 남아 7시에 있을 자바 언어 스터디 모임과 자바 기초를 위해</p>
 
-<p>7시에 있을 자바 언어 스터디 모임을 위해
-자바의 객체지향 관련 포스팅을 하고, SOLID 원칙을 공부 하였다.
-(포스팅..)</p>
+<p>자바의 객체지향 관련 포스팅을 하고, SOLID 원칙을 공부하였다.</p>
 
-<p>저녁 7시 자바 언어스터디 모임을 가졌다.</p>
+<p><a href="https://hyunjunhwang1994.github.io/java/Java14/">객체, 클래스, 인스턴스, 생성자</a><br />
+<a href="https://hyunjunhwang1994.github.io/java/Java16/">메소드, 정적 멤버, 접근 제한자, Getter/Setter</a><br />
+<a href="https://hyunjunhwang1994.github.io/java/Java17/">SOLID 원칙</a></p>
+
+<h2 id="자바-언어-스터디-모임">자바 언어 스터디 모임</h2>
+<p>저녁 7시 자바 언어 스터디 모임을 가졌다.</p>
 
 <p><img src="../../images/2022-12-23-19-41-48.png" alt="" /></p>
 
 <p>객체지향에 있어서
-자바의 클래스, 필드, 생성자, 메소드, 인스턴스, 접근제한자 등에 있어서 
+자바의 클래스, 필드, 생성자, 메소드, 인스턴스, 접근 제한자 등에 있어서 
 한 팀원이 정리해온 내용을 프레젠테이션 발표로 듣고,</p>
 
-<p>나머지팀원은 궁금한 점이나, 만약. 면접관이라면 어떤 질문을던질까? 라는 
+<p>나머지 팀원은 궁금한 점이나, 만약. 면접관이라면 어떤 질문을 던질까?라는 
 느낌으로 질문을 하면서 스터디 진행을 했다.</p>
 
-<p>다음주 금요일은 내가 상속, 다형성(타입변환),추상클래스에 관해서 발표를 할차례다..</p>
+<p>다음 주 금요일은 내가 상속, 다형성(타입 변환), 추상 클래스에 관해서 발표를 할 차례다..</p>
 
-<p>그리고 진행 도중 알고리즘 문제 매일 풀기라는 팀에 어찌하여 끼게 되었고,</p>
+<h2 id="매일매일-알고리즘-풀기">매일매일 알고리즘 풀기</h2>
 
-<p>피보나치 수
-https://school.programmers.co.kr/learn/courses/30/lessons/12945</p>
+<p>언어 스터디 진행 도중 알고리즘 문제 매일 풀기라는 모임에 어찌하여 끼게 되었고,</p>
 
-<p>올바른 괄호
-https://school.programmers.co.kr/learn/courses/30/lessons/12909?language=java</p>
+<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12945">피보나치 수</a><br />
+<a href="https://school.programmers.co.kr/learn/courses/30/lessons/12909?language=java">올바른 괄호</a></p>
 
-<p>라는 문제를 내일까지 풀기로했다.</p>
+<p>위의 2문제를 내일까지 풀기로 했다.<br />
+오늘은 일단 피보나치 수까지만.. 풀어 보려고 한다.</p>
 
-<p>오늘은 일단 피보나치 수 까지만.. 풀어 보려고 한다.</p>
-
-<p>어쩌다가 됬다.. 피보나치 수를 구현하고 1234567의 나머지를 구하는 과정에서
+<p>어찌어찌하다가 됐다.. 피보나치 수를 구현하고 1234567의 나머지를 구하는 과정에서
 오버플로우를 고치느라 시간이 좀 걸렸다.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
@@ -333,7 +330,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/12909?language=java</p
 
         <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
     <span class="o">}</span>
-</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 주특기 입문 주 차 발제가 있었다.]]></summary></entry><entry><title type="html">TIL 18일 차 프로그래밍 주 차, 알고리즘 테스트</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16/" rel="alternate" type="text/html" title="TIL 18일 차 프로그래밍 주 차, 알고리즘 테스트" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16/"><![CDATA[<p>오늘은 알고리즘 테스트가 있는 날이었다.<br />
+</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 주특기 입문 주 차 발제가 있었다. 스프링을 배우기 앞서 전반적인 내용과 조언, 스케줄, 팀 배정 등이 이루어졌고, 주특기(스프링) 입문 주 차는, 일주일 동안 진행된다.]]></summary></entry><entry><title type="html">TIL 18일 차 프로그래밍 주 차, 알고리즘 테스트</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16/" rel="alternate" type="text/html" title="TIL 18일 차 프로그래밍 주 차, 알고리즘 테스트" /><published>2022-12-22T00:00:00+09:00</published><updated>2022-12-22T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL16/"><![CDATA[<p>오늘은 알고리즘 테스트가 있는 날이었다.<br />
 4가지 정도의 문제가 나왔고 4번 문제 난이도 상의 문제 빼고는 다 푼 것 같다..</p>
 
 <p>내일이면 처음 해봤기에 너무나 어려웠던 알고리즘 주차가 끝나고,<br />
