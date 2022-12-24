@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-24T20:55:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 20일 차 드디어 스프링 시작, 어렵다…</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18/" rel="alternate" type="text/html" title="TIL 20일 차 드디어 스프링 시작, 어렵다…" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18/"><![CDATA[<p>지금까지는 인텔리 제이 커뮤니티 버전만으로 잘 사용해오고 있었는데</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-24T20:58:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 20일 차 드디어 스프링 시작, 어렵다…</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18/" rel="alternate" type="text/html" title="TIL 20일 차 드디어 스프링 시작, 어렵다…" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18/"><![CDATA[<p>지금까지는 인텔리 제이 커뮤니티 버전만으로 잘 사용해오고 있었는데</p>
 
 <p>커뮤니티 버전으로 스프링 공부를 하던 도중, 빈번하게 발생하는<br />
 스프링 프로젝트 생성, SQL 관련 작업 등 불편한 점이 많더라고요,</p>
@@ -267,6 +267,16 @@ Mysql의 쿼리문으로 사용하기 위해 하는 설정입니다.</p>
 MVC, Dao, Dto, controller, Entity, service, repository 등</p>
 
 <p>스프링 패키지 구조와 전반적인 흐름도 먼저 공부하고 가자.</p>
+
+<p><img src="../../images/2022-12-24-20-55-35.png" alt="" /></p>
+
+<p><a href="https://code-lab1.tistory.com/201">사진 참조 블로그</a></p>
+
+<p>Spring boot MVC Pattern</p>
+
+<p><img src="../../images/2022-12-24-20-57-49.png" alt="" /></p>
+
+<p><a href="https://iyk2h.tistory.com/147">사진 및 내용 참조 블로그</a></p>
 
 <h3 id="스프링으로-실습">스프링으로 실습</h3>
 

@@ -378,7 +378,7 @@ var store = [{
         "teaser": null
       },{
         "title": "스프링 - 스프링 전반적인 개념 잡고가기",
-        "excerpt":"본격적으로 스프링 실습을 하기전 MVC, Dao, Dto, controller, Entity, service, repository 등 스프링 패키지 구조와 전반적인 흐름도 먼저 공부하고 가자. 스프링으로 실습 필요한 의존파일들은 그래들이 알아서 가저와줍니다 main/resources/application.properties에 아래의 설정을 저장한뒤 시작합니다. spring.h2.console.enabled=true spring.datasource.url=jdbc:h2:mem:db spring.datasource.username=sa spring.datasource.password= 스프링 코드 업데이트 시 재시작 방법 처음 스프링 디펜던시중 devtools를 설치한다. Modify options 눌러서...","categories": ["Spring"],
+        "excerpt":"본격적으로 스프링 실습을 하기전 MVC, Dao, Dto, controller, Entity, service, repository 등 스프링 패키지 구조와 전반적인 흐름도 먼저 공부하고 가자. 사진 참조 블로그 Spring boot MVC Pattern 사진 및 내용 참조 블로그 스프링으로 실습 필요한 의존파일들은 그래들이 알아서 가저와줍니다 main/resources/application.properties에 아래의 설정을 저장한뒤 시작합니다. spring.h2.console.enabled=true spring.datasource.url=jdbc:h2:mem:db spring.datasource.username=sa spring.datasource.password= 스프링 코드...","categories": ["Spring"],
         "tags": ["Spring boot 실습"],
         "url": "/spring/Spring4/",
         "teaser": null
