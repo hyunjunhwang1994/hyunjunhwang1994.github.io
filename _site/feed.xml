@@ -1,45 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-24T19:39:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">WIL 3주 차 회고, 힘들었던 알고리즘 주 차가 끝나고, 앞으로의 계획</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL03/" rel="alternate" type="text/html" title="WIL 3주 차 회고, 힘들었던 알고리즘 주 차가 끝나고, 앞으로의 계획" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL03</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL03/"><![CDATA[<p>알고리즘 주 차가 끝나면서 사실 이전의 TIL들에서 계속 얘기해왔지만,<br />
-코딩 테스트 문제 자체를 풀어본 적이 없어 처음에 힘들었다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-24T20:13:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 20일 차 드디어 스프링 시작, 어렵다…</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18/" rel="alternate" type="text/html" title="TIL 20일 차 드디어 스프링 시작, 어렵다…" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18/"><![CDATA[<p>지금까지는 인텔리 제이 커뮤니티 버전만으로 잘 사용해오고 있었는데</p>
 
-<p>하지만 너무 오래 걸리는 문제들은 정답을 보고 내 것으로 만들고 풀고,<br />
-아는 것은 오래 걸려도 풀어서, 이 과정을 반복하다 보니 프로그래밍 주 차 첫날과 비교하면
-그래도 많이 성장한 것 같다.</p>
+<p>커뮤니티 버전으로 스프링 공부를 하던 도중, 빈번하게 발생하는<br />
+스프링 프로젝트 생성, SQL 관련 작업 등 불편한 점이 많더라고요,</p>
 
-<h2 id="지금까지-배워-온-것">지금까지 배워 온 것</h2>
-<p>오늘 기준 21일 정도가 지났는데 지금까지 오면서<br />
-배웠던 것들, 파이썬(플라스크), 몽고 DB, 알고리즘, JWT 등</p>
+<p>그래서 너무 불편해서 팀원들이랑 소통하던 중,<br />
+항해에서 4개월치 인텔리 제이 얼티메이트를 제공해 준다 하더라고요..???</p>
 
-<p>시간이 난다면.. 다시 정리하는 과정을 거치고,</p>
+<p>그래서 해당 노션 문서를 보고 4개월 얼티메이트 코드를 찾았고,<br />
+사용해서 잘 쓰고 있습니다…</p>
 
-<p>확실히 포스팅을 하며 정리를 해가며 공부하는 것이 기억에 오래 남고<br />
-당장은 귀찮을 것 같아도 도움이 되는 것 같기에</p>
+<p>흑.. 프로그래밍 주 차(알고리즘, 코딩 테스트)에서 환경설정 부분을 클릭하면 나오는데</p>
 
-<h2 id="이제부터는">이제부터는</h2>
-<p>이제부터 배우는 것들은 블로그에 잘 정리해가며 기록하려 한다.<br />
-블로그 TIL, WIL도 어느 순간부터 좀 짧아진 감이 있는데 초심을 찾아서 다시<br />
-열심히 써야겠다.</p>
+<p>나는 이미 인텔리 제이 관련 환경설정을 맞췄다는 자만감?에 자세히 확인을 하지 않은 제 잘못입니다 ㅠㅠ</p>
 
-<p>금요일부터는 스프링을 시작했는데, 생각보다 모르는 용어들도 많고<br />
-어려운 내용들이나, 이론적이거나 원칙 같은 것이 너무나 많다.</p>
+<p>지금 당장 인텔리 제이 얼티메이트 버전은 아래와 같은 장점이 있습니다.</p>
+<ul>
+  <li>스프링 프로젝트 바로바로 생성 가능</li>
+  <li>SQL 관리 가능</li>
+</ul>
 
-<p>이제부터는 확실히 스케줄을 지켜가며 진행을 해야 잘 따라갈 수 있을 것 같다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="WIL" /><summary type="html"><![CDATA[알고리즘 주 차가 끝나면서 사실 이전의 TIL들에서 계속 얘기해왔지만, 코딩 테스트 문제 자체를 풀어본 적이 없어 처음에 힘들었다.]]></summary></entry><entry><title type="html">Spring4</title><link href="http://localhost:4000/Spring4/" rel="alternate" type="text/html" title="Spring4" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/Spring4</id><content type="html" xml:base="http://localhost:4000/Spring4/"><![CDATA[<h3 id="스프링으로-실습">스프링으로 실습</h3>
+<h2 id="주특기-주-차-계획">주특기 주 차 계획.</h2>
 
-<p><img src="../../images/2022-12-24-11-27-24.png" alt="" /></p>
+<p>스프링 주 차가 시작되고, 본격적으로 스프링을 공부하는데<br />
+지금까지 난이도가 10이었다면, 50 정도로 올라간 것 같다…</p>
 
-<p>필요한 의존파일들은 그래들이 알아서 가저와줍니다
-<img src="../../images/2022-12-24-11-28-05.png" alt="" />
-<img src="../../images/2022-12-24-11-28-11.png" alt="" /></p>
+<p>JPA, ORM, H2, MYSQL, 쿼리문 등등.</p>
 
-<p>main/resources/application.properties에</p>
+<p>사실 코딩도 코딩이지만,  H2랑 Mysql이 뭐가 다른 거지?<br />
+JPA는 뭐고 JDBC는 뭐지부터 시작해서…</p>
 
-<p>아래의 설정을 저장한뒤 시작합니다.</p>
+<p>이쯤 되니 용어 자체가 더 헷갈리기 시작했다.<br />
+그래서 아래의 스프링 정리 포스팅을 통해</p>
 
-<p>spring.h2.console.enabled=true
-spring.datasource.url=jdbc:h2:mem:db
-spring.datasource.username=sa
-spring.datasource.password=</p>
+<p><a href="https://hyunjunhwang1994.github.io/spring/Spring3/">오늘 정리한 스프링 포스트</a></p>
 
-<p><img src="../../images/2022-12-24-11-30-18.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[스프링으로 실습]]></summary></entry><entry><title type="html">스프링 - 훑어보기</title><link href="http://localhost:4000/spring/Spring3/" rel="alternate" type="text/html" title="스프링 - 훑어보기" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring3</id><content type="html" xml:base="http://localhost:4000/spring/Spring3/"><![CDATA[<p>제가 정리한 스프링 부트 기초 1, 2의 경우<br />
+<p>용어부터 정리를 하고 -&gt; 차근차근 넘어가면서 공부하는 방식으로 진행을 해봤다.</p>
+
+<p>그래서 이제부터는 용어 정리, 개념 정리를 확실하게 하면서 이해를 넘어가야겠다.</p>
+
+<p>이렇게 안 하면 나중에 더 어려운 개념이 나오면 더 어려울 것 같기 때문에..</p>
+
+<h2 id="오늘의-알고리즘-문제">오늘의 알고리즘 문제</h2>
+
+<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12909">프로그래머스 올바른 괄호 찾기</a></p>
+
+<p>Stack 자료구조를 활용해서 풀어 보았다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">boolean</span> <span class="nf">solution</span><span class="o">(</span><span class="nc">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">boolean</span> <span class="n">answer</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+
+        <span class="nc">Stack</span><span class="o">&lt;</span><span class="nc">Character</span><span class="o">&gt;</span> <span class="n">characters</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Stack</span><span class="o">&lt;&gt;();</span>
+
+
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">==</span> <span class="sc">'('</span><span class="o">){</span>
+                <span class="n">characters</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="sc">'('</span><span class="o">);</span>
+            <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">characters</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+
+                <span class="k">else</span> <span class="n">characters</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
+            <span class="o">}</span>
+
+        <span class="o">}</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="o">(</span><span class="n">characters</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">?</span> <span class="kc">true</span> <span class="o">:</span> <span class="kc">false</span><span class="o">;</span>
+
+        <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[지금까지는 인텔리 제이 커뮤니티 버전만으로 잘 사용해오고 있었는데]]></summary></entry><entry><title type="html">스프링 - 훑어보기</title><link href="http://localhost:4000/spring/Spring3/" rel="alternate" type="text/html" title="스프링 - 훑어보기" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring3</id><content type="html" xml:base="http://localhost:4000/spring/Spring3/"><![CDATA[<p>제가 정리한 스프링 부트 기초 1, 2의 경우<br />
 인텔리 제이 Community Edition 버전으로 진행하였기 때문에,</p>
 
 <p>아래의 사이트에서 스프링 프로젝트를 생성해 인텔리 제이로 실행했습니다만<br />
@@ -63,16 +90,18 @@ Database 관련 작업도 쉽게 가능합니다.</p>
 <p>전 세계적으로 많이 사용되는 RDBMS 형식의 관계형데이터베이스 시스템</p>
 
 <h3 id="jdbc-java-database-connectivity">JDBC (Java Database Connectivity)</h3>
-<p>자바 언어와 DB를 연결해 주는 통로와 같은 것.
+<p>자바 언어와 DB를 연결해 주는 통로와 같은 것.<br />
 자바를 이용한 DB 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약.</p>
 
-<p>자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API.
+<p>자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API.<br />
 SQL과 프로그래밍 언어의 통합 접근 중 한 형태</p>
 
-<p>필요한 이유
-db 학습 시 SQL 이용해서 db에다 직접 값을 넣거나 조회하는 등의 일을 수행했음.
-하지만 우리가 웹을 동작, 수행시킬 때마다 매번 그럴 수는 없음.
-그래서 프로그램이 이 일을 대신할 수 있게 만들어줘야 하는데 이때 사용하는 것이 JDBC이다.</p>
+<h4 id="필요한-이유">필요한 이유</h4>
+<p>db 학습 시 SQL 이용해서 db에다 직접 값을 넣거나 조회하는 등의 일을 수행했음.</p>
+
+<p>하지만 우리가 웹을 동작, 수행시킬 때마다 매번 그럴 수는 없음.</p>
+
+<p>그래서 프로그램이 이 일을 대신할 수 있게 만들어줘야 하는데 이때 사용하는 것이 JDBC이다.</p>
 
 <h3 id="orm-object-relational-mapping">ORM (Object Relational Mapping)</h3>
 <p>객체와 테이블을 매핑해서 패러다임의 불일치를 개발자 대신 해결해 준다.</p>
@@ -117,7 +146,7 @@ Spring Boot에서는 JSP가 아닌 Thymeleaf 사용을 권장하고 있다.</p>
 
 <p>이 용어들을 이어 붙여서 관계를 이해해 보자면, H2는 로컬 환경에서 쉽게 데이터베이스 작업을 하기 위해 사용한다.</p>
 
-<p>Spring에서는 JDBC만 사용 시 일일이 쿼리문을 다 입력하여 사용해야 한다.
+<p>Spring에서는 JDBC만 사용 시 일일이 쿼리문을 다 입력하여 사용해야 한다.<br />
 비즈니스 로직 개발보다 Sql 작성 및, 수정에 따른 관리에 더 많은 시간을 기울여야 한다.</p>
 
 <p>ORM, JPA가 등장하여 간단하게 쿼리를 작성 및 실행하면서,<br />
@@ -232,77 +261,36 @@ Mysql의 쿼리문으로 사용하기 위해 하는 설정입니다.</p>
 
 <p>이런 걸 언제 스프링에서 언제 일일이 다 관리하지 ..?</p>
 
-<p>그래서 ORM이 나오고 JPA이 나왔습니다.</p>
+<p>그래서 ORM이 나오고 JPA가 나왔습니다.</p>
 
-<p>스프링을 사용한 데이터베이스 관련 내용은 다음 글에 쓰도록 하겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring 훑어보기" /><summary type="html"><![CDATA[제가 정리한 스프링 부트 기초 1, 2의 경우 인텔리 제이 Community Edition 버전으로 진행하였기 때문에,]]></summary></entry><entry><title type="html">TIL 20일 차 드디어 스프링 시작, 어렵다…</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18/" rel="alternate" type="text/html" title="TIL 20일 차 드디어 스프링 시작, 어렵다…" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18/"><![CDATA[<p>지금까지는 인텔리 제이 커뮤니티 버전만으로 잘 사용해오고 있었는데</p>
+<p>스프링을 사용한 데이터베이스 관련 내용은 다음 글에 쓰도록 하겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring 훑어보기" /><summary type="html"><![CDATA[제가 정리한 스프링 부트 기초 1, 2의 경우 인텔리 제이 Community Edition 버전으로 진행하였기 때문에,]]></summary></entry><entry><title type="html">스프링 - 스프링 부트 실습</title><link href="http://localhost:4000/spring/Spring4/" rel="alternate" type="text/html" title="스프링 - 스프링 부트 실습" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring4</id><content type="html" xml:base="http://localhost:4000/spring/Spring4/"><![CDATA[<h3 id="스프링으로-실습">스프링으로 실습</h3>
 
-<p>커뮤니티 버전으로 스프링 공부를 하던 도중, 빈번하게 발생하는<br />
-스프링 프로젝트 생성, SQL 관련 작업 등 불편한 점이 많더라고요,</p>
+<p><img src="../../images/2022-12-24-11-27-24.png" alt="" /></p>
 
-<p>그래서 너무 불편해서 팀원들이랑 소통하던 중,<br />
-항해에서 4개월치 인텔리 제이 얼티메이트를 제공해 준다 하더라고요..???</p>
+<p>필요한 의존파일들은 그래들이 알아서 가저와줍니다
+<img src="../../images/2022-12-24-11-28-05.png" alt="" />
+<img src="../../images/2022-12-24-11-28-11.png" alt="" /></p>
 
-<p>그래서 해당 노션 문서를 보고 4개월 얼티메이트 코드를 찾았고,<br />
-사용해서 잘 쓰고 있습니다…</p>
+<p>main/resources/application.properties에</p>
 
-<p>흑.. 프로그래밍 주 차(알고리즘, 코딩 테스트)에서 환경설정 부분을 클릭하면 나오는데</p>
+<p>아래의 설정을 저장한뒤 시작합니다.</p>
 
-<p>나는 이미 인텔리 제이 관련 환경설정을 맞췄다는 자만감?에 자세히 확인을 하지 않은 제 잘못입니다 ㅠㅠ</p>
+<p>spring.h2.console.enabled=true
+spring.datasource.url=jdbc:h2:mem:db
+spring.datasource.username=sa
+spring.datasource.password=</p>
 
-<p>지금 당장 인텔리 제이 얼티메이트 버전은 아래와 같은 장점이 있습니다.</p>
-<ul>
-  <li>스프링 프로젝트 바로바로 생성 가능</li>
-  <li>SQL 관리 가능</li>
-</ul>
+<p><img src="../../images/2022-12-24-11-30-18.png" alt="" /></p>
 
-<h2 id="주특기-주-차-계획">주특기 주 차 계획.</h2>
+<h3 id="스프링-재시작-방법">스프링 재시작 방법</h3>
+<p>처음 스프링 디펜던시중 devtools를 설치한다.</p>
 
-<p>스프링 주 차가 시작되고, 본격적으로 스프링을 공부하는데<br />
-지금까지 난이도가 10이었다면, 50 정도로 올라간 것 같다…</p>
+<p><img src="../../images/2022-12-24-19-59-39.png" alt="" /></p>
 
-<p>JPA, ORM, H2, MYSQL, 쿼리문 등등.</p>
+<p>Modify options 눌러서 진행
+<img src="../../images/2022-12-24-20-00-18.png" alt="" /></p>
 
-<p>사실 코딩도 코딩이지만,  H2랑 Mysql이 뭐가 다른 거지?<br />
-JPA는 뭐고 JDBC는 뭐지부터 시작해서…</p>
-
-<p>이쯤 되니 용어 자체가 더 헷갈리기 시작했다.<br />
-그래서 아래의 스프링 정리 포스팅을 통해</p>
-
-<p><a href="https://hyunjunhwang1994.github.io/spring/Spring3/">오늘 정리한 스프링 포스트</a></p>
-
-<p>용어부터 정리를 하고 -&gt; 차근차근 넘어가면서 공부하는 방식으로 진행을 해봤다.</p>
-
-<p>그래서 이제부터는 용어 정리, 개념 정리를 확실하게 하면서 이해를 넘어가야겠다.</p>
-
-<p>이렇게 안 하면 나중에 더 어려운 개념이 나오면 더 어려울 것 같기 때문에..</p>
-
-<h2 id="오늘의-알고리즘-문제">오늘의 알고리즘 문제</h2>
-
-<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/12909">프로그래머스 올바른 괄호 찾기</a></p>
-
-<p>Stack 자료구조를 활용해서 풀어 보았다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">boolean</span> <span class="nf">solution</span><span class="o">(</span><span class="nc">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">boolean</span> <span class="n">answer</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-
-        <span class="nc">Stack</span><span class="o">&lt;</span><span class="nc">Character</span><span class="o">&gt;</span> <span class="n">characters</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Stack</span><span class="o">&lt;&gt;();</span>
-
-
-        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">==</span> <span class="sc">'('</span><span class="o">){</span>
-                <span class="n">characters</span><span class="o">.</span><span class="na">push</span><span class="o">(</span><span class="sc">'('</span><span class="o">);</span>
-            <span class="o">}</span><span class="k">else</span><span class="o">{</span>
-                <span class="k">if</span><span class="o">(</span><span class="n">characters</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-
-                <span class="k">else</span> <span class="n">characters</span><span class="o">.</span><span class="na">pop</span><span class="o">();</span>
-            <span class="o">}</span>
-
-        <span class="o">}</span>
-        <span class="n">answer</span> <span class="o">=</span> <span class="o">(</span><span class="n">characters</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">?</span> <span class="kc">true</span> <span class="o">:</span> <span class="kc">false</span><span class="o">;</span>
-
-        <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
-    <span class="o">}</span>
-</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[지금까지는 인텔리 제이 커뮤니티 버전만으로 잘 사용해오고 있었는데]]></summary></entry><entry><title type="html">TIL 19일 차 주특기 입문 주 차 발제</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17/" rel="alternate" type="text/html" title="TIL 19일 차 주특기 입문 주 차 발제" /><published>2022-12-23T00:00:00+09:00</published><updated>2022-12-23T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17/"><![CDATA[<p>오늘은 주특기 입문 주 차 발제가 있었다.<br />
+<p>코드 업데이트시 스프링부트를 재시작하지 않ㅇ아도 자동으로 업데이트시 재시작 시켜준다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring boot 실습" /><summary type="html"><![CDATA[스프링으로 실습]]></summary></entry><entry><title type="html">TIL 19일 차 주특기 입문 주 차 발제</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17/" rel="alternate" type="text/html" title="TIL 19일 차 주특기 입문 주 차 발제" /><published>2022-12-23T00:00:00+09:00</published><updated>2022-12-23T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17/"><![CDATA[<p>오늘은 주특기 입문 주 차 발제가 있었다.<br />
 스프링을 배우기 앞서 전반적인 내용과 조언, 스케줄, 팀 배정 등이 이루어졌고,<br />
 주특기(스프링) 입문 주 차는, 일주일 동안 진행된다.</p>
 
@@ -975,4 +963,113 @@ public void setStop(boolean stop){
 
 <p>-&gt; 더 공부를 해야 할 것 같다. 난이도 하의 문제도 어렵다니.. ㅠ</p>
 
-<p>스프링을 공부하기 전 알고리즘과, 자바에 대해서 좀 더 공부해 봐야겠다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 항해99에서 내일모레 있음 알고리즘 테스트를 치르기 전, 알고리즘 모의고사 시험이 있었다..]]></summary></entry></feed>
+<p>스프링을 공부하기 전 알고리즘과, 자바에 대해서 좀 더 공부해 봐야겠다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 항해99에서 내일모레 있음 알고리즘 테스트를 치르기 전, 알고리즘 모의고사 시험이 있었다..]]></summary></entry><entry><title type="html">Github Readme.md 잔디 먹는 뱀 만들기</title><link href="http://localhost:4000/git/Git03/" rel="alternate" type="text/html" title="Github Readme.md 잔디 먹는 뱀 만들기" /><published>2022-12-19T00:00:00+09:00</published><updated>2022-12-19T00:00:00+09:00</updated><id>http://localhost:4000/git/Git03</id><content type="html" xml:base="http://localhost:4000/git/Git03/"><![CDATA[<p><img src="../../images/Dec-19-2022-16-05-18.gif" alt="" /></p>
+
+<p>일정 시간마다 자신의 잔디 정보를 기준으로 이미지 형태가 자동으로 만들어지고,<br />
+연한 색 -&gt; 진한 색 잔디 순서로 먹고 원위치로 돌아갑니다.</p>
+
+<p><a href="https://aeda.tistory.com/m/21">참조한 블로그</a></p>
+
+<h2 id="repo-directory-만들기">repo, directory 만들기</h2>
+
+<p>본인 계정명 Repo 생성 및, .gihub/workflows를 생성해 줍니다.<br />
+repository 생성 시 readme.md 포함해서 만들어주세요!
+<img src="../../images/2022-12-19-16-16-18.png" alt="" /></p>
+
+<p>자신 본인 id로 레파지토리를 만들고 Readme.md를 만들고 수정하면<br />
+자신의 계정 프로필 방문 시 소개 페이지를 만든 것이 됩니다.</p>
+
+<h2 id="token-발급받기">token 발급받기</h2>
+
+<p><img src="../../images/2022-12-19-16-18-24.png" alt="" /></p>
+
+<p><img src="../../images/2022-12-19-16-18-37.png" alt="" /></p>
+
+<p><img src="../../images/2022-12-19-16-18-55.png" alt="" /></p>
+
+<p><img src="../../images/2022-12-19-16-19-08.png" alt="" /></p>
+
+<p>옵션 체크 후 제너레이트 클릭
+<img src="../../images/2022-12-19-16-20-46.png" alt="" /></p>
+
+<p>토큰 관련된 정보나 파일은 유출되면 안 됩니다!!</p>
+
+<h2 id="snakeyml">snake.yml</h2>
+
+<p>아까 만들었던 폴더에 snake.yml을 만들고 아래의 내용을 붙여 넣고,<br />
+본인의 계정명을 적어주세요 -&gt; 영문 아이디만 적어주세요.</p>
+
+<p>snake.yml 파일은 편집기로 하셔서 push 하셔도 되고, 깃허브에서 직접 생성하셔도 됩니다.</p>
+
+<p><img src="../../images/2022-12-19-16-23-35.png" alt="" /></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c1"># 커밋 먹는 뱀 그래프 생성을 위한 GitHub Action🐍</span>
+
+    <span class="na">name</span><span class="pi">:</span> <span class="s">Generate Snake</span>
+
+    <span class="c1"># Action이 언제 구동될지 결정</span>
+
+    <span class="na">on</span><span class="pi">:</span>
+    <span class="na">schedule</span><span class="pi">:</span>
+        <span class="c1"># 6시간마다 한 번(수정 가능)</span>
+        <span class="pi">-</span> <span class="na">cron</span><span class="pi">:</span> <span class="s2">"</span><span class="s">0</span><span class="nv"> </span><span class="s">*/6</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+
+    <span class="c1"># 자동으로 Action이 실행되도록 함</span>
+    <span class="na">workflow_dispatch</span><span class="pi">:</span>
+
+    <span class="na">jobs</span><span class="pi">:</span>
+    <span class="na">build</span><span class="pi">:</span>
+        <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>
+        <span class="na">steps</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v2</span>
+
+        <span class="c1"># 뱀 생성</span>
+        <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">Platane/snk@master</span>
+            <span class="s">id</span><span class="err">:</span> <span class="s">snake-gif</span>
+            <span class="s">with</span><span class="err">:</span>
+            <span class="na">github_user_name</span><span class="pi">:</span> <span class="kt">!!!</span><span class="s">본인의 깃허브 계정명 입력 ex) hongildong23 !!!</span>
+            <span class="c1"># output branch에 gif, svg를 각각 생성</span>
+            <span class="na">gif_out_path</span><span class="pi">:</span> <span class="s">dist/github-contribution-grid-snake.gif</span>
+            <span class="na">svg_out_path</span><span class="pi">:</span> <span class="s">dist/github-contribution-grid-snake.svg</span>
+
+        <span class="pi">-</span> <span class="na">run</span><span class="pi">:</span> <span class="s">git status</span>
+
+        <span class="c1"># 변경사항 push</span>
+        <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Push changes</span>
+            <span class="s">uses</span><span class="err">:</span> <span class="s">ad-m/github-push-action@master</span>
+            <span class="s">with</span><span class="err">:</span>
+            <span class="na">github_token</span><span class="pi">:</span> <span class="s">$</span>
+            <span class="na">branch</span><span class="pi">:</span> <span class="s">master</span>
+            <span class="na">force</span><span class="pi">:</span> <span class="no">true</span>
+
+        <span class="pi">-</span> <span class="na">uses</span><span class="pi">:</span> <span class="s">crazy-max/ghaction-github-pages@v2.1.3</span>
+            <span class="s">with</span><span class="err">:</span>
+            <span class="na">target_branch</span><span class="pi">:</span> <span class="s">output</span>
+            <span class="na">build_dir</span><span class="pi">:</span> <span class="s">dist</span>
+            <span class="na">env</span><span class="pi">:</span>
+            <span class="na">GITHUB_TOKEN</span><span class="pi">:</span> <span class="s">$</span>
+</code></pre></div></div>
+
+<p>GITHUB_TOKEN 부분(아래 참고)에 ${{ secrets.GITHUB_TOKEN }} 내용 2줄 추가해 주세요.</p>
+
+<p><img src="../../images/2022-12-19-16-42-44.png" alt="" /></p>
+
+<p>저장 후 Push 해주세요.</p>
+
+<h2 id="actions">Actions</h2>
+
+<p>그다음 본인의 레파지토리 -&gt; Actions를 들어가면 아래처럼<br />
+Generate Snake가 생겨 있습니다. 들어갑시다!</p>
+
+<p><img src="../../images/2022-12-19-16-26-23.png" alt="" /></p>
+
+<p>자 이제 Run workflow만 눌러주면 실행됩니다.
+<img src="../../images/2022-12-19-16-27-01.png" alt="" /></p>
+
+<p>이제 본인의 깃허브 계정명 레파지토리 -&gt; readme.md에 아래의 내용만 추가해 주면 자동으로 생성됩니다.
+(URL 주소에 아이디 본인의 아이디로 변경하세요.)</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">snake gif</span><span class="p">](</span><span class="sx">https://github.com/아이디/아이디/blob/output/github-contribution-grid-snake.svg</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>아까 snake.yml에서 적었던 시간(기본 설정 6시간)마다 
+본인의 잔디 정보에 따라 Gif(움직이는 뱀))이 재생성되어 프로필 readme.md에 보이게 됩니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Git" /><category term="깃허브 잔디 먹는 뱀" /><summary type="html"><![CDATA[]]></summary></entry></feed>

@@ -377,21 +377,15 @@ var store = [{
         "url": "/spring/Spring3/",
         "teaser": null
       },{
-        "title": "Spring4",
-        "excerpt":"스프링으로 실습      필요한 의존파일들은 그래들이 알아서 가저와줍니다     main/resources/application.properties에   아래의 설정을 저장한뒤 시작합니다.   spring.h2.console.enabled=true spring.datasource.url=jdbc:h2:mem:db spring.datasource.username=sa spring.datasource.password=     ","categories": [],
-        "tags": [],
-        "url": "/Spring4/",
+        "title": "스프링 - 스프링 부트 실습",
+        "excerpt":"스프링으로 실습      필요한 의존파일들은 그래들이 알아서 가저와줍니다     main/resources/application.properties에   아래의 설정을 저장한뒤 시작합니다.   spring.h2.console.enabled=true spring.datasource.url=jdbc:h2:mem:db spring.datasource.username=sa spring.datasource.password=      스프링 재시작 방법  처음 스프링 디펜던시중 devtools를 설치한다.      Modify options 눌러서 진행    코드 업데이트시 스프링부트를 재시작하지 않ㅇ아도 자동으로 업데이트시 재시작 시켜준다.  ","categories": ["Spring"],
+        "tags": ["Spring boot 실습"],
+        "url": "/spring/Spring4/",
         "teaser": null
       },{
         "title": "TIL 20일 차 드디어 스프링 시작, 어렵다...",
         "excerpt":"지금까지는 인텔리 제이 커뮤니티 버전만으로 잘 사용해오고 있었는데 커뮤니티 버전으로 스프링 공부를 하던 도중, 빈번하게 발생하는 스프링 프로젝트 생성, SQL 관련 작업 등 불편한 점이 많더라고요, 그래서 너무 불편해서 팀원들이랑 소통하던 중, 항해에서 4개월치 인텔리 제이 얼티메이트를 제공해 준다 하더라고요..??? 그래서 해당 노션 문서를 보고 4개월 얼티메이트 코드를 찾았고, 사용해서...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL18/",
-        "teaser": null
-      },{
-        "title": "WIL 3주 차 회고, 힘들었던 알고리즘 주 차가 끝나고, 앞으로의 계획",
-        "excerpt":"알고리즘 주 차가 끝나면서 사실 이전의 TIL들에서 계속 얘기해왔지만, 코딩 테스트 문제 자체를 풀어본 적이 없어 처음에 힘들었다. 하지만 너무 오래 걸리는 문제들은 정답을 보고 내 것으로 만들고 풀고, 아는 것은 오래 걸려도 풀어서, 이 과정을 반복하다 보니 프로그래밍 주 차 첫날과 비교하면 그래도 많이 성장한 것 같다. 지금까지 배워...","categories": ["항해99"],
-        "tags": ["항해99","WIL"],
-        "url": "/%ED%95%AD%ED%95%B499/WIL03/",
         "teaser": null
       }]

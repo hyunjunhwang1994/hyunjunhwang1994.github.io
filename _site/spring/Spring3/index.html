@@ -218,7 +218,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">66</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">65</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -235,7 +235,7 @@
                     
                 
                     
-                        <li><a href="/categories/hanghae99" class="">항해99 🚢(23)</a></li>
+                        <li><a href="/categories/hanghae99" class="">항해99 🚢(22)</a></li>
                     
                 
                     
@@ -439,7 +439,7 @@
                     
                 
                     
-                        <li><a href="/categories/spring" class="">Spring (3)</a></li>
+                        <li><a href="/categories/spring" class="">Spring (4)</a></li>
                     
                 
                     
@@ -623,7 +623,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#시작에-앞서-용어-정리부터">시작에 앞서 용어 정리부터.</a><ul><li><a href="#mysql">Mysql</a></li><li><a href="#jdbc-java-database-connectivity">JDBC (Java Database Connectivity)</a></li><li><a href="#orm-object-relational-mapping">ORM (Object Relational Mapping)</a></li><li><a href="#jpa-java-persisitence-api">JPA (Java Persisitence API)</a></li><li><a href="#hibernate">Hibernate</a></li><li><a href="#h2">H2</a></li><li><a href="#lombok">lombok</a></li><li><a href="#thymeleaf">thymeleaf</a></li></ul></li><li><a href="#간단-관계-정리">간단 관계 정리</a></li><li><a href="#실습">실습</a></li></ul>
+              <ul class="toc__menu"><li><a href="#시작에-앞서-용어-정리부터">시작에 앞서 용어 정리부터.</a><ul><li><a href="#mysql">Mysql</a></li><li><a href="#jdbc-java-database-connectivity">JDBC (Java Database Connectivity)</a><ul><li><a href="#필요한-이유">필요한 이유</a></li></ul></li><li><a href="#orm-object-relational-mapping">ORM (Object Relational Mapping)</a></li><li><a href="#jpa-java-persisitence-api">JPA (Java Persisitence API)</a></li><li><a href="#hibernate">Hibernate</a></li><li><a href="#h2">H2</a></li><li><a href="#lombok">lombok</a></li><li><a href="#thymeleaf">thymeleaf</a></li></ul></li><li><a href="#간단-관계-정리">간단 관계 정리</a></li><li><a href="#실습">실습</a></li></ul>
 
             </nav>
           </aside>
@@ -652,16 +652,18 @@ Database 관련 작업도 쉽게 가능합니다.</p>
 <p>전 세계적으로 많이 사용되는 RDBMS 형식의 관계형데이터베이스 시스템</p>
 
 <h3 id="jdbc-java-database-connectivity">JDBC (Java Database Connectivity)</h3>
-<p>자바 언어와 DB를 연결해 주는 통로와 같은 것.
+<p>자바 언어와 DB를 연결해 주는 통로와 같은 것.<br />
 자바를 이용한 DB 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약.</p>
 
-<p>자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API.
+<p>자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API.<br />
 SQL과 프로그래밍 언어의 통합 접근 중 한 형태</p>
 
-<p>필요한 이유
-db 학습 시 SQL 이용해서 db에다 직접 값을 넣거나 조회하는 등의 일을 수행했음.
-하지만 우리가 웹을 동작, 수행시킬 때마다 매번 그럴 수는 없음.
-그래서 프로그램이 이 일을 대신할 수 있게 만들어줘야 하는데 이때 사용하는 것이 JDBC이다.</p>
+<h4 id="필요한-이유">필요한 이유</h4>
+<p>db 학습 시 SQL 이용해서 db에다 직접 값을 넣거나 조회하는 등의 일을 수행했음.</p>
+
+<p>하지만 우리가 웹을 동작, 수행시킬 때마다 매번 그럴 수는 없음.</p>
+
+<p>그래서 프로그램이 이 일을 대신할 수 있게 만들어줘야 하는데 이때 사용하는 것이 JDBC이다.</p>
 
 <h3 id="orm-object-relational-mapping">ORM (Object Relational Mapping)</h3>
 <p>객체와 테이블을 매핑해서 패러다임의 불일치를 개발자 대신 해결해 준다.</p>
@@ -706,7 +708,7 @@ Spring Boot에서는 JSP가 아닌 Thymeleaf 사용을 권장하고 있다.</p>
 
 <p>이 용어들을 이어 붙여서 관계를 이해해 보자면, H2는 로컬 환경에서 쉽게 데이터베이스 작업을 하기 위해 사용한다.</p>
 
-<p>Spring에서는 JDBC만 사용 시 일일이 쿼리문을 다 입력하여 사용해야 한다.
+<p>Spring에서는 JDBC만 사용 시 일일이 쿼리문을 다 입력하여 사용해야 한다.<br />
 비즈니스 로직 개발보다 Sql 작성 및, 수정에 따른 관리에 더 많은 시간을 기울여야 한다.</p>
 
 <p>ORM, JPA가 등장하여 간단하게 쿼리를 작성 및 실행하면서,<br />
@@ -821,7 +823,7 @@ Mysql의 쿼리문으로 사용하기 위해 하는 설정입니다.</p>
 
 <p>이런 걸 언제 스프링에서 언제 일일이 다 관리하지 ..?</p>
 
-<p>그래서 ORM이 나오고 JPA이 나왔습니다.</p>
+<p>그래서 ORM이 나오고 JPA가 나왔습니다.</p>
 
 <p>스프링을 사용한 데이터베이스 관련 내용은 다음 글에 쓰도록 하겠습니다.</p>
 
@@ -887,6 +889,8 @@ Mysql의 쿼리문으로 사용하기 위해 하는 설정입니다.</p>
 
 
   
+
+  
   	
   	
   	
@@ -899,7 +903,7 @@ Mysql의 쿼리문으로 사용하기 위해 하는 설정입니다.</p>
       <a href="/spring/Spring2/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>스프링 부트 기초2</a>
     
     
-      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
+      <a href="/spring/Spring4/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>스프링 - 스프링 부트 실습</a>
     
   </nav>
 
@@ -914,68 +918,6 @@ Mysql의 쿼리문으로 사용하기 위해 하는 설정입니다.</p>
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/%ED%95%AD%ED%95%B499/WIL03/" rel="permalink">WIL 3주 차 회고, 힘들었던 알고리즘 주 차가 끝나고, 앞으로의 계획
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-12-24T00:00:00+09:00">2022-12-24</time>
-      </span>
-    
-
-                 
-                
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          2 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
         
           
 
@@ -1048,7 +990,7 @@ Mysql의 쿼리문으로 사용하기 위해 하는 설정입니다.</p>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/Spring4/" rel="permalink">Spring4
+        <a href="/spring/Spring4/" rel="permalink">스프링 - 스프링 부트 실습
 </a>
       
     </h2>
@@ -1111,6 +1053,68 @@ Mysql의 쿼리문으로 사용하기 위해 하는 설정입니다.</p>
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
         <a href="/%ED%95%AD%ED%95%B499/TIL17/" rel="permalink">TIL 19일 차 주특기 입문 주 차 발제
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-23T00:00:00+09:00">2022-12-23</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/java/Java17/" rel="permalink">객체 지향 프로그래밍 - SOLID 원칙
 </a>
       
     </h2>
