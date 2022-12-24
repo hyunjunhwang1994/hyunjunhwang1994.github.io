@@ -218,7 +218,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">65</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">66</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -608,7 +608,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          13 분 소요
+          14 분 소요
         
       </span>
     
@@ -623,7 +623,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#시작에-앞서-용어-정리부터">시작에 앞서 용어 정리부터.</a><ul><li><a href="#mysql">Mysql</a></li><li><a href="#jdbc-java-database-connectivity">JDBC (Java Database Connectivity)</a></li><li><a href="#orm-object-relational-mapping">ORM (Object Relational Mapping)</a></li><li><a href="#jpa-java-persisitence-api">JPA (Java Persisitence API)</a></li><li><a href="#hibernate">Hibernate</a></li><li><a href="#h2">H2</a></li><li><a href="#lombok">lombok</a></li><li><a href="#thymeleaf">thymeleaf</a></li></ul></li><li><a href="#간단-관계-정리">간단 관계 정리</a></li><li><a href="#실습">실습</a><ul><li><a href="#스프링으로-실습">스프링으로 실습</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#시작에-앞서-용어-정리부터">시작에 앞서 용어 정리부터.</a><ul><li><a href="#mysql">Mysql</a></li><li><a href="#jdbc-java-database-connectivity">JDBC (Java Database Connectivity)</a></li><li><a href="#orm-object-relational-mapping">ORM (Object Relational Mapping)</a></li><li><a href="#jpa-java-persisitence-api">JPA (Java Persisitence API)</a></li><li><a href="#hibernate">Hibernate</a></li><li><a href="#h2">H2</a></li><li><a href="#lombok">lombok</a></li><li><a href="#thymeleaf">thymeleaf</a></li></ul></li><li><a href="#간단-관계-정리">간단 관계 정리</a></li><li><a href="#실습">실습</a></li></ul>
 
             </nav>
           </aside>
@@ -716,19 +716,19 @@ Spring Boot에서는 JSP가 아닌 Thymeleaf 사용을 권장하고 있다.</p>
 
 <p><img src="../../images/2022-12-24-13-29-30.png" alt="" /></p>
 
-<p><a href="https://suhwan.dev/2019/02/24/jpa-vs-hibernate-vs-spring-data-jpa/">사진 출처및 참고 블로그</a></p>
+<p><a href="https://suhwan.dev/2019/02/24/jpa-vs-hibernate-vs-spring-data-jpa/">사진 출처 및 참고 블로그</a></p>
 
 <p><a href="https://victorydntmd.tistory.com/195">JPA, Hibernate 관련 좋은 참고 블로그</a>
 <a href="https://gmlwjd9405.github.io/2019/02/01/orm.html">영속성, ORM 블로그</a></p>
 
 <h2 id="실습">실습</h2>
 
-<p>일단은 Spring, H2, Mysql 쿼리형식을 이용 해
+<p>일단은 Spring, H2, Mysql 쿼리 형식을 이용해
 쿼리를 이용하는 방법부터 기술하겠습니다.</p>
 
 <p><img src="../../images/2022-12-24-09-37-25.png" alt="" /></p>
 
-<p>아라처럼 추가해 프로젝트를 생성해줍니다.
+<p>아라처럼 추가해 프로젝트를 생성해 줍니다.
 <img src="../../images/2022-12-24-09-38-32.png" alt="" /></p>
 
 <p><img src="../../images/2022-12-24-09-39-03.png" alt="" /></p>
@@ -736,10 +736,10 @@ Spring Boot에서는 JSP가 아닌 Thymeleaf 사용을 권장하고 있다.</p>
 <p><br /></p>
 
 <p>Connection type을 눌러,<br />
-인메모리 방식으로 변경후 아래url을 url에 추가해주고 생성합니다.</p>
+인 메모리 방식으로 변경 후 아래 url을 url에 추가해 주고 생성합니다.</p>
 
 <p>jdbc:h2:mem:test;MODE=MYSQL;<br />
-혹시 위의 url로 진행이안되거나 진행중 오류가 난다면,</p>
+혹시 위의 url로 진행이 안되거나 진행 중 오류가 난다면,</p>
 
 <p>아래의 url 쓰세요.<br />
 jdbc:h2:mem:test;MODE=MYSQL;OLD_INFORMATION_SCHEMA=TRUE;</p>
@@ -749,15 +749,15 @@ jdbc:h2:mem:test;MODE=MYSQL;OLD_INFORMATION_SCHEMA=TRUE;</p>
 <p><img src="../../images/2022-12-24-09-46-51.png" alt="" /></p>
 
 <p>그다음 테스트 커넥션을 누르고,<br />
-만약 첫 실행시 드라이버 설치관련 문구가 나온다면 download driver files를 눌러 설치해주세요.</p>
+만약 첫 실행 시 드라이버 설치 관련 문구가 나온다면 download driver files를 눌러 설치해 주세요.</p>
 
-<p>그럼 드라이버 설치를 자동으로해주고 아래처럼 성공 결과가 나옵니다.
+<p>그럼 드라이버 설치를 자동으로 해주고 아래처럼 성공 결과가 나옵니다.
 <img src="../../images/2022-12-24-08-51-39.png" alt="" /></p>
 
 <p>일단 아래처럼 나오면 성공입니다.<br />
 <img src="../../images/2022-12-24-09-41-03.png" alt="" /></p>
 
-<p>콘솔에 아래처럼 입력해볼까요?</p>
+<p>콘솔에 아래처럼 입력해 볼까요?</p>
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">MAJOR</span>
 <span class="p">(</span>
     <span class="n">major_code</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">primary</span> <span class="k">key</span> <span class="k">comment</span> <span class="s1">'주특기코드'</span><span class="p">,</span>
@@ -779,23 +779,23 @@ Mysql쿼리문을 인식하지 못해 나오는 빨간 줄입니다.<br />
 <p>아래처럼 바꿔주시면 됩니다.
 <img src="../../images/2022-12-24-09-18-36.png" alt="" /></p>
 
-<p>이래도 빨간줄이 뜹니다.</p>
+<p>이래도 빨간 줄이 뜹니다.</p>
 
-<p>추가적으로 아래와 같이 설정해줍니다.
+<p>추가적으로 아래와 같이 설정해 줍니다.
 <img src="../../images/2022-12-24-09-58-33.png" alt="" /></p>
 
-<p>현재 사용중인 데이터베이스시스템은H2지만 
+<p>현재 사용 중인 데이터베이스 시스템은 H2 지만 
 Mysql의 쿼리문으로 사용하기 위해 하는 설정입니다.</p>
 
-<p>그래도 빨간줄이..?</p>
+<p>그래도 빨간 줄이..?</p>
 
-<p>MY SQL이 아닌 H2 쿼리문으로 인식해서 그런거같은데
-사용하는데는 지장이없습니다!</p>
+<p>MY SQL이 아닌 H2 쿼리문으로 인식해서 그런 거 같은데
+사용하는 데는 지장이 없습니다!</p>
 
-<p>쿼리문을 테스트할 때에는 해당 부분을 드래그 해준뒤 실행해야합니다.
+<p>쿼리문을 테스트할 때에는 해당 부분을 드래그해준 뒤 실행해야 합니다.
 <img src="../../images/2022-12-24-14-13-02.png" alt="" /></p>
 
-<p>그럼 아래처럼 실행결과가 나옵니다.
+<p>그럼 아래처럼 실행 결과가 나옵니다.
 <img src="../../images/2022-12-24-14-13-19.png" alt="" /></p>
 
 <p>만약 아래와 같은 코드가 있다면</p>
@@ -819,28 +819,12 @@ Mysql의 쿼리문으로 사용하기 위해 하는 설정입니다.</p>
 
 <p><img src="../../images/2022-12-24-14-20-15.png" alt="" /></p>
 
-<p>이런걸언제 스프링에서 언제 일일이 다관리 하지 ..?</p>
+<p>이런 걸 언제 스프링에서 언제 일일이 다 관리하지 ..?</p>
 
 <p>그래서 ORM이 나오고 JPA이 나왔습니다.</p>
 
-<h3 id="스프링으로-실습">스프링으로 실습</h3>
+<p>스프링을 사용한 데이터베이스 관련 내용은 다음 글에 쓰도록 하겠습니다.</p>
 
-<p><img src="../../images/2022-12-24-11-27-24.png" alt="" /></p>
-
-<p>필요한 의존파일들은 그래들이 알아서 가저와줍니다
-<img src="../../images/2022-12-24-11-28-05.png" alt="" />
-<img src="../../images/2022-12-24-11-28-11.png" alt="" /></p>
-
-<p>main/resources/application.properties에</p>
-
-<p>아래의 설정을 저장한뒤 시작합니다.</p>
-
-<p>spring.h2.console.enabled=true
-spring.datasource.url=jdbc:h2:mem:db
-spring.datasource.username=sa
-spring.datasource.password=</p>
-
-<p><img src="../../images/2022-12-24-11-30-18.png" alt="" /></p>
  <!--실제 페이지 글 부분-->
         
       </section>
@@ -1064,7 +1048,7 @@ spring.datasource.password=</p>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/%ED%95%AD%ED%95%B499/TIL17/" rel="permalink">TIL 19일 차 주특기 입문 주 차 발제
+        <a href="/Spring4/" rel="permalink">Spring4
 </a>
       
     </h2>
@@ -1076,7 +1060,7 @@ spring.datasource.password=</p>
       <span class="page__meta-date">
         <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2022-12-23T00:00:00+09:00">2022-12-23</time>
+        <time datetime="2022-12-24T00:00:00+09:00">2022-12-24</time>
       </span>
     
 
@@ -1095,7 +1079,7 @@ spring.datasource.password=</p>
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          5 분 소요
+          최대 1 분 소요
         
       </span>
     
@@ -1126,7 +1110,7 @@ spring.datasource.password=</p>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/java/Java17/" rel="permalink">객체 지향 프로그래밍 - SOLID 원칙
+        <a href="/%ED%95%AD%ED%95%B499/TIL17/" rel="permalink">TIL 19일 차 주특기 입문 주 차 발제
 </a>
       
     </h2>

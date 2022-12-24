@@ -377,6 +377,12 @@ var store = [{
         "url": "/spring/Spring3/",
         "teaser": null
       },{
+        "title": "Spring4",
+        "excerpt":"스프링으로 실습      필요한 의존파일들은 그래들이 알아서 가저와줍니다     main/resources/application.properties에   아래의 설정을 저장한뒤 시작합니다.   spring.h2.console.enabled=true spring.datasource.url=jdbc:h2:mem:db spring.datasource.username=sa spring.datasource.password=     ","categories": [],
+        "tags": [],
+        "url": "/Spring4/",
+        "teaser": null
+      },{
         "title": "TIL 20일 차 드디어 스프링 시작, 어렵다...",
         "excerpt":"지금까지는 인텔리 제이 커뮤니티 버전만으로 잘 사용해오고 있었는데 커뮤니티 버전으로 스프링 공부를 하던 도중, 빈번하게 발생하는 스프링 프로젝트 생성, SQL 관련 작업 등 불편한 점이 많더라고요, 그래서 너무 불편해서 팀원들이랑 소통하던 중, 항해에서 4개월치 인텔리 제이 얼티메이트를 제공해 준다 하더라고요..??? 그래서 해당 노션 문서를 보고 4개월 얼티메이트 코드를 찾았고, 사용해서...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
