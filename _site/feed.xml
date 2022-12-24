@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-24T20:13:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 20일 차 드디어 스프링 시작, 어렵다…</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18/" rel="alternate" type="text/html" title="TIL 20일 차 드디어 스프링 시작, 어렵다…" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18/"><![CDATA[<p>지금까지는 인텔리 제이 커뮤니티 버전만으로 잘 사용해오고 있었는데</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-24T20:55:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 20일 차 드디어 스프링 시작, 어렵다…</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18/" rel="alternate" type="text/html" title="TIL 20일 차 드디어 스프링 시작, 어렵다…" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL18/"><![CDATA[<p>지금까지는 인텔리 제이 커뮤니티 버전만으로 잘 사용해오고 있었는데</p>
 
 <p>커뮤니티 버전으로 스프링 공부를 하던 도중, 빈번하게 발생하는<br />
 스프링 프로젝트 생성, SQL 관련 작업 등 불편한 점이 많더라고요,</p>
@@ -263,7 +263,12 @@ Mysql의 쿼리문으로 사용하기 위해 하는 설정입니다.</p>
 
 <p>그래서 ORM이 나오고 JPA가 나왔습니다.</p>
 
-<p>스프링을 사용한 데이터베이스 관련 내용은 다음 글에 쓰도록 하겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring 훑어보기" /><summary type="html"><![CDATA[제가 정리한 스프링 부트 기초 1, 2의 경우 인텔리 제이 Community Edition 버전으로 진행하였기 때문에,]]></summary></entry><entry><title type="html">스프링 - 스프링 부트 실습</title><link href="http://localhost:4000/spring/Spring4/" rel="alternate" type="text/html" title="스프링 - 스프링 부트 실습" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring4</id><content type="html" xml:base="http://localhost:4000/spring/Spring4/"><![CDATA[<h3 id="스프링으로-실습">스프링으로 실습</h3>
+<p>스프링을 사용한 데이터베이스 관련 내용은 다음 글에 쓰도록 하겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring 훑어보기" /><summary type="html"><![CDATA[제가 정리한 스프링 부트 기초 1, 2의 경우 인텔리 제이 Community Edition 버전으로 진행하였기 때문에,]]></summary></entry><entry><title type="html">스프링 - 스프링 전반적인 개념 잡고가기</title><link href="http://localhost:4000/spring/Spring4/" rel="alternate" type="text/html" title="스프링 - 스프링 전반적인 개념 잡고가기" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring4</id><content type="html" xml:base="http://localhost:4000/spring/Spring4/"><![CDATA[<p>본격적으로 스프링 실습을 하기전 
+MVC, Dao, Dto, controller, Entity, service, repository 등</p>
+
+<p>스프링 패키지 구조와 전반적인 흐름도 먼저 공부하고 가자.</p>
+
+<h3 id="스프링으로-실습">스프링으로 실습</h3>
 
 <p><img src="../../images/2022-12-24-11-27-24.png" alt="" /></p>
 
@@ -282,7 +287,7 @@ spring.datasource.password=</p>
 
 <p><img src="../../images/2022-12-24-11-30-18.png" alt="" /></p>
 
-<h3 id="스프링-재시작-방법">스프링 재시작 방법</h3>
+<h3 id="스프링-코드-업데이트-시-재시작-방법">스프링 코드 업데이트 시 재시작 방법</h3>
 <p>처음 스프링 디펜던시중 devtools를 설치한다.</p>
 
 <p><img src="../../images/2022-12-24-19-59-39.png" alt="" /></p>
@@ -290,7 +295,7 @@ spring.datasource.password=</p>
 <p>Modify options 눌러서 진행
 <img src="../../images/2022-12-24-20-00-18.png" alt="" /></p>
 
-<p>코드 업데이트시 스프링부트를 재시작하지 않ㅇ아도 자동으로 업데이트시 재시작 시켜준다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring boot 실습" /><summary type="html"><![CDATA[스프링으로 실습]]></summary></entry><entry><title type="html">TIL 19일 차 주특기 입문 주 차 발제</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17/" rel="alternate" type="text/html" title="TIL 19일 차 주특기 입문 주 차 발제" /><published>2022-12-23T00:00:00+09:00</published><updated>2022-12-23T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17/"><![CDATA[<p>오늘은 주특기 입문 주 차 발제가 있었다.<br />
+<p>코드 업데이트시 스프링부트를 재시작하지 않ㅇ아도 자동으로 업데이트시 재시작 시켜준다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring boot 실습" /><summary type="html"><![CDATA[본격적으로 스프링 실습을 하기전 MVC, Dao, Dto, controller, Entity, service, repository 등]]></summary></entry><entry><title type="html">TIL 19일 차 주특기 입문 주 차 발제</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17/" rel="alternate" type="text/html" title="TIL 19일 차 주특기 입문 주 차 발제" /><published>2022-12-23T00:00:00+09:00</published><updated>2022-12-23T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL17/"><![CDATA[<p>오늘은 주특기 입문 주 차 발제가 있었다.<br />
 스프링을 배우기 앞서 전반적인 내용과 조언, 스케줄, 팀 배정 등이 이루어졌고,<br />
 주특기(스프링) 입문 주 차는, 일주일 동안 진행된다.</p>
 
