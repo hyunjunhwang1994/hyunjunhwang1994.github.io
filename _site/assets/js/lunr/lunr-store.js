@@ -377,9 +377,9 @@ var store = [{
         "url": "/spring/Spring3/",
         "teaser": null
       },{
-        "title": "스프링 - 스프링의 구조, MVC Pattern과 패키지(파일)구조",
-        "excerpt":"MVC구조 측면의 스프링 흐름도 사진 및 스프링 프레임 워크 구조 참조 블로그 사진 및 내용 참조 블로그 MVC MVC패턴은 디자인패턴 중 하나로써, 하나의 애플리케이션에서 Model, View, Controller의 역할로 구성요소를 구성한것이 MVC패턴입니다. Model : 애플리케이션의 정보, 데이터를 나타냅니다. View : input 텍스트, 체크박스 항목 등과 같은 사용자 인터페이스 요소를 나타냅니다. 다시...","categories": ["Spring"],
-        "tags": ["Spring MVC Pattern"],
+        "title": "스프링 - 아키텍처, MVC Pattern과 패키지(파일) 구조",
+        "excerpt":"MVC 패턴 측면의 스프링 흐름도 사진 및 스프링 프레임 워크 구조 참조 블로그 사진 및 내용 참조 블로그 MVC MVC 패턴은 디자인 패턴 중 하나로써, 하나의 애플리케이션에서 Model, View, Controller의 역할로 구성요소를 구성한 것이 MVC 패턴입니다. Model : 애플리케이션의 정보, 데이터를 나타냅니다. View : input 텍스트, 체크박스 항목 등과 같은...","categories": ["Spring"],
+        "tags": ["Spring MVC Pattern","DAO","DTO","Spring Repository","Spring Service","Spring Controller","Spring Entity"],
         "url": "/spring/Spring4/",
         "teaser": null
       },{
@@ -389,9 +389,9 @@ var store = [{
         "url": "/%ED%95%AD%ED%95%B499/TIL18/",
         "teaser": null
       },{
-        "title": "스프링 - MVC 패턴 데이터 접근 실습",
-        "excerpt":"사용자의 이름과, 간단한 메모를 CRUD, 생성 읽기 수정 삭제 해보는 애플리케이션을 만들어보겠습니다. 스프링으로 MVC 패턴 데이터 접근 실습해보기. 아래와 같은 Dependency가 필요합니다. Spring Web Spring Data JPA H2 Database Thymeleaf Spring Boot DevTools Lombok 처음 Dependency를 가지고 올 경우 필요한 의존파일들은 그래들이 알아서 가저와서 설치해줍니다. 시작 하기전, 서버 재시작 설정하기...","categories": ["Spring"],
-        "tags": ["Spring MVC Pattern"],
+        "title": "(작성중)스프링 - MVC 패턴 데이터 접근 실습",
+        "excerpt":"유스케이스 다이어그램에서 아래와같이 설꼐… ERD는 아래와 같아 API명세는 사용자의 이름과, 간단한 메모를 CRUD, 생성 읽기 수정 삭제 해보는 애플리케이션을 만들어보겠습니다. 스프링으로 MVC 패턴 데이터 접근 실습해보기. 아래와 같은 Dependency가 필요합니다. Spring Web Spring Data JPA H2 Database Thymeleaf Spring Boot DevTools Lombok 처음 Dependency를 가지고 올 경우 필요한 의존파일들은 그래들이...","categories": ["Spring"],
+        "tags": ["Spring MVC Pattern","Spring Devtools","Spring 자동 재시작"],
         "url": "/spring/Spring5/",
         "teaser": null
       },{
@@ -403,12 +403,12 @@ var store = [{
       },{
         "title": "스프링 - 스프링의 구조, Controller",
         "excerpt":"Controller의 Get, Post 정적(static)웹 페이지 Client가 Request를 보내면, Server의 Controller은 Model로 받아 처리하고, Client에게 정적 웹페이지(HTML)을 보내준다. static/hello.html &lt;!DOCTYPE html&gt; &lt;html lang=\"ko\"&gt; &lt;head&gt; &lt;meta charset=\"UTF-8\"&gt; &lt;title&gt;Hello Spring&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div&gt; Hello, Spring 정적 웹 페이지!! &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; static에 html생성시, http://localhost:8080/hello.html 로 요청이오면 일단 컨트롤러를 확인 후 해당하는 것 이없다면...","categories": ["Spring"],
-        "tags": ["Spring Controller","Spring Get Post","Spring Rest API"],
+        "tags": ["Spring Controller","Spring Get Post","Spring Rest API","Spring ModelAndView"],
         "url": "/spring/Spring6/",
         "teaser": null
       },{
         "title": "TIL 21일 스프링 입문 주 차, 데이터 접근 기술, 기획 좀 하고 작업을 해보자!",
-        "excerpt":"오늘은 스프링에 익숙해지는 겸 개인 과제를 진행하면서 스프링 아키텍처를 이해하는 시간을 가졌습니다. 오늘 SQL 관련 강의가 지급되어서 내일은 DB 쪽으로 공부 좀 해보려고 합니다. 일단 과제를 하기 전, 강의들을 보며 Controller, Dto, Entity, Service, Repository을 이용해서 H2 데이터베이스에 접근하여 방법들을 먼저 공부했다. 스프링 아키텍처 CRUD 게시판 (블로그) 기획하기 과제 요구...","categories": ["항해99"],
+        "excerpt":"오늘은 스프링에 익숙해지는 겸 개인 과제를 진행하면서 스프링 아키텍처를 이해하는 시간을 가졌습니다. 오늘 SQL 관련 강의가 지급되어서 내일은 DB 쪽으로 공부 좀 해보려고 합니다. 일단 과제를 하기 전, 강의들을 보며 Controller, Dto, Entity, Service, Repository을 이용해서 H2 데이터베이스에 접근하여 방법들을 먼저 공부해 봤습니다. 스프링 아키텍처 CRUD 게시판 (블로그) 기획하기 과제...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL19/",
         "teaser": null

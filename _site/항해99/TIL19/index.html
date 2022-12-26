@@ -623,7 +623,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#crud-게시판-블로그-기획하기">CRUD 게시판 (블로그) 기획하기</a><ul><li><a href="#use-case-diagram">Use Case Diagram</a></li><li><a href="#api-명세서">API 명세서</a></li><li><a href="#시작">시작</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#crud-게시판-블로그-기획하기">CRUD 게시판 (블로그) 기획하기</a><ul><li><a href="#use-case-diagram">Use Case Diagram</a></li><li><a href="#api-명세서">API 명세서</a></li><li><a href="#어려웠던-점">어려웠던 점</a></li></ul></li></ul>
 
             </nav>
           </aside>
@@ -633,30 +633,33 @@
 
 <p>오늘 SQL 관련 강의가 지급되어서 내일은 DB 쪽으로 공부 좀 해보려고 합니다.</p>
 
-<p>일단 과제를 하기 전, 강의들을 보며 Controller, Dto, Entity, Service, Repository을 이용해서<br />
-H2 데이터베이스에 접근하여 방법들을 먼저 공부했다.</p>
+<p>일단 과제를 하기 전, 강의들을 보며 Controller, Dto, Entity, Service, Repository을 이용해서</p>
+
+<p>H2 데이터베이스에 접근하여 방법들을 먼저 공부해 봤습니다.</p>
 
 <p><a href="https://hyunjunhwang1994.github.io/spring/Spring4/">스프링 아키텍처</a></p>
 
 <h1 id="crud-게시판-블로그-기획하기">CRUD 게시판 (블로그) 기획하기</h1>
-<p>과제 요구 사항 중 기획하는 부분이 꽤 중요한 부분같 아서, 기획도 시간을 많이 들여서 해봤다.</p>
+<p>과제 요구 사항 중 기획하는 부분이 꽤 중요한 부분 같아서, 기획도 시간을 많이 들여서 해봤다.</p>
 
 <p>일단 Use Case, API 명세가 과제 요구사항이었고 과제 진행전 아래처럼 기획해 보았다.</p>
 
 <p>여러 가지 툴을 이용하여 기획을 하는 부분이 힘들었지만, 나중에 협업에 있어서도 매우 중요한 부분이라고
 생각하기 때문에, 시간을 많이 들여 진행했다.</p>
 
-<h3 id="use-case-diagram">Use Case Diagram</h3>
+<h2 id="use-case-diagram">Use Case Diagram</h2>
 <p>유스 케이스 다이어그램 같은 경우 시스템에서 제공해야 하는 기능이나 서비스를 명세한 다이어그램이다.</p>
 
-<p>툴은 무료 버전 중 괜찮은 아래의 웹툴을 깃허브랑 연결하여 사용하였다.
+<p>툴은 무료 버전 중 괜찮은 아래의 웹툴을 깃허브랑 연결하여 사용하였다.<br />
 <a href="https://app.diagrams.net/">UseCaseTool</a></p>
 
 <p><img src="../../images/2022-12-26-16-38-22.png" alt="" /></p>
 
-<h3 id="api-명세서">API 명세서</h3>
-<p>협업할 때 매우 중요하고, API 명세서를 잘 기획하고 작업을 해야 작업시간이 단축된다.
-무슨 기능이 있는지, 파라미터는 무엇을 사용해야 하는지 등의 API에 대한 명세를 기록한 것이다.</p>
+<h2 id="api-명세서">API 명세서</h2>
+<p>협업할 때 매우 중요하고,<br />
+API 명세서를 잘 기획하고 작업을 해야 작업시간이 단축된다.</p>
+
+<p>무슨 기능이 있는지, 파라미터는 무엇을 사용해야 하는지 등의 API에 대한 명세를 기록한 것이다.</p>
 
 <p>Postman이라는 앱으로 사용하여 아래처럼 기획해 보았습니다.</p>
 
@@ -664,23 +667,22 @@ H2 데이터베이스에 접근하여 방법들을 먼저 공부했다.</p>
 
 <p><img src="../../images/2022-12-26-17-42-32.png" alt="" /></p>
 
-<p>ERD의 경우 과제요구사항이 아니기 때문에 기획하지 않았고,
-인텔리제이에서 다이어그램을 볼 수 있기 때문에, 인텔리제이를 잘 활용해서 사용해볼려고 한다.</p>
+<p>ERD의 경우 과제 요구사항이 아니기 때문에 기획하지 않았고,</p>
 
-<h3 id="시작">시작</h3>
+<p>인텔리제이에서 다이어그램을 볼 수 있기 때문에, 인텔리제이를 잘 활용해서 사용해 보려고 한다.</p>
 
-<p>조금 헤메었던 점</p>
+<h2 id="어려웠던-점">어려웠던 점</h2>
 
-<p>해당 글의 링크 클릭시 -&gt; 해당글의 전반적인 내용 표시에서</p>
+<p>오늘 작업 진행 중, 조금 헤매었던 점?<br />
+해당 글의 링크(제목) 클릭 시 -&gt; 해당 글의 자세한 내용을 표시하는 로직이 있는데</p>
 
-<p>전체글 페이지에서 -&gt; 선택 글 페이지로 뷰가 바뀌기때문에</p>
+<p>전체 글 리스팅 페이지에서 -&gt; 선택 글 페이지로 뷰가 바뀌기 때문에</p>
 
-<p>Rest Controller에서 처리해온 DTO객체를 반환할건데
-이걸Rest Controller인데 어떻게 넘기지 라고 고민했고,</p>
+<p>Rest Controller에서 처리해온 DTO 객체를 반환할 건데<br />
+이걸 Rest Controller인데 어떻게 넘기지?라고 고민했고,</p>
 
-<p>얼마전 봤던 강의에서 RestController에서 ModelAndView로 뷰를 뿌린것ㅇ ㅣ생각나</p>
-
-<p>아래처럼 적용해 보았다.</p>
+<p>얼마 전 봤던 강의에서 RestController에서 ModelAndView로 뷰를 뿌린 것이 생각나서<br />
+아래처럼 적용해 보았다.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/api/post/{id}"</span><span class="o">)</span>
     <span class="kd">public</span> <span class="nc">ModelAndView</span> <span class="nf">readPost</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
@@ -694,20 +696,20 @@ H2 데이터베이스에 접근하여 방법들을 먼저 공부했다.</p>
     <span class="o">}</span>
 </code></pre></div></div>
 
-<p>그다음은.. 넘어온 모델 데이터안에 들은 값들을</p>
+<p><br /></p>
 
-<p>처음엔 ${id}로 써야하나 해서 안되길래.. 생각해보니 저건 PathVariable 같은 형태만 되는것인가?
-생각 했다가.</p>
+<p>그다음은.. 넘어온 모델 데이터 안에 든 값들을</p>
 
-<p>어차피 모델로 똑같이 넘어오는거 아닌가 ? 라는 생각이들어서</p>
+<p>처음엔 ${post.contents}로 써야 하나? 해서 안되길래..<br />
+thymeleaf 템플릿 엔진은 문법이 다르겠지 하고 찾아보았다.</p>
 
-<p><img src="../../images/2022-12-26-21-43-30.png" alt="" /></p>
+<p>thymeleaf 템플릿 엔진은 jinja2에서처럼 ${post.title} 방식은 안되고
+아래와 같은 방식으로 해야 된다는 걸 알았다.</p>
 
-<p>jinja2에서 처럼 ${post.title} 방식은 안되고</p>
-
-<p>하다보니 아래와 같은 방식으로 해야 된다는걸 알았다.</p>
+<p>${id}는 @PathVariable 값이다.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${post.id}"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${id}"</span><span class="nt">&gt;&lt;/span&gt;</span>
 
 [[${post.title}]]
 [[${post.contents}]]
@@ -939,7 +941,7 @@ H2 데이터베이스에 접근하여 방법들을 먼저 공부했다.</p>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/spring/Spring5/" rel="permalink">스프링 - MVC 패턴 데이터 접근 실습
+        <a href="/spring/Spring5/" rel="permalink">(작성중)스프링 - MVC 패턴 데이터 접근 실습
 </a>
       
     </h2>
@@ -972,7 +974,7 @@ H2 데이터베이스에 접근하여 방법들을 먼저 공부했다.</p>
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          2 분 소요
         
       </span>
     
