@@ -377,9 +377,9 @@ var store = [{
         "url": "/spring/Spring3/",
         "teaser": null
       },{
-        "title": "(작성중)스프링 - 스프링 전반적인 개념 잡고가기",
-        "excerpt":"본격적으로 스프링 실습을 하기전 MVC, Dao, Dto, controller, Entity, service, repository 등 스프링 패키지 구조와 전반적인 흐름도 먼저 공부하고 가자. 사진 참조 블로그 Spring boot MVC Pattern 사진 및 내용 참조 블로그 스프링으로 실습 필요한 의존파일들은 그래들이 알아서 가저와줍니다 main/resources/application.properties에 아래의 설정을 저장한뒤 시작합니다. spring.h2.console.enabled=true spring.datasource.url=jdbc:h2:mem:db spring.datasource.username=sa spring.datasource.password= 스프링 코드...","categories": ["Spring"],
-        "tags": ["Spring boot 실습"],
+        "title": "스프링 - 스프링의 구조, MVC Pattern과 패키지(파일)구조",
+        "excerpt":"MVC구조 측면의 스프링 흐름도 사진 및 스프링 프레임 워크 구조 참조 블로그 사진 및 내용 참조 블로그 MVC MVC패턴은 디자인패턴 중 하나로써, 하나의 애플리케이션에서 Model, View, Controller의 역할로 구성요소를 구성한것이 MVC패턴입니다. Model : 애플리케이션의 정보, 데이터를 나타냅니다. View : input 텍스트, 체크박스 항목 등과 같은 사용자 인터페이스 요소를 나타냅니다. 다시...","categories": ["Spring"],
+        "tags": ["Spring MVC Pattern"],
         "url": "/spring/Spring4/",
         "teaser": null
       },{
@@ -389,9 +389,27 @@ var store = [{
         "url": "/%ED%95%AD%ED%95%B499/TIL18/",
         "teaser": null
       },{
+        "title": "스프링 - MVC 패턴 데이터 접근 실습",
+        "excerpt":"사용자의 이름과, 간단한 메모를 CRUD, 생성 읽기 수정 삭제 해보는 애플리케이션을 만들어보겠습니다. 스프링으로 MVC 패턴 데이터 접근 실습해보기. 아래와 같은 Dependency가 필요합니다. Spring Web Spring Data JPA H2 Database Thymeleaf Spring Boot DevTools Lombok 처음 Dependency를 가지고 올 경우 필요한 의존파일들은 그래들이 알아서 가저와서 설치해줍니다. 시작 하기전, 서버 재시작 설정하기...","categories": ["Spring"],
+        "tags": ["Spring MVC Pattern"],
+        "url": "/spring/Spring5/",
+        "teaser": null
+      },{
         "title": "WIL 3주 차 회고, 주특기 주 차 시작",
         "excerpt":"알고리즘 주 차가 끝나면서 사실 이전의 TIL들에서 계속 얘기해왔지만, 코딩 테스트 문제 자체를 풀어본 적이 없어 처음에 힘들었다. 하지만 너무 오래 걸리는 문제들은 정답을 보고 내 것으로 만들고 풀고, 아는 것은 오래 걸려도 풀어서, 이 과정을 반복하다 보니 프로그래밍 주 차 첫날과 비교하면 그래도 많이 성장한 것 같다. 지금까지 배워...","categories": ["항해99"],
         "tags": ["항해99","WIL"],
         "url": "/%ED%95%AD%ED%95%B499/WIL03/",
+        "teaser": null
+      },{
+        "title": "스프링 - 스프링의 구조, Controller",
+        "excerpt":"Controller의 Get, Post 정적(static)웹 페이지 Client가 Request를 보내면, Server의 Controller은 Model로 받아 처리하고, Client에게 정적 웹페이지(HTML)을 보내준다. static/hello.html &lt;!DOCTYPE html&gt; &lt;html lang=\"ko\"&gt; &lt;head&gt; &lt;meta charset=\"UTF-8\"&gt; &lt;title&gt;Hello Spring&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div&gt; Hello, Spring 정적 웹 페이지!! &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; static에 html생성시, http://localhost:8080/hello.html 로 요청이오면 일단 컨트롤러를 확인 후 해당하는 것 이없다면...","categories": ["Spring"],
+        "tags": ["Spring Controller","Spring Get Post","Spring Rest API"],
+        "url": "/spring/Spring6/",
+        "teaser": null
+      },{
+        "title": "TIL 21일 스프링 입문 주 차, 데이터 접근 기술, 기획 좀 하고 작업을 해보자!",
+        "excerpt":"오늘은 스프링에 익숙해지는 겸 개인 과제를 진행하면서 스프링 아키텍처를 이해하는 시간을 가졌습니다. 오늘 SQL 관련 강의가 지급되어서 내일은 DB 쪽으로 공부 좀 해보려고 합니다. 일단 과제를 하기 전, 강의들을 보며 Controller, Dto, Entity, Service, Repository을 이용해서 H2 데이터베이스에 접근하여 방법들을 먼저 공부했다. 스프링 아키텍처 CRUD 게시판 (블로그) 기획하기 과제 요구...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL19/",
         "teaser": null
       }]
