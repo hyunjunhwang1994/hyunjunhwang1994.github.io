@@ -408,7 +408,7 @@ var store = [{
         "teaser": null
       },{
         "title": "TIL 22일 스프링 입문 주 차, 데이터 접근 기술, 기획하고 작업하기!",
-        "excerpt":"오늘은 스프링에 익숙해지는 겸 개인 과제를 진행하면서 스프링 아키텍처를 이해하는 시간을 가졌습니다. 오늘 SQL 관련 강의가 지급되어서 내일은 DB 쪽으로 공부 좀 해보려고 합니다. 일단 과제를 하기 전, 강의들을 보며 Controller, Dto, Entity, Service, Repository을 이용해서 H2 데이터베이스에 접근하여 방법들을 먼저 공부해 봤습니다. 스프링 아키텍처 CRUD 게시판 (블로그) 기획하기 과제...","categories": ["항해99"],
+        "excerpt":"오늘은 스프링에 익숙해지는 겸 개인 과제를 진행하면서 스프링 아키텍처를 이해하는 시간을 가졌습니다. 오늘 SQL 관련 강의가 지급되어서 내일은 DB 쪽으로 공부 좀 해보려고 합니다. 일단 과제를 하기 전, 강의들을 보며 Controller, Dto, Entity, Service, Repository 아키텍처를 익히고, Repository를 이용해서 H2 데이터베이스에 접근하는 방법들을 먼저 공부해 봤습니다. 스프링 아키텍처 CRUD 게시판...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL19/",
         "teaser": null
