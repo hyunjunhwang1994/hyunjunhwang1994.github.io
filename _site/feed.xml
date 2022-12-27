@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-27T17:00:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 23일 스프링 입문 주 차#, Thymeleaf</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL20/" rel="alternate" type="text/html" title="TIL 23일 스프링 입문 주 차#, Thymeleaf" /><published>2022-12-27T00:00:00+09:00</published><updated>2022-12-27T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL20</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL20/"><![CDATA[<p>오늘은 CRUD 게시판 과제 진행 중<br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-27T21:01:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 23일 스프링 입문 주 차#, Thymeleaf</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL20/" rel="alternate" type="text/html" title="TIL 23일 스프링 입문 주 차#, Thymeleaf" /><published>2022-12-27T00:00:00+09:00</published><updated>2022-12-27T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL20</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL20/"><![CDATA[<p>오늘은 CRUD 게시판 과제 진행 중<br />
 HTML, 자바스크립트에 thymeleaf 사용 시 잘 안되는 것 같아서 공부를 좀 했습니다.</p>
 
 <p>오늘은 헤맨 부분이 꽤 있어서 TIL을 쓸 거리는 좀 있겠구나… 했습니다.</p>
@@ -207,12 +207,74 @@ ${}와, [[${}]]가 버전에 따라 다른 것 같다고 말한 것 같은데</p
 <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"postUpdateRequest()"</span><span class="nt">&gt;</span>글 수정 완료<span class="nt">&lt;/button&gt;</span>
 </code></pre></div></div>
 
-<p>그러고는 SQL 공부 및 정리와, 자바 언어 스터디를 위한 자바의 상속 및 다형성에 대해서 정리를 했습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 CRUD 게시판 과제 진행 중 HTML, 자바스크립트에 thymeleaf 사용 시 잘 안되는 것 같아서 공부를 좀 했습니다.]]></summary></entry><entry><title type="html">SQL 기초1</title><link href="http://localhost:4000/sql/SQL01/" rel="alternate" type="text/html" title="SQL 기초1" /><published>2022-12-27T00:00:00+09:00</published><updated>2022-12-27T00:00:00+09:00</updated><id>http://localhost:4000/sql/SQL01</id><content type="html" xml:base="http://localhost:4000/sql/SQL01/"><![CDATA[<div class="notice" style="text-align:center">
+<p>그러고는 SQL 공부 및 정리와, 자바 언어 스터디를 위한 자바의 상속 및 다형성에 대해서 정리를 했습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 CRUD 게시판 과제 진행 중 HTML, 자바스크립트에 thymeleaf 사용 시 잘 안되는 것 같아서 공부를 좀 했습니다.]]></summary></entry><entry><title type="html">Database MySQL 기초 1</title><link href="http://localhost:4000/sql/SQL01/" rel="alternate" type="text/html" title="Database MySQL 기초 1" /><published>2022-12-27T00:00:00+09:00</published><updated>2022-12-27T00:00:00+09:00</updated><id>http://localhost:4000/sql/SQL01</id><content type="html" xml:base="http://localhost:4000/sql/SQL01/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.1
 </div>
-<hr />]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="SQL" /><category term="SQL 기초" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">TIL 22일 스프링 입문 주 차#, 데이터 접근 기술, 기획하고 작업하기!</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL19/" rel="alternate" type="text/html" title="TIL 22일 스프링 입문 주 차#, 데이터 접근 기술, 기획하고 작업하기!" /><published>2022-12-26T00:00:00+09:00</published><updated>2022-12-26T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL19</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL19/"><![CDATA[<p>오늘은 스프링에 익숙해지는 겸 개인 과제를 진행하면서<br />
+
+<div class="notice--info" style="text-align:center">
+          항해99중 진행되는 엑셀보다 쉬운 SQL의 강의의 내용을 참고하여 포스팅했습니다.
+</div>
+
+<h2 id="데이터베이스를-사용하는-이유">데이터베이스를 사용하는 이유</h2>
+<p>데이터를 잘 저장하고자 사용하는 것도 있지만,<br />
+잘 저장해서 -&gt; 잘 꺼내서 가공해 사용하려는 목적성이 더 크다.</p>
+
+<p>Ex) 방에다가 책을 어질러 놨을 때, 책이 적다면 빨리빨리 찾을 수 있지만,
+책의 수가 많아진다면 찾는 속도가 매우 느려지고 힘들어질 것임.</p>
+
+<p>ex) 책장에 책을 잘 정리해놓으면 책이 많아지더라도 찾아지기가 쉬워진다.</p>
+
+<h2 id="crud">CRUD</h2>
+<p>통상적으로 모든 데이터베이스는 기본적으로<br />
+아래의 4가지 기능을 제공한다.</p>
+
+<p>C(create)   데이터 생성<br />
+R(read)     데이터 읽기<br />
+U(update)   데이터 변경<br />
+D(delete)   데이터 삭제</p>
+
+<h3 id="select">SELECT</h3>
+
+<p>어떤 테이블에서 어떤 필드를 가져올지 정의한다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="err">필드</span> <span class="k">FROM</span> <span class="err">테이블</span>
+</code></pre></div></div>
+
+<p>*은 모든 필드를 의미한다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span>
+</code></pre></div></div>
+
+<h3 id="where">WHERE</h3>
+<p>조건을 걸 때 사용한다 여러 개의 조건을 함께 사용할 때는 AND, OR을 사용한다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span>
+<span class="k">WHERE</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'이**'</span>
+</code></pre></div></div>
+
+<p>Where과 같이 쓰이는 문법</p>
+
+<p>BETWEEN 해당 범위의 포함하는 값을 찾는다.<br />
+LIKE    해당 패턴에 맞는 값을 찾는다 ex) gmail 사용자를 찾아라<br />
+(%는 앞에 무엇이 오든 gmail.com으로 끝나는 이메일을 찾아라라는 뜻!)</p>
+
+<p>user 테이블에서 email이 gmail이고,<br />
+가입 날짜가 200701~200801이고,<br />
+성이 이씨인 사람의 모든 필드를 찾아라.</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span>
+<span class="k">WHERE</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'이**'</span>
+<span class="k">AND</span> <span class="n">email</span> <span class="k">LIKE</span> <span class="s1">'%gmail.com'</span>
+<span class="k">AND</span> <span class="n">created_at</span> <span class="k">BETWEEN</span> <span class="s1">'2020-07-01'</span> <span class="k">AND</span> <span class="s1">'2020-08-01'</span>
+</code></pre></div></div>
+
+<p>그 컬럼이 몇 개인지 출력하라</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">FROM</span> <span class="n">users</span>
+<span class="k">WHERE</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'이**'</span>
+<span class="k">AND</span> <span class="n">email</span> <span class="k">LIKE</span> <span class="s1">'%gmail.com'</span>
+<span class="k">AND</span> <span class="n">created_at</span> <span class="k">BETWEEN</span> <span class="s1">'2020-07-01'</span> <span class="k">AND</span> <span class="s1">'2020-08-01'</span>
+</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="SQL" /><category term="SQL 기초" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1]]></summary></entry><entry><title type="html">TIL 22일 스프링 입문 주 차#, 데이터 접근 기술, 기획하고 작업하기!</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL19/" rel="alternate" type="text/html" title="TIL 22일 스프링 입문 주 차#, 데이터 접근 기술, 기획하고 작업하기!" /><published>2022-12-26T00:00:00+09:00</published><updated>2022-12-26T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL19</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL19/"><![CDATA[<p>오늘은 스프링에 익숙해지는 겸 개인 과제를 진행하면서<br />
 스프링 아키텍처를 이해하는 시간을 가졌습니다.</p>
 
 <p>오늘 SQL 관련 강의가 지급되어서 내일은 DB 쪽으로 공부 좀 해보려고 합니다.</p>

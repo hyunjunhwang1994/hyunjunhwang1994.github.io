@@ -419,8 +419,8 @@ var store = [{
         "url": "/%ED%95%AD%ED%95%B499/TIL19/",
         "teaser": null
       },{
-        "title": "SQL 기초1",
-        "excerpt":"           개발 환경            - 2021, 맥북 프로 M1 Pro 14인치 모델             - Ventura 13.1    ","categories": ["SQL"],
+        "title": "Database MySQL 기초 1",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 항해99중 진행되는 엑셀보다 쉬운 SQL의 강의의 내용을 참고하여 포스팅했습니다. 데이터베이스를 사용하는 이유 데이터를 잘 저장하고자 사용하는 것도 있지만, 잘 저장해서 -&gt; 잘 꺼내서 가공해 사용하려는 목적성이 더 크다. Ex) 방에다가 책을 어질러 놨을 때, 책이 적다면 빨리빨리...","categories": ["SQL"],
         "tags": ["SQL 기초"],
         "url": "/sql/SQL01/",
         "teaser": null

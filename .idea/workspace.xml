@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="698e0a96-1435-4af4-91a5-d6bc50f5edcb" name="Changes" comment="" />
+    <list default="true" id="698e0a96-1435-4af4-91a5-d6bc50f5edcb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/_posts/항해99/2022-12-27-TIL20.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/항해99/2022-12-27-TIL20.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +41,7 @@
       <updated>1671805442167</updated>
       <workItem from="1671805445507" duration="61000" />
       <workItem from="1671805559035" duration="36000" />
+      <workItem from="1672128586559" duration="39000" />
     </task>
     <servers />
   </component>
