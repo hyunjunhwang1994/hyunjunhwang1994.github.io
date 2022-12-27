@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>TIL 23일 스프링 입문 주 차#, Thymeleaf | 기술 블로그</title>
-<meta name="description" content="오늘은 CRUD게시판 과제 진행중 HTML, 자바스크립트에 thymeleaf 사용 시 잘안되는 것같아서공부를 좀 했습니다.">
+<meta name="description" content="오늘은 CRUD 게시판 과제 진행 중 HTML, 자바스크립트에 thymeleaf 사용 시 잘 안되는 것 같아서 공부를 좀 했습니다.">
 
 
   <meta name="author" content="Hyun Jun">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL20/">
 
 
-  <meta property="og:description" content="오늘은 CRUD게시판 과제 진행중 HTML, 자바스크립트에 thymeleaf 사용 시 잘안되는 것같아서공부를 좀 했습니다.">
+  <meta property="og:description" content="오늘은 CRUD 게시판 과제 진행 중 HTML, 자바스크립트에 thymeleaf 사용 시 잘 안되는 것 같아서 공부를 좀 했습니다.">
 
 
 
@@ -570,7 +570,7 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="TIL 23일 스프링 입문 주 차#, Thymeleaf">
-    <meta itemprop="description" content="오늘은 CRUD게시판 과제 진행중HTML, 자바스크립트에 thymeleaf 사용 시 잘안되는 것같아서공부를 좀 했습니다.">
+    <meta itemprop="description" content="오늘은 CRUD 게시판 과제 진행 중HTML, 자바스크립트에 thymeleaf 사용 시 잘 안되는 것 같아서 공부를 좀 했습니다.">
     <meta itemprop="datePublished" content="2022-12-27T00:00:00+09:00">
     
 
@@ -608,7 +608,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          9 분 소요
+          10 분 소요
         
       </span>
     
@@ -623,28 +623,28 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#cdata">CDATA?</a></li><li><a href="#delete-기능">Delete 기능</a></li></ul>
+              <ul class="toc__menu"><li><a href="#cdata">CDATA?</a></li><li><a href="#delete-기능">Delete 기능</a></li><li><a href="#또-헤매었던-부분">또 헤매었던 부분</a></li></ul>
 
             </nav>
           </aside>
         
-        <p>오늘은 CRUD게시판 과제 진행중
-HTML, 자바스크립트에 thymeleaf 사용 시 잘안되는 것같아서공부를 좀 했습니다.</p>
+        <p>오늘은 CRUD 게시판 과제 진행 중<br />
+HTML, 자바스크립트에 thymeleaf 사용 시 잘 안되는 것 같아서 공부를 좀 했습니다.</p>
 
-<p>오늘은 헤맨부분이 꽤 있어서 TIL을 쓸 거리는 좀 있겠구나… 했습니다.</p>
+<p>오늘은 헤맨 부분이 꽤 있어서 TIL을 쓸 거리는 좀 있겠구나… 했습니다.</p>
 
 <h3 id="cdata">CDATA?</h3>
-<p>처음에 자바스크립트에서  생각되로 Thymeleaf가 잘 되지 않아서,
-검색해보니 CDATA?라는 것을 적용해야 한다고해서</p>
+<p>처음에 자바스크립트에서 생각대로 Thymeleaf가 잘되지 않아서,
+검색해 보니 CDATA?라는 것을 적용해야 한다고 해서</p>
 
-<p>더 알아보니 thymeleaf 3.0버전 부는 자바스크립테으 CDATA를 안써도 된다고 하더라고요.</p>
+<p>더 알아보니 thymeleaf 3.0버전 부는 자바스크립트에 CDATA를 안 써도 된다고 하더라고요.</p>
 
 <h3 id="delete-기능">Delete 기능</h3>
 
-<p>Delete기능을 구현하던중 
-RestController 한개로만 코드를 작성하고 있어서,</p>
+<p>Delete 기능을 구현하던 중 
+RestController 한 개만으로 코드를 작성하고 있어서,</p>
 
-<p>뷰를 같이넘기고 싶어서, 모델엔뷰를 계속 리턴하고 있엇는데</p>
+<p>뷰를 같이 넘기고 싶어서, 모델엔 뷰를 계속 리턴하고 있었는데</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nd">@DeleteMapping</span><span class="o">(</span><span class="s">"/api/post/{id}"</span><span class="o">)</span>
     <span class="kd">public</span> <span class="nc">ModelAndView</span> <span class="nf">deletePost</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">,</span> <span class="nd">@RequestBody</span> <span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
@@ -677,13 +677,12 @@ RestController 한개로만 코드를 작성하고 있어서,</p>
     <span class="o">}</span>
 </code></pre></div></div>
 
-<p>위의 로직이 진행되면 Ajax가 결과를 받아 처리합니다.</p>
+<p>위의 로직이 진행되면 Ajax가 결과를 받아 처리합니다.
+그런데 Ajax 부분 진행 중 Hashmap으로 넘긴 값을</p>
 
-<p>그런데 Ajax부분 진행중 Hashmap으로 넘긴값을</p>
-
-<p>자바스크립트에서 jsonReturn으로 받으려해도 잘안되더라고요.
-thymeleaf문법을 다써봐도 잘안됬습니다.
-뭔가 타입이 안맞다던지. 키값을 입력해도 벨류값이 안넘어온다던지..</p>
+<p>자바스크립트에서 jsonReturn으로 받으려 해도 잘 안되더라고요.
+thymeleaf 문법을 다 써봐도 잘 안됐습니다.
+뭔가 타입이 안 맞다든지. 키값을 입력해도 밸류 값이 안 넘어온다든지..</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">function</span> <span class="nx">postDelete</span><span class="p">(){</span>
 
@@ -711,20 +710,21 @@ thymeleaf문법을 다써봐도 잘안됬습니다.
         <span class="p">}</span>
 </code></pre></div></div>
 
-<p>컨트롤러에서 HASH MAp으로 넘겨주면 json이된다고하던데…
-왜안되는거지 생각을 해보다가</p>
+<p>컨트롤러에서 HashMap으로 넘겨주면 json이 된다고 하던데…
+왜 안되는 거지 생각을 해보다가</p>
 
-<p>생각해보니 자바스크립트에서 리다이렉트를 해주고 있는데
- 굳이 모델엔뷰로 뷰까지 넘겨야하나 해서..</p>
+<p>생각해 보니 자바스크립트에서 리다이렉트를 해주고 있는데
+굳이 모델엔 뷰로 뷰까지 넘겨야 하나 해서..</p>
 
-<p>생각을 해보니 요청한 것은 Ajax 비동기방식이고,
-자바스크립트 코드에서 리다이렉트를 해주고있어서 ModelAndView를 쓸필요가 없겠구나?
+<p>여기서 더 생각을 해보니 요청한 것은 Ajax 비동기 방식이고,
+자바스크립트 코드에서 리다이렉트를 해주고 있어서 ModelAndView를 쓸 필요가 없겠구나?
 라고 생각했습니다.</p>
 
-<p>Restful하게 최대한 만들려면!</p>
+<p>최대한 Restful하게 만들기도 해야 하고요.</p>
 
 <p>그래서 아래의 코드처럼 JSON을 리턴해주기 위해
 결과값 데이터만 가지는 PostDeleteResultDto를 새로 만들어 사용했습니다.</p>
+
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nd">@DeleteMapping</span><span class="o">(</span><span class="s">"/api/post/{id}"</span><span class="o">)</span>
     <span class="kd">public</span> <span class="nc">PostDeleteResultDto</span> <span class="nf">deletePost</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">,</span> <span class="nd">@RequestBody</span> <span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
 
@@ -788,7 +788,7 @@ thymeleaf문법을 다써봐도 잘안됬습니다.
 
 </code></pre></div></div>
 
-<p>헤멘부분 2</p>
+<h3 id="또-헤매었던-부분">또 헤매었던 부분</h3>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"title"</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">value=</span><span class="s">[[${post.title}]]</span> <span class="na">placeholder=</span><span class="s">"title"</span> <span class="nt">&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"author"</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">value=</span><span class="s">[[${post.author}]]</span> <span class="na">placeholder=</span><span class="s">"author"</span> <span class="nt">&gt;</span>
@@ -796,7 +796,7 @@ thymeleaf문법을 다써봐도 잘안됬습니다.
 
 </code></pre></div></div>
 
-<p>일단 위의 thymeleaf값들은 일반 HTML 태그안 데이터로 불러오면 다 잘불러와지는데
+<p>일단 위의 thymeleaf 값들은 일반 HTML 태그 안 데이터로 불러오면 다 잘 불러와지는데
 저위의 상태에서 input 값들은 잘 되는데</p>
 
 <p>textarea의 경우 태그 안의 데이터로 넣으면,
@@ -804,40 +804,39 @@ thymeleaf문법을 다써봐도 잘안됬습니다.
 
 <p><img src="../../images/2022-12-27-13-04-14.png" alt="" /></p>
 
-<p>찾아보니 th:text로 쓰라고 해서 쓰는데,
-동작 자체를 안합니다.</p>
+<p>찾아보니 th:text로 쓰라고 해서 쓰는데, 동작 자체를 안 합니다.</p>
 
 <p>렌더링 시점 차이인지는 모르겠지만
-[[${post.author}]] 는 데이터가 출력되지만 ““가 포함되어나오고</p>
+[[${post.author}]]는 데이터가 출력되지만 ““가 포함되어 값이 나오고</p>
 
 <p>th:text=[[${post.title}]]   ,  th:text=${post.title}
 는 아예 빈값으로 나와서,</p>
 
 <p>어떻게 해결해야 할까 생각을 해보다가?</p>
 
-<p>그리고 언젠가 TIL글에서,
-${}와, [[${}]]가 버전에 따라 다른것같다 라고 말한 것 같은데
-아니였습니다….</p>
+<p>그리고 언젠가 TIL 글에서,<br />
+${}와, [[${}]]가 버전에 따라 다른 것 같다고 말한 것 같은데</p>
 
-<p>중괄호, 대괄호의  차이를아래글을 보고 알았습니다…<br />
-<a href="https://maenco.tistory.com/entry/Thymeleaf-Text-Escape-%ED%85%8D%EC%8A%A4%ED%8A%B8-%ED%91%9C%ED%98%84-%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84">thy문법</a></p>
+<p>아니었습니다….</p>
 
-<p>그리고 헤멘김에 더 공부를 해보니</p>
+<p>중괄호, 대괄호의  차이를 아랫글을 보고 알았습니다…<br />
+<a href="https://maenco.tistory.com/entry/Thymeleaf-Text-Escape-%ED%85%8D%EC%8A%A4%ED%8A%B8-%ED%91%9C%ED%98%84-%EC%9D%B4%EC%8A%A4%EC%BC%80%EC%9D%B4%ED%94%84">Thymeleaf 문법</a></p>
+
+<p>그리고 헤맨 김에 더 공부를 해보니</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">th</span><span class="p">:</span><span class="nx">inline</span><span class="o">=</span><span class="dl">"</span><span class="s2">javascript</span><span class="dl">"</span><span class="o">&gt;</span>
 </code></pre></div></div>
 
-<p>무조건 해야 하는줄 알았던 위의 inline 설정 떄문에 자동 따옴표가 생기는것이였고</p>
-
-<p>이 기능 자체는 편의성을 위한 것 같지만 이것을해제하여 잘 동작하길래 위의 inline 설정 제거후 아래처럼 사용하였습니다</p>
+<p>무조건 해야 하는 줄 알았던 위의 inline 설정 때문에 자동 따옴표가 생기는 것이었고<br />
+이 기능 자체는 편의성을 위한 것 같지만 이것을 해제하여 잘 동작하길래 위의 inline 설정 제거 후 아래처럼 사용하였습니다</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"title"</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">value=</span><span class="s">[[${post.title}]]</span> <span class="na">placeholder=</span><span class="s">"title"</span> <span class="nt">&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"author"</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">value=</span><span class="s">[[${post.author}]]</span> <span class="na">placeholder=</span><span class="s">"author"</span> <span class="nt">&gt;</span>
 <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">"contents"</span> <span class="nt">&gt;</span>[[${post.contents}]]<span class="nt">&lt;/textarea&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"postUpdateRequest()"</span><span class="nt">&gt;</span>글 수정완료<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"postUpdateRequest()"</span><span class="nt">&gt;</span>글 수정 완료<span class="nt">&lt;/button&gt;</span>
 </code></pre></div></div>
 
-<p>그러고는 SQU공부 및 정리와, 자바 언어스터디를 위한 자바의 상속및 다형성에대해서 정리를 했습니다.</p>
+<p>그러고는 SQL 공부 및 정리와, 자바 언어 스터디를 위한 자바의 상속 및 다형성에 대해서 정리를 했습니다.</p>
 
  <!--실제 페이지 글 부분-->
         
