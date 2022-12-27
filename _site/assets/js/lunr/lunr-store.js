@@ -401,15 +401,27 @@ var store = [{
         "url": "/%ED%95%AD%ED%95%B499/WIL03/",
         "teaser": null
       },{
+        "title": "객체 지향 프로그래밍 - 상속, 다형성, 추상 클래스",
+        "excerpt":"이번 언어스터디에서 제가 중요하게 생각했떤부분은 자바의 다형성에대해서 완벽하게 알게 해드리고 싶은 마음입니다. 상속 현실과 다르게 자식이 부모를 선택해 상속받는다. 상속을 하는 이유 이미 (잘)만들어진 클래스를 재사용할 수 있기 때문에, 효율성이 좋으며 개발시간을 줄여준다. 자바에서는 자식 객체를 생성하면 부모객체를 먼저 생성후! 자싯객체가 그다음에 생성된다. 여기까지는 뭐 다아는내용이니…. 제가봤을때 7챕터에서 중요한부분은 다형성이라고...","categories": ["Java"],
+        "tags": ["Java 상속","Java 다형성","Java 추상 클래스"],
+        "url": "/java/Java18/",
+        "teaser": null
+      },{
         "title": "스프링 - 스프링의 구조, Controller",
         "excerpt":"Controller의 Get, Post 정적(static)웹 페이지 Client가 Request를 보내면, Server의 Controller은 Model로 받아 처리하고, Client에게 정적 웹페이지(HTML)을 보내준다. static/hello.html &lt;!DOCTYPE html&gt; &lt;html lang=\"ko\"&gt; &lt;head&gt; &lt;meta charset=\"UTF-8\"&gt; &lt;title&gt;Hello Spring&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div&gt; Hello, Spring 정적 웹 페이지!! &lt;/div&gt; &lt;/body&gt; &lt;/html&gt; static에 html생성시, http://localhost:8080/hello.html 로 요청이오면 일단 컨트롤러를 확인 후 해당하는 것 이없다면...","categories": ["Spring"],
         "tags": ["Spring Controller","Spring Get Post","Spring Rest API","Spring ModelAndView"],
         "url": "/spring/Spring6/",
         "teaser": null
       },{
-        "title": "TIL 22일 스프링 입문 주 차, 데이터 접근 기술, 기획하고 작업하기!",
-        "excerpt":"오늘은 스프링에 익숙해지는 겸 개인 과제를 진행하면서 스프링 아키텍처를 이해하는 시간을 가졌습니다. 오늘 SQL 관련 강의가 지급되어서 내일은 DB 쪽으로 공부 좀 해보려고 합니다. 일단 과제를 하기 전, 강의들을 보며 Controller, Dto, Entity, Service, Repository 아키텍처를 익히고, Repository를 이용해서 H2 데이터베이스에 접근하는 방법들을 먼저 공부해 봤습니다. 스프링 아키텍처 CRUD 게시판...","categories": ["항해99"],
+        "title": "TIL 22일 스프링 입문 주 차#, 데이터 접근 기술, 기획하고 작업하기!",
+        "excerpt":"오늘은 스프링에 익숙해지는 겸 개인 과제를 진행하면서 스프링 아키텍처를 이해하는 시간을 가졌습니다. 오늘 SQL 관련 강의가 지급되어서 내일은 DB 쪽으로 공부 좀 해보려고 합니다. 일단 과제를 하기 전, 강의들을 보며 Controller, Dto, Entity, Service, Repository 등 스프링 아키텍처를 정리해보고, Repository를 이용해서 H2 데이터베이스에 접근하는 방법들을 먼저 공부해 봤습니다. 스프링 아키텍처...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL19/",
+        "teaser": null
+      },{
+        "title": "TIL 22일 스프링 입문 주 차#, Thymeleaf",
+        "excerpt":"오늘은 CRUD게시판 과제 진행중 HTML, 자바스크립트에 thymeleaf 사용 시 잘안되는 것같아서공부를 좀 했습니다. 오늘은 헤맨부분이 꽤 있어서 TIL을 쓸 거리는 좀 있겠구나… 했습니다. CDATA? 처음에 자바스크립트에서 생각되로 Thymeleaf가 잘 되지 않아서, 검색해보니 CDATA?라는 것을 적용해야 한다고해서 더 알아보니 thymeleaf 3.0버전 부는 자바스크립테으 CDATA를 안써도 된다고 하더라고요. Delete 기능 Delete기능을 구현하던중...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL20/",
         "teaser": null
       }]
