@@ -218,7 +218,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">71</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">72</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -250,6 +250,8 @@
                 
                     
                 
+                    
+                
             </ul>
             
             <ul>
@@ -260,6 +262,8 @@
                 
                     
                         <li><a href="/categories/jekyllblogdev" class="">Jekyll Blog Dev (11)</a></li>
+                    
+                
                     
                 
                     
@@ -310,6 +314,8 @@
                 
                     
                 
+                    
+                
             </ul>
 
             <ul>
@@ -338,6 +344,8 @@
                 
                     
                 
+                    
+                
             </ul>
 
             
@@ -349,6 +357,8 @@
                 
                     
                         <li><a href="/categories/java" class="">Java (12)</a></li>
+                    
+                
                     
                 
                     
@@ -400,6 +410,8 @@
                 
                     
                 
+                    
+                
             </ul>
 
             <ul>
@@ -428,7 +440,42 @@
                 
                     
                 
+                    
+                
             </ul>
+
+        <span class="nav__sub-title">Database</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/sql" class="">SQL (1)</a></li>
+                    
+                
+            </ul>
+
+   
 
 
         <span class="nav__sub-title">Framework</span>   
@@ -440,6 +487,8 @@
                 
                     
                         <li><a href="/categories/spring" class="">Spring (6)</a></li>
+                    
+                
                     
                 
                     
@@ -486,6 +535,8 @@
                 
                     
                 
+                    
+                
             </ul>
 
 
@@ -516,6 +567,8 @@
                 
                     
                 
+                    
+                
             </ul> 
 
             <ul>
@@ -542,6 +595,8 @@
                 
                     
                         <li><a href="/categories/algorithmhanghae99" class="">Algorithm - Hanghae99🚢 (5)</a></li>
+                    
+                
                     
                 
             </ul> 
@@ -677,11 +732,11 @@ RestController 한 개만으로 코드를 작성하고 있어서,</p>
     <span class="o">}</span>
 </code></pre></div></div>
 
-<p>위의 로직이 진행되면 Ajax가 결과를 받아 처리합니다.
-그런데 Ajax 부분 진행 중 Hashmap으로 넘긴 값을</p>
+<p>위의 로직이 진행되면 Ajax가 결과를 받아 처리합니다.<br />
+그런데 Ajax 부분 진행 중 Hashmap으로 받은 값을</p>
 
-<p>자바스크립트에서 jsonReturn으로 받으려 해도 잘 안되더라고요.
-thymeleaf 문법을 다 써봐도 잘 안됐습니다.
+<p>자바스크립트에서 jsonReturn으로 받으려 해도 잘 안되더라고요.<br />
+thymeleaf 문법을 다 써봐도 잘 안됐습니다.<br />
 뭔가 타입이 안 맞다든지. 키값을 입력해도 밸류 값이 안 넘어온다든지..</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="kd">function</span> <span class="nx">postDelete</span><span class="p">(){</span>
@@ -716,13 +771,12 @@ thymeleaf 문법을 다 써봐도 잘 안됐습니다.
 <p>생각해 보니 자바스크립트에서 리다이렉트를 해주고 있는데
 굳이 모델엔 뷰로 뷰까지 넘겨야 하나 해서..</p>
 
-<p>여기서 더 생각을 해보니 요청한 것은 Ajax 비동기 방식이고,
-자바스크립트 코드에서 리다이렉트를 해주고 있어서 ModelAndView를 쓸 필요가 없겠구나?
-라고 생각했습니다.</p>
+<p>여기서 더 생각을 해보니 요청한 것은 Ajax 비동기 방식이고,<br />
+자바스크립트 코드에서 리다이렉트를 해주고 있어서 ModelAndView를 쓸 필요가 없겠구나?라고 생각했습니다.</p>
 
 <p>최대한 Restful하게 만들기도 해야 하고요.</p>
 
-<p>그래서 아래의 코드처럼 JSON을 리턴해주기 위해
+<p>그래서 아래의 코드처럼 JSON을 리턴해주기 위해<br />
 결과값 데이터만 가지는 PostDeleteResultDto를 새로 만들어 사용했습니다.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nd">@DeleteMapping</span><span class="o">(</span><span class="s">"/api/post/{id}"</span><span class="o">)</span>
@@ -796,8 +850,9 @@ thymeleaf 문법을 다 써봐도 잘 안됐습니다.
 
 </code></pre></div></div>
 
-<p>일단 위의 thymeleaf 값들은 일반 HTML 태그 안 데이터로 불러오면 다 잘 불러와지는데
-저위의 상태에서 input 값들은 잘 되는데</p>
+<p>일단 위의 thymeleaf 값들은 일반 HTML 태그 안 데이터로 불러오면 다 잘 불러와집니다.</p>
+
+<p>근데 저위의 input과 textarea가 있는 상태에서 input 값들은 잘 되는데</p>
 
 <p>textarea의 경우 태그 안의 데이터로 넣으면,
 쌍따옴표 “” 가 표기되어 나오고,</p>
@@ -814,7 +869,7 @@ thymeleaf 문법을 다 써봐도 잘 안됐습니다.
 
 <p>어떻게 해결해야 할까 생각을 해보다가?</p>
 
-<p>그리고 언젠가 TIL 글에서,<br />
+<p>그리고 어제의 TIL 글에서,<br />
 ${}와, [[${}]]가 버전에 따라 다른 것 같다고 말한 것 같은데</p>
 
 <p>아니었습니다….</p>
@@ -827,8 +882,9 @@ ${}와, [[${}]]가 버전에 따라 다른 것 같다고 말한 것 같은데</p
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">th</span><span class="p">:</span><span class="nx">inline</span><span class="o">=</span><span class="dl">"</span><span class="s2">javascript</span><span class="dl">"</span><span class="o">&gt;</span>
 </code></pre></div></div>
 
-<p>무조건 해야 하는 줄 알았던 위의 inline 설정 때문에 자동 따옴표가 생기는 것이었고<br />
-이 기능 자체는 편의성을 위한 것 같지만 이것을 해제하여 잘 동작하길래 위의 inline 설정 제거 후 아래처럼 사용하였습니다</p>
+<p>무조건 해야 하는 줄 알았던 위의 inline 설정 때문에 자동 따옴표가 생기는 것이었고</p>
+
+<p>이 기능 자체는 편의성을 위한 것 같지만 이것을 해제하여 잘 동작하길래 위의 inline 설정 제거 후 아래처럼 사용하였습니다</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"title"</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">value=</span><span class="s">[[${post.title}]]</span> <span class="na">placeholder=</span><span class="s">"title"</span> <span class="nt">&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"author"</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">value=</span><span class="s">[[${post.author}]]</span> <span class="na">placeholder=</span><span class="s">"author"</span> <span class="nt">&gt;</span>
@@ -929,6 +985,68 @@ ${}와, [[${}]]가 버전에 따라 다른 것 같다고 말한 것 같은데</p
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sql/SQL01/" rel="permalink">SQL 기초1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-27T00:00:00+09:00">2022-12-27</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
         
           
 
@@ -1095,68 +1213,6 @@ ${}와, [[${}]]가 버전에 따라 다른 것 같다고 말한 것 같은데</p
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           9 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/%ED%95%AD%ED%95%B499/WIL03/" rel="permalink">WIL 3주 차 회고, 주특기 주 차 시작
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-12-25T00:00:00+09:00">2022-12-25</time>
-      </span>
-    
-
-                 
-                
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          11 분 소요
         
       </span>
     
