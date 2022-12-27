@@ -419,7 +419,7 @@ var store = [{
         "url": "/%ED%95%AD%ED%95%B499/TIL19/",
         "teaser": null
       },{
-        "title": "TIL 22일 스프링 입문 주 차#, Thymeleaf",
+        "title": "TIL 23일 스프링 입문 주 차#, Thymeleaf",
         "excerpt":"오늘은 CRUD게시판 과제 진행중 HTML, 자바스크립트에 thymeleaf 사용 시 잘안되는 것같아서공부를 좀 했습니다. 오늘은 헤맨부분이 꽤 있어서 TIL을 쓸 거리는 좀 있겠구나… 했습니다. CDATA? 처음에 자바스크립트에서 생각되로 Thymeleaf가 잘 되지 않아서, 검색해보니 CDATA?라는 것을 적용해야 한다고해서 더 알아보니 thymeleaf 3.0버전 부는 자바스크립테으 CDATA를 안써도 된다고 하더라고요. Delete 기능 Delete기능을 구현하던중...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL20/",
