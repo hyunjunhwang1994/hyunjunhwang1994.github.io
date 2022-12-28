@@ -438,7 +438,7 @@ var store = [{
         "teaser": null
       },{
         "title": "TIL 24일 스프링 입문 주 차#, DTO와 Entity",
-        "excerpt":"자바의 상속과 다형성에 대해서 정리를했따 링크 Spring Architecture, DTO, Entity 어제 완성한 기존의 코드의 경우 서비스단에서 처리한 Entity 객체가 뷰(HTML페이지..)까지 넘어 가는 형태로 작성을 했는데. Entity객체는 실제 DB테이블과 매핑되는 핵심 클래스 이면서, 테이블이 가지는 컬럼들이 필드로 가지기 때문에 보안상의 이유로 단순 데이터 그 자체만 가지고 전달되는 객체인 DTO객체로 변경해보려고 한다....","categories": ["항해99"],
+        "excerpt":"오전에 한 것 자바의 상속과 다형성에 대해서 정리를 했다. 상속, 다형성 오후) Spring Architecture, DTO, Entity 기존의 과제에서 완성한 코드의 경우 서비스단에서 처리한 Entity 객체가 뷰(HTML 페이지)까지 넘어가는 형태로 작성을 했다. 하지만, Entity 객체는 실제 DB 테이블과 매핑되는 핵심 클래스이면서, 테이블이 가지는 컬럼들이 필드로 가지기 때문에 보안상의 이유로 단순 데이터...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL21/",
         "teaser": null

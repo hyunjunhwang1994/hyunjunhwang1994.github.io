@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>TIL 24일 스프링 입문 주 차#, DTO와 Entity | 기술 블로그</title>
-<meta name="description" content="자바의 상속과 다형성에 대해서 정리를했따 링크">
+<meta name="description" content="오전에 한 것 자바의 상속과 다형성에 대해서 정리를 했다.">
 
 
   <meta name="author" content="Hyun Jun">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL21/">
 
 
-  <meta property="og:description" content="자바의 상속과 다형성에 대해서 정리를했따 링크">
+  <meta property="og:description" content="오전에 한 것 자바의 상속과 다형성에 대해서 정리를 했다.">
 
 
 
@@ -625,7 +625,7 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="TIL 24일 스프링 입문 주 차#, DTO와 Entity">
-    <meta itemprop="description" content="자바의 상속과 다형성에 대해서 정리를했따링크">
+    <meta itemprop="description" content="오전에 한 것자바의 상속과 다형성에 대해서 정리를 했다.">
     <meta itemprop="datePublished" content="2022-12-28T00:00:00+09:00">
     
 
@@ -663,7 +663,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          33 분 소요
+          39 분 소요
         
       </span>
     
@@ -678,29 +678,29 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#자바의-상속과-다형성에-대해서-정리를했따">자바의 상속과 다형성에 대해서 정리를했따</a></li><li><a href="#spring-architecture-dto-entity">Spring Architecture, DTO, Entity</a><ul><li><a href="#요구사항-현재-crud-게시판-과제-진행중">요구사항 (현재 CRUD 게시판 과제 진행중)</a></li><li><a href="#dto생성">Dto생성</a></li><li><a href="#service-계층-코드-수정">Service 계층 코드 수정</a></li><li><a href="#삽질-시작">삽질 시작!</a></li><li><a href="#다음-단계-디버깅">다음 단계 디버깅</a></li><li><a href="#로그를-잘-확인하자">로그를 잘 확인하자..</a></li><li><a href="#dto-필드-변경">dto 필드 변경</a></li><li><a href="#로그-익셉션-확인-잘-하자">로그, 익셉션 확인 잘 하자!!</a></li><li><a href="#더-나은-방식으로">더 나은 방식으로.</a></li><li><a href="#entity---dto">Entity -&gt; DTO</a></li><li><a href="#modelmapper">ModelMapper</a></li><li><a href="#builder패턴과-toentity">Builder패턴과 toEntity</a><ul><li><a href="#선택한-글을-수정하기">선택한 글을 수정하기</a></li><li><a href="#시작">시작!</a></li><li><a href="#마치며">마치며.</a></li></ul></li><li><a href="#렌더링시점">렌더링시점</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#오전에-한-것">오전에 한 것</a></li><li><a href="#오후-spring-architecture-dto-entity">오후) Spring Architecture, DTO, Entity</a><ul><li><a href="#요구사항-현재-crud-게시판-과제-진행-중">요구사항 (현재 CRUD 게시판 과제 진행 중)</a></li><li><a href="#dto-생성">Dto 생성</a></li><li><a href="#service-계층-코드-수정">Service 계층 코드 수정</a></li><li><a href="#삽질-시작">삽질 시작!</a></li><li><a href="#다음-단계-디버깅">다음 단계 디버깅</a></li><li><a href="#로그를-잘-확인하자">로그를 잘 확인하자..</a></li><li><a href="#dto-필드-변경">dto 필드 변경</a></li><li><a href="#로그-익셉션-확인-잘-하자">로그, 익셉션 확인 잘 하자!!</a></li><li><a href="#더-나은-방식으로">더 나은 방식으로.</a></li><li><a href="#entity---dto">Entity -&gt; DTO</a></li><li><a href="#modelmapper">ModelMapper</a></li><li><a href="#builder-패턴과-toentity">Builder 패턴과 toEntity</a><ul><li><a href="#선택한-글을-수정하기">선택한 글을 수정하기</a></li><li><a href="#시작">시작!</a></li><li><a href="#마치며">마치며.</a></li><li><a href="#망함">망함.</a></li></ul></li><li><a href="#렌더링-시점">렌더링 시점</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="자바의-상속과-다형성에-대해서-정리를했따">자바의 상속과 다형성에 대해서 정리를했따</h1>
-<p><a href="">링크</a></p>
+        <h1 id="오전에-한-것">오전에 한 것</h1>
+<p>자바의 상속과 다형성에 대해서 정리를 했다.</p>
 
-<h1 id="spring-architecture-dto-entity">Spring Architecture, DTO, Entity</h1>
+<p><a href="https://hyunjunhwang1994.github.io/java/Java18/">상속, 다형성</a></p>
 
-<p>어제 완성한 기존의 코드의 경우 서비스단에서 처리한 Entity 객체가 뷰(HTML페이지..)까지 넘어 가는 형태로 작성을 했는데.</p>
+<h1 id="오후-spring-architecture-dto-entity">오후) Spring Architecture, DTO, Entity</h1>
 
-<p>Entity객체는 실제 DB테이블과 매핑되는 핵심 클래스 이면서,<br />
+<p>기존의 과제에서 완성한 코드의 경우 서비스단에서 처리한 Entity 객체가 뷰(HTML 페이지)까지 넘어가는 형태로 작성을 했다.</p>
+
+<p>하지만, Entity 객체는 실제 DB 테이블과 매핑되는 핵심 클래스이면서,<br />
 테이블이 가지는 컬럼들이 필드로 가지기 때문에</p>
 
-<p>보안상의 이유로</p>
+<p>보안상의 이유로 단순 데이터 그 자체만 가지고 전달되는 객체인 DTO 객체로 변경해 보려고 한다.</p>
 
-<p>단순 데이터 그 자체만 가지고 전달되는 객체인 DTO객체로 변경해보려고 한다.</p>
-
-<h2 id="요구사항-현재-crud-게시판-과제-진행중">요구사항 (현재 CRUD 게시판 과제 진행중)</h2>
+<h2 id="요구사항-현재-crud-게시판-과제-진행-중">요구사항 (현재 CRUD 게시판 과제 진행 중)</h2>
 <ul>
   <li>현재 엔티티상에는 Password 컬럼(필드)이 포함되어 있다.</li>
-  <li>서비스단에서 해당 선택글 데이터를 가지고 올때, Entity에 존재하는 컬럼인 Password 필드는 필요가 없다. (있을 시 위험.)</li>
+  <li>서비스단에서 해당 선택 글 데이터를 가지고 올 때, Entity에 존재하는 컬럼인 Password 필드는 필요가 없다. (있을 시 위험.)</li>
   <li>컨트롤러 단에서 Entity가 아닌 DTO만을 처리하게 해라.</li>
 </ul>
 
@@ -814,13 +814,12 @@
 
 <p>TODO:</p>
 <ol>
-  <li>Service단에서 Entity를 DTO로 변환하여 컨트롤러로 넘겨줘야함.</li>
-  <li>DTO에는 Password 필드가 존재하지 않아야함.</li>
+  <li>Service 단에서 Entity를 DTO로 변환하여 컨트롤러로 넘겨줘야 함.</li>
+  <li>DTO에는 Password 필드가 존재하지 않아야 함.</li>
 </ol>
 
-<h2 id="dto생성">Dto생성</h2>
-
-<p>password 필드만 제외한 선택 글을 뿌려주기위한 용도의 DTO를 만들었다.</p>
+<h2 id="dto-생성">Dto 생성</h2>
+<p>password 필드만 제외한 선택 글을 뿌려주기 위한 용도의 DTO를 만들었다.</p>
 
 <details>  
 <summary>SelectPostShowDto</summary>
@@ -841,7 +840,7 @@
 </details>
 
 <h2 id="service-계층-코드-수정">Service 계층 코드 수정</h2>
-<p>서비스 단에서 부터 리턴을 DTO로 하기위해 return 타입과, 로직을 변경하였다.</p>
+<p>서비스 단에서부터 리턴을 DTO로 하기 위해 return 타입과, 로직을 변경하였다.</p>
 
 <details>  
 <summary>PostService</summary>
@@ -874,23 +873,23 @@
 </details>
 
 <h2 id="삽질-시작">삽질 시작!</h2>
-<p>위의 코드까지 진행 시 사실 html페이지의 템플릿엔진 부분만 살짝 바꿔주면 동작을 해야할 것 같다.</p>
+<p>위의 코드까지 진행 시 사실 html 페이지의 템플릿 엔진 부분만 살짝 바꿔주면 동작을 해야 할 것 같다.</p>
 
 <p>그런데, post.html에서</p>
 
-<p>기존 Entity의  [[${post.id}]] 를<br />
+<p>기존 Entity의  [[${post.id}]]를<br />
 DTO의         [[${SelectPostShowDto.title}]] 식으로 바꾸었더니 에러가 났다.</p>
 
-<p>개발자 도구 확인시 500에러 발생으로 서버쪽 에러가 확인됬다.<br />
-타임리프자체가 서버렌더링이므로 서버쪽에러는 맞는 것 같고.</p>
+<p>개발자 도구 확인 시 500에러 발생으로 서버 쪽 에러가 확인됐다.<br />
+타임리프 자체가 서버 렌더링이므로 서버쪽 에러는 맞는 것 같고.</p>
 
-<p>원래의 코드는 service단에서 post라는 이름으로 뷰단까지 넘어왔었는데<br />
+<p>원래의 코드는 service 단에서 post라는 이름으로 뷰단까지 넘어왔었는데<br />
 현재는 selectPostShowDto라는 이름으로 바꾸어놓아서<br />
-html페이지의 이름도 바꾸었는데 에러가 왜 날까?</p>
+html 페이지의 이름도 바꾸었는데 에러가 왜 날까?</p>
 
 <ul>
-  <li>일단 서비스단 자체는 문제가없을것으로 판단 컨트롤러단으로 넘어온 필드들의 데이터를 확인해보았다.</li>
-  <li>확인 중, 컨틑롤러 단에서 기존 서비스를 의존하는 코드에서 DTO를 의존하는 코드로 코드를 변경하였다.</li>
+  <li>일단 서비스단 자체는 문제가 없을 것으로 판단 컨트롤러단으로 넘어온 필드들의 데이터를 확인해 보았다.</li>
+  <li>확인 중, 컨트롤러 단에서 기존 서비스를 의존하는 코드에서 DTO를 의존하는 코드로 코드를 변경하였다.</li>
 </ul>
 
 <details>  
@@ -934,12 +933,12 @@ html페이지의 이름도 바꾸었는데 에러가 왜 날까?</p>
   </div>
 </details>
 
-<p>해보니, 컨트롤러 단까지 값은 아래와 같이 잘넘어온다.<br />
+<p>해보니, 컨트롤러 단까지 값은 아래와 같이 잘 넘어온다.<br />
 <img src="../../images/2022-12-28-11-27-32.png" alt="" /></p>
 
-<p>그렇다면 어느부분이 문제일까?</p>
+<p>그렇다면 어느 부분이 문제일까?</p>
 
-<p>아마 DTO를 토대로 서버쪽에서 뷰페이지를 렌더링하는 과정에서 타임리프의 문제이지 않을까 싶다.</p>
+<p>아마 DTO를 토대로 서버 쪽에서 뷰 페이지를 렌더링 하는 과정에서 타임리프의 문제이지 않을까 싶다.</p>
 
 <h2 id="다음-단계-디버깅">다음 단계 디버깅</h2>
 
@@ -949,12 +948,12 @@ System.out.println( modelAndView.getModel());</p>
 <p>아래와 같은 값이 나온다.
 {selectPostShowDto=com.hyunjun.spring_basic_week_assignment.dto.SelectPostShowDto@25faa12f}</p>
 
-<p>그렇다면 selectPostShowDto라는 이름으로 렌더링 되는게 맞을건데 왜안될까..?</p>
+<p>그렇다면 selectPostShowDto라는 이름으로 렌더링 되는 게 맞을 건데 왜 안 될까..?</p>
 
-<p>post html에 관련코드가 많아 테스트가 어려워
+<p>post html에 관련 코드가 많아 테스트가 어려워
 새로 test html을 만들어 테스트를 해 보았다.</p>
 
-<p>혹시나 기존방식이아닌 th:text 방식을 써보고자
+<p>혹시나 기존 방식이 아닌 th:text 방식을 써보고자
 아래처럼 해보았더니</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${selectPostShowDto.title}"</span><span class="nt">&gt;</span>제목  <span class="nt">&lt;/span&gt;</span>
@@ -962,50 +961,50 @@ System.out.println( modelAndView.getModel());</p>
     <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${selectPostShowDto.contents}"</span><span class="nt">&gt;</span>작성자  <span class="nt">&lt;/span&gt;</span>
 </code></pre></div></div>
 
-<p>잘동작한다 ?
+<p>잘 동작한다?
 <img src="../../images/2022-12-28-13-10-35.png" alt="" /></p>
 
 <p>–&gt; 기존[[${data}]] 방식의 경우 값 치환이 아닌 unescpae가 적용되어 직접 출력하는 것이고<br />
-–&gt; 바뀐 th:text=”${data}” 의 경우 data안의 값을 이스케이프 처리하지않고 출력하는것인데</p>
+–&gt; 바뀐 th:text=”${data}”의 경우 data 안의 값을 이스케이프 처리하지 않고 출력하는 것인데</p>
 
-<p>안되려면 두개다 안되어야되는데 뭔가 이상하다!</p>
+<p>안되려면 두 개다 안되어야 되는데 뭔가 이상하다!</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[${selectPostShowDto.title}]]
 [[${selectPostShowDto.author}]]
 [[${selectPostShowDto.contents}]]
 </code></pre></div></div>
 
-<p>도 test.html에 같이 넣어 테스트해보았더니 아래처럼 잘나온다.</p>
+<p>도 test.html에 같이 넣어 테스트해 보았더니 아래처럼 잘 나온다.</p>
 
-<p>두가지 방식 다 잘 통과한다. 과연 무슨문제일까?
+<p>두 가지 방식 다 잘 통과한다. 과연 무슨 문제일까?
 <img src="../../images/2022-12-28-13-14-14.png" alt="" /></p>
 
 <h2 id="로그를-잘-확인하자">로그를 잘 확인하자..</h2>
 
-<p>스프링의 로그를 확인해보니.
-ajax 부분의 URL 부분에서 에러가난다.</p>
+<p>스프링의 로그를 확인해 보니.
+ajax 부분의 URL 부분에서 에러가 난다.</p>
 
-<p>원래코드는 이렇다.
+<p>원래 코드는 이렇다.
  url: “/api/post/[[${post.id}]]”,,</p>
 
 <p>바뀐 코드는.
   url: “/api/post/[[${selectPostShowDto.id}]]”,</p>
 
-<p>인데 타임리프가 잘동작하는걸 test.html에서 확인했는데 왜 저부분에서 에러가 날까 ?</p>
+<p>인데 타임리프가 잘 동작하는 걸 test.html에서 확인했는데 왜 저 부분에서 에러가 날까?</p>
 
-<p>아래처럼 타임리프도 회색으로나오고.</p>
+<p>아래처럼 타임리프도 회색으로 나오고.</p>
 
 <p><img src="../../images/2022-12-28-13-23-55.png" alt="" /></p>
 
-<p>아마 현재 html페이지에서 타임리프를 사용하지 않는다는의미같은데..?</p>
+<p>아마 현재 html 페이지에서 타임리프를 사용하지 않는다는 의미 같은데..?</p>
 
-<p>test.html 에는 잘되는 타임리프가  post.html으로오면안된다.?</p>
+<p>test.html에는 잘 되는 타임리프가  post.html으로 오면 안 된다.?</p>
 
-<p>합리적의심으로 일단 인텔리제이를 껏다켜보았따.</p>
+<p>합리적 의심으로 일단 인텔리 제이를 껐다 켜보았다.</p>
 
-<p>차이가없다.. 컴퓨터는 바보가아니다.. 분명 내가 뭔가 잘못했을것이다..</p>
+<p>차이가 없다.. 컴퓨터는 바보가 아니다.. 분명 내가 뭔가 잘못했을 것이다..</p>
 
-<p>혹시나 싶어, 관련 ajax 내용 빼고 다지워보았다.</p>
+<p>혹시나 싶어, 관련 ajax 내용 빼고 다 지워보았다.</p>
 
 <p><img src="../../images/2022-12-28-13-32-42.png" alt="" /></p>
 
@@ -1013,104 +1012,104 @@ ajax 부분의 URL 부분에서 에러가난다.</p>
 
 <p><img src="../../images/2022-12-28-13-32-30.png" alt="" /></p>
 
-<p>아 URL을 넣는부분에 문제가 있구나..</p>
+<p>아 URL을 넣는 부분에 문제가 있구나..</p>
 
-<p>post.id(Entity 버전에서 되던부분)과<br />
-selectPostShowDto.id(현재 DTO버전에서 안되는 부분)가 무슨 차이가 있지 ??</p>
+<p>post.id(Entity 버전에서 되던 부분)과<br />
+selectPostShowDto.id(현재 DTO 버전에서 안되는 부분)가 무슨 차이가 있지 ??</p>
 
-<p>하다가 문득 떠올랐다.. 에러가난 부분의 필드명이 id구나..?<br />
-내가만든 dto안에는 id가 안들어있지..?</p>
+<p>하다가 문득 떠올랐다.. 에러가 발생한 부분의 필드명이 id구나..?<br />
+내가 만든 dto 안에는 id가 안 들어있지..?</p>
 
-<p>그래서 고민을해봤다..</p>
+<p>그래서 고민을 해봤다..</p>
 
-<p>기존의 로직은 Entity를 끌고다니므로 테이블에있는 key인 Id 와 매칭이되어<br />
-뷰까지 끌고와서 사용을했었다.</p>
+<p>기존의 로직은 Entity를 끌고 다니므로 테이블에 있는 key인 Id와 매칭이 되어<br />
+뷰까지 끌고 와서 사용을 했었다.</p>
 
-<p>그랬기에 테이블에있는 컬럼들은 자유롭게 사용이가능하지만
-password라던지 중요정보를 같이 끌고올 위험이있다.</p>
+<p>그랬기에 테이블에 있는 컬럼들은 자유롭게 사용이 가능하지만
+password라든지 중요 정보를 같이 끌고 올 위험이 있다.</p>
 
 <p>그래서 id 컬럼을 만들어 보기로 했다.</p>
 
-<p>원래버전이 가능했던것은 기존로직에서는 응답 시 DTO자체를 사용하지 않았다는 말이 된다.
-(DTO자체에 id필드가 없으니.)</p>
+<p>원래 버전이 가능했던 것은 기존 로직에서는 응답 시 DTO 자체를 사용하지 않았다는 말이 된다.
+(DTO 자체에 id 필드가 없으니.)</p>
 
 <p>사실 컨트롤러 API를 호출할 때 PathVariable으로<br />
-id를 가지고 오므로, 이 id를 활용할까하다가, 사용자가 직접입력하거나 하는 부분에서<br />
-취약점이 있을것같아 그방법으로 하지않고,</p>
+id를 가지고 오므로, 이 id를 활용할까 하다가, 사용자가 직접 입력하거나 하는 부분에서<br />
+취약점이 있을 것 같아 그 방법으로 하지 않고,</p>
 
 <p>아래의 방법으로 했다.</p>
 
 <h2 id="dto-필드-변경">dto 필드 변경</h2>
 
-<p>그래서 dto에 id를 추가해주고<br />
+<p>그래서 dto에 id를 추가해 주고<br />
 <img src="../../images/2022-12-28-13-40-07.png" alt="" /></p>
 
-<p>이런식으로 id도 담아주었다.<br />
+<p>이런 식으로 id도 담아주었다.<br />
 <img src="../../images/2022-12-28-13-41-28.png" alt="" /></p>
 
-<p>그랬더니 이제는 잘동작을한다!</p>
+<p>그랬더니 이제는 잘 동작을 한다!</p>
 
 <h2 id="로그-익셉션-확인-잘-하자">로그, 익셉션 확인 잘 하자!!</h2>
 
-<p>중요한 부분은 사실 애초에 스프링에서띄워줬던 익셉션 부분만 곰곰히 생각해봤따면</p>
+<p>중요한 부분은 사실 애초에 스프링에서 띄워줬던 익셉션 부분만 곰곰이 생각해 봤다면</p>
 
-<p>id라는 부분에서 에러가나네? 하고 금방해결할문제인데 기존 Entity로 사용했던 방식때문에,</p>
+<p>id라는 부분에서 에러가 나네? 하고 금방 해결할 문제인데 기존 Entity로 사용했던 방식 때문에,</p>
 
-<p>id는 있는데 왜없다고하는거지?라는 생각에</p>
+<p>id는 있는데 왜 없다고 하는 거지?라는 생각에</p>
 
-<p>역으로 디버깅을 해보지않아도 될 시간을 좀 잡아먹은 것 같다.</p>
+<p>역으로 디버깅을 해보지 않아도 될 시간을 좀 잡아먹은 것 같다.</p>
 
 <h2 id="더-나은-방식으로">더 나은 방식으로.</h2>
-<p>이렇게 진행을 해보니 이제는 다른 방식이 없나? 하고 다음과같은 생각이 들었다.</p>
+<p>이렇게 진행을 해보니 이제는 다른 방식이 없나? 하고 다음과 같은 생각이 들었다.</p>
 
-<p>일단 DTO버전으로 수정한 방법처럼,<br />
+<p>일단 DTO 버전으로 수정한 방법처럼,<br />
 구조만을 생각하고 DTO에 중점을 두고 기능을 만들어 보았기에<br />
 더 쉽고, 좋고, 안전한 방법들을 생각해 보았다.</p>
 
 <ul>
   <li>
-    <p>Service -&gt; 컨트롤러로 넘어올때 entity로 넘겨와서 DTO로 변환을 해도 될것같고</p>
+    <p>Service -&gt; 컨트롤러로 넘어올 때 entity로 넘겨와서 DTO로 변환을 해도 될 것 같고</p>
   </li>
-  <li>DTO는 어느 계층까지 활용을하고</li>
-  <li>DTO는 요청, 응답마다 따로만들어야 하나 ?<br />
-  ㄴ 요청시에는 비밀번호가 있지만, 응답 시에는 비밀번호가 없다면?</li>
+  <li>DTO는 어느 계층까지 활용을 하고</li>
+  <li>DTO는 요청, 응답마다 따로 만들어야 하나?<br />
+  ㄴ 요청 시에는 비밀번호가 있지만, 응답 시에는 비밀번호가 없다면?</li>
   <li>Entity는 어느 계층까지 와도 되나</li>
-  <li>Entity값을 더 쉽게 넣을수없을까?</li>
+  <li>Entity 값을 더 쉽게 넣을 수 없을까?</li>
 </ul>
 
-<p>와 같은 생각이들었다.</p>
+<p>와 같은 생각이 들었다.</p>
 
-<p><a href="https://okky.kr/articles/1202337">DTO용도, 갯수 관련 참조 글</a></p>
+<p><a href="https://okky.kr/articles/1202337">DTO 용도, 갯수 관련 참조 글</a></p>
 
 <h2 id="entity---dto">Entity -&gt; DTO</h2>
 
-<p>아까 수정했던 Server계층에서 DTO에 Entity값을 넣는 과정에서<br />
+<p>아까 수정했던 Server 계층에서 DTO에 Entity 값을 넣는 과정에서<br />
 <img src="../../images/2022-12-28-13-45-39.png" alt="" /></p>
 
-<p>selectpostShowDto.set() 과정이 복잡해보여서 이것 관련<br />
-어노테이션, 스프링기능 혹은 방법은없나? 하고 찾아보았다.<br />
-(아무리 생각해도 편하게 쓰려고 쓰는 스프링에서 위와같이 쓸것같진않아서..)</p>
+<p>selectpostShowDto.set() 과정이 복잡해 보여서 이것 관련<br />
+어노테이션, 스프링 기능 혹은 방법은 없나? 하고 찾아보았다.<br />
+(아무리 생각해도 편하게 쓰려고 쓰는 스프링에서 위와 같이 쓸 것 같진 않아서..)</p>
 
-<p>지금까지는 DTO를 사용해야한다는 마음에 직접 삽질하여 내마음대로 해보았고,
-이제는 스프링에서 쓰는방식, 다른사람들이 쓰는 방식대로 해보고 싶었다.</p>
+<p>지금까지는 DTO를 사용해야 한다는 마음에 직접 삽질하여 내 마음대로 해보았고,
+이제는 스프링에서 쓰는 방식, 다른 사람들이 쓰는 방식대로 해보고 싶었다.</p>
 
 <p>찾아보다가
-Entity와 DTO간의 변환은 Controller, Servcie단에서 주로 한다고하여</p>
+Entity와 DTO 간의 변환은 Controller, Servcie 단에서 주로 한다고 하여</p>
 
-<p>내가했던 Entity값을 DTO에 일일이 담는 비효율 적인방법보다
+<p>내가 했던 Entity 값을 DTO에 일일이 담는 비효율적인 방법보다
 Entity를 DTO랑 매칭해서 값을 넣어주는 라이브러리를 찾아서</p>
 
-<p>일단은 service단에서 처리후 dto를 반환하는 코드를 바꿔보았다.</p>
+<p>일단은 service 단에서 처리 후 dto를 반환하는 코드를 바꿔보았다.</p>
 
 <h2 id="modelmapper">ModelMapper</h2>
-<p>일단 난 그래들이므로 build.gradle에 아래의 디펜던시 의존성을 추가해줬다</p>
+<p>일단 난 그래들이므로 build.gradle에 아래의 디펜던시 의존성을 추가해 줬다</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.3.8'
 </code></pre></div></div>
 
-<p>그 후, ModelMapper의 임포트가 잘되지않아서 인텔리제이를 재 시작하니 임포트는 잘 되었다.</p>
+<p>그 후, ModelMapper의 임포트가 잘되지 않아서 인텔리제이를 재시작하니 임포트는 잘 되었다.</p>
 
-<p>그 후 아래처럼 바꿨더니 잘동작한다!!( 주석은 원래 코드 )</p>
+<p>그 후 아래처럼 바꿨더니 잘 동작한다!!( 주석은 원래 코드 )</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@Transactional</span><span class="o">(</span><span class="n">readOnly</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
     <span class="kd">public</span> <span class="nc">SelectPostShowDto</span> <span class="nf">readPost</span><span class="o">(</span><span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
@@ -1139,37 +1138,37 @@ Entity를 DTO랑 매칭해서 값을 넣어주는 라이브러리를 찾아서</
 <p><img src="../../images/2022-12-28-14-50-11.png" alt="" />
 <img src="../../images/2022-12-28-14-50-17.png" alt="" /></p>
 
-<h2 id="builder패턴과-toentity">Builder패턴과 toEntity</h2>
+<h2 id="builder-패턴과-toentity">Builder 패턴과 toEntity</h2>
 
 <p>써칭을 하다가 아래 블로그에서 또 다른 방법을 발견하여</p>
 
-<p>글을 수정하는 API에 적용해 보려고한다!</p>
+<p>글을 수정하는 API에 적용해 보려고 한다!</p>
 
-<p>정리가 잘되어있으니 참조하면 좋을 듯하다.
+<p>정리가 잘 되어있으니 참조하면 좋을 듯하다.
 <a href="https://velog.io/@jsb100800/Spring-boot-DTO-Entity-%EA%B0%84-%EB%B3%80%ED%99%98-%EC%96%B4%EB%8A%90-Layer%EC%97%90%EC%84%9C-%ED%95%98%EB%8A%94%EA%B2%8C-%EC%A2%8B%EC%9D%84%EA%B9%8C">참조 블로그</a></p>
 
 <h3 id="선택한-글을-수정하기">선택한 글을 수정하기</h3>
-<p>DTO의 입장에서 먼저 확인해보겠습니다.</p>
+<p>DTO의 입장에서 먼저 확인해 보겠습니다.</p>
 
-<p>글 수정시 패스워드를 기준으로 글에대한 수정권한을 주므로,
-password, title, contents, author 정도를 수정할수 있게 하려 합니다.</p>
+<p>글 수정 시 패스워드를 기준으로 글에 대한 수정 권한을 주므로,
+password, title, contents, author 정도를 수정할 수 있게 하려 합니다.</p>
 
 <p>그럼 요청 시 DTO는
 password, title, contents, author를 담게 만들고</p>
 
-<p>응답같은경우 password를 제외한</p>
+<p>응답 같은 경우 password를 제외한</p>
 
 <p>createdAt, modifiedAt, id, title, content, author를 가지는 dto를 따로 만들면 될 것 같네요!</p>
 
-<p>사실 글 수정 성공시 해당 글id로 GET으로 보내주어서,
+<p>사실 글 수정 성공 시 해당 글 id로 GET으로 보내주어서,
 위의 응답 DTO는 만들 필요가 없지만,</p>
 
 <p>확인하는 용도로 만들어볼게요!</p>
 
 <ul>
-  <li>유연하게 사용할려면 현재 상황의 경우<br />
-아마도 글 작성, 글 수정 의 서비스는 달라도 DTO는 똑같아도 될 것 같네요!
-(물론 API 기능마다 DTO파일이 달라야 한다라는 룰이있다면 그렇게 쓰셔도 좋구요!)</li>
+  <li>유연하게 사용하려면 현재 상황의 경우<br />
+아마도 글 작성, 글 수정의 서비스는 달라도 DTO는 똑같아도 될 것 같네요!
+(물론 API 기능마다 DTO 파일이 달라야 한다는 룰이 있다면 그렇게 쓰셔도 좋고요!)</li>
 </ul>
 
 <h3 id="시작">시작!</h3>
@@ -1339,8 +1338,8 @@ password, title, contents, author를 담게 만들고</p>
   </div>
 </details>
 
-<p>이때 엔티티의 만들어놓은 업데이트 메소드만으로 실제 업데이트 쿼리가 가능한이유?<br />
-Dirty Chechking으로 인해 트랜잭션안에서 Entity의 변경이 일어나면,<br />
+<p>이때 엔티티의 만들어놓은 업데이트 메소드만으로 실제 업데이트 쿼리가 가능한 이유?<br />
+Dirty Chechking으로 인해 트랜잭션 안에서 Entity의 변경이 일어나면,<br />
 변경한 내용은 자동으로 DB에 반영(update)된다.</p>
 
 <p><a href="https://velog.io/@koo8624/Spring-%EB%B3%80%EA%B2%BD-%EA%B0%90%EC%A7%80%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-Entity-%EC%88%98%EC%A0%95">변경 감지</a><br />
@@ -1369,68 +1368,82 @@ Dirty Chechking으로 인해 트랜잭션안에서 Entity의 변경이 일어나
 </details>
 
 <h3 id="마치며">마치며.</h3>
-<p>지금까지 봐온 DTO 계층 이동, Entity 계층 이동,
-DTO의 용도, 파일구분 등은 사람,회사, 상황, 에 따라 다르며,</p>
+<p>지금까지 봐온 DTO 계층 이동, Entity 계층 이동,<br />
+DTO의 용도, 파일 구분 등은 사람, 회사, 상황에 따라 다르며,</p>
 
-<p>DTO를 아예 안써도 되고,
-여러가지 상황을 DTO한개로 해결가능하다면 해도되고,
-Entity로 뷰까지 끌어와도됩니다..(지양해야겠지만)</p>
+<p>DTO를 아예 안 써도 되고,<br />
+여러 가지 상황을 DTO 한 개로 해결 가능하다면 해도 되고,<br />
+Entity로 뷰까지 끌어와도 됩니다.. (지양해야겠지만)</p>
 
-<p>주어진 상황에 따라 유연하게 대처할 수 있어야합니다.</p>
+<p>주어진 상황에 따라 유연하게 대처할 수 있어야 합니다.</p>
 
 <p><a href="https://donghyeon.dev/jpa/2020/07/12/JPA%EC%9D%98-DTO%EC%99%80-Entity/">참조한 좋은 글</a>
 <a href="https://tmdrl5779.tistory.com/51">실질적으로 도움 받은 글</a></p>
 
-<p>과제를 다 끝내고보니 실수한부분이있었다..
-현재 의 중요목표중하나가 RESTful API 스럽게 만드는것인데</p>
+<h3 id="망함">망함.</h3>
+
+<p>과제를 다 끝내고 보니 실수한 부분이 있었다..</p>
+
+<p>원래 과제의 목적은 RESTful API를 만드는 것인데<br />
+(다른 팀원들에게 물어보니 프론트엔드 페이지는 만들지 않고, API Request, Response만 잘 되면 된다 한다..)</p>
 
 <p>아래는 전체 글 보기 페이지인데 
 <img src="../../images/2022-12-28-20-00-21.png" alt="" /></p>
 
-<p>테이블에서 해당글 클릭시 해당글의 번호로 api로 접근해
-ModelAndView를 받아서 View를 받아 이동하게된다…</p>
+<p>테이블에서 해당 글 클릭 시 해당 글의 번호로 api로 접근해<br />
+ModelAndView를 받아서 View를 받아 이동하게 된다…</p>
 
 <p>ex)
 localhost:8080/api/post/1</p>
 
 <p><img src="../../images/2022-12-28-20-01-44.png" alt="" /></p>
 
-<p>이것을 이제 RESTful스럽게 ,postman사용시 json데이터 형식으로만 받을수 있게 바꿔보려고한다.</p>
+<p>이것을 이제 RESTful스럽게, postman 사용 시 json 데이터 형식으로만 받을 수 있게 바꿔보려고 한다.</p>
 
-<p>아래처럼 ajax를 활용하기위해 온클릭 함수로 바꾸어줬고 href에서 온클릭으로 바꾸니 파란밑줄이 사라졌다..ㅎ
+<p>아래처럼 ajax를 활용하기 위해 온 클릭 함수로 바꾸어줬고 href에서 온 클릭으로 바꾸니 파란 밑줄이 사라졌다.. ㅎ<br />
 <img src="../../images/2022-12-28-20-02-42.png" alt="" /></p>
 
-<p>일단 아래처럼 글 클릭시 API호출하는것 까지 확인완료
+<p>일단 아래처럼 글 클릭 시 API 호출하는 것까지 확인 완료
 <img src="../../images/2022-12-28-20-04-06.png" alt="" /></p>
 
-<p>계쏙 하던중 아무리생각해도 컨트롤러단에서는 json만을 리턴하고
-페이지를 이동시키면서 json만 받아 처리하는 법을 모르겠어서</p>
+<p>계속하던 중 아무리 생각해도 컨트롤러단에서는 json만을 리턴하고<br />
+페이지를 이동시키면서 json만 받아 처리하는 법을 모르겠어서<br />
+-&gt; json 줄게 페이지 이동시키면서 그 Json 데이터를 출력해라?</p>
 
-<p>그냥 페이지이동없이 javascript로 노가다 했다.</p>
+<p>그래서 그냥 페이지 이동 없이 javascript(jquery)로 노가다 했다.</p>
 
-<h2 id="렌더링시점">렌더링시점</h2>
+<h2 id="렌더링-시점">렌더링 시점</h2>
 
-<p>처음엔 글번호 클릭시 postPage()를 호출하고
-ajax로 페이지정보를 가저와 아래의 thymleaf로 할려고했는데
-에러가 났다.. 아마 데이터가 생기기전 렌더링이먼저되어 그런것같다.</p>
+<p>처음엔 글번호 클릭 시 postPage()를 호출하고<br />
+ajax로 페이지 정보를 가저와 아래의 thymleaf로 하려고 했는데<br />
+에러가 났다.. 아마 데이터가 생기기 전 렌더링이 먼저 되어 그런 것 같다.</p>
 
 <p><img src="../../images/2022-12-28-20-42-13.png" alt="" /></p>
 
-<p>그래서 response 값을 활용해보자라고 생각했고
-아래와 같이 하니 동작하였다.
+<p>그래서 response 값을 활용해 보자라고 생각했고<br />
+아래와 같이 하니 동작하였다.<br />
 <img src="../../images/2022-12-28-20-43-57.png" alt="" /></p>
 
-<p>그렇게 해서 아래처럼 한페이지에 다옮겨놓았다</p>
+<p>그렇게 해서 아래처럼 한 페이지에 다 옮겨놓았다.</p>
 
-<p>RESTful하게 만들때 모델엔뷰를 쓰지않고 어떻게 뷰를넘기면서 json으로 값을 쓰려면해야할지
-생각해볼 부분이다.</p>
+<p>RESTful 하게 만들 때 모델엔뷰를 쓰지 않고 어떻게 뷰를 넘기면서 json으로 값을 사용할지 생각해 볼 부분이다.</p>
 
-<p>삭제와 수정도 원래의 페이지에서 다 가지고왔는데
-역시나 아래와 같이 타임리프에서 아직 가지고오지 못한 값들에서 에러가나서
+<p>삭제와 수정도 원래의 페이지에서 다 가지고 왔는데<br />
+역시나 아래와 같이 타임리프에서 아직 가지고 오지 못한 값들에서 에러가 나서<br />
 <img src="../../images/2022-12-28-20-55-25.png" alt="" /></p>
 
-<p>글의 id를 가지고올때 요소들의 온클릭함수에 Id를 넘겨서 해당 Id를 이용했다.
+<p>아래와 같이 처리했고<br />
+<img src="../../images/2022-12-28-23-16-38.png" alt="" /></p>
+
+<p>글의 id를 가지고 올 때 요소들의 온 클릭 함수에 Id를 넘겨서 해당 Id를 이용했다.<br />
 <img src="../../images/2022-12-28-20-54-45.png" alt="" /></p>
+
+<p>원래대로라면 /api/post/1 요청 시 해당 링크로 이동하면서 모델엔뷰로 뿌려주게 했는데</p>
+
+<p>생각해 보니 과제에서의 리스폰스는 해당 글의 내용이 Json으로만 와야 해서<br />
+API에 중점을 두고 뷰 페이지는 끼워 맞췄다..</p>
+
+<p>애당초 목표가 API 만들기였는데, 프론트엔드까지 만들어서 괜히 고생했다.</p>
  <!--실제 페이지 글 부분-->
         
       </section>
