@@ -1,4 +1,751 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-27T21:01:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 23일 스프링 입문 주 차#, Thymeleaf</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL20/" rel="alternate" type="text/html" title="TIL 23일 스프링 입문 주 차#, Thymeleaf" /><published>2022-12-27T00:00:00+09:00</published><updated>2022-12-27T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL20</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL20/"><![CDATA[<p>오늘은 CRUD 게시판 과제 진행 중<br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-28T20:55:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 24일 스프링 입문 주 차#, DTO와 Entity</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL21/" rel="alternate" type="text/html" title="TIL 24일 스프링 입문 주 차#, DTO와 Entity" /><published>2022-12-28T00:00:00+09:00</published><updated>2022-12-28T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL21</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL21/"><![CDATA[<h1 id="자바의-상속과-다형성에-대해서-정리를했따">자바의 상속과 다형성에 대해서 정리를했따</h1>
+<p><a href="">링크</a></p>
+
+<h1 id="spring-architecture-dto-entity">Spring Architecture, DTO, Entity</h1>
+
+<p>어제 완성한 기존의 코드의 경우 서비스단에서 처리한 Entity 객체가 뷰(HTML페이지..)까지 넘어 가는 형태로 작성을 했는데.</p>
+
+<p>Entity객체는 실제 DB테이블과 매핑되는 핵심 클래스 이면서,<br />
+테이블이 가지는 컬럼들이 필드로 가지기 때문에</p>
+
+<p>보안상의 이유로</p>
+
+<p>단순 데이터 그 자체만 가지고 전달되는 객체인 DTO객체로 변경해보려고 한다.</p>
+
+<h2 id="요구사항-현재-crud-게시판-과제-진행중">요구사항 (현재 CRUD 게시판 과제 진행중)</h2>
+<ul>
+  <li>현재 엔티티상에는 Password 컬럼(필드)이 포함되어 있다.</li>
+  <li>서비스단에서 해당 선택글 데이터를 가지고 올때, Entity에 존재하는 컬럼인 Password 필드는 필요가 없다. (있을 시 위험.)</li>
+  <li>컨트롤러 단에서 Entity가 아닌 DTO만을 처리하게 해라.</li>
+</ul>
+
+<details>   
+<summary>기존 선택 글 가져오기 코드</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// RestController</span>
+<span class="nd">@RestController</span>
+
+
+     <span class="c1">// 선택 글 조회</span>
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/api/post/{id}"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">ModelAndView</span> <span class="nf">readPost</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">ModelAndView</span> <span class="n">modelAndView</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ModelAndView</span><span class="o">();</span>
+        <span class="n">modelAndView</span><span class="o">.</span><span class="na">setViewName</span><span class="o">(</span><span class="s">"post"</span><span class="o">);</span>
+        <span class="n">modelAndView</span><span class="o">.</span><span class="na">addObject</span><span class="o">(</span><span class="n">postService</span><span class="o">.</span><span class="na">readPost</span><span class="o">(</span><span class="n">id</span><span class="o">));</span>
+
+        <span class="k">return</span> <span class="n">modelAndView</span><span class="o">;</span>
+
+    <span class="o">}</span>
+
+
+<span class="c1">// Service</span>
+<span class="nd">@Transactional</span><span class="o">(</span><span class="n">readOnly</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">Post</span> <span class="nf">readPost</span><span class="o">(</span><span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="n">postRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">orElseThrow</span><span class="o">(</span>
+                <span class="o">()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"해당 글이 존재하지 않습니다."</span><span class="o">)</span>
+        <span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">post</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="c1">// Repository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PostRepository</span> <span class="kd">extends</span> <span class="nc">JpaRepository</span><span class="o">&lt;</span><span class="nc">Post</span><span class="o">,</span> <span class="nc">Long</span><span class="o">&gt;</span> <span class="o">{</span>
+
+        <span class="o">.......</span>
+
+<span class="o">}</span>
+
+<span class="c1">// DTO</span>
+<span class="nd">@Getter</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostRequestDto</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">password</span><span class="o">;</span>
+
+
+<span class="o">}</span>
+
+
+<span class="c1">// Entity</span>
+<span class="nd">@Getter</span>
+<span class="nd">@Entity</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Post</span> <span class="kd">extends</span> <span class="nc">Timestamped</span> <span class="o">{</span>
+
+
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="nc">GenerationType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">length</span> <span class="o">=</span> <span class="mi">50000</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">password</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Post</span><span class="o">(</span><span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getTitle</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getContents</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getPassword</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">updatePost</span><span class="o">(</span><span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getTitle</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getContents</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div>    </div>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- post.html --&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"postMeta"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span&gt;</span>제목 : [[${post.title}]]<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span&gt;</span>작성자 : [[${post.author}]]<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<p><br /></p>
+
+<p>TODO:</p>
+<ol>
+  <li>Service단에서 Entity를 DTO로 변환하여 컨트롤러로 넘겨줘야함.</li>
+  <li>DTO에는 Password 필드가 존재하지 않아야함.</li>
+</ol>
+
+<h2 id="dto생성">Dto생성</h2>
+
+<p>password 필드만 제외한 선택 글을 뿌려주기위한 용도의 DTO를 만들었다.</p>
+
+<details>  
+<summary>SelectPostShowDto</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
+<span class="nd">@Setter</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SelectPostShowDto</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+<span class="o">}</span>
+
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<h2 id="service-계층-코드-수정">Service 계층 코드 수정</h2>
+<p>서비스 단에서 부터 리턴을 DTO로 하기위해 return 타입과, 로직을 변경하였다.</p>
+
+<details>  
+<summary>PostService</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Service</span>
+
+
+    <span class="nd">@Transactional</span><span class="o">(</span><span class="n">readOnly</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">SelectPostShowDto</span> <span class="nf">readPost</span><span class="o">(</span><span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">SelectPostShowDto</span> <span class="n">selectPostShowDto</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SelectPostShowDto</span><span class="o">();</span>
+
+        <span class="nc">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="n">postRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">orElseThrow</span><span class="o">(</span>
+                <span class="o">()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"해당 글이 존재하지 않습니다."</span><span class="o">)</span>
+        <span class="o">);</span>
+
+        <span class="n">selectPostShowDto</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">post</span><span class="o">.</span><span class="na">getTitle</span><span class="o">());</span>
+        <span class="n">selectPostShowDto</span><span class="o">.</span><span class="na">setAuthor</span><span class="o">(</span><span class="n">post</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">());</span>
+        <span class="n">selectPostShowDto</span><span class="o">.</span><span class="na">setContents</span><span class="o">(</span><span class="n">post</span><span class="o">.</span><span class="na">getContents</span><span class="o">());</span>
+
+
+
+        <span class="k">return</span> <span class="n">selectPostShowDto</span><span class="o">;</span>
+    <span class="o">}</span>
+
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<h2 id="삽질-시작">삽질 시작!</h2>
+<p>위의 코드까지 진행 시 사실 html페이지의 템플릿엔진 부분만 살짝 바꿔주면 동작을 해야할 것 같다.</p>
+
+<p>그런데, post.html에서</p>
+
+<p>기존 Entity의  [[${post.id}]] 를<br />
+DTO의         [[${SelectPostShowDto.title}]] 식으로 바꾸었더니 에러가 났다.</p>
+
+<p>개발자 도구 확인시 500에러 발생으로 서버쪽 에러가 확인됬다.<br />
+타임리프자체가 서버렌더링이므로 서버쪽에러는 맞는 것 같고.</p>
+
+<p>원래의 코드는 service단에서 post라는 이름으로 뷰단까지 넘어왔었는데<br />
+현재는 selectPostShowDto라는 이름으로 바꾸어놓아서<br />
+html페이지의 이름도 바꾸었는데 에러가 왜 날까?</p>
+
+<ul>
+  <li>일단 서비스단 자체는 문제가없을것으로 판단 컨트롤러단으로 넘어온 필드들의 데이터를 확인해보았다.</li>
+  <li>확인 중, 컨틑롤러 단에서 기존 서비스를 의존하는 코드에서 DTO를 의존하는 코드로 코드를 변경하였다.</li>
+</ul>
+
+<details>  
+<summary>기존 컨트롤러, 변경 코드</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 기존 코드</span>
+ <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/api/post/{id}"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">ModelAndView</span> <span class="nf">readPost</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">ModelAndView</span> <span class="n">modelAndView</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ModelAndView</span><span class="o">();</span>
+        <span class="n">modelAndView</span><span class="o">.</span><span class="na">setViewName</span><span class="o">(</span><span class="s">"post"</span><span class="o">);</span>
+        <span class="n">modelAndView</span><span class="o">.</span><span class="na">addObject</span><span class="o">(</span><span class="n">postService</span><span class="o">.</span><span class="na">readPost</span><span class="o">(</span><span class="n">id</span><span class="o">));</span>
+        
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">postService</span><span class="o">.</span><span class="na">readPost</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">getAuthor</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">postService</span><span class="o">.</span><span class="na">readPost</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">getContents</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">postService</span><span class="o">.</span><span class="na">readPost</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">getTitle</span><span class="o">());</span>
+        
+        <span class="k">return</span> <span class="n">modelAndView</span><span class="o">;</span>
+
+    <span class="o">}</span>
+
+
+<span class="c1">// 변경 코드</span>
+<span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/api/post/{id}"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">ModelAndView</span> <span class="nf">readPost</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SelectPostShowDto</span> <span class="n">selectPostShowDto</span> <span class="o">=</span> <span class="n">postService</span><span class="o">.</span><span class="na">readPost</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+
+        <span class="nc">ModelAndView</span> <span class="n">modelAndView</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ModelAndView</span><span class="o">();</span>
+        <span class="n">modelAndView</span><span class="o">.</span><span class="na">setViewName</span><span class="o">(</span><span class="s">"post"</span><span class="o">);</span>
+        <span class="n">modelAndView</span><span class="o">.</span><span class="na">addObject</span><span class="o">(</span><span class="n">selectPostShowDto</span><span class="o">);</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">selectPostShowDto</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">selectPostShowDto</span><span class="o">.</span><span class="na">getTitle</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">selectPostShowDto</span><span class="o">.</span><span class="na">getContents</span><span class="o">());</span>
+
+        <span class="k">return</span> <span class="n">modelAndView</span><span class="o">;</span>
+
+    <span class="o">}</span>
+</code></pre></div>    </div>
+  </div>
+</details>
+
+<p>해보니, 컨트롤러 단까지 값은 아래와 같이 잘넘어온다.<br />
+<img src="../../images/2022-12-28-11-27-32.png" alt="" /></p>
+
+<p>그렇다면 어느부분이 문제일까?</p>
+
+<p>아마 DTO를 토대로 서버쪽에서 뷰페이지를 렌더링하는 과정에서 타임리프의 문제이지 않을까 싶다.</p>
+
+<h2 id="다음-단계-디버깅">다음 단계 디버깅</h2>
+
+<p>컨트롤러에서 아래처럼 모델을 찍어보니
+System.out.println( modelAndView.getModel());</p>
+
+<p>아래와 같은 값이 나온다.
+{selectPostShowDto=com.hyunjun.spring_basic_week_assignment.dto.SelectPostShowDto@25faa12f}</p>
+
+<p>그렇다면 selectPostShowDto라는 이름으로 렌더링 되는게 맞을건데 왜안될까..?</p>
+
+<p>post html에 관련코드가 많아 테스트가 어려워
+새로 test html을 만들어 테스트를 해 보았다.</p>
+
+<p>혹시나 기존방식이아닌 th:text 방식을 써보고자
+아래처럼 해보았더니</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${selectPostShowDto.title}"</span><span class="nt">&gt;</span>제목  <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${selectPostShowDto.author}"</span><span class="nt">&gt;</span>작성자  <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${selectPostShowDto.contents}"</span><span class="nt">&gt;</span>작성자  <span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<p>잘동작한다 ?
+<img src="../../images/2022-12-28-13-10-35.png" alt="" /></p>
+
+<p>–&gt; 기존[[${data}]] 방식의 경우 값 치환이 아닌 unescpae가 적용되어 직접 출력하는 것이고<br />
+–&gt; 바뀐 th:text=”${data}” 의 경우 data안의 값을 이스케이프 처리하지않고 출력하는것인데</p>
+
+<p>안되려면 두개다 안되어야되는데 뭔가 이상하다!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[${selectPostShowDto.title}]]
+[[${selectPostShowDto.author}]]
+[[${selectPostShowDto.contents}]]
+</code></pre></div></div>
+
+<p>도 test.html에 같이 넣어 테스트해보았더니 아래처럼 잘나온다.</p>
+
+<p>두가지 방식 다 잘 통과한다. 과연 무슨문제일까?
+<img src="../../images/2022-12-28-13-14-14.png" alt="" /></p>
+
+<h2 id="로그를-잘-확인하자">로그를 잘 확인하자..</h2>
+
+<p>스프링의 로그를 확인해보니.
+ajax 부분의 URL 부분에서 에러가난다.</p>
+
+<p>원래코드는 이렇다.
+ url: “/api/post/[[${post.id}]]”,,</p>
+
+<p>바뀐 코드는.
+  url: “/api/post/[[${selectPostShowDto.id}]]”,</p>
+
+<p>인데 타임리프가 잘동작하는걸 test.html에서 확인했는데 왜 저부분에서 에러가 날까 ?</p>
+
+<p>아래처럼 타임리프도 회색으로나오고.</p>
+
+<p><img src="../../images/2022-12-28-13-23-55.png" alt="" /></p>
+
+<p>아마 현재 html페이지에서 타임리프를 사용하지 않는다는의미같은데..?</p>
+
+<p>test.html 에는 잘되는 타임리프가  post.html으로오면안된다.?</p>
+
+<p>합리적의심으로 일단 인텔리제이를 껏다켜보았따.</p>
+
+<p>차이가없다.. 컴퓨터는 바보가아니다.. 분명 내가 뭔가 잘못했을것이다..</p>
+
+<p>혹시나 싶어, 관련 ajax 내용 빼고 다지워보았다.</p>
+
+<p><img src="../../images/2022-12-28-13-32-42.png" alt="" /></p>
+
+<p>동작하네 ..?</p>
+
+<p><img src="../../images/2022-12-28-13-32-30.png" alt="" /></p>
+
+<p>아 URL을 넣는부분에 문제가 있구나..</p>
+
+<p>post.id(Entity 버전에서 되던부분)과<br />
+selectPostShowDto.id(현재 DTO버전에서 안되는 부분)가 무슨 차이가 있지 ??</p>
+
+<p>하다가 문득 떠올랐다.. 에러가난 부분의 필드명이 id구나..?<br />
+내가만든 dto안에는 id가 안들어있지..?</p>
+
+<p>그래서 고민을해봤다..</p>
+
+<p>기존의 로직은 Entity를 끌고다니므로 테이블에있는 key인 Id 와 매칭이되어<br />
+뷰까지 끌고와서 사용을했었다.</p>
+
+<p>그랬기에 테이블에있는 컬럼들은 자유롭게 사용이가능하지만
+password라던지 중요정보를 같이 끌고올 위험이있다.</p>
+
+<p>그래서 id 컬럼을 만들어 보기로 했다.</p>
+
+<p>원래버전이 가능했던것은 기존로직에서는 응답 시 DTO자체를 사용하지 않았다는 말이 된다.
+(DTO자체에 id필드가 없으니.)</p>
+
+<p>사실 컨트롤러 API를 호출할 때 PathVariable으로<br />
+id를 가지고 오므로, 이 id를 활용할까하다가, 사용자가 직접입력하거나 하는 부분에서<br />
+취약점이 있을것같아 그방법으로 하지않고,</p>
+
+<p>아래의 방법으로 했다.</p>
+
+<h2 id="dto-필드-변경">dto 필드 변경</h2>
+
+<p>그래서 dto에 id를 추가해주고<br />
+<img src="../../images/2022-12-28-13-40-07.png" alt="" /></p>
+
+<p>이런식으로 id도 담아주었다.<br />
+<img src="../../images/2022-12-28-13-41-28.png" alt="" /></p>
+
+<p>그랬더니 이제는 잘동작을한다!</p>
+
+<h2 id="로그-익셉션-확인-잘-하자">로그, 익셉션 확인 잘 하자!!</h2>
+
+<p>중요한 부분은 사실 애초에 스프링에서띄워줬던 익셉션 부분만 곰곰히 생각해봤따면</p>
+
+<p>id라는 부분에서 에러가나네? 하고 금방해결할문제인데 기존 Entity로 사용했던 방식때문에,</p>
+
+<p>id는 있는데 왜없다고하는거지?라는 생각에</p>
+
+<p>역으로 디버깅을 해보지않아도 될 시간을 좀 잡아먹은 것 같다.</p>
+
+<h2 id="더-나은-방식으로">더 나은 방식으로.</h2>
+<p>이렇게 진행을 해보니 이제는 다른 방식이 없나? 하고 다음과같은 생각이 들었다.</p>
+
+<p>일단 DTO버전으로 수정한 방법처럼,<br />
+구조만을 생각하고 DTO에 중점을 두고 기능을 만들어 보았기에<br />
+더 쉽고, 좋고, 안전한 방법들을 생각해 보았다.</p>
+
+<ul>
+  <li>
+    <p>Service -&gt; 컨트롤러로 넘어올때 entity로 넘겨와서 DTO로 변환을 해도 될것같고</p>
+  </li>
+  <li>DTO는 어느 계층까지 활용을하고</li>
+  <li>DTO는 요청, 응답마다 따로만들어야 하나 ?<br />
+  ㄴ 요청시에는 비밀번호가 있지만, 응답 시에는 비밀번호가 없다면?</li>
+  <li>Entity는 어느 계층까지 와도 되나</li>
+  <li>Entity값을 더 쉽게 넣을수없을까?</li>
+</ul>
+
+<p>와 같은 생각이들었다.</p>
+
+<p><a href="https://okky.kr/articles/1202337">DTO용도, 갯수 관련 참조 글</a></p>
+
+<h2 id="entity---dto">Entity -&gt; DTO</h2>
+
+<p>아까 수정했던 Server계층에서 DTO에 Entity값을 넣는 과정에서<br />
+<img src="../../images/2022-12-28-13-45-39.png" alt="" /></p>
+
+<p>selectpostShowDto.set() 과정이 복잡해보여서 이것 관련<br />
+어노테이션, 스프링기능 혹은 방법은없나? 하고 찾아보았다.<br />
+(아무리 생각해도 편하게 쓰려고 쓰는 스프링에서 위와같이 쓸것같진않아서..)</p>
+
+<p>지금까지는 DTO를 사용해야한다는 마음에 직접 삽질하여 내마음대로 해보았고,
+이제는 스프링에서 쓰는방식, 다른사람들이 쓰는 방식대로 해보고 싶었다.</p>
+
+<p>찾아보다가
+Entity와 DTO간의 변환은 Controller, Servcie단에서 주로 한다고하여</p>
+
+<p>내가했던 Entity값을 DTO에 일일이 담는 비효율 적인방법보다
+Entity를 DTO랑 매칭해서 값을 넣어주는 라이브러리를 찾아서</p>
+
+<p>일단은 service단에서 처리후 dto를 반환하는 코드를 바꿔보았다.</p>
+
+<h2 id="modelmapper">ModelMapper</h2>
+<p>일단 난 그래들이므로 build.gradle에 아래의 디펜던시 의존성을 추가해줬다</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.3.8'
+</code></pre></div></div>
+
+<p>그 후, ModelMapper의 임포트가 잘되지않아서 인텔리제이를 재 시작하니 임포트는 잘 되었다.</p>
+
+<p>그 후 아래처럼 바꿨더니 잘동작한다!!( 주석은 원래 코드 )</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@Transactional</span><span class="o">(</span><span class="n">readOnly</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">SelectPostShowDto</span> <span class="nf">readPost</span><span class="o">(</span><span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="c1">//        SelectPostShowDto selectPostShowDto = new SelectPostShowDto();</span>
+
+        <span class="nc">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="n">postRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">orElseThrow</span><span class="o">(</span>
+                <span class="o">()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"해당 글이 존재하지 않습니다."</span><span class="o">)</span>
+        <span class="o">);</span>
+        <span class="c1">//        selectPostShowDto.setId(post.getId());</span>
+        <span class="c1">//        selectPostShowDto.setTitle(post.getTitle());</span>
+        <span class="c1">//        selectPostShowDto.setAuthor(post.getAuthor());</span>
+        <span class="c1">//        selectPostShowDto.setContents(post.getContents());</span>
+
+
+        <span class="nc">ModelMapper</span> <span class="n">modelMapper</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ModelMapper</span><span class="o">();</span>
+        <span class="nc">SelectPostShowDto</span> <span class="n">selectPostShowDto</span> <span class="o">=</span> <span class="n">modelMapper</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">post</span><span class="o">,</span> <span class="nc">SelectPostShowDto</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+
+        <span class="k">return</span> <span class="n">selectPostShowDto</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p><a href="https://velog.io/@kimview/ModelMapper">Model mapper</a></p>
+
+<p><img src="../../images/2022-12-28-14-50-11.png" alt="" />
+<img src="../../images/2022-12-28-14-50-17.png" alt="" /></p>
+
+<h2 id="builder패턴과-toentity">Builder패턴과 toEntity</h2>
+
+<p>써칭을 하다가 아래 블로그에서 또 다른 방법을 발견하여</p>
+
+<p>글을 수정하는 API에 적용해 보려고한다!</p>
+
+<p>정리가 잘되어있으니 참조하면 좋을 듯하다.
+<a href="https://velog.io/@jsb100800/Spring-boot-DTO-Entity-%EA%B0%84-%EB%B3%80%ED%99%98-%EC%96%B4%EB%8A%90-Layer%EC%97%90%EC%84%9C-%ED%95%98%EB%8A%94%EA%B2%8C-%EC%A2%8B%EC%9D%84%EA%B9%8C">참조 블로그</a></p>
+
+<h3 id="선택한-글을-수정하기">선택한 글을 수정하기</h3>
+<p>DTO의 입장에서 먼저 확인해보겠습니다.</p>
+
+<p>글 수정시 패스워드를 기준으로 글에대한 수정권한을 주므로,
+password, title, contents, author 정도를 수정할수 있게 하려 합니다.</p>
+
+<p>그럼 요청 시 DTO는
+password, title, contents, author를 담게 만들고</p>
+
+<p>응답같은경우 password를 제외한</p>
+
+<p>createdAt, modifiedAt, id, title, content, author를 가지는 dto를 따로 만들면 될 것 같네요!</p>
+
+<p>사실 글 수정 성공시 해당 글id로 GET으로 보내주어서,
+위의 응답 DTO는 만들 필요가 없지만,</p>
+
+<p>확인하는 용도로 만들어볼게요!</p>
+
+<ul>
+  <li>유연하게 사용할려면 현재 상황의 경우<br />
+아마도 글 작성, 글 수정 의 서비스는 달라도 DTO는 똑같아도 될 것 같네요!
+(물론 API 기능마다 DTO파일이 달라야 한다라는 룰이있다면 그렇게 쓰셔도 좋구요!)</li>
+</ul>
+
+<h3 id="시작">시작!</h3>
+
+<details>  
+<summary>PostRequestDto</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostRequestDto</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">password</span><span class="o">;</span>
+
+
+    <span class="nd">@Builder</span>
+    <span class="kd">public</span> <span class="nf">PostRequestDto</span><span class="o">(</span><span class="nc">String</span> <span class="n">title</span><span class="o">,</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">,</span> <span class="nc">String</span> <span class="n">author</span><span class="o">,</span> <span class="nc">String</span> <span class="n">password</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">contents</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">author</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">password</span><span class="o">;</span>
+    <span class="o">}</span>
+
+
+    <span class="c1">// dto -&gt; entity</span>
+    <span class="kd">public</span> <span class="nc">Post</span> <span class="nf">toEntity</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nc">Post</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">title</span><span class="o">(</span><span class="n">title</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">contents</span><span class="o">(</span><span class="n">contents</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">author</span><span class="o">(</span><span class="n">author</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">password</span><span class="o">(</span><span class="n">password</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<details>  
+<summary>PostResponseDto</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostResponseDto</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">LocalDateTime</span> <span class="n">createdAt</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">LocalDateTime</span> <span class="n">modifiedAt</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+
+    <span class="c1">// entity -&gt; dto</span>
+    <span class="kd">public</span> <span class="nf">PostResponseDto</span><span class="o">(</span><span class="nc">Post</span> <span class="n">post</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getId</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">createdAt</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getCreatedAt</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">modifiedAt</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getModifiedAt</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getTitle</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getContents</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<details>  
+<summary>PostService</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Transactional</span>
+    <span class="kd">public</span> <span class="nc">PostResponseDto</span> <span class="nf">updatePost</span><span class="o">(</span><span class="nc">Long</span> <span class="n">id</span><span class="o">,</span> <span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="c1">// Entity &lt;- DTO</span>
+        <span class="c1">// Post post = requestDto.toEntity();</span>
+
+
+        <span class="c1">// 해당 글과 글과 비밀번호가 매칭되는지 확인</span>
+        <span class="nc">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="n">postRepository</span><span class="o">.</span><span class="na">findByIdAndPassword</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getPassword</span><span class="o">());</span>
+
+
+        <span class="c1">// 매칭된다면</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">post</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+            <span class="c1">// Dirty Checking을 이용하여 업데이트</span>
+            <span class="n">post</span><span class="o">.</span><span class="na">updatePost</span><span class="o">(</span><span class="n">requestDto</span><span class="o">);</span>
+
+            <span class="c1">// DTO &lt;- Entity</span>
+            <span class="nc">PostResponseDto</span> <span class="n">postResponseDto</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PostResponseDto</span><span class="o">(</span><span class="n">post</span><span class="o">);</span>
+
+            <span class="k">return</span> <span class="n">postResponseDto</span><span class="o">;</span>
+        <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<details>  
+<summary>Post</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
+<span class="nd">@Entity</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Post</span> <span class="kd">extends</span> <span class="nc">Timestamped</span> <span class="o">{</span>
+
+
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="nc">GenerationType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">length</span> <span class="o">=</span> <span class="mi">50000</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">password</span><span class="o">;</span>
+
+
+    <span class="nd">@Builder</span>
+    <span class="kd">public</span> <span class="nf">Post</span><span class="o">(</span><span class="nc">Long</span> <span class="n">id</span><span class="o">,</span> <span class="nc">String</span> <span class="n">title</span><span class="o">,</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">,</span> <span class="nc">String</span> <span class="n">author</span><span class="o">,</span> <span class="nc">String</span> <span class="n">password</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">contents</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">author</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">password</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nf">Post</span><span class="o">(</span><span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getTitle</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getContents</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getPassword</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">updatePost</span><span class="o">(</span><span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getTitle</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getContents</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">();</span>
+    <span class="o">}</span>
+
+
+<span class="o">}</span>
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<p>이때 엔티티의 만들어놓은 업데이트 메소드만으로 실제 업데이트 쿼리가 가능한이유?<br />
+Dirty Chechking으로 인해 트랜잭션안에서 Entity의 변경이 일어나면,<br />
+변경한 내용은 자동으로 DB에 반영(update)된다.</p>
+
+<p><a href="https://velog.io/@koo8624/Spring-%EB%B3%80%EA%B2%BD-%EA%B0%90%EC%A7%80%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-Entity-%EC%88%98%EC%A0%95">변경 감지</a><br />
+<a href="https://jojoldu.tistory.com/415">Dirty Checking</a><br />
+<a href="https://jojoldu.tistory.com/536">Dirty Chechking</a></p>
+
+<details>  
+<summary>PostController</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RestController</span>
+<span class="nd">@RequiredArgsConstructor</span>
+
+
+ <span class="nd">@PutMapping</span><span class="o">(</span><span class="s">"/api/post/{id}"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">PostResponseDto</span> <span class="nf">updatePost</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="kt">long</span> <span class="n">id</span><span class="o">,</span> <span class="nd">@RequestBody</span> <span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">PostResponseDto</span> <span class="n">postResponseDto</span> <span class="o">=</span> <span class="n">postService</span><span class="o">.</span><span class="na">updatePost</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">requestDto</span><span class="o">);</span>
+
+
+        <span class="k">return</span> <span class="n">postResponseDto</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<h3 id="마치며">마치며.</h3>
+<p>지금까지 봐온 DTO 계층 이동, Entity 계층 이동,
+DTO의 용도, 파일구분 등은 사람,회사, 상황, 에 따라 다르며,</p>
+
+<p>DTO를 아예 안써도 되고,
+여러가지 상황을 DTO한개로 해결가능하다면 해도되고,
+Entity로 뷰까지 끌어와도됩니다..(지양해야겠지만)</p>
+
+<p>주어진 상황에 따라 유연하게 대처할 수 있어야합니다.</p>
+
+<p><a href="https://donghyeon.dev/jpa/2020/07/12/JPA%EC%9D%98-DTO%EC%99%80-Entity/">참조한 좋은 글</a>
+<a href="https://tmdrl5779.tistory.com/51">실질적으로 도움 받은 글</a></p>
+
+<p>과제를 다 끝내고보니 실수한부분이있었다..
+현재 의 중요목표중하나가 RESTful API 스럽게 만드는것인데</p>
+
+<p>아래는 전체 글 보기 페이지인데 
+<img src="../../images/2022-12-28-20-00-21.png" alt="" /></p>
+
+<p>테이블에서 해당글 클릭시 해당글의 번호로 api로 접근해
+ModelAndView를 받아서 View를 받아 이동하게된다…</p>
+
+<p>ex)
+localhost:8080/api/post/1</p>
+
+<p><img src="../../images/2022-12-28-20-01-44.png" alt="" /></p>
+
+<p>이것을 이제 RESTful스럽게 ,postman사용시 json데이터 형식으로만 받을수 있게 바꿔보려고한다.</p>
+
+<p>아래처럼 ajax를 활용하기위해 온클릭 함수로 바꾸어줬고 href에서 온클릭으로 바꾸니 파란밑줄이 사라졌다..ㅎ
+<img src="../../images/2022-12-28-20-02-42.png" alt="" /></p>
+
+<p>일단 아래처럼 글 클릭시 API호출하는것 까지 확인완료
+<img src="../../images/2022-12-28-20-04-06.png" alt="" /></p>
+
+<p>계쏙 하던중 아무리생각해도 컨트롤러단에서는 json만을 리턴하고
+페이지를 이동시키면서 json만 받아 처리하는 법을 모르겠어서</p>
+
+<p>그냥 페이지이동없이 javascript로 노가다 했다.</p>
+
+<h2 id="렌더링시점">렌더링시점</h2>
+
+<p>처음엔 글번호 클릭시 postPage()를 호출하고
+ajax로 페이지정보를 가저와 아래의 thymleaf로 할려고했는데
+에러가 났다.. 아마 데이터가 생기기전 렌더링이먼저되어 그런것같다.</p>
+
+<p><img src="../../images/2022-12-28-20-42-13.png" alt="" /></p>
+
+<p>그래서 response 값을 활용해보자라고 생각했고
+아래와 같이 하니 동작하였다.
+<img src="../../images/2022-12-28-20-43-57.png" alt="" /></p>
+
+<p>그렇게 해서 아래처럼 한페이지에 다옮겨놓았다</p>
+
+<p>RESTful하게 만들때 모델엔뷰를 쓰지않고 어떻게 뷰를넘기면서 json으로 값을 쓰려면해야할지
+생각해볼 부분이다.</p>
+
+<p>삭제와 수정도 원래의 페이지에서 다 가지고왔는데
+역시나 아래와 같이 타임리프에서 아직 가지고오지 못한 값들에서 에러가나서
+<img src="../../images/2022-12-28-20-55-25.png" alt="" /></p>
+
+<p>글의 id를 가지고올때 요소들의 온클릭함수에 Id를 넘겨서 해당 Id를 이용했다.
+<img src="../../images/2022-12-28-20-54-45.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[자바의 상속과 다형성에 대해서 정리를했따 링크]]></summary></entry><entry><title type="html">Job00</title><link href="http://localhost:4000/JOB00/" rel="alternate" type="text/html" title="Job00" /><published>2022-12-28T00:00:00+09:00</published><updated>2022-12-28T00:00:00+09:00</updated><id>http://localhost:4000/JOB00</id><content type="html" xml:base="http://localhost:4000/JOB00/"><![CDATA[]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">TIL 23일 스프링 입문 주 차#, Thymeleaf</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL20/" rel="alternate" type="text/html" title="TIL 23일 스프링 입문 주 차#, Thymeleaf" /><published>2022-12-27T00:00:00+09:00</published><updated>2022-12-27T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL20</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL20/"><![CDATA[<p>오늘은 CRUD 게시판 과제 진행 중<br />
 HTML, 자바스크립트에 thymeleaf 사용 시 잘 안되는 것 같아서 공부를 좀 했습니다.</p>
 
 <p>오늘은 헤맨 부분이 꽤 있어서 TIL을 쓸 거리는 좀 있겠구나… 했습니다.</p>
@@ -363,31 +1110,316 @@ thymeleaf 템플릿 엔진은 문법이 다르겠지 하고 찾아보았다.</p>
 [[${post.title}]]
 [[${post.contents}]]
 [[${post.author}]]
-</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 스프링에 익숙해지는 겸 개인 과제를 진행하면서 스프링 아키텍처를 이해하는 시간을 가졌습니다.]]></summary></entry><entry><title type="html">객체 지향 프로그래밍 - 상속, 다형성, 추상 클래스</title><link href="http://localhost:4000/java/Java18/" rel="alternate" type="text/html" title="객체 지향 프로그래밍 - 상속, 다형성, 추상 클래스" /><published>2022-12-26T00:00:00+09:00</published><updated>2022-12-26T00:00:00+09:00</updated><id>http://localhost:4000/java/Java18</id><content type="html" xml:base="http://localhost:4000/java/Java18/"><![CDATA[<p>이번 언어스터디에서 제가 중요하게 생각했떤부분은
-자바의 다형성에대해서 완벽하게 알게 해드리고 싶은 마음입니다.</p>
+</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 스프링에 익숙해지는 겸 개인 과제를 진행하면서 스프링 아키텍처를 이해하는 시간을 가졌습니다.]]></summary></entry><entry><title type="html">객체 지향 프로그래밍 - 상속, 다형성, 추상 클래스</title><link href="http://localhost:4000/java/Java18/" rel="alternate" type="text/html" title="객체 지향 프로그래밍 - 상속, 다형성, 추상 클래스" /><published>2022-12-26T00:00:00+09:00</published><updated>2022-12-26T00:00:00+09:00</updated><id>http://localhost:4000/java/Java18</id><content type="html" xml:base="http://localhost:4000/java/Java18/"><![CDATA[<p>목표: 자바의 상속에 대한 개념을 완벽하게 익히고<br />
+상속에서 비롯되는 다형성에 대해서 완벽하게 알고 가자.</p>
 
 <h1 id="상속">상속</h1>
+<p>객체지향적 개념으로 봤을 때 자바에서는 객체 간의 상속 관계를 지어주기 위해 상속이라는 개념이 존재한다.</p>
 
+<p>상속은 캡슐화, 추상화, 다형성 등 객체지향프로그래밍을 구성하는 특징 중 하나이다.</p>
+
+<h2 id="상속의-특징">상속의 특징</h2>
 <ul>
-  <li>현실과 다르게 자식이 부모를 선택해 상속받는다.</li>
-  <li></li>
+  <li>자식 클래스가 상속받고 싶은 부모 클래스를 선택해서 물려받는다.<br />
+이때 상속받는 클래스를 자식 클래스, 하위 클래스 또는 서브 클래스라고 부른다.<br />
+상속을 해주는 클래스를 부모 클래스, 상위 클래스 또는 슈퍼 클래스라고 한다. 
+(현실과 다르게 자식이 부모를 선택해 상속받는다.)</li>
 </ul>
 
-<p>상속을 하는 이유</p>
+<p>그래서 다이어그램 같은 경우 화살표 방향이 자식 -&gt; 부모 클래스 형태로 표기한다.</p>
+
 <ul>
-  <li>이미 (잘)만들어진 클래스를 재사용할 수 있기 때문에, 효율성이 좋으며 개발시간을 줄여준다.</li>
-  <li></li>
+  <li>
+    <p>상속을 받게 되면 부모 클래스의 필드와 메서드를 물려받게 된다. <br />
+단, 접근제어자가 private을 갖는 필드나 메소드는 상속이 불가하고,<br />
+패키지가 다를 경우 접근제어자가 default인 경우도 상속이 불가하다.</p>
+  </li>
+  <li>
+    <p>부모 클래스의 생성자, 초기화 블럭은 상속 안됨.</p>
+  </li>
+  <li>자바의 모든 클래스는 Object 클래스의 자식 클래스이다.</li>
+  <li>Object 클래스가 제공하는 메소드를 오버라이딩해서 메소드 기능을 변경하여 사용 가능</li>
+  <li>모든 클래스는 java.lang.Object를 포함하고 있으며 jvm이 자동으로 추가해 준다.
+예시) java.lang.String 클래스의 equals()과 toString()</li>
 </ul>
 
-<p>자바에서는 자식 객체를 생성하면 부모객체를 먼저 생성후!
-자싯객체가 그다음에 생성된다.</p>
+<h2 id="objectequals와-stringequals">Object.equals와 String.equals</h2>
 
-<p>여기까지는 뭐 다아는내용이니….</p>
+<p>우리가 기본적으로 비교 연산자인 “==” 을 사용하게 되면,
+레퍼런스 타입인 경우 객체의 주솟값을 비교하게 된다.</p>
 
-<p>제가봤을때 7챕터에서 중요한부분은 다형성이라고 생각합니다..</p>
+<p>이때 Object.equals()라는 메소드도 객체의 주솟값을 비교하는 메소드인데.</p>
+
+<p>우리가 String.equals을 사용해서 데이터(문자열 값 등)을 비교할 수 있었던 이유가</p>
+
+<p>Object(모든 부모)의 메소드를 String.equals가 재정의하여 사용했기 때문이다.</p>
+
+<details>   
+
+<summary>equals 예시</summary>
+
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Objects</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">String</span> <span class="n">test1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"test"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">test2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"test"</span><span class="o">);</span>
+
+
+        <span class="c1">// 모~~든 객체는 Object를 물려받는다.</span>
+
+        <span class="c1">// test1은 String 타입 -&gt; String.equals 동작 (부모의 Object.equals 재정의)</span>
+        <span class="c1">// 스트링의 데이터 비교로 동작.</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">test1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test2</span><span class="o">))</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"1. String 비교, 같다"</span><span class="o">);</span>
+
+
+        <span class="c1">//////////////////////////////////</span>
+
+
+        <span class="n">test1</span> <span class="n">test3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test1</span><span class="o">(</span><span class="s">"son"</span><span class="o">,</span><span class="mi">25</span><span class="o">);</span>
+        <span class="n">test1</span> <span class="n">test4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test1</span><span class="o">(</span><span class="s">"son"</span><span class="o">,</span><span class="mi">25</span><span class="o">);</span>
+
+
+
+
+        <span class="c1">// test3과 4는 객체 타입이므로 Object.equals 즉 주소 비교(==)가 들어간다.</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">test3</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test4</span><span class="o">))</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"2. 주소비교, 같다."</span><span class="o">);</span>
+
+
+
+
+        <span class="c1">// 해당 객체에서 equals, hashcode를 재정의 해주면?</span>
+
+        <span class="n">test2</span> <span class="n">test5</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test2</span><span class="o">(</span><span class="s">"merong"</span><span class="o">,</span> <span class="mi">222</span><span class="o">);</span>
+        <span class="n">test2</span> <span class="n">test6</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test2</span><span class="o">(</span><span class="s">"merong"</span><span class="o">,</span> <span class="mi">222</span><span class="o">);</span>
+        <span class="n">test2</span> <span class="n">test7</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test2</span><span class="o">(</span><span class="s">"zz"</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+
+        <span class="c1">// 기본적으로 Objects.equals는  object.equals -&gt; test3.equals(test4)  와 같다.</span>
+        <span class="k">if</span> <span class="o">(</span><span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test5</span><span class="o">,</span> <span class="n">test6</span><span class="o">))</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"3. 객체 값 비교, 같다."</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test6</span><span class="o">,</span> <span class="n">test7</span><span class="o">))</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"4. 객체 값 비교, 같다."</span><span class="o">);</span>
+        <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"4. 객체 값 비교, 다르다."</span><span class="o">);</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">test1</span> <span class="o">{</span>
+
+        <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="nf">test1</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">test2</span> <span class="o">{</span>
+
+        <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="nc">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">o</span><span class="o">)</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">o</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">getClass</span><span class="o">()</span> <span class="o">!=</span> <span class="n">o</span><span class="o">.</span><span class="na">getClass</span><span class="o">())</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="n">test2</span> <span class="n">test1</span> <span class="o">=</span> <span class="o">(</span><span class="n">test2</span><span class="o">)</span> <span class="n">o</span><span class="o">;</span>
+            <span class="k">return</span> <span class="n">age</span> <span class="o">==</span> <span class="n">test1</span><span class="o">.</span><span class="na">age</span> <span class="o">&amp;&amp;</span> <span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">test1</span><span class="o">.</span><span class="na">name</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="nc">Objects</span><span class="o">.</span><span class="na">hash</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">age</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="nf">test2</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+
+<span class="o">}</span>
+
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<p>인텔리제이에서는 equals 재정의와 
+hashcode를 맞추기 위한 기능을 제공합니다
+<img src="../../images/2022-12-28-09-59-47.png" alt="" /></p>
+
+<p>그럼 아래와 같이 자동으로 생성이 되고,
+<img src="../../images/2022-12-28-10-00-30.png" alt="" /></p>
+
+<p>이제는 객체 안의 필드값이 같을 경우 
+equals는 값 비교를 하게 되고,
+hashcode()는 주소값이 동일해지게 처리를 해줍니다.</p>
+
+<p><a href="https://gardeny.tistory.com/31">참조 블로그</a></p>
+
+<p>!!! 여기서 중요한 점은 위의 일련의 과정들이<br />
+상속과 오버라이딩이 있기 때문에 가능하다는 점!!!</p>
+
+<p>위의 것들이 가능한 이유도 상속이 있기 때문.   (모든 객체의 최상위 부모는 Object 클래스)
+Object &lt;–상속– 객체<br />
+Object &lt;–상속– String(equals 재정의)</p>
+
+<h2 id="상속의-관계">상속의 관계</h2>
+
+<h3 id="is-a-상속관계">IS a 상속관계</h3>
+<p>자식 클래스는 하나의 부모 클래스 일 수 있다.</p>
+
+<p><a href="https://zangzangs.tistory.com/44">사진 출처</a></p>
+
+<p><img src="../../images/2022-12-28-09-08-42.png" alt="" /></p>
+
+<p>상속은 IS-A 관계에서 사용하는 것이 가장 효율적입니다.</p>
+
+<p>IS-A 관계(is a relationship, inheritance)는 일반적인 개념과 구체적인 개념의 관계입니다.</p>
+
+<p>사람은 동물이다.
+소는 동물이다
+새는 동물이다.
+위와 같은 관계입니다. 즉, 일반 클래스를 구체화하는 상황에서 상속을 사용합니다.</p>
+
+<p>상속을 사용하면 많은 장점이 있지만,</p>
+
+<p>하위 클래스가 상위 클래스에 종속되기 때문에 이질적인 클래스 간에는 상속을 사용하지 않는 것이 좋습니다.</p>
+
+<p>단순히 코드를 재사용할 목적으로 서로 관련이 없는 개념의 클래스를 상속 관계로 사용하는 것은 
+객체지향적 개념에도 맞지 않으므로, 추천하지 않습니다.</p>
+
+<h3 id="has-a-상속관계">Has a 상속관계</h3>
+<p>HAS-A 관계에서는 상속을 사용하지 않습니다.</p>
+
+<p>HAS-A 관계(has a relationship, association)는 일반적인 포함 개념의 관계입니다.</p>
+
+<p><img src="../../images/2022-12-28-09-10-21.png" alt="" /></p>
+
+<p>HAS-A 관계는 다른 클래스의 기능(변수 혹은 메서드)을 받아들여 사용합니다.</p>
+
+<h2 id="상속을-사용하는-목적">상속을 사용하는 목적</h2>
+<p>코드의 재사용성을 높여서 사용하는 목적이 있고 그 목적이 큰 것은 맞지만,</p>
+
+<p>그렇다고 해서 무분별하게 상속을 해서 사용하게 되면 클래스 간 결합도가 높아져
+상위 클래스를 수정해야 할 때 하위 클래스에 미치는 영향이 커지므로,</p>
+
+<p>상속은 IS-A 관계 일 때만 사용하는 것이 좋습니다.</p>
+
+<h2 id="상속의-장점">상속의 장점</h2>
+
+<p>상속의 장점은, 중복된 코드를 줄일 수 있고, 유지 보수가 편리하며, 통일성이 있고 다형성을 구현할 수 있다.</p>
+
+<p>그리고 자바에서는 자식 클래스가 여러 부모로부터 다중 상속을 받는 것은 불가능하다. 
+즉, 1개의 부모 클래스로부터의 단일 상속만 허용된다.</p>
+
+<p>하지만 부모 클래스는 여러 개의 자식 클래스에게 상속이 가능하다</p>
+
+<p><img src="../../images/2022-12-28-08-47-30.png" alt="" /></p>
+
+<p><a href="https://coding-factory.tistory.com/865">이미지 출처</a></p>
+
+<p>상속을 의 목적(상속을 사용하는 이유)</p>
+<ul>
+  <li>이미 (잘) 만들어진 클래스를 재사용할 수 있기 때문에, 효율성이 좋으며 개발 시간을 줄여준다. (코드의 재사용성 극대화)</li>
+  <li>위와 같은 이유로 유지 보수가 쉽고, 중복이 적고, 통일성이 있는 코드를 작성이 가능</li>
+</ul>
+
+<h1 id="super-키워드">super 키워드</h1>
+<p>자식 클래스에서 부모 클래스를 가리킬 때 사용하는 키워드,  주로 부모 클래스의 필드에 접근
+메소드를 호출할 때 사용</p>
+
+<h1 id="this-키워드">this 키워드</h1>
+<p>객체 자신인 자신을 가리 킬 때 사용하는 키워드, 주로 생성자에서 필드값을 변경할 때 사용</p>
+
+<p>자바에서는 자식 객체를 생성하면 부모 객체를 먼저 생성 후!
+자식 객체가 그다음에 생성된다.</p>
+
+<h2 id="다중-상속이-안되는-이유-">다중 상속이 안되는 이유 ?</h2>
+
+<ul>
+  <li>
+    <p>다중 상속은 코드의 흐름이 모호해지고, 애매해지기 때문에
+다중 상속은 지양해야 한다. 어차피 자바에서는 안되지만!</p>
+  </li>
+  <li>상속받은 여러 부모 클래스들 중 동일한 명칭의 필드나 메소드가 있다면?</li>
+  <li>어떤 부모 클래스의 필드와 메소드를 상속받아야 하는가?</li>
+  <li>어떤 부모 클래스에 어떻게 접근해야 하는가?</li>
+</ul>
+
+<p>와 같은 모호함이 발생합니다.</p>
+
+<p>C++, 파이썬, 스칼라, 펄 등은 다중 상속을 지원한다.
+자바, 루비 등은 단일 상속만을 지원한다.</p>
+
+<h3 id="다이아몬드-문제">다이아몬드 문제</h3>
+
+<p>다이아몬드 문제로 고통받고 있는 출처 불분명 사진
+<img src="../../images/2022-12-28-09-05-06.png" alt="" /></p>
+
+<p>위에서 말했던 여러 이유가 한 장의 다이아몬드 구조의 사진으로 말할 수 있다.</p>
+
+<p>예를 들어 GrandFather이라는 클래스가 goToTheHome() (강남)이라는 이름의 메소드를 가지고 있다고 가정해 보자</p>
+
+<p>그리고 FatherA (영등포)와 FatherB (수원)가 각각 오버라이딩하여 구현하였다면,</p>
+
+<p>FatherA와 FatherB를 모두 상속받은</p>
+
+<p>Son 클래스 입장에서는 어떤 부모의 goToTheHome()를 사용해야 할까요?<br />
+FatherA의 집으로 가야 할까요, FatherB의 집으로 가야 할까요<br />
+이로 인하여 충돌이 생기게 됩니다.</p>
+
+<p>FatherA에게 단일 상속을 받은 경우 son은 FatherA의 집인<br />
+영등포로 가기만 하면 됩니다. (혹은 재정의 하거나.)</p>
+
+<p>다중 상속을 받으면 재정의 할 때도 모호함이 발생합니다.<br />
+FatherA, B 누구의 메소드를 받아서 재정의 할 것인지?</p>
+
+<h2 id="bonus-그럼-인터페이스는-왜-다중-상속이-될까">Bonus 그럼 인터페이스는 왜 다중 상속이 될까?</h2>
+<p>인터페이스는 쉽게 말하면 껍데기만 존재하기 때문에,</p>
+
+<p>인터페이스의 메소드는 무조건 추상 메소드이므로 메소드명이 겹쳐도 인터페이스를<br />
+상속한 클래스에서 해당 메소드를 구현하므로 애매한 문제는 생기지 않는다.</p>
+
+<p>반면 인터페이스는 다중 상속이 가능하지만, 다이아몬드 문제를 피해 갈 수 있다. 
+왜냐하면 인터페이스의 메서드는 정의되지 않았기 때문이다.</p>
+
+<p>즉 선언된 형태의 메서드만 가지는 인터페이스는, 
+동일 시그니처의 메서드를 얼마든 상속받아도 아무런 문제가 발생하지 않는다.</p>
+
+<p>해당 메서드는 아직 구현되지 않아 자식 클래스에서 새롭게 정의해야 하기 때문이다.</p>
+
+<p><img src="../../images/2022-12-28-09-05-06.png" alt="" />
+예를 들어 위의 사진이 인터페이스라면,</p>
+
+<p>FatherA, B, Son의 관계에서
+Son은 FatherA와 FatherB의 인터페이스에 같은 이름의 메소드가 있더라도
+Son에서 구현하면 그만이다. (인터페이스는 실행 블록을 가지지 않기 때문에)</p>
+
+<p>왜? 메소드명이 겹치더라도 어차피 실질적인 구현 부분은 구현체에서 하기 때문에.</p>
+
+<p>!! 자바 8버전부터 나온 dafault Method 기능으로, 인터페이스 내에서도 로직이 포함된 메소드를
+기술할 수 있는데, 이 경우에도 상속과 마찬가지로 다중 상속이 안 될 수도 있다.</p>
+
+<p><a href="https://velog.io/@dnwlsrla40/Java%EC%97%90%EC%84%9C-%EB%8B%A4%EC%A4%91-%EC%83%81%EC%86%8D%EC%9D%84-%EC%A7%80%EC%9B%90-%EB%AA%BB%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0">인터페이스 다중 상속 불가 참고 블로그</a></p>
+
+<p>제가 봤을 때 7챕터에서 중요한 부분은 다형성이라고 생각합니다..</p>
 
 <h1 id="-다형성-중요">!! 다형성 !!(중요)</h1>
-<p>여러가지 개념의 다형성</p>
+<p>여러 가지 개념의 다형성</p>
 
 <p>1.
 부모-자식 상속관계에서, 부모클래스가 동일한 메시지로 하위 클래스들을 서로 다르게 동작시키는 객체 지향원리입니다.</p>
@@ -519,7 +1551,7 @@ print : SF</p>
 }
 if(b instanceof Novel){
     b.print(); //true
-}</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Java" /><category term="Java 상속" /><category term="Java 다형성" /><category term="Java 추상 클래스" /><summary type="html"><![CDATA[이번 언어스터디에서 제가 중요하게 생각했떤부분은 자바의 다형성에대해서 완벽하게 알게 해드리고 싶은 마음입니다.]]></summary></entry><entry><title type="html">스프링 - 스프링의 구조, Controller</title><link href="http://localhost:4000/spring/Spring6/" rel="alternate" type="text/html" title="스프링 - 스프링의 구조, Controller" /><published>2022-12-26T00:00:00+09:00</published><updated>2022-12-26T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring6</id><content type="html" xml:base="http://localhost:4000/spring/Spring6/"><![CDATA[<h3 id="controller의-get-post">Controller의 Get, Post</h3>
+}</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Java" /><category term="Java 상속" /><category term="Java 다형성" /><category term="Java 추상 클래스" /><summary type="html"><![CDATA[목표: 자바의 상속에 대한 개념을 완벽하게 익히고 상속에서 비롯되는 다형성에 대해서 완벽하게 알고 가자.]]></summary></entry><entry><title type="html">스프링 - 스프링의 구조, Controller</title><link href="http://localhost:4000/spring/Spring6/" rel="alternate" type="text/html" title="스프링 - 스프링의 구조, Controller" /><published>2022-12-26T00:00:00+09:00</published><updated>2022-12-26T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring6</id><content type="html" xml:base="http://localhost:4000/spring/Spring6/"><![CDATA[<h3 id="controller의-get-post">Controller의 Get, Post</h3>
 
 <h4 id="정적static-웹-페이지">정적(static) 웹 페이지</h4>
 <p>Client가 Request를 보내면, Server의 Controller은
@@ -1121,357 +2153,4 @@ JPA는 뭐고 JDBC는 뭐지부터 시작해서…</p>
 
         <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
     <span class="o">}</span>
-</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[지금까지는 인텔리 제이 커뮤니티 버전만으로 잘 사용해오고 있었는데]]></summary></entry><entry><title type="html">스프링 - 훑어보기</title><link href="http://localhost:4000/spring/Spring3/" rel="alternate" type="text/html" title="스프링 - 훑어보기" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-24T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring3</id><content type="html" xml:base="http://localhost:4000/spring/Spring3/"><![CDATA[<p>제가 정리한 스프링 부트 기초 1, 2의 경우<br />
-인텔리 제이 Community Edition 버전으로 진행하였기 때문에,</p>
-
-<p>아래의 사이트에서 스프링 프로젝트를 생성해 인텔리 제이로 실행했습니다만<br />
-<a href="https://start.spring.io/">start spring</a></p>
-
-<p>항해99 과정 진행 중 인텔리 제이 Ultimate 버전 4개월치가 제공되어서<br />
-이제부터는 인텔리 제이에서 스프링 프로젝트 생성이 가능하며,<br />
-Database 관련 작업도 쉽게 가능합니다.</p>
-
-<p>아마 인텔리 제이 얼티메이트 버전으로 해야 가능한 기능들이 많이 있을 겁니다.</p>
-
-<p>이클립스를 많이 그리고 잘 사용해 본 건 아닌 초보자이지만,<br />
-이제 이클립스는 못 쓸 것 같습니다.</p>
-
-<h2 id="시작에-앞서-용어-정리부터">시작에 앞서 용어 정리부터.</h2>
-
-<p>해당 용어에 대한 자세한 정리가 아닌, 제가 아예 모르고 있던 부분이 많기 때문에
-관계 이해를 위해 간단하게 정리만 하고 지나가겠습니다.</p>
-
-<h3 id="mysql">Mysql</h3>
-<p>전 세계적으로 많이 사용되는 RDBMS 형식의 관계형데이터베이스 시스템</p>
-
-<h3 id="jdbc-java-database-connectivity">JDBC (Java Database Connectivity)</h3>
-<p>자바 언어와 DB를 연결해 주는 통로와 같은 것.<br />
-자바를 이용한 DB 접속과 SQL 문장의 실행, 그리고 실행 결과로 얻어진 데이터의 핸들링을 제공하는 방법과 절차에 관한 규약.</p>
-
-<p>자바 프로그램 내에서 SQL문을 실행하기 위한 자바 API.<br />
-SQL과 프로그래밍 언어의 통합 접근 중 한 형태</p>
-
-<h4 id="필요한-이유">필요한 이유</h4>
-<p>db 학습 시 SQL 이용해서 db에다 직접 값을 넣거나 조회하는 등의 일을 수행했음.</p>
-
-<p>하지만 우리가 웹을 동작, 수행시킬 때마다 매번 그럴 수는 없음.</p>
-
-<p>그래서 프로그램이 이 일을 대신할 수 있게 만들어줘야 하는데 이때 사용하는 것이 JDBC이다.</p>
-
-<h3 id="orm-object-relational-mapping">ORM (Object Relational Mapping)</h3>
-<p>객체와 테이블을 매핑해서 패러다임의 불일치를 개발자 대신 해결해 준다.</p>
-
-<h3 id="jpa-java-persisitence-api">JPA (Java Persisitence API)</h3>
-<p>자바 진영의 ORM 기술 표준. 어플리케이션과 JDBC 사이에서 동작</p>
-
-<h3 id="hibernate">Hibernate</h3>
-<p>하이버네이트는 자바 언어를 위한 ORM 프레임워크,<br />
-JPA의 구현체로, JPA 인터페이스를 구현하며, 내부적으로 JDBC API를 사용.</p>
-
-<p><a href="https://velog.io/@jungnoeun/JDBC%EB%9E%80">JDBC 참조 블로그</a></p>
-
-<h3 id="h2">H2</h3>
-<p>자바로 작성된 관계형 데이터베이스 관리 시스템이다.</p>
-
-<p>장점<br />
-따로 설치가 필요 없다.<br />
-용량이 매우 가볍다.<br />
-웹용 콘솔(쿼리 툴) 제공하여 개발용 로컬 DB로 사용 용이</p>
-
-<p>특징<br />
-JAVA로 작성된 오픈소스 RDBMS<br />
-스프링 부트가 지원하는 인 메모리 관계형 데이터베이스<br />
-인 메모리로 띄우면 애플리케이션 재기동 때마다 초기화<br />
-로컬 환경, 테스트 환경에서 많이 쓰임</p>
-
-<p><a href="https://yjkim-dev.tistory.com/3">H2 참조 블로그</a></p>
-
-<h3 id="lombok">lombok</h3>
-<p>여러 가지 @어노테이션을 제공하고 이를 기반으로 반복 소스코드를 컴파일 과정에서 생성해 주는 방식으로 동작하는 라이브러리</p>
-
-<p>어노테이션 사용 시,<br />
-자바 객체지향에서 자주 사용하는 getter, setter 등을 자동으로 만들어준다.</p>
-
-<h3 id="thymeleaf">thymeleaf</h3>
-<p>html 태그를 기반으로 하여 동적인 View를 제공하는 템플릿 엔진<br />
-플라스크의 Jinja 템플릿이나, Jsp(Java Server Page) 같은 것,<br />
-Spring Boot에서는 JSP가 아닌 Thymeleaf 사용을 권장하고 있다.</p>
-
-<h2 id="간단-관계-정리">간단 관계 정리</h2>
-
-<p>이 용어들을 이어 붙여서 관계를 이해해 보자면, H2는 로컬 환경에서 쉽게 데이터베이스 작업을 하기 위해 사용한다.</p>
-
-<p>Spring에서는 JDBC만 사용 시 일일이 쿼리문을 다 입력하여 사용해야 한다.<br />
-비즈니스 로직 개발보다 Sql 작성 및, 수정에 따른 관리에 더 많은 시간을 기울여야 한다.</p>
-
-<p>ORM, JPA가 등장하여 간단하게 쿼리를 작성 및 실행하면서,<br />
-객체지향 패러다임의 불일치를 해결해 준다.</p>
-
-<p>하이버네이트는 이 JPA를 구현한 것이므로 하이버네이트를 통해 JPA를 사용하는 것이다.</p>
-
-<p><img src="../../images/2022-12-24-13-29-30.png" alt="" /></p>
-
-<p><a href="https://suhwan.dev/2019/02/24/jpa-vs-hibernate-vs-spring-data-jpa/">사진 출처 및 참고 블로그</a></p>
-
-<p><a href="https://victorydntmd.tistory.com/195">JPA, Hibernate 관련 좋은 참고 블로그</a>
-<a href="https://gmlwjd9405.github.io/2019/02/01/orm.html">영속성, ORM 블로그</a></p>
-
-<h2 id="실습">실습</h2>
-
-<p>일단은 Spring, H2, Mysql 쿼리 형식을 이용해
-쿼리를 이용하는 방법부터 기술하겠습니다.</p>
-
-<p><img src="../../images/2022-12-24-09-37-25.png" alt="" /></p>
-
-<p>아라처럼 추가해 프로젝트를 생성해 줍니다.
-<img src="../../images/2022-12-24-09-38-32.png" alt="" /></p>
-
-<p><img src="../../images/2022-12-24-09-39-03.png" alt="" /></p>
-
-<p><br /></p>
-
-<p>Connection type을 눌러,<br />
-인 메모리 방식으로 변경 후 아래 url을 url에 추가해 주고 생성합니다.</p>
-
-<p>jdbc:h2:mem:test;MODE=MYSQL;<br />
-혹시 위의 url로 진행이 안되거나 진행 중 오류가 난다면,</p>
-
-<p>아래의 url 쓰세요.<br />
-jdbc:h2:mem:test;MODE=MYSQL;OLD_INFORMATION_SCHEMA=TRUE;</p>
-
-<p>Mysql을 이용해서 h2를 사용한다는 뜻입니다.</p>
-
-<p><img src="../../images/2022-12-24-09-46-51.png" alt="" /></p>
-
-<p>그다음 테스트 커넥션을 누르고,<br />
-만약 첫 실행 시 드라이버 설치 관련 문구가 나온다면 download driver files를 눌러 설치해 주세요.</p>
-
-<p>그럼 드라이버 설치를 자동으로 해주고 아래처럼 성공 결과가 나옵니다.
-<img src="../../images/2022-12-24-08-51-39.png" alt="" /></p>
-
-<p>일단 아래처럼 나오면 성공입니다.<br />
-<img src="../../images/2022-12-24-09-41-03.png" alt="" /></p>
-
-<p>콘솔에 아래처럼 입력해 볼까요?</p>
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">MAJOR</span>
-<span class="p">(</span>
-    <span class="n">major_code</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">primary</span> <span class="k">key</span> <span class="k">comment</span> <span class="s1">'주특기코드'</span><span class="p">,</span>
-    <span class="n">major_name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">comment</span> <span class="s1">'주특기명'</span><span class="p">,</span>
-    <span class="n">tutor_name</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">comment</span> <span class="s1">'튜터'</span>
-<span class="p">)</span>
-<span class="k">COMMENT</span> <span class="s1">'주특기'</span> <span class="n">charset</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p><img src="../../images/2022-12-24-14-11-47.png" alt="" /></p>
-
-<p>만약 이런 빨간 줄이 나온다면, 현재 H2이기 때문에,<br />
-Mysql쿼리문을 인식하지 못해 나오는 빨간 줄입니다.<br />
-<img src="../../images/2022-12-24-09-09-02.png" alt="" /></p>
-
-<p>마우스를 올리고<br />
-<img src="../../images/2022-12-24-09-09-18.png" alt="" /></p>
-
-<p>아래처럼 바꿔주시면 됩니다.
-<img src="../../images/2022-12-24-09-18-36.png" alt="" /></p>
-
-<p>이래도 빨간 줄이 뜹니다.</p>
-
-<p>추가적으로 아래와 같이 설정해 줍니다.
-<img src="../../images/2022-12-24-09-58-33.png" alt="" /></p>
-
-<p>현재 사용 중인 데이터베이스 시스템은 H2 지만 
-Mysql의 쿼리문으로 사용하기 위해 하는 설정입니다.</p>
-
-<p>그래도 빨간 줄이..?</p>
-
-<p>MY SQL이 아닌 H2 쿼리문으로 인식해서 그런 거 같은데
-사용하는 데는 지장이 없습니다!</p>
-
-<p>쿼리문을 테스트할 때에는 해당 부분을 드래그해준 뒤 실행해야 합니다.
-<img src="../../images/2022-12-24-14-13-02.png" alt="" /></p>
-
-<p>그럼 아래처럼 실행 결과가 나옵니다.
-<img src="../../images/2022-12-24-14-13-19.png" alt="" /></p>
-
-<p>만약 아래와 같은 코드가 있다면</p>
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">INSERT</span> <span class="k">into</span> <span class="n">MAJOR</span><span class="p">(</span><span class="n">major_code</span><span class="p">,</span> <span class="n">major_name</span><span class="p">,</span> <span class="n">tutor_name</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'수학'</span><span class="p">,</span> <span class="s1">'철수'</span><span class="p">)</span>
-<span class="k">INSERT</span> <span class="k">into</span> <span class="n">MAJOR</span><span class="p">(</span><span class="n">major_code</span><span class="p">,</span> <span class="n">major_name</span><span class="p">,</span> <span class="n">tutor_name</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'영어'</span><span class="p">,</span> <span class="s1">'영희'</span><span class="p">)</span>
-<span class="k">INSERT</span> <span class="k">into</span> <span class="n">MAJOR</span><span class="p">(</span><span class="n">major_code</span><span class="p">,</span> <span class="n">major_name</span><span class="p">,</span> <span class="n">tutor_name</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'국어'</span><span class="p">,</span> <span class="s1">'홍길동'</span><span class="p">)</span>
-<span class="k">INSERT</span> <span class="k">into</span> <span class="n">MAJOR</span><span class="p">(</span><span class="n">major_code</span><span class="p">,</span> <span class="n">major_name</span><span class="p">,</span> <span class="n">tutor_name</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">'과학'</span><span class="p">,</span> <span class="s1">'김아무개'</span><span class="p">)</span>
-<span class="k">INSERT</span> <span class="k">into</span> <span class="n">MAJOR</span><span class="p">(</span><span class="n">major_code</span><span class="p">,</span> <span class="n">major_name</span><span class="p">,</span> <span class="n">tutor_name</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">'음악'</span><span class="p">,</span> <span class="s1">'사람1'</span><span class="p">)</span>
-<span class="k">INSERT</span> <span class="k">into</span> <span class="n">MAJOR</span><span class="p">(</span><span class="n">major_code</span><span class="p">,</span> <span class="n">major_name</span><span class="p">,</span> <span class="n">tutor_name</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">'체육'</span><span class="p">,</span> <span class="s1">'사람2'</span><span class="p">)</span>
-<span class="k">INSERT</span> <span class="k">into</span> <span class="n">MAJOR</span><span class="p">(</span><span class="n">major_code</span><span class="p">,</span> <span class="n">major_name</span><span class="p">,</span> <span class="n">tutor_name</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">'미술'</span><span class="p">,</span> <span class="s1">'사람3'</span><span class="p">)</span>
-<span class="k">INSERT</span> <span class="k">into</span> <span class="n">MAJOR</span><span class="p">(</span><span class="n">major_code</span><span class="p">,</span> <span class="n">major_name</span><span class="p">,</span> <span class="n">tutor_name</span><span class="p">)</span>
-<span class="k">VALUES</span> <span class="p">(</span> <span class="mi">8</span><span class="p">,</span> <span class="s1">'한문'</span><span class="p">,</span> <span class="s1">'사람4'</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p><img src="../../images/2022-12-24-14-20-15.png" alt="" /></p>
-
-<p>이런 걸 언제 스프링에서 언제 일일이 다 관리하지 ..?</p>
-
-<p>그래서 ORM이 나오고 JPA가 나왔습니다.</p>
-
-<p>스프링을 사용한 데이터베이스 관련 내용은 다음 글에 쓰도록 하겠습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring 훑어보기" /><summary type="html"><![CDATA[제가 정리한 스프링 부트 기초 1, 2의 경우 인텔리 제이 Community Edition 버전으로 진행하였기 때문에,]]></summary></entry><entry><title type="html">스프링 - 아키텍처, MVC Pattern과 패키지(파일) 구조</title><link href="http://localhost:4000/spring/Spring4/" rel="alternate" type="text/html" title="스프링 - 아키텍처, MVC Pattern과 패키지(파일) 구조" /><published>2022-12-24T00:00:00+09:00</published><updated>2022-12-26T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring4</id><content type="html" xml:base="http://localhost:4000/spring/Spring4/"><![CDATA[<h1 id="mvc-패턴-측면의-스프링-흐름도">MVC 패턴 측면의 스프링 흐름도</h1>
-
-<p><a href="https://devscb.tistory.com/119">사진 및 스프링 프레임 워크 구조 참조 블로그</a></p>
-
-<p><img src="../../images/2022-12-26-09-33-57.png" alt="" /></p>
-
-<p><a href="https://iyk2h.tistory.com/147">사진 및 내용 참조 블로그</a></p>
-
-<p><img src="../../images/2022-12-24-20-57-49.png" alt="" /></p>
-
-<blockquote>
-  <h3 id="mvc">MVC</h3>
-</blockquote>
-
-<p>MVC 패턴은 디자인 패턴 중 하나로써,</p>
-
-<p>하나의 애플리케이션에서 Model, View, Controller의 역할로 구성요소를 구성한 것이 MVC 패턴입니다.</p>
-
-<p>Model : 애플리케이션의 정보, 데이터를 나타냅니다.</p>
-
-<p>View : input 텍스트, 체크박스 항목 등과 같은 사용자 인터페이스 요소를 나타냅니다.<br />
-다시 말해 데이터 및 객체의 입력, 그리고 보여주는 출력을 담당합니다.<br />
-데이터를 기반으로 사용자들이 볼 수 있는 화면입니다.</p>
-
-<p>Controller : 데이터와 사용자인터페이스 요소들을 잇는 다리 역할을 합니다. <br />
-즉, 사용자가 데이터를 클릭하고, 수정하는 것에 대한 “이벤트”들을 처리하는 부분을 뜻합니다.</p>
-
-<p><a href="https://m.blog.naver.com/jhc9639/220967034588">사진 및 내용 참조 블로그</a></p>
-
-<p><img src="../../images/2022-12-26-09-57-53.png" alt="" /></p>
-
-<p><br /><br /></p>
-<hr />
-
-<h1 id="패키지파일-구조-측면의-스프링-흐름도">패키지(파일) 구조 측면의 스프링 흐름도</h1>
-
-<p><a href="https://code-lab1.tistory.com/201">사진 참조 블로그</a></p>
-
-<p><img src="../../images/2022-12-24-20-55-35.png" alt="" /></p>
-
-<blockquote>
-  <h3 id="controller">controller</h3>
-</blockquote>
-
-<p>Controller는 Client의 요청을 DTO의 형태로 받아 Service의 기능을 호출하고, 
-적절한 응답을 DTO의 형태로 반환하는 역할을 한다.</p>
-
-<p>즉, 요청과 응답을 관리하는 계층이라고 생각하면 된다.</p>
-
-<blockquote>
-  <h3 id="entity">Entity</h3>
-</blockquote>
-
-<p>DB의 테이블에 존재하는 Column들을 필드로 가지는 객체.
-Entity는 DB의 테이블과 1대1 대응이며, 
-테이블에 가지지 않는 칼럼을 필드로 가져서는 안 된다.</p>
-
-<p>또한 Entity 클래스는 다른 클래스를 상속받거나 인터페이스의 구현체여서는 안되고 순수한 데이터 객체인 것이 좋다.</p>
-
-<blockquote>
-  <h3 id="dto-data-transfer-object">DTO (Data Transfer Object)</h3>
-</blockquote>
-
-<p>DTO는 말 그대로 데이터를 Transfer(이동)하기 위한 객체이다.</p>
-
-<p>Client가 Controller에 요청을 보낼 때도 RequestDto의 형식으로 데이터가 이동하고, 
-Controller가 Client에게 응답을 보낼 때도 ResponseDto의 형태로 데이터를 보내게 된다.</p>
-
-<p>Controller와 Service, Repository 계층 사이에 데이터가 오갈 때도 데이터는 DTO의 형태로 이동하게 된다.</p>
-
-<p>DTO는 로직을 갖고 있지 않는 순수한 데이터 객체이며, 
- 일반적으로 getter/setter 메서드만을 가진다.</p>
-
-<p>하지만 DTO는 단순히 데이터를 옮기는 용도이기 때문에 
- 굳이 Setter를 이용해 값을 수정할 필요가 없이, 생성자만을 사용하여 값을 할당하는 게 좋다.</p>
-
-<p>그런데 데이터를 움직일 때 왜 Entity 객체를 그대로 사용하지 않고 굳이 DTO를 사용하는 것일까?</p>
-
-<p>DTO를 사용하는 이유</p>
-
-<ol>
-  <li>
-    <p>View Layer와 DB Layer의 역할을 분리하기 위해서
--&gt; 객체를 표현하기 위한 계층과 저장하는 계층의 역할을 분리하기 위해서 DTO를 사용한다.</p>
-  </li>
-  <li>
-    <p>Entity 객체의 변경을 피하기 위하여
--&gt; Entity 객체를 그대로 사용하면 프로그래머의 의도와 다르게 데이터가 변질될 수 있다.</p>
-  </li>
-  <li>
-    <p>View와 통신하는 DTO 클래스는 자주 변경된다
-View(클라이언트)와 통신하는 DTO 클래스, 
-예를 들어 ResponseDTO, RequestDTO는 요구사항에 따라 자주 변경된다. 
-어떤 요청에서는 특정 값이 추가될 수도 있고, 특정 값이 없을 수도 있다.<br />
-따라서 Entity 클래스와 분리하여 관리해야 한다.</p>
-  </li>
-  <li>
-    <p>도메인 모델링을 지키기 위하여
-도메인 설계를 잘하였다고 하더라도 원하는 데이터를 표시하기가 쉽지 않을 수 있다. 
-예를 들어 Entity 클래스의 특정 컬럼들을 조합하여 특정 포맷을 출력하고 싶다고 하자.</p>
-  </li>
-</ol>
-
-<p>Entity 클래스에 표현을 위한 필드나 로직이 추가되면 객체 설계를 망가뜨릴 수 있다. 
-따라서 DTO에 표현을 위한 로직을 추가해서 사용하는 것이 Entity의 도메인 모델링을 지킬 수 있다.</p>
-
-<blockquote>
-  <h3 id="dao-data-access-object">DAO (Data Access Object)</h3>
-</blockquote>
-
-<p>DAO는 말 그대로 실제 DB에 접근하는 객체를 뜻한다. 
-DAO는 Service와 실제 데이터베이스를 연결하는 역할을 하게 된다. 
-즉, DB에서 데이터를 꺼내오거나 넣는 역할을 DAO가 담당한다.</p>
-
-<p>JPA의 경우 Repository가 DAO의 역할을 한다고 볼 수 있다. 하지만 DAO와 Repository가 같은 것은 아니다.</p>
-
-<details>  
-<summary>DAO와 Repository의 차이점</summary>
-<div>
-
-    <p>DAO와 REPOSITORY 모두 퍼시스턴스 로직에 대한 객체-지향적인<br />
-인터페이스를 제공하고 도메인 로직과 퍼시스턴스 로직을 분리하여 관심의 분리(separation of concerns) 원리를 만족시키는데 목적이 있다.</p>
-
-    <p>그러나 비록 의도와 인터페이스의 메서드 시그니처에 유사성이 존재한다고 해서<br />
-DAO와 REPOSITORY를 동일한 패턴으로 취급하는 것은 성급한 일반화의 오류를 범하는 것이다.</p>
-
-    <p>DAO는 퍼시스턴스 로직인 Entity Bean을 대체하기 위해 만들어진 개념이다.</p>
-
-    <p>DAO가 비록 객체-지향적인 인터페이스를 제공하려는 의도를 가지고 있다고 하더라도<br />
-실제 개발 시에는 하부의 퍼시스턴스 메커니즘이 데이터베이스라는 사실을 숨기려고 하지 않는다.</p>
-
-    <p>DAO의 인터페이스는 데이터베이스의 CRUD 쿼리와 1:1 매칭되는 세밀한 단위의 오퍼레이션을 제공한다.<br />
-반면 REPOSITORY는 메모리에 로드된 객체 컬렉션에 대한 집합 처리를 위한 인터페이스를 제공한다.</p>
-
-    <p>DAO가 제공하는 오퍼레이션이 REPOSITORY 가 제공하는 오퍼레이션보다 더 세밀하며,<br />
-결과적으로 REPOSITORY에서 제공하는 하나의 오퍼레이션이 DAO의 여러 오퍼레이션에 매핑되는 것이 일반적이다.</p>
-
-    <p>따라서 하나의 REPOSITORY 내부에서 다수의 DAO를 호출하는 방식으로 REPOSITORY를 구현할 수 있다.</p>
-
-  </div>
-</details>
-
-<blockquote>
-  <h3 id="service">Service</h3>
-</blockquote>
-
-<p>Service 계층은 DTO를 통해 받은 데이터를 이용해 비즈니스 로직을 처리하고,<br />
-DAO(혹은 Repository)를 통해 DB에 접근하여 데이터를 관리하는 역할을 한다.</p>
-
-<blockquote>
-  <h3 id="repository">Repository</h3>
-</blockquote>
-
-<p>JPA를 사용하면 Repository를 통해 DB에 실제로 접근할 수 있다.<br />
-Service와 DB를 연결해주는 역할을 하며,</p>
-
-<p>Service 계층에서 Repository를 이용하여 데이터를 관리할 수 있다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring MVC Pattern" /><category term="DAO" /><category term="DTO" /><category term="Spring Repository" /><category term="Spring Service" /><category term="Spring Controller" /><category term="Spring Entity" /><summary type="html"><![CDATA[MVC 패턴 측면의 스프링 흐름도]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[지금까지는 인텔리 제이 커뮤니티 버전만으로 잘 사용해오고 있었는데]]></summary></entry></feed>

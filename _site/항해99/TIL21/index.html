@@ -1,0 +1,1871 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>TIL 24일 스프링 입문 주 차#, DTO와 Entity | 기술 블로그</title>
+<meta name="description" content="자바의 상속과 다형성에 대해서 정리를했따 링크">
+
+
+  <meta name="author" content="Hyun Jun">
+  
+  <meta property="article:author" content="Hyun Jun">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술 블로그">
+<meta property="og:title" content="TIL 24일 스프링 입문 주 차#, DTO와 Entity">
+<meta property="og:url" content="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL21/">
+
+
+  <meta property="og:description" content="자바의 상속과 다형성에 대해서 정리를했따 링크">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-28T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL21/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hyun Jun",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="843d72a8e4b20f1a8ae8e971f19c34cb128b6c8b">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+
+    <style> 
+    /*스크롤바 꾸며주는 코드*/
+      ::-webkit-scrollbar{width: 17px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: rgb(25, 56, 109);}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      
+      {
+        width:12px;height:12px;background:transparent;
+      }
+
+        /*사이드바에는 적용하지않는다.*/
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          기술 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+
+                <!-- 다크 모드 토글 버튼 -->
+                
+                <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+                <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">카테고리👇</span>
+                    <div class="navicon"></div>
+                </button>
+
+
+                
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리👇</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+
+
+        
+        
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+  
+  
+    
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리👇</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">74</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <span class="nav__sub-title">etc</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/hanghae99" class="">항해99 🚢(26)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                
+                    
+                
+                    
+                        <li><a href="/categories/jekyllblogdev" class="">Jekyll Blog Dev (11)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/cloudcomputingaws" class="">Cloud computing - AWS (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/git" class="">Git (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            
+
+
+
+        <span class="nav__sub-title">Programming language</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/java" class="">Java (12)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Database</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/sql" class="">SQL (1)</a></li>
+                    
+                
+            </ul>
+
+   
+
+
+        <span class="nav__sub-title">Framework</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/spring" class="">Spring (6)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/flask" class="">Flask (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <span class="nav__sub-title">Algorithm</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmbasic" class="">Algorithm - Basic (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul> 
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmhanghae99" class="">Algorithm - Hanghae99🚢 (5)</a></li>
+                    
+                
+                    
+                
+            </ul> 
+
+
+ 
+
+
+      </li>
+
+
+
+  </ul>
+</nav>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="TIL 24일 스프링 입문 주 차#, DTO와 Entity">
+    <meta itemprop="description" content="자바의 상속과 다형성에 대해서 정리를했따링크">
+    <meta itemprop="datePublished" content="2022-12-28T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL21/" class="u-url" itemprop="url">TIL 24일 스프링 입문 주 차#, DTO와 Entity
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-28T00:00:00+09:00">2022-12-28</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          33 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#자바의-상속과-다형성에-대해서-정리를했따">자바의 상속과 다형성에 대해서 정리를했따</a></li><li><a href="#spring-architecture-dto-entity">Spring Architecture, DTO, Entity</a><ul><li><a href="#요구사항-현재-crud-게시판-과제-진행중">요구사항 (현재 CRUD 게시판 과제 진행중)</a></li><li><a href="#dto생성">Dto생성</a></li><li><a href="#service-계층-코드-수정">Service 계층 코드 수정</a></li><li><a href="#삽질-시작">삽질 시작!</a></li><li><a href="#다음-단계-디버깅">다음 단계 디버깅</a></li><li><a href="#로그를-잘-확인하자">로그를 잘 확인하자..</a></li><li><a href="#dto-필드-변경">dto 필드 변경</a></li><li><a href="#로그-익셉션-확인-잘-하자">로그, 익셉션 확인 잘 하자!!</a></li><li><a href="#더-나은-방식으로">더 나은 방식으로.</a></li><li><a href="#entity---dto">Entity -&gt; DTO</a></li><li><a href="#modelmapper">ModelMapper</a></li><li><a href="#builder패턴과-toentity">Builder패턴과 toEntity</a><ul><li><a href="#선택한-글을-수정하기">선택한 글을 수정하기</a></li><li><a href="#시작">시작!</a></li><li><a href="#마치며">마치며.</a></li></ul></li><li><a href="#렌더링시점">렌더링시점</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="자바의-상속과-다형성에-대해서-정리를했따">자바의 상속과 다형성에 대해서 정리를했따</h1>
+<p><a href="">링크</a></p>
+
+<h1 id="spring-architecture-dto-entity">Spring Architecture, DTO, Entity</h1>
+
+<p>어제 완성한 기존의 코드의 경우 서비스단에서 처리한 Entity 객체가 뷰(HTML페이지..)까지 넘어 가는 형태로 작성을 했는데.</p>
+
+<p>Entity객체는 실제 DB테이블과 매핑되는 핵심 클래스 이면서,<br />
+테이블이 가지는 컬럼들이 필드로 가지기 때문에</p>
+
+<p>보안상의 이유로</p>
+
+<p>단순 데이터 그 자체만 가지고 전달되는 객체인 DTO객체로 변경해보려고 한다.</p>
+
+<h2 id="요구사항-현재-crud-게시판-과제-진행중">요구사항 (현재 CRUD 게시판 과제 진행중)</h2>
+<ul>
+  <li>현재 엔티티상에는 Password 컬럼(필드)이 포함되어 있다.</li>
+  <li>서비스단에서 해당 선택글 데이터를 가지고 올때, Entity에 존재하는 컬럼인 Password 필드는 필요가 없다. (있을 시 위험.)</li>
+  <li>컨트롤러 단에서 Entity가 아닌 DTO만을 처리하게 해라.</li>
+</ul>
+
+<details>   
+<summary>기존 선택 글 가져오기 코드</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// RestController</span>
+<span class="nd">@RestController</span>
+
+
+     <span class="c1">// 선택 글 조회</span>
+    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/api/post/{id}"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">ModelAndView</span> <span class="nf">readPost</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">ModelAndView</span> <span class="n">modelAndView</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ModelAndView</span><span class="o">();</span>
+        <span class="n">modelAndView</span><span class="o">.</span><span class="na">setViewName</span><span class="o">(</span><span class="s">"post"</span><span class="o">);</span>
+        <span class="n">modelAndView</span><span class="o">.</span><span class="na">addObject</span><span class="o">(</span><span class="n">postService</span><span class="o">.</span><span class="na">readPost</span><span class="o">(</span><span class="n">id</span><span class="o">));</span>
+
+        <span class="k">return</span> <span class="n">modelAndView</span><span class="o">;</span>
+
+    <span class="o">}</span>
+
+
+<span class="c1">// Service</span>
+<span class="nd">@Transactional</span><span class="o">(</span><span class="n">readOnly</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">Post</span> <span class="nf">readPost</span><span class="o">(</span><span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="n">postRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">orElseThrow</span><span class="o">(</span>
+                <span class="o">()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"해당 글이 존재하지 않습니다."</span><span class="o">)</span>
+        <span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">post</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="c1">// Repository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PostRepository</span> <span class="kd">extends</span> <span class="nc">JpaRepository</span><span class="o">&lt;</span><span class="nc">Post</span><span class="o">,</span> <span class="nc">Long</span><span class="o">&gt;</span> <span class="o">{</span>
+
+        <span class="o">.......</span>
+
+<span class="o">}</span>
+
+<span class="c1">// DTO</span>
+<span class="nd">@Getter</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostRequestDto</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">password</span><span class="o">;</span>
+
+
+<span class="o">}</span>
+
+
+<span class="c1">// Entity</span>
+<span class="nd">@Getter</span>
+<span class="nd">@Entity</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Post</span> <span class="kd">extends</span> <span class="nc">Timestamped</span> <span class="o">{</span>
+
+
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="nc">GenerationType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">length</span> <span class="o">=</span> <span class="mi">50000</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">password</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Post</span><span class="o">(</span><span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getTitle</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getContents</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getPassword</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">updatePost</span><span class="o">(</span><span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getTitle</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getContents</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div>    </div>
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- post.html --&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"postMeta"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span&gt;</span>제목 : [[${post.title}]]<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span&gt;</span>작성자 : [[${post.author}]]<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<p><br /></p>
+
+<p>TODO:</p>
+<ol>
+  <li>Service단에서 Entity를 DTO로 변환하여 컨트롤러로 넘겨줘야함.</li>
+  <li>DTO에는 Password 필드가 존재하지 않아야함.</li>
+</ol>
+
+<h2 id="dto생성">Dto생성</h2>
+
+<p>password 필드만 제외한 선택 글을 뿌려주기위한 용도의 DTO를 만들었다.</p>
+
+<details>  
+<summary>SelectPostShowDto</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
+<span class="nd">@Setter</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SelectPostShowDto</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+<span class="o">}</span>
+
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<h2 id="service-계층-코드-수정">Service 계층 코드 수정</h2>
+<p>서비스 단에서 부터 리턴을 DTO로 하기위해 return 타입과, 로직을 변경하였다.</p>
+
+<details>  
+<summary>PostService</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Service</span>
+
+
+    <span class="nd">@Transactional</span><span class="o">(</span><span class="n">readOnly</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">SelectPostShowDto</span> <span class="nf">readPost</span><span class="o">(</span><span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">SelectPostShowDto</span> <span class="n">selectPostShowDto</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SelectPostShowDto</span><span class="o">();</span>
+
+        <span class="nc">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="n">postRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">orElseThrow</span><span class="o">(</span>
+                <span class="o">()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"해당 글이 존재하지 않습니다."</span><span class="o">)</span>
+        <span class="o">);</span>
+
+        <span class="n">selectPostShowDto</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="n">post</span><span class="o">.</span><span class="na">getTitle</span><span class="o">());</span>
+        <span class="n">selectPostShowDto</span><span class="o">.</span><span class="na">setAuthor</span><span class="o">(</span><span class="n">post</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">());</span>
+        <span class="n">selectPostShowDto</span><span class="o">.</span><span class="na">setContents</span><span class="o">(</span><span class="n">post</span><span class="o">.</span><span class="na">getContents</span><span class="o">());</span>
+
+
+
+        <span class="k">return</span> <span class="n">selectPostShowDto</span><span class="o">;</span>
+    <span class="o">}</span>
+
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<h2 id="삽질-시작">삽질 시작!</h2>
+<p>위의 코드까지 진행 시 사실 html페이지의 템플릿엔진 부분만 살짝 바꿔주면 동작을 해야할 것 같다.</p>
+
+<p>그런데, post.html에서</p>
+
+<p>기존 Entity의  [[${post.id}]] 를<br />
+DTO의         [[${SelectPostShowDto.title}]] 식으로 바꾸었더니 에러가 났다.</p>
+
+<p>개발자 도구 확인시 500에러 발생으로 서버쪽 에러가 확인됬다.<br />
+타임리프자체가 서버렌더링이므로 서버쪽에러는 맞는 것 같고.</p>
+
+<p>원래의 코드는 service단에서 post라는 이름으로 뷰단까지 넘어왔었는데<br />
+현재는 selectPostShowDto라는 이름으로 바꾸어놓아서<br />
+html페이지의 이름도 바꾸었는데 에러가 왜 날까?</p>
+
+<ul>
+  <li>일단 서비스단 자체는 문제가없을것으로 판단 컨트롤러단으로 넘어온 필드들의 데이터를 확인해보았다.</li>
+  <li>확인 중, 컨틑롤러 단에서 기존 서비스를 의존하는 코드에서 DTO를 의존하는 코드로 코드를 변경하였다.</li>
+</ul>
+
+<details>  
+<summary>기존 컨트롤러, 변경 코드</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 기존 코드</span>
+ <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/api/post/{id}"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">ModelAndView</span> <span class="nf">readPost</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">ModelAndView</span> <span class="n">modelAndView</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ModelAndView</span><span class="o">();</span>
+        <span class="n">modelAndView</span><span class="o">.</span><span class="na">setViewName</span><span class="o">(</span><span class="s">"post"</span><span class="o">);</span>
+        <span class="n">modelAndView</span><span class="o">.</span><span class="na">addObject</span><span class="o">(</span><span class="n">postService</span><span class="o">.</span><span class="na">readPost</span><span class="o">(</span><span class="n">id</span><span class="o">));</span>
+        
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">postService</span><span class="o">.</span><span class="na">readPost</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">getAuthor</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">postService</span><span class="o">.</span><span class="na">readPost</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">getContents</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">postService</span><span class="o">.</span><span class="na">readPost</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">getTitle</span><span class="o">());</span>
+        
+        <span class="k">return</span> <span class="n">modelAndView</span><span class="o">;</span>
+
+    <span class="o">}</span>
+
+
+<span class="c1">// 변경 코드</span>
+<span class="nd">@GetMapping</span><span class="o">(</span><span class="s">"/api/post/{id}"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">ModelAndView</span> <span class="nf">readPost</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">SelectPostShowDto</span> <span class="n">selectPostShowDto</span> <span class="o">=</span> <span class="n">postService</span><span class="o">.</span><span class="na">readPost</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+
+        <span class="nc">ModelAndView</span> <span class="n">modelAndView</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ModelAndView</span><span class="o">();</span>
+        <span class="n">modelAndView</span><span class="o">.</span><span class="na">setViewName</span><span class="o">(</span><span class="s">"post"</span><span class="o">);</span>
+        <span class="n">modelAndView</span><span class="o">.</span><span class="na">addObject</span><span class="o">(</span><span class="n">selectPostShowDto</span><span class="o">);</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">selectPostShowDto</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">selectPostShowDto</span><span class="o">.</span><span class="na">getTitle</span><span class="o">());</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">selectPostShowDto</span><span class="o">.</span><span class="na">getContents</span><span class="o">());</span>
+
+        <span class="k">return</span> <span class="n">modelAndView</span><span class="o">;</span>
+
+    <span class="o">}</span>
+</code></pre></div>    </div>
+  </div>
+</details>
+
+<p>해보니, 컨트롤러 단까지 값은 아래와 같이 잘넘어온다.<br />
+<img src="../../images/2022-12-28-11-27-32.png" alt="" /></p>
+
+<p>그렇다면 어느부분이 문제일까?</p>
+
+<p>아마 DTO를 토대로 서버쪽에서 뷰페이지를 렌더링하는 과정에서 타임리프의 문제이지 않을까 싶다.</p>
+
+<h2 id="다음-단계-디버깅">다음 단계 디버깅</h2>
+
+<p>컨트롤러에서 아래처럼 모델을 찍어보니
+System.out.println( modelAndView.getModel());</p>
+
+<p>아래와 같은 값이 나온다.
+{selectPostShowDto=com.hyunjun.spring_basic_week_assignment.dto.SelectPostShowDto@25faa12f}</p>
+
+<p>그렇다면 selectPostShowDto라는 이름으로 렌더링 되는게 맞을건데 왜안될까..?</p>
+
+<p>post html에 관련코드가 많아 테스트가 어려워
+새로 test html을 만들어 테스트를 해 보았다.</p>
+
+<p>혹시나 기존방식이아닌 th:text 방식을 써보고자
+아래처럼 해보았더니</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${selectPostShowDto.title}"</span><span class="nt">&gt;</span>제목  <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${selectPostShowDto.author}"</span><span class="nt">&gt;</span>작성자  <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">th:text=</span><span class="s">"${selectPostShowDto.contents}"</span><span class="nt">&gt;</span>작성자  <span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<p>잘동작한다 ?
+<img src="../../images/2022-12-28-13-10-35.png" alt="" /></p>
+
+<p>–&gt; 기존[[${data}]] 방식의 경우 값 치환이 아닌 unescpae가 적용되어 직접 출력하는 것이고<br />
+–&gt; 바뀐 th:text=”${data}” 의 경우 data안의 값을 이스케이프 처리하지않고 출력하는것인데</p>
+
+<p>안되려면 두개다 안되어야되는데 뭔가 이상하다!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[${selectPostShowDto.title}]]
+[[${selectPostShowDto.author}]]
+[[${selectPostShowDto.contents}]]
+</code></pre></div></div>
+
+<p>도 test.html에 같이 넣어 테스트해보았더니 아래처럼 잘나온다.</p>
+
+<p>두가지 방식 다 잘 통과한다. 과연 무슨문제일까?
+<img src="../../images/2022-12-28-13-14-14.png" alt="" /></p>
+
+<h2 id="로그를-잘-확인하자">로그를 잘 확인하자..</h2>
+
+<p>스프링의 로그를 확인해보니.
+ajax 부분의 URL 부분에서 에러가난다.</p>
+
+<p>원래코드는 이렇다.
+ url: “/api/post/[[${post.id}]]”,,</p>
+
+<p>바뀐 코드는.
+  url: “/api/post/[[${selectPostShowDto.id}]]”,</p>
+
+<p>인데 타임리프가 잘동작하는걸 test.html에서 확인했는데 왜 저부분에서 에러가 날까 ?</p>
+
+<p>아래처럼 타임리프도 회색으로나오고.</p>
+
+<p><img src="../../images/2022-12-28-13-23-55.png" alt="" /></p>
+
+<p>아마 현재 html페이지에서 타임리프를 사용하지 않는다는의미같은데..?</p>
+
+<p>test.html 에는 잘되는 타임리프가  post.html으로오면안된다.?</p>
+
+<p>합리적의심으로 일단 인텔리제이를 껏다켜보았따.</p>
+
+<p>차이가없다.. 컴퓨터는 바보가아니다.. 분명 내가 뭔가 잘못했을것이다..</p>
+
+<p>혹시나 싶어, 관련 ajax 내용 빼고 다지워보았다.</p>
+
+<p><img src="../../images/2022-12-28-13-32-42.png" alt="" /></p>
+
+<p>동작하네 ..?</p>
+
+<p><img src="../../images/2022-12-28-13-32-30.png" alt="" /></p>
+
+<p>아 URL을 넣는부분에 문제가 있구나..</p>
+
+<p>post.id(Entity 버전에서 되던부분)과<br />
+selectPostShowDto.id(현재 DTO버전에서 안되는 부분)가 무슨 차이가 있지 ??</p>
+
+<p>하다가 문득 떠올랐다.. 에러가난 부분의 필드명이 id구나..?<br />
+내가만든 dto안에는 id가 안들어있지..?</p>
+
+<p>그래서 고민을해봤다..</p>
+
+<p>기존의 로직은 Entity를 끌고다니므로 테이블에있는 key인 Id 와 매칭이되어<br />
+뷰까지 끌고와서 사용을했었다.</p>
+
+<p>그랬기에 테이블에있는 컬럼들은 자유롭게 사용이가능하지만
+password라던지 중요정보를 같이 끌고올 위험이있다.</p>
+
+<p>그래서 id 컬럼을 만들어 보기로 했다.</p>
+
+<p>원래버전이 가능했던것은 기존로직에서는 응답 시 DTO자체를 사용하지 않았다는 말이 된다.
+(DTO자체에 id필드가 없으니.)</p>
+
+<p>사실 컨트롤러 API를 호출할 때 PathVariable으로<br />
+id를 가지고 오므로, 이 id를 활용할까하다가, 사용자가 직접입력하거나 하는 부분에서<br />
+취약점이 있을것같아 그방법으로 하지않고,</p>
+
+<p>아래의 방법으로 했다.</p>
+
+<h2 id="dto-필드-변경">dto 필드 변경</h2>
+
+<p>그래서 dto에 id를 추가해주고<br />
+<img src="../../images/2022-12-28-13-40-07.png" alt="" /></p>
+
+<p>이런식으로 id도 담아주었다.<br />
+<img src="../../images/2022-12-28-13-41-28.png" alt="" /></p>
+
+<p>그랬더니 이제는 잘동작을한다!</p>
+
+<h2 id="로그-익셉션-확인-잘-하자">로그, 익셉션 확인 잘 하자!!</h2>
+
+<p>중요한 부분은 사실 애초에 스프링에서띄워줬던 익셉션 부분만 곰곰히 생각해봤따면</p>
+
+<p>id라는 부분에서 에러가나네? 하고 금방해결할문제인데 기존 Entity로 사용했던 방식때문에,</p>
+
+<p>id는 있는데 왜없다고하는거지?라는 생각에</p>
+
+<p>역으로 디버깅을 해보지않아도 될 시간을 좀 잡아먹은 것 같다.</p>
+
+<h2 id="더-나은-방식으로">더 나은 방식으로.</h2>
+<p>이렇게 진행을 해보니 이제는 다른 방식이 없나? 하고 다음과같은 생각이 들었다.</p>
+
+<p>일단 DTO버전으로 수정한 방법처럼,<br />
+구조만을 생각하고 DTO에 중점을 두고 기능을 만들어 보았기에<br />
+더 쉽고, 좋고, 안전한 방법들을 생각해 보았다.</p>
+
+<ul>
+  <li>
+    <p>Service -&gt; 컨트롤러로 넘어올때 entity로 넘겨와서 DTO로 변환을 해도 될것같고</p>
+  </li>
+  <li>DTO는 어느 계층까지 활용을하고</li>
+  <li>DTO는 요청, 응답마다 따로만들어야 하나 ?<br />
+  ㄴ 요청시에는 비밀번호가 있지만, 응답 시에는 비밀번호가 없다면?</li>
+  <li>Entity는 어느 계층까지 와도 되나</li>
+  <li>Entity값을 더 쉽게 넣을수없을까?</li>
+</ul>
+
+<p>와 같은 생각이들었다.</p>
+
+<p><a href="https://okky.kr/articles/1202337">DTO용도, 갯수 관련 참조 글</a></p>
+
+<h2 id="entity---dto">Entity -&gt; DTO</h2>
+
+<p>아까 수정했던 Server계층에서 DTO에 Entity값을 넣는 과정에서<br />
+<img src="../../images/2022-12-28-13-45-39.png" alt="" /></p>
+
+<p>selectpostShowDto.set() 과정이 복잡해보여서 이것 관련<br />
+어노테이션, 스프링기능 혹은 방법은없나? 하고 찾아보았다.<br />
+(아무리 생각해도 편하게 쓰려고 쓰는 스프링에서 위와같이 쓸것같진않아서..)</p>
+
+<p>지금까지는 DTO를 사용해야한다는 마음에 직접 삽질하여 내마음대로 해보았고,
+이제는 스프링에서 쓰는방식, 다른사람들이 쓰는 방식대로 해보고 싶었다.</p>
+
+<p>찾아보다가
+Entity와 DTO간의 변환은 Controller, Servcie단에서 주로 한다고하여</p>
+
+<p>내가했던 Entity값을 DTO에 일일이 담는 비효율 적인방법보다
+Entity를 DTO랑 매칭해서 값을 넣어주는 라이브러리를 찾아서</p>
+
+<p>일단은 service단에서 처리후 dto를 반환하는 코드를 바꿔보았다.</p>
+
+<h2 id="modelmapper">ModelMapper</h2>
+<p>일단 난 그래들이므로 build.gradle에 아래의 디펜던시 의존성을 추가해줬다</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.3.8'
+</code></pre></div></div>
+
+<p>그 후, ModelMapper의 임포트가 잘되지않아서 인텔리제이를 재 시작하니 임포트는 잘 되었다.</p>
+
+<p>그 후 아래처럼 바꿨더니 잘동작한다!!( 주석은 원래 코드 )</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@Transactional</span><span class="o">(</span><span class="n">readOnly</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">SelectPostShowDto</span> <span class="nf">readPost</span><span class="o">(</span><span class="nc">Long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="c1">//        SelectPostShowDto selectPostShowDto = new SelectPostShowDto();</span>
+
+        <span class="nc">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="n">postRepository</span><span class="o">.</span><span class="na">findById</span><span class="o">(</span><span class="n">id</span><span class="o">).</span><span class="na">orElseThrow</span><span class="o">(</span>
+                <span class="o">()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"해당 글이 존재하지 않습니다."</span><span class="o">)</span>
+        <span class="o">);</span>
+        <span class="c1">//        selectPostShowDto.setId(post.getId());</span>
+        <span class="c1">//        selectPostShowDto.setTitle(post.getTitle());</span>
+        <span class="c1">//        selectPostShowDto.setAuthor(post.getAuthor());</span>
+        <span class="c1">//        selectPostShowDto.setContents(post.getContents());</span>
+
+
+        <span class="nc">ModelMapper</span> <span class="n">modelMapper</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ModelMapper</span><span class="o">();</span>
+        <span class="nc">SelectPostShowDto</span> <span class="n">selectPostShowDto</span> <span class="o">=</span> <span class="n">modelMapper</span><span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">post</span><span class="o">,</span> <span class="nc">SelectPostShowDto</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+
+        <span class="k">return</span> <span class="n">selectPostShowDto</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p><a href="https://velog.io/@kimview/ModelMapper">Model mapper</a></p>
+
+<p><img src="../../images/2022-12-28-14-50-11.png" alt="" />
+<img src="../../images/2022-12-28-14-50-17.png" alt="" /></p>
+
+<h2 id="builder패턴과-toentity">Builder패턴과 toEntity</h2>
+
+<p>써칭을 하다가 아래 블로그에서 또 다른 방법을 발견하여</p>
+
+<p>글을 수정하는 API에 적용해 보려고한다!</p>
+
+<p>정리가 잘되어있으니 참조하면 좋을 듯하다.
+<a href="https://velog.io/@jsb100800/Spring-boot-DTO-Entity-%EA%B0%84-%EB%B3%80%ED%99%98-%EC%96%B4%EB%8A%90-Layer%EC%97%90%EC%84%9C-%ED%95%98%EB%8A%94%EA%B2%8C-%EC%A2%8B%EC%9D%84%EA%B9%8C">참조 블로그</a></p>
+
+<h3 id="선택한-글을-수정하기">선택한 글을 수정하기</h3>
+<p>DTO의 입장에서 먼저 확인해보겠습니다.</p>
+
+<p>글 수정시 패스워드를 기준으로 글에대한 수정권한을 주므로,
+password, title, contents, author 정도를 수정할수 있게 하려 합니다.</p>
+
+<p>그럼 요청 시 DTO는
+password, title, contents, author를 담게 만들고</p>
+
+<p>응답같은경우 password를 제외한</p>
+
+<p>createdAt, modifiedAt, id, title, content, author를 가지는 dto를 따로 만들면 될 것 같네요!</p>
+
+<p>사실 글 수정 성공시 해당 글id로 GET으로 보내주어서,
+위의 응답 DTO는 만들 필요가 없지만,</p>
+
+<p>확인하는 용도로 만들어볼게요!</p>
+
+<ul>
+  <li>유연하게 사용할려면 현재 상황의 경우<br />
+아마도 글 작성, 글 수정 의 서비스는 달라도 DTO는 똑같아도 될 것 같네요!
+(물론 API 기능마다 DTO파일이 달라야 한다라는 룰이있다면 그렇게 쓰셔도 좋구요!)</li>
+</ul>
+
+<h3 id="시작">시작!</h3>
+
+<details>  
+<summary>PostRequestDto</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostRequestDto</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">password</span><span class="o">;</span>
+
+
+    <span class="nd">@Builder</span>
+    <span class="kd">public</span> <span class="nf">PostRequestDto</span><span class="o">(</span><span class="nc">String</span> <span class="n">title</span><span class="o">,</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">,</span> <span class="nc">String</span> <span class="n">author</span><span class="o">,</span> <span class="nc">String</span> <span class="n">password</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">contents</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">author</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">password</span><span class="o">;</span>
+    <span class="o">}</span>
+
+
+    <span class="c1">// dto -&gt; entity</span>
+    <span class="kd">public</span> <span class="nc">Post</span> <span class="nf">toEntity</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nc">Post</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">title</span><span class="o">(</span><span class="n">title</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">contents</span><span class="o">(</span><span class="n">contents</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">author</span><span class="o">(</span><span class="n">author</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">password</span><span class="o">(</span><span class="n">password</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<details>  
+<summary>PostResponseDto</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostResponseDto</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">LocalDateTime</span> <span class="n">createdAt</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">LocalDateTime</span> <span class="n">modifiedAt</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+
+    <span class="c1">// entity -&gt; dto</span>
+    <span class="kd">public</span> <span class="nf">PostResponseDto</span><span class="o">(</span><span class="nc">Post</span> <span class="n">post</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getId</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">createdAt</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getCreatedAt</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">modifiedAt</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getModifiedAt</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getTitle</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getContents</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">();</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<details>  
+<summary>PostService</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Transactional</span>
+    <span class="kd">public</span> <span class="nc">PostResponseDto</span> <span class="nf">updatePost</span><span class="o">(</span><span class="nc">Long</span> <span class="n">id</span><span class="o">,</span> <span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="c1">// Entity &lt;- DTO</span>
+        <span class="c1">// Post post = requestDto.toEntity();</span>
+
+
+        <span class="c1">// 해당 글과 글과 비밀번호가 매칭되는지 확인</span>
+        <span class="nc">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="n">postRepository</span><span class="o">.</span><span class="na">findByIdAndPassword</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getPassword</span><span class="o">());</span>
+
+
+        <span class="c1">// 매칭된다면</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">post</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+            <span class="c1">// Dirty Checking을 이용하여 업데이트</span>
+            <span class="n">post</span><span class="o">.</span><span class="na">updatePost</span><span class="o">(</span><span class="n">requestDto</span><span class="o">);</span>
+
+            <span class="c1">// DTO &lt;- Entity</span>
+            <span class="nc">PostResponseDto</span> <span class="n">postResponseDto</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PostResponseDto</span><span class="o">(</span><span class="n">post</span><span class="o">);</span>
+
+            <span class="k">return</span> <span class="n">postResponseDto</span><span class="o">;</span>
+        <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<details>  
+<summary>Post</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
+<span class="nd">@Entity</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Post</span> <span class="kd">extends</span> <span class="nc">Timestamped</span> <span class="o">{</span>
+
+
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="nc">GenerationType</span><span class="o">.</span><span class="na">AUTO</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">length</span> <span class="o">=</span> <span class="mi">50000</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">password</span><span class="o">;</span>
+
+
+    <span class="nd">@Builder</span>
+    <span class="kd">public</span> <span class="nf">Post</span><span class="o">(</span><span class="nc">Long</span> <span class="n">id</span><span class="o">,</span> <span class="nc">String</span> <span class="n">title</span><span class="o">,</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">,</span> <span class="nc">String</span> <span class="n">author</span><span class="o">,</span> <span class="nc">String</span> <span class="n">password</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">contents</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">author</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">password</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nf">Post</span><span class="o">(</span><span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getTitle</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getContents</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getPassword</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">updatePost</span><span class="o">(</span><span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getTitle</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getContents</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">requestDto</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">();</span>
+    <span class="o">}</span>
+
+
+<span class="o">}</span>
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<p>이때 엔티티의 만들어놓은 업데이트 메소드만으로 실제 업데이트 쿼리가 가능한이유?<br />
+Dirty Chechking으로 인해 트랜잭션안에서 Entity의 변경이 일어나면,<br />
+변경한 내용은 자동으로 DB에 반영(update)된다.</p>
+
+<p><a href="https://velog.io/@koo8624/Spring-%EB%B3%80%EA%B2%BD-%EA%B0%90%EC%A7%80%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-Entity-%EC%88%98%EC%A0%95">변경 감지</a><br />
+<a href="https://jojoldu.tistory.com/415">Dirty Checking</a><br />
+<a href="https://jojoldu.tistory.com/536">Dirty Chechking</a></p>
+
+<details>  
+<summary>PostController</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RestController</span>
+<span class="nd">@RequiredArgsConstructor</span>
+
+
+ <span class="nd">@PutMapping</span><span class="o">(</span><span class="s">"/api/post/{id}"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">PostResponseDto</span> <span class="nf">updatePost</span><span class="o">(</span><span class="nd">@PathVariable</span> <span class="kt">long</span> <span class="n">id</span><span class="o">,</span> <span class="nd">@RequestBody</span> <span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">PostResponseDto</span> <span class="n">postResponseDto</span> <span class="o">=</span> <span class="n">postService</span><span class="o">.</span><span class="na">updatePost</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">requestDto</span><span class="o">);</span>
+
+
+        <span class="k">return</span> <span class="n">postResponseDto</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<h3 id="마치며">마치며.</h3>
+<p>지금까지 봐온 DTO 계층 이동, Entity 계층 이동,
+DTO의 용도, 파일구분 등은 사람,회사, 상황, 에 따라 다르며,</p>
+
+<p>DTO를 아예 안써도 되고,
+여러가지 상황을 DTO한개로 해결가능하다면 해도되고,
+Entity로 뷰까지 끌어와도됩니다..(지양해야겠지만)</p>
+
+<p>주어진 상황에 따라 유연하게 대처할 수 있어야합니다.</p>
+
+<p><a href="https://donghyeon.dev/jpa/2020/07/12/JPA%EC%9D%98-DTO%EC%99%80-Entity/">참조한 좋은 글</a>
+<a href="https://tmdrl5779.tistory.com/51">실질적으로 도움 받은 글</a></p>
+
+<p>과제를 다 끝내고보니 실수한부분이있었다..
+현재 의 중요목표중하나가 RESTful API 스럽게 만드는것인데</p>
+
+<p>아래는 전체 글 보기 페이지인데 
+<img src="../../images/2022-12-28-20-00-21.png" alt="" /></p>
+
+<p>테이블에서 해당글 클릭시 해당글의 번호로 api로 접근해
+ModelAndView를 받아서 View를 받아 이동하게된다…</p>
+
+<p>ex)
+localhost:8080/api/post/1</p>
+
+<p><img src="../../images/2022-12-28-20-01-44.png" alt="" /></p>
+
+<p>이것을 이제 RESTful스럽게 ,postman사용시 json데이터 형식으로만 받을수 있게 바꿔보려고한다.</p>
+
+<p>아래처럼 ajax를 활용하기위해 온클릭 함수로 바꾸어줬고 href에서 온클릭으로 바꾸니 파란밑줄이 사라졌다..ㅎ
+<img src="../../images/2022-12-28-20-02-42.png" alt="" /></p>
+
+<p>일단 아래처럼 글 클릭시 API호출하는것 까지 확인완료
+<img src="../../images/2022-12-28-20-04-06.png" alt="" /></p>
+
+<p>계쏙 하던중 아무리생각해도 컨트롤러단에서는 json만을 리턴하고
+페이지를 이동시키면서 json만 받아 처리하는 법을 모르겠어서</p>
+
+<p>그냥 페이지이동없이 javascript로 노가다 했다.</p>
+
+<h2 id="렌더링시점">렌더링시점</h2>
+
+<p>처음엔 글번호 클릭시 postPage()를 호출하고
+ajax로 페이지정보를 가저와 아래의 thymleaf로 할려고했는데
+에러가 났다.. 아마 데이터가 생기기전 렌더링이먼저되어 그런것같다.</p>
+
+<p><img src="../../images/2022-12-28-20-42-13.png" alt="" /></p>
+
+<p>그래서 response 값을 활용해보자라고 생각했고
+아래와 같이 하니 동작하였다.
+<img src="../../images/2022-12-28-20-43-57.png" alt="" /></p>
+
+<p>그렇게 해서 아래처럼 한페이지에 다옮겨놓았다</p>
+
+<p>RESTful하게 만들때 모델엔뷰를 쓰지않고 어떻게 뷰를넘기면서 json으로 값을 쓰려면해야할지
+생각해볼 부분이다.</p>
+
+<p>삭제와 수정도 원래의 페이지에서 다 가지고왔는데
+역시나 아래와 같이 타임리프에서 아직 가지고오지 못한 값들에서 에러가나서
+<img src="../../images/2022-12-28-20-55-25.png" alt="" /></p>
+
+<p>글의 id를 가지고올때 요소들의 온클릭함수에 Id를 넘겨서 해당 Id를 이용했다.
+<img src="../../images/2022-12-28-20-54-45.png" alt="" /></p>
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-28T00:00:00+09:00">2022-12-28</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=TIL+24%EC%9D%BC+%EC%8A%A4%ED%94%84%EB%A7%81+%EC%9E%85%EB%AC%B8+%EC%A3%BC+%EC%B0%A8%23%2C+DTO%EC%99%80+Entity%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL21%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL21%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL21%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/%ED%95%AD%ED%95%B499/TIL20/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>TIL 23일 스프링 입문 주 차#, Thymeleaf</a>
+    
+    
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/JOB00/" rel="permalink">Job00
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-28T00:00:00+09:00">2022-12-28</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL20/" rel="permalink">TIL 23일 스프링 입문 주 차#, Thymeleaf
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-27T00:00:00+09:00">2022-12-27</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          10 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sql/SQL01/" rel="permalink">Database MySQL 기초 1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-27T00:00:00+09:00">2022-12-27</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL19/" rel="permalink">TIL 22일 스프링 입문 주 차#, 데이터 접근 기술, 기획하고 작업하기!
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-26T00:00:00+09:00">2022-12-26</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/hyunjunhwang1994" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/hyunjuuuuun/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Hyun Jun. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <!-- start custom comments scripts -->
+
+<!-- end custom comments scripts -->
+
+<script>
+    'use strict';
+
+    window.customUtterances = {
+      theme: 'github-light',
+      darkTheme: 'github-dark',
+      onChange: (theme) => {
+        var commentContainer = document.querySelector('#utterances-comments');
+  
+        if (!commentContainer) {
+          return;
+        }
+  
+        while ( commentContainer.hasChildNodes() ) { 
+          commentContainer.removeChild( commentContainer.firstChild );
+        }
+  
+        var script = document.createElement('script');
+        script.setAttribute('src', 'https://utteranc.es/client.js');
+        script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
+        script.setAttribute('label', 'utterances');
+        script.setAttribute('issue-term', 'pathname');
+        script.setAttribute('theme', theme);
+        script.setAttribute('crossorigin', 'anonymous');
+  
+        commentContainer.appendChild(script);
+      }
+    };
+  </script>
+
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>
