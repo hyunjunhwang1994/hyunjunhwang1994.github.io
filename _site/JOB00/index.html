@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Job00 | 기술 블로그</title>
-<meta name="description" content="">
+<meta name="description" content="면접 준비">
 
 
   <meta name="author" content="Hyun Jun">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/JOB00/">
 
 
-  <meta property="og:description" content="">
+  <meta property="og:description" content="면접 준비">
 
 
 
@@ -218,7 +218,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">74</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">75</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -235,7 +235,7 @@
                     
                 
                     
-                        <li><a href="/categories/hanghae99" class="">항해99 🚢(26)</a></li>
+                        <li><a href="/categories/hanghae99" class="">항해99 🚢(27)</a></li>
                     
                 
                     
@@ -625,7 +625,7 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Job00">
-    <meta itemprop="description" content="">
+    <meta itemprop="description" content="면접 준비">
     <meta itemprop="datePublished" content="2022-12-28T00:00:00+09:00">
     
 
@@ -663,7 +663,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          3 분 소요
         
       </span>
     
@@ -683,7 +683,80 @@
             </nav>
           </aside>
         
-        
+        <p>면접 준비</p>
+
+<p>메소드영역 자바프로그램이 공유할수있는 공유공간
+        코드가저장됨, 정적필드, 정적상수 저장됨
+        static 정적인것.static은 무조건 메소드영역저장(어디서든 공통사용 가능)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    힙영역&lt;-&gt; 스택 공유할수없는공간
+
+    힙영역 : 스트링도 힙영역에 생김
+
+
+    new-&gt;힙영역에 새로운것 생성 -&gt;객체생성
+
+    힙영역에생긴 객체들의주소를 스택에서 저장및관리.
+</code></pre></div></div>
+
+<p>힙영역에 중요한것 Garbage collector : 메모리관리자
+면접에서 자주나옴 가비지컬렉터</p>
+
+<p>스택:  그림이 왜2개냐면
+        쓰레드: 프로그램, 프로세스, 쓰레드</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    프로그램: 하드디스크에 저장된것
+    프로세스: -&gt; 프로그램을 실행헤서 하드-&gt;메인메모리에 실행하면 메모리에올라가있는프로그램 프로세스
+    쓰레드: 각각의 일을 처리해주는 과정
+
+
+    스택 흰색그림하나하나당 쓰레드1개라고 보면됨
+    -&gt; 공유가안되기때문에
+    메소드영역이 있는거(공유할수있게)
+
+    스프링,자바 멀티쓰레드
+
+    노드 단일쓰레드
+
+
+
+
+            -- 배열
+</code></pre></div></div>
+
+<p>면접에 나올만한 것들</p>
+
+<p>자바 14버전에서나온 레코드가 뭔지 익히기.</p>
+
+<p>23쪽 컴파일과정 외우기</p>
+
+<p>네트워크 에러
+200 정상
+300 리다이렉트
+400 잘못된값
+500 서버</p>
+
+<p>get, post차이</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    자료구조. 리스트 셋 맵 배열
+    물어보면 좀깊게 대답하기.
+
+
+DB left inner outter join 물어볼것임
+
+    스프링 관련된거 많이 물어볼것임
+
+    git에 대해서도 물어본다.
+
+git플로우 회사에서 많이 사용
+Git flow 깃을 관리할 수 있는
+    약속? 을 물어본다. develop feature stage &lt;-- 이런전략을 물어봄.
+</code></pre></div></div>
+
+<p>항해에서 면접은 많이 해줌 .
+이력서는 많이봐줌</p>
+
+<p>자바 버전별 추가된 주요기능 외우기</p>
  <!--실제 페이지 글 부분-->
         
       </section>
@@ -737,6 +810,68 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL22/" rel="permalink">TIL 25일 스프링 입문 주 차#, API 설계 시험, 트랜잭션, 더티 체킹
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-29T00:00:00+09:00">2022-12-29</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          10 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
         
           
 
@@ -903,68 +1038,6 @@
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           4 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/%ED%95%AD%ED%95%B499/TIL19/" rel="permalink">TIL 22일 스프링 입문 주 차#, 데이터 접근 기술, 기획하고 작업하기!
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-12-26T00:00:00+09:00">2022-12-26</time>
-      </span>
-    
-
-                 
-                
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          6 분 소요
         
       </span>
     
