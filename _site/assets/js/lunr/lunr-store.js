@@ -402,7 +402,7 @@ var store = [{
         "teaser": null
       },{
         "title": "객체 지향 프로그래밍 - 상속, 다형성, 추상 클래스",
-        "excerpt":"- 목표 - 상속, 추상 클래스와 둘에서 비롯되는 다형성에 대해 알고 가는 것 상속 객체지향적 개념으로 봤을 때 어떠한 객체에서 비롯되는 동작, 기능을 가지는 하위 객체가 많기 때문애 이를 더욱 편하게 사용하고자 상속이 있습니다. 상속은 캡슐화, 추상화, 다형성 등 객체지향프로그래밍을 구성하는 특징 중 하나이다. 상속의 특징 부모가 상속을 해주는 현실과는...","categories": ["Java"],
+        "excerpt":"- 목표 - 상속, 추상 클래스와 둘에서 비롯되는 다형성에 대해 알고 가는 것 ⭐️상속⭐️ 객체지향적 개념으로 봤을 때 어떠한 객체에서 비롯되는 동작, 기능을 가지는 하위 객체가 무수히 많기 때문에 이를 더욱 편하게 프로그래밍으로 구현하고자 상속이 있습니다. ex) 동물 -&gt; 사람, 고양이, 강아지, 원숭이, .. 이 있을 때 상속이 없다면 사람,...","categories": ["Java"],
         "tags": ["Java 상속","Java 다형성","Java 추상 클래스"],
         "url": "/java/Java18/",
         "teaser": null
@@ -449,19 +449,19 @@ var store = [{
         "url": "/%ED%95%AD%ED%95%B499/TIL22/",
         "teaser": null
       },{
-        "title": "스프링 - JPA 파헤치기, 총정리1",
+        "title": "스프링 - JPA, 총정리1",
         "excerpt":"Spring Data JPA가 없었다면? Spring Data JPA라이브러리를 사용하면 아래처럼 간단하게 사용이 가능하다. // Entity 생성 Member hyunjun = new Member(); member.setId(\"hyunjun94\"); member.setUsername(\"현준\"); // 이렇게 간단하게 DB에 접근하여 사용 가능했다. memberRepository.save(hyunjun); memberRepository.find(); 만약 Spring Data JPA를 사용하지 않았을때 위의 과정을 실행 시키려면? // Entity를 생성 Member hyunjun = new Member(); member.setId(\"hyunjun94\");...","categories": ["Spring"],
         "tags": ["JPA 영속성 컨텍스트","JPA 더티 체크","JPA Entity Manager"],
         "url": "/spring/Spring7/",
         "teaser": null
       },{
-        "title": "스프링 - JPA 파헤치기, 총정리2",
+        "title": "스프링 - JPA, 총정리2",
         "excerpt":"JPA의 영속성 컨텍스트란? persistence context! 엔티티를 영구 저장하는 환경 어플리케이션이 데이터베이스에서 꺼내온 데이터 객체를 보관하는 역할을 합니다. 영속성 컨텍스트는 엔티티 매니저를 통해 엔티티를 조회하거나 저장할 때 엔티티를 보관하고 관리합니다. 엔티티 매니저마다 개별적으로 부여되는, 어떠한 논리적 공간같은 개념으로 비유적으로 이해하셔도 좋을 것 같습니다. 자바의 엔티티 객체를 엔티티 매니저마다 가지고 있는 영속성...","categories": ["Spring"],
         "tags": ["JPA 영속성 컨텍스트","JPA 더티 체크","JPA Entity Manager"],
         "url": "/spring/Spring8/",
         "teaser": null
       },{
-        "title": "스프링 - JPA 파헤치기, 엔티티 매핑, 연관관계, 프록시",
+        "title": "스프링 - JPA, 엔티티 매핑, 연관관계, 프록시",
         "excerpt":"엔티티 매핑 @Entity JPA를 사용해서 테이블과 매핑할 클래스는 @Entity 어노테이션을 필수로 붙여야 한다. @Entity가 붙은 클래스는 JPA가 관리합니다. @Entity 적용시 주의사항 기본 생성자는 필수. (파라미터가 없는 public 또는 protected 생성자) final 클래스, enum, interface, inner 클래스에는 사용할 수 없다. 저장할 필드에 final을 사용하면 안된다. @Entity @Table (name=\"USER\") public class Member...","categories": ["Spring"],
         "tags": ["JPA 영속성 컨텍스트","JPA 더티 체크","JPA Entity Manager"],
         "url": "/spring/Spring9/",
