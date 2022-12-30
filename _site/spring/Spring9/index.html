@@ -663,7 +663,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          9 분 소요
+          15 분 소요
         
       </span>
     
@@ -678,7 +678,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#엔티티-매핑">엔티티 매핑</a></li><li><a href="#연관-관계">연관 관계</a><ul><li><a href="#단방향-연관관계">단방향 연관관계</a></li><li><a href="#양방향-연관관계">양방향 연관관계</a></li></ul></li><li><a href="#프록시">프록시</a></li></ul>
+              <ul class="toc__menu"><li><a href="#엔티티-매핑">엔티티 매핑</a></li><li><a href="#연관-관계">연관 관계</a><ul><li><a href="#단방향-연관관계">단방향 연관관계</a></li><li><a href="#양방향-연관관계">양방향 연관관계</a></li><li><a href="#mappedby">mappedBy</a><ul><li><a href="#03-양방향-연관관계의-주의점">03. 양방향 연관관계의 주의점</a></li></ul></li></ul></li><li><a href="#프록시">프록시</a></li></ul>
 
             </nav>
           </aside>
@@ -862,6 +862,8 @@ final 클래스, enum, interface, inner 클래스에는 사용할 수 없다.
 <span class="o">}</span>
 
 </code></pre></div></div>
+
+<p>Member와 Team vs  Order의 Member차이</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="c1">// Member의 Team쪽</span>
 	<span class="nd">@ManyToOne</span>
 	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"team_id"</span><span class="o">)</span>
@@ -873,6 +875,161 @@ final 클래스, enum, interface, inner 클래스에는 사용할 수 없다.
 	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"member_id"</span><span class="o">)</span>
   <span class="kd">private</span> <span class="nc">Member</span> <span class="n">member</span><span class="o">;</span>
 </code></pre></div></div>
+
+<p>그렇다면 Many의 반대쪽은 ?</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@OneToMany</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"member"</span><span class="o">,</span> <span class="n">fetch</span> <span class="o">=</span> <span class="nc">FetchType</span><span class="o">.</span><span class="na">EAGER</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Orders</span><span class="o">&gt;</span> <span class="n">orders</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+</code></pre></div></div>
+
+<h2 id="mappedby">mappedBy</h2>
+<p>객체에는 사실 양방향 연관관계라는 것이 없습니다. 
+서로 다른 단방향으로 조회하는 로직 2개를 잘 묶어서 양방향인 것처럼 보이게 한 것 뿐이죠!</p>
+
+<p>더 정확히는 멤버객체에 주문객체의 주소값을, 주문객체에는 멤버객체의 주소값을 가지고 있는 것 입니다!</p>
+
+<ul>
+  <li>
+    <p>반면 데이터베이스는 어떨까요?</p>
+
+    <p><strong>Member</strong></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th> </th>
+          <th>id</th>
+          <th>member_name</th>
+          <th>order</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Order</strong></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th> </th>
+          <th>id</th>
+          <th>food_id</th>
+          <th>member_id</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><strong>외래키는 연관관계가있는 두개의 테이블 중에서 하나의 테이블에만 있으면 충분합니다!</strong>
+ 따라서. 이런 차이로 인해  두 객체 연관관계 중 하나를 정해서 테이블의 외래키를 관리해야 하는데 이것을 연관관계의 주인이라 합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">연관관계</code>의 주인만이 데이터베이스 연관관계와 매핑되고 외래 키를 관리(등록, 수정, 삭제) 하게 되어있습니다. 
+ 반면에 주인이 아닌 쪽은 읽기만 할 수 있죠. <strong>연관관계의 주인을 정한다는 것은 사실 외래 키 관리자를 선택하는 것 입이다</strong>.</p>
+
+<p>연관관계의 주인에 의해 mappedBy 된다!</p>
+
+<h3 id="03-양방향-연관관계의-주의점">03. <strong>양방향 연관관계의 주의점</strong></h3>
+
+<ul>
+  <li>
+    <p><strong>주의점</strong></p>
+
+    <p>연관관계의 주인에는 값을 입력하지 않고, 주인이 아닌 곳에만 값을 입력하기. <strong>데이터베이스에 외래 키값이 정상적으로 저장되지 않으면 이것부터 의심해봐야 합니다.</strong></p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    
+    <span class="nc">Order</span> <span class="n">order</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Order</span> <span class="o">(</span><span class="s">"order"</span><span class="o">,</span> <span class="s">"order”);
+    em.persist(order);
+    
+    Order order2 = new Order (”order2"</span><span class="o">,</span> <span class="s">"order2”);
+    em.persist(order2);
+    
+    Member member = new Member("</span><span class="n">member</span><span class="err">"</span><span class="o">,</span> <span class="err">”</span><span class="n">member</span><span class="err">”</span><span class="o">);</span>
+      
+  	<span class="c1">//여기가 실수 포인트!!!</span>
+    <span class="n">member</span><span class="o">.</span><span class="na">getOrders</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">order</span><span class="o">);</span>
+    <span class="n">member</span><span class="o">.</span><span class="na">getOrders</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">order2</span><span class="o">);</span>
+    <span class="n">em</span><span class="o">.</span><span class="na">persist</span><span class="o">(</span><span class="n">member</span><span class="o">);</span>
+    
+</code></pre></div>    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th> </th>
+          <th>memberId</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>order</td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>order2</td>
+          <td>null</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <aside>
+  📌 여기는 연관관계의 주인이 아닌 member.order에만 값을 저장했기 때문입니다. 예제 코드는 연관관계의 주인인 order.member에 아무 값도 입력하지 않았죠. 따라서 memberId 외래 키의 값도 `null`이 저장됩니다.
+    
+  </aside>
+
+    <p>해결 : <strong>순수한 객체까지 고려한 양방향 연관관계</strong></p>
+
+    <p>객체 관점에서 양쪽 방향에 모두 값을 입력해주는 것이 가장 안전합니다. 양쪽 방향 모두 값을 입력하지 않으면 <code class="language-plaintext highlighter-rouge">JPA</code>를 사용하지 않는 순수한 객체 상태에서 심각한 문제가 발생할 수 있죠.</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">order</span><span class="o">.</span><span class="na">setMember</span><span class="o">(</span><span class="n">member</span><span class="o">)</span>
+  <span class="n">member</span><span class="o">.</span><span class="na">getOrders</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">order</span><span class="o">);</span>
+</code></pre></div>    </div>
+
+    <p>해결 2 : <strong>연관관계 편의 메소드</strong></p>
+
+    <p>이걸 매번 하는건 깜빡할 여지가 너무 많겠죠?</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">private</span> <span class="nc">Order</span> <span class="n">order</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMember</span><span class="o">(</span><span class="nc">Member</span> <span class="n">member</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">member</span> <span class="o">=</span> <span class="n">member</span><span class="o">;</span>
+      <span class="n">member</span><span class="o">.</span><span class="na">getOrders</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="o">...</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+
+    <aside>
+  🙂 이러면 깜빡하지 않을 수 있겠네요
+    
+  </aside>
+  </li>
+</ul>
 
 <h1 id="프록시">프록시</h1>
  <!--실제 페이지 글 부분-->

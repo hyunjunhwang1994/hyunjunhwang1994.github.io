@@ -1,41 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-30T22:21:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 26일 스프링 숙련 주 차#, 발제, 이번 주 목표</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL23/" rel="alternate" type="text/html" title="TIL 26일 스프링 숙련 주 차#, 발제, 이번 주 목표" /><published>2022-12-30T00:00:00+09:00</published><updated>2022-12-30T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL23</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL23/"><![CDATA[<p><img src="../../images/2022-12-30-09-12-06.png" alt="" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-30T22:53:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 26일 스프링 숙련 주 차#, 발제, 이번 주 목표</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL23/" rel="alternate" type="text/html" title="TIL 26일 스프링 숙련 주 차#, 발제, 이번 주 목표" /><published>2022-12-30T00:00:00+09:00</published><updated>2022-12-30T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL23</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL23/"><![CDATA[<p><img src="../../images/2022-12-30-09-12-06.png" alt="" /></p>
 
 <h1 id="주특기-숙련-주-차-발제">주특기 숙련 주 차 발제!</h1>
 <p>오늘은 스프링 숙련 주 차의 발제가 있었고,
-새 원들로 조가 다시 만들어 졌다.</p>
+새 원들로 조가 다시 만들어졌다.</p>
 
-<p>항해99 Spring 숙련주차 라는 강의가 지급되었다.
-일단 해당강의의 제목들을 보았을 때</p>
+<p>항해99 Spring 숙련 주 차라는 강의가 지급되었다.
+일단 해당 강의의 제목들을 보았을 때</p>
 
 <h2 id="이번-주의-목표는">이번 주의 목표는?</h2>
 <ul>
   <li>CRUD 로직 완벽 익히기</li>
   <li>JPA 이론 파악하기, 잘 다루기</li>
   <li>Auth 인증/인가 다루기</li>
-  <li>JWT 사용하기
-정도 인 것 같다.</li>
+  <li>JWT 사용하기</li>
+  <li>스프링 이론 및 어노테이션 익히기
+정도인 것 같다.</li>
 </ul>
 
-<p>저번 입문 주 차에서는 스프링에관해 전반적인 내용들을 통해 API 만들어 보는 것이 목표였다면<br />
-이제 숙련 주 차에서는 JPA에 대해서 이론적인 내용까지 확실하게 알아가면서</p>
+<h2 id="지난주-목표">지난주 목표</h2>
+<ul>
+  <li>CRUD API 로직 구현</li>
+  <li>스프링 구조 익히기</li>
+</ul>
 
-<p>스프링에 관한 구조를 더 정확히 알아보는것을 목표로 잡고 진행하면 될 것 같다.</p>
+<p><br /></p>
 
-<p>숙련 주 차 강의의 1화를 보자마자 스프링 입문 주 차 1화를 봤을 때랑<br />
-똑같이 소리를 하는지 모르겠는 느낌이 왔다… 그래도 입문 주 차 내용이 적응된 것처럼<br />
-이것들도 다음주 쯤이면 적응이되지 않을까 싶다.</p>
+<p>숙련 주 차 강의의 1화를 보자마자 스프링 입문 주 차 1화를 봤을 때랑</p>
 
-<p>JPA 영속성,준영속,비영속,1차캐시, 더티체킹 엔티티 매니저등에 대해서 정리를 해보았다.<br />
-이번주 내내 글 수정해가며 공부 할 예정<br />
-<a href="http://localhost:4000/spring/Spring7/">JPA, EntityManager(Factory)</a><br />
-<a href="http://localhost:4000/spring/Spring8/">영속성 컨텍스트, 1차 캐시, Lazy loading, Dirty Checking, 동일성 보장</a><br />
+<p>똑같이 무슨 말을 하는지 모르겠는 느낌이 왔다…</p>
+
+<p>그래도 입문 주 차 내용이 적응된 것처럼<br />
+이것들도 다음 주쯤이면 적응이 되지 않을까 싶다.</p>
+
+<p>JPA 영속성,준영속,비영속,1차캐시, 더티 체킹 엔티티 매니저 등에 대해서 정리를 해보았다.</p>
+
+<p><a href="http://localhost:4000/spring/Spring7/">JPA, EntityManager(Factory)</a><br />
+<a href="http://localhost:4000/spring/Spring8/">영속성 컨텍스트, 1차 캐시, 쓰기 지연, Dirty Checking, 동일성 보장</a><br />
 <a href="http://localhost:4000/spring/Spring9/">엔티티 매핑, 연관 관계, 프록시</a></p>
 
-<p>21시에 있었던 특강에서 나온 내용들은 차차 정리해야 겠다.</p>
+<hr />
+
+<p>21시에 있었던 특강에서 나온 내용들은 차차 정리해야겠다.</p>
 <ul>
-  <li>softdelete</li>
+  <li>Soft delete</li>
   <li>testcode의 중요성</li>
   <li>테스트 커버리지 100%</li>
+</ul>
+
+<h2 id="오늘-배운-것-한-것">오늘 배운 것, 한 것</h2>
+
+<ul>
+  <li>JPA 영속성 컨텍스트에 관해서 공부 및 정리</li>
+  <li>자바 언어 스터디(20시)에서 발표 한 상속, 다형성, 추상 클래스 정리 및 공부 <a href="http://localhost:4000/java/Java18/">포스팅</a></li>
 </ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">스프링 - JPA, 총정리2</title><link href="http://localhost:4000/spring/Spring8/" rel="alternate" type="text/html" title="스프링 - JPA, 총정리2" /><published>2022-12-30T00:00:00+09:00</published><updated>2022-12-30T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring8</id><content type="html" xml:base="http://localhost:4000/spring/Spring8/"><![CDATA[<h1 id="jpa의-영속성-컨텍스트란">JPA의 영속성 컨텍스트란?</h1>
 
 <ul>
@@ -111,6 +127,7 @@
 <a href="https://product.kyobobook.co.kr/detail/S000000935744">사진 출처</a></p>
 
 <h2 id="영속성-컨텍스트는-어떻게-왜-이렇게-설계되어있을까요">영속성 컨텍스트는 어떻게, 왜 이렇게 설계되어있을까요?</h2>
+<p>영속성 컨텍스트가 엔티티를 관리하는 것의 장점!</p>
 
 <details>   
 <summary>1차 캐시</summary>
@@ -142,7 +159,7 @@
 </details>
 
 <details>   
-<summary>Lazy loading SQL 저장소</summary>
+<summary>쓰기 지연 SQL 저장소</summary>
 <div>
 
     <p>비슷한 맥락입니다.<br />
@@ -482,6 +499,8 @@ final 클래스, enum, interface, inner 클래스에는 사용할 수 없다.
 <span class="o">}</span>
 
 </code></pre></div></div>
+
+<p>Member와 Team vs  Order의 Member차이</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="c1">// Member의 Team쪽</span>
 	<span class="nd">@ManyToOne</span>
 	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"team_id"</span><span class="o">)</span>
@@ -493,6 +512,161 @@ final 클래스, enum, interface, inner 클래스에는 사용할 수 없다.
 	<span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"member_id"</span><span class="o">)</span>
   <span class="kd">private</span> <span class="nc">Member</span> <span class="n">member</span><span class="o">;</span>
 </code></pre></div></div>
+
+<p>그렇다면 Many의 반대쪽은 ?</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@OneToMany</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"member"</span><span class="o">,</span> <span class="n">fetch</span> <span class="o">=</span> <span class="nc">FetchType</span><span class="o">.</span><span class="na">EAGER</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Orders</span><span class="o">&gt;</span> <span class="n">orders</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+</code></pre></div></div>
+
+<h2 id="mappedby">mappedBy</h2>
+<p>객체에는 사실 양방향 연관관계라는 것이 없습니다. 
+서로 다른 단방향으로 조회하는 로직 2개를 잘 묶어서 양방향인 것처럼 보이게 한 것 뿐이죠!</p>
+
+<p>더 정확히는 멤버객체에 주문객체의 주소값을, 주문객체에는 멤버객체의 주소값을 가지고 있는 것 입니다!</p>
+
+<ul>
+  <li>
+    <p>반면 데이터베이스는 어떨까요?</p>
+
+    <p><strong>Member</strong></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th> </th>
+          <th>id</th>
+          <th>member_name</th>
+          <th>order</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Order</strong></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th> </th>
+          <th>id</th>
+          <th>food_id</th>
+          <th>member_id</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p><strong>외래키는 연관관계가있는 두개의 테이블 중에서 하나의 테이블에만 있으면 충분합니다!</strong>
+ 따라서. 이런 차이로 인해  두 객체 연관관계 중 하나를 정해서 테이블의 외래키를 관리해야 하는데 이것을 연관관계의 주인이라 합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">연관관계</code>의 주인만이 데이터베이스 연관관계와 매핑되고 외래 키를 관리(등록, 수정, 삭제) 하게 되어있습니다. 
+ 반면에 주인이 아닌 쪽은 읽기만 할 수 있죠. <strong>연관관계의 주인을 정한다는 것은 사실 외래 키 관리자를 선택하는 것 입이다</strong>.</p>
+
+<p>연관관계의 주인에 의해 mappedBy 된다!</p>
+
+<h3 id="03-양방향-연관관계의-주의점">03. <strong>양방향 연관관계의 주의점</strong></h3>
+
+<ul>
+  <li>
+    <p><strong>주의점</strong></p>
+
+    <p>연관관계의 주인에는 값을 입력하지 않고, 주인이 아닌 곳에만 값을 입력하기. <strong>데이터베이스에 외래 키값이 정상적으로 저장되지 않으면 이것부터 의심해봐야 합니다.</strong></p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    
+    <span class="nc">Order</span> <span class="n">order</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Order</span> <span class="o">(</span><span class="s">"order"</span><span class="o">,</span> <span class="s">"order”);
+    em.persist(order);
+    
+    Order order2 = new Order (”order2"</span><span class="o">,</span> <span class="s">"order2”);
+    em.persist(order2);
+    
+    Member member = new Member("</span><span class="n">member</span><span class="err">"</span><span class="o">,</span> <span class="err">”</span><span class="n">member</span><span class="err">”</span><span class="o">);</span>
+      
+  	<span class="c1">//여기가 실수 포인트!!!</span>
+    <span class="n">member</span><span class="o">.</span><span class="na">getOrders</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">order</span><span class="o">);</span>
+    <span class="n">member</span><span class="o">.</span><span class="na">getOrders</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">order2</span><span class="o">);</span>
+    <span class="n">em</span><span class="o">.</span><span class="na">persist</span><span class="o">(</span><span class="n">member</span><span class="o">);</span>
+    
+</code></pre></div>    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th> </th>
+          <th>memberId</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>order</td>
+          <td>null</td>
+        </tr>
+        <tr>
+          <td>order2</td>
+          <td>null</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <aside>
+  📌 여기는 연관관계의 주인이 아닌 member.order에만 값을 저장했기 때문입니다. 예제 코드는 연관관계의 주인인 order.member에 아무 값도 입력하지 않았죠. 따라서 memberId 외래 키의 값도 `null`이 저장됩니다.
+    
+  </aside>
+
+    <p>해결 : <strong>순수한 객체까지 고려한 양방향 연관관계</strong></p>
+
+    <p>객체 관점에서 양쪽 방향에 모두 값을 입력해주는 것이 가장 안전합니다. 양쪽 방향 모두 값을 입력하지 않으면 <code class="language-plaintext highlighter-rouge">JPA</code>를 사용하지 않는 순수한 객체 상태에서 심각한 문제가 발생할 수 있죠.</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">order</span><span class="o">.</span><span class="na">setMember</span><span class="o">(</span><span class="n">member</span><span class="o">)</span>
+  <span class="n">member</span><span class="o">.</span><span class="na">getOrders</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">order</span><span class="o">);</span>
+</code></pre></div>    </div>
+
+    <p>해결 2 : <strong>연관관계 편의 메소드</strong></p>
+
+    <p>이걸 매번 하는건 깜빡할 여지가 너무 많겠죠?</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">private</span> <span class="nc">Order</span> <span class="n">order</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMember</span><span class="o">(</span><span class="nc">Member</span> <span class="n">member</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">member</span> <span class="o">=</span> <span class="n">member</span><span class="o">;</span>
+      <span class="n">member</span><span class="o">.</span><span class="na">getOrders</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="o">...</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+
+    <aside>
+  🙂 이러면 깜빡하지 않을 수 있겠네요
+    
+  </aside>
+  </li>
+</ul>
 
 <h1 id="프록시">프록시</h1>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="JPA 영속성 컨텍스트" /><category term="JPA 더티 체크" /><category term="JPA Entity Manager" /><summary type="html"><![CDATA[엔티티 매핑]]></summary></entry><entry><title type="html">TIL 25일 스프링 입문 주 차#, API 설계 시험, 트랜잭션, 더티 체킹</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL22/" rel="alternate" type="text/html" title="TIL 25일 스프링 입문 주 차#, API 설계 시험, 트랜잭션, 더티 체킹" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL22</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL22/"><![CDATA[<p>오늘은 10시~12시 주특기 입문 주 차 시험이 있었다.</p>
 
