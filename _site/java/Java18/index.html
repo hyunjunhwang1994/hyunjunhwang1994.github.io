@@ -667,7 +667,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          54 분 소요
+          55 분 소요
         
       </span>
     
@@ -727,7 +727,7 @@
 <h2 id="objectequals와-stringequals">Object.equals와 String.equals</h2>
 
 <p>우리가 기본적으로 비교 연산자인 “==” 을 사용하게 되면,<br />
-레퍼런스 타입 끼리 비교하는 경우 객체의 주솟값을 비교하게 된다.</p>
+레퍼런스 타입끼리 비교하는 경우 객체의 주솟값을 비교하게 된다.</p>
 
 <p>이때 Object.equals()라는 메소드도 객체의 주솟값을 비교하는 메소드인데.</p>
 
@@ -779,20 +779,20 @@
         <span class="c1">// test3과 4는 객체 타입이므로 </span>
         <span class="c1">// Object.equals를 재정의하지 않았기 때문에 즉 주소 비교(==)가 들어간다.</span>
         <span class="k">if</span><span class="o">(</span><span class="n">test3</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test4</span><span class="o">))</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"2. 주소비교, 다르다."</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"2. 주소 비교, 다르다."</span><span class="o">);</span>
 
 
 </code></pre></div>    </div>
 
     <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-        <span class="c1">// Strig도 그냥 객체에 불과한대 String.equals를 데이터 비교에 사용하는 것 처럼</span>
-        <span class="c1">// 일반 생성 객체도 데이터비교를 하게 하려면?</span>
+        <span class="c1">// Strig도 그냥 객체에 불과한대 String.equals를 데이터 비교에 사용하는 것처럼</span>
+        <span class="c1">// 일반 생성 객체도 데이터 비교를 하게 하려면?</span>
         <span class="n">test2</span> <span class="n">test5</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test2</span><span class="o">(</span><span class="s">"merong"</span><span class="o">,</span> <span class="mi">222</span><span class="o">);</span>
         <span class="n">test2</span> <span class="n">test6</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test2</span><span class="o">(</span><span class="s">"merong"</span><span class="o">,</span> <span class="mi">222</span><span class="o">);</span>
         <span class="n">test2</span> <span class="n">test7</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test2</span><span class="o">(</span><span class="s">"zz"</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
 
         <span class="c1">// 기본적으로 Objects.equals는</span>
-        <span class="c1">// 객체안 필드값을 비교한다.</span>
+        <span class="c1">// 객체간의 필드값을 비교한다.</span>
         <span class="k">if</span> <span class="o">(</span><span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test5</span><span class="o">,</span> <span class="n">test6</span><span class="o">))</span> <span class="o">{</span>
             <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"3. 객체 안 데이터 비교, 같다."</span><span class="o">);</span>
         <span class="o">}</span>
@@ -803,7 +803,7 @@
             <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"4.🅾️ 객체 안 데이터, 다르다."</span><span class="o">);</span>
         <span class="o">}</span>
 
-        <span class="c1">// 재정의한 equals, Hashcode사용</span>
+        <span class="c1">// 재정의한 equals, Hashcode 사용</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">test5</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test6</span><span class="o">))</span> <span class="o">{</span>
             <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">test5</span><span class="o">);</span>
             <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">test6</span><span class="o">);</span>
@@ -889,46 +889,46 @@
 
 <p>이제는 같은 객체(클래스)로 생성된 인스턴스의 안의 필드값이 같을 경우</p>
 
-<p>재정의한 equals를 통해 필드값(데이터)을 비교하여 true &amp; false를 리턴받게되고 , 
-(원래같은 경우 아이덴티티 해쉬 코드 주소값만 비교합니다, 일반 해쉬코드 X)</p>
+<p>재정의한 equals를 통해 필드값(데이터)을 비교하여 true &amp; false를 리턴 받게 되고, 
+(원래 같은 경우 아이덴티티 해시 코드 주소값만 비교합니다, 일반 해시 코드 X)</p>
 
-<p>재정의한 hashcode()는 인스턴스 생성시 필드값에 대한 절대적인 해쉬값을 리턴해줍니다.</p>
+<p>재정의한 hashcode()는 인스턴스 생성 시 필드값에 대한 절대적인 해시값을 리턴해줍니다.</p>
 
 <p>ex) 
 int=1, name=”a” -&gt; 38db4c11<br />
 int=1, name=”a” -&gt; 38db4c11<br />
 int=1, name=”c” -&gt; 22ha4c34</p>
 
-<p>위처럼 다른 인스턴스의 필드 타입, 필드 데이터가 같다면 같은 해쉬로 인스턴스를생성해줍니다.
-(원래 같은 경우 데이터가 같아도 해쉬값이 다르게 인스턴스가 생성됩니다.)</p>
+<p>위처럼 다른 인스턴스의 필드 타입, 필드 데이터가 같다면 같은 해시로 인스턴스를 생성해 줍니다.
+(원래 같은 경우 데이터가 같아도 해시값이 다르게 인스턴스가 생성됩니다.)</p>
 
 <h3 id="hashcode까지-쓰는-이유">hashcode()까지 쓰는 이유.</h3>
 
 <ul>
   <li>보통의 상황에서는 equals만 오버라이딩해도 객체끼리의 값이 비교 가능하다.</li>
-  <li>하지만, HashMap, HaseSet등의 자료구조는 내부적으로 객체를 비교할 때 해당 객체의 해쉬값으로 비교를 하기 때문에</li>
-  <li>Hash값을 사용하는 컬렉션을 사용할 때 완벽하게 같은 데이터의 인스턴스로 다루고싶다면, 
-hashcode()를 오버라이딩해 해쉬값까지 맞추어 주어야 합니다.</li>
+  <li>하지만, HashMap, HaseSet 등의 자료구조는 내부적으로 객체를 비교할 때 해당 객체의 해시값으로 비교를 하기 때문에</li>
+  <li>Hash 값을 사용하는 컬렉션을 사용할 때 완벽하게 같은 데이터의 인스턴스로 다루고 싶다면, 
+hashcode()를 오버라이딩해 해시값까지 맞추어 주어야 합니다.</li>
 </ul>
 
-<p>Hash값을 사용하는 컬렉션에서 객체가 논리적으로 같은지 비교할 때 거치는 과정</p>
+<p>Hash 값을 사용하는 컬렉션에서 객체가 논리적으로 같은지 비교할 때 거치는 과정</p>
 
 <p><img src="../../images/2022-12-30-17-02-43.png" alt="" /></p>
 
 <ul>
-  <li>하지만 “==”로 실제 객체의 내부참조 값은 identityHashCode로 동작하기 때문에
+  <li>하지만 “==”로 실제 객체의 내부 참조 값은 identityHashCode로 동작하기 때문에
 False가 나옵니다.</li>
   <li>
-    <p>String의 경우 new를 사용하지 않고, 같은 값으로 초기화 한다면,
-내부적으로 identityHashCode까지 똑같이 만들어놨기 때문에 “==” 로 값을 비교해도 true가 나옵니다.</p>
+    <p>String의 경우 new를 사용하지 않고, 같은 값으로 초기화한다면,
+내부적으로 identityHashCode까지 똑같이 만들어놨기 때문에 “==”로 값을 비교해도 true가 나옵니다.</p>
   </li>
-  <li>기본적으로 객체 생성 시 identityHashCod값과 hashCode값은 같다.</li>
+  <li>기본적으로 객체 생성 시 identityHashCod 값과 hashCode 값은 같다.</li>
   <li>hashCode는 오버라이딩이 가능하나 오버라이딩 할 경우</li>
-  <li>identityHashCode값은 hascode값과 다르게 변경된다.</li>
+  <li>identityHashCode 값은 hascode 값과 다르게 변경된다.</li>
   <li>identityHashCode는 재정의가 불가능하다.</li>
-  <li>identityHashCode는 소수의 확률로 중복이 될수 있다.</li>
+  <li>identityHashCode는 소수의 확률로 중복이 될 수 있다.</li>
   <li>그러므로 Hashcode를 재정의하여 다른 인스턴스에서 같은 값이 나오더라도,</li>
-  <li>내부적으로 identityHashCode는 다르게 재생성되어 결국 같은 메모리주소를 참조하진 못한다.</li>
+  <li>내부적으로 identityHashCode는 다르게 재생성되어 결국 같은 메모리 주소를 참조하진 못한다.</li>
   <li>String의 경우 예외.</li>
 </ul>
 
@@ -936,17 +936,17 @@ False가 나옵니다.</li>
 
 <h2 id="요약">요약</h2>
 <ul>
-  <li>equals를 재정의하여 객체안의 필드값 비교를 가능하게 해줌</li>
-  <li>Hash Collection을 할때의 같은 데이터로 보게하려면 Hashcode()를 오버라이딩 해줘야한다.</li>
-  <li>결국 A인스턴스와 B인스턴스는 new해서 생성했지만 같은 데이터가 된다</li>
-  <li>하지만 내부적으로 보자면 결국 같은곳을 참조하는 건 아니다.</li>
+  <li>equals를 재정의하여 객체 안의 필드값 비교를 가능하게 해줌</li>
+  <li>Hash Collection을 할 때의 같은 데이터로 보게 하려면 Hashcode()를 오버라이딩 해줘야한다.</li>
+  <li>결국 A 인스턴스와 B 인스턴스는 new 해서 생성했지만 같은 데이터가 된다</li>
+  <li>하지만 내부적으로 보자면 결국 같은 곳을 참조하는 건 아니다.</li>
 </ul>
 
 <p>++ 롬복 라이브러리에서 @EqualsAndHashCode 어노테이션을 붙여주면<br />
-롬복 라이브러리가 자동으로 equals와 hashcode를 생성해준다.</p>
+롬복 라이브러리가 자동으로 equals와 hashcode를 생성해 준다.</p>
 
-<p>아래 참조글을 보면 아마 자바에서는 
-가비지컬렉터의 활용 때문에, 실제 주소값 자체를 활용하는건 의미가 없는 것 같습니다.</p>
+<p>아래 참조 글을 보면 아마 자바에서는 
+가비지 컬렉터의 활용 때문에, 프로그래머가 실제 주소값 자체를 활용하는 건 의미가 없는 것 같습니다.</p>
 
 <p><a href="https://okky.kr/articles/611110">참조</a> 
 <a href="https://gardeny.tistory.com/31">참조 블로그</a><br />
