@@ -402,7 +402,7 @@ var store = [{
         "teaser": null
       },{
         "title": "객체 지향 프로그래밍 - 상속, 다형성, 추상 클래스",
-        "excerpt":"목표: 자바의 상속에 대한 개념을 완벽하게 익히고 상속에서 비롯되는 다형성에 대해서 완벽하게 알고 가자. 상속 객체지향적 개념으로 봤을 때 자바에서는 객체 간의 상속 관계를 지어주기 위해 상속이라는 개념이 존재한다. 상속은 캡슐화, 추상화, 다형성 등 객체지향프로그래밍을 구성하는 특징 중 하나이다. 상속의 특징 자식 클래스가 상속받고 싶은 부모 클래스를 선택해서 물려받는다. 이때...","categories": ["Java"],
+        "excerpt":"- 목표 - 상속, 추상 클래스와 둘에서 비롯되는 다형성에 대해 알고 가는 것 상속 객체지향적 개념으로 봤을 때 자바에서는 객체 간의 상속 관계를 지어주기 위해 상속이라는 개념이 존재한다. 상속은 캡슐화, 추상화, 다형성 등 객체지향프로그래밍을 구성하는 특징 중 하나이다. 상속의 특징 부모가 상속을 해주는 현실과는 다르게 자식 클래스가 상속받고 싶은 부모...","categories": ["Java"],
         "tags": ["Java 상속","Java 다형성","Java 추상 클래스"],
         "url": "/java/Java18/",
         "teaser": null
@@ -447,5 +447,17 @@ var store = [{
         "excerpt":"오늘은 10시~12시 주특기 입문 주 차 시험이 있었다. 회원 조회와, 회원 리스트를 RestAPI로 구현하는 과제가 나왔고 아래처럼 구현하였다. 깃허브 주소 이것과 관련해서 습관처럼 사용하던 @Transactional 어노테이션을 굳이 사용하지 않아도 되는 상황이면 사용하지 말라고 하여서 한번 정리해 보았다. JPA에서의 트랜잭션이란? 상황에 맞게 사용하기 위해 Transaction의 이해와 @Transactional의 이해를 위해 정리를 조금...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL22/",
+        "teaser": null
+      },{
+        "title": "스프링 - JPA 파헤치기",
+        "excerpt":"Spring Data JPA가 없었다면? Spring Data JPA라이브러리를 사용하면 아래처럼 간단하게 사용이 가능하다. // Entity 생성 Member hyunjun = new Member(); member.setId(\"hyunjun94\"); member.setUsername(\"현준\"); // 이렇게 간단하게 해오셨던것 기억나시죠? 아래의 내용은 똑같은 과정입니다! memberRepository.save(hyunjun); memberRepository.find(); 만약 Spring Data JPA를 사용하지 않았다면? // Entity를 생성 Member hyunjun = new Member(); member.setId(\"abcd1234\"); member.setUsername(\"현준\"); //...","categories": ["Spring"],
+        "tags": ["JPA 영속성 컨텍스트","JPA 더티 체크"],
+        "url": "/spring/Spring7/",
+        "teaser": null
+      },{
+        "title": "TIL 26일 스프링 숙련 주 차#, 발제, JPA 파헤치기",
+        "excerpt":"오늘은 숙련 주 차 발제가 있었다. 발제 후 새 팀원들로 팀이다시 꾸려젔고.. 3주째 8조… 항해99 Spring 숙련주차 라는 강의가 지급되었다. 저번 입문 주 차에서는 스프링에관해 전반적인 내용들을 통해 API 만들어 보는 것이 목표였다면 이제 숙련 주 차에서는 JPA에 대해서 이론적인 내용까지 확실하게 알아가면서 JWT, Auth 기능들을 활용 API를 만들어 보는...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL23/",
         "teaser": null
       }]

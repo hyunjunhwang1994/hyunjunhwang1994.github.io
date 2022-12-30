@@ -1,4 +1,135 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-29T22:34:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 25일 스프링 입문 주 차#, API 설계 시험, 트랜잭션, 더티 체킹</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL22/" rel="alternate" type="text/html" title="TIL 25일 스프링 입문 주 차#, API 설계 시험, 트랜잭션, 더티 체킹" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL22</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL22/"><![CDATA[<p>오늘은 10시~12시 주특기 입문 주 차 시험이 있었다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-30T14:15:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">TIL 26일 스프링 숙련 주 차#, 발제, JPA 파헤치기</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL23/" rel="alternate" type="text/html" title="TIL 26일 스프링 숙련 주 차#, 발제, JPA 파헤치기" /><published>2022-12-30T00:00:00+09:00</published><updated>2022-12-30T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL23</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL23/"><![CDATA[<p>오늘은 숙련 주 차 발제가 있었다.</p>
+
+<p><img src="../../images/2022-12-30-09-12-06.png" alt="" /></p>
+
+<p>발제 후  새 팀원들로 팀이다시 꾸려젔고..
+3주째 8조…</p>
+
+<p>항해99 Spring 숙련주차 라는 강의가 지급되었다.</p>
+
+<p>저번 입문 주 차에서는 스프링에관해 전반적인 내용들을 통해 API 만들어 보는 것이 목표였다면</p>
+
+<p>이제 숙련 주 차에서는 JPA에 대해서 이론적인 내용까지 확실하게 알아가면서</p>
+
+<p>JWT, Auth 기능들을 활용 API를 만들어 보는 것이 목표인 것 같다.</p>
+
+<p>!일단 
+오늘 하루의 목표는 개인과제 기본 틀완성과
+스파르타코딩 클럽에서 준 강의의 1화내용을 다 이해하고 정리하는 것으로 잡았다.</p>
+
+<p>강의의 1화를 보자마자 스프링 처음 배울때 처럼 이해가안가는 이론(용어)들이</p>
+
+<p>많이 있었다.. 그래서 이제부터는</p>
+
+<p>스프링의 구조도 중요하지만 일단 
+JPA 관련 해서 이론을 좀 깊게 파바야 할 것으로 생각이들어서</p>
+
+<p>JPA 영속성,준영속,비영속,1차캐시, 더티체킹 엔티티 매니저등에 대해서 정리를 해보았다.
+<a href="">정리한 내용 링크</a></p>
+
+<hr />
+
+<p>오늘저녁7시에는 자바언어스터디모임이 있었고 나의 발표차례라
+아래의 포스팅을 토대로 발표를 하였다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 숙련 주 차 발제가 있었다.]]></summary></entry><entry><title type="html">스프링 - JPA 파헤치기</title><link href="http://localhost:4000/spring/Spring7/" rel="alternate" type="text/html" title="스프링 - JPA 파헤치기" /><published>2022-12-30T00:00:00+09:00</published><updated>2022-12-30T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring7</id><content type="html" xml:base="http://localhost:4000/spring/Spring7/"><![CDATA[<h1 id="spring-data-jpa가-없었다면">Spring Data JPA가 없었다면?</h1>
+
+<p>Spring Data JPA라이브러리를 사용하면 아래처럼 간단하게 사용이 가능하다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Entity 생성</span>
+<span class="nc">Member</span> <span class="n">hyunjun</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Member</span><span class="o">();</span>
+<span class="n">member</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="s">"hyunjun94"</span><span class="o">);</span> 
+<span class="n">member</span><span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="s">"현준"</span><span class="o">);</span>
+
+<span class="c1">// 이렇게 간단하게 해오셨던것 기억나시죠? 아래의 내용은 똑같은 과정입니다!</span>
+<span class="n">memberRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">hyunjun</span><span class="o">);</span>
+<span class="n">memberRepository</span><span class="o">.</span><span class="na">find</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>만약 Spring Data JPA를 사용하지 않았다면?</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Entity를 생성</span>
+<span class="nc">Member</span> <span class="n">hyunjun</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Member</span><span class="o">();</span>
+<span class="n">member</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="s">"abcd1234"</span><span class="o">);</span> 
+<span class="n">member</span><span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="s">"현준"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// EntityManager를 생성해줄 EntityManagerFactory를 만들어야합니다.</span>
+<span class="nc">EntityManagerFactory</span> <span class="n">emf</span> <span class="o">=</span> <span class="nc">Persistence</span><span class="o">.</span><span class="na">createEntityManagerFactory</span><span class="o">(</span><span class="s">"jpaManager"</span><span class="o">);</span>
+
+<span class="c1">// Entity를 관리해줄 EntityManager를 EntityManagerFactory에서 생성!</span>
+<span class="nc">EntityManager</span> <span class="n">em</span> <span class="o">=</span> <span class="n">emf</span><span class="o">.</span><span class="na">createEntityManager</span><span class="o">();</span>
+
+
+<span class="c1">// 엔티티를 영속화(저장)</span>
+<span class="n">em</span><span class="o">.</span><span class="na">persist</span><span class="o">(</span><span class="n">hyunjun</span><span class="o">);</span>
+<span class="c1">// 엔티티를 찾기</span>
+<span class="n">em</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="nc">Member</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="mi">100L</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>결국 코드자체도 늘어나지만, 엔티티매니저 라는 개념을 새로 알아야합니다.</p>
+
+<h1 id="엔티티-매니저-팩토리와-엔티티-매니저">엔티티 매니저 팩토리와 엔티티 매니저</h1>
+
+<h2 id="엔티티-매니저">엔티티 매니저?</h2>
+
+<p><img src="../../images/2022-12-30-13-49-54.png" alt="" /></p>
+
+<p><a href="https://product.kyobobook.co.kr/detail/S000000935744">사진 출처</a>
+<a href="https://ultrakain.gitbooks.io/jpa/content/chapter3/chapter3.1.html">참조 및 이미지 출처한 글</a></p>
+
+<h3 id="entitymanagerfactory">EntityManagerFactory</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 비용이 아주 많이 든다.</span>
+<span class="c1">//엔티티 매니저 팩토리 생성</span>
+<span class="nc">EntityManagerFactory</span> <span class="n">emf</span> <span class="o">=</span> <span class="nc">Persistence</span><span class="o">.</span><span class="na">createEntityManagerFactory</span><span class="o">(</span><span class="s">"jpabook"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>만드는 비용이 상당히 큼</li>
+  <li>한 개만 만들어서 어플리케이션 전체에서 공유하도록 설계.</li>
+  <li>여러 스레드가 동시에 접근해도 안전, 서로 다르 스레드 간 공유 가능</li>
+</ul>
+
+<h3 id="entitymanger">EntityManger</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 엔티티 매니저 생성, 비용이 거의 안든다.</span>
+<span class="nc">EntityManager</span> <span class="n">em</span> <span class="o">=</span> <span class="n">emf</span><span class="o">.</span><span class="na">createEntityManager</span><span class="o">();</span> <span class="c1">//엔티티 매니저 생성</span>
+</code></pre></div></div>
+
+<ul>
+  <li>여러스레드가 동시에 접근하면 동시성 문제 발생</li>
+  <li>스레드간 절대 공유하면 안된다!</li>
+  <li>데이터베이스 연결이 필요한 시점까지 커넥션을 얻지 않는다.</li>
+</ul>
+
+<h1 id="jpa의-영속성-컨텍스트란">JPA의 영속성 컨텍스트란?</h1>
+
+<ul>
+  <li>persistence context!</li>
+  <li>엔티티를 영구 저장하는 환경</li>
+  <li>어플리케이션이 데이터베이스에서 꺼내온 데이터 객체를 보관하는 역할을 합니다.</li>
+  <li>영속성 컨텍스트는 엔티티 매니저를 통해 엔티티를 조회하거나 저장할 때 엔티티를 보관하고 관리합니다.</li>
+</ul>
+
+<div class="notice" style="text-align:center">
+엔티티 매니저마다 개별적으로 부여되는, <br />
+어떠한 논리적 공간같은 개념으로 비유적으로 이해하셔도 좋을 것 같습니다.   <br />
+
+자바의 엔티티 객체를 엔티티 매니저마다 가지고 있는 영속성 컨텍스트라는 공간에다 넣고 빼고 하면서 사용하는거죠, <br />
+“영속화 한다” 라는 말을 “엔티티 매니저가 자기의 영속성 컨텍스트에 넣어준다”로 이해하는 것 처럼 말이죠
+</div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">em</span><span class="o">.</span><span class="na">persist</span><span class="o">(</span><span class="n">member</span><span class="o">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>단순하게 회원 엔티티 저장</li>
+  <li>정확하게는 엔티티 매니저를 사용해서 회원 엔티티를 영속성 컨텍스트에 저장</li>
+  <li>논리적인 개념에 가까움</li>
+  <li>엔티티 매니저를 생성할 때 하나 만들어진다.</li>
+  <li>⭐️엔티티 매니저를 통해 영속성 컨텍스트에 접근하고 관리할 수 있다.</li>
+</ul>
+
+<p><img src="../../images/2022-12-30-14-10-58.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="JPA 영속성 컨텍스트" /><category term="JPA 더티 체크" /><summary type="html"><![CDATA[Spring Data JPA가 없었다면?]]></summary></entry><entry><title type="html">TIL 25일 스프링 입문 주 차#, API 설계 시험, 트랜잭션, 더티 체킹</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL22/" rel="alternate" type="text/html" title="TIL 25일 스프링 입문 주 차#, API 설계 시험, 트랜잭션, 더티 체킹" /><published>2022-12-29T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL22</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL22/"><![CDATA[<p>오늘은 10시~12시 주특기 입문 주 차 시험이 있었다.</p>
 
 <p>회원 조회와, 회원 리스트를 RestAPI로 구현하는 과제가 나왔고 아래처럼 구현하였다.</p>
 
@@ -1335,8 +1466,11 @@ thymeleaf 템플릿 엔진은 문법이 다르겠지 하고 찾아보았다.</p>
 [[${post.title}]]
 [[${post.contents}]]
 [[${post.author}]]
-</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 스프링에 익숙해지는 겸 개인 과제를 진행하면서 스프링 아키텍처를 이해하는 시간을 가졌습니다.]]></summary></entry><entry><title type="html">객체 지향 프로그래밍 - 상속, 다형성, 추상 클래스</title><link href="http://localhost:4000/java/Java18/" rel="alternate" type="text/html" title="객체 지향 프로그래밍 - 상속, 다형성, 추상 클래스" /><published>2022-12-26T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/java/Java18</id><content type="html" xml:base="http://localhost:4000/java/Java18/"><![CDATA[<p>목표: 자바의 상속에 대한 개념을 완벽하게 익히고<br />
-상속에서 비롯되는 다형성에 대해서 완벽하게 알고 가자.</p>
+</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 스프링에 익숙해지는 겸 개인 과제를 진행하면서 스프링 아키텍처를 이해하는 시간을 가졌습니다.]]></summary></entry><entry><title type="html">객체 지향 프로그래밍 - 상속, 다형성, 추상 클래스</title><link href="http://localhost:4000/java/Java18/" rel="alternate" type="text/html" title="객체 지향 프로그래밍 - 상속, 다형성, 추상 클래스" /><published>2022-12-26T00:00:00+09:00</published><updated>2022-12-29T00:00:00+09:00</updated><id>http://localhost:4000/java/Java18</id><content type="html" xml:base="http://localhost:4000/java/Java18/"><![CDATA[<div class="notice--info" style="text-align:center">
+          - 목표 - <br />
+    상속, 추상 클래스와 둘에서 비롯되는 다형성에 대해 알고 가는 것
+</div>
+<hr />
 
 <h1 id="상속">상속</h1>
 <p>객체지향적 개념으로 봤을 때 자바에서는 객체 간의 상속 관계를 지어주기 위해 상속이라는 개념이 존재한다.</p>
@@ -1345,33 +1479,34 @@ thymeleaf 템플릿 엔진은 문법이 다르겠지 하고 찾아보았다.</p>
 
 <h2 id="상속의-특징">상속의 특징</h2>
 <ul>
-  <li>자식 클래스가 상속받고 싶은 부모 클래스를 선택해서 물려받는다.<br />
-이때 상속받는 클래스를 자식 클래스, 하위 클래스 또는 서브 클래스라고 부른다.<br />
-상속을 해주는 클래스를 부모 클래스, 상위 클래스 또는 슈퍼 클래스라고 한다. 
-(현실과 다르게 자식이 부모를 선택해 상속받는다.)</li>
+  <li>부모가 상속을 해주는 현실과는 다르게 자식 클래스가 상속받고 싶은 부모 클래스를 선택해서 물려받는다.</li>
+  <li>이때 상속받는 클래스를 자식 클래스, 하위 클래스 또는 서브 클래스라고 부른다.</li>
+  <li>상속을 해주는 클래스를 부모 클래스, 상위 클래스 또는 슈퍼 클래스라고 한다.</li>
 </ul>
 
-<p>그래서 다이어그램 같은 경우 화살표 방향이 자식 -&gt; 부모 클래스 형태로 표기한다.</p>
+<p>그래서 클래스 다이어그램 같은 경우 화살표 방향이<br />
+자식 –&gt; 부모 클래스 형태로 표기한다.</p>
 
 <ul>
+  <li>상속을 받게 되면 자식 클래스는 부모 클래스의 필드와 메서드를 물려받게 된다.</li>
+  <li>단, 접근제어자가 private을 갖는 필드나 메소드는 상속이 불가하고,</li>
   <li>
-    <p>상속을 받게 되면 부모 클래스의 필드와 메서드를 물려받게 된다. <br />
-단, 접근제어자가 private을 갖는 필드나 메소드는 상속이 불가하고,<br />
-패키지가 다를 경우 접근제어자가 default인 경우도 상속이 불가하다.</p>
+    <p>패키지가 다를 경우 접근제어자가 default인 경우도 상속이 불가하다.</p>
   </li>
   <li>
     <p>부모 클래스의 생성자, 초기화 블럭은 상속 안됨.</p>
   </li>
-  <li>자바의 모든 클래스는 Object 클래스의 자식 클래스이다.</li>
-  <li>Object 클래스가 제공하는 메소드를 오버라이딩해서 메소드 기능을 변경하여 사용 가능</li>
-  <li>모든 클래스는 java.lang.Object를 포함하고 있으며 jvm이 자동으로 추가해 준다.
-예시) java.lang.String 클래스의 equals()과 toString()</li>
+  <li>⭐️자바의 모~든 클래스는 Object 클래스의 자식 클래스이다.</li>
+  <li>Object 클래스가 제공하는 메소드를 오버라이딩해서 메소드 기능을 변경하여 사용 가능하다.</li>
+  <li>모든 클래스는 java.lang.Object를 포함하고 있으며 jvm이 자동으로 추가해 준다.</li>
 </ul>
+
+<p>예시) java.lang.String 클래스의 equals()과 toString()</p>
 
 <h2 id="objectequals와-stringequals">Object.equals와 String.equals</h2>
 
-<p>우리가 기본적으로 비교 연산자인 “==” 을 사용하게 되면,
-레퍼런스 타입인 경우 객체의 주솟값을 비교하게 된다.</p>
+<p>우리가 기본적으로 비교 연산자인 “==” 을 사용하게 되면,<br />
+레퍼런스 타입 끼리 비교하는 경우 객체의 주솟값을 비교하게 된다.</p>
 
 <p>이때 Object.equals()라는 메소드도 객체의 주솟값을 비교하는 메소드인데.</p>
 
@@ -1385,61 +1520,9 @@ thymeleaf 템플릿 엔진은 문법이 다르겠지 하고 찾아보았다.</p>
 
 <div>
 
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Objects</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-
-        <span class="nc">String</span> <span class="n">test1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"test"</span><span class="o">);</span>
-        <span class="nc">String</span> <span class="n">test2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"test"</span><span class="o">);</span>
-
-
-        <span class="c1">// 모~~든 객체는 Object를 물려받는다.</span>
-
-        <span class="c1">// test1은 String 타입 -&gt; String.equals 동작 (부모의 Object.equals 재정의)</span>
-        <span class="c1">// 스트링의 데이터 비교로 동작.</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">test1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test2</span><span class="o">))</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"1. String 비교, 같다"</span><span class="o">);</span>
-
-
-        <span class="c1">//////////////////////////////////</span>
-
-
-        <span class="n">test1</span> <span class="n">test3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test1</span><span class="o">(</span><span class="s">"son"</span><span class="o">,</span><span class="mi">25</span><span class="o">);</span>
-        <span class="n">test1</span> <span class="n">test4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test1</span><span class="o">(</span><span class="s">"son"</span><span class="o">,</span><span class="mi">25</span><span class="o">);</span>
-
-
-
-
-        <span class="c1">// test3과 4는 객체 타입이므로 Object.equals 즉 주소 비교(==)가 들어간다.</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">test3</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test4</span><span class="o">))</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"2. 주소비교, 같다."</span><span class="o">);</span>
-
-
-
-
-        <span class="c1">// 해당 객체에서 equals, hashcode를 재정의 해주면?</span>
-
-        <span class="n">test2</span> <span class="n">test5</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test2</span><span class="o">(</span><span class="s">"merong"</span><span class="o">,</span> <span class="mi">222</span><span class="o">);</span>
-        <span class="n">test2</span> <span class="n">test6</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test2</span><span class="o">(</span><span class="s">"merong"</span><span class="o">,</span> <span class="mi">222</span><span class="o">);</span>
-        <span class="n">test2</span> <span class="n">test7</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test2</span><span class="o">(</span><span class="s">"zz"</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
-
-        <span class="c1">// 기본적으로 Objects.equals는  object.equals -&gt; test3.equals(test4)  와 같다.</span>
-        <span class="k">if</span> <span class="o">(</span><span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test5</span><span class="o">,</span> <span class="n">test6</span><span class="o">))</span> <span class="o">{</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"3. 객체 값 비교, 같다."</span><span class="o">);</span>
-        <span class="o">}</span>
-
-        <span class="k">if</span> <span class="o">(</span><span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test6</span><span class="o">,</span> <span class="n">test7</span><span class="o">))</span> <span class="o">{</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"4. 객체 값 비교, 같다."</span><span class="o">);</span>
-        <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
-            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"4. 객체 값 비교, 다르다."</span><span class="o">);</span>
-        <span class="o">}</span>
-
-    <span class="o">}</span>
-
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">test1</span> <span class="o">{</span>
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// test1.java</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">test1</span> <span class="o">{</span>
 
         <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
         <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
@@ -1450,10 +1533,76 @@ thymeleaf 템플릿 엔진은 문법이 다르겠지 하고 찾아보았다.</p>
         <span class="o">}</span>
     <span class="o">}</span>
 
+
+<span class="c1">// Main.java</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">String</span> <span class="n">test1</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"test"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">test2</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">(</span><span class="s">"test"</span><span class="o">);</span>
+
+        <span class="c1">// 모~~든 객체는 Object를 물려받는다.</span>
+
+        <span class="c1">// test1은 String 타입 -&gt; String.equals 동작 (부모의 Object.equals 재정의)</span>
+        <span class="c1">// 스트링의 데이터 비교로 동작.</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">test1</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test2</span><span class="o">))</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"1. String 비교, 같다."</span><span class="o">);</span>
+</code></pre></div>    </div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+        <span class="n">test1</span> <span class="n">test3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test1</span><span class="o">(</span><span class="s">"son"</span><span class="o">,</span><span class="mi">25</span><span class="o">);</span>
+        <span class="n">test1</span> <span class="n">test4</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test1</span><span class="o">(</span><span class="s">"son"</span><span class="o">,</span><span class="mi">25</span><span class="o">);</span>
+
+
+        <span class="c1">// test3과 4는 객체 타입이므로 Object.equals 즉 주소 비교(==)가 들어간다.</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">test3</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test4</span><span class="o">))</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"2. 주소비교, 다르다."</span><span class="o">);</span>
+
+
+</code></pre></div>    </div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+        <span class="c1">// 객체에서 String.equals가 데이터 비교로 사용되는 것 처럼</span>
+        <span class="c1">// equals와, hashcode를 재정의 해주면?</span>
+        <span class="n">test2</span> <span class="n">test5</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test2</span><span class="o">(</span><span class="s">"merong"</span><span class="o">,</span> <span class="mi">222</span><span class="o">);</span>
+        <span class="n">test2</span> <span class="n">test6</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test2</span><span class="o">(</span><span class="s">"merong"</span><span class="o">,</span> <span class="mi">222</span><span class="o">);</span>
+        <span class="n">test2</span> <span class="n">test7</span> <span class="o">=</span> <span class="k">new</span> <span class="n">test2</span><span class="o">(</span><span class="s">"zz"</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+
+        <span class="c1">// 기본적으로 Objects.equals는</span>
+        <span class="c1">// 객체안 필드값을 비교한다.</span>
+        <span class="k">if</span> <span class="o">(</span><span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test5</span><span class="o">,</span> <span class="n">test6</span><span class="o">))</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"3. 객체 안 데이터 비교, 같다."</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="nc">Objects</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test6</span><span class="o">,</span> <span class="n">test7</span><span class="o">))</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"4. 객체 안 데이터, 같다."</span><span class="o">);</span>
+        <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"4.🅾️ 객체 안 데이터, 다르다."</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="c1">// 재정의한 equals, Hashcode사용</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">test5</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">test6</span><span class="o">))</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">test5</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">test6</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">test7</span><span class="o">);</span>
+        <span class="o">}</span>
+
+
+    <span class="o">}</span>
+
+
+  
+
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">test2</span> <span class="o">{</span>
 
         <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
         <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="nf">test2</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+        <span class="o">}</span>
 
         <span class="nd">@Override</span>
         <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="nc">Object</span> <span class="n">o</span><span class="o">)</span> <span class="o">{</span>
@@ -1468,10 +1617,7 @@ thymeleaf 템플릿 엔진은 문법이 다르겠지 하고 찾아보았다.</p>
             <span class="k">return</span> <span class="nc">Objects</span><span class="o">.</span><span class="na">hash</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">age</span><span class="o">);</span>
         <span class="o">}</span>
 
-        <span class="kd">public</span> <span class="nf">test2</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
-            <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
-        <span class="o">}</span>
+        
     <span class="o">}</span>
 
 
@@ -1482,24 +1628,59 @@ thymeleaf 템플릿 엔진은 문법이 다르겠지 하고 찾아보았다.</p>
   </div>
 </details>
 
-<p>인텔리제이에서는 equals 재정의와 
-hashcode를 맞추기 위한 기능을 제공합니다
+<p><img src="../../images/2022-12-30-11-02-44.png" alt="" /></p>
+
+<p>인텔리제이에서는 equals 재정의와 hashcode를 맞추기 위한 기능을 제공합니다.<br />
 <img src="../../images/2022-12-28-09-59-47.png" alt="" /></p>
 
-<p>그럼 아래와 같이 자동으로 생성이 되고,
+<p>그럼 아래와 같이 자동으로 생성이 됩니다.
 <img src="../../images/2022-12-28-10-00-30.png" alt="" /></p>
 
-<p>이제는 객체 안의 필드값이 같을 경우 
-equals는 값 비교를 하게 되고,
-hashcode()는 주소값이 동일해지게 처리를 해줍니다.</p>
+<hr />
 
-<p><a href="https://gardeny.tistory.com/31">참조 블로그</a></p>
+<p>equals, hashcode 오버라이딩을 통해</p>
 
-<p>!!! 여기서 중요한 점은 위의 일련의 과정들이<br />
-상속과 오버라이딩이 있기 때문에 가능하다는 점!!!</p>
+<p>이제는 같은 객체(클래스)로 생성된 인스턴스의 안의 필드값이 같을 경우</p>
 
-<p>위의 것들이 가능한 이유도 상속이 있기 때문.   (모든 객체의 최상위 부모는 Object 클래스)
-Object &lt;–상속– 객체<br />
+<p>재정의한 equals를 통해 필드값(데이터)을 비교하여 true &amp; false를 리턴받게되고 , (원래같은 경우 해쉬 주소값만 비교합니다.)</p>
+
+<p>재정의한 hashcode()는 인스턴스 생성시 필드값이 같다면,</p>
+
+<p>해시값(메모리 주소 해싱값)이 동일해지게 처리를 해줍니다.<br />
+(원래 같은 경우 데이터가 같아도 메모리주소가 다르게 인스턴스가 생성됩니다.)</p>
+
+<p>HashMap, HaseSet등의 자료구조는 내부적으로 객체를 비교할 때</p>
+
+<p>해당 객체의 해쉬값으로 비교를 하기 때문에 완벽하게 같은 데이터의 인스턴스로 다루고싶다면,</p>
+
+<p>hashcode()를 사용해서 주솟값 까지 맞춰주는 것입니다.</p>
+
+<h2 id="요약">요약</h2>
+<ul>
+  <li>equals를 재정의하여 객체안의 필드값 비교를 가능하게 해줌</li>
+  <li>위의건 데이터비교만 가능하게 해준 것이고, 아직 객체의 주솟값인 Hash 값이 다름 -&gt; Hashcode를 사용하여 같게 맞춰준다.</li>
+  <li>결국 A인스턴스와 B인스턴스는 new해서 생성했지만 같은 데이터가 된다!</li>
+</ul>
+
+<p>++ 객체를 System.out.println(); 했을때 나오는<br />
+Main$객체@38db4c11 이라는 값은 메모리 주소값을 해싱하여 나온 값이다.</p>
+
+<p>++ 롬복 라이브러리에서 @EqualsAndHashCode 어노테이션을 붙여주면<br />
+롬복 라이브러리가 자동으로 equals와 hashcode를 생성해준다.</p>
+
+<p><a href="https://gardeny.tistory.com/31">참조 블로그</a><br />
+<a href="https://okky.kr/articles/596050">해쉬값과 주소값 차이</a><br />
+<a href="https://stackoverflow.com/questions/3700595/difference-between-hash-code-and-reference-or-address-of-an-object">스택 오버플로우, 해쉬값 주소값 차이</a></p>
+
+<hr />
+
+<p>여기서 매우 중요한 점은 위의 일련의 과정들이<br />
+상속과 오버라이딩(다형성)이 있기 때문에 가능하다는 점!!!</p>
+
+<p>위의 것들이 가능한 이유도 상속이 있기 때문.<br />
+(모든 객체의 최상위 부모를 Object 클래스로 잡아놓고)</p>
+
+<p>Object &lt;–상속– 객체(equals, hashcode 재정의)<br />
 Object &lt;–상속– String(equals 재정의)</p>
 
 <h2 id="상속의-관계">상속의 관계</h2>
@@ -1515,16 +1696,19 @@ Object &lt;–상속– String(equals 재정의)</p>
 
 <p>IS-A 관계(is a relationship, inheritance)는 일반적인 개념과 구체적인 개념의 관계입니다.</p>
 
-<p>사람은 동물이다.
-소는 동물이다
-새는 동물이다.
-위와 같은 관계입니다. 즉, 일반 클래스를 구체화하는 상황에서 상속을 사용합니다.</p>
+<ul>
+  <li>사람은 동물이다.</li>
+  <li>소는 동물이다.</li>
+  <li>새는 동물이다.</li>
+</ul>
+
+<p>위와 같은 관계입니다. 즉, 일반 클래스를 구체화하는 상황에서 상속을 사용합니다.</p>
 
 <p>상속을 사용하면 많은 장점이 있지만,</p>
 
 <p>하위 클래스가 상위 클래스에 종속되기 때문에 이질적인 클래스 간에는 상속을 사용하지 않는 것이 좋습니다.</p>
 
-<p>단순히 코드를 재사용할 목적으로 서로 관련이 없는 개념의 클래스를 상속 관계로 사용하는 것은 
+<p>단순히 코드를 재사용할 목적으로 서로 관련이 없는 개념의 클래스를 상속 관계로 사용하는 것은
 객체지향적 개념에도 맞지 않으므로, 추천하지 않습니다.</p>
 
 <h3 id="has-a-상속관계">Has a 상속관계</h3>
@@ -1533,6 +1717,15 @@ Object &lt;–상속– String(equals 재정의)</p>
 <p>HAS-A 관계(has a relationship, association)는 일반적인 포함 개념의 관계입니다.</p>
 
 <p><img src="../../images/2022-12-28-09-10-21.png" alt="" /></p>
+
+<ul>
+  <li>RAM은 컴퓨터이다?</li>
+  <li>CPU는 컴퓨터이다?</li>
+  <li>MainBoard는 컴퓨터이다?</li>
+</ul>
+
+<p>컴퓨터에서 RAM을 포함하는 관계는 형성되지만 IS-A의 관계에는 적용되지 않습니다.<br />
+따라서 상속 관계가 아닙니다.</p>
 
 <p>HAS-A 관계는 다른 클래스의 기능(변수 혹은 메서드)을 받아들여 사용합니다.</p>
 
@@ -1546,32 +1739,33 @@ Object &lt;–상속– String(equals 재정의)</p>
 
 <h2 id="상속의-장점">상속의 장점</h2>
 
-<p>상속의 장점은, 중복된 코드를 줄일 수 있고, 유지 보수가 편리하며, 통일성이 있고 다형성을 구현할 수 있다.</p>
+<p>상속의 장점은, 중복된 코드를 줄일 수 있고, 유지 보수가 편리하며, 통일성이 있고 다형성을 구현할 수 있습니다.</p>
 
-<p>그리고 자바에서는 자식 클래스가 여러 부모로부터 다중 상속을 받는 것은 불가능하다. 
-즉, 1개의 부모 클래스로부터의 단일 상속만 허용된다.</p>
+<p>그리고 자바에서는 자식 클래스가 여러 부모로부터 다중 상속을 받는 것은 불가능합니다. 
+즉, 1개의 부모 클래스로부터의 단일 상속만 허용됩니다.</p>
 
-<p>하지만 부모 클래스는 여러 개의 자식 클래스에게 상속이 가능하다</p>
+<p>하지만 부모 클래스는 여러 개의 자식 클래스에게 상속이 가능하다는 것이 특징입니다.</p>
 
-<p><img src="../../images/2022-12-28-08-47-30.png" alt="" /></p>
+<p>다이어그램의 화살표 방향을 반대로 보시면 될 것 같습니다.<br />
+<img src="../../images/2022-12-28-08-47-30.png" alt="" /></p>
 
 <p><a href="https://coding-factory.tistory.com/865">이미지 출처</a></p>
 
 <p>상속을 의 목적(상속을 사용하는 이유)</p>
 <ul>
-  <li>이미 (잘) 만들어진 클래스를 재사용할 수 있기 때문에, 효율성이 좋으며 개발 시간을 줄여준다. (코드의 재사용성 극대화)</li>
-  <li>위와 같은 이유로 유지 보수가 쉽고, 중복이 적고, 통일성이 있는 코드를 작성이 가능</li>
+  <li>이미 (잘) 만들어진 클래스를 재사용할 수 있기 때문에, 효율성이 좋으며 개발 시간을 줄여줍니다. (코드의 재사용성 극대화)</li>
+  <li>위와 같은 이유로 유지 보수가 쉽고, 중복이 적고, 통일성이 있는 코드를 작성이 가능합니다.</li>
 </ul>
 
 <h1 id="super-키워드">super 키워드</h1>
 <p>자식 클래스에서 부모 클래스를 가리킬 때 사용하는 키워드,  주로 부모 클래스의 필드에 접근
-메소드를 호출할 때 사용</p>
+메소드를 호출할 때 사용합니다.</p>
 
 <h1 id="this-키워드">this 키워드</h1>
-<p>객체 자신인 자신을 가리 킬 때 사용하는 키워드, 주로 생성자에서 필드값을 변경할 때 사용</p>
+<p>객체 자신인 자신을 가리 킬 때 사용하는 키워드, 주로 생성자에서 필드값을 변경할 때 사용합니다.</p>
 
-<p>자바에서는 자식 객체를 생성하면 부모 객체를 먼저 생성 후!
-자식 객체가 그다음에 생성된다.</p>
+<p>자바에서는 자식 객체를 생성하면 부모 객체를 먼저 생성 후!<br />
+자식 객체가 그다음에 생성됩니다.</p>
 
 <h2 id="다중-상속이-안되는-이유-">다중 상속이 안되는 이유 ?</h2>
 
@@ -1587,17 +1781,17 @@ Object &lt;–상속– String(equals 재정의)</p>
 
 <p>와 같은 모호함이 발생합니다.</p>
 
-<p>C++, 파이썬, 스칼라, 펄 등은 다중 상속을 지원한다.
-자바, 루비 등은 단일 상속만을 지원한다.</p>
+<p>C++, 파이썬, 스칼라, 펄 등은 다중 상속을 지원합니다!<br />
+하지만 자바, 루비 등은 단일 상속만을 지원합니다.</p>
 
 <h3 id="다이아몬드-문제">다이아몬드 문제</h3>
 
 <p>다이아몬드 문제로 고통받고 있는 출처 불분명 사진
 <img src="../../images/2022-12-28-09-05-06.png" alt="" /></p>
 
-<p>위에서 말했던 여러 이유가 한 장의 다이아몬드 구조의 사진으로 말할 수 있다.</p>
+<p>위에서 말했던 여러 이유가 한 장의 다이아몬드 구조의 사진으로 말할 수 있습니다.</p>
 
-<p>예를 들어 GrandFather이라는 클래스가 goToTheHome() (강남)이라는 이름의 메소드를 가지고 있다고 가정해 보자</p>
+<p>예를 들어 GrandFather이라는 클래스가 goToTheHome() (강남)이라는 이름의 메소드를 가지고 있다고 가정해 보려고 합니다.</p>
 
 <p>그리고 FatherA (영등포)와 FatherB (수원)가 각각 오버라이딩하여 구현하였다면,</p>
 
@@ -1616,8 +1810,8 @@ FatherA, B 누구의 메소드를 받아서 재정의 할 것인지?</p>
 <h2 id="bonus-그럼-인터페이스는-왜-다중-상속이-될까">Bonus 그럼 인터페이스는 왜 다중 상속이 될까?</h2>
 <p>인터페이스는 쉽게 말하면 껍데기만 존재하기 때문에,</p>
 
-<p>인터페이스의 메소드는 무조건 추상 메소드이므로 메소드명이 겹쳐도 인터페이스를<br />
-상속한 클래스에서 해당 메소드를 구현하므로 애매한 문제는 생기지 않는다.</p>
+<p>인터페이스의 메소드는 무조건 추상 메소드이므로 메소드명이 겹쳐도 인터페이스를 상속한 클래스에서 해당 메소드를 구현하므로 애매한 문제는 생기지 않는다.<br />
+-&gt; 메소드를 사용측면이아닌 구현만하면 되기 때문에.</p>
 
 <p>반면 인터페이스는 다중 상속이 가능하지만, 다이아몬드 문제를 피해 갈 수 있다. 
 왜냐하면 인터페이스의 메서드는 정의되지 않았기 때문이다.</p>
@@ -1803,14 +1997,13 @@ Son에서 구현하면 그만이다. (인터페이스는 실행 블록을 가지
 
 </code></pre></div></div>
 
-<p>위의 코드 결과, Dog이던, Cat이던 -&gt; 전부 Animals이다.(현재 Animals 메소드만 존재.)
+<p>위의 코드 결과, Dog이던, Cat이던 -&gt; 전부 Animals이다.(현재 Animals 메소드만 존재.)<br />
 <img src="../../images/2022-12-29-15-54-45.png" alt="" /></p>
 
-<p>여기서 오버라이딩을 사용하면서 다형성을 극대화시킬수 있는데.
+<p>여기서 오버라이딩을 사용하면서 다형성을 극대화시킬수 있는데.<br />
 위의 과정 까진 그렇다치자</p>
 
-<p>근데 Cat은 Animal이면서 Cat이고
-Dog은 Animal이면서 Dog이다.</p>
+<p>근데 Cat은 Animal이면서 Cat이고 Dog은 Animal이면서 Dog이다.</p>
 
 <p>자기 자신을 표현하고싶다면?
 -&gt; 오버라이딩</p>
@@ -1847,11 +2040,13 @@ Dog은 Animal이면서 Dog이다.</p>
 
 <p>Animal이면서 Dog(Cat)이라는 것을 다 표현할 수 있게된다.</p>
 
-<p>만약 I am Animals를 빼고 Dog(Cat)이라는 것만을 표현하고 싶다면 각 자식클래스 메소드에서
-부모클래스의 메소드를 호출하고 있는 super.printInfo()를 삭제하면 됨.  <br />
+<p>만약 I am Animals를 빼고 Dog(Cat)이라는 것만을 표현하고 싶다면 각 자식클래스 메소드에서</p>
+
+<p>부모클래스의 메소드를 호출하고 있는 super.printInfo()를 삭제하면 됨.  <br />
 <img src="../../images/2022-12-29-16-00-52.png" alt="" /></p>
 
-<p>다형성측면에서 보면 Animals는 자식클래스에서 재정의된 메소드를 호출할 수 있다는 것을 뜻함.</p>
+<p>다형성측면에서 보면 Animals는 자기자신이 Animals 타입이지만,<br />
+자신이 아닌 다른 클래스로 볼 수 있는 자식클래스에서 재정의된 메소드를 호출할 수 있다는 것을 뜻함.</p>
 
 <p>그렇다면 Cat과 Dog에서 이미 Animals에 정의된 기능을 오버라이딩 하는 것이 아닌<br />
 각자 다른 기능을 구현하고 싶다면 어떻게 해야 할까요?</p>
@@ -1974,7 +2169,9 @@ Animal를 상속하는 모든 클래스를 받아 낼 수잇다.</p>
 
 </code></pre></div></div>
 
-<p>또한 instanceof 연산자를 사용하면</p>
+<p>📌 객체 타입 확인 : instanceof</p>
+
+<p>instanceof 는 객체 타입을 확인하는 연산자로, 객체의 실제 타입을 알아보기 위한 연산자입니다.</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>참조변수 instanceof 타입(클래스명)   (리턴타입 boolean)
         
@@ -1988,25 +2185,13 @@ Animal를 상속하는 모든 클래스를 받아 낼 수잇다.</p>
 
 <p>( 모든클래스 instanceof Object는 다 true겟죠?)</p>
 
-<p>📌 6. 객체 타입 확인 : instanceof</p>
-
-<p>instanceof 는 객체 타입을 확인하는 연산자로, 객체의 실제 타입을 알아보기 위한 연산자입니다.</p>
-
-<p>아래와 같이 “객체 instanceof 타입” 과 같이 사용합니다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="k">instanceof</span> <span class="no">SF</span><span class="o">){</span>
-    <span class="n">c</span><span class="o">.</span><span class="na">print</span><span class="o">();</span> <span class="c1">//true</span>
-<span class="o">}</span>
-<span class="k">if</span><span class="o">(</span><span class="n">b</span> <span class="k">instanceof</span> <span class="nc">Novel</span><span class="o">){</span>
-    <span class="n">b</span><span class="o">.</span><span class="na">print</span><span class="o">();</span> <span class="c1">//true</span>
-<span class="o">}</span>
-</code></pre></div></div>
+<p><br /></p>
 
 <p>위의 내용들을 다 보고 나서 다형성을 간단하게 정의하자면 ?</p>
 <ul>
   <li>하나의 자료형에 여러가지 자료형(객체)를 대입해 다양한 결과를 얻어내는 성질</li>
-  <li>자바에서는  상속, 오버라이딩, 오버로딩, 업캐스팅, 다운캐스팅, 추상메소드, 추상클래스 등이 존재.</li>
+  <li>자바에서는  상속, 오버라이딩, 오버로딩, 업캐스팅, 다운캐스팅, 추상메소드, 추상클래스 등을 통해 
+다형성이 이루어진다.</li>
 </ul>
 
 <p>인터페이스에서도 다형성이 사용되는데. 이건 다음 사람 한테 넘깁니다!!</p>
@@ -2014,14 +2199,159 @@ Animal를 상속하는 모든 클래스를 받아 낼 수잇다.</p>
 <p>추상메소드. 클래스 관련해서 다형성은 아래 추상클래스 파트에서 간단히 다뤄보도록..</p>
 
 <p><a href="https://limkydev.tistory.com/188">참고 블로그</a></p>
+
 <h1 id="추상-클래스">추상 클래스</h1>
 
 <ul>
+  <li>추상 클래스란 하나 이상의 추상 메소드를 포함한 클래스!</li>
   <li>A,B,C 클래스가 있을 때 이들 클래스간의 비슷한 필드와 메서드를 공통적으로 추출해 만들어진 클래스</li>
-  <li></li>
+  <li>실체 클래스의 멤버(필드, 메소드)를 통일하는데 목적.</li>
 </ul>
 
-<h2 id="추상-메소드">추상 메소드</h2>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Java" /><category term="Java 상속" /><category term="Java 다형성" /><category term="Java 추상 클래스" /><summary type="html"><![CDATA[목표: 자바의 상속에 대한 개념을 완벽하게 익히고 상속에서 비롯되는 다형성에 대해서 완벽하게 알고 가자.]]></summary></entry><entry><title type="html">스프링 - 스프링의 구조, Controller</title><link href="http://localhost:4000/spring/Spring6/" rel="alternate" type="text/html" title="스프링 - 스프링의 구조, Controller" /><published>2022-12-26T00:00:00+09:00</published><updated>2022-12-26T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring6</id><content type="html" xml:base="http://localhost:4000/spring/Spring6/"><![CDATA[<h3 id="controller의-get-post">Controller의 Get, Post</h3>
+<h2 id="추상이란-이름">추상이란 이름?</h2>
+
+<p>추상이란 이름이 왜붙었을까? -&gt; 추상 메소드를 가지고 있기 때문에<br />
+자연스럽게 해당 클래스는 추상적인 클래스가 된다.</p>
+
+<p>그럼 추상메소드는 왜 추상메소드인가</p>
+
+<p>메소드의 시그니처만 존재하고 구현부는 없기 때문에 추상적임.<br />
+이 추상메소드를 구현하면 구현한 해당 메소드는 비로소 실체 메소드가 된다.</p>
+
+<p>이 추상 클래스는 말그대로 지금까지 작성해왔던<br />
+구체적(concrete) 코드들과 다르기때문에 인스턴스화가 불! 가! 능! 하다</p>
+
+<p>new 사용 시(인스턴스 생성 시) 추상 메소드를 오버라이딩 한다면,<br />
+추상클래스가 추상메소드 때문에 추상적인 클래스인것이기 때문에</p>
+
+<p>추상 메소드를 구현하면 추상적이지않은 구체적 클래스가 된다.<br />
+그래서 사용이 가능해진다.</p>
+
+<h2 id="장점">장점</h2>
+
+<p>추상화를 한다는것에 있어서의 장점은 무엇일까.</p>
+
+<p>예를들어 동물 -&gt; 강아지,고양이. 등의 동물은 먹기/걷기 등의 공통적인 행동을 하기 때문에</p>
+
+<p>동물이라는 추상 클래스를 만들 수 있고 이뜻은 강아지,고양이… .등을 동물이라는 하나의 클래스로 추상화를 시킨것이다.</p>
+
+<p>결국 Animal 타입으로 Cat, Dog, .. 클래스들을 다 받을수 있었던<br />
+다형성과도 맞아 떨어지는 부분이다.</p>
+
+<p>사실 이 예제만 봤을때는 위에서 상속부분에서 했던 예제와도 똑같다.
+다만 동물 클래스를 상속받을 자식 클래스들에게</p>
+
+<p>어떠한 행동을 강제 하고 싶을때 추상클래스에 추상메소드를 넣어주면된다.<br />
+강제하고 싶다는건? 해당 자식클래스들의 공통적인 메소드라는 뜻이다.</p>
+
+<h2 id="예시">예시</h2>
+
+<p>키보드라는 클래스가 있다. 
+키보드를 만드는 제조사는 여러개이다.</p>
+
+<p>A제조사, B제조사, C제조사는 각 제조사만의 스타일대로 키보드를 제작하고 소비자들에게 제품을 출시한다.</p>
+
+<p>여기서 A제조사는 키보드를 누를때 마다 불빛이 들어온다.<br />
+B제조사는 키보드를 누를때 딸깍 거리는 소리가 난다.<br />
+C제조사는 키보드를 누를때 살짝만 눌러도 잘 눌린다.</p>
+
+<p>여기서 이 키보드들 간에 공통점이 있을까? 있다.</p>
+
+<p>바로 키보드를 누른다! 라는 액션! 즉 메서드가 공통적이다. 
+그럼 이 메서드를 추출해서 추상클래스 안에 두면 된다.</p>
+
+<p>(키보드를 상속받아 탄생한,  A키보드, B키보드, C키보드)
+이때 이들 키보들간의 공통적인 필드
+키보드 이름, 가격 등을 추상클래스에 넣으면된다.</p>
+
+<h2 id="추상-메소드">추상 메소드</h2>
+
+<ul>
+  <li>메소드의 시그니쳐부분만 존재하고, 구현블록은 없는 메소드</li>
+  <li>추상클래스를 상속받는 실체클래스들은 반드시 추상메소드를 오버라이딩 해야한다.</li>
+</ul>
+
+<p>코드 구현</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Animal.java</span>
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nc">String</span> <span class="n">kind</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">breath</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"숨 쉰다."</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 추상 메소드</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">sound</span><span class="o">();</span>
+
+<span class="o">}</span>
+
+<span class="c1">// Cat.java</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nf">Cat</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">kind</span> <span class="o">=</span> <span class="s">"포유류"</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"야~옹"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Dog.java</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="nc">Animal</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nf">Dog</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">kind</span> <span class="o">=</span> <span class="s">"포유류"</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sound</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"왈왈!"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="c1">// Main.java</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">Dog</span> <span class="n">dog</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">();</span>
+        <span class="nc">Cat</span> <span class="n">cat</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Cat</span><span class="o">();</span>
+
+        <span class="n">dog</span><span class="o">.</span><span class="na">sound</span><span class="o">();</span>
+        <span class="n">cat</span><span class="o">.</span><span class="na">sound</span><span class="o">();</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"============="</span><span class="o">);</span>
+
+        <span class="nc">Animal</span> <span class="n">animal</span><span class="o">;</span>
+
+        <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Dog</span><span class="o">();</span> <span class="c1">// 자동 타입변환</span>
+        <span class="n">animal</span><span class="o">.</span><span class="na">sound</span><span class="o">();</span> <span class="c1">// Dog에 구현된 Sound()메소드 실행</span>
+
+        <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Cat</span><span class="o">();</span>
+        <span class="n">animal</span><span class="o">.</span><span class="na">sound</span><span class="o">();</span> <span class="c1">// Cat에 구현된 Sound()메소드 실행</span>
+
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"============="</span><span class="o">);</span>
+
+        <span class="n">animalSound</span><span class="o">(</span><span class="k">new</span> <span class="nc">Dog</span><span class="o">());</span>
+        <span class="n">animalSound</span><span class="o">(</span><span class="k">new</span> <span class="nc">Cat</span><span class="o">());</span>
+
+    <span class="o">}</span>
+
+    <span class="c1">// 자동 타입변환 : 추상 클래스 타입 변수는 추상클래스를 상속받은 실체클래스의 타입으로</span>
+    <span class="c1">// 자동 타입변환이 된다.</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">animalSound</span><span class="o">(</span><span class="nc">Animal</span> <span class="n">animal</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">animal</span><span class="o">.</span><span class="na">sound</span><span class="o">();</span>
+
+    <span class="o">}</span>
+    
+<span class="o">}</span>
+
+
+</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Java" /><category term="Java 상속" /><category term="Java 다형성" /><category term="Java 추상 클래스" /><summary type="html"><![CDATA[- 목표 - 상속, 추상 클래스와 둘에서 비롯되는 다형성에 대해 알고 가는 것]]></summary></entry><entry><title type="html">스프링 - 스프링의 구조, Controller</title><link href="http://localhost:4000/spring/Spring6/" rel="alternate" type="text/html" title="스프링 - 스프링의 구조, Controller" /><published>2022-12-26T00:00:00+09:00</published><updated>2022-12-26T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring6</id><content type="html" xml:base="http://localhost:4000/spring/Spring6/"><![CDATA[<h3 id="controller의-get-post">Controller의 Get, Post</h3>
 
 <h4 id="정적static-웹-페이지">정적(static) 웹 페이지</h4>
 <p>Client가 Request를 보내면, Server의 Controller은
@@ -2392,167 +2722,4 @@ Client에게 보내준다.</p>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div>    </div>
   </div>
-</details>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring Controller" /><category term="Spring Get Post" /><category term="Spring Rest API" /><category term="Spring ModelAndView" /><summary type="html"><![CDATA[Controller의 Get, Post]]></summary></entry><entry><title type="html">WIL 3주 차 회고, 주특기 주 차 시작</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL03/" rel="alternate" type="text/html" title="WIL 3주 차 회고, 주특기 주 차 시작" /><published>2022-12-25T00:00:00+09:00</published><updated>2022-12-25T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL03</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL03/"><![CDATA[<p>알고리즘 주 차가 끝나면서 사실 이전의 TIL들에서 계속 얘기해왔지만,<br />
-코딩 테스트 문제 자체를 풀어본 적이 없어 처음에 힘들었다.</p>
-
-<p>하지만 너무 오래 걸리는 문제들은 정답을 보고 내 것으로 만들고 풀고,<br />
-아는 것은 오래 걸려도 풀어서, 이 과정을 반복하다 보니 프로그래밍 주 차 첫날과 비교하면
-그래도 많이 성장한 것 같다.</p>
-
-<h2 id="지금까지-배워-온-것">지금까지 배워 온 것</h2>
-<p>오늘 기준 21일 정도가 지났는데 지금까지 오면서<br />
-배웠던 것들, 파이썬(플라스크), 몽고 DB, 알고리즘, JWT 등</p>
-
-<p>시간이 난다면.. 다시 정리하는 과정을 거치고,</p>
-
-<p>확실히 포스팅을 하며 정리를 해가며 공부하는 것이 기억에 오래 남고<br />
-당장은 귀찮을 것 같아도 도움이 되는 것 같다.</p>
-
-<h2 id="이제부터는">이제부터는</h2>
-<p>이제부터 배우는 것들은 블로그에 잘 정리해가며 기록해야만 할 것 같다.</p>
-
-<p>블로그 TIL, WIL도 어느 순간부터 좀 짧아진 감이 있는데 초심을 찾아서 다시<br />
-열심히 써야겠다.</p>
-
-<p>금요일부터는 스프링을 시작했는데, 생각보다 모르는 용어들도 많고<br />
-어려운 내용들이나, 이론적이거나 원칙 같은 것이 너무나 많다.</p>
-
-<p>이제부터는 확실히 스케줄을 지켜가며 진행을 해야 잘 따라갈 수 있을 것 같다.</p>
-
-<p>일단 현재 스파르타 코딩 클럽 항해99 Spring 입문 주차 1주 차라는 강의를 다 봤지만,
-MVC, Dao, Dto, controller, Entity, service, repository의 구조를 잘 모르겠어서 이 구조들을 정리해 보고 진행해야 할 것 같다.</p>
-
-<p>사실 항해99의 경우 약간 어려운 전반적인 내용을 한번 돌린 뒤 세세한 내용을 배워가는 느낌이 있는데 이 방법이 되게 좋은 방법인 것 같다.</p>
-
-<p>어려운 내용을 돌리게 되면, 그 내용을 찾아보며 정리하게 되는 점이 좋은 것 같다.</p>
-
-<p><br /></p>
-
-<h1 id="이번-주-wil-키워드-상속-인터페이스">이번 주 WIL 키워드 상속, 인터페이스</h1>
-
-<h2 id="상속">상속</h2>
-<p>객체지향적 개념으로 봤을 때 자바에서는 객체 간의 상속 관계를 지어주기 위해
-상속이라는 개념이 존재한다.</p>
-
-<p>이 상속은 예를 들면</p>
-
-<p>부모 객체를 기반으로 하위 객체를 생성하는 관계<br />
-ex) 동물 / 강아지, 고양이,..<br />
-ex) 사람 / 철수, 영희</p>
-
-<p>위와 같이 사용이 가능하다.</p>
-
-<p>상속은
-자식 클래스가 상속받고 싶은 부모 클래스를 선택해서 물려받는다.<br />
-이때 상속받는 클래스를 자식 클래스, 하위 클래스 또는 서브 클래스라고 부른다.<br />
-상속을 해주는 클래스를 부모 클래스, 상위 클래스 또는 슈퍼 클래스라고 한다.</p>
-
-<p>상속을 받게 되면 부모 클래스의 필드와 메서드를 물려받게 된다.</p>
-
-<p>단, 접근제어자가 private을 갖는 필드나 메소드는 상속이 불가하고, 
-패키지가 다를 경우 접근제어자가 default인 경우도 상속이 불가하다.</p>
-
-<p>상속의 장점은, 중복된 코드를 줄일 수 있고, 유지 보수가 편리하며, 통일성이 있고 다형성을 구현할 수 있다.</p>
-
-<p>그리고 자바에서는 자식 클래스가 여러 부모로부터 다중 상속을 받는 것은 불가능하다. 
-즉, 1개의 부모 클래스로부터의 단일 상속만 허용된다.</p>
-
-<p>하지만 부모 클래스는 여러 개의 자식 클래스에게 상속이 가능하다</p>
-
-<h2 id="인터페이스">인터페이스</h2>
-<p>인터페이스란? 극단적으로 동일한 목적 하에 동일한 기능을 보장하게 하기 위함!<br />
-어떻게? 자바의 다형성을 이용하여  개발코드 수정을 줄이고 유지 보수성을 높인다!</p>
-
-<p>인터페이스는 추상 메서드만을 가질 수 있고 구현메서드는 가질 수 없는 일종의 추상 클래스입니다.</p>
-
-<p>인터페이스는 개발 코드와 객체가 서로 통신하는 접점 역할을 한다.<br />
-개발 코드가 인터페이스의 메소드를 호출하면 인터페이스는 객체의 메소드를 호출시킨다.</p>
-
-<p>때문에 개발 코드는 객체의 내부 구조를 알 필요가 없고 인터페이스의 메소드만 알고 있으면 된다.</p>
-
-<p>그렇기 때문에, 다형성을 이용하여 개발코드 수정을 줄이고 유지 보수성을 높이는 점도 좋은 점이다.</p>
-
-<p>인터페이스와 추상 클래스의 기능적으로 다른 점은 자식 클래스들의 기능 유사도인데요.<br />
-추상 클래스는 서로 비슷한 기능을 하는 클래스들을 묶을 때 사용하며,</p>
-
-<p>인터페이스는 서로 다른 기능을 하는 클래스들을 묶을 때 인터페이스를 사용합니다.</p>
-
-<p>예를 들어,<br />
-리모컨 인터페이스를 구현하는 TV, Audio 구현체가 있고,</p>
-
-<p>추상 클래스는 그 자체로,
-리모컨 추상 클래스가 있다면 그 추상 클래스를 구현하여,
-A사 리모컨, B사 리모컨, C사 리모컨을 구현할 때 3사 리모컨들의 공통적인
-부분을 추상 클래스에 정의한다.</p>
-
-<p>@인터페이스는 다형성을 보장한다.</p>
-
-<p>부모 클래스가 인터페이스이면 자식 클래스가 무조건 구현되어야 합니다.<br />
-즉 부모 인터페이스의 모든 메서드들을 자식 클래스에서 반드시 재정의되어야 하기 때문에 다형성이 보장됩니다.</p>
-
-<p>또한, 인터페이스는 객체지향에서 다양한 이유로 사용이 되겠지만,
-저는 객체 지향의 5대 원칙 SOLID를 지킬 수 있게 해주기에 자주 사용되는 것이 아닌가 하는
-생각도 듭니다.</p>
-
-<p>서비스 애플리케이션의 유지 보수 측면에서의
-인터페이스(interface)는 SOLID를 구현하고, 객체 지향 프로그래밍으로 하는데 큰 도움을 주기 때문에,
-많은 시간 단축을 할 수 있고, 객체지향 패러다임도 지킬 수 있습니다.</p>
-
-<p>인터페이스는 상속과 다르게 구현체가 여러 인터페이스를 구현하는 다중 구현이 가능하다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="WIL" /><summary type="html"><![CDATA[알고리즘 주 차가 끝나면서 사실 이전의 TIL들에서 계속 얘기해왔지만, 코딩 테스트 문제 자체를 풀어본 적이 없어 처음에 힘들었다.]]></summary></entry><entry><title type="html">(작성중)스프링 - MVC 패턴 데이터 접근 실습</title><link href="http://localhost:4000/spring/Spring5/" rel="alternate" type="text/html" title="(작성중)스프링 - MVC 패턴 데이터 접근 실습" /><published>2022-12-25T00:00:00+09:00</published><updated>2022-12-26T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring5</id><content type="html" xml:base="http://localhost:4000/spring/Spring5/"><![CDATA[<p>유스케이스 다이어그램에서 아래와같이 설꼐…</p>
-
-<p>ERD는 아래와 같아</p>
-
-<p>API명세는</p>
-
-<p>사용자의 이름과, 간단한 메모를 CRUD, 생성 읽기 수정 삭제 해보는 애플리케이션을 만들어보겠습니다.</p>
-
-<h2 id="스프링으로-mvc-패턴-데이터-접근-실습해보기">스프링으로 MVC 패턴 데이터 접근 실습해보기.</h2>
-
-<p>아래와 같은 Dependency가 필요합니다.</p>
-<ul>
-  <li>Spring Web</li>
-  <li>Spring Data JPA</li>
-  <li>H2 Database</li>
-  <li>Thymeleaf</li>
-  <li>Spring Boot DevTools</li>
-  <li>Lombok</li>
-</ul>
-
-<p><img src="../../images/2022-12-26-10-12-15.png" alt="" /></p>
-
-<p><img src="../../images/2022-12-26-10-13-10.png" alt="" /></p>
-
-<p>처음 Dependency를 가지고 올 경우 필요한 의존파일들은 그래들이 알아서 가저와서 설치해줍니다.
-<img src="../../images/2022-12-24-11-28-05.png" alt="" />
-<img src="../../images/2022-12-24-11-28-11.png" alt="" /></p>
-
-<h3 id="시작-하기전-서버-재시작-설정하기">시작 하기전, 서버 재시작 설정하기</h3>
-<p>처음 스프링 디펜던시중 devtools를 설치한다.</p>
-
-<p><img src="../../images/2022-12-24-19-59-39.png" alt="" /></p>
-
-<p>Modify options 눌러서 진행
-<img src="../../images/2022-12-24-20-00-18.png" alt="" /></p>
-
-<p>코드 업데이트시 스프링부트를 재시작하지 않ㅇ아도 자동으로 업데이트시 재시작 시켜준다.</p>
-
-<h3 id="applicationproperties">application.properties</h3>
-<p>src/main/resources/application.properties에</p>
-
-<p>아래의 설정을 저장한뒤 시작합니다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>spring.h2.console.enabled=true
-spring.datasource.url=jdbc:h2:mem:db
-spring.datasource.username=admin
-spring.datasource.password=
-</code></pre></div></div>
-
-<p>위 처럼 설정해놓게 되면 username을 이용하여 h2 데이터베이스로<br />
-관리할 수 있게 됩니다.</p>
-
-<p><img src="../../images/2022-12-26-11-21-06.png" alt="" /></p>
-
-<h3 id="패키지-설정-하기">패키지 설정 하기</h3>
-<p>main/java/com.practice.springmvcpractice/ 아래에 아래의 패키지들을 먼저 생성해주세요.</p>
-
-<p><img src="../../images/2022-12-26-10-22-26.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring MVC Pattern" /><category term="Spring Devtools" /><category term="Spring 자동 재시작" /><summary type="html"><![CDATA[유스케이스 다이어그램에서 아래와같이 설꼐…]]></summary></entry></feed>
+</details>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring Controller" /><category term="Spring Get Post" /><category term="Spring Rest API" /><category term="Spring ModelAndView" /><summary type="html"><![CDATA[Controller의 Get, Post]]></summary></entry></feed>
