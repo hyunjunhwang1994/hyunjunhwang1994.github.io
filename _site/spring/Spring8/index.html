@@ -1,0 +1,1292 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>스프링 - JPA 파헤치기, 총정리2 | 기술 블로그</title>
+<meta name="description" content="JPA의 영속성 컨텍스트란?">
+
+
+  <meta name="author" content="Hyun Jun">
+  
+  <meta property="article:author" content="Hyun Jun">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술 블로그">
+<meta property="og:title" content="스프링 - JPA 파헤치기, 총정리2">
+<meta property="og:url" content="http://localhost:4000/spring/Spring8/">
+
+
+  <meta property="og:description" content="JPA의 영속성 컨텍스트란?">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-30T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/spring/Spring8/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hyun Jun",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="843d72a8e4b20f1a8ae8e971f19c34cb128b6c8b">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+
+    <style> 
+    /*스크롤바 꾸며주는 코드*/
+      ::-webkit-scrollbar{width: 17px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: rgb(25, 56, 109);}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      
+      {
+        width:12px;height:12px;background:transparent;
+      }
+
+        /*사이드바에는 적용하지않는다.*/
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          기술 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+
+                <!-- 다크 모드 토글 버튼 -->
+                
+                <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+                <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">카테고리👇</span>
+                    <div class="navicon"></div>
+                </button>
+
+
+                
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리👇</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+
+
+        
+        
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+  
+  
+    
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리👇</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">79</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <span class="nav__sub-title">etc</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/hanghae99" class="">항해99 🚢(28)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                
+                    
+                
+                    
+                        <li><a href="/categories/jekyllblogdev" class="">Jekyll Blog Dev (11)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/cloudcomputingaws" class="">Cloud computing - AWS (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/git" class="">Git (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            
+
+
+
+        <span class="nav__sub-title">Programming language</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/java" class="">Java (12)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Database</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/sql" class="">SQL (1)</a></li>
+                    
+                
+            </ul>
+
+   
+
+
+        <span class="nav__sub-title">Framework</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/spring" class="">Spring (9)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/flask" class="">Flask (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <span class="nav__sub-title">Algorithm</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmbasic" class="">Algorithm - Basic (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul> 
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmhanghae99" class="">Algorithm - Hanghae99🚢 (5)</a></li>
+                    
+                
+                    
+                
+            </ul> 
+
+
+ 
+
+
+      </li>
+
+
+
+  </ul>
+</nav>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="스프링 - JPA 파헤치기, 총정리2">
+    <meta itemprop="description" content="JPA의 영속성 컨텍스트란?">
+    <meta itemprop="datePublished" content="2022-12-30T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/spring/Spring8/" class="u-url" itemprop="url">스프링 - JPA 파헤치기, 총정리2
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-30T00:00:00+09:00">2022-12-30</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          9 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#jpa의-영속성-컨텍스트란">JPA의 영속성 컨텍스트란?</a><ul><li><a href="#jpa-엔티티의-상태">JPA 엔티티의 상태</a><ul><li><a href="#비영속new">비영속(New)</a></li><li><a href="#영속managed">영속(Managed)</a></li><li><a href="#준영속detached">준영속(Detached)</a></li><li><a href="#삭제removed">삭제(Removed)</a></li></ul></li><li><a href="#영속성-컨텍스트는-어떻게-왜-이렇게-설계되어있을까요">영속성 컨텍스트는 어떻게, 왜 이렇게 설계되어있을까요?</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="jpa의-영속성-컨텍스트란">JPA의 영속성 컨텍스트란?</h1>
+
+<ul>
+  <li>persistence context!</li>
+  <li>엔티티를 영구 저장하는 환경</li>
+  <li>어플리케이션이 데이터베이스에서 꺼내온 데이터 객체를 보관하는 역할을 합니다.</li>
+  <li>영속성 컨텍스트는 엔티티 매니저를 통해 엔티티를 조회하거나 저장할 때 엔티티를 보관하고 관리합니다.</li>
+</ul>
+
+<div class="notice">
+엔티티 매니저마다 개별적으로 부여되는, 어떠한 논리적 공간같은 개념으로 비유적으로 이해하셔도 좋을 것 같습니다.   <br />
+<br />
+자바의 엔티티 객체를 엔티티 매니저마다 가지고 있는 영속성 컨텍스트라는 공간에다 넣고 빼고 하면서 사용하는거죠, <br /><br />
+“영속화 한다” 라는 말을 “엔티티 매니저가 자기의 영속성 컨텍스트에 넣어준다”로 이해하는 것 처럼 말이죠
+</div>
+
+<hr />
+
+<blockquote>
+  <p>예시</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">em</span><span class="o">.</span><span class="na">persist</span><span class="o">(</span><span class="n">member</span><span class="o">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>단순하게 회원 엔티티 저장</li>
+  <li>정확하게는 엔티티 매니저를 사용해서 회원 엔티티를 영속성 컨텍스트에 저장</li>
+  <li>논리적인 개념에 가까움</li>
+  <li>엔티티 매니저를 생성할 때 하나 만들어진다.</li>
+  <li>⭐️엔티티 매니저를 통해 영속성 컨텍스트에 접근하고 관리할 수 있다.</li>
+</ul>
+
+<p><img src="../../images/2022-12-30-14-10-58.png" alt="" /></p>
+
+<h2 id="jpa-엔티티의-상태">JPA 엔티티의 상태</h2>
+
+<h3 id="비영속new">비영속(New)</h3>
+<p>영속성 컨택스트와 관계가 없는 새로운 상태입니다.
+해당 객체의 데이터가 변경되거나 말거나 실제 DB의 데이터와는 관련없고, 그냥 Java 객체인 상태!</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Member</span> <span class="n">hyunjun</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Member</span><span class="o">();</span>
+<span class="n">member</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="s">"hyunjun94"</span><span class="o">);</span>
+<span class="n">member</span><span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="s">"현준"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h3 id="영속managed">영속(Managed)</h3>
+<p>엔티티 매니저를 통해 엔티티가 영속성 컨텍스트에 저장되어 관리되고 있는 상태입니다.<br />
+이와 같은 경우 데이터의 생성, 변경등을 JPA가 추적하면서 필요하면 DB에 반영합니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 엔티티 매니저를 통해 영속성 컨텍스트에 엔티티를 저장</span>
+<span class="n">em</span><span class="o">.</span><span class="na">persist</span><span class="o">(</span><span class="n">hyunjun</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h3 id="준영속detached">준영속(Detached)</h3>
+<p>영속성 컨택스트에서 관리되다가 분리된 상태입니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 엔티티를 영속성 컨택스트에서 분리</span>
+<span class="n">em</span><span class="o">.</span><span class="na">detach</span><span class="o">(</span><span class="n">hyunjun</span><span class="o">);</span>
+<span class="c1">// 영속성 컨텍스트를 비우기</span>
+<span class="n">em</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+<span class="c1">// 영속성 컨택스트를 종료</span>
+<span class="n">em</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</code></pre></div></div>
+
+<h3 id="삭제removed">삭제(Removed)</h3>
+<p>영속성 컨택스트에서 삭제된 상태</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">em</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">hyunjun</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p><img src="../../images/2022-12-30-14-23-54.png" alt="" />
+<a href="https://product.kyobobook.co.kr/detail/S000000935744">사진 출처</a></p>
+
+<h2 id="영속성-컨텍스트는-어떻게-왜-이렇게-설계되어있을까요">영속성 컨텍스트는 어떻게, 왜 이렇게 설계되어있을까요?</h2>
+
+<details>   
+<summary>1차 캐시</summary>
+<div>
+
+    <p>DB역시 저장공간, 연산능력과 같은 컴퓨팅 리소스를 가진 프로그램 같은 것이라고 말씀드렸죠?<br />
+그리고 보통은 서버가 떠있는 컴퓨터(AWS라고 치면 여러분의 ec2 인스턴스)가 아닌 다른 곳에 떠있는 경우가 많습니다.</p>
+
+    <p>그리고 다른 여러가지 이유와 함께 DB를 이용하는 작업은 상대적으로 부하와 비용이 심한 작업입니다.<br />
+그래서 부하가 심한 작업을 자주하는 것을 줄여야 할 필요가 있었습니다.</p>
+
+    <p>자바 어플리케이션 상에서 데이터를 조회 사용할일이 아주 잦은데,<br />
+그럴때마다 DB로 “SELECT * FROM….”과 같은 SQL쿼리를 내는 일은 막아야 한다는 거죠!</p>
+
+    <p>그러기 위해서 영속성 컨텍스트 내부에 1차캐시를 둡니다.</p>
+    <ol>
+      <li>find(”memberB”)와 같은 로직이 있을 때 먼저 1차 캐시를 조회합니다.</li>
+      <li>있으면 해당 데이터를 반환합니다.</li>
+      <li>없으면 그 때 실제 DB로 “SELECT * FROM….” 의 쿼리를 내보냅니다.</li>
+      <li>그리고 반환하기 전에 1차캐시에 저장하고 반환해줍니다.</li>
+    </ol>
+
+    <p>이제 memberB를 find 하는 요청이 다시 들어와도 굳이 DB로 다녀올 필요가 전혀 없겠죠?</p>
+
+    <p><img src="../../images/2022-12-30-14-29-46.png" alt="" />
+<a href="https://product.kyobobook.co.kr/detail/S000000935744">사진 출처</a></p>
+
+  </div>
+</details>
+
+<details>   
+<summary>Lazy loading SQL 저장소</summary>
+<div>
+
+    <p>비슷한 맥락입니다.<br />
+MemberA, MemberB를 생성할 때 마다 DB를 다녀오는건 비효율적이겠죠?<br />
+굳이 여러번 DB를 방문하지 않도록 내부에 “쓰기 지연 SQL 저장소”를 뒀습니다.</p>
+
+    <ol>
+      <li>memberA, memberB를 영속화 하고</li>
+      <li>entityManager.commit() 메서드를 호출하면</li>
+      <li>내부적으로 쓰기 지연 SQL 저장소에서 Flush가 일어나고</li>
+      <li>“INSERT A”, “INSERT B”와 같은 쓰기 전용 쿼리들이 DB로 흘러들어갑니다.</li>
+    </ol>
+
+    <p><img src="../../images/2022-12-30-14-34-13.png" alt="" />
+<a href="https://product.kyobobook.co.kr/detail/S000000935744">사진 출처</a></p>
+
+  </div>
+</details>
+
+<details>   
+<summary>Dirty Checking</summary>
+<div>
+
+    <p>사실 똘똘한 JPA는 1차캐시와 쓰기지연 SQL 저장소를 이용해서 변경과 수정을 감지해줍니다.</p>
+
+    <ol>
+      <li>사실 1차 캐시에는 DB의 엔티티의 정보만 저장하는것이 아닙니다.</li>
+      <li>해당 엔티티를 조회한 시점의 데이터의 정보를 같이 저장해둡니다.</li>
+      <li>그리고 엔티티객체와 조회 시점의 데이터가 다르다면 변경이 발생했다고 알 수 있겠죠?</li>
+      <li>해당 변경 부문을 반영 할 수 있는 UPDATE 쿼리를 작성해둡니다.</li>
+    </ol>
+
+    <p><img src="../../images/2022-12-30-14-35-59.png" alt="" />
+<a href="https://product.kyobobook.co.kr/detail/S000000935744">사진 출처</a></p>
+
+  </div>
+</details>
+
+<details>   
+<summary>데이터의 어플리케이션 단의 동일성을 보장해줍니다.</summary>
+<div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Member</span> <span class="n">member1</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="nc">Member</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="s">"hyunjun"</span><span class="o">);</span>
+<span class="nc">Member</span> <span class="n">member2</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="nc">Member</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="s">"hyunjun"</span><span class="o">);</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">member1</span> <span class="o">==</span> <span class="n">member2</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="kc">true</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>결과는 “참”</li>
+      <li>둘은 같은 인스턴스</li>
+      <li>영속성 컨텍스트는 성능상 이점과 엔티티의 동일성을 보장한다.</li>
+    </ul>
+
+    <p>위와 같이 JPA는 매우 세심하게 어플리케이션과 DB를 이어줍니다.<br />
+그러면서도 성능 최적화 부분까지 세심하게 신경을 써줬죠.</p>
+
+  </div>
+</details>
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#jpa-entity-manager" class="page__taxonomy-item p-category" rel="tag">JPA Entity Manager</a><span class="sep">, </span>
+    
+      <a href="/tags/#jpa-%EB%8D%94%ED%8B%B0-%EC%B2%B4%ED%81%AC" class="page__taxonomy-item p-category" rel="tag">JPA 더티 체크</a><span class="sep">, </span>
+    
+      <a href="/tags/#jpa-%EC%98%81%EC%86%8D%EC%84%B1-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">JPA 영속성 컨텍스트</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#spring" class="page__taxonomy-item p-category" rel="tag">Spring</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-30T00:00:00+09:00">2022-12-30</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%8A%A4%ED%94%84%EB%A7%81+-+JPA+%ED%8C%8C%ED%97%A4%EC%B9%98%EA%B8%B0%2C+%EC%B4%9D%EC%A0%95%EB%A6%AC2%20http%3A%2F%2Flocalhost%3A4000%2Fspring%2FSpring8%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fspring%2FSpring8%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fspring%2FSpring8%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/spring/Spring7/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>스프링 - JPA 파헤치기, 총정리1</a>
+    
+    
+      <a href="/spring/Spring9/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>스프링 - JPA 파헤치기, 엔티티 매핑, 연관관계, 프록시</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL23/" rel="permalink">TIL 26일 스프링 숙련 주 차#, 발제, JPA 파헤치기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-30T00:00:00+09:00">2022-12-30</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring9/" rel="permalink">스프링 - JPA 파헤치기, 엔티티 매핑, 연관관계, 프록시
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-30T00:00:00+09:00">2022-12-30</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          10 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring7/" rel="permalink">스프링 - JPA 파헤치기, 총정리1
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-30T00:00:00+09:00">2022-12-30</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          7 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL22/" rel="permalink">TIL 25일 스프링 입문 주 차#, API 설계 시험, 트랜잭션, 더티 체킹
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-29T00:00:00+09:00">2022-12-29</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          9 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/hyunjunhwang1994" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/hyunjuuuuun/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Hyun Jun. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <!-- start custom comments scripts -->
+
+<!-- end custom comments scripts -->
+
+<script>
+    'use strict';
+
+    window.customUtterances = {
+      theme: 'github-light',
+      darkTheme: 'github-dark',
+      onChange: (theme) => {
+        var commentContainer = document.querySelector('#utterances-comments');
+  
+        if (!commentContainer) {
+          return;
+        }
+  
+        while ( commentContainer.hasChildNodes() ) { 
+          commentContainer.removeChild( commentContainer.firstChild );
+        }
+  
+        var script = document.createElement('script');
+        script.setAttribute('src', 'https://utteranc.es/client.js');
+        script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
+        script.setAttribute('label', 'utterances');
+        script.setAttribute('issue-term', 'pathname');
+        script.setAttribute('theme', theme);
+        script.setAttribute('crossorigin', 'anonymous');
+  
+        commentContainer.appendChild(script);
+      }
+    };
+  </script>
+
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>
