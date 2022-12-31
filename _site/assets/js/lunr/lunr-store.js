@@ -264,31 +264,31 @@ var store = [{
         "teaser": null
       },{
         "title": "2016년 문제",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 해당 풀이는 자바로 이루어져 있고, 프로그래머스의 문제를 토대로 포스팅했습니다. 2016년 문제 설명 2016년 1월 1일은 금요일입니다. 2016년 a월 b일은 무슨 요일일까요? 두 수 a ,b를 입력받아 2016년 a월 b일이 무슨 요일인지 리턴하는 함수, solution을 완성하세요. 요일의 이름은...","categories": ["Algorithm - Hanghae99"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 해당 풀이는 자바로 이루어져 있고, 프로그래머스의 문제를 토대로 포스팅했습니다. 문제 설명 2016년 1월 1일은 금요일입니다. 2016년 a월 b일은 무슨 요일일까요? 두 수 a ,b를 입력받아 2016년 a월 b일이 무슨 요일인지 리턴하는 함수, solution을 완성하세요. 요일의 이름은 일요일부터...","categories": ["Algorithm - Hanghae99"],
         "tags": [],
         "url": "/algorithm%20-%20hanghae99/algorithm-hanghae99-01/",
         "teaser": null
       },{
         "title": "나누어 떨어지는 숫자 배열 문제",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 해당 풀이는 자바로 이루어져 있고, 프로그래머스의 문제를 토대로 포스팅했습니다. 나누어 떨어지는 숫자 배열 문제 설명 array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하는 함수, solution을 작성해주세요. divisor로 나누어 떨어지는 element가 하나도 없다면 배열에...","categories": ["Algorithm - Hanghae99"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 해당 풀이는 자바로 이루어져 있고, 프로그래머스의 문제를 토대로 포스팅했습니다. 문제 설명 array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하는 함수, solution을 작성해주세요. divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을 담아 반환하세요. 제한...","categories": ["Algorithm - Hanghae99"],
         "tags": [],
         "url": "/algorithm%20-%20hanghae99/algorithm-hanghae99-02/",
         "teaser": null
       },{
         "title": "수박수박수박수박수박수?",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 해당 풀이는 자바로 이루어져 있고, 프로그래머스의 문제를 토대로 포스팅했습니다. 수박수박수박수박수박수? 문제 설명 길이가 n이고, “수박수박수박수….”와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요. 예를들어 n이 4이면 “수박수박”을 리턴하고 3이라면 “수박수”를 리턴하면 됩니다. 제한 조건 n은 길이 10,000이하인...","categories": ["Algorithm - Hanghae99"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 해당 풀이는 자바로 이루어져 있고, 프로그래머스의 문제를 토대로 포스팅했습니다. 문제 설명 길이가 n이고, “수박수박수박수….”와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요. 예를들어 n이 4이면 “수박수박”을 리턴하고 3이라면 “수박수”를 리턴하면 됩니다. 제한 조건 n은 길이 10,000이하인 자연수입니다....","categories": ["Algorithm - Hanghae99"],
         "tags": [],
         "url": "/algorithm%20-%20hanghae99/algorithm-hanghae99-03/",
         "teaser": null
       },{
         "title": "완주하지 못한 선수",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 해당 풀이는 자바로 이루어져 있고, 프로그래머스의 문제를 토대로 포스팅했습니다. 완주하지 못한 선수 문제 설명 수많은 마라톤 선수들이 마라톤에 참여하였습니다. 단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다. 마라톤에 참여한 선수들의 이름이 담긴 배열 participant와 완주한 선수들의...","categories": ["Algorithm - Hanghae99"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 해당 풀이는 자바로 이루어져 있고, 프로그래머스의 문제를 토대로 포스팅했습니다. 문제 설명 수많은 마라톤 선수들이 마라톤에 참여하였습니다. 단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다. 마라톤에 참여한 선수들의 이름이 담긴 배열 participant와 완주한 선수들의 이름이 담긴 배열...","categories": ["Algorithm - Hanghae99"],
         "tags": [],
         "url": "/algorithm%20-%20hanghae99/algorithm-hanghae99-04/",
         "teaser": null
       },{
         "title": "이상한 문자 만들기",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 해당 풀이는 자바로 이루어져 있고, 프로그래머스의 문제를 토대로 포스팅했습니다. 이상한 문자 만들기 문제 설명 문자열 s는 한 개 이상의 단어로 구성되어 있습니다. 각 단어는 하나 이상의 공백문자로 구분되어 있습니다. 각 단어의 짝수번째 알파벳은 대문자로, 홀수번째 알파벳은 소문자로...","categories": ["Algorithm - Hanghae99"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.1 해당 풀이는 자바로 이루어져 있고, 프로그래머스의 문제를 토대로 포스팅했습니다. 문제 설명 문자열 s는 한 개 이상의 단어로 구성되어 있습니다. 각 단어는 하나 이상의 공백문자로 구분되어 있습니다. 각 단어의 짝수번째 알파벳은 대문자로, 홀수번째 알파벳은 소문자로 바꾼 문자열을 리턴하는...","categories": ["Algorithm - Hanghae99"],
         "tags": [],
         "url": "/algorithm%20-%20hanghae99/algorithm-hanghae99-05/",
         "teaser": null
@@ -474,7 +474,7 @@ var store = [{
         "teaser": null
       },{
         "title": "행렬의 곱셈",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.2 해당 풀이는 자바로 이루어져 있고, 프로그래머스의 문제를 토대로 포스팅했습니다. 행렬의 곱셈 문제 설명 2차원 행렬 arr1과 arr2를 입력받아, arr1에 arr2를 곱한 결과를 반환하는 함수, solution을 완성해주세요. 제한 조건 행렬 arr1, arr2의 행과 열의 길이는 2 이상 100...","categories": ["Algorithm - Hanghae99"],
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.2 해당 풀이는 자바로 이루어져 있고, 프로그래머스의 문제를 토대로 포스팅했습니다. 문제 설명 2차원 행렬 arr1과 arr2를 입력받아, arr1에 arr2를 곱한 결과를 반환하는 함수, solution을 완성해 주세요. 제한 조건 행렬 arr1, arr2의 행과 열의 길이는 2 이상 100 이하입니다....","categories": ["Algorithm - Hanghae99"],
         "tags": [],
         "url": "/algorithm%20-%20hanghae99/algorithm-hanghae99-06/",
         "teaser": null
