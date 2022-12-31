@@ -39,7 +39,7 @@ tag: []
 
 |s|return|
 |---|---|
-|"try hello world"|"TrY HeLlO WoRlD|
+|"try hello world"|"TrY HeLlO WoRlD"|
 
 
 ## 입출력 예 설명

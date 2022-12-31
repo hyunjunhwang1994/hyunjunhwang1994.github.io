@@ -472,4 +472,28 @@ var store = [{
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL23/",
         "teaser": null
+      },{
+        "title": "행렬의 곱셈",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.2 해당 풀이는 자바로 이루어져 있고, 프로그래머스의 문제를 토대로 포스팅했습니다. 행렬의 곱셈 문제 설명 2차원 행렬 arr1과 arr2를 입력받아, arr1에 arr2를 곱한 결과를 반환하는 함수, solution을 완성해주세요. 제한 조건 행렬 arr1, arr2의 행과 열의 길이는 2 이상 100...","categories": ["Algorithm - Hanghae99"],
+        "tags": [],
+        "url": "/algorithm%20-%20hanghae99/algorithm-hanghae99-06/",
+        "teaser": null
+      },{
+        "title": "스프링부트 - EC2, RDS(Mysql)연결하기",
+        "excerpt":"AWS 가입및 EC2 설정은 아래 글 참 조 아래의 링크에 접속! AWS RDS 검색후 클릭 데이터베이스 생성 -로딩- 표준, MySQL(상황에 따라 선택) 프리티어 선택 및 DB이름, 계정, 암호 설정(마스터 사용자 이름및 암호는 기억해야 함) 데이터베이스 생성 클릭 생성되는데 시간이 조금 걸립ㄴ디ㅏ. 생성된 인스턴스 클릭 VPC 보안그룹의 security 클릭 보안그룹 ID...","categories": ["Spring"],
+        "tags": ["EC2","스프링 부트 EC2","RDS"],
+        "url": "/spring/Spring10/",
+        "teaser": null
+      },{
+        "title": "TIL 27일 스프링 숙련 주 차#, AWS, RDS, Happy new year",
+        "excerpt":"오늘 배운것! 인증/인가 JWT를 이용한 Auth구현 스프링 프로젝트 AWS EC2, RDS사용 호스팅 하기 알고리즘 문제 1개 풀기 인증/인가 사실 스프링에서 인증, 인가와 관련되어 스프링 시큐리티가 관리해준다고 한다. 하지만 해당 개념이 잡히기 전에 바로 스프링 시큐리티를 사용하는건 너무 어렵기만하고 재미가 없다. 인증(Authentication) 해당 유저가 실제 유저인지 인증하는 개념입니다. 여러분의 스마트폰에 지문인식,...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL24/",
+        "teaser": null
+      },{
+        "title": "스프링 - DI, IoC, Bean",
+        "excerpt":" ","categories": ["Spring"],
+        "tags": [],
+        "url": "/spring/Spring11/",
+        "teaser": null
       }]

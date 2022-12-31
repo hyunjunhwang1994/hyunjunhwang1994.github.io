@@ -1,0 +1,1333 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>스프링부트 - EC2, RDS(Mysql)연결하기 | 기술 블로그</title>
+<meta name="description" content="AWS 가입및 EC2 설정은 아래 글 참 조">
+
+
+  <meta name="author" content="Hyun Jun">
+  
+  <meta property="article:author" content="Hyun Jun">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술 블로그">
+<meta property="og:title" content="스프링부트 - EC2, RDS(Mysql)연결하기">
+<meta property="og:url" content="http://localhost:4000/spring/Spring10/">
+
+
+  <meta property="og:description" content="AWS 가입및 EC2 설정은 아래 글 참 조">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-12-31T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/spring/Spring10/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hyun Jun",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="843d72a8e4b20f1a8ae8e971f19c34cb128b6c8b">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+
+    <style> 
+    /*스크롤바 꾸며주는 코드*/
+      ::-webkit-scrollbar{width: 17px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: rgb(25, 56, 109);}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      
+      {
+        width:12px;height:12px;background:transparent;
+      }
+
+        /*사이드바에는 적용하지않는다.*/
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          기술 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+
+                <!-- 다크 모드 토글 버튼 -->
+                
+                <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+                <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">카테고리👇</span>
+                    <div class="navicon"></div>
+                </button>
+
+
+                
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리👇</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+
+
+        
+        
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+  
+  
+    
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리👇</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">83</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <span class="nav__sub-title">etc</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/hanghae99" class="">항해99 🚢(29)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                
+                    
+                
+                    
+                        <li><a href="/categories/jekyllblogdev" class="">Jekyll Blog Dev (11)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/cloudcomputingaws" class="">Cloud computing - AWS (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/git" class="">Git (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            
+
+
+
+        <span class="nav__sub-title">Programming language</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/java" class="">Java (12)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Database</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/sql" class="">SQL (1)</a></li>
+                    
+                
+            </ul>
+
+   
+
+
+        <span class="nav__sub-title">Framework</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/spring" class="">Spring (11)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/flask" class="">Flask (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <span class="nav__sub-title">Algorithm</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmbasic" class="">Algorithm - Basic (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul> 
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmhanghae99" class="">Algorithm - Hanghae99🚢 (6)</a></li>
+                    
+                
+                    
+                
+            </ul> 
+
+
+ 
+
+
+      </li>
+
+
+
+  </ul>
+</nav>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="스프링부트 - EC2, RDS(Mysql)연결하기">
+    <meta itemprop="description" content="AWS 가입및 EC2 설정은 아래 글 참 조">
+    <meta itemprop="datePublished" content="2022-12-31T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/spring/Spring10/" class="u-url" itemprop="url">스프링부트 - EC2, RDS(Mysql)연결하기
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-31T00:00:00+09:00">2022-12-31</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#ec2호스팅하기">EC2호스팅하기</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>AWS 가입및 EC2 설정은 아래 글 참 조</p>
+
+<hr />
+
+<ol>
+  <li>
+    <p>아래의 링크에 접속!
+<a href="https://ap-northeast-2.console.aws.amazon.com/console/home?region=ap-northeast-2#">AWS</a></p>
+  </li>
+  <li>
+    <p>RDS 검색후 클릭
+<img src="../../images/2022-12-31-19-54-18.png" alt="" /></p>
+  </li>
+  <li>
+    <p>데이터베이스 생성
+<img src="../../images/2022-12-31-19-55-04.png" alt="" /></p>
+  </li>
+</ol>
+
+<p>-로딩-
+<img src="../../images/2022-12-31-19-55-16.png" alt="" /></p>
+
+<ol>
+  <li>
+    <p>표준, MySQL(상황에 따라 선택)
+<img src="../../images/2022-12-31-19-57-16.png" alt="" /></p>
+  </li>
+  <li>
+    <p>프리티어 선택 및 DB이름, 계정, 암호 설정(마스터 사용자 이름및 암호는 기억해야 함)
+<img src="../../images/2022-12-31-19-59-41.png" alt="" /></p>
+  </li>
+</ol>
+
+<p><img src="../../images/2022-12-31-20-56-43.png" alt="" /></p>
+
+<p><img src="../../images/2022-12-31-20-57-04.png" alt="" /></p>
+
+<p><img src="../../images/2022-12-31-20-58-24.png" alt="" /></p>
+
+<p><img src="../../images/2022-12-31-20-58-50.png" alt="" /></p>
+
+<p>데이터베이스 생성 클릭
+<img src="../../images/2022-12-31-20-59-05.png" alt="" /></p>
+
+<p>생성되는데 시간이 조금 걸립ㄴ디ㅏ.
+<img src="../../images/2022-12-31-21-01-32.png" alt="" /></p>
+
+<p>생성된 인스턴스 클릭
+<img src="../../images/2022-12-31-21-02-24.png" alt="" /></p>
+
+<p>VPC 보안그룹의 security 클릭
+<img src="../../images/2022-12-31-21-03-27.png" alt="" /></p>
+
+<p>보안그룹 ID 클릭
+<img src="../../images/2022-12-31-21-11-28.png" alt="" /></p>
+
+<p>인바운드 규칙 편집 클릭
+<img src="../../images/2022-12-31-21-13-07.png" alt="" /></p>
+
+<p>아래처럼 설정 후 규칙 저장 클릭
+<img src="../../images/2022-12-31-22-36-40.png" alt="" /></p>
+
+<p><a href="https://ap-northeast-2.console.aws.amazon.com/rds/home?region=ap-northeast-2#databases:">RDS 대시보드</a></p>
+
+<p>다시 대시보드 이동 후 인스턴스 클릭</p>
+
+<p><img src="../../images/2022-12-31-22-39-39.png" alt="" /></p>
+
+<p>엔드포인트 복사하기
+<img src="../../images/2022-12-31-22-40-24.png" alt="" /></p>
+
+<p>호스팅할 프로젝트 인텔리제이로 들어가서 mysql 추가
+<img src="../../images/2022-12-31-22-43-21.png" alt="" /></p>
+
+<ul>
+  <li>Name: DB 인스턴스 식별자</li>
+  <li>Host: 나의 엔드포인트</li>
+  <li>User: 마스터 사용자 이름</li>
+  <li>Password: 마스터 암호</li>
+  <li>Database: 초기 데이터베이스 이름
+<img src="../../images/2022-12-31-22-46-00.png" alt="" /></li>
+</ul>
+
+<p>OK 누르지말고 일단 Test Connection 클릭</p>
+
+<p>아래와 같은 창이 나온다면 Download Driver Files 클릭
+<img src="../../images/2022-12-31-22-49-40.png" alt="" /></p>
+
+<p>아래와 같이 나오면 Test Connection성공!
+<img src="../../images/2022-12-31-22-51-23.png" alt="" /></p>
+
+<p>성공 했다면 OK클릭 실패 시 AWS 인바운드 규칙 설정이나, 인텔리제이 위의 SQL설정 값들 확인!</p>
+
+<p>application.properties(설정파일)에 DB관련 설정값을 넣어줍니다.<br />
+(한글로 된 값 바꿔서!)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    spring.datasource.url=jdbc:mysql://나의엔드포인트:3306/myselectshop
+    spring.datasource.username=나의USERNAME
+    spring.datasource.password=나의패스워드
+    spring.jpa.hibernate.ddl-auto=update
+</code></pre></div></div>
+
+<p>참고로 해당 프로젝트를 깃에 올린다면 위의 정보는 중요정보이므로
+application.properties는 ignore 해주고 올려주세요.</p>
+
+<p>현재 properties에 jwt secret key와 실제 AWS RDS 어드민 계정 정보가있으므로
+해당 파일을 통째로 추가해보겠습니다.</p>
+
+<p>resources 아래에 application-원하는이름.properties로 파일 생성 후
+<img src="../../images/2022-12-31-23-01-59.png" alt="" /></p>
+
+<p>그안에 중요 정보 작성 후 저장해주세요!
+<img src="../../images/2022-12-31-23-03-35.png" alt="" /></p>
+
+<p>application.properties에 아래처럼 우리가 만든 파일을 포함해주는 코드를 작성해주세요!
+<img src="../../images/2022-12-31-23-05-14.png" alt="" /></p>
+
+<p>.gitignore라는 파일을 찾아 아래 우리가 만든 properties를 추가해주세요!
+<img src="../../images/2022-12-31-23-06-56.png" alt="" /></p>
+
+<p>이제 푸쉬해보면 application.properties만 올라와 있을겁니다!
+오타가 나있을수 있으니 꼭 처음에 한번 확인해보세요</p>
+
+<p>다시 데이터베이스로와서.
+사실 위의 설정까지만 하면 이제 우리의 데이터베이스는 작동합니다
+각자의 데이터 베이스 입력을 한뒤 스프링서버를 껏다켜보세요!</p>
+
+<p>프리티어인 1년 기간 동안을 잘 맞춰서 사용하시고,
+데이터베이스의 경우 프리티어라도 사용량이 정해져있으므로 사용하지 않을 시 인스턴스 종료해주세요!</p>
+
+<p>RDS의 경우 EC2와 다르게 정지를 시켜놓아도 1주일 뒤면 자동 재부팅이 된다고 하네요
+안쓰는 DB는 삭제하시는게 좋습니다!</p>
+
+<p>20기가 까지만 무료이므로 인스턴스는 1개까지만!</p>
+
+<p>프리티어라도 무료 사용량이 정해져있는데 아래 블로그 글 참조하시면 좋을 것 같습니다.
+<a href="https://inpa.tistory.com/entry/AWS-%F0%9F%92%B0-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%9A%94%EA%B8%88-%ED%8F%AD%ED%83%84-%EB%B0%A9%EC%A7%80-%F0%9F%92%B8-%EB%AC%B4%EB%A3%8C-%EC%82%AC%EC%9A%A9%EB%9F%89-%EC%A0%95%EB%A6%AC">AWS 무료 사용량</a></p>
+
+<p>스토리지 자동 조정기능과, 자동 백업기능을 해제하라는 말이 많아서 해제해보려고 합니다.
+<img src="../../images/2022-12-31-23-22-39.png" alt="" /></p>
+
+<p><img src="../../images/2022-12-31-23-24-23.png" alt="" /></p>
+
+<p>자동백업같은경우 아래처럼 나와 일단 놔두고
+<img src="../../images/2022-12-31-23-25-07.png" alt="" /></p>
+
+<p>마이너 버전 자동업그레이드 만 해제해줬다
+<img src="../../images/2022-12-31-23-25-23.png" alt="" /></p>
+
+<p>그다음 계속 클릭후 아래처럼 확인 후 적용해 주었다.
+<img src="../../images/2022-12-31-23-25-44.png" alt="" /></p>
+
+<h1 id="ec2호스팅하기">EC2호스팅하기</h1>
+<p>EC2의 기본적인 호스팅방법은 아래글을 참조하사ㅔ요.</p>
+
+<ul>
+  <li>배포 파일 빌드하기
+    <ul>
+      <li>우측 탭 중에서 Gradle 을 선택합니다.</li>
+      <li>Tasks &gt; build &gt; build 를 더블 클릭합니다.
+<img src="../../images/2022-12-31-23-29-14.png" alt="" /></li>
+    </ul>
+  </li>
+</ul>
+
+<p>아래처럼 빌드가 성공하게되면
+<img src="../../images/2022-12-31-23-30-03.png" alt="" /></p>
+
+<p>build/libs/에  .jar로 끝나는 파일이 생겼다면 빌드성공!
+<img src="../../images/2022-12-31-23-30-36.png" alt="" /></p>
+
+<p>터미널로 자신의 EC2서버에 접속해주세요ㅣ.</p>
+
+<p>그후 자신의 EC2의 위치에서</p>
+
+<p>아래의 명령어를 한줄 씩 실행하여 설치및 
+자바 버전을 확인해 주세요.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update
+
+sudo apt-get install openjdk-11-jdk
+
+java -version
+
+javac -version
+</code></pre></div></div>
+
+<p>아래와 같이 나오면 y 입력후 엔터
+<img src="../../images/2022-12-31-23-33-16.png" alt="" /></p>
+
+<p><img src="../../images/2022-12-31-23-34-10.png" alt="" /></p>
+
+<p>이런창이 나오면 그냥 엔터 클릭
+<img src="../../images/2022-12-31-23-34-29.png" alt="" /></p>
+
+<p>그후 포트 스프링의기본 8080포트를 80포트로 연결해줍니다
+    sudo iptables -t nat -A PREROUTING -i eth0 -p tcp –dport 80 -j REDIRECT –to-port 8080</p>
+
+<p>인바운드 규칙 아래처럼!
+<img src="../../images/2022-12-31-23-50-11.png" alt="" /></p>
+
+<p>그후 아래의 명령어로 jar빌드 파일 실행!
+    java -jar JAR파일명.jar</p>
+
+<p>그럼아래처럼 우리의 서버에서 돌아갑니다.
+<img src="../../images/2022-12-31-23-41-48.png" alt="" /></p>
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#ec2" class="page__taxonomy-item p-category" rel="tag">EC2</a><span class="sep">, </span>
+    
+      <a href="/tags/#rds" class="page__taxonomy-item p-category" rel="tag">RDS</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-ec2" class="page__taxonomy-item p-category" rel="tag">스프링 부트 EC2</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#spring" class="page__taxonomy-item p-category" rel="tag">Spring</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-31T00:00:00+09:00">2022-12-31</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8+-+EC2%2C+RDS%28Mysql%29%EC%97%B0%EA%B2%B0%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fspring%2FSpring10%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fspring%2FSpring10%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fspring%2FSpring10%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/spring/Spring9/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>스프링 - JPA, 엔티티 매핑, 연관관계, 프록시</a>
+    
+    
+      <a href="/spring/Spring11/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>스프링 - DI, IoC, Bean</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring11/" rel="permalink">스프링 - DI, IoC, Bean
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-01T00:00:00+09:00">2023-01-01</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL24/" rel="permalink">TIL 27일 스프링 숙련 주 차#, AWS, RDS, Happy new year
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-31T00:00:00+09:00">2022-12-31</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/algorithm%20-%20hanghae99/algorithm-hanghae99-06/" rel="permalink">행렬의 곱셈
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-31T00:00:00+09:00">2022-12-31</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL23/" rel="permalink">TIL 26일 스프링 숙련 주 차#, 발제, 이번 주 목표
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2022-12-30T00:00:00+09:00">2022-12-30</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/hyunjunhwang1994" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/hyunjuuuuun/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Hyun Jun. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <!-- start custom comments scripts -->
+
+<!-- end custom comments scripts -->
+
+<script>
+    'use strict';
+
+    window.customUtterances = {
+      theme: 'github-light',
+      darkTheme: 'github-dark',
+      onChange: (theme) => {
+        var commentContainer = document.querySelector('#utterances-comments');
+  
+        if (!commentContainer) {
+          return;
+        }
+  
+        while ( commentContainer.hasChildNodes() ) { 
+          commentContainer.removeChild( commentContainer.firstChild );
+        }
+  
+        var script = document.createElement('script');
+        script.setAttribute('src', 'https://utteranc.es/client.js');
+        script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
+        script.setAttribute('label', 'utterances');
+        script.setAttribute('issue-term', 'pathname');
+        script.setAttribute('theme', theme);
+        script.setAttribute('crossorigin', 'anonymous');
+  
+        commentContainer.appendChild(script);
+      }
+    };
+  </script>
+
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>
