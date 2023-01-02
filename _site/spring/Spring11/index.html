@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>스프링 - DI, IoC, Bean | 기술 블로그</title>
-<meta name="description" content="">
+<meta name="description" content="이미지 출처 및 참조 글">
 
 
   <meta name="author" content="Hyun Jun">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/spring/Spring11/">
 
 
-  <meta property="og:description" content="">
+  <meta property="og:description" content="이미지 출처 및 참조 글">
 
 
 
@@ -681,7 +681,7 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="스프링 - DI, IoC, Bean">
-    <meta itemprop="description" content="">
+    <meta itemprop="description" content="이미지 출처 및 참조 글">
     <meta itemprop="datePublished" content="2023-01-01T00:00:00+09:00">
     
 
@@ -719,7 +719,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          8 분 소요
         
       </span>
     
@@ -734,12 +734,130 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#di-dependency-injection">DI (Dependency Injection)</a></li><li><a href="#iocinversion-of-control">IoC(Inversion of Control)</a></li><li><a href="#bean">Bean</a></li></ul>
 
             </nav>
           </aside>
         
-        
+        <p><a href="https://devlog-wjdrbs96.tistory.com/165">이미지 출처 및 참조 글</a></p>
+
+<blockquote>
+  <p>Spring 삼각형<br />
+Spring의 기반이 되는 설계 개념을 표현한 것!</p>
+</blockquote>
+
+<p><img src="../../images/2023-01-01-09-40-52.png" alt="" /></p>
+
+<hr />
+
+<h1 id="di-dependency-injection">DI (Dependency Injection)</h1>
+<p>어떤 객체가 사용하는 의존 객체를 직접 만들어 사용하는게 아니라, 
+주입 받아 사용하는 방법이다.</p>
+
+<p>스프링이 다른 프레임워크와 차별화되어 제공하는 의존 관계 주입 기능으로,<br />
+객체를 직접 생성하는 게 아니라 외부에서 생성한 후 주입 시켜주는 방식이다.</p>
+
+<p>new 연산자를 이용해서 객체를 생성하는 것을 스프링에서 해준다고 보면 된다.</p>
+
+<p>DI(의존성 주입)를 통해서 모듈 간의 결합도가 낮아지고 유연성이 높아진다.</p>
+
+<hr />
+
+<p><a href="https://m.blog.naver.com/PostView.nhn?blogId=ljh0326s&amp;logNo=221395815870&amp;proxyReferer=https:%2F%2Fwww.google.com%2F">이미지 출처</a></p>
+
+<p><img src="../../images/2023-01-01-09-43-17.png" alt="" /></p>
+
+<p>이 장난감들은 <code class="language-plaintext highlighter-rouge">배터리가 있어야만 동작</code> 하므로, <code class="language-plaintext highlighter-rouge">배터리에 의존</code>하고 있다 라고 보면되고,
+<code class="language-plaintext highlighter-rouge">장난감들에게 배터리를 넣어주는 것을 의존성 주입이라고 한다.</code></p>
+
+<p>위의 예시를 자바코드로 구현하면?<br />
+<img src="../../images/2023-01-01-09-52-53.png" alt="" /></p>
+
+<p>베터리의 일체형인 경우에는 생성자에서만 의존성을 주입해주는 상황이라</p>
+
+<p>베터리가 떨어지게 된다면 다른 베터리로 교체하지 못하고</p>
+
+<p>새로운 것으로 바꿔야 하기 때문에 유연하지 못한 방식이다.</p>
+
+<p>setter, 생성자를 이용해서 외부에서 주입해주는 상황은 외부에서</p>
+
+<p>베터리를 교체해줄 수 있기 때문에 일체형보다 유연한 상황이다.</p>
+
+<p><a href="https://velog.io/@gillog/Spring-DIDependency-Injection">이미지 출처, 참조 블로그</a></p>
+
+<p><img src="../../images/2023-01-02-09-51-28.png" alt="" /></p>
+
+<p>첫번째 방법은 A객체가 B와 C객체를 New 생성자를 통해서 직접 생성하는 방법이고,</p>
+
+<p>두번째 방법은 외부에서 생성 된 객체를 setter()를 통해 사용하는 방법이다.</p>
+
+<p>이러한 두번째 방식이 의존성 주입의 예시인데,<br />
+A 객체에서 B, C객체를 사용(의존)할 때 A 객체에서 직접 생성 하는 것이 아니라 외부(IOC컨테이너)에서 생성된 B, C객체를 조립(주입)시켜 setter 혹은 생성자를 통해 사용하는 방식이다.</p>
+
+<p><img src="../../images/2023-01-02-09-52-46.png" alt="" /></p>
+
+<p>스프링에서는 객체를 <code class="language-plaintext highlighter-rouge">Bean</code>이라고 부르며, 
+프로젝트가 실행될때 사용자가 Bean으로 관리하는 객체들의 생성과 소멸에 관련된 작업을 자동적으로 수행해주는데 객체가 생성되는 곳을 스프링에서는 Bean 컨테이너라고 부른다.</p>
+
+<hr />
+
+<h1 id="iocinversion-of-control">IoC(Inversion of Control)</h1>
+<p>IoC(Inversion of Control)란 “제어의 역전” 이라는 의미로,<br />
+말 그대로 메소드나 객체의 호출작업을 개발자가 결정하는 것이 아니라,<br />
+외부에서 결정되는 것을 의미한다.</p>
+
+<p>간단히 말해 “제어의 흐름을 바꾼다”라고 한다.</p>
+
+<p>객체의 의존성을 역전시켜 객체 간의 결합도를 줄이고<br />
+유연한 코드를 작성할 수 있게 하여 가독성 및 코드 중복, 유지 보수를 편하게 할 수 있게 한다.</p>
+
+<p>기존에는 다음과 순서로 객체가 만들어지고 실행되었다.</p>
+
+<ol>
+  <li>객체 생성</li>
+  <li>의존성 객체 생성<br />
+ 클래스 내부에서 생성</li>
+  <li>의존성 객체 메소드 호출</li>
+</ol>
+
+<p>하지만, 스프링에서는 다음과 같은 순서로 객체가 만들어지고 실행된다.</p>
+
+<ol>
+  <li>
+    <p>객체 생성</p>
+  </li>
+  <li>
+    <p>의존성 객체 주입<br />
+스스로가 만드는것이 아니라 제어권을 스프링에게 위임하여 스프링이 만들어놓은 객체를 주입한다.</p>
+  </li>
+  <li>
+    <p>의존성 객체 메소드 호출</p>
+  </li>
+</ol>
+
+<p>스프링이 모든 의존성 객체를 스프링이 실행될때 다 만들어주고 필요한곳에 주입시켜줌으로써 Bean들은 싱글톤 패턴의 특징을 가지며,</p>
+
+<p>제어의 흐름을 사용자가 컨트롤 하는 것이 아니라 스프링에게 맡겨 작업을 처리하게 된다.</p>
+
+<hr />
+
+<h1 id="bean">Bean</h1>
+<p>Spring IoC 컨테이너가 관리하는 자바 객체를 빈(Bean)이라고 부릅니다.</p>
+
+<p>우리가 알던 기존의 Java Programming 에서는</p>
+
+<ol>
+  <li>Class를 생성하고</li>
+  <li>new를 입력하여 원하는 객체를 직접 생성한 후에 사용했었습니다.</li>
+</ol>
+
+<p>하지만 Spring에서는 직접 new를 이용하여 생성한 객체가 아니라,<br />
+Spring에 의하여 관리당하는 자바 객체를 사용합니다.</p>
+
+<p>이렇게 Spring에 의하여 생성되고 관리되는 자바 객체를 Bean이라고 합니다.</p>
+
+<p>Spring Framework 에서는 Spring Bean 을 얻기 위하여<br />
+ApplicationContext.getBean() 와 같은 메소드를 사용하여 Spring 에서 직접 자바 객체를 얻어서 사용합니다.</p>
  <!--실제 페이지 글 부분-->
         
       </section>
@@ -747,6 +865,21 @@
       <footer class="page__meta">
         
         
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#spring-di-ioc-bean" class="page__taxonomy-item p-category" rel="tag">Spring DI IOC Bean</a>
+    
+    </span>
+  </p>
+
+
 
 
   

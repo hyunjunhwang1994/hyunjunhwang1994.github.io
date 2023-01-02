@@ -481,7 +481,7 @@ var store = [{
       },{
         "title": "스프링부트 - EC2, RDS(Mysql)연결하기",
         "excerpt":"AWS 가입및 EC2 설정은 아래 글 참 조 아래의 링크에 접속! AWS RDS 검색후 클릭 데이터베이스 생성 -로딩- 표준, MySQL(상황에 따라 선택) 프리티어 선택 및 DB이름, 계정, 암호 설정(마스터 사용자 이름및 암호는 기억해야 함) 데이터베이스 생성 클릭 생성되는데 시간이 조금 걸립ㄴ디ㅏ. 생성된 인스턴스 클릭 VPC 보안그룹의 security 클릭 보안그룹 ID...","categories": ["Spring"],
-        "tags": ["EC2","스프링 부트 EC2","RDS"],
+        "tags": ["EC2 RDS","스프링 부트 EC2 RDS"],
         "url": "/spring/Spring10/",
         "teaser": null
       },{
@@ -492,8 +492,8 @@ var store = [{
         "teaser": null
       },{
         "title": "스프링 - DI, IoC, Bean",
-        "excerpt":" ","categories": ["Spring"],
-        "tags": [],
+        "excerpt":"이미지 출처 및 참조 글 Spring 삼각형 Spring의 기반이 되는 설계 개념을 표현한 것! DI (Dependency Injection) 어떤 객체가 사용하는 의존 객체를 직접 만들어 사용하는게 아니라, 주입 받아 사용하는 방법이다. 스프링이 다른 프레임워크와 차별화되어 제공하는 의존 관계 주입 기능으로, 객체를 직접 생성하는 게 아니라 외부에서 생성한 후 주입 시켜주는 방식이다....","categories": ["Spring"],
+        "tags": ["Spring DI IOC Bean"],
         "url": "/spring/Spring11/",
         "teaser": null
       },{
