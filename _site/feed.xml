@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-02T15:00:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 - DI, IoC, Bean</title><link href="http://localhost:4000/spring/Spring11/" rel="alternate" type="text/html" title="스프링 - DI, IoC, Bean" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring11</id><content type="html" xml:base="http://localhost:4000/spring/Spring11/"><![CDATA[<p><a href="https://devlog-wjdrbs96.tistory.com/165">이미지 출처 및 참조 글</a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-02T15:00:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 - DI, IoC, Bean</title><link href="http://localhost:4000/spring/Spring11/" rel="alternate" type="text/html" title="스프링 - DI, IoC, Bean" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring11</id><content type="html" xml:base="http://localhost:4000/spring/Spring11/"><![CDATA[<p><a href="https://devlog-wjdrbs96.tistory.com/165">이미지 출처 및 참조 글</a></p>
 
 <blockquote>
   <p>Spring 삼각형<br />
@@ -124,6 +124,8 @@ ApplicationContext.getBean() 와 같은 메소드를 사용하여 Spring 에서 
 <p>항해99에서는 시작한 지 28일이 됐음에도, 그때와 비교하면 많은 것들을 배운 것 같다.</p>
 
 <p>아무래도 짧은 시간 내에 많은 내용을 공부하려다 보니 효율적으로 공부하는 방법을 익힌 것 같다.</p>
+
+<hr />
 
 <h1 id="2023년-새해-목표">2023년 새해 목표</h1>
 <ul>
