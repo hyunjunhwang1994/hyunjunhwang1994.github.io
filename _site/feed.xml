@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-02T10:26:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 - DI, IoC, Bean</title><link href="http://localhost:4000/spring/Spring11/" rel="alternate" type="text/html" title="스프링 - DI, IoC, Bean" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring11</id><content type="html" xml:base="http://localhost:4000/spring/Spring11/"><![CDATA[<p><a href="https://devlog-wjdrbs96.tistory.com/165">이미지 출처 및 참조 글</a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-02T10:28:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 - DI, IoC, Bean</title><link href="http://localhost:4000/spring/Spring11/" rel="alternate" type="text/html" title="스프링 - DI, IoC, Bean" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring11</id><content type="html" xml:base="http://localhost:4000/spring/Spring11/"><![CDATA[<p><a href="https://devlog-wjdrbs96.tistory.com/165">이미지 출처 및 참조 글</a></p>
 
 <blockquote>
   <p>Spring 삼각형<br />
@@ -118,7 +118,7 @@ Spring에 의하여 관리당하는 자바 객체를 사용합니다.</p>
 <p>이렇게 Spring에 의하여 생성되고 관리되는 자바 객체를 Bean이라고 합니다.</p>
 
 <p>Spring Framework 에서는 Spring Bean 을 얻기 위하여<br />
-ApplicationContext.getBean() 와 같은 메소드를 사용하여 Spring 에서 직접 자바 객체를 얻어서 사용합니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring DI IOC Bean" /><summary type="html"><![CDATA[이미지 출처 및 참조 글]]></summary></entry><entry><title type="html">4주, 주특기 숙련 주 차 시작</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/" rel="alternate" type="text/html" title="4주, 주특기 숙련 주 차 시작" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/"><![CDATA[<p>벌써 항해99를 시작한 지 28일째다. 
+ApplicationContext.getBean() 와 같은 메소드를 사용하여 Spring 에서 직접 자바 객체를 얻어서 사용합니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring DI IOC Bean" /><summary type="html"><![CDATA[이미지 출처 및 참조 글]]></summary></entry><entry><title type="html">4주, 배운 것 정리, DI, IoC, Bean</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/" rel="alternate" type="text/html" title="4주, 배운 것 정리, DI, IoC, Bean" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/"><![CDATA[<p>벌써 항해99를 시작한 지 28일째다. 
 옛날에 다른 학원에서 공부했었을 때는  자바 1달.. 파이썬 1달.. 이런 식으로 배운 것 같은데</p>
 
 <p>항해99에서는 시작한 지 28일이 됐음에도, 그때와 비교하면 많은 것들을 배운 것 같다.</p>
@@ -127,16 +127,16 @@ ApplicationContext.getBean() 와 같은 메소드를 사용하여 Spring 에서 
 
 <hr />
 
-<h1 id="이번주-배운-것들">이번주 배운 것들</h1>
+<h1 id="이번-주-배운-것들">이번 주 배운 것들</h1>
 <ul>
-  <li>스프링부트 CRUD 게시판 API 만들기</li>
+  <li>스프링 부트 CRUD 게시판 API 만들기</li>
   <li>Thymeleaf</li>
   <li>JPA</li>
   <li>DTO, Entity</li>
   <li>AWS EC2, RDS</li>
 </ul>
 
-<h2 id="중요-하다고-생각한-부분">중요 하다고 생각한 부분</h2>
+<h2 id="중요하다고-생각한-부분">중요하다고 생각한 부분</h2>
 <ul>
   <li>API 명세서</li>
   <li>REST API</li>
