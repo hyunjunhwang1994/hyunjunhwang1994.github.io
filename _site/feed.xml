@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-02T10:12:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 - DI, IoC, Bean</title><link href="http://localhost:4000/spring/Spring11/" rel="alternate" type="text/html" title="스프링 - DI, IoC, Bean" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring11</id><content type="html" xml:base="http://localhost:4000/spring/Spring11/"><![CDATA[<p><a href="https://devlog-wjdrbs96.tistory.com/165">이미지 출처 및 참조 글</a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-02T10:26:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 - DI, IoC, Bean</title><link href="http://localhost:4000/spring/Spring11/" rel="alternate" type="text/html" title="스프링 - DI, IoC, Bean" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring11</id><content type="html" xml:base="http://localhost:4000/spring/Spring11/"><![CDATA[<p><a href="https://devlog-wjdrbs96.tistory.com/165">이미지 출처 및 참조 글</a></p>
 
 <blockquote>
   <p>Spring 삼각형<br />
@@ -41,6 +41,8 @@ Spring의 기반이 되는 설계 개념을 표현한 것!</p>
 <p>setter, 생성자를 이용해서 외부에서 주입해주는 상황은 외부에서</p>
 
 <p>베터리를 교체해줄 수 있기 때문에 일체형보다 유연한 상황이다.</p>
+
+<hr />
 
 <p><a href="https://velog.io/@gillog/Spring-DIDependency-Injection">이미지 출처, 참조 블로그</a></p>
 
@@ -116,18 +118,41 @@ Spring에 의하여 관리당하는 자바 객체를 사용합니다.</p>
 <p>이렇게 Spring에 의하여 생성되고 관리되는 자바 객체를 Bean이라고 합니다.</p>
 
 <p>Spring Framework 에서는 Spring Bean 을 얻기 위하여<br />
-ApplicationContext.getBean() 와 같은 메소드를 사용하여 Spring 에서 직접 자바 객체를 얻어서 사용합니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring DI IOC Bean" /><summary type="html"><![CDATA[이미지 출처 및 참조 글]]></summary></entry><entry><title type="html">4주, 주특기 숙련 주 차 시작</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/" rel="alternate" type="text/html" title="4주, 주특기 숙련 주 차 시작" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/"><![CDATA[<p>벌써 항해99를 시작한지 28일이 되어간다.</p>
+ApplicationContext.getBean() 와 같은 메소드를 사용하여 Spring 에서 직접 자바 객체를 얻어서 사용합니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring DI IOC Bean" /><summary type="html"><![CDATA[이미지 출처 및 참조 글]]></summary></entry><entry><title type="html">4주, 주특기 숙련 주 차 시작</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/" rel="alternate" type="text/html" title="4주, 주특기 숙련 주 차 시작" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/"><![CDATA[<p>벌써 항해99를 시작한 지 28일째다. 
+옛날에 다른 학원에서 공부했었을 때는  자바 1달.. 파이썬 1달.. 이런 식으로 배운 것 같은데</p>
 
-<p>옛날에 다른 학원에서 공부했었을때는  자바1달.. 파이썬1달.. 이런식으로 배운 것 같은데</p>
+<p>항해99에서는 시작한 지 28일이 됐음에도, 그때와 비교하면 많은 것들을 배운 것 같다.</p>
 
-<p>시작한지 28일이 됫음에도, 그때와 비교하면 많은 것들을 배운 것 같다.</p>
+<p>아무래도 짧은 시간 내에 많은 내용을 공부하려다 보니 효율적으로 공부하는 방법을 익힌 것 같다.</p>
+
+<hr />
+
+<h1 id="이번주-배운-것들">이번주 배운 것들</h1>
+<ul>
+  <li>스프링부트 CRUD 게시판 API 만들기</li>
+  <li>Thymeleaf</li>
+  <li>JPA</li>
+  <li>DTO, Entity</li>
+  <li>AWS EC2, RDS</li>
+</ul>
+
+<h2 id="중요-하다고-생각한-부분">중요 하다고 생각한 부분</h2>
+<ul>
+  <li>API 명세서</li>
+  <li>REST API</li>
+  <li>JPA</li>
+  <li>Transaction</li>
+</ul>
+
+<hr />
 
 <h1 id="di-ioc-bean">DI, IoC, Bean</h1>
 
-<p>공부한 내용과, TIL(WIL)을 같이 올리려다보니 각 포스팅에서
-쓴 내용이 달라지기도하고 힘들기도하여서 아래의 링크에</p>
+<p>공부한 내용 정리 글과, TIL(WIL)을 같이 올리려다 보니 각 포스팅에서
+쓴 내용이 달라지기도 하고 힘들기도 하여서 아래의 링크에<br />
+이번 주 WIL 키워드에 관한 내용을 정리했다.</p>
 
-<p>이번주 WIL키워드에 관한 내용을 정리했다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="WIL" /><summary type="html"><![CDATA[벌써 항해99를 시작한지 28일이 되어간다.]]></summary></entry><entry><title type="html">스프링부트 - EC2, RDS(Mysql)연결하기</title><link href="http://localhost:4000/spring/Spring10/" rel="alternate" type="text/html" title="스프링부트 - EC2, RDS(Mysql)연결하기" /><published>2022-12-31T00:00:00+09:00</published><updated>2022-12-31T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring10</id><content type="html" xml:base="http://localhost:4000/spring/Spring10/"><![CDATA[<p>AWS 가입및 EC2 설정은 아래 글 참 조</p>
+<p><a href="https://hyunjunhwang1994.github.io/spring/Spring11/">DI, IoC, Bean 정리 글</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="WIL" /><summary type="html"><![CDATA[벌써 항해99를 시작한 지 28일째다. 옛날에 다른 학원에서 공부했었을 때는 자바 1달.. 파이썬 1달.. 이런 식으로 배운 것 같은데]]></summary></entry><entry><title type="html">스프링부트 - EC2, RDS(Mysql)연결하기</title><link href="http://localhost:4000/spring/Spring10/" rel="alternate" type="text/html" title="스프링부트 - EC2, RDS(Mysql)연결하기" /><published>2022-12-31T00:00:00+09:00</published><updated>2022-12-31T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring10</id><content type="html" xml:base="http://localhost:4000/spring/Spring10/"><![CDATA[<p>AWS 가입및 EC2 설정은 아래 글 참 조</p>
 
 <hr />
 
