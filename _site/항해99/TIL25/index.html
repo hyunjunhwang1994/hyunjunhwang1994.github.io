@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>29일, 스프링 숙련 주 차#,  | 기술 블로그</title>
-<meta name="description" content="">
+<!-- begin _includes/seo.html --><title>29일, JWT, Validated, Response Entity | 기술 블로그</title>
+<meta name="description" content="오늘은 Spring 숙련 주 차의  개인과제 LV1을 진행해 보면서 어려웠던 점이나 새롭게 알게된 점을 정리하려고 한다.">
 
 
   <meta name="author" content="Hyun Jun">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="기술 블로그">
-<meta property="og:title" content="29일, 스프링 숙련 주 차#,">
+<meta property="og:title" content="29일, JWT, Validated, Response Entity">
 <meta property="og:url" content="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25/">
 
 
-  <meta property="og:description" content="">
+  <meta property="og:description" content="오늘은 Spring 숙련 주 차의  개인과제 LV1을 진행해 보면서 어려웠던 점이나 새롭게 알게된 점을 정리하려고 한다.">
 
 
 
@@ -218,7 +218,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">85</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">87</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -309,7 +309,7 @@
                     
                 
                     
-                        <li><a href="/categories/cloudcomputingaws" class="">Cloud computing - AWS (3)</a></li>
+                        <li><a href="/categories/cloudcomputingaws" class="">Cloud computing - AWS (4)</a></li>
                     
                 
                     
@@ -680,8 +680,8 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="29일, 스프링 숙련 주 차#,">
-    <meta itemprop="description" content="">
+    <meta itemprop="headline" content="29일, JWT, Validated, Response Entity">
+    <meta itemprop="description" content="오늘은 Spring 숙련 주 차의  개인과제 LV1을 진행해 보면서어려웠던 점이나 새롭게 알게된 점을 정리하려고 한다.">
     <meta itemprop="datePublished" content="2023-01-02T00:00:00+09:00">
     
 
@@ -689,7 +689,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25/" class="u-url" itemprop="url">29일, 스프링 숙련 주 차#,
+            <a href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25/" class="u-url" itemprop="url">29일, JWT, Validated, Response Entity
 </a>
           </h1>
           
@@ -719,7 +719,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          5 분 소요
         
       </span>
     
@@ -734,12 +734,114 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#validated">Validated</a></li><li><a href="#상태코드의-중요성">상태코드의 중요성</a></li><li><a href="#response-entity">Response Entity</a></li><li><a href="#느낀점">느낀점</a></li></ul>
 
             </nav>
           </aside>
         
-        
+        <p>오늘은 Spring 숙련 주 차의  개인과제 LV1을 진행해 보면서
+어려웠던 점이나 새롭게 알게된 점을 정리하려고 한다.</p>
+
+<p>이번 개인 과제는 저번 입문 주 차때 만들었던 
+기본 CRUD 게시판에 로그인 기능과 그에 따른 추가기능을 넣고,</p>
+
+<p>기존의 기능에서의 변경사항이 있는데 일단 오늘은
+추가 요구사항부터 해결해 보려고 한다.</p>
+
+<p>추가 요구사항</p>
+<ul>
+  <li>회원 가입 API (Validated)</li>
+  <li>로그인 API(JWT, Response Entity)</li>
+</ul>
+
+<hr />
+
+<h1 id="validated">Validated</h1>
+
+<p>처음에 회원가입을 구현 하던중, 아이디, 패스워드에 최소, 최대 글자 수 및<br />
+소문자, 대문자등 유효성 검증 기능이 있었는데</p>
+
+<p>Validated를 알지 못했기에 서비스단에서 패턴을만들고 아래처럼
+Pattern 클래스로 검증을 했다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Pattern</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="n">pattern</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>기존 방식
+<img src="../../images/2023-01-02-21-53-29.png" alt="" /></p>
+
+<p>하지만 스프링의 Validated라는 기능을 알게되고
+이것을 사용하면 서비스단으로 넘어가기전에 프론트에서 넘어온
+값을 검사해 유효성 검증을 통과하지못하면 바로 팅겨버리는 게 있다는걸 알고 해당 코드로 바꿨다.</p>
+
+<p>바뀐 방식
+<img src="../../images/2023-01-03-08-55-54.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-08-56-19.png" alt="" /></p>
+
+<p>기존 생각</p>
+<ul>
+  <li>서비스단이 실질적인 비즈니스 로직이니까 서비스 단에서 정규표현식을 가지고와서 하면 되겠지?</li>
+</ul>
+
+<p>Validated을 알고 나서 생각</p>
+<ul>
+  <li>만약 데이터로 악의적인 데이터가 들어오거나 취약점이 있다면?</li>
+  <li>
+    <p>서비스단으로 넘어오기전에 처리하는게 맞지않을까?라는 생각도 들었다. 
+(서비스단은 DB랑 가까운 곳이기 때문에.)</p>
+  </li>
+  <li>아마 현업에서는 프론트엔드, 컨트롤러, 서비스 여기저기에 유효성검증이 있지않을까 ?</li>
+</ul>
+
+<hr />
+
+<h1 id="상태코드의-중요성">상태코드의 중요성</h1>
+<p>저번 입문 주 차까지는 RestAPI에서 클라이언트의 요청에 응답해오는 JSON
+데이터의 구조에 크게 신경을 안쓰고 값만 받는식으로 했는데</p>
+
+<p>공부를 하다보니 아래와같이 status, message, data로 구조가 거의 통일되게 사용되는 것 같다.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"로그인 성공"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"honggildong"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jwt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer eyJsarashbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZWqweqweqMzQ4fQ.qpRN6gkMl-Lrt4U6VGrIgpcW7HuPutaG0oMh21gQNlbhg"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>그래서 아래의 블로그를 참조해 내 프로젝트에 적용시켜 보았다.<br />
+<a href="https://devlog-wjdrbs96.tistory.com/197">참조</a></p>
+
+<hr />
+
+<h1 id="response-entity">Response Entity</h1>
+
+<p><a href="https://wildeveloperetrain.tistory.com/25">Validated 참조 글</a></p>
+
+<p>HTTP 아케텍쳐 형태에 맞게 Response를 보내주기 위해 Response Entity를 사용해보았다.</p>
+
+<p>그래서 아래처럼 일단 오늘 계획했던 부분들은 다완성을 시켰고,
+로그인을 하면 아래처럼 데이터가 오게 만들었다!</p>
+
+<p><img src="../../images/2023-01-03-09-01-48.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-09-02-03.png" alt="" /></p>
+
+<hr />
+
+<h1 id="느낀점">느낀점</h1>
+<p>확실히 스마트폰, TV, 태블릿, 냉장고등 다양한 디바이스들이 나오고
+그렇기 때문에 REST API라는 것이 많이 중요해지고 거의다 이렇게 사용하나 보다 라는 생각이들었다.</p>
+
+<p>API명세부터 RestAPI구현까지 API에대해서 집중적으로 공부한 것 같고,
+기존의 생각과는 다르게 프론트단의 뷰가 없어도,</p>
+
+<p>서버단에서의 구현만으로 Postman같은 프로그램으로 테스트를 다 해볼수 있다는 것에 신기했다.</p>
+
  <!--실제 페이지 글 부분-->
         
       </section>
@@ -792,7 +894,7 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=29%EC%9D%BC%2C+%EC%8A%A4%ED%94%84%EB%A7%81+%EC%88%99%EB%A0%A8+%EC%A3%BC+%EC%B0%A8%23%2C+%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL25%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=29%EC%9D%BC%2C+JWT%2C+Validated%2C+Response+Entity%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL25%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL25%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -831,6 +933,130 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL26/" rel="permalink">Til26
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-03T00:00:00+09:00">2023-01-03</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cloud%20computing%20-%20aws/AWS-04/" rel="permalink">AWS 프리 티어 요금 알림 설정하기.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-03T00:00:00+09:00">2023-01-03</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
         
           
 
@@ -935,130 +1161,6 @@
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           8 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/%ED%95%AD%ED%95%B499/TIL24/" rel="permalink">27일, 스프링 숙련 주 차#, AWS, RDS, Happy new year
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-12-31T00:00:00+09:00">2022-12-31</time>
-      </span>
-    
-
-                 
-                
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          7 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/spring/Spring10/" rel="permalink">스프링 부트 - EC2, RDS(Mysql) 연결하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-12-31T00:00:00+09:00">2022-12-31</time>
-      </span>
-    
-
-                 
-                
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          14 분 소요
         
       </span>
     
