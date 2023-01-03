@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-03T17:24:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 부트 - Swagger UI 3.0</title><link href="http://localhost:4000/spring/Spring12/" rel="alternate" type="text/html" title="스프링 부트 - Swagger UI 3.0" /><published>2023-01-03T00:00:00+09:00</published><updated>2023-01-03T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring12</id><content type="html" xml:base="http://localhost:4000/spring/Spring12/"><![CDATA[<p><a href="https://velog.io/@livenow/SpringBoot-Swagger%EB%A5%BC-%ED%86%B5%ED%95%9C-REST-%EC%9A%94%EC%B2%AD%EC%97%90-%EC%A0%84%EC%97%AD-jwt-%EC%9D%B8%EC%A6%9D-%EC%84%A4%EC%A0%95-%ED%95%98%EA%B8%B0">참조한 글 </a></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-03T23:14:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 부트 - Swagger UI 3.0</title><link href="http://localhost:4000/spring/Spring12/" rel="alternate" type="text/html" title="스프링 부트 - Swagger UI 3.0" /><published>2023-01-03T00:00:00+09:00</published><updated>2023-01-03T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring12</id><content type="html" xml:base="http://localhost:4000/spring/Spring12/"><![CDATA[<p><a href="https://velog.io/@livenow/SpringBoot-Swagger%EB%A5%BC-%ED%86%B5%ED%95%9C-REST-%EC%9A%94%EC%B2%AD%EC%97%90-%EC%A0%84%EC%97%AD-jwt-%EC%9D%B8%EC%A6%9D-%EC%84%A4%EC%A0%95-%ED%95%98%EA%B8%B0">참조한 글 </a></p>
 
 <h1 id="swaggerui란">Swagger(UI)란?</h1>
 <ul>
@@ -216,65 +216,69 @@ or 아예 에러가 뜨는 경우!</p>
 <img src="../../images/2023-01-03-11-25-58.png" alt="" /></p>
 
 <p>아마 조금 기다리시고 아래처럼 정상이 뜨면 완료입니다!
-<img src="../../images/2023-01-03-11-27-33.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Cloud computing - AWS" /><category term="AWS 프리 티어 알림 설정하기." /><summary type="html"><![CDATA[결제 대시보드 클릭]]></summary></entry><entry><title type="html">Til26</title><link href="http://localhost:4000/TIL26/" rel="alternate" type="text/html" title="Til26" /><published>2023-01-03T00:00:00+09:00</published><updated>2023-01-03T00:00:00+09:00</updated><id>http://localhost:4000/TIL26</id><content type="html" xml:base="http://localhost:4000/TIL26/"><![CDATA[<p>오늘은 토큰 을확인후 글이써진다던지 이런 기능을넣었는데</p>
-
-<p>토큰이 아무리 발급해줘도 null이떠서확인해보니</p>
-
-<p>포스트맨은 자동으로 토큰을 넣어주지 못하여</p>
-
-<p>아래의 블로그를 보고 참조하여 토큰이 자동주입되게 해주었다.</p>
-
-<p><a href="https://velog.io/@jejjang/Postman%EC%97%90%EC%84%9C-Token-%EA%B0%92-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0">참조 블로그</a></p>
-
-<p>과제완료. 오늘 과제에서 배운것</p>
+<img src="../../images/2023-01-03-11-27-33.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Cloud computing - AWS" /><category term="AWS 프리 티어 알림 설정하기." /><summary type="html"><![CDATA[결제 대시보드 클릭]]></summary></entry><entry><title type="html">30일, Swagger UI, ERD</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL26/" rel="alternate" type="text/html" title="30일, Swagger UI, ERD" /><published>2023-01-03T00:00:00+09:00</published><updated>2023-01-03T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL26</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL26/"><![CDATA[<p>오늘 배운 것</p>
 <ul>
-  <li>JWT토큰 인증/인가 구현 방식</li>
-  <li>JPA 연관관계 사용하여 데이터베이스 엮어 사용하기.</li>
+  <li>JWT 토큰 인증/인가 구현 방식</li>
+  <li>JPA 연관관계 사용하여 데이터베이스 사용하기.</li>
+  <li>Swagger UI 이용하여 API 테스트하기.</li>
 </ul>
 
-<h1 id="swagger을-스프링부트에-적용하여-편하게-사용해보았따">Swagger을 스프링부트에 적용하여 편하게 사용해보았따.</h1>
+<hr />
 
-<p>삽질 한거 ..
-PostMan으로 매번 하기 귀찮아서
-Swagger을 프로젝트에 적용해 보았고,,</p>
+<h1 id="swagger를-스프링-부트에-적용하기">Swagger를 스프링 부트에 적용하기.</h1>
 
-<p>적용자체는 어렵지 않았지만, 
-JWT토큰을 적용하는 부분에서 생각보다 오래걸렸따.</p>
+<p>기존 Postman 사용 시 새로운 컨트롤러 생성 시 API를 일일이 만들어 줘야 한다.</p>
 
-<p>까먹지 않도록 공부하고 아래의 글에 정리를 했다.</p>
+<p>하지만 Swagger UI 사용 스프링 프로젝트에 적용 시, 자동으로 API 문서 및 테스트 도구를 생성해 주고,
+JWT 관련 인증 기능도 편하게 사용할 수 있다.</p>
 
-<p>Apikey에서 해맷끼 때문에 APIkey구조와</p>
+<h2 id="헤맨-점">헤맨 점</h2>
 
-<p>SwaggerConfig 파일에 
-어디는 @EnableSwagger2로 되어있고
-나는@EnableWebMvc로만 동작하는데 차이가 무엇일까?</p>
+<ol>
+  <li>
+    <ul>
+      <li>적용 자체는 크게 어렵지 않았음.</li>
+      <li>기본 설정 부분에서 JWT 토큰 관련 설정이 생각보다 어려웠다.</li>
+      <li>까먹지 않도록 공부하고 아래의 글에 정리를 했다.<br />
+<a href="https://hyunjunhwang1994.github.io/spring/Spring12/">Swagger UI 3.0 정리</a></li>
+    </ul>
+  </li>
+  <li>SwaggerConfig 파일에 @EnableSwagger2랑 @EnableWebMvc의 차이가 궁금했다.<br />
+나는 왜 EnableWebMvc로만 동작할까?</li>
+</ol>
 
-<p>@Validated가 적용된 컨트롤러에 아래와같이 입력이 가능한 이상한 배열들이 나왔다.
-사실 그냥</p>
+<p><a href="https://choisblog.tistory.com/74">참조 글</a></p>
 
-<p><img src="../../images/2023-01-03-15-06-12.png" alt="" />
-<img src="../../images/2023-01-03-15-08-12.png" alt="" /></p>
+<p>찾아보니 3.0버전부터는 EnableWebMvc로 사용한다고 한다.
+(워낙 블로그에 옛날 글들이 많다 보니 버전별로 문서나 검색을 잘해야 한다!)</p>
 
-<p>사실그냥 무시하고 아래처럼 입력해도 동작하지만,
-왜 이런게 생겼는지 삽질을 좀 해보았다.
+<ol>
+  <li>@Validated가 적용된 컨트롤러에서 Request 요청 시<br />
+아래와 같이 입력이 가능한 이상한 배열들이 나왔다.</li>
+</ol>
+
+<p><img src="../../images/2023-01-03-15-06-12.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-15-08-12.png" alt="" /></p>
+
+<p>사실 그냥 무시하고 아래처럼 입력해도 동작하지만,
+왜 이런 게 생겼는지 삽질을 좀 해보았다.
 <img src="../../images/2023-01-03-15-08-54.png" alt="" /></p>
 
-<p>생각을 좀ㅎ ㅐ보니 errors  count등이 나오는것보아서
-Errors 객체의 문제 인 것 같은데</p>
+<p>생각을 좀 해보니 errors count 등이 나오는 것을 보니
+Errors 객체의 문제인 것 같다.</p>
 
 <p>파라미터를 숨기는 것을 사용해도 동작하지를 않는다.
 <img src="../../images/2023-01-03-15-16-16.png" alt="" /></p>
 
-<p>검색해보니     @Parameter(hidden=true)가 동작하지 않는다는 말들이 있었고
-버전의 문제인것같다.</p>
+<p>검색해 보니 @Parameter(hidden=true)가 동작하지 않는다는 말들이 있었고
+이것도 아마 버전의 문제인 것 같다.</p>
 
-<p>@ApiIgnore로 매개변수 앞에다 사용해주니 이제 잘 동작한다!
-<img src="../../images/2023-01-03-15-19-27.png" alt="" /></p>
+<p>@ApiIgnore로 매개변수 앞에다 사용해 주니 이제 잘 동작한다!</p>
 
-<p><img src="../../images/2023-01-03-15-18-42.png" alt="" /></p>
+<p><img src="../../images/2023-01-03-15-19-27.png" alt="" /></p>
 
-<h1 id="lv2-시작">LV2 시작</h1>
-<p>LV2에 댓글기능이있어서 다시 ERD와 API명세를 정리해보았다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">29일, JWT, Validated, Response Entity</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25/" rel="alternate" type="text/html" title="29일, JWT, Validated, Response Entity" /><published>2023-01-02T00:00:00+09:00</published><updated>2023-01-02T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25/"><![CDATA[<p>오늘은 Spring 숙련 주 차의  개인과제 LV1을 진행해 보면서
+<p><img src="../../images/2023-01-03-15-18-42.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘 배운 것 JWT 토큰 인증/인가 구현 방식 JPA 연관관계 사용하여 데이터베이스 사용하기. Swagger UI 이용하여 API 테스트하기.]]></summary></entry><entry><title type="html">29일, JWT, Validated, Response Entity</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25/" rel="alternate" type="text/html" title="29일, JWT, Validated, Response Entity" /><published>2023-01-02T00:00:00+09:00</published><updated>2023-01-02T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25/"><![CDATA[<p>오늘은 Spring 숙련 주 차의  개인과제 LV1을 진행해 보면서
 어려웠던 점이나 새롭게 알게된 점을 정리하려고 한다.</p>
 
 <p>이번 개인 과제는 저번 입문 주 차때 만들었던 
@@ -495,7 +499,7 @@ Spring에 의하여 관리당하는 자바 객체를 사용합니다.</p>
 <p>이렇게 Spring에 의하여 생성되고 관리되는 자바 객체를 Bean이라고 합니다.</p>
 
 <p>Spring Framework 에서는 Spring Bean 을 얻기 위하여<br />
-ApplicationContext.getBean() 와 같은 메소드를 사용하여 Spring 에서 직접 자바 객체를 얻어서 사용합니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring DI IOC Bean" /><summary type="html"><![CDATA[이미지 출처 및 참조 글]]></summary></entry><entry><title type="html">4주, 배운 것 정리, DI, IoC, Bean</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/" rel="alternate" type="text/html" title="4주, 배운 것 정리, DI, IoC, Bean" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/"><![CDATA[<p>벌써 항해99를 시작한 지 28일째다. 
+ApplicationContext.getBean() 와 같은 메소드를 사용하여 Spring 에서 직접 자바 객체를 얻어서 사용합니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring DI IOC Bean" /><summary type="html"><![CDATA[이미지 출처 및 참조 글]]></summary></entry><entry><title type="html">4주, DI, IoC, Bean</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/" rel="alternate" type="text/html" title="4주, DI, IoC, Bean" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/"><![CDATA[<p>벌써 항해99를 시작한 지 28일째다. 
 옛날에 다른 학원에서 공부했었을 때는  자바 1달.. 파이썬 1달.. 이런 식으로 배운 것 같은데</p>
 
 <p>항해99에서는 시작한 지 28일이 됐음에도, 그때와 비교하면 많은 것들을 배운 것 같다.</p>
