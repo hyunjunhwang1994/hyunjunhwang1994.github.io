@@ -515,8 +515,14 @@ var store = [{
         "url": "/cloud%20computing%20-%20aws/AWS-04/",
         "teaser": null
       },{
+        "title": "스프링 부트 - Swagger UI 3.0",
+        "excerpt":"참조한 글 Swagger(UI)란? Open Api Speccification(OAS)를 위한 프레임워크. RESTful API 테스트를 쉽게 가능하게 해주고 자신의 프로젝트에 설정할 경우 Swagger UI로 API 문서 및 테스트 페이지가 자동완성된다. Authorize 기능의 추가로 JWT 같은 토큰 사용 시 토큰 재입력 필요 없이 편하게 사용 가능하다. Gradle 추가 implementation 'io.springfox:springfox-boot-starter:3.0.0' implementation 'io.springfox:springfox-swagger-ui:3.0.0' Config 클래스 생성...","categories": ["Spring"],
+        "tags": ["Spring DI IOC Bean"],
+        "url": "/spring/Spring12/",
+        "teaser": null
+      },{
         "title": "Til26",
-        "excerpt":" 오늘은 토큰 을확인후 글이써진다던지 이런 기능을넣었는데   토큰이 아무리 발급해줘도 null이떠서확인해보니   포스트맨은 자동으로 토큰을 넣어주지 못하여   아래의 블로그를 보고 참조하여 토큰이 자동주입되게 해주었다.   참조 블로그  ","categories": [],
+        "excerpt":"오늘은 토큰 을확인후 글이써진다던지 이런 기능을넣었는데 토큰이 아무리 발급해줘도 null이떠서확인해보니 포스트맨은 자동으로 토큰을 넣어주지 못하여 아래의 블로그를 보고 참조하여 토큰이 자동주입되게 해주었다. 참조 블로그 과제완료. 오늘 과제에서 배운것 JWT토큰 인증/인가 구현 방식 JPA 연관관계 사용하여 데이터베이스 엮어 사용하기. Swagger을 스프링부트에 적용하여 편하게 사용해보았따. 삽질 한거 .. PostMan으로 매번 하기 귀찮아서...","categories": [],
         "tags": [],
         "url": "/TIL26/",
         "teaser": null

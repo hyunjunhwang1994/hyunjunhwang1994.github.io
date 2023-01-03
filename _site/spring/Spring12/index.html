@@ -1,0 +1,1345 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>스프링 부트 - Swagger UI 3.0 | 기술 블로그</title>
+<meta name="description" content="참조한 글">
+
+
+  <meta name="author" content="Hyun Jun">
+  
+  <meta property="article:author" content="Hyun Jun">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술 블로그">
+<meta property="og:title" content="스프링 부트 - Swagger UI 3.0">
+<meta property="og:url" content="http://localhost:4000/spring/Spring12/">
+
+
+  <meta property="og:description" content="참조한 글">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-01-03T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/spring/Spring12/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hyun Jun",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="843d72a8e4b20f1a8ae8e971f19c34cb128b6c8b">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+
+    <style> 
+    /*스크롤바 꾸며주는 코드*/
+      ::-webkit-scrollbar{width: 17px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: rgb(25, 56, 109);}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      
+      {
+        width:12px;height:12px;background:transparent;
+      }
+
+        /*사이드바에는 적용하지않는다.*/
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          기술 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+
+                <!-- 다크 모드 토글 버튼 -->
+                
+                <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+                <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">카테고리👇</span>
+                    <div class="navicon"></div>
+                </button>
+
+
+                
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리👇</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+
+
+        
+        
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+  
+  
+    
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리👇</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">88</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <span class="nav__sub-title">etc</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/hanghae99" class="">항해99 🚢(30)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                
+                    
+                
+                    
+                        <li><a href="/categories/jekyllblogdev" class="">Jekyll Blog Dev (11)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/cloudcomputingaws" class="">Cloud computing - AWS (4)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/git" class="">Git (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/jwt" class="">JWT (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            
+
+
+
+        <span class="nav__sub-title">Programming language</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/java" class="">Java (12)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Database</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/sql" class="">SQL (1)</a></li>
+                    
+                
+            </ul>
+
+   
+
+
+        <span class="nav__sub-title">Framework</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/spring" class="">Spring (12)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/flask" class="">Flask (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <span class="nav__sub-title">Algorithm</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmbasic" class="">Algorithm - Basic (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul> 
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmhanghae99" class="">Algorithm - Hanghae99🚢 (6)</a></li>
+                    
+                
+                    
+                
+            </ul> 
+
+
+ 
+
+
+      </li>
+
+
+
+  </ul>
+</nav>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="스프링 부트 - Swagger UI 3.0">
+    <meta itemprop="description" content="참조한 글 ">
+    <meta itemprop="datePublished" content="2023-01-03T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/spring/Spring12/" class="u-url" itemprop="url">스프링 부트 - Swagger UI 3.0
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-03T00:00:00+09:00">2023-01-03</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#swaggerui란">Swagger(UI)란?</a><ul><li><a href="#gradle-추가">Gradle 추가</a></li><li><a href="#config-클래스-생성">Config 클래스 생성</a></li></ul></li><li><a href="#swaggerui-접속하기">Swagger(UI) 접속하기</a><ul><li><a href="#jwt-연동하기-apikey">JWT 연동하기, apikey()</a></li></ul></li><li><a href="#errors-errors-매개변수를-사용하는-경우-에러">Errors errors 매개변수를 사용하는 경우 에러!</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><a href="https://velog.io/@livenow/SpringBoot-Swagger%EB%A5%BC-%ED%86%B5%ED%95%9C-REST-%EC%9A%94%EC%B2%AD%EC%97%90-%EC%A0%84%EC%97%AD-jwt-%EC%9D%B8%EC%A6%9D-%EC%84%A4%EC%A0%95-%ED%95%98%EA%B8%B0">참조한 글 </a></p>
+
+<h1 id="swaggerui란">Swagger(UI)란?</h1>
+<ul>
+  <li>Open Api Speccification(OAS)를 위한 프레임워크.</li>
+  <li>RESTful API 테스트를 쉽게 가능하게 해주고</li>
+  <li>자신의 프로젝트에 설정할 경우 Swagger UI로 API 문서 및 테스트 페이지가 자동완성된다.</li>
+  <li>Authorize 기능의 추가로 JWT 같은 토큰 사용 시 토큰 재입력 필요 없이 편하게 사용 가능하다.</li>
+</ul>
+
+<h2 id="gradle-추가">Gradle 추가</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>implementation 'io.springfox:springfox-boot-starter:3.0.0'
+implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+</code></pre></div></div>
+
+<h2 id="config-클래스-생성">Config 클래스 생성</h2>
+<ol>
+  <li>스프링 부트 프로젝트 기준 최상단 (.Application 클래스 있는 곳)에 클래스 생성 후 설정 파일 작성</li>
+  <li>basePackage() 부분에 자신의 컨트롤러 패키지 Path를 입력!</li>
+</ol>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Configuration</span>
+<span class="nd">@EnableWebMvc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SwaggerConfig</span> <span class="o">{</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="nc">Docket</span> <span class="nf">api</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Docket</span><span class="o">(</span><span class="nc">DocumentationType</span><span class="o">.</span><span class="na">SWAGGER_2</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">useDefaultResponseMessages</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">select</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">apis</span><span class="o">(</span><span class="nc">RequestHandlerSelectors</span><span class="o">.</span><span class="na">basePackage</span><span class="o">(</span><span class="s">"com.sparta.spring_skillful_week_assignment.controller"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">paths</span><span class="o">(</span><span class="nc">PathSelectors</span><span class="o">.</span><span class="na">ant</span><span class="o">(</span><span class="s">"/api/**"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">apiInfo</span><span class="o">(</span><span class="n">metaData</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">securityContexts</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">securityContext</span><span class="o">()))</span>
+                <span class="o">.</span><span class="na">securitySchemes</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">apiKey</span><span class="o">()));</span>
+
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="nc">ApiInfo</span> <span class="nf">metaData</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ApiInfoBuilder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">title</span><span class="o">(</span><span class="s">"Hanghae99 REST API"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">description</span><span class="o">(</span><span class="s">"Post, User Rest Api"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">version</span><span class="o">(</span><span class="s">"0.0.1"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">termsOfServiceUrl</span><span class="o">(</span><span class="s">"Terms of service"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">contact</span><span class="o">(</span><span class="k">new</span> <span class="nc">Contact</span><span class="o">(</span><span class="s">"Hyun Jun Hwang"</span><span class="o">,</span> <span class="s">"https://github.com/hyunjunhwang1994/Spring_Skillful_Week_Assignment"</span><span class="o">,</span> <span class="s">"hyunjunhwang1994@gmail.com"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">license</span><span class="o">(</span><span class="s">"Apache License Version 2.0"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">licenseUrl</span><span class="o">(</span><span class="s">"https://www.apache.org/licenses/LICENSE-2.0"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="nc">ApiKey</span> <span class="nf">apiKey</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ApiKey</span><span class="o">(</span><span class="s">"JWT"</span><span class="o">,</span> <span class="no">AUTHORIZATION_HEADER</span><span class="o">,</span> <span class="s">"header"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+
+
+    <span class="kd">private</span> <span class="nc">SecurityContext</span> <span class="nf">securityContext</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">springfox</span>
+                <span class="o">.</span><span class="na">documentation</span>
+                <span class="o">.</span><span class="na">spi</span><span class="o">.</span><span class="na">service</span>
+                <span class="o">.</span><span class="na">contexts</span>
+                <span class="o">.</span><span class="na">SecurityContext</span>
+                <span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">securityReferences</span><span class="o">(</span><span class="n">defaultAuth</span><span class="o">()).</span><span class="na">forPaths</span><span class="o">(</span><span class="nc">PathSelectors</span><span class="o">.</span><span class="na">any</span><span class="o">()).</span><span class="na">build</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">SecurityReference</span><span class="o">&gt;</span> <span class="nf">defaultAuth</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">AuthorizationScope</span> <span class="n">authorizationScope</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AuthorizationScope</span><span class="o">(</span><span class="s">"global"</span><span class="o">,</span> <span class="s">"accessEverything"</span><span class="o">);</span>
+        <span class="nc">AuthorizationScope</span><span class="o">[]</span> <span class="n">authorizationScopes</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AuthorizationScope</span><span class="o">[</span><span class="mi">1</span><span class="o">];</span>
+        <span class="n">authorizationScopes</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">authorizationScope</span><span class="o">;</span>
+        <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="k">new</span> <span class="nc">SecurityReference</span><span class="o">(</span><span class="s">"JWT"</span><span class="o">,</span> <span class="n">authorizationScopes</span><span class="o">));</span>
+    <span class="o">}</span>
+
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="swaggerui-접속하기">Swagger(UI) 접속하기</h1>
+<p>위의 과정까지 완료하고 에러가 없이 프로젝트 실행이 잘 된 경우</p>
+
+<p>도메인주소/swagger-ui/index.html로 접속을 하면?</p>
+
+<p>ex)<br />
+http://localhost:8080/swagger-ui/index.html</p>
+
+<p>아래와 같이 API 문서 및 테스트까지 가능한 페이지가 자동으로 완성된다!<br />
+<img src="../../images/2023-01-03-15-54-36.png" alt="" /></p>
+
+<hr />
+
+<h2 id="jwt-연동하기-apikey">JWT 연동하기, apikey()</h2>
+<p>JWT를 편하게 사용할 수 있게 연동이 가능한데
+아래의 설정을 바꿔주어야 한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="nc">ApiKey</span> <span class="nf">apiKey</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ApiKey</span><span class="o">(</span><span class="s">"JWT"</span><span class="o">,</span> <span class="no">AUTHORIZATION_HEADER</span><span class="o">,</span> <span class="s">"header"</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>“JWT”<br />
+defaultAuth()에서 설정해 준<br />
+return Arrays.asList(new SecurityReference(“JWT”, authorizationScopes)); 값이다.</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>AUTHORIZATION_HEADER<br />
+본인의 JWT 관련 로직이 있는 곳에서 JWT 값을 헤더에 넣어줄 때
+헤더의 네임 값을 넣으면 된다.</li>
+</ul>
+
+<p>아래와 같은 코드가 있다면 AUTHORIZATION_HEADER 값!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    response.addHeader(JwtUtil.AUTHORIZATION_HEADER, jwtUtil.createToken(user.getUsername()));
+</code></pre></div></div>
+
+<p><img src="../../images/2023-01-03-15-30-43.png" alt="" /></p>
+
+<hr />
+
+<ul>
+  <li>header<br />
+JWT 값이 header에 담겨있으므로 그냥 그대로 둔다.</li>
+</ul>
+
+<hr />
+
+<p>로그인 성공 시 발급되는 JWT
+<img src="../../images/2023-01-03-15-41-24.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-15-41-40.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-15-42-11.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-15-42-16.png" alt="" /></p>
+
+<p>자신이 쓴 글만 수정이 가능하다면
+<img src="../../images/2023-01-03-15-42-44.png" alt="" /></p>
+
+<p>토큰 값 입력 없이도 잘 동작한다. (글 번호, 글 내용 들만 입력했고, 토큰 인증 후 해당 글 쓴 유저 네임과 일치해야 삭제되는 API이다.)
+<img src="../../images/2023-01-03-15-43-23.png" alt="" /></p>
+
+<hr />
+
+<h1 id="errors-errors-매개변수를-사용하는-경우-에러">Errors errors 매개변수를 사용하는 경우 에러!</h1>
+<p>스프링의 @Validated를 이용해서 Errors errors를 바로 뒤에 매개변수로 받거나,
+혹은 여타 다른 매개변수로 인하여 아래처럼 화면이 나오는 경우!<br />
+or 아예 에러가 뜨는 경우!</p>
+
+<p><img src="../../images/2023-01-03-15-06-12.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-15-08-12.png" alt="" /></p>
+
+<p>사실 그냥 무시하고 위의 에러 입력값들 제외 원래의 입력값만 잘 주어도
+동작하지만, 보기 불편하고 사실상 없는 게 맞다.</p>
+
+<p><img src="../../images/2023-01-03-15-08-54.png" alt="" /></p>
+
+<p>@ApiIgnore로 매개변수 앞에다 사용해 주면 해당 파라미터를 제외하고 API 컨트롤러가 동작한다<br />
+<img src="../../images/2023-01-03-15-19-27.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-15-18-42.png" alt="" /></p>
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#spring-di-ioc-bean" class="page__taxonomy-item p-category" rel="tag">Spring DI IOC Bean</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#spring" class="page__taxonomy-item p-category" rel="tag">Spring</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-01-03T00:00:00+09:00">2023-01-03</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%8A%A4%ED%94%84%EB%A7%81+%EB%B6%80%ED%8A%B8+-+Swagger+UI+3.0%20http%3A%2F%2Flocalhost%3A4000%2Fspring%2FSpring12%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fspring%2FSpring12%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fspring%2FSpring12%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/spring/Spring11/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>스프링 - DI, IoC, Bean</a>
+    
+    
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/TIL26/" rel="permalink">Til26
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-03T00:00:00+09:00">2023-01-03</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cloud%20computing%20-%20aws/AWS-04/" rel="permalink">AWS 프리 티어 요금 알림 설정하기.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-03T00:00:00+09:00">2023-01-03</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL25/" rel="permalink">29일, JWT, Validated, Response Entity
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-02T00:00:00+09:00">2023-01-02</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/WIL04/" rel="permalink">4주, 배운 것 정리, DI, IoC, Bean
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-01T00:00:00+09:00">2023-01-01</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/hyunjunhwang1994" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/hyunjuuuuun/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Hyun Jun. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <!-- start custom comments scripts -->
+
+<!-- end custom comments scripts -->
+
+<script>
+    'use strict';
+
+    window.customUtterances = {
+      theme: 'github-light',
+      darkTheme: 'github-dark',
+      onChange: (theme) => {
+        var commentContainer = document.querySelector('#utterances-comments');
+  
+        if (!commentContainer) {
+          return;
+        }
+  
+        while ( commentContainer.hasChildNodes() ) { 
+          commentContainer.removeChild( commentContainer.firstChild );
+        }
+  
+        var script = document.createElement('script');
+        script.setAttribute('src', 'https://utteranc.es/client.js');
+        script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
+        script.setAttribute('label', 'utterances');
+        script.setAttribute('issue-term', 'pathname');
+        script.setAttribute('theme', theme);
+        script.setAttribute('crossorigin', 'anonymous');
+  
+        commentContainer.appendChild(script);
+      }
+    };
+  </script>
+
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>

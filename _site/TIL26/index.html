@@ -218,7 +218,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">87</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">88</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -534,7 +534,7 @@
                     
                 
                     
-                        <li><a href="/categories/spring" class="">Spring (11)</a></li>
+                        <li><a href="/categories/spring" class="">Spring (12)</a></li>
                     
                 
                     
@@ -719,7 +719,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          2 분 소요
         
       </span>
     
@@ -734,7 +734,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#swagger을-스프링부트에-적용하여-편하게-사용해보았따">Swagger을 스프링부트에 적용하여 편하게 사용해보았따.</a></li><li><a href="#lv2-시작">LV2 시작</a></li></ul>
 
             </nav>
           </aside>
@@ -749,6 +749,56 @@
 <p>아래의 블로그를 보고 참조하여 토큰이 자동주입되게 해주었다.</p>
 
 <p><a href="https://velog.io/@jejjang/Postman%EC%97%90%EC%84%9C-Token-%EA%B0%92-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0">참조 블로그</a></p>
+
+<p>과제완료. 오늘 과제에서 배운것</p>
+<ul>
+  <li>JWT토큰 인증/인가 구현 방식</li>
+  <li>JPA 연관관계 사용하여 데이터베이스 엮어 사용하기.</li>
+</ul>
+
+<h1 id="swagger을-스프링부트에-적용하여-편하게-사용해보았따">Swagger을 스프링부트에 적용하여 편하게 사용해보았따.</h1>
+
+<p>삽질 한거 ..
+PostMan으로 매번 하기 귀찮아서
+Swagger을 프로젝트에 적용해 보았고,,</p>
+
+<p>적용자체는 어렵지 않았지만, 
+JWT토큰을 적용하는 부분에서 생각보다 오래걸렸따.</p>
+
+<p>까먹지 않도록 공부하고 아래의 글에 정리를 했다.</p>
+
+<p>Apikey에서 해맷끼 때문에 APIkey구조와</p>
+
+<p>SwaggerConfig 파일에 
+어디는 @EnableSwagger2로 되어있고
+나는@EnableWebMvc로만 동작하는데 차이가 무엇일까?</p>
+
+<p>@Validated가 적용된 컨트롤러에 아래와같이 입력이 가능한 이상한 배열들이 나왔다.
+사실 그냥</p>
+
+<p><img src="../../images/2023-01-03-15-06-12.png" alt="" />
+<img src="../../images/2023-01-03-15-08-12.png" alt="" /></p>
+
+<p>사실그냥 무시하고 아래처럼 입력해도 동작하지만,
+왜 이런게 생겼는지 삽질을 좀 해보았다.
+<img src="../../images/2023-01-03-15-08-54.png" alt="" /></p>
+
+<p>생각을 좀ㅎ ㅐ보니 errors  count등이 나오는것보아서
+Errors 객체의 문제 인 것 같은데</p>
+
+<p>파라미터를 숨기는 것을 사용해도 동작하지를 않는다.
+<img src="../../images/2023-01-03-15-16-16.png" alt="" /></p>
+
+<p>검색해보니     @Parameter(hidden=true)가 동작하지 않는다는 말들이 있었고
+버전의 문제인것같다.</p>
+
+<p>@ApiIgnore로 매개변수 앞에다 사용해주니 이제 잘 동작한다!
+<img src="../../images/2023-01-03-15-19-27.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-15-18-42.png" alt="" /></p>
+
+<h1 id="lv2-시작">LV2 시작</h1>
+<p>LV2에 댓글기능이있어서 다시 ERD와 API명세를 정리해보았다.</p>
  <!--실제 페이지 글 부분-->
         
       </section>
@@ -802,6 +852,68 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring12/" rel="permalink">스프링 부트 - Swagger UI 3.0
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-03T00:00:00+09:00">2023-01-03</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          7 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
         
           
 
@@ -968,68 +1080,6 @@
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           2 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/spring/Spring11/" rel="permalink">스프링 - DI, IoC, Bean
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-01-01T00:00:00+09:00">2023-01-01</time>
-      </span>
-    
-
-                 
-                
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          8 분 소요
         
       </span>
     

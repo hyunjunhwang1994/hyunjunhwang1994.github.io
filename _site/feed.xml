@@ -1,4 +1,171 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-03T11:34:51+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">AWS 프리 티어 요금 알림 설정하기.</title><link href="http://localhost:4000/cloud%20computing%20-%20aws/AWS-04/" rel="alternate" type="text/html" title="AWS 프리 티어 요금 알림 설정하기." /><published>2023-01-03T00:00:00+09:00</published><updated>2023-01-03T00:00:00+09:00</updated><id>http://localhost:4000/cloud%20computing%20-%20aws/AWS-04</id><content type="html" xml:base="http://localhost:4000/cloud%20computing%20-%20aws/AWS-04/"><![CDATA[<p>결제 대시보드 클릭<br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-03T17:24:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 부트 - Swagger UI 3.0</title><link href="http://localhost:4000/spring/Spring12/" rel="alternate" type="text/html" title="스프링 부트 - Swagger UI 3.0" /><published>2023-01-03T00:00:00+09:00</published><updated>2023-01-03T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring12</id><content type="html" xml:base="http://localhost:4000/spring/Spring12/"><![CDATA[<p><a href="https://velog.io/@livenow/SpringBoot-Swagger%EB%A5%BC-%ED%86%B5%ED%95%9C-REST-%EC%9A%94%EC%B2%AD%EC%97%90-%EC%A0%84%EC%97%AD-jwt-%EC%9D%B8%EC%A6%9D-%EC%84%A4%EC%A0%95-%ED%95%98%EA%B8%B0">참조한 글 </a></p>
+
+<h1 id="swaggerui란">Swagger(UI)란?</h1>
+<ul>
+  <li>Open Api Speccification(OAS)를 위한 프레임워크.</li>
+  <li>RESTful API 테스트를 쉽게 가능하게 해주고</li>
+  <li>자신의 프로젝트에 설정할 경우 Swagger UI로 API 문서 및 테스트 페이지가 자동완성된다.</li>
+  <li>Authorize 기능의 추가로 JWT 같은 토큰 사용 시 토큰 재입력 필요 없이 편하게 사용 가능하다.</li>
+</ul>
+
+<h2 id="gradle-추가">Gradle 추가</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>implementation 'io.springfox:springfox-boot-starter:3.0.0'
+implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+</code></pre></div></div>
+
+<h2 id="config-클래스-생성">Config 클래스 생성</h2>
+<ol>
+  <li>스프링 부트 프로젝트 기준 최상단 (.Application 클래스 있는 곳)에 클래스 생성 후 설정 파일 작성</li>
+  <li>basePackage() 부분에 자신의 컨트롤러 패키지 Path를 입력!</li>
+</ol>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Configuration</span>
+<span class="nd">@EnableWebMvc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SwaggerConfig</span> <span class="o">{</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="nc">Docket</span> <span class="nf">api</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Docket</span><span class="o">(</span><span class="nc">DocumentationType</span><span class="o">.</span><span class="na">SWAGGER_2</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">useDefaultResponseMessages</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">select</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">apis</span><span class="o">(</span><span class="nc">RequestHandlerSelectors</span><span class="o">.</span><span class="na">basePackage</span><span class="o">(</span><span class="s">"com.sparta.spring_skillful_week_assignment.controller"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">paths</span><span class="o">(</span><span class="nc">PathSelectors</span><span class="o">.</span><span class="na">ant</span><span class="o">(</span><span class="s">"/api/**"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">apiInfo</span><span class="o">(</span><span class="n">metaData</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">securityContexts</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">securityContext</span><span class="o">()))</span>
+                <span class="o">.</span><span class="na">securitySchemes</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">apiKey</span><span class="o">()));</span>
+
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="nc">ApiInfo</span> <span class="nf">metaData</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ApiInfoBuilder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">title</span><span class="o">(</span><span class="s">"Hanghae99 REST API"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">description</span><span class="o">(</span><span class="s">"Post, User Rest Api"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">version</span><span class="o">(</span><span class="s">"0.0.1"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">termsOfServiceUrl</span><span class="o">(</span><span class="s">"Terms of service"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">contact</span><span class="o">(</span><span class="k">new</span> <span class="nc">Contact</span><span class="o">(</span><span class="s">"Hyun Jun Hwang"</span><span class="o">,</span> <span class="s">"https://github.com/hyunjunhwang1994/Spring_Skillful_Week_Assignment"</span><span class="o">,</span> <span class="s">"hyunjunhwang1994@gmail.com"</span><span class="o">))</span>
+                <span class="o">.</span><span class="na">license</span><span class="o">(</span><span class="s">"Apache License Version 2.0"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">licenseUrl</span><span class="o">(</span><span class="s">"https://www.apache.org/licenses/LICENSE-2.0"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="nc">ApiKey</span> <span class="nf">apiKey</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ApiKey</span><span class="o">(</span><span class="s">"JWT"</span><span class="o">,</span> <span class="no">AUTHORIZATION_HEADER</span><span class="o">,</span> <span class="s">"header"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+
+
+    <span class="kd">private</span> <span class="nc">SecurityContext</span> <span class="nf">securityContext</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">springfox</span>
+                <span class="o">.</span><span class="na">documentation</span>
+                <span class="o">.</span><span class="na">spi</span><span class="o">.</span><span class="na">service</span>
+                <span class="o">.</span><span class="na">contexts</span>
+                <span class="o">.</span><span class="na">SecurityContext</span>
+                <span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">securityReferences</span><span class="o">(</span><span class="n">defaultAuth</span><span class="o">()).</span><span class="na">forPaths</span><span class="o">(</span><span class="nc">PathSelectors</span><span class="o">.</span><span class="na">any</span><span class="o">()).</span><span class="na">build</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">SecurityReference</span><span class="o">&gt;</span> <span class="nf">defaultAuth</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">AuthorizationScope</span> <span class="n">authorizationScope</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AuthorizationScope</span><span class="o">(</span><span class="s">"global"</span><span class="o">,</span> <span class="s">"accessEverything"</span><span class="o">);</span>
+        <span class="nc">AuthorizationScope</span><span class="o">[]</span> <span class="n">authorizationScopes</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AuthorizationScope</span><span class="o">[</span><span class="mi">1</span><span class="o">];</span>
+        <span class="n">authorizationScopes</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">authorizationScope</span><span class="o">;</span>
+        <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="k">new</span> <span class="nc">SecurityReference</span><span class="o">(</span><span class="s">"JWT"</span><span class="o">,</span> <span class="n">authorizationScopes</span><span class="o">));</span>
+    <span class="o">}</span>
+
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h1 id="swaggerui-접속하기">Swagger(UI) 접속하기</h1>
+<p>위의 과정까지 완료하고 에러가 없이 프로젝트 실행이 잘 된 경우</p>
+
+<p>도메인주소/swagger-ui/index.html로 접속을 하면?</p>
+
+<p>ex)<br />
+http://localhost:8080/swagger-ui/index.html</p>
+
+<p>아래와 같이 API 문서 및 테스트까지 가능한 페이지가 자동으로 완성된다!<br />
+<img src="../../images/2023-01-03-15-54-36.png" alt="" /></p>
+
+<hr />
+
+<h2 id="jwt-연동하기-apikey">JWT 연동하기, apikey()</h2>
+<p>JWT를 편하게 사용할 수 있게 연동이 가능한데
+아래의 설정을 바꿔주어야 한다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="nc">ApiKey</span> <span class="nf">apiKey</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ApiKey</span><span class="o">(</span><span class="s">"JWT"</span><span class="o">,</span> <span class="no">AUTHORIZATION_HEADER</span><span class="o">,</span> <span class="s">"header"</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>“JWT”<br />
+defaultAuth()에서 설정해 준<br />
+return Arrays.asList(new SecurityReference(“JWT”, authorizationScopes)); 값이다.</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>AUTHORIZATION_HEADER<br />
+본인의 JWT 관련 로직이 있는 곳에서 JWT 값을 헤더에 넣어줄 때
+헤더의 네임 값을 넣으면 된다.</li>
+</ul>
+
+<p>아래와 같은 코드가 있다면 AUTHORIZATION_HEADER 값!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    response.addHeader(JwtUtil.AUTHORIZATION_HEADER, jwtUtil.createToken(user.getUsername()));
+</code></pre></div></div>
+
+<p><img src="../../images/2023-01-03-15-30-43.png" alt="" /></p>
+
+<hr />
+
+<ul>
+  <li>header<br />
+JWT 값이 header에 담겨있으므로 그냥 그대로 둔다.</li>
+</ul>
+
+<hr />
+
+<p>로그인 성공 시 발급되는 JWT
+<img src="../../images/2023-01-03-15-41-24.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-15-41-40.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-15-42-11.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-15-42-16.png" alt="" /></p>
+
+<p>자신이 쓴 글만 수정이 가능하다면
+<img src="../../images/2023-01-03-15-42-44.png" alt="" /></p>
+
+<p>토큰 값 입력 없이도 잘 동작한다. (글 번호, 글 내용 들만 입력했고, 토큰 인증 후 해당 글 쓴 유저 네임과 일치해야 삭제되는 API이다.)
+<img src="../../images/2023-01-03-15-43-23.png" alt="" /></p>
+
+<hr />
+
+<h1 id="errors-errors-매개변수를-사용하는-경우-에러">Errors errors 매개변수를 사용하는 경우 에러!</h1>
+<p>스프링의 @Validated를 이용해서 Errors errors를 바로 뒤에 매개변수로 받거나,
+혹은 여타 다른 매개변수로 인하여 아래처럼 화면이 나오는 경우!<br />
+or 아예 에러가 뜨는 경우!</p>
+
+<p><img src="../../images/2023-01-03-15-06-12.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-15-08-12.png" alt="" /></p>
+
+<p>사실 그냥 무시하고 위의 에러 입력값들 제외 원래의 입력값만 잘 주어도
+동작하지만, 보기 불편하고 사실상 없는 게 맞다.</p>
+
+<p><img src="../../images/2023-01-03-15-08-54.png" alt="" /></p>
+
+<p>@ApiIgnore로 매개변수 앞에다 사용해 주면 해당 파라미터를 제외하고 API 컨트롤러가 동작한다<br />
+<img src="../../images/2023-01-03-15-19-27.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-15-18-42.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring DI IOC Bean" /><summary type="html"><![CDATA[참조한 글]]></summary></entry><entry><title type="html">AWS 프리 티어 요금 알림 설정하기.</title><link href="http://localhost:4000/cloud%20computing%20-%20aws/AWS-04/" rel="alternate" type="text/html" title="AWS 프리 티어 요금 알림 설정하기." /><published>2023-01-03T00:00:00+09:00</published><updated>2023-01-03T00:00:00+09:00</updated><id>http://localhost:4000/cloud%20computing%20-%20aws/AWS-04</id><content type="html" xml:base="http://localhost:4000/cloud%20computing%20-%20aws/AWS-04/"><![CDATA[<p>결제 대시보드 클릭<br />
 <img src="../../images/2023-01-03-11-12-48.png" alt="" /></p>
 
 <p>프리 티어 사용량 알림 받기, 결제 알림 받기 클릭 후<br />
@@ -57,7 +224,57 @@
 
 <p>아래의 블로그를 보고 참조하여 토큰이 자동주입되게 해주었다.</p>
 
-<p><a href="https://velog.io/@jejjang/Postman%EC%97%90%EC%84%9C-Token-%EA%B0%92-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0">참조 블로그</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">29일, JWT, Validated, Response Entity</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25/" rel="alternate" type="text/html" title="29일, JWT, Validated, Response Entity" /><published>2023-01-02T00:00:00+09:00</published><updated>2023-01-02T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25/"><![CDATA[<p>오늘은 Spring 숙련 주 차의  개인과제 LV1을 진행해 보면서
+<p><a href="https://velog.io/@jejjang/Postman%EC%97%90%EC%84%9C-Token-%EA%B0%92-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0">참조 블로그</a></p>
+
+<p>과제완료. 오늘 과제에서 배운것</p>
+<ul>
+  <li>JWT토큰 인증/인가 구현 방식</li>
+  <li>JPA 연관관계 사용하여 데이터베이스 엮어 사용하기.</li>
+</ul>
+
+<h1 id="swagger을-스프링부트에-적용하여-편하게-사용해보았따">Swagger을 스프링부트에 적용하여 편하게 사용해보았따.</h1>
+
+<p>삽질 한거 ..
+PostMan으로 매번 하기 귀찮아서
+Swagger을 프로젝트에 적용해 보았고,,</p>
+
+<p>적용자체는 어렵지 않았지만, 
+JWT토큰을 적용하는 부분에서 생각보다 오래걸렸따.</p>
+
+<p>까먹지 않도록 공부하고 아래의 글에 정리를 했다.</p>
+
+<p>Apikey에서 해맷끼 때문에 APIkey구조와</p>
+
+<p>SwaggerConfig 파일에 
+어디는 @EnableSwagger2로 되어있고
+나는@EnableWebMvc로만 동작하는데 차이가 무엇일까?</p>
+
+<p>@Validated가 적용된 컨트롤러에 아래와같이 입력이 가능한 이상한 배열들이 나왔다.
+사실 그냥</p>
+
+<p><img src="../../images/2023-01-03-15-06-12.png" alt="" />
+<img src="../../images/2023-01-03-15-08-12.png" alt="" /></p>
+
+<p>사실그냥 무시하고 아래처럼 입력해도 동작하지만,
+왜 이런게 생겼는지 삽질을 좀 해보았다.
+<img src="../../images/2023-01-03-15-08-54.png" alt="" /></p>
+
+<p>생각을 좀ㅎ ㅐ보니 errors  count등이 나오는것보아서
+Errors 객체의 문제 인 것 같은데</p>
+
+<p>파라미터를 숨기는 것을 사용해도 동작하지를 않는다.
+<img src="../../images/2023-01-03-15-16-16.png" alt="" /></p>
+
+<p>검색해보니     @Parameter(hidden=true)가 동작하지 않는다는 말들이 있었고
+버전의 문제인것같다.</p>
+
+<p>@ApiIgnore로 매개변수 앞에다 사용해주니 이제 잘 동작한다!
+<img src="../../images/2023-01-03-15-19-27.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-03-15-18-42.png" alt="" /></p>
+
+<h1 id="lv2-시작">LV2 시작</h1>
+<p>LV2에 댓글기능이있어서 다시 ERD와 API명세를 정리해보았다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">29일, JWT, Validated, Response Entity</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25/" rel="alternate" type="text/html" title="29일, JWT, Validated, Response Entity" /><published>2023-01-02T00:00:00+09:00</published><updated>2023-01-02T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25/"><![CDATA[<p>오늘은 Spring 숙련 주 차의  개인과제 LV1을 진행해 보면서
 어려웠던 점이나 새롭게 알게된 점을 정리하려고 한다.</p>
 
 <p>이번 개인 과제는 저번 입문 주 차때 만들었던 
@@ -902,169 +1119,4 @@ kill -9 [pid값]
 <ul>
   <li>JPA 영속성 컨텍스트에 관해서 공부 및 정리</li>
   <li>자바 언어 스터디(20시)에서 발표 한 상속, 다형성, 추상 클래스 정리 및 공부 <a href="http://localhost:4000/java/Java18/">포스팅</a></li>
-</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">스프링 - JPA, 총정리2</title><link href="http://localhost:4000/spring/Spring8/" rel="alternate" type="text/html" title="스프링 - JPA, 총정리2" /><published>2022-12-30T00:00:00+09:00</published><updated>2022-12-30T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring8</id><content type="html" xml:base="http://localhost:4000/spring/Spring8/"><![CDATA[<h1 id="jpa의-영속성-컨텍스트란">JPA의 영속성 컨텍스트란?</h1>
-
-<ul>
-  <li>persistence context!</li>
-  <li>엔티티를 영구 저장하는 환경</li>
-  <li>어플리케이션이 데이터베이스에서 꺼내온 데이터 객체를 보관하는 역할을 합니다.</li>
-  <li>영속성 컨텍스트는 엔티티 매니저를 통해 엔티티를 조회하거나 저장할 때 엔티티를 보관하고 관리합니다.</li>
-</ul>
-
-<div class="notice">
-엔티티 매니저마다 개별적으로 부여되는, 어떠한 논리적 공간같은 개념으로 비유적으로 이해하셔도 좋을 것 같습니다.   <br />
-<br />
-자바의 엔티티 객체를 엔티티 매니저마다 가지고 있는 영속성 컨텍스트라는 공간에다 넣고 빼고 하면서 사용하는거죠, <br /><br />
-“영속화 한다” 라는 말을 “엔티티 매니저가 자기의 영속성 컨텍스트에 넣어준다”로 이해하는 것 처럼 말이죠
-</div>
-
-<hr />
-
-<blockquote>
-  <p>예시</p>
-</blockquote>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">em</span><span class="o">.</span><span class="na">persist</span><span class="o">(</span><span class="n">member</span><span class="o">);</span>
-</code></pre></div></div>
-
-<ul>
-  <li>단순하게 회원 엔티티 저장</li>
-  <li>정확하게는 엔티티 매니저를 사용해서 회원 엔티티를 영속성 컨텍스트에 저장</li>
-  <li>논리적인 개념에 가까움</li>
-  <li>엔티티 매니저를 생성할 때 하나 만들어진다.</li>
-  <li>⭐️엔티티 매니저를 통해 영속성 컨텍스트에 접근하고 관리할 수 있다.</li>
-</ul>
-
-<p><img src="../../images/2022-12-30-14-10-58.png" alt="" /></p>
-
-<h2 id="jpa-엔티티의-상태">JPA 엔티티의 상태</h2>
-
-<h3 id="비영속new">비영속(New)</h3>
-<p>영속성 컨택스트와 관계가 없는 새로운 상태입니다.
-해당 객체의 데이터가 변경되거나 말거나 실제 DB의 데이터와는 관련없고, 그냥 Java 객체인 상태!</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Member</span> <span class="n">hyunjun</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Member</span><span class="o">();</span>
-<span class="n">member</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="s">"hyunjun94"</span><span class="o">);</span>
-<span class="n">member</span><span class="o">.</span><span class="na">setUsername</span><span class="o">(</span><span class="s">"현준"</span><span class="o">);</span>
-</code></pre></div></div>
-
-<h3 id="영속managed">영속(Managed)</h3>
-<p>엔티티 매니저를 통해 엔티티가 영속성 컨텍스트에 저장되어 관리되고 있는 상태입니다.<br />
-이와 같은 경우 데이터의 생성, 변경등을 JPA가 추적하면서 필요하면 DB에 반영합니다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 엔티티 매니저를 통해 영속성 컨텍스트에 엔티티를 저장</span>
-<span class="n">em</span><span class="o">.</span><span class="na">persist</span><span class="o">(</span><span class="n">hyunjun</span><span class="o">);</span>
-</code></pre></div></div>
-
-<h3 id="준영속detached">준영속(Detached)</h3>
-<p>영속성 컨택스트에서 관리되다가 분리된 상태입니다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 엔티티를 영속성 컨택스트에서 분리</span>
-<span class="n">em</span><span class="o">.</span><span class="na">detach</span><span class="o">(</span><span class="n">hyunjun</span><span class="o">);</span>
-<span class="c1">// 영속성 컨텍스트를 비우기</span>
-<span class="n">em</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
-<span class="c1">// 영속성 컨택스트를 종료</span>
-<span class="n">em</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-</code></pre></div></div>
-
-<h3 id="삭제removed">삭제(Removed)</h3>
-<p>영속성 컨택스트에서 삭제된 상태</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">em</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">hyunjun</span><span class="o">)</span>
-</code></pre></div></div>
-
-<p><img src="../../images/2022-12-30-14-23-54.png" alt="" />
-<a href="https://product.kyobobook.co.kr/detail/S000000935744">사진 출처</a></p>
-
-<h2 id="영속성-컨텍스트는-어떻게-왜-이렇게-설계되어있을까요">영속성 컨텍스트는 어떻게, 왜 이렇게 설계되어있을까요?</h2>
-<p>영속성 컨텍스트가 엔티티를 관리하는 것의 장점!</p>
-
-<details>   
-<summary>1차 캐시</summary>
-<div>
-
-    <p>DB역시 저장공간, 연산능력과 같은 컴퓨팅 리소스를 가진 프로그램 같은 것이라고 말씀드렸죠?<br />
-그리고 보통은 서버가 떠있는 컴퓨터(AWS라고 치면 여러분의 ec2 인스턴스)가 아닌 다른 곳에 떠있는 경우가 많습니다.</p>
-
-    <p>그리고 다른 여러가지 이유와 함께 DB를 이용하는 작업은 상대적으로 부하와 비용이 심한 작업입니다.<br />
-그래서 부하가 심한 작업을 자주하는 것을 줄여야 할 필요가 있었습니다.</p>
-
-    <p>자바 어플리케이션 상에서 데이터를 조회 사용할일이 아주 잦은데,<br />
-그럴때마다 DB로 “SELECT * FROM….”과 같은 SQL쿼리를 내는 일은 막아야 한다는 거죠!</p>
-
-    <p>그러기 위해서 영속성 컨텍스트 내부에 1차캐시를 둡니다.</p>
-    <ol>
-      <li>find(”memberB”)와 같은 로직이 있을 때 먼저 1차 캐시를 조회합니다.</li>
-      <li>있으면 해당 데이터를 반환합니다.</li>
-      <li>없으면 그 때 실제 DB로 “SELECT * FROM….” 의 쿼리를 내보냅니다.</li>
-      <li>그리고 반환하기 전에 1차캐시에 저장하고 반환해줍니다.</li>
-    </ol>
-
-    <p>이제 memberB를 find 하는 요청이 다시 들어와도 굳이 DB로 다녀올 필요가 전혀 없겠죠?</p>
-
-    <p><img src="../../images/2022-12-30-14-29-46.png" alt="" />
-<a href="https://product.kyobobook.co.kr/detail/S000000935744">사진 출처</a></p>
-
-  </div>
-</details>
-
-<details>   
-<summary>쓰기 지연 SQL 저장소</summary>
-<div>
-
-    <p>비슷한 맥락입니다.<br />
-MemberA, MemberB를 생성할 때 마다 DB를 다녀오는건 비효율적이겠죠?<br />
-굳이 여러번 DB를 방문하지 않도록 내부에 “쓰기 지연 SQL 저장소”를 뒀습니다.</p>
-
-    <ol>
-      <li>memberA, memberB를 영속화 하고</li>
-      <li>entityManager.commit() 메서드를 호출하면</li>
-      <li>내부적으로 쓰기 지연 SQL 저장소에서 Flush가 일어나고</li>
-      <li>“INSERT A”, “INSERT B”와 같은 쓰기 전용 쿼리들이 DB로 흘러들어갑니다.</li>
-    </ol>
-
-    <p><img src="../../images/2022-12-30-14-34-13.png" alt="" />
-<a href="https://product.kyobobook.co.kr/detail/S000000935744">사진 출처</a></p>
-
-  </div>
-</details>
-
-<details>   
-<summary>Dirty Checking</summary>
-<div>
-
-    <p>사실 똘똘한 JPA는 1차캐시와 쓰기지연 SQL 저장소를 이용해서 변경과 수정을 감지해줍니다.</p>
-
-    <ol>
-      <li>사실 1차 캐시에는 DB의 엔티티의 정보만 저장하는것이 아닙니다.</li>
-      <li>해당 엔티티를 조회한 시점의 데이터의 정보를 같이 저장해둡니다.</li>
-      <li>그리고 엔티티객체와 조회 시점의 데이터가 다르다면 변경이 발생했다고 알 수 있겠죠?</li>
-      <li>해당 변경 부문을 반영 할 수 있는 UPDATE 쿼리를 작성해둡니다.</li>
-    </ol>
-
-    <p><img src="../../images/2022-12-30-14-35-59.png" alt="" />
-<a href="https://product.kyobobook.co.kr/detail/S000000935744">사진 출처</a></p>
-
-  </div>
-</details>
-
-<details>   
-<summary>데이터의 어플리케이션 단의 동일성을 보장해줍니다.</summary>
-<div>
-
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Member</span> <span class="n">member1</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="nc">Member</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="s">"hyunjun"</span><span class="o">);</span>
-<span class="nc">Member</span> <span class="n">member2</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="nc">Member</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="s">"hyunjun"</span><span class="o">);</span>
-<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">member1</span> <span class="o">==</span> <span class="n">member2</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="kc">true</span>
-</code></pre></div>    </div>
-
-    <ul>
-      <li>결과는 “참”</li>
-      <li>둘은 같은 인스턴스</li>
-      <li>영속성 컨텍스트는 성능상 이점과 엔티티의 동일성을 보장한다.</li>
-    </ul>
-
-    <p>위와 같이 JPA는 매우 세심하게 어플리케이션과 DB를 이어줍니다.<br />
-그러면서도 성능 최적화 부분까지 세심하게 신경을 써줬죠.</p>
-
-  </div>
-</details>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="JPA 영속성 컨텍스트" /><category term="JPA 더티 체크" /><category term="JPA Entity Manager" /><summary type="html"><![CDATA[JPA의 영속성 컨텍스트란?]]></summary></entry></feed>
+</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry></feed>
