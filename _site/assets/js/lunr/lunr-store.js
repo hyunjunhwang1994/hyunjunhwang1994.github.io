@@ -539,7 +539,7 @@ var store = [{
         "url": "/spring/Spring14/",
         "teaser": null
       },{
-        "title": "31일, JPA 연관관계, 무한 순환 참조, Json Ignore -> DTO 만들기",
+        "title": "31일, JPA 연관관계, 무한 순환 참조, Json Ignore -> DTO 만들기, EnableWebMvc",
         "excerpt":"현재 상황 전체 포스트 + 각 포스트에 속한 댓글 들을 가지고 오는 과정에서 Infinite recursion(무한 순환 참조)가 일어남. 목표 정확히 어느 부분에서 순환 참조가 되는지 알아보자 일단 동작이 가능하게 고쳐보자. 동작이 되면서 더 나은 방법을 찾아보자(뭔가 좋은 방법이 있겠지..?) 이 삽질을 공부하고 정리해 보자 해결 1. 어느 부분에서 JSON으로 직렬화가...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL27/",

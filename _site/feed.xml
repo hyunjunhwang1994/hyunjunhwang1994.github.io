@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-04T17:35:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/" rel="alternate" type="text/html" title="31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/"><![CDATA[<h2 id="현재-상황">현재 상황</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-04T21:32:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기, EnableWebMvc</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/" rel="alternate" type="text/html" title="31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기, EnableWebMvc" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/"><![CDATA[<h2 id="현재-상황">현재 상황</h2>
 
 <ul>
   <li>전체 포스트 + 각 포스트에 속한 댓글 들을 가지고 오는 과정에서</li>
@@ -56,7 +56,132 @@
 
 <p>아래의 포스팅에 글을 정리해놨습니다.</p>
 
-<p><a href="https://hyunjunhwang1994.github.io/spring/Spring14/">무한 순환 참조 정리 글</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[현재 상황]]></summary></entry><entry><title type="html">스프링 부트 - JWT 인증/인가 구현하기</title><link href="http://localhost:4000/spring/Spring13/" rel="alternate" type="text/html" title="스프링 부트 - JWT 인증/인가 구현하기" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring13</id><content type="html" xml:base="http://localhost:4000/spring/Spring13/"><![CDATA[<p><a href="https://hyunjunhwang1994.github.io/jwt/JWT/">JWT 개념 정리 포스팅</a></p>
+<p><a href="https://hyunjunhwang1994.github.io/spring/Spring14/">무한 순환 참조 정리 글</a></p>
+
+<hr />
+
+<h1 id="enablewebmvc">EnableWebMvc</h1>
+
+<h2 id="해결-과정">해결 과정</h2>
+
+<p>개인과제를 어느 정도 마무리 해놓고 밤 7시가 되어 보니 
+시간 데이터의 형식이 아래처럼 나온다는 걸 처음 봤다.. 으악 야근ㅠ</p>
+
+<p><img src="../../images/2023-01-04-19-43-31.png" alt="" /></p>
+
+<h3 id="내가-잘못한-게-아니었군">내가 잘못한 게 아니었군?</h3>
+
+<p>아래의 포스팅을 보고 아하 LocalDateTime은 원래 저렇게 나오는구나?
+<a href="https://lejewk.github.io/jpa-localdatetime-jsonformat/">처음 본 글</a></p>
+
+<p>그래서 jsr310이라는 것을 의존성에 넣고.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+</code></pre></div></div>
+
+<p>아래처럼 DTO에 포맷팅을 해주면</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
+</code></pre></div></div>
+
+<p>시간이 잘 나오는구나?</p>
+
+<p><img src="../../images/2023-01-04-21-06-17.png" alt="" /></p>
+
+<p>일단 잘 나오긴 하지만 내가 원했던 형태와 같지가 않다.
+ “2022-12-01T12:56:36.821474”</p>
+
+<p>여기까지 였다면 그렇게 오래 걸리지 않았을 것이다..</p>
+
+<h3 id="내가-잘못한-건가">내가 잘못한 건가..?</h3>
+<p>팀원이랑 얘기하던 중 특정 사람들은 LocalDateTime이 [] 형식으로 나오고
+특정 사람들은 2022-12-01T…. 형식으로 잘 나온다.</p>
+
+<p>또 이런 궁금한 거 있으면 못 참지….</p>
+
+<p>검색을 해보니 @EnableWebMvc를 쓸 경우 타임이 배열로 나온다고 한다.</p>
+
+<p>찾아보니 스웨거 Config 파일에서 해당 어노테이션을 사용하고 있었다.</p>
+
+<p><img src="../../images/2023-01-04-21-08-45.png" alt="" /></p>
+
+<h3 id="내가-잘못했구나">내가 잘못했구나!</h3>
+<p>그래서 일단 스웨거를 안 쓸 마음은 1도 없지만, 스웨거 관련된 설정들을 전부
+지워보고 다시 진행해 봤더니 @JsonFormat으로 포맷팅하지 않아도
+원하는 2022-12-01T…. 형식으로 잘 나온다.</p>
+
+<p><img src="../../images/2023-01-04-21-12-19.png" alt="" /></p>
+
+<p>하지만 스웨거를 사용하지 못한다..?</p>
+
+<p>이제부터는 영어 공부시간이 온 건가?..!</p>
+
+<p>다행히 한국어 블로그의 첫 힌트를 얻었다.
+<a href="https://velog.io/@godkimchichi/Spring-Boot-json%EC%97%90%EC%84%9C-LocalDateTime%EC%9D%B4-Array%EB%A1%9C-%EB%82%98%EC%98%AC-%EB%95%8C">첫 힌트</a></p>
+
+<p>음 .. EnableWebMvc가 Json 관련 serializer, deserializer 설정 + 여러 설정을 가지고 있는데
+내가 @EnableWebMvc를 써버려서 덮어씌운 거군?</p>
+
+<p><a href="https://leezzangmin.tistory.com/43">두 번째 힌트</a></p>
+
+<p>봐도 잘 모르겠지만. 이 EnableWebMvc와 관련된 녀석을 건드리면 안 되는구나 생각함!</p>
+
+<p>그리고 또 찾아보다가 한 가지 보너스 힌트를 얻었다.</p>
+
+<p>[참조 글](https://johnmarc.tistory.com/52</p>
+
+<p>스프링 부트 2.0부터는 jsr310을 기본 지원한다 하여 다음 의존성을 삭제했다
+이 글에서 처음에 이 문제를 해결하려 의존성으로 넣었었는데 휴 한 줄 무 쓸모로 차지할 뻔했네..</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
+</code></pre></div></div>
+
+<p>그리고, Mvc 모드 활성화 시 왜 Spring Boot의 Auto Configuration이 동작하지 않는지도 나와있다.
+@EnableWebMvc를 사용하지 말고 WebMvcConfigurer을 구현하라는데.. 더 쉬운 방법 없을까?</p>
+
+<p>그래서 이제부터는 체력 싸움이다.</p>
+
+<p>그래서 아래의 글을 참조해서 위의 개념들이 점점 확실해져 갔고,<br />
+이런 식으로 커스텀을 할 수 있구나 .. 생각했다.
+<a href="http://honeymon.io/tech/2018/03/13/spring-boot-mvc-controller.html">커스텀 참조 글</a></p>
+
+<p>그리고 역시 해결이 안 날 땐 스택 오버플로우!!</p>
+
+<p>2년 전에 올라온 글임에도 불구하고 나랑 아예 똑같은 상황이었다..</p>
+
+<p>그래서 이 글을 참조하여 Swagger를 사용하면서 기본 json 설정도 같이 사용했다.<br />
+<a href="https://stackoverflow.com/questions/64377067/enablewebmvc-showing-date-in-array-formate">역시 미제, 본사 뉴욕…</a></p>
+
+<p>아마 SwaggerConfig은 Swagger대로 가지고 가면서,
+WebMvcConfigurer을 구현하여 Jackson Dates Timestamps 설정 관련을 기본값으로 넣어주는 과정인 것 같다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Configuration</span>
+<span class="nd">@EnableWebMvc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SwaggerConfig</span> <span class="kd">implements</span> <span class="nc">WebMvcConfigurer</span> <span class="o">{</span>
+
+
+    <span class="c1">// EnableWebMvc로 인하여 JSON 타입 시간이 배열로 나와서 수동으로 넣어줌</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">extendMessageConverters</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">HttpMessageConverter</span><span class="o">&lt;?&gt;&gt;</span> <span class="n">converters</span><span class="o">)</span> <span class="o">{</span>
+<span class="c1">//        Remove the default MappingJackson2HttpMessageConverter</span>
+        <span class="n">converters</span><span class="o">.</span><span class="na">removeIf</span><span class="o">(</span><span class="n">converter</span> <span class="o">-&gt;</span> <span class="o">{</span>
+            <span class="nc">String</span> <span class="n">converterName</span> <span class="o">=</span> <span class="n">converter</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getSimpleName</span><span class="o">();</span>
+            <span class="k">return</span> <span class="n">converterName</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"MappingJackson2HttpMessageConverter"</span><span class="o">);</span>
+        <span class="o">});</span>
+<span class="c1">//        Add your custom MappingJackson2HttpMessageConverter</span>
+        <span class="nc">MappingJackson2HttpMessageConverter</span> <span class="n">converter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MappingJackson2HttpMessageConverter</span><span class="o">();</span>
+        <span class="nc">ObjectMapper</span> <span class="n">objectMapper</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ObjectMapper</span><span class="o">();</span>
+        <span class="n">objectMapper</span><span class="o">.</span><span class="na">registerModule</span><span class="o">(</span><span class="k">new</span> <span class="nc">JavaTimeModule</span><span class="o">());</span>
+        <span class="n">objectMapper</span><span class="o">.</span><span class="na">configure</span><span class="o">(</span><span class="nc">SerializationFeature</span><span class="o">.</span><span class="na">WRITE_DATES_AS_TIMESTAMPS</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+        <span class="n">converter</span><span class="o">.</span><span class="na">setObjectMapper</span><span class="o">(</span><span class="n">objectMapper</span><span class="o">);</span>
+        <span class="n">converters</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">converter</span><span class="o">);</span>
+        <span class="nc">WebMvcConfigurer</span><span class="o">.</span><span class="na">super</span><span class="o">.</span><span class="na">extendMessageConverters</span><span class="o">(</span><span class="n">converters</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    
+    <span class="c1">// SwaggerConfig...</span>
+
+</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[현재 상황]]></summary></entry><entry><title type="html">스프링 부트 - JWT 인증/인가 구현하기</title><link href="http://localhost:4000/spring/Spring13/" rel="alternate" type="text/html" title="스프링 부트 - JWT 인증/인가 구현하기" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring13</id><content type="html" xml:base="http://localhost:4000/spring/Spring13/"><![CDATA[<p><a href="https://hyunjunhwang1994.github.io/jwt/JWT/">JWT 개념 정리 포스팅</a></p>
 
 <ul>
   <li>JWT를 이용하여 로그인 및 인증/인가하는 방법을 기술하였으며,</li>
