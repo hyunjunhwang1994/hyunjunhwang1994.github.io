@@ -517,7 +517,7 @@ var store = [{
       },{
         "title": "스프링 부트 - Swagger UI 3.0",
         "excerpt":"참조한 글 Swagger(UI)란? Open Api Speccification(OAS)를 위한 프레임워크. RESTful API 테스트를 쉽게 가능하게 해주고 자신의 프로젝트에 설정할 경우 Swagger UI로 API 문서 및 테스트 페이지가 자동완성된다. Authorize 기능의 추가로 JWT 같은 토큰 사용 시 토큰 재입력 필요 없이 편하게 사용 가능하다. Gradle 추가 implementation 'io.springfox:springfox-boot-starter:3.0.0' implementation 'io.springfox:springfox-swagger-ui:3.0.0' Config 클래스 생성...","categories": ["Spring"],
-        "tags": ["Spring DI IOC Bean"],
+        "tags": ["Spring Boot Swagger UI"],
         "url": "/spring/Spring12/",
         "teaser": null
       },{
@@ -525,5 +525,17 @@ var store = [{
         "excerpt":"오늘 배운 것 JWT 토큰 인증/인가 구현 방식 JPA 연관관계 사용하여 데이터베이스 사용하기. Swagger UI 이용하여 API 테스트하기. Swagger를 스프링 부트에 적용하기. 기존 Postman 사용 시 새로운 컨트롤러 생성 시 API를 일일이 만들어 줘야 한다. 하지만 Swagger UI 사용 스프링 프로젝트에 적용 시, 자동으로 API 문서 및 테스트 도구를 생성해...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL26/",
+        "teaser": null
+      },{
+        "title": "스프링 부트 - JWT 인증/인가 구현하기",
+        "excerpt":"JWT 개념 정리 포스팅 JWT를 이용하여 로그인 및 인증/인가하는 방법을 기술하였으며, 프론트단에서 실질적으로 클라이언트의 쿠키로 저장하는 코드는 기술하지 않았습니다. JwtUtil이라는 하나의 Util을 만들고 컴포넌트로 등록 후 가저다가 사용하는 형식 build.gradle 의존성 추가. compileOnly group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2' runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2' runtimeOnly group: 'io.jsonwebtoken', name:...","categories": ["Spring"],
+        "tags": ["Spring Boot JWT 인증/인가 구현"],
+        "url": "/spring/Spring13/",
+        "teaser": null
+      },{
+        "title": "31일, JPA 무한 순환 참조, Json Ignore -> DTO 만들기",
+        "excerpt":"무한 순환 참조로 스택오버플로우 발생   왜 이런 상황이 발생했을까   아래의 글을 참조했다. Json Ignore   JSOn으로 변환하는 과정에 해당객체들이 사용되지않게 설정해줬다.   JSON ignore로 사용하면 엔티티의 성격에 안맞는다는 말이 많아   DTO를 따로 만들어주어 사용해보았다.  ","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL27/",
         "teaser": null
       }]

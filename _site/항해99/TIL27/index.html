@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>이클립스 내 JDK 버전 변경, JDK 1.8 버전 변경 에러 | 기술 블로그</title>
-<meta name="description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1">
+<!-- begin _includes/seo.html --><title>31일, JPA 무한 순환 참조, Json Ignore -&gt; DTO 만들기 | 기술 블로그</title>
+<meta name="description" content="무한 순환 참조로 스택오버플로우 발생">
 
 
   <meta name="author" content="Hyun Jun">
@@ -22,23 +22,21 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="기술 블로그">
-<meta property="og:title" content="이클립스 내 JDK 버전 변경, JDK 1.8 버전 변경 에러">
-<meta property="og:url" content="http://localhost:4000/java/Java3/">
+<meta property="og:title" content="31일, JPA 무한 순환 참조, Json Ignore -&gt; DTO 만들기">
+<meta property="og:url" content="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/">
 
 
-  <meta property="og:description" content="개발 환경           - 2021, 맥북 프로 M1 Pro 14인치 모델            - Ventura 13.1">
-
-
-
+  <meta property="og:description" content="무한 순환 참조로 스택오버플로우 발생">
 
 
 
 
-  <meta property="article:published_time" content="2022-11-16T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2022-12-06T00:00:00+09:00">
+  <meta property="article:published_time" content="2023-01-04T00:00:00+09:00">
+
+
 
 
 
@@ -47,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/java/Java3/">
+<link rel="canonical" href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/">
 
 
 
@@ -682,16 +680,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="이클립스 내 JDK 버전 변경, JDK 1.8 버전 변경 에러">
-    <meta itemprop="description" content="          개발 환경          - 2021, 맥북 프로 M1 Pro 14인치 모델           - Ventura 13.1">
-    <meta itemprop="datePublished" content="2022-11-16T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2022-12-06T00:00:00+09:00">
+    <meta itemprop="headline" content="31일, JPA 무한 순환 참조, Json Ignore -&gt; DTO 만들기">
+    <meta itemprop="description" content="무한 순환 참조로 스택오버플로우 발생">
+    <meta itemprop="datePublished" content="2023-01-04T00:00:00+09:00">
+    
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/java/Java3/" class="u-url" itemprop="url">이클립스 내 JDK 버전 변경, JDK 1.8 버전 변경 에러
+            <a href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/" class="u-url" itemprop="url">31일, JPA 무한 순환 참조, Json Ignore -&gt; DTO 만들기
 </a>
           </h1>
           
@@ -701,263 +699,6 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2022-11-16T00:00:00+09:00">2022-11-16</time>
-      </span>
-    
-
-                 
-                
-                
-                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>Updated:  2022.12.06
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 분 소요
-        
-      </span>
-    
-  </p>
-
-
-        </header>
-      
-
-      <section class="page__content e-content" itemprop="text">
-        
-          <aside class="sidebar__right sticky">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#프로젝트-jdk-버전-확인">프로젝트 JDK 버전 확인</a></li><li><a href="#버전-변경">버전 변경</a></li><li><a href="#module-error">module error</a></li></ul>
-
-            </nav>
-          </aside>
-        
-        <!-- 나의 실제 컴퓨터및 컴퓨터 버전 -->
-<div class="notice" style="text-align:center">
-          개발 환경<br />
-          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
-          - Ventura 13.1
-</div>
-<hr />
-
-<!-- 자바 포스팅시 JDK, IDE버전 등-->
-<div class="notice--info" style="text-align:center">
-          버전<br />
-          JDK: openjdk version 1.8.0_352
-<br />
-          Eclipse: Version: 2022-09 (4.25.0)
-</div>
-<hr />
-
-<p><br /></p>
-
-<p>JDK 버전 변경 시 JDK 설치와 환경 변수 적용 등이 미리 되어 있어야 합니다.</p>
-
-<p>JDK 설치 참조</p>
-
-<p><a href="https://hyunjunhwang1994.github.io/java/Java1/">참조</a></p>
-
-<p>이클립스 설치 참조</p>
-
-<p><a href="https://hyunjunhwang1994.github.io/java/Java2/">참조</a></p>
-
-<h2 id="프로젝트-jdk-버전-확인">프로젝트 JDK 버전 확인</h2>
-
-<p>Properties -&gt; ProjectFacets -&gt; Convert to faceted form…</p>
-
-<p><img src="../../images/2022-11-28-15-48-20.png" alt="" class="align-center" />
-<img src="../../images/2022-11-28-15-48-25.png" alt="" class="align-center" />
-<img src="../../images/2022-11-28-15-48-29.png" alt="" class="align-center" /></p>
-
-<p>이클립스와 연결된 JRE (JDK) 버전 확인
-<img src="../../images/2022-11-28-15-48-34.png" alt="" class="align-center" /></p>
-
-<p>이클립스와 연결된 컴파일러 버전 확인</p>
-
-<p><img src="../../images/2022-11-28-15-48-39.png" alt="" class="align-center" /></p>
-
-<h2 id="버전-변경">버전 변경</h2>
-
-<p>JDK 17 -&gt; JDK 8 (1.8) 변경으로 가정해 보겠습니다.</p>
-
-<p><img src="../../images/2022-11-28-15-48-44.png" alt="" class="align-center" /></p>
-
-<p>버전 변경할 프로젝트 Properties -&gt; Project Facets -&gt; Convert to faceted form…</p>
-
-<p><img src="../../images/2022-11-28-15-48-48.png" alt="" class="align-center" /></p>
-
-<p>17 -&gt; 1.8 변경 후 Apply
-<img src="../../images/2022-11-28-15-48-53.png" alt="" class="align-center" />
-<img src="../../images/2022-11-28-15-48-56.png" alt="" class="align-center" /></p>
-
-<p>Java Build Path -&gt; JavaSE - 17 더블클릭 -&gt; JDK1.8 변경 후 Finish -&gt; Apply</p>
-
-<p><img src="../../images/2022-11-28-15-49-00.png" alt="" /></p>
-
-<p><img src="../../images/2022-11-28-15-49-03.png" alt="" /></p>
-
-<p>Java Compiler -&gt; 17 -&gt; 1.8로 변경 및 Apply</p>
-
-<p><img src="../../images/2022-11-28-15-49-07.png" alt="" /></p>
-
-<h2 id="module-error">module error</h2>
-
-<p>통상 많이 쓰이는 1.8 버전으로 변경할 경우</p>
-
-<p>그전 프로젝트가 JDK 9버전 이상의 버전으로 작성되었다면 
-JDK 9버전부터는 모듈이라는 기능 및 파일 (module-info.java) 추가됩니다.</p>
-
-<p>그렇기 때문에
-JDK 1.8 버전에는 모듈 기능이 없으므로<br />
-Syntax error on token “module”, module expected” error가 발생합니다.</p>
-
-<p>하여, module.info.java를 제거해 줘야 에러가 발생하지 않습니다.</p>
-
-<p><img src="../../images/2022-11-28-15-49-12.png" alt="" />
-<img src="../../images/2022-11-28-15-49-16.png" alt="" width="300" /></p>
-
-<p><img src="../../images/2022-11-28-15-49-24.png" alt="" /></p>
- <!--실제 페이지 글 부분-->
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#syntax-error-on-token-module-module-expected-error" class="page__taxonomy-item p-category" rel="tag">Syntax error on token module module expected error</a><span class="sep">, </span>
-    
-      <a href="/tags/#%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4-jdk-%EB%B2%84%EC%A0%84-%EB%B3%80%EA%B2%BD" class="page__taxonomy-item p-category" rel="tag">이클립스 JDK 버전 변경</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#java" class="page__taxonomy-item p-category" rel="tag">Java</a>
-    
-    </span>
-  </p>
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-12-06">2022-12-06</time></p>
-
-      </footer>
-
-      <section class="page__share">
-  
-    <h4 class="page__share-title">공유하기</h4>
-  
-
-  <a href="https://twitter.com/intent/tweet?text=%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4+%EB%82%B4+JDK+%EB%B2%84%EC%A0%84+%EB%B3%80%EA%B2%BD%2C+JDK+1.8+%EB%B2%84%EC%A0%84+%EB%B3%80%EA%B2%BD+%EC%97%90%EB%9F%AC%20http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJava3%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJava3%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjava%2FJava3%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-</section>
-
-
-      
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  	
-  	
-  	
-  	
-  	
-
-
-  <nav class="pagination_prev_next">
-    
-      <a href="/java/Java2/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>맥북 M1 이클립스 설치하는 법</a>
-    
-    
-      <a href="/java/Java4/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>맥에서 이클립스 오류나는 경우.</a>
-    
-  </nav>
-
-
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h2 class="page__related-title">참고</h2>
-      <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/%ED%95%AD%ED%95%B499/TIL27/" rel="permalink">31일, JPA 무한 순환 참조, Json Ignore -&gt; DTO 만들기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
         
         <time datetime="2023-01-04T00:00:00+09:00">2023-01-04</time>
       </span>
@@ -976,7 +717,7 @@ Syntax error on token “module”, module expected” error가 발생합니다.
       
 
       <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        <i class="far fa-clock" aria-hidden="true"></i>
         
           최대 1 분 소요
         
@@ -985,20 +726,122 @@ Syntax error on token “module”, module expected” error가 발생합니다.
   </p>
 
 
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              
+
+            </nav>
+          </aside>
+        
+        <p>무한 순환 참조로 스택오버플로우 발생</p>
+
+<p>왜 이런 상황이 발생했을까</p>
+
+<p>아래의 글을 참조했다.
+<a href="https://gorokke.tistory.com/202">Json Ignore</a></p>
+
+<p>JSOn으로 변환하는 과정에 해당객체들이 사용되지않게 설정해줬다.</p>
+
+<p>JSON ignore로 사용하면 엔티티의 성격에 안맞는다는 말이 많아</p>
+
+<p>DTO를 따로 만들어주어 사용해보았다.</p>
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
     
+      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-01-04T00:00:00+09:00">2023-01-04</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=31%EC%9D%BC%2C+JPA+%EB%AC%B4%ED%95%9C+%EC%88%9C%ED%99%98+%EC%B0%B8%EC%A1%B0%2C+Json+Ignore+-%3E+DTO+%EB%A7%8C%EB%93%A4%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL27%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL27%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL27%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/%ED%95%AD%ED%95%B499/TIL26/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>30일, Swagger UI, ERD</a>
+    
+    
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
+    
+  </nav>
+
+
+    </div>
+
     
   </article>
-</div>
 
-
-
-
-
-
-
-
-
-
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
         
           
 
@@ -1040,7 +883,7 @@ Syntax error on token “module”, module expected” error가 발생합니다.
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          11 분 소요
+          10 분 소요
         
       </span>
     
@@ -1165,6 +1008,68 @@ Syntax error on token “module”, module expected” error가 발생합니다.
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           7 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/cloud%20computing%20-%20aws/AWS-04/" rel="permalink">AWS 프리 티어 요금 알림 설정하기.
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-03T00:00:00+09:00">2023-01-03</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
         
       </span>
     
