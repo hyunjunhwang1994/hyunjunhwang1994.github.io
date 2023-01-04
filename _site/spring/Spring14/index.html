@@ -1,0 +1,1481 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>스프링 부트 - JPA 연관관계, 무한 순환 참조 해결하기 | 기술 블로그</title>
+<meta name="description" content="연관관계 참조 블로그">
+
+
+  <meta name="author" content="Hyun Jun">
+  
+  <meta property="article:author" content="Hyun Jun">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술 블로그">
+<meta property="og:title" content="스프링 부트 - JPA 연관관계, 무한 순환 참조 해결하기">
+<meta property="og:url" content="http://localhost:4000/spring/Spring14/">
+
+
+  <meta property="og:description" content="연관관계 참조 블로그">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-01-04T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/spring/Spring14/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hyun Jun",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="843d72a8e4b20f1a8ae8e971f19c34cb128b6c8b">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+
+    <style> 
+    /*스크롤바 꾸며주는 코드*/
+      ::-webkit-scrollbar{width: 17px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: rgb(25, 56, 109);}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      
+      {
+        width:12px;height:12px;background:transparent;
+      }
+
+        /*사이드바에는 적용하지않는다.*/
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          기술 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+
+                <!-- 다크 모드 토글 버튼 -->
+                
+                <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+                <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">카테고리👇</span>
+                    <div class="navicon"></div>
+                </button>
+
+
+                
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리👇</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+
+
+        
+        
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+  
+  
+    
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리👇</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">91</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <span class="nav__sub-title">etc</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/hanghae99" class="">항해99 🚢(32)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                
+                    
+                
+                    
+                        <li><a href="/categories/jekyllblogdev" class="">Jekyll Blog Dev (11)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/cloudcomputingaws" class="">Cloud computing - AWS (4)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/git" class="">Git (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/jwt" class="">JWT (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            
+
+
+
+        <span class="nav__sub-title">Programming language</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/java" class="">Java (12)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Database</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/sql" class="">SQL (1)</a></li>
+                    
+                
+            </ul>
+
+   
+
+
+        <span class="nav__sub-title">Framework</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/spring" class="">Spring (14)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/flask" class="">Flask (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <span class="nav__sub-title">Algorithm</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmbasic" class="">Algorithm - Basic (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul> 
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmhanghae99" class="">Algorithm - Hanghae99🚢 (6)</a></li>
+                    
+                
+                    
+                
+            </ul> 
+
+
+ 
+
+
+      </li>
+
+
+
+  </ul>
+</nav>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="스프링 부트 - JPA 연관관계, 무한 순환 참조 해결하기">
+    <meta itemprop="description" content="연관관계 참조 블로그">
+    <meta itemprop="datePublished" content="2023-01-04T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/spring/Spring14/" class="u-url" itemprop="url">스프링 부트 - JPA 연관관계, 무한 순환 참조 해결하기
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-04T00:00:00+09:00">2023-01-04</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          18 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#현재-상황">현재 상황</a><ul><li><a href="#로그-확인하기">로그 확인하기.</a></li></ul></li><li><a href="#무한-순환-참조가-왜-일어날까">무한 순환 참조가 왜 일어날까?</a><ul><li><a href="#어느-부분에서-json으로-직렬화가-될까">어느 부분에서 JSON으로 직렬화가 될까?</a></li><li><a href="#참조-자체를-안-하면">참조 자체를 안 하면?</a></li><li><a href="#순환-참조를-막는-방법">순환 참조를 막는 방법</a><ul><li><a href="#jsonignore지양해야-하는-방법">@JsonIgnore(지양해야 하는 방법)</a></li><li><a href="#dto-사용-지향해야-하는-방법">DTO 사용 (지향해야 하는 방법)</a></li></ul></li></ul></li><li><a href="#정리️">정리⭐️</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p><a href="https://cornswrold.tistory.com/350">연관관계 참조 블로그</a></p>
+
+<h1 id="현재-상황">현재 상황</h1>
+<ul>
+  <li>전체 Post와 각 Post들의 전체 Comment를 가지고 오는 도중 무한 순환 참조가 발생</li>
+  <li>Infinite recursion (StackOverflowError)</li>
+</ul>
+
+<hr />
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Comment </span>
+    <span class="nd">@ManyToOne</span>
+    <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"USER_ID"</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">User</span> <span class="n">user</span><span class="o">;</span>
+
+    <span class="nd">@ManyToOne</span>
+    <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"POST_ID"</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Post</span> <span class="n">post</span><span class="o">;</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Post</span>
+    <span class="nd">@ManyToOne</span>
+    <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"USER_ID"</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">User</span> <span class="n">user</span><span class="o">;</span>
+
+    <span class="nd">@OneToMany</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"post"</span><span class="o">)</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Comment</span><span class="o">&gt;</span> <span class="n">comments</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//User</span>
+    <span class="nd">@OneToMany</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"user"</span><span class="o">)</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Post</span><span class="o">&gt;</span> <span class="n">posts</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+    <span class="nd">@OneToMany</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"user"</span><span class="o">)</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Comment</span><span class="o">&gt;</span> <span class="n">comments</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">//Service</span>
+
+    <span class="c1">// post와 해당 포스트의 commentList를 받아서 postResponseDto -&gt; DtoList에 넣는다.</span>
+    <span class="nc">PostResponseDto</span> <span class="n">postResponseDto</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PostResponseDto</span><span class="o">(</span><span class="n">post</span><span class="o">,</span> <span class="n">commentList</span><span class="o">);</span>
+
+    <span class="n">postResponseDtoList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">postResponseDto</span><span class="o">);</span>
+
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
+<span class="nd">@Setter</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostResponseDto</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">LocalDateTime</span> <span class="n">createdAt</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">LocalDateTime</span> <span class="n">modifiedAt</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">title</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">contents</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">author</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">username</span><span class="o">;</span>
+
+    <span class="c1">// 실질적인 문제 발생 지점</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Comment</span><span class="o">&gt;</span> <span class="n">comment</span><span class="o">;</span>
+
+
+
+    <span class="c1">// entity -&gt; dto</span>
+    <span class="kd">public</span> <span class="nf">PostResponseDto</span><span class="o">(</span><span class="nc">Post</span> <span class="n">post</span><span class="o">,</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Comment</span><span class="o">&gt;</span> <span class="n">comment</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getId</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">createdAt</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getCreatedAt</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">modifiedAt</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getModifiedAt</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getTitle</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getContents</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">username</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getUsername</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">comment</span> <span class="o">=</span> <span class="n">comment</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="로그-확인하기">로그 확인하기.</h2>
+
+<p>로그를 자세히 보면 친절하게 아래처럼 알려줍니다.<br />
+(실제로는 무한 순환 참조로 스택오버플로가 걸릴 때까지 진행되기 때문에 로그가 훨씬 길어요.)</p>
+
+<details>  
+<summary>로그 확인하기.</summary>
+<div>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     2023-01-04 14:03:56.792 ERROR 4348 --- [nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in  context with path [] threw exception [Request processing failed; nested exception is org.springframework.http.converter.HttpMessageNotWritableException:  Could not write JSON: Infinite recursion (StackOverflowError); nested exception is com.fasterxml.jackson.databind.JsonMappingException: Infinite recursion (StackOverflowError) (through reference chain: com.sparta.spring_skillful_week_assignment.entity.User["posts"]-&gt;org.hibernate.collection.internal.  PersistentBag[0]-&gt;com.sparta.spring_skillful_week_assignment.entity.Post["user"]-&gt;com.sparta.spring_skillful_week_assignment.entity.User["posts"]-&gt;org.  hibernate.collection.internal.PersistentBag[0]-&gt;com.sparta.spring_skillful_week_assignment.entity.Post["user"]-&gt;com.sparta.spring_skillful_week_assignment.  entity.User["posts"]-&gt;org.hibernate.collection.internal.PersistentBag[0]   
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<p>로그로 짐작해 보자면 posts -&gt; user의 무한 반복인 것처럼 보입니다.</p>
+
+<hr />
+
+<h1 id="무한-순환-참조가-왜-일어날까">무한 순환 참조가 왜 일어날까?</h1>
+
+<p><a href="https://k3068.tistory.com/32">참조 블로그1</a><br />
+<a href="https://m.blog.naver.com/writer0713/221587351970">2</a><br />
+<a href="https://dev-coco.tistory.com/133">3</a></p>
+
+<p>무한 순환 참조는 자바의 객체(Entity, Dto)를 JSON 타입으로 직렬화할 때</p>
+
+<p>Dto던 Entity던 직렬화하는 과정에 필드에 Entity가 있다면 해당 Entity를 직렬화하기 위해 참조하게 되고,</p>
+
+<p>해당 Entity 안의 연관관계가 맺어진 Entity를 직렬화하기 위해 또 참조하게 되고,</p>
+
+<p>또 그 Entity에서의 연관관계가 맺어진 Entity를 참조하게 되고의 반복입니다.
+(양방향 매핑이 되어 있기 때문에 !)</p>
+
+<hr />
+
+<p>🤔 현재 상황이 Comment와 Post를 활용 중인데 로그에 user는 왜 나온 걸까?를 한번 생각해 보면</p>
+
+<p>아래의 순서를 보시면 실제적으로 무한 순환 참조가 이루어지는 곳은 user posts입니다.</p>
+
+<p>예를 들면 제 코드를 기준으로</p>
+
+<ul>
+  <li>PostResponseDto에 담긴 내용물들을 직렬화하는 과정 중</li>
+  <li>List 타입의 comment 필드를 만나게 되고 해당 객체 자체(entity)가 들어와있으므로</li>
+  <li>comment Entity를 참조하여 comment Entity에 대한 내용들을 또 직렬화합니다.</li>
+  <li>comment로 가서 직렬화하던 중 user를 만나게 되고 또, 다시 user를 참조하여 user를 직렬화하게 됩니다.</li>
+  <li>user 직렬화 중 posts를 만나게 되고 posts를 참조하기 위해 또 posts로 이동합니다.</li>
+  <li>
+    <p>posts에서 user를 발견하고 또 참조하게 되고 -&gt; posts 참조를 무한 반복합니다.</p>
+  </li>
+  <li>결국 양방향 매핑을 자바에서 표현하려다 보니 나는 문제입니다.</li>
+</ul>
+
+<p>그럼 이제 대략 무한 순환 참조가 왜 나는지는 알았습니다.</p>
+
+<h2 id="어느-부분에서-json으로-직렬화가-될까">어느 부분에서 JSON으로 직렬화가 될까?</h2>
+
+<p>위의 무한 순환 참조가 왜 일어났는지 까지는 그렇다 칩시다.<br />
+그렇다면 우리는 JSON 직렬화라는 것을 직접 해준 적이 없습니다.</p>
+
+<p>그리고, 서비스단에서도 단순히 자바 객체지 JSON으로 직렬화를 해주는 부분이 없습니다.</p>
+
+<p>그렇다면 어디에서 JSON의 직렬화가 이루어지는 것인가를 한번 생각해 볼 필요가 있습니다.</p>
+
+<hr />
+
+<p>그 답은 의외로 쉽습니다.<br />
+RestAPI를 만들고 있는 현재 JSON이라는 형태로 데이터를 보내주고 있고,<br />
+알아서 직렬화를 해주는 곳은? 당연히 RestController이겠죠.</p>
+
+<p>RestController 어노테이션을 붙인 컨트롤러 혹은
+@ResponseBody가 붙은 컨트롤러 메소드에서</p>
+
+<p>값을 반환(return) 할 때 객체를 JSON 타입으로 ObjectMapper가 변환시켜줍니다. 
+여기서 JSON 타입에 대한 무한 루프 문제가 발생하고 스택오버플로가 발생하는 것입니다.</p>
+
+<p><a href="https://pasudo123.tistory.com/350">참조 블로그</a></p>
+
+<h2 id="참조-자체를-안-하면">참조 자체를 안 하면?</h2>
+
+<p>현제 제 기준으로 무한 순환 참조의 원인을 발생시키느 부분이 참조하는 것이 없다면?
+다른 말로 null이면 무한 순환 참조는 발생하지 않습니다.</p>
+
+<p>예를 들어 현재 무한 순환 참조가 발생하고 있는 상태인데요.</p>
+
+<p>만약 모든~~ 포스트에 댓글이 하나도 존재하지 않는다면
+어디에서도 comment를 참조하지 않고 순환 참조가 발생하지 않습니다.</p>
+
+<p>Swagger UI로 확인 시, 포스트에 댓글이 존재하지 않는다면 댓글은 빈 배열로
+순환 참조 없이 잘 불러와집니다.</p>
+
+<p><img src="../../images/2023-01-04-10-43-50.png" alt="" /></p>
+
+<p>댓글을 1개 이상 작성 후 다시 전체 포스트를 불러오면? (인피니티 시작..)</p>
+
+<p><img src="../../images/2023-01-04-10-45-21.png" alt="" /></p>
+
+<h2 id="순환-참조를-막는-방법">순환 참조를 막는 방법</h2>
+
+<p><a href="https://gorokke.tistory.com/202">Json Ignore 참조 블로그</a></p>
+
+<h3 id="jsonignore지양해야-하는-방법">@JsonIgnore(지양해야 하는 방법)</h3>
+<p>JosnIgnore는 객체를 직렬화하는 과정에서 해당 어노테이션이 붙은<br />
+필드들을 직렬화 대상에서 제외합니다.</p>
+
+<p>제 코드 기준으로 responseDto 안의 필드가, Comment Entity를 참조하는데 
+Comment는 연관 관계가 설정된 user, post를 참조해서 문제이므로</p>
+
+<p>결국 무한 순환 참조가 일어나는 두 개의 필드에 @JsonIgnore를 붙여주면 잘 동작은 합니다.</p>
+
+<p>하지만 해당 필드가 직렬화 과정에서 아예 제외되므로,<br />
+실질적으로 다른 비즈니스 로직 사용 시, 이용해야 할 때 사용을 못 할 수 있습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Comment</span>
+    <span class="nd">@ManyToOne</span>
+    <span class="nd">@JsonIgnore</span>
+    <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"USER_ID"</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">User</span> <span class="n">user</span><span class="o">;</span>
+
+    <span class="nd">@ManyToOne</span>
+    <span class="nd">@JsonIgnore</span>
+    <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"POST_ID"</span><span class="o">,</span> <span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Post</span> <span class="n">post</span><span class="o">;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="dto-사용-지향해야-하는-방법">DTO 사용 (지향해야 하는 방법)</h3>
+
+<p>그러면 애초에 원인인 Json의 직렬화가 이루어질 때의
+객체 안에 comment -&gt; CommentResponseDto 와 같은 식으로 바꾸면 문제없지 않을까요?</p>
+
+<p>현재 저의 경우 CommentResponseDto는 statusCode, responseMessage, data의 형태로
+쓰고 있기 때문에 PostCommentResponseDto로 만들어보겠습니다.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// PostResponseDto</span>
+ <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">PostCommentResponseDto</span><span class="o">&gt;</span> <span class="n">comment</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">PostResponseDto</span><span class="o">(</span><span class="nc">Post</span> <span class="n">post</span><span class="o">,</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">PostCommentResponseDto</span><span class="o">&gt;</span> <span class="n">comment</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getId</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">createdAt</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getCreatedAt</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">modifiedAt</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getModifiedAt</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getTitle</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">contents</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getContents</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">author</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">username</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="na">getUser</span><span class="o">().</span><span class="na">getUsername</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">comment</span> <span class="o">=</span> <span class="n">comment</span><span class="o">;</span>
+    <span class="o">}</span>
+
+
+<span class="c1">// PostCommentResponseDto</span>
+<span class="nd">@Getter</span>
+<span class="nd">@Setter</span>
+<span class="nd">@NoArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostCommentResponseDto</span> <span class="o">{</span>
+
+
+    <span class="kd">private</span> <span class="nc">LocalDateTime</span> <span class="n">createdAt</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">LocalDateTime</span> <span class="n">modifiedAt</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="nc">Contents</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">PostCommentResponseDto</span><span class="o">(</span><span class="nc">Comment</span> <span class="n">comment</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">createdAt</span> <span class="o">=</span> <span class="n">comment</span><span class="o">.</span><span class="na">getCreatedAt</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">modifiedAt</span> <span class="o">=</span> <span class="n">comment</span><span class="o">.</span><span class="na">getModifiedAt</span><span class="o">();</span>
+        <span class="nc">Contents</span> <span class="o">=</span> <span class="n">comment</span><span class="o">.</span><span class="na">getContents</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+
+
+<span class="c1">// service 대략적인 로직</span>
+<span class="nd">@Transactional</span><span class="o">(</span><span class="n">readOnly</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">PostResponseDto</span><span class="o">&gt;</span> <span class="nf">getPosts</span><span class="o">()</span> <span class="o">{</span>
+
+
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Post</span><span class="o">&gt;</span> <span class="n">postList</span> <span class="o">=</span> <span class="n">postRepository</span><span class="o">.</span><span class="na">findAllByOrderByModifiedAtDesc</span><span class="o">();</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">PostResponseDto</span><span class="o">&gt;</span> <span class="n">postResponseDtoList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+
+
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Comment</span><span class="o">&gt;</span> <span class="n">commentList</span><span class="o">;</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">PostCommentResponseDto</span><span class="o">&gt;</span> <span class="n">postCommentResponseDto</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+
+        <span class="k">for</span> <span class="o">(</span><span class="nc">Post</span> <span class="n">post</span> <span class="o">:</span> <span class="n">postList</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="n">commentList</span> <span class="o">=</span> <span class="n">commentRepository</span><span class="o">.</span><span class="na">findAllByPost_IdOrderByCreatedAtDesc</span><span class="o">(</span><span class="n">post</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+            
+            <span class="k">for</span> <span class="o">(</span><span class="nc">Comment</span> <span class="n">comment</span> <span class="o">:</span> <span class="n">commentList</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">postCommentResponseDto</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="nc">PostCommentResponseDto</span><span class="o">(</span><span class="n">comment</span><span class="o">));</span>
+                
+            <span class="o">}</span>
+            <span class="nc">PostResponseDto</span> <span class="n">postResponseDto</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PostResponseDto</span><span class="o">(</span><span class="n">post</span><span class="o">,</span> <span class="n">postCommentResponseDto</span><span class="o">);</span>
+            <span class="n">postResponseDtoList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">postResponseDto</span><span class="o">);</span>
+
+        <span class="o">}</span>
+        
+        <span class="k">return</span> <span class="n">postResponseDtoList</span><span class="o">;</span>
+    <span class="o">}</span>
+
+</code></pre></div></div>
+
+<p>이제 실질적으로 Entity가 아닌 DTO만 들어가 있으므로<br />
+JSON의 직렬화가 일어날 때 순환 참조가 일어날 일이 없다!</p>
+
+<hr />
+
+<h1 id="정리️">정리⭐️</h1>
+<p>만약 저와 다른 상황이시더라도, 
+아래의 글을 자~~세히 읽어보신다면 금방 해결하실 것 같습니다.</p>
+
+<ul>
+  <li>무한 순환 참조 Infinite recursion (StackOverflowError)는</li>
+  <li>자바 객체(DTO, Entity)의 직렬화가 이루어질 때 발생하고,</li>
+  <li>직렬화는 @RestController(@ResponseBody)에서 리턴 시 이루어진다.</li>
+  <li>해당 객체 안에 양방향으로 연관관계가 설정되어 있다면</li>
+  <li>직렬화 과정에서 계속 참조를 하게 되므로 발생한다.</li>
+  <li>그러므로 해당하는 엔티티에 대응하는 Dto 객체를 만들어</li>
+  <li>엔티티의 내용물을 Dto로 옮기고 최종적으로 컨트롤러에서 직렬화를 시켜 리턴한다.</li>
+</ul>
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#%EB%AC%B4%ED%95%9C-%EC%88%9C%ED%99%98-%EC%B0%B8%EC%A1%B0" class="page__taxonomy-item p-category" rel="tag">무한 순환 참조</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#spring" class="page__taxonomy-item p-category" rel="tag">Spring</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-01-04T00:00:00+09:00">2023-01-04</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%8A%A4%ED%94%84%EB%A7%81+%EB%B6%80%ED%8A%B8+-+JPA+%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84%2C+%EB%AC%B4%ED%95%9C+%EC%88%9C%ED%99%98+%EC%B0%B8%EC%A1%B0+%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fspring%2FSpring14%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fspring%2FSpring14%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fspring%2FSpring14%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/spring/Spring13/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>스프링 부트 - JWT 인증/인가 구현하기</a>
+    
+    
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL27/" rel="permalink">31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&gt; DTO 만들기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-04T00:00:00+09:00">2023-01-04</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring13/" rel="permalink">스프링 부트 - JWT 인증/인가 구현하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-04T00:00:00+09:00">2023-01-04</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          10 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL26/" rel="permalink">30일, Swagger UI, ERD
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-03T00:00:00+09:00">2023-01-03</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring12/" rel="permalink">스프링 부트 - Swagger UI 3.0
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-03T00:00:00+09:00">2023-01-03</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          7 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/hyunjunhwang1994" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/hyunjuuuuun/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Hyun Jun. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <!-- start custom comments scripts -->
+
+<!-- end custom comments scripts -->
+
+<script>
+    'use strict';
+
+    window.customUtterances = {
+      theme: 'github-light',
+      darkTheme: 'github-dark',
+      onChange: (theme) => {
+        var commentContainer = document.querySelector('#utterances-comments');
+  
+        if (!commentContainer) {
+          return;
+        }
+  
+        while ( commentContainer.hasChildNodes() ) { 
+          commentContainer.removeChild( commentContainer.firstChild );
+        }
+  
+        var script = document.createElement('script');
+        script.setAttribute('src', 'https://utteranc.es/client.js');
+        script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
+        script.setAttribute('label', 'utterances');
+        script.setAttribute('issue-term', 'pathname');
+        script.setAttribute('theme', theme);
+        script.setAttribute('crossorigin', 'anonymous');
+  
+        commentContainer.appendChild(script);
+      }
+    };
+  </script>
+
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>

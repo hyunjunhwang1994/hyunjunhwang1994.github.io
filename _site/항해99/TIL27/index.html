@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>31일, JPA 무한 순환 참조, Json Ignore -&gt; DTO 만들기 | 기술 블로그</title>
-<meta name="description" content="무한 순환 참조로 스택오버플로우 발생">
+<!-- begin _includes/seo.html --><title>31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&gt; DTO 만들기 | 기술 블로그</title>
+<meta name="description" content="현재 상황">
 
 
   <meta name="author" content="Hyun Jun">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="기술 블로그">
-<meta property="og:title" content="31일, JPA 무한 순환 참조, Json Ignore -&gt; DTO 만들기">
+<meta property="og:title" content="31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&gt; DTO 만들기">
 <meta property="og:url" content="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/">
 
 
-  <meta property="og:description" content="무한 순환 참조로 스택오버플로우 발생">
+  <meta property="og:description" content="현재 상황">
 
 
 
@@ -218,7 +218,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">90</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">91</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -534,7 +534,7 @@
                     
                 
                     
-                        <li><a href="/categories/spring" class="">Spring (13)</a></li>
+                        <li><a href="/categories/spring" class="">Spring (14)</a></li>
                     
                 
                     
@@ -680,8 +680,8 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="31일, JPA 무한 순환 참조, Json Ignore -&gt; DTO 만들기">
-    <meta itemprop="description" content="무한 순환 참조로 스택오버플로우 발생">
+    <meta itemprop="headline" content="31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&gt; DTO 만들기">
+    <meta itemprop="description" content="현재 상황">
     <meta itemprop="datePublished" content="2023-01-04T00:00:00+09:00">
     
 
@@ -689,7 +689,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/" class="u-url" itemprop="url">31일, JPA 무한 순환 참조, Json Ignore -&gt; DTO 만들기
+            <a href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/" class="u-url" itemprop="url">31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&gt; DTO 만들기
 </a>
           </h1>
           
@@ -719,7 +719,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          3 분 소요
         
       </span>
     
@@ -734,23 +734,68 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#현재-상황">현재 상황</a></li><li><a href="#목표">목표</a></li><li><a href="#해결">해결</a><ul><li><a href="#1-어느-부분에서-json으로-직렬화가-될까">1. 어느 부분에서 JSON으로 직렬화가 될까?</a></li><li><a href="#2-일단-빠르게-동작이-되게-해보자">2. 일단 빠르게 동작이 되게 해보자.</a></li><li><a href="#3-더-나은-방식">3. 더 나은 방식</a></li><li><a href="#4-정리">4. 정리</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <p>무한 순환 참조로 스택오버플로우 발생</p>
+        <h2 id="현재-상황">현재 상황</h2>
 
-<p>왜 이런 상황이 발생했을까</p>
+<ul>
+  <li>전체 포스트 + 각포스트에 속한 댓글 들을 가지고 오는 과정에서</li>
+  <li>Infinite recursion(무한 순환 참조)가 일어남.</li>
+</ul>
 
-<p>아래의 글을 참조했다.
-<a href="https://gorokke.tistory.com/202">Json Ignore</a></p>
+<h2 id="목표">목표</h2>
+<ol>
+  <li>정확히 어느부분에서 순환참조가 되는지 알아보자</li>
+  <li>일단 동작이 가능하게 고쳐보자.</li>
+  <li>동작이 되면서 더나은 방법을 찾아보자(뭔가 좋은 방법이 있겠지..?)</li>
+  <li>이 삽질을 공부하고 정리해보자</li>
+</ol>
 
-<p>JSOn으로 변환하는 과정에 해당객체들이 사용되지않게 설정해줬다.</p>
+<h2 id="해결">해결</h2>
 
-<p>JSON ignore로 사용하면 엔티티의 성격에 안맞는다는 말이 많아</p>
+<h3 id="1-어느-부분에서-json으로-직렬화가-될까">1. 어느 부분에서 JSON으로 직렬화가 될까?</h3>
+<p>처음엔 서비스단에서 문제가 있나해서 디버깅돌리고 찾아봤지만,
+서비스단에서는 단순히 자바 객체지 JSON으로 직렬화를 해주는 부분이 없다.</p>
 
-<p>DTO를 따로 만들어주어 사용해보았다.</p>
+<p>그래서 많이 찾아봤지만, 순환참조가 JSON 직렬화 시 나온다는 글만 많고 
+정확히 어느 단에서 발생하는지는 많이 안나와있었다. 하지만 계속 찾아본 결과 아래의 블로그에서<br />
+답을 찾았다.</p>
+
+<p><a href="https://pasudo123.tistory.com/350">참조 블로그</a></p>
+
+<hr />
+
+<p>RestController 어노테이션을 붙인 컨트롤러에서는<br />
+값을 반환(return)할때 객체를 JSON 타입으로 ObjectMapper가 변환시켜준다.</p>
+
+<p>여기서 JSON 타입에 대한 무한루프문제가 발생하고 스택오버플로우가 뜬다.</p>
+
+<h3 id="2-일단-빠르게-동작이-되게-해보자">2. 일단 빠르게 동작이 되게 해보자.</h3>
+
+<hr />
+
+<ul>
+  <li>일단 처음엔 JSON Ignore를 사용해 해결했지만,</li>
+  <li>JSON Ignore를 사용할 경우 해당필드를 직렬화에서 제외하므로,</li>
+  <li>해당 필드가 직렬화에 필요할 경우에는 적합하지 않고,</li>
+  <li>지양해야되는 방법이라 한다.</li>
+</ul>
+
+<h3 id="3-더-나은-방식">3. 더 나은 방식</h3>
+
+<hr />
+
+<p>@JsonManagedReference &amp; @JsonBackReference 방식도 있지만,
+더 찾아보니 Entity대신 DTO로 반환하는것이 지향해야할 방식이라해서 해당 방식으로 해결 해보았다.</p>
+
+<h3 id="4-정리">4. 정리</h3>
+
+<hr />
+
+<p>해서 아래의 포스팅에 글을 정리해놨습니다.</p>
  <!--실제 페이지 글 부분-->
         
       </section>
@@ -803,7 +848,7 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=31%EC%9D%BC%2C+JPA+%EB%AC%B4%ED%95%9C+%EC%88%9C%ED%99%98+%EC%B0%B8%EC%A1%B0%2C+Json+Ignore+-%3E+DTO+%EB%A7%8C%EB%93%A4%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL27%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=31%EC%9D%BC%2C+JPA+%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84%2C+%EB%AC%B4%ED%95%9C+%EC%88%9C%ED%99%98+%EC%B0%B8%EC%A1%B0%2C+Json+Ignore+-%3E+DTO+%EB%A7%8C%EB%93%A4%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL27%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL27%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -842,6 +887,68 @@
     <div class="page__related">
       <h2 class="page__related-title">참고</h2>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring14/" rel="permalink">스프링 부트 - JPA 연관관계, 무한 순환 참조 해결하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-04T00:00:00+09:00">2023-01-04</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          18 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
         
           
 
@@ -945,7 +1052,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          4 분 소요
         
       </span>
     
@@ -1008,68 +1115,6 @@
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           7 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/cloud%20computing%20-%20aws/AWS-04/" rel="permalink">AWS 프리 티어 요금 알림 설정하기.
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-01-03T00:00:00+09:00">2023-01-03</time>
-      </span>
-    
-
-                 
-                
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          2 분 소요
         
       </span>
     
