@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-04T17:23:58+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/" rel="alternate" type="text/html" title="31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/"><![CDATA[<h2 id="현재-상황">현재 상황</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-04T17:31:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/" rel="alternate" type="text/html" title="31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/"><![CDATA[<h2 id="현재-상황">현재 상황</h2>
 
 <ul>
   <li>전체 포스트 + 각포스트에 속한 댓글 들을 가지고 오는 과정에서</li>
@@ -54,7 +54,9 @@
 
 <hr />
 
-<p>해서 아래의 포스팅에 글을 정리해놨습니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[현재 상황]]></summary></entry><entry><title type="html">스프링 부트 - JWT 인증/인가 구현하기</title><link href="http://localhost:4000/spring/Spring13/" rel="alternate" type="text/html" title="스프링 부트 - JWT 인증/인가 구현하기" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring13</id><content type="html" xml:base="http://localhost:4000/spring/Spring13/"><![CDATA[<p><a href="https://hyunjunhwang1994.github.io/jwt/JWT/">JWT 개념 정리 포스팅</a></p>
+<p>아래의 포스팅에 글을 정리해놨습니다.</p>
+
+<p><a href="https://hyunjunhwang1994.github.io/spring/Spring14/">무한 순환 참조 정리 글</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[현재 상황]]></summary></entry><entry><title type="html">스프링 부트 - JWT 인증/인가 구현하기</title><link href="http://localhost:4000/spring/Spring13/" rel="alternate" type="text/html" title="스프링 부트 - JWT 인증/인가 구현하기" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring13</id><content type="html" xml:base="http://localhost:4000/spring/Spring13/"><![CDATA[<p><a href="https://hyunjunhwang1994.github.io/jwt/JWT/">JWT 개념 정리 포스팅</a></p>
 
 <ul>
   <li>JWT를 이용하여 로그인 및 인증/인가하는 방법을 기술하였으며,</li>
@@ -549,7 +551,7 @@ Comment는 연관 관계가 설정된 user, post를 참조해서 문제이므로
 </code></pre></div></div>
 
 <p>이제 실질적으로 Entity가 아닌 DTO만 들어가 있으므로<br />
-JSON의 직렬화가 일어날 때 순환 참조가 일어날 일이 없다!</p>
+JSON의 직렬화가 일어날 때 순환 참조가 일어날 일이 없습니다!</p>
 
 <hr />
 
