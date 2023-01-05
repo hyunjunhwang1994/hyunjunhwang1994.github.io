@@ -1,4 +1,294 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-04T21:32:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기, EnableWebMvc</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/" rel="alternate" type="text/html" title="31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기, EnableWebMvc" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/"><![CDATA[<h2 id="현재-상황">현재 상황</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-06T08:47:26+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">33일, 주특기 심화 주 차 발제.</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29/" rel="alternate" type="text/html" title="33일, 주특기 심화 주 차 발제." /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29/"><![CDATA[]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">JPA 연관 관계 요구사항 Entity 구현해 보기</title><link href="http://localhost:4000/spring/Spring15/" rel="alternate" type="text/html" title="JPA 연관 관계 요구사항 Entity 구현해 보기" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring15</id><content type="html" xml:base="http://localhost:4000/spring/Spring15/"><![CDATA[<p>요구사항에 따라 Spring Data Jpa의 Entity를<br />
+만들어 연관관계를 맺는 연습을 해보면 어떨까요?</p>
+
+<h1 id="요구사항">요구사항</h1>
+<h2 id="erd">ERD</h2>
+
+<p><img src="../../images/2023-01-05-17-00-34.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>자동차 테이블은 1대당 개별 테이블이 아닌
+자동차 종류별 테이블입니다 ex) 1개의 로우에 아반떼 재고 10대.</p>
+  </li>
+  <li>
+    <p>구매자의 경우 회원 형식이 아닌 말 그대로 구매자이므로,
+구매를 한 경우에만 등록됩니다.</p>
+  </li>
+</ul>
+
+<p>간단하게 위처럼 정의하고 자바 코드로 만들어 볼까요?</p>
+
+<hr />
+
+<h1 id="구현하기">구현하기.</h1>
+
+<ul>
+  <li>repository, entity 파일부터 기획에 맞게 생성</li>
+</ul>
+
+<p><img src="../../images/2023-01-05-16-48-53.png" alt="" /></p>
+
+<hr />
+
+<ul>
+  <li>각각의 repository 인터페이스에 JpaRepository 상속받기</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// BuyerRepository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">BuyerRepository</span> <span class="kd">extends</span> <span class="nc">JpaRepository</span><span class="o">&lt;</span><span class="nc">Buyer</span><span class="o">,</span> <span class="nc">Long</span><span class="o">&gt;</span> <span class="o">{</span>
+<span class="o">}</span>
+
+<span class="c1">// CarDealershipRepository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CarDealershipRepository</span> <span class="kd">extends</span> <span class="nc">JpaRepository</span><span class="o">&lt;</span><span class="nc">CarDealership</span><span class="o">,</span> <span class="nc">Long</span><span class="o">&gt;</span> <span class="o">{</span>
+<span class="o">}</span>
+
+<span class="c1">// CarRepository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">CarRepository</span> <span class="kd">extends</span> <span class="nc">JpaRepository</span><span class="o">&lt;</span><span class="nc">Car</span><span class="o">,</span> <span class="nc">Long</span><span class="o">&gt;</span> <span class="o">{</span>
+<span class="o">}</span>
+
+<span class="c1">//PurchaseRepository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">PurchaseRepository</span> <span class="kd">extends</span> <span class="nc">JpaRepository</span><span class="o">&lt;</span><span class="nc">Purchase</span><span class="o">,</span> <span class="nc">Long</span><span class="o">&gt;</span> <span class="o">{</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>이제 미리 기획한 ERD를 보고 구현만 하면 됩니다!
+참 쉽죠?!</p>
+
+<ul>
+  <li>Buyer Entity</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Buyer</span> <span class="o">{</span>
+
+
+    <span class="c1">// PK</span>
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="nc">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">email</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">address</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">phoneNumber</span><span class="o">;</span>
+
+    <span class="nd">@OneToMany</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"buyer"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Purchase</span><span class="o">&gt;</span> <span class="n">purchases</span><span class="o">;</span>
+
+
+    <span class="c1">// FK의 경우 ( N인 곳에만 있습니다. )</span>
+    <span class="c1">// CarDealership(1) --&gt; (N)Buyer</span>
+    <span class="c1">// 위와 같이 단방향이므로 이곳 필드엔 기입하지 않아요!</span>
+
+
+
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<hr />
+
+<ul>
+  <li>Car</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Car</span> <span class="o">{</span>
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="nc">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">price</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">quantity</span><span class="o">;</span>
+
+    <span class="nd">@ManyToOne</span>
+    <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"CARDEALERSHIP_ID"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">CarDealership</span> <span class="n">carDealership</span><span class="o">;</span>
+
+
+    <span class="nd">@OneToMany</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"car"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Purchase</span><span class="o">&gt;</span> <span class="n">purchases</span><span class="o">;</span>
+
+
+
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<ul>
+  <li>CarDealership</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CarDealership</span> <span class="o">{</span>
+
+
+    <span class="c1">// PK</span>
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="nc">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">location</span><span class="o">;</span>
+
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">nullable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
+
+    <span class="nd">@OneToMany</span>
+    <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"CARDEALERSHIP_ID"</span><span class="o">)</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Buyer</span><span class="o">&gt;</span> <span class="n">buyers</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+
+    <span class="nd">@OneToMany</span><span class="o">(</span><span class="n">mappedBy</span> <span class="o">=</span> <span class="s">"carDealership"</span><span class="o">)</span>
+    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Car</span><span class="o">&gt;</span> <span class="n">cars</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<ul>
+  <li>Purchase</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Entity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Purchase</span> <span class="kd">extends</span> <span class="nc">Timestamped</span> <span class="o">{</span>
+    <span class="nd">@Id</span>
+    <span class="nd">@GeneratedValue</span><span class="o">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="nc">GenerationType</span><span class="o">.</span><span class="na">IDENTITY</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Long</span> <span class="n">id</span><span class="o">;</span>
+
+
+    <span class="nd">@ManyToOne</span>
+    <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"BUYER_ID"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Buyer</span> <span class="n">buyer</span><span class="o">;</span>
+
+    <span class="nd">@ManyToOne</span>
+    <span class="nd">@JoinColumn</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"CAR_ID"</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">Car</span> <span class="n">car</span><span class="o">;</span>
+
+
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<ul>
+  <li>Timestamped</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Getter</span>
+<span class="nd">@MappedSuperclass</span>
+<span class="nd">@EntityListeners</span><span class="o">(</span><span class="nc">AutoCloseable</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Timestamped</span> <span class="o">{</span>
+
+    <span class="nd">@CreatedDate</span>
+    <span class="nd">@Column</span><span class="o">(</span><span class="n">updatable</span> <span class="o">=</span> <span class="kc">false</span><span class="o">)</span>
+    <span class="kd">private</span> <span class="nc">LocalDateTime</span> <span class="n">datePurchased</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>인텔리제이에서 JPA ER 다이어그램으로 확인해 보니,<br />
+처음 기획한 것과 비슷하게 나오네요!</p>
+
+<p><img src="../../images/2023-01-05-19-51-10.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="JPA 연관관계 구현" /><summary type="html"><![CDATA[요구사항에 따라 Spring Data Jpa의 Entity를 만들어 연관관계를 맺는 연습을 해보면 어떨까요?]]></summary></entry><entry><title type="html">Spring Data JPA Entity ERD 보기.</title><link href="http://localhost:4000/intellij/IntelliJ01/" rel="alternate" type="text/html" title="Spring Data JPA Entity ERD 보기." /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/intellij/IntelliJ01</id><content type="html" xml:base="http://localhost:4000/intellij/IntelliJ01/"><![CDATA[<p>Spring으로 개발을 하다 보면,<br />
+자신이 개발 중인 Entity들을 ERD로 볼 수 있으면 얼마나 편할까?라는 생각이 듭니다.</p>
+
+<p>그래서, 인텔리제이는 JPA의 Entity들을 ERD Diagram으로 볼 수 있는 기능을 제공합니다.</p>
+
+<hr />
+
+<p>Persistence 탭 생성<br />
+<img src="../../images/2023-01-05-20-08-09.png" alt="" /></p>
+
+<p>좌측 하단 .main -&gt; entityManagerFactory 우 클릭 -&gt;
+Entity Relationship Diagram 클릭<br />
+<img src="../../images/2023-01-05-20-09-33.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-05-20-11-36.png" alt="" /></p>
+
+<hr />
+
+<p>Entity 간의 관계를 가지고 간단하게 보여주는 것이므로,<br />
+실제 RDB의 ERD처럼 자세히는 안 나오는 것 같습니다.</p>
+
+<hr />
+
+<p>Persistence에 아무것도 보이지 않거나, 다른 구현체를 사용하시는 경우</p>
+
+<p><img src="../../images/2023-01-05-20-16-03.png" alt="" /></p>
+
+<p>아래의 Modules에서 +를 눌러 추가하시거나, Provider 부분을 바꿔주시면 됩니다.
+<img src="../../images/2023-01-05-20-17-49.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="IntelliJ" /><category term="IntelliJ JPA Entity ERD 보기" /><summary type="html"><![CDATA[Spring으로 개발을 하다 보면, 자신이 개발 중인 Entity들을 ERD로 볼 수 있으면 얼마나 편할까?라는 생각이 듭니다.]]></summary></entry><entry><title type="html">32일, RestAPI EC2호스팅, JPA 참조된 데이터 삭제하기</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28/" rel="alternate" type="text/html" title="32일, RestAPI EC2호스팅, JPA 참조된 데이터 삭제하기" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28/"><![CDATA[<p>오늘은 스프링 숙련 주 차의 마지막 날..
+시험이 있는날이다.</p>
+
+<p>시험에서는 JPA의 연관관계에 대해서 나왔고,<br />
+JPA에 대해서 깊게 공부를 안해서 그런지 생각보다 어려웠다.</p>
+
+<p>그래서 항해99에서 나온 문제를 재사용하기엔 좀 그래서<br />
+비슷한 예제로 새로만들어서 아래의 포스팅에 정리를 했다.</p>
+
+<h1 id="오늘-겪은-문제들">오늘 겪은 문제들.</h1>
+<ul>
+  <li>
+    <p>Post 테이블에서 글 삭제시 삭제 되지 않는 것.
+<a href="https://devpouch.tistory.com/116">참조</a>
+<a href="https://yeon-kr.tistory.com/196">2</a>
+<a href="https://khdscor.tistory.com/18">3</a></p>
+  </li>
+  <li>jwt.secret.key 관련 에러.</li>
+  <li>@Column(length = 50000) ..</li>
+</ul>
+
+<p><a href="https://hyeonic.tistory.com/208#:~:text=%EA%B0%80%EB%B3%80%20%EA%B8%B8%EC%9D%B4%EC%9D%B4%EB%8B%A4.,%EC%B5%9C%EB%8C%80%20%EA%B8%B8%EC%9D%B4%EB%8A%94%2065535%EC%9D%B4%EB%8B%A4.">길이 관련 포스트</a></p>
+
+<h1 id="restapi-개인-과제를-rds연동-ec2에-호스팅-해보다">RestAPI 개인 과제를 RDS연동 EC2에 호스팅 해보다.</h1>
+
+<ul>
+  <li>RDS 연동</li>
+  <li>EC2 호스팅</li>
+  <li>도메인네임 연결</li>
+  <li>포트 포워딩</li>
+</ul>
+
+<p>사실 상 위의 것들은 정리가 잘된 블로그도 많고 
+AWS라는 공룡기업이 있어서 생각보다 어렵지 않았다.</p>
+
+<h2 id="어려웠던-점">어려웠던 점</h2>
+<p>기존 스프링 부트의 인 메모리 방식h2에서 RDS의 MySQL을 사용 할 시
+자잘한 설정으로 인해 오류가 나는 부분들이 있어서 까다로웠음.</p>
+
+<p>JPA를 사용함에 있어서 연관관계를 짜고,
+설계를 하는 것들이 생각보다 어려웠다.</p>
+
+<p>-연관관계 편의메서드 ?
+<a href="https://velog.io/@dhk22/JPA-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84">참조</a></p>
+
+<p><a href="https://erjuer.tistory.com/106">?</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는날이다.]]></summary></entry><entry><title type="html">31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기, EnableWebMvc</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/" rel="alternate" type="text/html" title="31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기, EnableWebMvc" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/"><![CDATA[<h2 id="현재-상황">현재 상황</h2>
 
 <ul>
   <li>전체 포스트 + 각 포스트에 속한 댓글 들을 가지고 오는 과정에서</li>
@@ -982,364 +1272,4 @@ or 아예 에러가 뜨는 경우!</p>
 <p>@ApiIgnore로 매개변수 앞에다 사용해 주면 해당 파라미터를 제외하고 API 컨트롤러가 동작한다<br />
 <img src="../../images/2023-01-03-15-19-27.png" alt="" /></p>
 
-<p><img src="../../images/2023-01-03-15-18-42.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring Boot Swagger UI" /><summary type="html"><![CDATA[참조한 글]]></summary></entry><entry><title type="html">29일, JWT, Validated, Response Entity</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25/" rel="alternate" type="text/html" title="29일, JWT, Validated, Response Entity" /><published>2023-01-02T00:00:00+09:00</published><updated>2023-01-02T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL25/"><![CDATA[<p>오늘은 Spring 숙련 주 차의  개인과제 LV1을 진행해 보면서
-어려웠던 점이나 새롭게 알게된 점을 정리하려고 한다.</p>
-
-<p>이번 개인 과제는 저번 입문 주 차때 만들었던 
-기본 CRUD 게시판에 로그인 기능과 그에 따른 추가기능을 넣고,</p>
-
-<p>기존의 기능에서의 변경사항이 있는데 일단 오늘은
-추가 요구사항부터 해결해 보려고 한다.</p>
-
-<p>추가 요구사항</p>
-<ul>
-  <li>회원 가입 API (Validated)</li>
-  <li>로그인 API(JWT, Response Entity)</li>
-</ul>
-
-<hr />
-
-<h1 id="validated">Validated</h1>
-
-<p>처음에 회원가입을 구현 하던중, 아이디, 패스워드에 최소, 최대 글자 수 및<br />
-소문자, 대문자등 유효성 검증 기능이 있었는데</p>
-
-<p>Validated를 알지 못했기에 서비스단에서 패턴을만들고 아래처럼
-Pattern 클래스로 검증을 했다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Pattern</span><span class="o">.</span><span class="na">matches</span><span class="o">(</span><span class="n">pattern</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
-</code></pre></div></div>
-
-<p>기존 방식
-<img src="../../images/2023-01-02-21-53-29.png" alt="" /></p>
-
-<p>하지만 스프링의 Validated라는 기능을 알게되고
-이것을 사용하면 서비스단으로 넘어가기전에 프론트에서 넘어온
-값을 검사해 유효성 검증을 통과하지못하면 바로 팅겨버리는 게 있다는걸 알고 해당 코드로 바꿨다.</p>
-
-<p>바뀐 방식
-<img src="../../images/2023-01-03-08-55-54.png" alt="" /></p>
-
-<p><img src="../../images/2023-01-03-08-56-19.png" alt="" /></p>
-
-<p>기존 생각</p>
-<ul>
-  <li>서비스단이 실질적인 비즈니스 로직이니까 서비스 단에서 정규표현식을 가지고와서 하면 되겠지?</li>
-</ul>
-
-<p>Validated을 알고 나서 생각</p>
-<ul>
-  <li>만약 데이터로 악의적인 데이터가 들어오거나 취약점이 있다면?</li>
-  <li>
-    <p>서비스단으로 넘어오기전에 처리하는게 맞지않을까?라는 생각도 들었다. 
-(서비스단은 DB랑 가까운 곳이기 때문에.)</p>
-  </li>
-  <li>아마 현업에서는 프론트엔드, 컨트롤러, 서비스 여기저기에 유효성검증이 있지않을까 ?</li>
-</ul>
-
-<hr />
-
-<h1 id="상태코드의-중요성">상태코드의 중요성</h1>
-<p>저번 입문 주 차까지는 RestAPI에서 클라이언트의 요청에 응답해오는 JSON
-데이터의 구조에 크게 신경을 안쓰고 값만 받는식으로 했는데</p>
-
-<p>공부를 하다보니 아래와같이 status, message, data로 구조가 거의 통일되게 사용되는 것 같다.</p>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"로그인 성공"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> 
-    </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"honggildong"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"jwt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer eyJsarashbGciOiJIUzI1NiJ9.eyJzdWIiOiJoZWqweqweqMzQ4fQ.qpRN6gkMl-Lrt4U6VGrIgpcW7HuPutaG0oMh21gQNlbhg"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<p>그래서 아래의 블로그를 참조해 내 프로젝트에 적용시켜 보았다.<br />
-<a href="https://devlog-wjdrbs96.tistory.com/197">참조</a></p>
-
-<hr />
-
-<h1 id="response-entity">Response Entity</h1>
-
-<p><a href="https://wildeveloperetrain.tistory.com/25">Validated 참조 글</a></p>
-
-<p>HTTP 아케텍쳐 형태에 맞게 Response를 보내주기 위해 Response Entity를 사용해보았다.</p>
-
-<p>그래서 아래처럼 일단 오늘 계획했던 부분들은 다완성을 시켰고,
-로그인을 하면 아래처럼 데이터가 오게 만들었다!</p>
-
-<p><img src="../../images/2023-01-03-09-01-48.png" alt="" /></p>
-
-<p><img src="../../images/2023-01-03-09-02-03.png" alt="" /></p>
-
-<hr />
-
-<h1 id="느낀점">느낀점</h1>
-<p>확실히 스마트폰, TV, 태블릿, 냉장고등 다양한 디바이스들이 나오고
-그렇기 때문에 REST API라는 것이 많이 중요해지고 거의다 이렇게 사용하나 보다 라는 생각이들었다.</p>
-
-<p>API명세부터 RestAPI구현까지 API에대해서 집중적으로 공부한 것 같고,
-기존의 생각과는 다르게 프론트단의 뷰가 없어도,</p>
-
-<p>서버단에서의 구현만으로 Postman같은 프로그램으로 테스트를 다 해볼수 있다는 것에 신기했다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 Spring 숙련 주 차의 개인과제 LV1을 진행해 보면서 어려웠던 점이나 새롭게 알게된 점을 정리하려고 한다.]]></summary></entry><entry><title type="html">스프링 - DI, IoC, Bean</title><link href="http://localhost:4000/spring/Spring11/" rel="alternate" type="text/html" title="스프링 - DI, IoC, Bean" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring11</id><content type="html" xml:base="http://localhost:4000/spring/Spring11/"><![CDATA[<p><a href="https://devlog-wjdrbs96.tistory.com/165">이미지 출처 및 참조 글</a></p>
-
-<blockquote>
-  <p>Spring 삼각형<br />
-Spring의 기반이 되는 설계 개념을 표현한 것!</p>
-</blockquote>
-
-<p><img src="../../images/2023-01-01-09-40-52.png" alt="" /></p>
-
-<hr />
-
-<h1 id="di-dependency-injection">DI (Dependency Injection)</h1>
-<p>어떤 객체가 사용하는 의존 객체를 직접 만들어 사용하는게 아니라, 
-주입 받아 사용하는 방법이다.</p>
-
-<p>스프링이 다른 프레임워크와 차별화되어 제공하는 의존 관계 주입 기능으로,<br />
-객체를 직접 생성하는 게 아니라 외부에서 생성한 후 주입 시켜주는 방식이다.</p>
-
-<p>new 연산자를 이용해서 객체를 생성하는 것을 스프링에서 해준다고 보면 된다.</p>
-
-<p>DI(의존성 주입)를 통해서 모듈 간의 결합도가 낮아지고 유연성이 높아진다.</p>
-
-<hr />
-
-<p><a href="https://m.blog.naver.com/PostView.nhn?blogId=ljh0326s&amp;logNo=221395815870&amp;proxyReferer=https:%2F%2Fwww.google.com%2F">이미지 출처</a></p>
-
-<p><img src="../../images/2023-01-01-09-43-17.png" alt="" /></p>
-
-<p>이 장난감들은 <code class="language-plaintext highlighter-rouge">배터리가 있어야만 동작</code> 하므로, <code class="language-plaintext highlighter-rouge">배터리에 의존</code>하고 있다 라고 보면되고,
-<code class="language-plaintext highlighter-rouge">장난감들에게 배터리를 넣어주는 것을 의존성 주입이라고 한다.</code></p>
-
-<p>위의 예시를 자바코드로 구현하면?<br />
-<img src="../../images/2023-01-01-09-52-53.png" alt="" /></p>
-
-<p>베터리의 일체형인 경우에는 생성자에서만 의존성을 주입해주는 상황이라</p>
-
-<p>베터리가 떨어지게 된다면 다른 베터리로 교체하지 못하고</p>
-
-<p>새로운 것으로 바꿔야 하기 때문에 유연하지 못한 방식이다.</p>
-
-<p>setter, 생성자를 이용해서 외부에서 주입해주는 상황은 외부에서</p>
-
-<p>베터리를 교체해줄 수 있기 때문에 일체형보다 유연한 상황이다.</p>
-
-<hr />
-
-<p><a href="https://velog.io/@gillog/Spring-DIDependency-Injection">이미지 출처, 참조 블로그</a></p>
-
-<p><img src="../../images/2023-01-02-09-51-28.png" alt="" /></p>
-
-<p>첫번째 방법은 A객체가 B와 C객체를 New 생성자를 통해서 직접 생성하는 방법이고,</p>
-
-<p>두번째 방법은 외부에서 생성 된 객체를 setter()를 통해 사용하는 방법이다.</p>
-
-<p>이러한 두번째 방식이 의존성 주입의 예시인데,<br />
-A 객체에서 B, C객체를 사용(의존)할 때 A 객체에서 직접 생성 하는 것이 아니라 외부(IOC컨테이너)에서 생성된 B, C객체를 조립(주입)시켜 setter 혹은 생성자를 통해 사용하는 방식이다.</p>
-
-<p><img src="../../images/2023-01-02-09-52-46.png" alt="" /></p>
-
-<p>스프링에서는 객체를 <code class="language-plaintext highlighter-rouge">Bean</code>이라고 부르며, 
-프로젝트가 실행될때 사용자가 Bean으로 관리하는 객체들의 생성과 소멸에 관련된 작업을 자동적으로 수행해주는데 객체가 생성되는 곳을 스프링에서는 Bean 컨테이너라고 부른다.</p>
-
-<hr />
-
-<h1 id="iocinversion-of-control">IoC(Inversion of Control)</h1>
-<p>IoC(Inversion of Control)란 “제어의 역전” 이라는 의미로,<br />
-말 그대로 메소드나 객체의 호출작업을 개발자가 결정하는 것이 아니라,<br />
-외부에서 결정되는 것을 의미한다.</p>
-
-<p>간단히 말해 “제어의 흐름을 바꾼다”라고 한다.</p>
-
-<p>객체의 의존성을 역전시켜 객체 간의 결합도를 줄이고<br />
-유연한 코드를 작성할 수 있게 하여 가독성 및 코드 중복, 유지 보수를 편하게 할 수 있게 한다.</p>
-
-<p>기존에는 다음과 순서로 객체가 만들어지고 실행되었다.</p>
-
-<ol>
-  <li>객체 생성</li>
-  <li>의존성 객체 생성<br />
- 클래스 내부에서 생성</li>
-  <li>의존성 객체 메소드 호출</li>
-</ol>
-
-<p>하지만, 스프링에서는 다음과 같은 순서로 객체가 만들어지고 실행된다.</p>
-
-<ol>
-  <li>
-    <p>객체 생성</p>
-  </li>
-  <li>
-    <p>의존성 객체 주입<br />
-스스로가 만드는것이 아니라 제어권을 스프링에게 위임하여 스프링이 만들어놓은 객체를 주입한다.</p>
-  </li>
-  <li>
-    <p>의존성 객체 메소드 호출</p>
-  </li>
-</ol>
-
-<p>스프링이 모든 의존성 객체를 스프링이 실행될때 다 만들어주고 필요한곳에 주입시켜줌으로써 Bean들은 싱글톤 패턴의 특징을 가지며,</p>
-
-<p>제어의 흐름을 사용자가 컨트롤 하는 것이 아니라 스프링에게 맡겨 작업을 처리하게 된다.</p>
-
-<hr />
-
-<h1 id="bean">Bean</h1>
-<p>Spring IoC 컨테이너가 관리하는 자바 객체를 빈(Bean)이라고 부릅니다.</p>
-
-<p>우리가 알던 기존의 Java Programming 에서는</p>
-
-<ol>
-  <li>Class를 생성하고</li>
-  <li>new를 입력하여 원하는 객체를 직접 생성한 후에 사용했었습니다.</li>
-</ol>
-
-<p>하지만 Spring에서는 직접 new를 이용하여 생성한 객체가 아니라,<br />
-Spring에 의하여 관리당하는 자바 객체를 사용합니다.</p>
-
-<p>이렇게 Spring에 의하여 생성되고 관리되는 자바 객체를 Bean이라고 합니다.</p>
-
-<p>Spring Framework 에서는 Spring Bean 을 얻기 위하여<br />
-ApplicationContext.getBean() 와 같은 메소드를 사용하여 Spring 에서 직접 자바 객체를 얻어서 사용합니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring DI IOC Bean" /><summary type="html"><![CDATA[이미지 출처 및 참조 글]]></summary></entry><entry><title type="html">4주, DI, IoC, Bean</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/" rel="alternate" type="text/html" title="4주, DI, IoC, Bean" /><published>2023-01-01T00:00:00+09:00</published><updated>2023-01-01T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL04/"><![CDATA[<p>벌써 항해99를 시작한 지 28일째다. 
-옛날에 다른 학원에서 공부했었을 때는  자바 1달.. 파이썬 1달.. 이런 식으로 배운 것 같은데</p>
-
-<p>항해99에서는 시작한 지 28일이 됐음에도, 그때와 비교하면 많은 것들을 배운 것 같다.</p>
-
-<p>아무래도 짧은 시간 내에 많은 내용을 공부하려다 보니 효율적으로 공부하는 방법을 익힌 것 같다.</p>
-
-<hr />
-
-<h1 id="2023년-새해-목표">2023년 새해 목표</h1>
-<ul>
-  <li>운동하기(살 빼기)</li>
-  <li>스프링 마스터하기.</li>
-  <li>취직하기.</li>
-  <li>TIL 꾸준히 쓰기</li>
-  <li>여행 2번 이상 가기</li>
-</ul>
-
-<hr />
-
-<h1 id="이번-주-배운-것들">이번 주 배운 것들</h1>
-<ul>
-  <li>스프링 부트 CRUD 게시판 API 만들기</li>
-  <li>Thymeleaf</li>
-  <li>JPA</li>
-  <li>DTO, Entity</li>
-  <li>AWS EC2, RDS</li>
-</ul>
-
-<h2 id="중요하다고-생각한-부분">중요하다고 생각한 부분</h2>
-<ul>
-  <li>API 명세서</li>
-  <li>REST API</li>
-  <li>JPA</li>
-  <li>Transaction</li>
-</ul>
-
-<hr />
-
-<h1 id="di-ioc-bean">DI, IoC, Bean</h1>
-
-<p>공부한 내용 정리 글과, TIL(WIL)을 같이 올리려다 보니 각 포스팅에서
-쓴 내용이 달라지기도 하고 힘들기도 하여서 아래의 링크에<br />
-이번 주 WIL 키워드에 관한 내용을 정리했다.</p>
-
-<p><a href="https://hyunjunhwang1994.github.io/spring/Spring11/">DI, IoC, Bean 정리 글</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="WIL" /><summary type="html"><![CDATA[벌써 항해99를 시작한 지 28일째다. 옛날에 다른 학원에서 공부했었을 때는 자바 1달.. 파이썬 1달.. 이런 식으로 배운 것 같은데]]></summary></entry><entry><title type="html">27일, AWS, RDS, Happy new year</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL24/" rel="alternate" type="text/html" title="27일, AWS, RDS, Happy new year" /><published>2022-12-31T00:00:00+09:00</published><updated>2022-12-31T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL24</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL24/"><![CDATA[<h1 id="오늘-배운-것">오늘 배운 것!</h1>
-
-<ul>
-  <li>인증/인가</li>
-  <li>JWT를 이용한 Auth 구현</li>
-  <li>스프링 프로젝트 AWS EC2, RDS 사용 호스팅 하기</li>
-  <li>알고리즘 문제 1개 풀기</li>
-</ul>
-
-<h1 id="인증인가">인증/인가</h1>
-<p>사실 스프링에서 인증, 인가와 관련되어 스프링 시큐리티가 관리해 준다고 한다.</p>
-
-<p>하지만 해당 개념이 잡히기 전에 바로 스프링 시큐리티를 사용하는 건 너무<br />
-어렵기만 하고 재미가 없기 때문에 차근차근 스프링 시큐리티 없이
-공부하여 구현부터 해보았다.</p>
-
-<h2 id="인증authentication">인증(Authentication)</h2>
-<p>해당 유저가 실제 유저인지 인증하는 개념이다.<br />
-스마트폰에 지문인식, 이용하는 사이트에 로그인 등과 같이, 실제 그 유저가 맞는지를 확인하는 절차이다.</p>
-
-<h2 id="인가authorization">인가(Authorization)</h2>
-<p>해당 유저가 특정 리소스에 접근이 가능한지 허가를 확인하는 개념이다.<br />
-예를 들어 관리자 페이지-관리자 권한 같은 것들!</p>
-
-<hr />
-
-<p>웹 애플리케이션은 기본적으로<br />
-비 연결성(Connectionless) 무상태(Stateless)로 이루어져 있기 때문에</p>
-
-<p>서버는 클라이언트와 연결되어 있지 않고 클라이언트의 상태를 저장하지 않는다.</p>
-
-<p>그렇기 때문에,<br />
-로그인을 하면 로그인이 계속된 것처럼 해주어야 하고,<br />
-비연결성이 연결성인 것처럼 보이게 해줘야 되고 무상태가 상태인 것처럼 해줘야 한다.</p>
-
-<p>이것들을 쿠키, 세션 등으로 구현할 수 있지만<br />
-이번에는 JWT로 구현해 보았다.</p>
-
-<h1 id="aws-ec2-rds">AWS, EC2, RDS</h1>
-<p>아마존 웹서비스의 EC2, RDS를 이용하여</p>
-
-<p>서버 호스팅 및 데이터베이스 서버까지 이용해서 스프링 프로젝트를 올려 보았다.</p>
-
-<p>도메인네임도 구매하여 적용해 보았고, 잘 돌아간다!</p>
-
-<p>그 과정은 아래 글에 정리해 보았다.<br />
-<a href="https://hyunjunhwang1994.github.io/spring/Spring10/">AWS EC2, RDS</a></p>
-
-<h2 id="느낀-점">느낀 점</h2>
-<p>이렇게 실제 데이터베이스 서버에 연결하고,<br />
-EC2 서버에 호스팅 하는 과정들을 진행해 보니,</p>
-
-<p>생각보다는 과정이 쉽다고 느꼈지만, 또 아래와 같은 것들도 느꼈다.</p>
-
-<ul>
-  <li>서버 보안의 중요성</li>
-  <li>리눅스 명령어(터미널 환경) 공부</li>
-  <li>HTTP 공부</li>
-  <li>IP 개념</li>
-</ul>
-
-<p>실제 서버를 호스팅 하는 과정이 쉬워진 만큼 더욱 신경 써야 할 부분이 많지 않을까?</p>
-
-<hr />
-
-<h1 id="행렬의-곱셈">행렬의 곱셈</h1>
-
-<p>알고리즘도 꾸준히 풀어보려고,<br />
-오랜만에 알고리즘을 다시 풀어보았는데 쉬운 문제를 고른 건지<br />
-생각보다 어렵지 않았다!<br />
-<a href="https://hyunjunhwang1994.github.io/algorithm%20-%20hanghae99/algorithm-hanghae99-06/">행렬의 곱셈 풀이</a></p>
-
-<hr />
-
-<h1 id="happy-new-year">Happy New Year</h1>
-<p>내 생에 처음으로 무언가 공부를 하며 새해를 맞이했다 ㅋㅋ<br />
-(그 와중에 age++ ..?)
-<img src="../../images/happynewyear.png" alt="" /></p>
-
-<hr />
-
-<h1 id="til-글쓰기">TIL, 글쓰기</h1>
-<p>블로그 포스팅 같은 경우 현재 TIL도 그렇고<br />
-Java, Spring 같은 경우도 그렇고 중요한 내용의 경우</p>
-
-<p>가독성이 없고 중요한 내용이긴 하지만 너무 글의 양이 많다.<br />
-이제부터는 깔끔하게 중요한 내용만 가독성 있게 정리하여 포스팅하는 연습을 해야 할 것 같다.</p>
-
-<p>그리고 TIL은 한눈에 성장과정을 볼 수 있도록 제목에 최대한 배운 것의 중요 키워드를 넣어야 할 것 같다.</p>
-
-<p>또한 배운 내용 들을 정리하는 과정에서 해당 카테고리에 포스팅하고, 또
-TIL(WIL)에 포스팅하니 한눈에 정리도 안되고, 힘들기도 하고 여러 글을 참조해야 하는 느낌이 들어서</p>
-
-<p>TIL(WIL)에는 배운 내용들을 내 포스팅 링크로 걸고<br />
-해결한 점, 몰랐던 점, 배운 점 등만 기술해야겠다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘 배운 것!]]></summary></entry></feed>
+<p><img src="../../images/2023-01-03-15-18-42.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring Boot Swagger UI" /><summary type="html"><![CDATA[참조한 글]]></summary></entry></feed>

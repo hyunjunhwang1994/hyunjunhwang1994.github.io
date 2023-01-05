@@ -449,19 +449,19 @@ var store = [{
         "url": "/%ED%95%AD%ED%95%B499/TIL22/",
         "teaser": null
       },{
-        "title": "스프링 - JPA, 총정리1",
+        "title": "JPA, 총정리1",
         "excerpt":"Spring Data JPA가 없었다면? Spring Data JPA라이브러리를 사용하면 아래처럼 간단하게 사용이 가능하다. // Entity 생성 Member hyunjun = new Member(); member.setId(\"hyunjun94\"); member.setUsername(\"현준\"); // 이렇게 간단하게 DB에 접근하여 사용 가능했다. memberRepository.save(hyunjun); memberRepository.find(); 만약 Spring Data JPA를 사용하지 않았을때 위의 과정을 실행 시키려면? // Entity를 생성 Member hyunjun = new Member(); member.setId(\"hyunjun94\");...","categories": ["Spring"],
         "tags": ["JPA 영속성 컨텍스트","JPA 더티 체크","JPA Entity Manager"],
         "url": "/spring/Spring7/",
         "teaser": null
       },{
-        "title": "스프링 - JPA, 총정리2",
+        "title": "JPA, 총정리2",
         "excerpt":"JPA의 영속성 컨텍스트란? persistence context! 엔티티를 영구 저장하는 환경 어플리케이션이 데이터베이스에서 꺼내온 데이터 객체를 보관하는 역할을 합니다. 영속성 컨텍스트는 엔티티 매니저를 통해 엔티티를 조회하거나 저장할 때 엔티티를 보관하고 관리합니다. 엔티티 매니저마다 개별적으로 부여되는, 어떠한 논리적 공간같은 개념으로 비유적으로 이해하셔도 좋을 것 같습니다. 자바의 엔티티 객체를 엔티티 매니저마다 가지고 있는 영속성...","categories": ["Spring"],
         "tags": ["JPA 영속성 컨텍스트","JPA 더티 체크","JPA Entity Manager"],
         "url": "/spring/Spring8/",
         "teaser": null
       },{
-        "title": "스프링 - JPA, 엔티티 매핑, 연관관계, 프록시",
+        "title": "JPA, 엔티티 매핑, 연관관계, 프록시",
         "excerpt":"엔티티 매핑 @Entity JPA를 사용해서 테이블과 매핑할 클래스는 @Entity 어노테이션을 필수로 붙여야 한다. @Entity가 붙은 클래스는 JPA가 관리합니다. @Entity 적용시 주의사항 기본 생성자는 필수. (파라미터가 없는 public 또는 protected 생성자) final 클래스, enum, interface, inner 클래스에는 사용할 수 없다. 저장할 필드에 final을 사용하면 안된다. @Entity @Table (name=\"USER\") public class Member...","categories": ["Spring"],
         "tags": ["JPA 영속성 컨텍스트","JPA 더티 체크","JPA Entity Manager"],
         "url": "/spring/Spring9/",
@@ -543,5 +543,29 @@ var store = [{
         "excerpt":"현재 상황 전체 포스트 + 각 포스트에 속한 댓글 들을 가지고 오는 과정에서 Infinite recursion(무한 순환 참조)가 일어남. 목표 정확히 어느 부분에서 순환 참조가 되는지 알아보자 일단 동작이 가능하게 고쳐보자. 동작이 되면서 더 나은 방법을 찾아보자(뭔가 좋은 방법이 있겠지..?) 이 삽질을 공부하고 정리해 보자 해결 1. 어느 부분에서 JSON으로 직렬화가...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL27/",
+        "teaser": null
+      },{
+        "title": "Spring Data JPA Entity ERD 보기.",
+        "excerpt":"Spring으로 개발을 하다 보면, 자신이 개발 중인 Entity들을 ERD로 볼 수 있으면 얼마나 편할까?라는 생각이 듭니다. 그래서, 인텔리제이는 JPA의 Entity들을 ERD Diagram으로 볼 수 있는 기능을 제공합니다. Persistence 탭 생성 좌측 하단 .main -&gt; entityManagerFactory 우 클릭 -&gt; Entity Relationship Diagram 클릭 Entity 간의 관계를 가지고 간단하게 보여주는 것이므로, 실제...","categories": ["IntelliJ"],
+        "tags": ["IntelliJ JPA Entity ERD 보기"],
+        "url": "/intellij/IntelliJ01/",
+        "teaser": null
+      },{
+        "title": "JPA 연관 관계 요구사항 Entity 구현해 보기",
+        "excerpt":"요구사항에 따라 Spring Data Jpa의 Entity를 만들어 연관관계를 맺는 연습을 해보면 어떨까요? 요구사항 ERD 자동차 테이블은 1대당 개별 테이블이 아닌 자동차 종류별 테이블입니다 ex) 1개의 로우에 아반떼 재고 10대. 구매자의 경우 회원 형식이 아닌 말 그대로 구매자이므로, 구매를 한 경우에만 등록됩니다. 간단하게 위처럼 정의하고 자바 코드로 만들어 볼까요? 구현하기. repository,...","categories": ["Spring"],
+        "tags": ["JPA 연관관계 구현"],
+        "url": "/spring/Spring15/",
+        "teaser": null
+      },{
+        "title": "32일, RestAPI EC2호스팅, JPA 참조된 데이터 삭제하기",
+        "excerpt":"오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는날이다. 시험에서는 JPA의 연관관계에 대해서 나왔고, JPA에 대해서 깊게 공부를 안해서 그런지 생각보다 어려웠다. 그래서 항해99에서 나온 문제를 재사용하기엔 좀 그래서 비슷한 예제로 새로만들어서 아래의 포스팅에 정리를 했다. 오늘 겪은 문제들. Post 테이블에서 글 삭제시 삭제 되지 않는 것. 참조 2 3...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL28/",
+        "teaser": null
+      },{
+        "title": "33일, 주특기 심화 주 차 발제.",
+        "excerpt":" ","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL29/",
         "teaser": null
       }]
