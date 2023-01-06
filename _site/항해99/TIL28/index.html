@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>32일, RestAPI EC2호스팅, JPA 참조된 데이터 삭제하기 | 기술 블로그</title>
-<meta name="description" content="오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는날이다.">
+<!-- begin _includes/seo.html --><title>RestAPI EC2 호스팅, JPA 연관관계 편의 메서드 | 기술 블로그</title>
+<meta name="description" content="오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는 날이다.">
 
 
   <meta name="author" content="Hyun Jun">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="기술 블로그">
-<meta property="og:title" content="32일, RestAPI EC2호스팅, JPA 참조된 데이터 삭제하기">
+<meta property="og:title" content="RestAPI EC2 호스팅, JPA 연관관계 편의 메서드">
 <meta property="og:url" content="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28/">
 
 
-  <meta property="og:description" content="오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는날이다.">
+  <meta property="og:description" content="오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는 날이다.">
 
 
 
@@ -218,7 +218,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">97</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">98</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -611,7 +611,7 @@
                         
                     
                         
-                            <li style="padding-left: 5px;"><a href="/categories/spring" class="">Spring (16)</a></li>
+                            <li style="padding-left: 5px;"><a href="/categories/spring" class="">Spring (17)</a></li>
                         
                     
                         
@@ -810,8 +810,8 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="32일, RestAPI EC2호스팅, JPA 참조된 데이터 삭제하기">
-    <meta itemprop="description" content="오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는날이다.">
+    <meta itemprop="headline" content="RestAPI EC2 호스팅, JPA 연관관계 편의 메서드">
+    <meta itemprop="description" content="오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는 날이다.">
     <meta itemprop="datePublished" content="2023-01-05T00:00:00+09:00">
     
 
@@ -819,7 +819,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28/" class="u-url" itemprop="url">32일, RestAPI EC2호스팅, JPA 참조된 데이터 삭제하기
+            <a href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28/" class="u-url" itemprop="url">RestAPI EC2 호스팅, JPA 연관관계 편의 메서드
 </a>
           </h1>
           
@@ -849,7 +849,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 분 소요
+          5 분 소요
         
       </span>
     
@@ -864,53 +864,56 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#오늘-겪은-문제들">오늘 겪은 문제들.</a><ul><li><a href="#해결">해결</a></li></ul></li><li><a href="#restapi-개인-과제를-rds연동-ec2에-호스팅-해보다">RestAPI 개인 과제를 RDS연동 EC2에 호스팅 해보다.</a><ul><li><a href="#어려웠던-점">어려웠던 점</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#오늘-겪은-문제들">오늘 겪은 문제들.</a><ul><li><a href="#1-참조된-데이터-삭제">1. 참조된 데이터 삭제</a></li><li><a href="#2-jwtsecretkey-관련-에러">2. jwt.secret.key 관련 에러.</a></li></ul></li><li><a href="#restapi-개인-과제를-rds-연동-ec2에-호스팅-해보다">RestAPI 개인 과제를 RDS 연동 EC2에 호스팅 해보다.</a><ul><li><a href="#어려웠던-점">어려웠던 점</a></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <p>오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는날이다.</p>
+        <p>오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는 날이다.</p>
 
 <p>시험에서는 JPA의 연관관계에 대해서 나왔고,<br />
-JPA에 대해서 깊게 공부를 안해서 그런지 생각보다 어려웠다.</p>
+JPA에 대해서 깊게 공부를 안 해서 그런지 생각보다 어려웠다.</p>
 
-<p>그래서 항해99에서 나온 문제를 재사용하기엔 좀 그래서<br />
-비슷한 예제로 새로만들어서 아래의 포스팅에 정리를 했다.</p>
+<p>그래서 항해 99에서 나온 문제를 재사용하기엔 좀 그래서<br />
+비슷한 예제로 새로 만들어서 아래의 포스팅에 정리를 했다.</p>
 
 <p><a href="https://hyunjunhwang1994.github.io/spring/Spring15/">연관관계 맵핑</a></p>
 
-<p>간단 정리</p>
+<hr />
+
+<p>연관관계 생각해 볼 점 간단 정리</p>
 <ul>
-  <li>DB입장에서는 FK를 가지고 있으면 양방향 조회가 되지만,</li>
-  <li>객체지향 입장에서는 사용할 목적에 따라 단방향, 양방향 맵핑등을 해주어야 한다.</li>
-  <li>@ManyToMany 사용 보다는 위의 연관관계 맵핑 글에서처럼 A, C를 관리하는 B테이블을 직접 만들어<br />
-A &lt;-OneToMany-&gt; B &lt;-ManyToOne-&gt; C  형태로 만들어 주는 것이 좋다.</li>
+  <li>DB 입장에서는 FK를 가지고 있으면 양방향 조회가 되지만,</li>
+  <li>객체지향 입장에서는 사용할 목적에 따라 단방향, 양방향 맵핑 등을 해주어야 한다.</li>
+  <li>@ManyToMany 사용보다는 위의 연관관계 맵핑 글에서처럼 A, C를 관리하는 B 테이블을 직접 만들어</li>
 </ul>
+
+<p>A &lt;-OneToMany-&gt; B &lt;-ManyToOne-&gt; C  형태로 만들어 주는 것이 좋다.</p>
 
 <hr />
 
 <h1 id="오늘-겪은-문제들">오늘 겪은 문제들.</h1>
-<ul>
-  <li>Post 테이블에서 글 삭제시 삭제 되지 않는 것.</li>
-  <li>현재 Post(글)의 PK를 댓글에서 참조(FK)하고 있는데</li>
-  <li>이렇게 다른 테이블에 참조되어 있는 경우</li>
-  <li>글을 삭제하려고 하면 기본 설정으로는 삭제가 안된다고 한다.</li>
-</ul>
+<ol>
+  <li>Post 테이블에서 글 삭제 시 삭제되지 않는 것.</li>
+  <li>jwt.secret.key 관련 에러.</li>
+</ol>
 
-<h2 id="해결">해결</h2>
+<h2 id="1-참조된-데이터-삭제">1. 참조된 데이터 삭제</h2>
+<p>현재 Post(글)의 PK를 댓글에서 참조(FK) 하고 있는데 이렇게 다른 테이블에 참조되어 있는 경우<br />
+글을 삭제하려고 하면 기본 설정으로는 삭제가 안된다고 한다.</p>
+
+<p>해결 방법들</p>
 <ul>
   <li>로직 상 검증이 끝난 후 참조하고 있는 데이터를 삭제 후</li>
   <li>목표 데이터를 삭제하거나,</li>
-  <li>상황에 따라 Cascade, OrphanRemoval등을 사용해주면 된다.</li>
+  <li>상황에 따라 Cascade, OrphanRemoval 등을 사용해 주면 된다.</li>
 </ul>
 
 <p><a href="https://choiblack.tistory.com/48">Cascade, OrphanRemoval 참조 블로그</a></p>
 
 <hr />
 
-<ul>
-  <li>jwt.secret.key 관련 에러.</li>
-</ul>
+<h2 id="2-jwtsecretkey-관련-에러">2. jwt.secret.key 관련 에러.</h2>
 
 <p><img src="../../images/2023-01-06-09-36-05.png" alt="" /></p>
 
@@ -922,12 +925,12 @@ jwt.secret.key 값 설정을</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>asdqk@ㄱㄴdqwdkqodk 
 </code></pre></div></div>
 
-<p>대략 위와 같이 하니 떴따..<br />
-테스트를 해보니 한글과 특수문자가 1개라도 들어가있으면 오류를 뱉었다..</p>
+<p>대략 위와 같이 하니 떴다.<br />
+테스트를 해보니 한글과 특수문자가 1개라도 들어가 있으면 오류를 뱉었다..</p>
 
 <hr />
 
-<h1 id="restapi-개인-과제를-rds연동-ec2에-호스팅-해보다">RestAPI 개인 과제를 RDS연동 EC2에 호스팅 해보다.</h1>
+<h1 id="restapi-개인-과제를-rds-연동-ec2에-호스팅-해보다">RestAPI 개인 과제를 RDS 연동 EC2에 호스팅 해보다.</h1>
 
 <ul>
   <li>RDS 연동</li>
@@ -936,23 +939,31 @@ jwt.secret.key 값 설정을</p>
   <li>포트 포워딩</li>
 </ul>
 
-<p>사실 상 위의 것들은 정리가 잘된 블로그도 많고 
+<p>사실상 위의 것들은 정리가 잘 된 블로그도 많고 
 AWS라는 공룡기업이 있어서 생각보다 어렵지 않았다.</p>
 
 <h2 id="어려웠던-점">어려웠던 점</h2>
-<p>기존 스프링 부트의 인 메모리 방식h2에서 RDS의 MySQL을 사용 할 시
+
+<ol>
+  <li>
+    <p>기존 스프링 부트의 인 메모리 방식 h2에서 RDS의 MySQL을 사용할 시
 자잘한 설정으로 인해 오류가 나는 부분들이 있어서 까다로웠음.</p>
+  </li>
+  <li>
+    <p>JPA를 사용함에 있어서 연관관계를 짜고, 설계를 하는 것들이 생각보다 어려웠다.
+그리고 공부를 하던 도중 연관관계 편의 메서드라는 것을 보았는데</p>
+  </li>
+</ol>
 
-<p>JPA를 사용함에 있어서 연관관계를 짜고,
-설계를 하는 것들이 생각보다 어려웠다.</p>
+<p>어느 정도 개인과제를 완성시키고 순환 참조라는 문제도 해결하고 난 후였기에,
+이게 왜 필요한 거지?라는 생각이 들었고 아래 포스팅에 정리해 보았다.</p>
 
-<p>-연관관계 편의메서드 ?
-<a href="https://velog.io/@dhk22/JPA-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84">참조</a></p>
+<p><a href="https://hyunjunhwang1994.github.io/spring/Spring16/">정리 글</a></p>
 
-<p>순환 참조를해결하는 편의메서드 라는 것을 알고 DTO대신 한번
-새로운 예제를 통해서 적용시켜 보았습니다.</p>
+<blockquote>
+  <p>여러 장점이 있지만, 결국 객체지향 관점적인 부분에서 양방향으로 다루기 위해 필요한 것이구나라고 결론을 내렸습니다!</p>
+</blockquote>
 
-<p><a href="https://erjuer.tistory.com/106">?</a></p>
  <!--실제 페이지 글 부분-->
         
       </section>
@@ -1005,7 +1016,7 @@ AWS라는 공룡기업이 있어서 생각보다 어렵지 않았다.</p>
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=32%EC%9D%BC%2C+RestAPI+EC2%ED%98%B8%EC%8A%A4%ED%8C%85%2C+JPA+%EC%B0%B8%EC%A1%B0%EB%90%9C+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EC%82%AD%EC%A0%9C%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL28%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=RestAPI+EC2+%ED%98%B8%EC%8A%A4%ED%8C%85%2C+JPA+%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84+%ED%8E%B8%EC%9D%98+%EB%A9%94%EC%84%9C%EB%93%9C%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL28%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL28%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -1028,10 +1039,10 @@ AWS라는 공룡기업이 있어서 생각보다 어렵지 않았다.</p>
 
   <nav class="pagination_prev_next">
     
-      <a href="/%ED%95%AD%ED%95%B499/TIL27/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>31일, JPA 연관관계, 무한 순환 참조, Json Ignore -> DTO 만들기, EnableWebMvc</a>
+      <a href="/%ED%95%AD%ED%95%B499/TIL27/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>JPA 연관관계 무한 순환 참조 해결, EnableWebMvc</a>
     
     
-      <a href="/%ED%95%AD%ED%95%B499/TIL29/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>33일, 주특기 심화 주 차 발제.</a>
+      <a href="/%ED%95%AD%ED%95%B499/TIL29/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>주특기 심화 주 차 발제, 스프링 시큐리티</a>
     
   </nav>
 
@@ -1056,7 +1067,7 @@ AWS라는 공룡기업이 있어서 생각보다 어렵지 않았다.</p>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/%ED%95%AD%ED%95%B499/TIL29/" rel="permalink">33일, 주특기 심화 주 차 발제.
+        <a href="/%ED%95%AD%ED%95%B499/TIL29/" rel="permalink">주특기 심화 주 차 발제, 스프링 시큐리티
 </a>
       
     </h2>
@@ -1087,7 +1098,69 @@ AWS라는 공룡기업이 있어서 생각보다 어렵지 않았다.</p>
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring17/" rel="permalink">Devtools 코드 업데이트 시 자동 재시작
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-06T00:00:00+09:00">2023-01-06</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
         
       </span>
     
@@ -1212,68 +1285,6 @@ AWS라는 공룡기업이 있어서 생각보다 어렵지 않았다.</p>
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
           최대 1 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/spring/Spring15/" rel="permalink">JPA 연관 관계 요구사항 Entity 구현해 보기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-01-05T00:00:00+09:00">2023-01-05</time>
-      </span>
-    
-
-                 
-                
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          7 분 소요
         
       </span>
     

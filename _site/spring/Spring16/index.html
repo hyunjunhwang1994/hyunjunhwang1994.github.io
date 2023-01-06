@@ -218,7 +218,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">97</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">98</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -611,7 +611,7 @@
                         
                     
                         
-                            <li style="padding-left: 5px;"><a href="/categories/spring" class="">Spring (16)</a></li>
+                            <li style="padding-left: 5px;"><a href="/categories/spring" class="">Spring (17)</a></li>
                         
                     
                         
@@ -864,7 +864,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#why">Why?</a></li></ul>
 
             </nav>
           </aside>
@@ -873,6 +873,9 @@
 
 <p><a href="https://okky.kr/articles/987954">편의 메서드 필요 이유 참조</a></p>
 
+<hr />
+
+<h1 id="why">Why?</h1>
 <p>Database에 flush 되기 전에 양방향으로 묶여있는 자료의 일관성을 지켜주기 위해 만듭니다.</p>
 
 <ul>
@@ -881,21 +884,27 @@
   <li>자료가 아니기때문에 추가한쪽에만 값이 들어있게되죠.</li>
 </ul>
 
+<hr />
+
 <p>멤버 와 팀의 관계를 예로들면</p>
 <ul>
-  <li>멤버와 팀을 생성 한 후 멤버에 팀를 넣습니다. 그리고 트랜잭션이 끝나서 디비에 플러쉬되고</li>
+  <li>멤버와 팀을 생성 한 후 멤버에 팀을 넣습니다. 그리고 트랜잭션이 끝나서 디비에 플러쉬되고</li>
   <li>
     <p>멤버와 팀을 조회하면 정상적으로 멤버에도 팀이 들어가있고 팀에도 멤버가 들어가있을겁니다.</p>
   </li>
   <li>그런데 멤버와 팀을 생성 한후 멤버에 팀을 넣고 그 트랙잭션이 끝나기전에 팀에서 멤버를 찾아보면 없겟죠?</li>
   <li>왜냐면 아직 디비에 반영되기 전 이거든요. 그런데 생각해보면 멤버가 팀에 들어갔으니 당연히 팀에서 멤버를 찾으면 있어야 된다는게 일반적인 생각이고,</li>
   <li>이런 데이터의 오류를 방지하려면 어느 한쪽에 자료가 들어갈때 반대쪽에도 같이 넣어줘야 하는데</li>
-  <li>그 넣는 방법중 하나가 저런식으로 한쪽에 값을 넣을 때 다른쪽에도 넣어버리는겁니다.</li>
+  <li>그 넣는 방법중 하나가 한쪽에 값을 넣을 때 다른쪽에도 넣어버리는겁니다.</li>
 </ul>
+
+<hr />
 
 <p><a href="https://velog.io/@songs4805/JPA-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91-%EA%B8%B0%EC%B4%88">순수한 객체까지 고려한 양방향 연관관계 참조 글</a><br />
 <a href="https://umanking.github.io/2020/10/26/jpa-mapping-2/">연관관계 편의 메서드 참조 글</a><br />
 <a href="https://ecsimsw.tistory.com/entry/JPA-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EA%B3%A0%EB%A0%A4%ED%95%9C-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%ED%8E%B8%EC%9D%98-%EB%A9%94%EC%86%8C%EB%93%9C">편의 메서드 이해가 쉬운 예제 참조</a></p>
+
+<p><a href="https://velog.io/@dhk22/JPA-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84">참조</a></p>
  <!--실제 페이지 글 부분-->
         
       </section>
@@ -958,6 +967,8 @@
 
 
   
+
+  
   	
   	
   	
@@ -970,7 +981,7 @@
       <a href="/spring/Spring15/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>JPA 연관 관계 요구사항 Entity 구현해 보기</a>
     
     
-      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
+      <a href="/spring/Spring17/" class="pagination_prev_next--pager"><span class="prev_next">다음 글  &nbsp  </span>Devtools 코드 업데이트 시 자동 재시작</a>
     
   </nav>
 
@@ -995,7 +1006,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/%ED%95%AD%ED%95%B499/TIL29/" rel="permalink">33일, 주특기 심화 주 차 발제.
+        <a href="/%ED%95%AD%ED%95%B499/TIL29/" rel="permalink">주특기 심화 주 차 발제, 스프링 시큐리티
 </a>
       
     </h2>
@@ -1026,7 +1037,69 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring17/" rel="permalink">Devtools 코드 업데이트 시 자동 재시작
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-06T00:00:00+09:00">2023-01-06</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
         
       </span>
     
@@ -1119,7 +1192,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/%ED%95%AD%ED%95%B499/TIL28/" rel="permalink">32일, RestAPI EC2호스팅, JPA 참조된 데이터 삭제하기
+        <a href="/%ED%95%AD%ED%95%B499/TIL28/" rel="permalink">RestAPI EC2 호스팅, JPA 연관관계 편의 메서드
 </a>
       
     </h2>
@@ -1150,69 +1223,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-fw fa-clock" aria-hidden="true"></i>
         
-          4 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    
-    
-  </article>
-</div>
-
-
-
-
-
-
-
-
-
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/spring/Spring15/" rel="permalink">JPA 연관 관계 요구사항 Entity 구현해 보기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-        
-        <time datetime="2023-01-05T00:00:00+09:00">2023-01-05</time>
-      </span>
-    
-
-                 
-                
-                
-                
-                 
-
-    <span class="page__meta-sep"></span>
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
-        
-          7 분 소요
+          5 분 소요
         
       </span>
     

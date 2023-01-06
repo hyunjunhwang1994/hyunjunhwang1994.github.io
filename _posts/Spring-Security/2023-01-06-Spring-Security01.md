@@ -6,9 +6,22 @@ categories:
 tag: [Spring Security 기초]
 ---
 
+<hr>
+
+# Spring Security란?
+
+
 
 # 프로젝트 생성
 
-![](../../images/2023-01-06-10-49-30.png)
+Spring Boot Version : 2.7.7
 
-![](../../images/2023-01-06-10-50-27.png)
+Dependencies
+- Spring Security
+- Spring Web
+- Spring Data JPA
+- Lombok
+- H2 Database
+- Thymeleaf
+
+<hr>
