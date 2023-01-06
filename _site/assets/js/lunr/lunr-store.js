@@ -527,7 +527,7 @@ var store = [{
         "url": "/%ED%95%AD%ED%95%B499/TIL26/",
         "teaser": null
       },{
-        "title": "스프링 부트 - JWT 인증/인가 구현하기",
+        "title": "스프링 부트 - 날 것의 JWT 인증/인가 구현하기",
         "excerpt":"JWT 개념 정리 포스팅 JWT를 이용하여 로그인 및 인증/인가하는 방법을 기술하였으며, 프론트단에서 실질적으로 클라이언트의 쿠키로 저장하는 코드는 기술하지 않았습니다. JwtUtil이라는 하나의 Util을 만들고 컴포넌트로 등록 후 가저다가 사용하는 형식 build.gradle 의존성 추가. compileOnly group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2' runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2' runtimeOnly group: 'io.jsonwebtoken', name:...","categories": ["Spring"],
         "tags": ["Spring Boot JWT 인증/인가 구현"],
         "url": "/spring/Spring13/",
@@ -552,19 +552,31 @@ var store = [{
         "teaser": null
       },{
         "title": "JPA 연관 관계 요구사항 Entity 구현해 보기",
-        "excerpt":"요구사항에 따라 Spring Data Jpa의 Entity를 만들어 연관관계를 맺는 연습을 해보면 어떨까요? 요구사항 ERD 자동차 테이블은 1대당 개별 테이블이 아닌 자동차 종류별 테이블입니다 ex) 1개의 로우에 아반떼 재고 10대. 구매자의 경우 회원 형식이 아닌 말 그대로 구매자이므로, 구매를 한 경우에만 등록됩니다. 간단하게 위처럼 정의하고 자바 코드로 만들어 볼까요? 구현하기. repository,...","categories": ["Spring"],
+        "excerpt":"요구사항에 따라 Spring Data Jpa의 Entity를 만들어 연관관계를 맺는 연습을 해보면 어떨까요? 연관관계 참조 글 요구사항 ERD 자동차 테이블은 1대당 개별 테이블이 아닌 자동차 종류별 테이블입니다 ex) 1개의 로우에 아반떼 재고 10대. 구매자의 경우 회원 형식이 아닌 말 그대로 구매자이므로, 구매를 한 경우에만 등록됩니다. Buyer와 Car 테이블은 N:M (다:다) 관계이므로,...","categories": ["Spring"],
         "tags": ["JPA 연관관계 구현"],
         "url": "/spring/Spring15/",
         "teaser": null
       },{
         "title": "32일, RestAPI EC2호스팅, JPA 참조된 데이터 삭제하기",
-        "excerpt":"오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는날이다. 시험에서는 JPA의 연관관계에 대해서 나왔고, JPA에 대해서 깊게 공부를 안해서 그런지 생각보다 어려웠다. 그래서 항해99에서 나온 문제를 재사용하기엔 좀 그래서 비슷한 예제로 새로만들어서 아래의 포스팅에 정리를 했다. 오늘 겪은 문제들. Post 테이블에서 글 삭제시 삭제 되지 않는 것. 참조 2 3...","categories": ["항해99"],
+        "excerpt":"오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는날이다. 시험에서는 JPA의 연관관계에 대해서 나왔고, JPA에 대해서 깊게 공부를 안해서 그런지 생각보다 어려웠다. 그래서 항해99에서 나온 문제를 재사용하기엔 좀 그래서 비슷한 예제로 새로만들어서 아래의 포스팅에 정리를 했다. 연관관계 맵핑 간단 정리 DB입장에서는 FK를 가지고 있으면 양방향 조회가 되지만, 객체지향 입장에서는 사용할...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL28/",
         "teaser": null
       },{
+        "title": "(작성중)Spring Security",
+        "excerpt":"프로젝트 생성        ","categories": ["Spring Security"],
+        "tags": ["Spring Security 기초"],
+        "url": "/spring%20security/Spring-Security01/",
+        "teaser": null
+      },{
+        "title": "JPA 연관관계 편의 메서드는 왜 사용할까",
+        "excerpt":"연관관계 편의 메서드는 왜 필요할까? 편의 메서드 필요 이유 참조 Database에 flush 되기 전에 양방향으로 묶여있는 자료의 일관성을 지켜주기 위해 만듭니다. 트랜잭션이 끝나 DB에 flush되고 난 후 자료를 조회하면 문제가 없겟지만 한 트랜잭션이 끝나기 전에 자료를 조작할 시 한쪽에만 자료를 추가 하면 그건 아직 디비에 반영되어잇는 자료가 아니기때문에 추가한쪽에만 값이...","categories": ["Spring"],
+        "tags": ["JPA 연관관계 편의 메서드"],
+        "url": "/spring/Spring16/",
+        "teaser": null
+      },{
         "title": "33일, 주특기 심화 주 차 발제.",
-        "excerpt":" ","categories": ["항해99"],
+        "excerpt":"  ","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL29/",
         "teaser": null

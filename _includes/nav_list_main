@@ -111,21 +111,35 @@
 
 
         <span class="nav__sub-title">Framework</span>   
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Spring" %}
-                        <li><a href="/categories/spring" class="">Spring ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
+                
+                <ul>
+                    <li>Spring Framework</li>
+                </ul>
 
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Flask" %}
-                        <li><a href="/categories/flask" class="">Flask ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
+                <ul>
+                    {% for category in site.categories %}
+                        {% if category[0] == "Spring" %}
+                            <li style="padding-left: 5px;"><a href="/categories/spring" class="">Spring ({{category[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <ul>
+                    {% for category in site.categories %}
+                        {% if category[0] == "Spring Security" %}
+                            <li style="padding-left: 5px;"><a href="/categories/springsecurity" class="">Spring Security ({{category[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+
+                <ul>
+                    {% for category in site.categories %}
+                        {% if category[0] == "Flask" %}
+                            <li><a href="/categories/flask" class="">Flask ({{category[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
 
 
             <span class="nav__sub-title">Algorithm</span>

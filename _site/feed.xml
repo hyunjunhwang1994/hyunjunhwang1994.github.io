@@ -1,5 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-06T08:47:26+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">33일, 주특기 심화 주 차 발제.</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29/" rel="alternate" type="text/html" title="33일, 주특기 심화 주 차 발제." /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29/"><![CDATA[]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">JPA 연관 관계 요구사항 Entity 구현해 보기</title><link href="http://localhost:4000/spring/Spring15/" rel="alternate" type="text/html" title="JPA 연관 관계 요구사항 Entity 구현해 보기" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring15</id><content type="html" xml:base="http://localhost:4000/spring/Spring15/"><![CDATA[<p>요구사항에 따라 Spring Data Jpa의 Entity를<br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-06T13:48:20+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">(작성중)Spring Security</title><link href="http://localhost:4000/spring%20security/Spring-Security01/" rel="alternate" type="text/html" title="(작성중)Spring Security" /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/spring%20security/Spring-Security01</id><content type="html" xml:base="http://localhost:4000/spring%20security/Spring-Security01/"><![CDATA[<h1 id="프로젝트-생성">프로젝트 생성</h1>
+
+<p><img src="../../images/2023-01-06-10-49-30.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-06-10-50-27.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring Security" /><category term="Spring Security 기초" /><summary type="html"><![CDATA[프로젝트 생성]]></summary></entry><entry><title type="html">JPA 연관관계 편의 메서드는 왜 사용할까</title><link href="http://localhost:4000/spring/Spring16/" rel="alternate" type="text/html" title="JPA 연관관계 편의 메서드는 왜 사용할까" /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring16</id><content type="html" xml:base="http://localhost:4000/spring/Spring16/"><![CDATA[<p>연관관계 편의 메서드는 왜 필요할까?</p>
+
+<p><a href="https://okky.kr/articles/987954">편의 메서드 필요 이유 참조</a></p>
+
+<p>Database에 flush 되기 전에 양방향으로 묶여있는 자료의 일관성을 지켜주기 위해 만듭니다.</p>
+
+<ul>
+  <li>트랜잭션이 끝나 DB에 flush되고 난 후 자료를 조회하면 문제가 없겟지만</li>
+  <li>한 트랜잭션이 끝나기 전에 자료를 조작할 시 한쪽에만 자료를 추가 하면 그건 아직 디비에 반영되어잇는</li>
+  <li>자료가 아니기때문에 추가한쪽에만 값이 들어있게되죠.</li>
+</ul>
+
+<p>멤버 와 팀의 관계를 예로들면</p>
+<ul>
+  <li>멤버와 팀을 생성 한 후 멤버에 팀를 넣습니다. 그리고 트랜잭션이 끝나서 디비에 플러쉬되고</li>
+  <li>
+    <p>멤버와 팀을 조회하면 정상적으로 멤버에도 팀이 들어가있고 팀에도 멤버가 들어가있을겁니다.</p>
+  </li>
+  <li>그런데 멤버와 팀을 생성 한후 멤버에 팀을 넣고 그 트랙잭션이 끝나기전에 팀에서 멤버를 찾아보면 없겟죠?</li>
+  <li>왜냐면 아직 디비에 반영되기 전 이거든요. 그런데 생각해보면 멤버가 팀에 들어갔으니 당연히 팀에서 멤버를 찾으면 있어야 된다는게 일반적인 생각이고,</li>
+  <li>이런 데이터의 오류를 방지하려면 어느 한쪽에 자료가 들어갈때 반대쪽에도 같이 넣어줘야 하는데</li>
+  <li>그 넣는 방법중 하나가 저런식으로 한쪽에 값을 넣을 때 다른쪽에도 넣어버리는겁니다.</li>
+</ul>
+
+<p><a href="https://velog.io/@songs4805/JPA-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91-%EA%B8%B0%EC%B4%88">순수한 객체까지 고려한 양방향 연관관계 참조 글</a><br />
+<a href="https://umanking.github.io/2020/10/26/jpa-mapping-2/">연관관계 편의 메서드 참조 글</a><br />
+<a href="https://ecsimsw.tistory.com/entry/JPA-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EA%B3%A0%EB%A0%A4%ED%95%9C-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%ED%8E%B8%EC%9D%98-%EB%A9%94%EC%86%8C%EB%93%9C">편의 메서드 이해가 쉬운 예제 참조</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="JPA 연관관계 편의 메서드" /><summary type="html"><![CDATA[연관관계 편의 메서드는 왜 필요할까?]]></summary></entry><entry><title type="html">33일, 주특기 심화 주 차 발제.</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29/" rel="alternate" type="text/html" title="33일, 주특기 심화 주 차 발제." /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29/"><![CDATA[<p><img src="../../images/2023-01-06-09-21-03.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">JPA 연관 관계 요구사항 Entity 구현해 보기</title><link href="http://localhost:4000/spring/Spring15/" rel="alternate" type="text/html" title="JPA 연관 관계 요구사항 Entity 구현해 보기" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring15</id><content type="html" xml:base="http://localhost:4000/spring/Spring15/"><![CDATA[<p>요구사항에 따라 Spring Data Jpa의 Entity를<br />
 만들어 연관관계를 맺는 연습을 해보면 어떨까요?</p>
+
+<p><a href="https://velog.io/@uiop9900/JPA-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91">연관관계 참조 글</a></p>
 
 <h1 id="요구사항">요구사항</h1>
 <h2 id="erd">ERD</h2>
@@ -14,6 +46,12 @@
   <li>
     <p>구매자의 경우 회원 형식이 아닌 말 그대로 구매자이므로,
 구매를 한 경우에만 등록됩니다.</p>
+  </li>
+  <li>
+    <p>Buyer와 Car 테이블은 N:M (다:다) 관계이므로, 
+ManyToMany를 사용하지 않고, Purchase라는 테이블에<br />
+Car  &lt;–OneToMany–&gt;  Purchase  &lt;—ManyToOne–&gt; Buyer<br />
+으로 연결해서 관리할 수 있게 기획했습니다.</p>
   </li>
 </ul>
 
@@ -243,8 +281,7 @@ Entity Relationship Diagram 클릭<br />
 <p><img src="../../images/2023-01-05-20-16-03.png" alt="" /></p>
 
 <p>아래의 Modules에서 +를 눌러 추가하시거나, Provider 부분을 바꿔주시면 됩니다.
-<img src="../../images/2023-01-05-20-17-49.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="IntelliJ" /><category term="IntelliJ JPA Entity ERD 보기" /><summary type="html"><![CDATA[Spring으로 개발을 하다 보면, 자신이 개발 중인 Entity들을 ERD로 볼 수 있으면 얼마나 편할까?라는 생각이 듭니다.]]></summary></entry><entry><title type="html">32일, RestAPI EC2호스팅, JPA 참조된 데이터 삭제하기</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28/" rel="alternate" type="text/html" title="32일, RestAPI EC2호스팅, JPA 참조된 데이터 삭제하기" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28/"><![CDATA[<p>오늘은 스프링 숙련 주 차의 마지막 날..
-시험이 있는날이다.</p>
+<img src="../../images/2023-01-05-20-17-49.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="IntelliJ" /><category term="IntelliJ JPA Entity ERD 보기" /><summary type="html"><![CDATA[Spring으로 개발을 하다 보면, 자신이 개발 중인 Entity들을 ERD로 볼 수 있으면 얼마나 편할까?라는 생각이 듭니다.]]></summary></entry><entry><title type="html">32일, RestAPI EC2호스팅, JPA 참조된 데이터 삭제하기</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28/" rel="alternate" type="text/html" title="32일, RestAPI EC2호스팅, JPA 참조된 데이터 삭제하기" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28/"><![CDATA[<p>오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는날이다.</p>
 
 <p>시험에서는 JPA의 연관관계에 대해서 나왔고,<br />
 JPA에 대해서 깊게 공부를 안해서 그런지 생각보다 어려웠다.</p>
@@ -252,19 +289,55 @@ JPA에 대해서 깊게 공부를 안해서 그런지 생각보다 어려웠다.
 <p>그래서 항해99에서 나온 문제를 재사용하기엔 좀 그래서<br />
 비슷한 예제로 새로만들어서 아래의 포스팅에 정리를 했다.</p>
 
-<h1 id="오늘-겪은-문제들">오늘 겪은 문제들.</h1>
+<p><a href="https://hyunjunhwang1994.github.io/spring/Spring15/">연관관계 맵핑</a></p>
+
+<p>간단 정리</p>
 <ul>
-  <li>
-    <p>Post 테이블에서 글 삭제시 삭제 되지 않는 것.
-<a href="https://devpouch.tistory.com/116">참조</a>
-<a href="https://yeon-kr.tistory.com/196">2</a>
-<a href="https://khdscor.tistory.com/18">3</a></p>
-  </li>
-  <li>jwt.secret.key 관련 에러.</li>
-  <li>@Column(length = 50000) ..</li>
+  <li>DB입장에서는 FK를 가지고 있으면 양방향 조회가 되지만,</li>
+  <li>객체지향 입장에서는 사용할 목적에 따라 단방향, 양방향 맵핑등을 해주어야 한다.</li>
+  <li>@ManyToMany 사용 보다는 위의 연관관계 맵핑 글에서처럼 A, C를 관리하는 B테이블을 직접 만들어<br />
+A &lt;-OneToMany-&gt; B &lt;-ManyToOne-&gt; C  형태로 만들어 주는 것이 좋다.</li>
 </ul>
 
-<p><a href="https://hyeonic.tistory.com/208#:~:text=%EA%B0%80%EB%B3%80%20%EA%B8%B8%EC%9D%B4%EC%9D%B4%EB%8B%A4.,%EC%B5%9C%EB%8C%80%20%EA%B8%B8%EC%9D%B4%EB%8A%94%2065535%EC%9D%B4%EB%8B%A4.">길이 관련 포스트</a></p>
+<hr />
+
+<h1 id="오늘-겪은-문제들">오늘 겪은 문제들.</h1>
+<ul>
+  <li>Post 테이블에서 글 삭제시 삭제 되지 않는 것.</li>
+  <li>현재 Post(글)의 PK를 댓글에서 참조(FK)하고 있는데</li>
+  <li>이렇게 다른 테이블에 참조되어 있는 경우</li>
+  <li>글을 삭제하려고 하면 기본 설정으로는 삭제가 안된다고 한다.</li>
+</ul>
+
+<h2 id="해결">해결</h2>
+<ul>
+  <li>로직 상 검증이 끝난 후 참조하고 있는 데이터를 삭제 후</li>
+  <li>목표 데이터를 삭제하거나,</li>
+  <li>상황에 따라 Cascade, OrphanRemoval등을 사용해주면 된다.</li>
+</ul>
+
+<p><a href="https://choiblack.tistory.com/48">Cascade, OrphanRemoval 참조 블로그</a></p>
+
+<hr />
+
+<ul>
+  <li>jwt.secret.key 관련 에러.</li>
+</ul>
+
+<p><img src="../../images/2023-01-06-09-36-05.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-06-09-36-15.png" alt="" /></p>
+
+<p>위와 같은 에러가 떴다!
+jwt.secret.key 값 설정을</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>asdqk@ㄱㄴdqwdkqodk 
+</code></pre></div></div>
+
+<p>대략 위와 같이 하니 떴따..<br />
+테스트를 해보니 한글과 특수문자가 1개라도 들어가있으면 오류를 뱉었다..</p>
+
+<hr />
 
 <h1 id="restapi-개인-과제를-rds연동-ec2에-호스팅-해보다">RestAPI 개인 과제를 RDS연동 EC2에 호스팅 해보다.</h1>
 
@@ -287,6 +360,9 @@ AWS라는 공룡기업이 있어서 생각보다 어렵지 않았다.</p>
 
 <p>-연관관계 편의메서드 ?
 <a href="https://velog.io/@dhk22/JPA-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84">참조</a></p>
+
+<p>순환 참조를해결하는 편의메서드 라는 것을 알고 DTO대신 한번
+새로운 예제를 통해서 적용시켜 보았습니다.</p>
 
 <p><a href="https://erjuer.tistory.com/106">?</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는날이다.]]></summary></entry><entry><title type="html">31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기, EnableWebMvc</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/" rel="alternate" type="text/html" title="31일, JPA 연관관계, 무한 순환 참조, Json Ignore -&amp;gt; DTO 만들기, EnableWebMvc" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/"><![CDATA[<h2 id="현재-상황">현재 상황</h2>
 
@@ -471,7 +547,7 @@ WebMvcConfigurer을 구현하여 Jackson Dates Timestamps 설정 관련을 기�
     
     <span class="c1">// SwaggerConfig...</span>
 
-</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[현재 상황]]></summary></entry><entry><title type="html">스프링 부트 - JWT 인증/인가 구현하기</title><link href="http://localhost:4000/spring/Spring13/" rel="alternate" type="text/html" title="스프링 부트 - JWT 인증/인가 구현하기" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring13</id><content type="html" xml:base="http://localhost:4000/spring/Spring13/"><![CDATA[<p><a href="https://hyunjunhwang1994.github.io/jwt/JWT/">JWT 개념 정리 포스팅</a></p>
+</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[현재 상황]]></summary></entry><entry><title type="html">스프링 부트 - 날 것의 JWT 인증/인가 구현하기</title><link href="http://localhost:4000/spring/Spring13/" rel="alternate" type="text/html" title="스프링 부트 - 날 것의 JWT 인증/인가 구현하기" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring13</id><content type="html" xml:base="http://localhost:4000/spring/Spring13/"><![CDATA[<p><a href="https://hyunjunhwang1994.github.io/jwt/JWT/">JWT 개념 정리 포스팅</a></p>
 
 <ul>
   <li>JWT를 이용하여 로그인 및 인증/인가하는 방법을 기술하였으며,</li>
@@ -1054,222 +1130,4 @@ Errors 객체의 문제인 것 같다.</p>
 
 <p><img src="../../images/2023-01-03-15-19-27.png" alt="" /></p>
 
-<p><img src="../../images/2023-01-03-15-18-42.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘 공부한 것 JWT 토큰 인증/인가 구현 방식 JPA 연관관계 사용하여 데이터베이스 사용하기. -&gt; 사용 도중 순환 참조 관련 문제 발생으로 다음 TIL 글에 정리할 예정 Swagger UI 이용하여 API 테스트하기.]]></summary></entry><entry><title type="html">AWS 프리 티어 요금 알림 설정하기.</title><link href="http://localhost:4000/cloud%20computing%20-%20aws/AWS-04/" rel="alternate" type="text/html" title="AWS 프리 티어 요금 알림 설정하기." /><published>2023-01-03T00:00:00+09:00</published><updated>2023-01-03T00:00:00+09:00</updated><id>http://localhost:4000/cloud%20computing%20-%20aws/AWS-04</id><content type="html" xml:base="http://localhost:4000/cloud%20computing%20-%20aws/AWS-04/"><![CDATA[<p>결제 대시보드 클릭<br />
-<img src="../../images/2023-01-03-11-12-48.png" alt="" /></p>
-
-<p>프리 티어 사용량 알림 받기, 결제 알림 받기 클릭 후<br />
-자신의 이메일 주소 입력 후 저장하면 됩니다.<br />
-<img src="../../images/2023-01-03-11-11-21.png" alt="" /></p>
-
-<ul>
-  <li>
-    <p>프리 티어 사용량 알림 받기<br />
-현재 사용하고 있는 프리 티어의 사용한도를 초과하면 이메일로 알람이 옵니다.</p>
-  </li>
-  <li>
-    <p>결제 알림 받기<br />
-요금이 특정 임계값에 도달할 때 이메일을 알림이 옵니다.</p>
-  </li>
-</ul>
-
-<hr />
-
-<p>임계값 설정하기.<br />
-<img src="../../images/2023-01-03-11-14-39.png" alt="" /></p>
-
-<p>요금과 관련된 설정(정보)가 버지니아 북부에 있기 때문에 지역 변경
-<img src="../../images/2023-01-03-11-17-33.png" alt="" /></p>
-
-<p>경보 -&gt; 결제 클릭<br />
-<img src="../../images/2023-01-03-11-18-02.png" alt="" /></p>
-
-<p>경보 생성 클릭
-<img src="../../images/2023-01-03-11-18-33.png" alt="" /></p>
-
-<p>저는 50달러의 요금이 넘게 나오면 알림이 오도록 설정해 주었습니다.
-<img src="../../images/2023-01-03-11-20-30.png" alt="" /></p>
-
-<p>이메일 엔드 포인트에 자신의 이메일을 적고 주제 생성 클릭!
-<img src="../../images/2023-01-03-11-21-38.png" alt="" /></p>
-
-<p>아래와 같이 됐다면 다음 클릭
-<img src="../../images/2023-01-03-11-22-50.png" alt="" /></p>
-
-<p>원하는 대로 설정 후 다음 클릭
-<img src="../../images/2023-01-03-11-24-41.png" alt="" /></p>
-
-<p>마지막으로 최종 확인 후 경보 생성 클릭
-<img src="../../images/2023-01-03-11-25-13.png" alt="" /></p>
-
-<p>처음엔 이렇게 데이터 부족이라고 나오실 텐데요
-<img src="../../images/2023-01-03-11-25-58.png" alt="" /></p>
-
-<p>아마 조금 기다리시고 아래처럼 정상이 뜨면 완료입니다!
-<img src="../../images/2023-01-03-11-27-33.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Cloud computing - AWS" /><category term="AWS 프리 티어 알림 설정하기." /><summary type="html"><![CDATA[결제 대시보드 클릭]]></summary></entry><entry><title type="html">스프링 부트 - Swagger UI 3.0</title><link href="http://localhost:4000/spring/Spring12/" rel="alternate" type="text/html" title="스프링 부트 - Swagger UI 3.0" /><published>2023-01-03T00:00:00+09:00</published><updated>2023-01-03T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring12</id><content type="html" xml:base="http://localhost:4000/spring/Spring12/"><![CDATA[<p><a href="https://velog.io/@livenow/SpringBoot-Swagger%EB%A5%BC-%ED%86%B5%ED%95%9C-REST-%EC%9A%94%EC%B2%AD%EC%97%90-%EC%A0%84%EC%97%AD-jwt-%EC%9D%B8%EC%A6%9D-%EC%84%A4%EC%A0%95-%ED%95%98%EA%B8%B0">참조한 글 </a></p>
-
-<h1 id="swaggerui란">Swagger(UI)란?</h1>
-<ul>
-  <li>Open Api Speccification(OAS)를 위한 프레임워크.</li>
-  <li>RESTful API 테스트를 쉽게 가능하게 해주고</li>
-  <li>자신의 프로젝트에 설정할 경우 Swagger UI로 API 문서 및 테스트 페이지가 자동완성된다.</li>
-  <li>Authorize 기능의 추가로 JWT 같은 토큰 사용 시 토큰 재입력 필요 없이 편하게 사용 가능하다.</li>
-</ul>
-
-<h2 id="gradle-추가">Gradle 추가</h2>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>implementation 'io.springfox:springfox-boot-starter:3.0.0'
-implementation 'io.springfox:springfox-swagger-ui:3.0.0'
-</code></pre></div></div>
-
-<h2 id="config-클래스-생성">Config 클래스 생성</h2>
-<ol>
-  <li>스프링 부트 프로젝트 기준 최상단 (.Application 클래스 있는 곳)에 클래스 생성 후 설정 파일 작성</li>
-  <li>basePackage() 부분에 자신의 컨트롤러 패키지 Path를 입력!</li>
-</ol>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Configuration</span>
-<span class="nd">@EnableWebMvc</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SwaggerConfig</span> <span class="o">{</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="nc">Docket</span> <span class="nf">api</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">Docket</span><span class="o">(</span><span class="nc">DocumentationType</span><span class="o">.</span><span class="na">SWAGGER_2</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">useDefaultResponseMessages</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">select</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">apis</span><span class="o">(</span><span class="nc">RequestHandlerSelectors</span><span class="o">.</span><span class="na">basePackage</span><span class="o">(</span><span class="s">"com.sparta.spring_skillful_week_assignment.controller"</span><span class="o">))</span>
-                <span class="o">.</span><span class="na">paths</span><span class="o">(</span><span class="nc">PathSelectors</span><span class="o">.</span><span class="na">ant</span><span class="o">(</span><span class="s">"/api/**"</span><span class="o">))</span>
-                <span class="o">.</span><span class="na">build</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">apiInfo</span><span class="o">(</span><span class="n">metaData</span><span class="o">())</span>
-                <span class="o">.</span><span class="na">securityContexts</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">securityContext</span><span class="o">()))</span>
-                <span class="o">.</span><span class="na">securitySchemes</span><span class="o">(</span><span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="n">apiKey</span><span class="o">()));</span>
-
-    <span class="o">}</span>
-
-    <span class="kd">private</span> <span class="nc">ApiInfo</span> <span class="nf">metaData</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">ApiInfoBuilder</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">title</span><span class="o">(</span><span class="s">"Hanghae99 REST API"</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">description</span><span class="o">(</span><span class="s">"Post, User Rest Api"</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">version</span><span class="o">(</span><span class="s">"0.0.1"</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">termsOfServiceUrl</span><span class="o">(</span><span class="s">"Terms of service"</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">contact</span><span class="o">(</span><span class="k">new</span> <span class="nc">Contact</span><span class="o">(</span><span class="s">"Hyun Jun Hwang"</span><span class="o">,</span> <span class="s">"https://github.com/hyunjunhwang1994/Spring_Skillful_Week_Assignment"</span><span class="o">,</span> <span class="s">"hyunjunhwang1994@gmail.com"</span><span class="o">))</span>
-                <span class="o">.</span><span class="na">license</span><span class="o">(</span><span class="s">"Apache License Version 2.0"</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">licenseUrl</span><span class="o">(</span><span class="s">"https://www.apache.org/licenses/LICENSE-2.0"</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="kd">private</span> <span class="nc">ApiKey</span> <span class="nf">apiKey</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">ApiKey</span><span class="o">(</span><span class="s">"JWT"</span><span class="o">,</span> <span class="no">AUTHORIZATION_HEADER</span><span class="o">,</span> <span class="s">"header"</span><span class="o">);</span>
-    <span class="o">}</span>
-
-
-
-    <span class="kd">private</span> <span class="nc">SecurityContext</span> <span class="nf">securityContext</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">springfox</span>
-                <span class="o">.</span><span class="na">documentation</span>
-                <span class="o">.</span><span class="na">spi</span><span class="o">.</span><span class="na">service</span>
-                <span class="o">.</span><span class="na">contexts</span>
-                <span class="o">.</span><span class="na">SecurityContext</span>
-                <span class="o">.</span><span class="na">builder</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">securityReferences</span><span class="o">(</span><span class="n">defaultAuth</span><span class="o">()).</span><span class="na">forPaths</span><span class="o">(</span><span class="nc">PathSelectors</span><span class="o">.</span><span class="na">any</span><span class="o">()).</span><span class="na">build</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="nc">List</span><span class="o">&lt;</span><span class="nc">SecurityReference</span><span class="o">&gt;</span> <span class="nf">defaultAuth</span><span class="o">()</span> <span class="o">{</span>
-        <span class="nc">AuthorizationScope</span> <span class="n">authorizationScope</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AuthorizationScope</span><span class="o">(</span><span class="s">"global"</span><span class="o">,</span> <span class="s">"accessEverything"</span><span class="o">);</span>
-        <span class="nc">AuthorizationScope</span><span class="o">[]</span> <span class="n">authorizationScopes</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AuthorizationScope</span><span class="o">[</span><span class="mi">1</span><span class="o">];</span>
-        <span class="n">authorizationScopes</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">authorizationScope</span><span class="o">;</span>
-        <span class="k">return</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="k">new</span> <span class="nc">SecurityReference</span><span class="o">(</span><span class="s">"JWT"</span><span class="o">,</span> <span class="n">authorizationScopes</span><span class="o">));</span>
-    <span class="o">}</span>
-
-
-<span class="o">}</span>
-</code></pre></div></div>
-
-<hr />
-
-<h1 id="swaggerui-접속하기">Swagger(UI) 접속하기</h1>
-<p>위의 과정까지 완료하고 에러가 없이 프로젝트 실행이 잘 된 경우</p>
-
-<p>도메인주소/swagger-ui/index.html로 접속을 하면?</p>
-
-<p>ex)<br />
-http://localhost:8080/swagger-ui/index.html</p>
-
-<p>아래와 같이 API 문서 및 테스트까지 가능한 페이지가 자동으로 완성된다!<br />
-<img src="../../images/2023-01-03-15-54-36.png" alt="" /></p>
-
-<hr />
-
-<h2 id="jwt-연동하기-apikey">JWT 연동하기, apikey()</h2>
-<p>JWT를 편하게 사용할 수 있게 연동이 가능한데
-아래의 설정을 바꿔주어야 한다.</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="nc">ApiKey</span> <span class="nf">apiKey</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">ApiKey</span><span class="o">(</span><span class="s">"JWT"</span><span class="o">,</span> <span class="no">AUTHORIZATION_HEADER</span><span class="o">,</span> <span class="s">"header"</span><span class="o">);</span>
-    <span class="o">}</span>
-</code></pre></div></div>
-
-<ul>
-  <li>“JWT”<br />
-defaultAuth()에서 설정해 준<br />
-return Arrays.asList(new SecurityReference(“JWT”, authorizationScopes)); 값이다.</li>
-</ul>
-
-<hr />
-
-<ul>
-  <li>AUTHORIZATION_HEADER<br />
-본인의 JWT 관련 로직이 있는 곳에서 JWT 값을 헤더에 넣어줄 때
-헤더의 네임 값을 넣으면 된다.</li>
-</ul>
-
-<p>아래와 같은 코드가 있다면 AUTHORIZATION_HEADER 값!</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    response.addHeader(JwtUtil.AUTHORIZATION_HEADER, jwtUtil.createToken(user.getUsername()));
-</code></pre></div></div>
-
-<p><img src="../../images/2023-01-03-15-30-43.png" alt="" /></p>
-
-<hr />
-
-<ul>
-  <li>header<br />
-JWT 값이 header에 담겨있으므로 그냥 그대로 둔다.</li>
-</ul>
-
-<hr />
-
-<p>로그인 성공 시 발급되는 JWT
-<img src="../../images/2023-01-03-15-41-24.png" alt="" /></p>
-
-<p><img src="../../images/2023-01-03-15-41-40.png" alt="" /></p>
-
-<p><img src="../../images/2023-01-03-15-42-11.png" alt="" /></p>
-
-<p><img src="../../images/2023-01-03-15-42-16.png" alt="" /></p>
-
-<p>자신이 쓴 글만 수정이 가능하다면
-<img src="../../images/2023-01-03-15-42-44.png" alt="" /></p>
-
-<p>토큰 값 입력 없이도 잘 동작한다. (글 번호, 글 내용 들만 입력했고, 토큰 인증 후 해당 글 쓴 유저 네임과 일치해야 삭제되는 API이다.)
-<img src="../../images/2023-01-03-15-43-23.png" alt="" /></p>
-
-<hr />
-
-<h1 id="errors-errors-매개변수를-사용하는-경우-에러">Errors errors 매개변수를 사용하는 경우 에러!</h1>
-<p>스프링의 @Validated를 이용해서 Errors errors를 바로 뒤에 매개변수로 받거나,
-혹은 여타 다른 매개변수로 인하여 아래처럼 화면이 나오는 경우!<br />
-or 아예 에러가 뜨는 경우!</p>
-
-<p><img src="../../images/2023-01-03-15-06-12.png" alt="" /></p>
-
-<p><img src="../../images/2023-01-03-15-08-12.png" alt="" /></p>
-
-<p>사실 그냥 무시하고 위의 에러 입력값들 제외 원래의 입력값만 잘 주어도
-동작하지만, 보기 불편하고 사실상 없는 게 맞다.</p>
-
-<p><img src="../../images/2023-01-03-15-08-54.png" alt="" /></p>
-
-<p>@ApiIgnore로 매개변수 앞에다 사용해 주면 해당 파라미터를 제외하고 API 컨트롤러가 동작한다<br />
-<img src="../../images/2023-01-03-15-19-27.png" alt="" /></p>
-
-<p><img src="../../images/2023-01-03-15-18-42.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring Boot Swagger UI" /><summary type="html"><![CDATA[참조한 글]]></summary></entry></feed>
+<p><img src="../../images/2023-01-03-15-18-42.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘 공부한 것 JWT 토큰 인증/인가 구현 방식 JPA 연관관계 사용하여 데이터베이스 사용하기. -&gt; 사용 도중 순환 참조 관련 문제 발생으로 다음 TIL 글에 정리할 예정 Swagger UI 이용하여 API 테스트하기.]]></summary></entry></feed>
