@@ -1,23 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-07T22:19:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30/" rel="alternate" type="text/html" title="스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인" /><published>2023-01-07T00:00:00+09:00</published><updated>2023-01-07T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30/"><![CDATA[<h1 id="계획-변경우선순위는-앞에부터">계획 변경!(우선순위는 앞에부터)</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-07T22:52:58+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30/" rel="alternate" type="text/html" title="스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인" /><published>2023-01-07T00:00:00+09:00</published><updated>2023-01-07T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30/"><![CDATA[<h1 id="계획우선순위는-앞에부터">계획(우선순위는 앞에부터)</h1>
 <ul>
   <li>금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL</li>
-  <li>금 : 저번주와 내용이 많이 바뀌므로, 일단 1강만 완강 후 새롭게 알게된 내용들 정리.</li>
   <li>토 : 7개중 3강완료, 내용을 정리하면서 가야 할 것 같아 강의 내용 정리.</li>
-  <li>일 : 키워드에 맞는 WIL작성, 개인과제 시작, 알고리즘 문제풀이.</li>
-  <li>월 : 개인과제, 개인과제 피드백, 저번주의 JPA 영속성 관련 포스트 다시 정리하며 공부</li>
-  <li>화 : 개인과제, 저번주에서 잘 이해가 안갔거나 정리못한것 정리</li>
-  <li>수 : 개인과제, 팀과제</li>
-  <li>목 : 개인과제, 개인과제 피드백, 팀과제, 과제 제출</li>
+  <li>일 : 키워드에 맞는 WIL 작성, 알고리즘 문제풀이.</li>
+  <li>월 : 개인과제, 개인과제 피드백, 지난주의 JPA 영속성 관련 포스트 다시 정리하며 공부</li>
+  <li>화 : 개인과제, 지난주에서 잘 이해가 안 갔거나 정리 못한 것 정리</li>
+  <li>수 : 개인과제, 팀 과제</li>
+  <li>목 : 개인과제, 개인과제 피드백, 팀 과제, 과제 제출</li>
   <li>금 : 스프링 프로젝트 주 차 시작</li>
 </ul>
 
-<p>오늘은 일다 강의를 다 들었고 2강을 듣던중 흥미로운 문제? 과제?가 있어서 기록해본다.</p>
+<p>오늘은 2강과 3강을 들었고, 배운것들을 정리하며 나아가야 할 것 같아서
+생각보다 오래걸려, 원래 어제의 TIL에서의 계획을 바꿨다 …</p>
 
 <hr />
 
+<p>Spring Security를 이용하여 프로젝트를 만들어보는 2강을 진행하다,
+흥미로운 문제가 있어서 진행해보았다.</p>
+
+<p>시큐리티의 인증이 구현된 상태에서, 유저의 정보가 담긴
+UserDetailsImpl userDetails를 컨트롤러 -&gt; 서비스로 넘겨서</p>
+
+<p>유저정보를 활용 후 다시 서비스 -&gt; 컨트롤러로 넘길 때
+에러가 발생하는데, 이 에러는 왜나는 것이고 해결해보라는 문제가 있었다!</p>
+
+<h2 id="왜-이런-문제가-발생하는지">왜 이런 문제가 발생하는지</h2>
+<ul>
+  <li>Spring Security의 필터 단에서 이미 user의 인증은 끝났다</li>
+  <li>그 말인 즉슨 트랜잭션은 끝났고, 준영속 상태이다.</li>
+  <li>그러므로 해당 객체가 서비스로 넘어가도 준영속 상태이고,</li>
+  <li>다시 컨트롤러로 가지고 온다해도 준영속 상태이므로 예외가 발생한다.</li>
+</ul>
+
+<h2 id="해결-방법들">해결 방법들</h2>
+
+<h3 id="추천하지-않는-방법">추천하지 않는 방법</h3>
+<ul>
+  <li>FetchType.EAGER로 바꾸니 동작은 하나 N+1 문제 발생.</li>
+  <li>서비스단에서 컨트롤러에서 가져온 username으로 entity 만듬 -&gt; 이럴거면 Spring Security 왜 씀?</li>
+</ul>
+
+<h3 id="추천하는-방법">추천하는 방법</h3>
+<p>OSIV(Open Session In View)를 이용, OpenEntityManagerInViewFilter를 이용하여
+Spring Security 필터보다 앞단에 위치하여 해결.</p>
+
+<hr />
+
+<p>그리고 oAuth2를이용하여 카카오로그인을 로컬서버에 구현해보았다.<br />
+사실 이건 구현하면서 딱히 어려운게 없어서 그냥 내용만 정리하여 올려보았다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[계획(우선순위는 앞에부터) 금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL 토 : 7개중 3강완료, 내용을 정리하면서 가야 할 것 같아 강의 내용 정리. 일 : 키워드에 맞는 WIL 작성, 알고리즘 문제풀이. 월 : 개인과제, 개인과제 피드백, 지난주의 JPA 영속성 관련 포스트 다시 정리하며 공부 화 : 개인과제, 지난주에서 잘 이해가 안 갔거나 정리 못한 것 정리 수 : 개인과제, 팀 과제 목 : 개인과제, 개인과제 피드백, 팀 과제, 과제 제출 금 : 스프링 프로젝트 주 차 시작]]></summary></entry><entry><title type="html">인증 완료된 userDetails 객체를 Service로 넘길 때</title><link href="http://localhost:4000/spring%20security/Spring-Security02/" rel="alternate" type="text/html" title="인증 완료된 userDetails 객체를 Service로 넘길 때" /><published>2023-01-07T00:00:00+09:00</published><updated>2023-01-07T00:00:00+09:00</updated><id>http://localhost:4000/spring%20security/Spring-Security02</id><content type="html" xml:base="http://localhost:4000/spring%20security/Spring-Security02/"><![CDATA[<p>이 글은, Spring Security 사용 중, 유저의 인증이 완료된<br />
+@AuthenticationPrincipal UserDetailsImpl userDetails를</p>
+
+<p>컨트롤러 -&gt; 서비스로 넘겨 유저 정보를 활용하고,
+다시 서비스 -&gt; 컨트롤러로 응답될 때 발생하는 아래의 에러로 인해 작성 하였습니다.</p>
+
+<details>   
+<summary>발생 워닝</summary>
+<div>
+
+    <p>2023-01-07 19:58:31.265  WARN 26751 — [nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: failed to lazily initialize a collection of role: com.sparta.myselectshopsecurity.entity.User.folders, could not initialize proxy - no Session; nested exception is com.fasterxml.jackson.databind.JsonMappingException: failed to lazily initialize a collection of role: com.sparta.myselectshopsecurity.entity.User.folders, could not initialize proxy - no Session (through reference chain: java.util.ArrayList[0]-&gt;com.sparta.myselectshopsecurity.entity.Folder[“user”]-&gt;com.sparta.myselectshopsecurity.entity.User[“folders”])]</p>
+
+  </div>
+</details>
+
+<p>Spring Security를 이용하여 프로젝트를 만들어보는 2강을 진행하다,
+흥미로운 문제가 있어서 진행해보았다.</p>
+
 <p>아래와 같이 1명의 user가 N개의 폴더를 추가하는 기능이 있었다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">원래의 부분을 주석으로 작성한 부분처럼 바꿨을때</code> 왜 동작이 안되는지 공부해보고, 동작시켜보라고 했다.</p>
+<p><code class="language-plaintext highlighter-rouge">원래의 부분을 주석으로 작성한 부분처럼 바꿨을때</code> 왜 동작이 안되는지 <br />
+직접 공부해보고, 동작시켜보라고 했다.</p>
 
 <p>시큐리티의 인증은 구현된 상태이다!</p>
 
@@ -70,15 +121,6 @@ JPA, 영속성 관련해서 생각해 볼 문제를 던져주기 위해 위와�
 
 <p>로그인 후 폴더 추가 시 최종적으로 아래와 같은 워닝이 뜨면서 로그인 창으로 다시 넘어가게 된다.</p>
 
-<details>   
-<summary>발생 워닝</summary>
-<div>
-
-    <p>2023-01-07 19:58:31.265  WARN 26751 — [nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: failed to lazily initialize a collection of role: com.sparta.myselectshopsecurity.entity.User.folders, could not initialize proxy - no Session; nested exception is com.fasterxml.jackson.databind.JsonMappingException: failed to lazily initialize a collection of role: com.sparta.myselectshopsecurity.entity.User.folders, could not initialize proxy - no Session (through reference chain: java.util.ArrayList[0]-&gt;com.sparta.myselectshopsecurity.entity.Folder[“user”]-&gt;com.sparta.myselectshopsecurity.entity.User[“folders”])]</p>
-
-  </div>
-</details>
-
 <p><br /></p>
 
 <p>일단 로그를 보고 추측하여, 아래 처럼 FetchType.EAGER로 바꾸니<br />
@@ -103,40 +145,120 @@ JPA, 영속성 관련해서 생각해 볼 문제를 던져주기 위해 위와�
 
 <p>하지만 이는 당장 동작은 할지 몰라도, 위와같이 N+1 문제를 발생시킨다.</p>
 
-<p>여러가지 방법이 있겠다</p>
+<h2 id="해결-방법들">해결 방법들</h2>
 <ul>
   <li>
-    <p>기존 코드처럼 user를 다시 불러와 사용한다 (Entity 다시 불러오기.)
-동작하는데는 문제없고 좋지만, 유저가 이미 있는데 다시불러오는것이
-서비스적으로 문제가 있어보인다.</p>
+    <p>FetchType.EAGER로 사용한다.
+동작은 하지만 N+1문제를 일으키며, 현재 여러가지 폴더를 추가할 수 있는
+상황이므로, 여러 유저가 많은 폴더를 추가할 때, 얼마나 많은 쿼리가 나올지..?</p>
   </li>
   <li>
-    <p>OSIV라는 것을 이용해 해결하였다.
-필터단보다 먼저 아래의 필터를 적용시켜 동작하였다!
-```java
-@Component
-@Configuration
-public class OpenEntityManagerConfig {</p>
-
-    <p>@Bean
-  public FilterRegistrationBean<OpenEntityManagerInViewFilter> openEntityManagerInViewFilter() {
-      FilterRegistrationBean<OpenEntityManagerInViewFilter> filterFilterRegistrationBean = new FilterRegistrationBean&lt;&gt;();
-      filterFilterRegistrationBean.setFilter(new OpenEntityManagerInViewFilter());
-      filterFilterRegistrationBean.setOrder(Integer.MIN_VALUE); // 예시를 위해 최우선 순위로 Filter 등록
-      return filterFilterRegistrationBean;
-  }</OpenEntityManagerInViewFilter></OpenEntityManagerInViewFilter></p>
+    <p>기존 코드처럼 서비스에서 Entity를 다시 불러와 사용한다.
+동작하는데는 문제없고 좋지만, 유저가 이미 있는데 다시불러오는것이 비효율적이고,
+이러면 Spring Security를 왜쓰지? 라는 생각이든다.</p>
+  </li>
+  <li>
+    <p>OSIV(Open Session In View)라는 것을 이용해 해결한다.
+영속성 컨텍스트를 뷰까지 열어두는 기능이다.
+이 기능은 기본적으로 true로 설정되어 있지만, 인터셉터 단에서 동작하므로,
+현재 Spring Security 의 트랜잭션은 필터단에서 이루어진다.</p>
   </li>
 </ul>
 
-<p>}
-```</p>
+<p>이러한 상황을 위해 필터단에서 동작하는 클래스가 존재한다.<br />
+OpenEntityManagerInView를 Bean으로 등록하면 해결된다!</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Component</span>
+<span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OpenEntityManagerConfig</span> <span class="o">{</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="nc">FilterRegistrationBean</span><span class="o">&lt;</span><span class="nc">OpenEntityManagerInViewFilter</span><span class="o">&gt;</span> <span class="nf">openEntityManagerInViewFilter</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">FilterRegistrationBean</span><span class="o">&lt;</span><span class="nc">OpenEntityManagerInViewFilter</span><span class="o">&gt;</span> <span class="n">filterFilterRegistrationBean</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FilterRegistrationBean</span><span class="o">&lt;&gt;();</span>
+        <span class="n">filterFilterRegistrationBean</span><span class="o">.</span><span class="na">setFilter</span><span class="o">(</span><span class="k">new</span> <span class="nc">OpenEntityManagerInViewFilter</span><span class="o">());</span>
+        <span class="n">filterFilterRegistrationBean</span><span class="o">.</span><span class="na">setOrder</span><span class="o">(</span><span class="nc">Integer</span><span class="o">.</span><span class="na">MIN_VALUE</span><span class="o">);</span> <span class="c1">// 예시를 위해 최우선 순위로 Filter 등록</span>
+        <span class="k">return</span> <span class="n">filterFilterRegistrationBean</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>OpenEntityManagerInView가 Spring Security의 DelegatingFilterProxy보다 먼저 적용될 수 있게끔 Order를 설정하는 것을 잊지 말자.</p>
+
+<p>이 설정을 추가하면 Lazy로 동작하는 연관 Entity를 조회할 때, 정상적으로 동작하는 것을 확인할 수 있다.</p>
 
 <p><a href="https://tecoble.techcourse.co.kr/post/2020-08-31-entity-lifecycle-1/">추천 참조 글1</a>
-<a href="https://tecoble.techcourse.co.kr/post/2020-09-20-entity-lifecycle-2/">추천 참조 글2</a></p>
+<a href="https://tecoble.techcourse.co.kr/post/2020-09-20-entity-lifecycle-2/">추천 참조 글2</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring Security" /><category term="Spring Security 기초" /><summary type="html"><![CDATA[이 글은, Spring Security 사용 중, 유저의 인증이 완료된 @AuthenticationPrincipal UserDetailsImpl userDetails를]]></summary></entry><entry><title type="html">JPA 연관관계 편의 메서드는 왜 사용할까</title><link href="http://localhost:4000/spring/Spring16/" rel="alternate" type="text/html" title="JPA 연관관계 편의 메서드는 왜 사용할까" /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring16</id><content type="html" xml:base="http://localhost:4000/spring/Spring16/"><![CDATA[<p>연관관계 편의 메서드는 왜 필요할까?</p>
+
+<p><a href="https://okky.kr/articles/987954">편의 메서드 필요 이유 참조</a></p>
 
 <hr />
 
-<p>그리고 oAuth2를이용하여 카카오로그인을 로컬서버에 구현해보았다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[계획 변경!(우선순위는 앞에부터) 금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL 금 : 저번주와 내용이 많이 바뀌므로, 일단 1강만 완강 후 새롭게 알게된 내용들 정리. 토 : 7개중 3강완료, 내용을 정리하면서 가야 할 것 같아 강의 내용 정리. 일 : 키워드에 맞는 WIL작성, 개인과제 시작, 알고리즘 문제풀이. 월 : 개인과제, 개인과제 피드백, 저번주의 JPA 영속성 관련 포스트 다시 정리하며 공부 화 : 개인과제, 저번주에서 잘 이해가 안갔거나 정리못한것 정리 수 : 개인과제, 팀과제 목 : 개인과제, 개인과제 피드백, 팀과제, 과제 제출 금 : 스프링 프로젝트 주 차 시작]]></summary></entry><entry><title type="html">주특기 심화 주 차 발제, 스프링 시큐리티</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29/" rel="alternate" type="text/html" title="주특기 심화 주 차 발제, 스프링 시큐리티" /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29/"><![CDATA[<p>오늘은 주특기 심화 주 차 발제가 있었다.
+<h1 id="why">Why?</h1>
+<p>Database에 flush 되기 전에 양방향으로 묶여있는 자료의 일관성을 지켜주기 위해 만듭니다.</p>
+
+<ul>
+  <li>트랜잭션이 끝나 DB에 flush되고 난 후 자료를 조회하면 문제가 없겟지만</li>
+  <li>한 트랜잭션이 끝나기 전에 자료를 조작할 시 한쪽에만 자료를 추가 하면 그건 아직 디비에 반영되어잇는</li>
+  <li>자료가 아니기때문에 추가한쪽에만 값이 들어있게되죠.</li>
+</ul>
+
+<hr />
+
+<p>멤버 와 팀의 관계를 예로들면</p>
+<ul>
+  <li>멤버와 팀을 생성 한 후 멤버에 팀을 넣습니다. 그리고 트랜잭션이 끝나서 디비에 플러쉬되고</li>
+  <li>
+    <p>멤버와 팀을 조회하면 정상적으로 멤버에도 팀이 들어가있고 팀에도 멤버가 들어가있을겁니다.</p>
+  </li>
+  <li>그런데 멤버와 팀을 생성 한후 멤버에 팀을 넣고 그 트랙잭션이 끝나기전에 팀에서 멤버를 찾아보면 없겟죠?</li>
+  <li>왜냐면 아직 디비에 반영되기 전 이거든요. 그런데 생각해보면 멤버가 팀에 들어갔으니 당연히 팀에서 멤버를 찾으면 있어야 된다는게 일반적인 생각이고,</li>
+  <li>이런 데이터의 오류를 방지하려면 어느 한쪽에 자료가 들어갈때 반대쪽에도 같이 넣어줘야 하는데</li>
+  <li>그 넣는 방법중 하나가 한쪽에 값을 넣을 때 다른쪽에도 넣어버리는겁니다.</li>
+</ul>
+
+<hr />
+
+<p><a href="https://velog.io/@songs4805/JPA-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91-%EA%B8%B0%EC%B4%88">순수한 객체까지 고려한 양방향 연관관계 참조 글</a><br />
+<a href="https://umanking.github.io/2020/10/26/jpa-mapping-2/">연관관계 편의 메서드 참조 글</a><br />
+<a href="https://ecsimsw.tistory.com/entry/JPA-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EA%B3%A0%EB%A0%A4%ED%95%9C-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%ED%8E%B8%EC%9D%98-%EB%A9%94%EC%86%8C%EB%93%9C">편의 메서드 이해가 쉬운 예제 참조</a></p>
+
+<p><a href="https://velog.io/@dhk22/JPA-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84">참조</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="JPA 연관관계 편의 메서드" /><summary type="html"><![CDATA[연관관계 편의 메서드는 왜 필요할까?]]></summary></entry><entry><title type="html">Devtools 코드 업데이트 시 자동 재시작</title><link href="http://localhost:4000/spring/Spring17/" rel="alternate" type="text/html" title="Devtools 코드 업데이트 시 자동 재시작" /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring17</id><content type="html" xml:base="http://localhost:4000/spring/Spring17/"><![CDATA[<p>인텔리제이에서 스프링 부트로 작업을 하다 보면,<br />
+코드 변경 사항이 있을 때, 자동으로 재시작 해주면 좋지 않을까라는 생각이 듭니다.</p>
+
+<p>그래서 인텔리제이에서는 해당 기능을 제공합니다.</p>
+
+<hr />
+
+<h1 id="의존성-추가">의존성 추가</h1>
+
+<p>처음 SpringBoot 프로젝트 생성 시</p>
+
+<ul>
+  <li>Spring Boot DevTools를 추가하시거나,</li>
+</ul>
+
+<p>or</p>
+
+<ul>
+  <li>
+    <p>build.gradle에 아래의 코드를 추가해 주세요!</p>
+
+    <p>developmentOnly ‘org.springframework.boot:spring-boot-devtools’</p>
+  </li>
+</ul>
+
+<hr />
+
+<p>그 후, 아래의 설정을 진행해 주면 됩니다.</p>
+
+<p><img src="../../images/2022-12-24-19-59-39.png" alt="" /></p>
+
+<p>Modify options -&gt; On frame deactivation -&gt; Update classes….<br />
+<img src="../../images/2022-12-24-20-00-18.png" alt="" /></p>
+
+<p>이제 코드 프로젝트 상 코드에 변경이 생기면,
+스프링 부트를 재시작하지 않아도 자동으로 업데이트 시 재시작 시켜줍니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="SpringBoot Devtools 코드 업데이트 시 서버 자동 재시작" /><summary type="html"><![CDATA[인텔리제이에서 스프링 부트로 작업을 하다 보면, 코드 변경 사항이 있을 때, 자동으로 재시작 해주면 좋지 않을까라는 생각이 듭니다.]]></summary></entry><entry><title type="html">주특기 심화 주 차 발제, Spring Security</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29/" rel="alternate" type="text/html" title="주특기 심화 주 차 발제, Spring Security" /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL29/"><![CDATA[<p>오늘은 주특기 심화 주 차 발제가 있었다.
 <img src="../../images/2023-01-06-09-21-03.png" alt="" /></p>
 
 <hr />
@@ -153,30 +275,30 @@ public class OpenEntityManagerConfig {</p>
 
 <hr />
 
-<p>30%정도 달려온 이 시점, 이제부터 사실 상,<br />
-9to9을 주6일을 공부해도 시간이 모자른 것 같다..</p>
+<p>30% 정도 달려온 이 시점, 이제부터 사실상,<br />
+9to9을 주 6일을 공부해도 시간이 모자란 것 같다..</p>
 
-<p>그래서 매 발제때 마다 일주일의 계획을 미리 짜고 공부를 해야겠다는 생각을 했다.</p>
+<p>그래서 매 발제 때마다 일주일의 계획을 미리 짜고 공부를 해야겠다는 생각을 했다.</p>
 
 <hr />
 
 <h1 id="계획우선순위는-앞에부터">계획(우선순위는 앞에부터)</h1>
 <ul>
   <li>금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL</li>
-  <li>금 : 저번주와 내용이 많이 바뀌므로, 일단 1강만 완강 후 새롭게 알게된 내용들 정리.</li>
-  <li>토 : 전체 강의 완강후 블로그 정리, 개인과제 시작</li>
-  <li>일 : 키워드에 맞는 WIL작성, 알고리즘 문제풀이.</li>
-  <li>월 : 개인과제, 개인과제 피드백, 저번주의 JPA 영속성 관련 포스트 다시 정리하며 공부</li>
-  <li>화 : 개인과제, 저번주에서 잘 이해가 안갔거나 정리못한것 정리</li>
-  <li>수 : 개인과제, 팀과제</li>
-  <li>목 : 개인과제, 개인과제 피드백, 팀과제, 과제 제출</li>
+  <li>금 : 지난주와 내용이 많이 바뀌므로, 일단 1강 스프링 시큐리티만 완강 후 새롭게 알게 된 내용들 정리.</li>
+  <li>토 : 전체 강의 완강 후 블로그 정리, 개인과제 시작</li>
+  <li>일 : 키워드에 맞는 WIL 작성, 알고리즘 문제풀이.</li>
+  <li>월 : 개인과제, 개인과제 피드백, 지난주의 JPA 영속성 관련 포스트 다시 정리하며 공부</li>
+  <li>화 : 개인과제, 지난주에서 잘 이해가 안 갔거나 정리 못한 것 정리</li>
+  <li>수 : 개인과제, 팀 과제</li>
+  <li>목 : 개인과제, 개인과제 피드백, 팀 과제, 과제 제출</li>
   <li>금 : 스프링 프로젝트 주 차 시작</li>
 </ul>
 
-<h2 id="신경써야-할-것">신경써야 할 것</h2>
+<h2 id="신경-써야-할-것">신경 써야 할 것</h2>
 <ul>
-  <li>프로젝트 시작 전 기획부터 확실히 하고 시작 할 것</li>
-  <li>이제부터 코드의 가독성, 효율성, 관점 등을 생각하며 코딩 할 것</li>
+  <li>프로젝트 시작 전 기획부터 확실히 하고 시작할 것</li>
+  <li>이제부터 코드의 가독성, 효율성, 관점 등을 생각하며 코딩할 것</li>
   <li>시간 관리</li>
 </ul>
 
@@ -193,15 +315,19 @@ public class OpenEntityManagerConfig {</p>
   <li>세션</li>
 </ul>
 
-<p>지금것 해왔던 날것의 로그인 인증방식이 스프링 시큐리티 하나를 잘 파고들면<br />
-편하게 사용할 수 있다는 게 신기했고, 이럴거면 처음부터 스프링 시큐리티를 알려주지!</p>
+<hr />
 
-<p>하지만 뭐, 처음부터 알아가면 좋은거 아닐까?</p>
+<p>지금껏 해왔던 날것의 로그인 인증 방식이 스프링 시큐리티 하나를 잘 파고들면
+편하게 사용할 수 있다는 게 신기했고, 이럴 거면 처음부터 스프링 시큐리티를 알려주지!</p>
 
-<p>그리고 이제부터는 확실히 <code class="language-plaintext highlighter-rouge">아키텍쳐, 스프링구조가 중요</code>해지는 부분인 것같다.</p>
+<p>하지만 뭐, 처음부터 알아가면 좋은 거 아닐까?</p>
 
-<p>마지막으로 자세한 스프링 시큐리티 관련 1강을 보고 정리해보았다.<br />
-역시나 어려웠지만, 한번 공부한 내용들을 정리해 보았다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 주특기 심화 주 차 발제가 있었다.]]></summary></entry><entry><title type="html">(작성중)Spring Security</title><link href="http://localhost:4000/spring%20security/Spring-Security01/" rel="alternate" type="text/html" title="(작성중)Spring Security" /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/spring%20security/Spring-Security01</id><content type="html" xml:base="http://localhost:4000/spring%20security/Spring-Security01/"><![CDATA[<hr />
+<p>그리고 이제부터는 확실히 <code class="language-plaintext highlighter-rouge">아키텍처, 스프링 구조가 중요</code>해지는 부분인 것 같다.
+정리를 안 하면 이제부터 내용이 꼬이기 시작한다.. ㅠ</p>
+
+<p>그래서, 마지막으로 자세한 스프링 시큐리티 관련 1강을 보고 정리해 보았다.<br />
+역시나 어려웠지만, 한번 공부한 내용들을 정리해 보았다.<br />
+<a href="https://hyunjunhwang1994.github.io/spring%20security/Spring-Security01/">스프링 시큐리티 간단 구조 정리</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 주특기 심화 주 차 발제가 있었다.]]></summary></entry><entry><title type="html">(작성중)Spring Security</title><link href="http://localhost:4000/spring%20security/Spring-Security01/" rel="alternate" type="text/html" title="(작성중)Spring Security" /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/spring%20security/Spring-Security01</id><content type="html" xml:base="http://localhost:4000/spring%20security/Spring-Security01/"><![CDATA[<hr />
 
 <p>목표</p>
 <ul>
@@ -413,77 +539,128 @@ Filter는 Client 요청이 전달되기 전후의 URL 패턴에 맞는 모든 �
 <a href="https://velog.io/@seongwon97/Spring-Security-Filter%EB%9E%80">참조 블로그 2</a><br />
 <a href="https://gngsn.tistory.com/160">참조 블로그 3</a><br />
 <a href="https://brightmango.tistory.com/360">참조 블로그 4</a><br />
-<a href="https://icthuman.tistory.com/entry/Spring-Security-%EA%B8%B0%EB%8A%A5-%ED%99%9C%EC%9A%A9-1-Filter-Chain">참조 블로그 5</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring Security" /><category term="Spring Security 기초" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">JPA 연관관계 편의 메서드는 왜 사용할까</title><link href="http://localhost:4000/spring/Spring16/" rel="alternate" type="text/html" title="JPA 연관관계 편의 메서드는 왜 사용할까" /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring16</id><content type="html" xml:base="http://localhost:4000/spring/Spring16/"><![CDATA[<p>연관관계 편의 메서드는 왜 필요할까?</p>
+<a href="https://icthuman.tistory.com/entry/Spring-Security-%EA%B8%B0%EB%8A%A5-%ED%99%9C%EC%9A%A9-1-Filter-Chain">참조 블로그 5</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring Security" /><category term="Spring Security 기초" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">RestAPI EC2 호스팅, JPA 연관관계 편의 메서드</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28/" rel="alternate" type="text/html" title="RestAPI EC2 호스팅, JPA 연관관계 편의 메서드" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28/"><![CDATA[<p>오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는 날이다.</p>
 
-<p><a href="https://okky.kr/articles/987954">편의 메서드 필요 이유 참조</a></p>
+<p>시험에서는 JPA의 연관관계에 대해서 나왔고,<br />
+JPA에 대해서 깊게 공부를 안 해서 그런지 생각보다 어려웠다.</p>
+
+<p>그래서 항해 99에서 나온 문제를 재사용하기엔 좀 그래서<br />
+비슷한 예제로 새로 만들어서 아래의 포스팅에 정리를 했다.</p>
+
+<p><a href="https://hyunjunhwang1994.github.io/spring/Spring15/">연관관계 맵핑</a></p>
 
 <hr />
 
-<h1 id="why">Why?</h1>
-<p>Database에 flush 되기 전에 양방향으로 묶여있는 자료의 일관성을 지켜주기 위해 만듭니다.</p>
-
+<p>연관관계 생각해 볼 점 간단 정리</p>
 <ul>
-  <li>트랜잭션이 끝나 DB에 flush되고 난 후 자료를 조회하면 문제가 없겟지만</li>
-  <li>한 트랜잭션이 끝나기 전에 자료를 조작할 시 한쪽에만 자료를 추가 하면 그건 아직 디비에 반영되어잇는</li>
-  <li>자료가 아니기때문에 추가한쪽에만 값이 들어있게되죠.</li>
+  <li>DB 입장에서는 FK를 가지고 있으면 양방향 조회가 되지만,</li>
+  <li>객체지향 입장에서는 사용할 목적에 따라 단방향, 양방향 맵핑 등을 해주어야 한다.</li>
+  <li>@ManyToMany 사용보다는 위의 연관관계 맵핑 글에서처럼 A, C를 관리하는 B 테이블을 직접 만들어</li>
 </ul>
 
+<p>A &lt;-OneToMany-&gt; B &lt;-ManyToOne-&gt; C  형태로 만들어 주는 것이 좋다.</p>
+
 <hr />
 
-<p>멤버 와 팀의 관계를 예로들면</p>
+<h1 id="오늘-겪은-문제들">오늘 겪은 문제들.</h1>
+<ol>
+  <li>Post 테이블에서 글 삭제 시 삭제되지 않는 것.</li>
+  <li>jwt.secret.key 관련 에러.</li>
+</ol>
+
+<h2 id="1-참조된-데이터-삭제">1. 참조된 데이터 삭제</h2>
+<p>현재 Post(글)의 PK를 댓글에서 참조(FK) 하고 있는데 이렇게 다른 테이블에 참조되어 있는 경우<br />
+글을 삭제하려고 하면 기본 설정으로는 삭제가 안된다고 한다.</p>
+
+<p>해결 방법들</p>
 <ul>
-  <li>멤버와 팀을 생성 한 후 멤버에 팀을 넣습니다. 그리고 트랜잭션이 끝나서 디비에 플러쉬되고</li>
+  <li>로직 상 검증이 끝난 후 참조하고 있는 데이터를 삭제 후</li>
+  <li>목표 데이터를 삭제하거나,</li>
+  <li>상황에 따라 Cascade, OrphanRemoval 등을 사용해 주면 된다.</li>
+</ul>
+
+<p><a href="https://choiblack.tistory.com/48">Cascade, OrphanRemoval 참조 블로그</a></p>
+
+<hr />
+
+<h2 id="2-jwtsecretkey-관련-에러">2. jwt.secret.key 관련 에러.</h2>
+
+<p><img src="../../images/2023-01-06-09-36-05.png" alt="" /></p>
+
+<p><img src="../../images/2023-01-06-09-36-15.png" alt="" /></p>
+
+<p>위와 같은 에러가 떴다!
+jwt.secret.key 값 설정을</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>asdqk@ㄱㄴdqwdkqodk 
+</code></pre></div></div>
+
+<p>대략 위와 같이 하니 떴다.<br />
+테스트를 해보니 한글과 특수문자가 1개라도 들어가 있으면 오류를 뱉었다..</p>
+
+<hr />
+
+<h1 id="restapi-개인-과제를-rds-연동-ec2에-호스팅-해보다">RestAPI 개인 과제를 RDS 연동 EC2에 호스팅 해보다.</h1>
+
+<ul>
+  <li>RDS 연동</li>
+  <li>EC2 호스팅</li>
+  <li>도메인네임 연결</li>
+  <li>포트 포워딩</li>
+</ul>
+
+<p>사실상 위의 것들은 정리가 잘 된 블로그도 많고 
+AWS라는 공룡기업이 있어서 생각보다 어렵지 않았다.</p>
+
+<h2 id="어려웠던-점">어려웠던 점</h2>
+
+<ol>
   <li>
-    <p>멤버와 팀을 조회하면 정상적으로 멤버에도 팀이 들어가있고 팀에도 멤버가 들어가있을겁니다.</p>
+    <p>기존 스프링 부트의 인 메모리 방식 h2에서 RDS의 MySQL을 사용할 시
+자잘한 설정으로 인해 오류가 나는 부분들이 있어서 까다로웠음.</p>
   </li>
-  <li>그런데 멤버와 팀을 생성 한후 멤버에 팀을 넣고 그 트랙잭션이 끝나기전에 팀에서 멤버를 찾아보면 없겟죠?</li>
-  <li>왜냐면 아직 디비에 반영되기 전 이거든요. 그런데 생각해보면 멤버가 팀에 들어갔으니 당연히 팀에서 멤버를 찾으면 있어야 된다는게 일반적인 생각이고,</li>
-  <li>이런 데이터의 오류를 방지하려면 어느 한쪽에 자료가 들어갈때 반대쪽에도 같이 넣어줘야 하는데</li>
-  <li>그 넣는 방법중 하나가 한쪽에 값을 넣을 때 다른쪽에도 넣어버리는겁니다.</li>
-</ul>
-
-<hr />
-
-<p><a href="https://velog.io/@songs4805/JPA-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91-%EA%B8%B0%EC%B4%88">순수한 객체까지 고려한 양방향 연관관계 참조 글</a><br />
-<a href="https://umanking.github.io/2020/10/26/jpa-mapping-2/">연관관계 편의 메서드 참조 글</a><br />
-<a href="https://ecsimsw.tistory.com/entry/JPA-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EA%B3%A0%EB%A0%A4%ED%95%9C-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%ED%8E%B8%EC%9D%98-%EB%A9%94%EC%86%8C%EB%93%9C">편의 메서드 이해가 쉬운 예제 참조</a></p>
-
-<p><a href="https://velog.io/@dhk22/JPA-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84">참조</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="JPA 연관관계 편의 메서드" /><summary type="html"><![CDATA[연관관계 편의 메서드는 왜 필요할까?]]></summary></entry><entry><title type="html">Devtools 코드 업데이트 시 자동 재시작</title><link href="http://localhost:4000/spring/Spring17/" rel="alternate" type="text/html" title="Devtools 코드 업데이트 시 자동 재시작" /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring17</id><content type="html" xml:base="http://localhost:4000/spring/Spring17/"><![CDATA[<p>인텔리제이에서 스프링 부트로 작업을 하다 보면,<br />
-코드 변경 사항이 있을 때, 자동으로 재시작 해주면 좋지 않을까라는 생각이 듭니다.</p>
-
-<p>그래서 인텔리제이에서는 해당 기능을 제공합니다.</p>
-
-<hr />
-
-<h1 id="의존성-추가">의존성 추가</h1>
-
-<p>처음 SpringBoot 프로젝트 생성 시</p>
-
-<ul>
-  <li>Spring Boot DevTools를 추가하시거나,</li>
-</ul>
-
-<p>or</p>
-
-<ul>
   <li>
-    <p>build.gradle에 아래의 코드를 추가해 주세요!</p>
-
-    <p>developmentOnly ‘org.springframework.boot:spring-boot-devtools’</p>
+    <p>JPA를 사용함에 있어서 연관관계를 짜고, 설계를 하는 것들이 생각보다 어려웠다.
+그리고 공부를 하던 도중 연관관계 편의 메서드라는 것을 보았는데</p>
   </li>
-</ul>
+</ol>
+
+<p>어느 정도 개인과제를 완성시키고 순환 참조라는 문제도 해결하고 난 후였기에,
+이게 왜 필요한 거지?라는 생각이 들었고 아래 포스팅에 정리해 보았다.</p>
+
+<p><a href="https://hyunjunhwang1994.github.io/spring/Spring16/">정리 글</a></p>
+
+<blockquote>
+  <p>여러 장점이 있지만, 결국 객체지향 관점적인 부분에서 양방향으로 다루기 위해 필요한 것이구나라고 결론을 내렸습니다!</p>
+</blockquote>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는 날이다.]]></summary></entry><entry><title type="html">Spring Data JPA Entity ERD 보기.</title><link href="http://localhost:4000/intellij/IntelliJ01/" rel="alternate" type="text/html" title="Spring Data JPA Entity ERD 보기." /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/intellij/IntelliJ01</id><content type="html" xml:base="http://localhost:4000/intellij/IntelliJ01/"><![CDATA[<p>Spring으로 개발을 하다 보면,<br />
+자신이 개발 중인 Entity들을 ERD로 볼 수 있으면 얼마나 편할까?라는 생각이 듭니다.</p>
+
+<p>그래서, 인텔리제이는 JPA의 Entity들을 ERD Diagram으로 볼 수 있는 기능을 제공합니다.</p>
 
 <hr />
 
-<p>그 후, 아래의 설정을 진행해 주면 됩니다.</p>
+<p>Persistence 탭 생성<br />
+<img src="../../images/2023-01-05-20-08-09.png" alt="" /></p>
 
-<p><img src="../../images/2022-12-24-19-59-39.png" alt="" /></p>
+<p>좌측 하단 .main -&gt; entityManagerFactory 우 클릭 -&gt;
+Entity Relationship Diagram 클릭<br />
+<img src="../../images/2023-01-05-20-09-33.png" alt="" /></p>
 
-<p>Modify options -&gt; On frame deactivation -&gt; Update classes….<br />
-<img src="../../images/2022-12-24-20-00-18.png" alt="" /></p>
+<p><img src="../../images/2023-01-05-20-11-36.png" alt="" /></p>
 
-<p>이제 코드 프로젝트 상 코드에 변경이 생기면,
-스프링 부트를 재시작하지 않아도 자동으로 업데이트 시 재시작 시켜줍니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="SpringBoot Devtools 코드 업데이트 시 서버 자동 재시작" /><summary type="html"><![CDATA[인텔리제이에서 스프링 부트로 작업을 하다 보면, 코드 변경 사항이 있을 때, 자동으로 재시작 해주면 좋지 않을까라는 생각이 듭니다.]]></summary></entry><entry><title type="html">JPA 연관 관계 요구사항 Entity 구현해 보기</title><link href="http://localhost:4000/spring/Spring15/" rel="alternate" type="text/html" title="JPA 연관 관계 요구사항 Entity 구현해 보기" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring15</id><content type="html" xml:base="http://localhost:4000/spring/Spring15/"><![CDATA[<p>요구사항에 따라 Spring Data Jpa의 Entity를<br />
+<hr />
+
+<p>Entity 간의 관계를 가지고 간단하게 보여주는 것이므로,<br />
+실제 RDB의 ERD처럼 자세히는 안 나오는 것 같습니다.</p>
+
+<hr />
+
+<p>Persistence에 아무것도 보이지 않거나, 다른 구현체를 사용하시는 경우</p>
+
+<p><img src="../../images/2023-01-05-20-16-03.png" alt="" /></p>
+
+<p>아래의 Modules에서 +를 눌러 추가하시거나, Provider 부분을 바꿔주시면 됩니다.
+<img src="../../images/2023-01-05-20-17-49.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="IntelliJ" /><category term="IntelliJ JPA Entity ERD 보기" /><summary type="html"><![CDATA[Spring으로 개발을 하다 보면, 자신이 개발 중인 Entity들을 ERD로 볼 수 있으면 얼마나 편할까?라는 생각이 듭니다.]]></summary></entry><entry><title type="html">JPA 연관 관계 요구사항 Entity 구현해 보기</title><link href="http://localhost:4000/spring/Spring15/" rel="alternate" type="text/html" title="JPA 연관 관계 요구사항 Entity 구현해 보기" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring15</id><content type="html" xml:base="http://localhost:4000/spring/Spring15/"><![CDATA[<p>요구사항에 따라 Spring Data Jpa의 Entity를<br />
 만들어 연관관계를 맺는 연습을 해보면 어떨까요?</p>
 
 <p><a href="https://velog.io/@uiop9900/JPA-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91">연관관계 참조 글</a></p>
@@ -708,128 +885,7 @@ Car  &lt;–OneToMany–&gt;  Purchase  &lt;—ManyToOne–&gt; Buyer<br />
 <p>인텔리제이에서 JPA ER 다이어그램으로 확인해 보니,<br />
 처음 기획한 것과 비슷하게 나오네요!</p>
 
-<p><img src="../../images/2023-01-05-19-51-10.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="JPA 연관관계 구현" /><summary type="html"><![CDATA[요구사항에 따라 Spring Data Jpa의 Entity를 만들어 연관관계를 맺는 연습을 해보면 어떨까요?]]></summary></entry><entry><title type="html">Spring Data JPA Entity ERD 보기.</title><link href="http://localhost:4000/intellij/IntelliJ01/" rel="alternate" type="text/html" title="Spring Data JPA Entity ERD 보기." /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/intellij/IntelliJ01</id><content type="html" xml:base="http://localhost:4000/intellij/IntelliJ01/"><![CDATA[<p>Spring으로 개발을 하다 보면,<br />
-자신이 개발 중인 Entity들을 ERD로 볼 수 있으면 얼마나 편할까?라는 생각이 듭니다.</p>
-
-<p>그래서, 인텔리제이는 JPA의 Entity들을 ERD Diagram으로 볼 수 있는 기능을 제공합니다.</p>
-
-<hr />
-
-<p>Persistence 탭 생성<br />
-<img src="../../images/2023-01-05-20-08-09.png" alt="" /></p>
-
-<p>좌측 하단 .main -&gt; entityManagerFactory 우 클릭 -&gt;
-Entity Relationship Diagram 클릭<br />
-<img src="../../images/2023-01-05-20-09-33.png" alt="" /></p>
-
-<p><img src="../../images/2023-01-05-20-11-36.png" alt="" /></p>
-
-<hr />
-
-<p>Entity 간의 관계를 가지고 간단하게 보여주는 것이므로,<br />
-실제 RDB의 ERD처럼 자세히는 안 나오는 것 같습니다.</p>
-
-<hr />
-
-<p>Persistence에 아무것도 보이지 않거나, 다른 구현체를 사용하시는 경우</p>
-
-<p><img src="../../images/2023-01-05-20-16-03.png" alt="" /></p>
-
-<p>아래의 Modules에서 +를 눌러 추가하시거나, Provider 부분을 바꿔주시면 됩니다.
-<img src="../../images/2023-01-05-20-17-49.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="IntelliJ" /><category term="IntelliJ JPA Entity ERD 보기" /><summary type="html"><![CDATA[Spring으로 개발을 하다 보면, 자신이 개발 중인 Entity들을 ERD로 볼 수 있으면 얼마나 편할까?라는 생각이 듭니다.]]></summary></entry><entry><title type="html">RestAPI EC2 호스팅, JPA 연관관계 편의 메서드</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28/" rel="alternate" type="text/html" title="RestAPI EC2 호스팅, JPA 연관관계 편의 메서드" /><published>2023-01-05T00:00:00+09:00</published><updated>2023-01-05T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL28/"><![CDATA[<p>오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는 날이다.</p>
-
-<p>시험에서는 JPA의 연관관계에 대해서 나왔고,<br />
-JPA에 대해서 깊게 공부를 안 해서 그런지 생각보다 어려웠다.</p>
-
-<p>그래서 항해 99에서 나온 문제를 재사용하기엔 좀 그래서<br />
-비슷한 예제로 새로 만들어서 아래의 포스팅에 정리를 했다.</p>
-
-<p><a href="https://hyunjunhwang1994.github.io/spring/Spring15/">연관관계 맵핑</a></p>
-
-<hr />
-
-<p>연관관계 생각해 볼 점 간단 정리</p>
-<ul>
-  <li>DB 입장에서는 FK를 가지고 있으면 양방향 조회가 되지만,</li>
-  <li>객체지향 입장에서는 사용할 목적에 따라 단방향, 양방향 맵핑 등을 해주어야 한다.</li>
-  <li>@ManyToMany 사용보다는 위의 연관관계 맵핑 글에서처럼 A, C를 관리하는 B 테이블을 직접 만들어</li>
-</ul>
-
-<p>A &lt;-OneToMany-&gt; B &lt;-ManyToOne-&gt; C  형태로 만들어 주는 것이 좋다.</p>
-
-<hr />
-
-<h1 id="오늘-겪은-문제들">오늘 겪은 문제들.</h1>
-<ol>
-  <li>Post 테이블에서 글 삭제 시 삭제되지 않는 것.</li>
-  <li>jwt.secret.key 관련 에러.</li>
-</ol>
-
-<h2 id="1-참조된-데이터-삭제">1. 참조된 데이터 삭제</h2>
-<p>현재 Post(글)의 PK를 댓글에서 참조(FK) 하고 있는데 이렇게 다른 테이블에 참조되어 있는 경우<br />
-글을 삭제하려고 하면 기본 설정으로는 삭제가 안된다고 한다.</p>
-
-<p>해결 방법들</p>
-<ul>
-  <li>로직 상 검증이 끝난 후 참조하고 있는 데이터를 삭제 후</li>
-  <li>목표 데이터를 삭제하거나,</li>
-  <li>상황에 따라 Cascade, OrphanRemoval 등을 사용해 주면 된다.</li>
-</ul>
-
-<p><a href="https://choiblack.tistory.com/48">Cascade, OrphanRemoval 참조 블로그</a></p>
-
-<hr />
-
-<h2 id="2-jwtsecretkey-관련-에러">2. jwt.secret.key 관련 에러.</h2>
-
-<p><img src="../../images/2023-01-06-09-36-05.png" alt="" /></p>
-
-<p><img src="../../images/2023-01-06-09-36-15.png" alt="" /></p>
-
-<p>위와 같은 에러가 떴다!
-jwt.secret.key 값 설정을</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>asdqk@ㄱㄴdqwdkqodk 
-</code></pre></div></div>
-
-<p>대략 위와 같이 하니 떴다.<br />
-테스트를 해보니 한글과 특수문자가 1개라도 들어가 있으면 오류를 뱉었다..</p>
-
-<hr />
-
-<h1 id="restapi-개인-과제를-rds-연동-ec2에-호스팅-해보다">RestAPI 개인 과제를 RDS 연동 EC2에 호스팅 해보다.</h1>
-
-<ul>
-  <li>RDS 연동</li>
-  <li>EC2 호스팅</li>
-  <li>도메인네임 연결</li>
-  <li>포트 포워딩</li>
-</ul>
-
-<p>사실상 위의 것들은 정리가 잘 된 블로그도 많고 
-AWS라는 공룡기업이 있어서 생각보다 어렵지 않았다.</p>
-
-<h2 id="어려웠던-점">어려웠던 점</h2>
-
-<ol>
-  <li>
-    <p>기존 스프링 부트의 인 메모리 방식 h2에서 RDS의 MySQL을 사용할 시
-자잘한 설정으로 인해 오류가 나는 부분들이 있어서 까다로웠음.</p>
-  </li>
-  <li>
-    <p>JPA를 사용함에 있어서 연관관계를 짜고, 설계를 하는 것들이 생각보다 어려웠다.
-그리고 공부를 하던 도중 연관관계 편의 메서드라는 것을 보았는데</p>
-  </li>
-</ol>
-
-<p>어느 정도 개인과제를 완성시키고 순환 참조라는 문제도 해결하고 난 후였기에,
-이게 왜 필요한 거지?라는 생각이 들었고 아래 포스팅에 정리해 보았다.</p>
-
-<p><a href="https://hyunjunhwang1994.github.io/spring/Spring16/">정리 글</a></p>
-
-<blockquote>
-  <p>여러 장점이 있지만, 결국 객체지향 관점적인 부분에서 양방향으로 다루기 위해 필요한 것이구나라고 결론을 내렸습니다!</p>
-</blockquote>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 스프링 숙련 주 차의 마지막 날.. 시험이 있는 날이다.]]></summary></entry><entry><title type="html">JPA 연관관계 무한 순환 참조 해결, EnableWebMvc</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/" rel="alternate" type="text/html" title="JPA 연관관계 무한 순환 참조 해결, EnableWebMvc" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/"><![CDATA[<h2 id="현재-상황">현재 상황</h2>
+<p><img src="../../images/2023-01-05-19-51-10.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="JPA 연관관계 구현" /><summary type="html"><![CDATA[요구사항에 따라 Spring Data Jpa의 Entity를 만들어 연관관계를 맺는 연습을 해보면 어떨까요?]]></summary></entry><entry><title type="html">JPA 연관관계 무한 순환 참조 해결, EnableWebMvc</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/" rel="alternate" type="text/html" title="JPA 연관관계 무한 순환 참조 해결, EnableWebMvc" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL27/"><![CDATA[<h2 id="현재-상황">현재 상황</h2>
 
 <ul>
   <li>전체 포스트 + 각 포스트에 속한 댓글 들을 가지고 오는 과정에서</li>
@@ -1012,212 +1068,4 @@ WebMvcConfigurer을 구현하여 Jackson Dates Timestamps 설정 관련을 기�
     
     <span class="c1">// SwaggerConfig...</span>
 
-</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[현재 상황]]></summary></entry><entry><title type="html">스프링 부트 - 날 것의 JWT 인증/인가 구현하기</title><link href="http://localhost:4000/spring/Spring13/" rel="alternate" type="text/html" title="스프링 부트 - 날 것의 JWT 인증/인가 구현하기" /><published>2023-01-04T00:00:00+09:00</published><updated>2023-01-04T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring13</id><content type="html" xml:base="http://localhost:4000/spring/Spring13/"><![CDATA[<p><a href="https://hyunjunhwang1994.github.io/jwt/JWT/">JWT 개념 정리 포스팅</a></p>
-
-<ul>
-  <li>JWT를 이용하여 로그인 및 인증/인가하는 방법을 기술하였으며,</li>
-  <li>프론트단에서 실질적으로 클라이언트의 쿠키로 저장하는 코드는 기술하지 않았습니다.</li>
-  <li>JwtUtil이라는 하나의 Util을 만들고 컴포넌트로 등록 후 가저다가 사용하는 형식</li>
-</ul>
-
-<hr />
-
-<h1 id="buildgradle-의존성-추가">build.gradle 의존성 추가.</h1>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>compileOnly group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2'
-runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2'
-runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
-</code></pre></div></div>
-
-<hr />
-
-<h1 id="applicationproperties">application.properties</h1>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jwt.secret.key=7ZWt7ZW0OTntm원하는값@lZzqta시크릿키TrhIjrqLjshLjqs4TroZznpDtm4zrpa3tlZzqsJzrsJzsnpDrpbzrp4zrk6TslrTqsIDsnpA=
-</code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">실제 서비스하는 목적으로 사용하는 경우 해당 값은 깃허브 같은 곳에 올리면 안 됩니다.</code></p>
-
-<hr />
-
-<h1 id="project_packagejwtjwtutil">project_package.jwt.JwtUtil</h1>
-
-<details>   
-<summary>JwtUtil.java 완성 코드</summary>
-<div>
-
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Slf4j</span>
-<span class="nd">@Component</span>
-<span class="nd">@RequiredArgsConstructor</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JwtUtil</span> <span class="o">{</span>
-
-    <span class="c1">// Header KEY 값</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">AUTHORIZATION_HEADER</span> <span class="o">=</span> <span class="s">"Authorization"</span><span class="o">;</span>
-    <span class="c1">// 사용자 권한 값의 KEY</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">AUTHORIZATION_KEY</span> <span class="o">=</span> <span class="s">"auth"</span><span class="o">;</span>
-    <span class="c1">// TOKEN 식별자</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">BEARER_PREFIX</span> <span class="o">=</span> <span class="s">"Bearer "</span><span class="o">;</span>
-    <span class="c1">// 토큰 만료 시간</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="no">TOKEN_TIME</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000L</span><span class="o">;</span>
-
-    <span class="nd">@Value</span><span class="o">(</span><span class="s">"${jwt.secret.key}"</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="nc">String</span> <span class="n">secretKey</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="nc">Key</span> <span class="n">key</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">SignatureAlgorithm</span> <span class="n">signatureAlgorithm</span> <span class="o">=</span> <span class="nc">SignatureAlgorithm</span><span class="o">.</span><span class="na">HS256</span><span class="o">;</span>
-
-
-    <span class="c1">// secretKey 값을 이용하여 실질적으로 토큰 검증에 사용될 key 값 생성</span>
-    <span class="nd">@PostConstruct</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">init</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kt">byte</span><span class="o">[]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="nc">Base64</span><span class="o">.</span><span class="na">getDecoder</span><span class="o">().</span><span class="na">decode</span><span class="o">(</span><span class="n">secretKey</span><span class="o">);</span>
-        <span class="n">key</span> <span class="o">=</span> <span class="nc">Keys</span><span class="o">.</span><span class="na">hmacShaKeyFor</span><span class="o">(</span><span class="n">bytes</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="c1">// header에 있는 토큰을 있다면 가저오고 없다면 null 리턴</span>
-    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">resolveToken</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">String</span> <span class="n">bearerToken</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getHeader</span><span class="o">(</span><span class="no">AUTHORIZATION_HEADER</span><span class="o">);</span>
-        <span class="k">if</span> <span class="o">(</span><span class="nc">StringUtils</span><span class="o">.</span><span class="na">hasText</span><span class="o">(</span><span class="n">bearerToken</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">bearerToken</span><span class="o">.</span><span class="na">startsWith</span><span class="o">(</span><span class="no">BEARER_PREFIX</span><span class="o">))</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="n">bearerToken</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">7</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="c1">// Jwt 토큰 생성</span>
-    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">createToken</span><span class="o">(</span><span class="nc">String</span> <span class="n">username</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Date</span><span class="o">();</span>
-
-        <span class="k">return</span> <span class="no">BEARER_PREFIX</span> <span class="o">+</span>
-                <span class="nc">Jwts</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
-                        <span class="o">.</span><span class="na">setSubject</span><span class="o">(</span><span class="n">username</span><span class="o">)</span>
-                        <span class="o">.</span><span class="na">setExpiration</span><span class="o">(</span><span class="k">new</span> <span class="nc">Date</span><span class="o">(</span><span class="n">date</span><span class="o">.</span><span class="na">getTime</span><span class="o">()</span> <span class="o">+</span> <span class="no">TOKEN_TIME</span><span class="o">))</span>
-                        <span class="o">.</span><span class="na">setIssuedAt</span><span class="o">(</span><span class="n">date</span><span class="o">)</span>
-                        <span class="o">.</span><span class="na">signWith</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">signatureAlgorithm</span><span class="o">)</span>
-                        <span class="o">.</span><span class="na">compact</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="c1">// Jwt 토큰 검증</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">validateToken</span><span class="o">(</span><span class="nc">String</span> <span class="n">token</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="nc">Jwts</span><span class="o">.</span><span class="na">parserBuilder</span><span class="o">().</span><span class="na">setSigningKey</span><span class="o">(</span><span class="n">key</span><span class="o">).</span><span class="na">build</span><span class="o">().</span><span class="na">parseClaimsJws</span><span class="o">(</span><span class="n">token</span><span class="o">);</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">SecurityException</span> <span class="o">|</span> <span class="nc">MalformedJwtException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Invalid JWT signature, 유효하지 않는 JWT 서명 입니다."</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">ExpiredJwtException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Expired JWT token, 만료된 JWT token 입니다."</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">UnsupportedJwtException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Unsupported JWT token, 지원되지 않는 JWT 토큰 입니다."</span><span class="o">);</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IllegalArgumentException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"JWT claims is empty, 잘못된 JWT 토큰 입니다."</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="c1">// Jwt 토큰에서 사용자 정보 가져오기</span>
-    <span class="kd">public</span> <span class="nc">Claims</span> <span class="nf">getUserInfoFromToken</span><span class="o">(</span><span class="nc">String</span> <span class="n">token</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="nc">Jwts</span><span class="o">.</span><span class="na">parserBuilder</span><span class="o">().</span><span class="na">setSigningKey</span><span class="o">(</span><span class="n">key</span><span class="o">).</span><span class="na">build</span><span class="o">().</span><span class="na">parseClaimsJws</span><span class="o">(</span><span class="n">token</span><span class="o">).</span><span class="na">getBody</span><span class="o">();</span>
-    <span class="o">}</span>
-
-
-<span class="o">}</span>
-</code></pre></div>    </div>
-
-  </div>
-</details>
-
-<h2 id="회원-인증인가">회원 인증/인가</h2>
-
-<details>   
-<summary>Service</summary>
-<div>
-
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Service</span>
-<span class="nd">@RequiredArgsConstructor</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserService</span> <span class="o">{</span>
-
-
-    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">JwtUtil</span> <span class="n">jwtUtil</span><span class="o">;</span>
-
-    <span class="nd">@Transactional</span><span class="o">(</span><span class="n">readOnly</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="nc">UserLoginResponseDto</span> <span class="nf">login</span><span class="o">(</span><span class="nc">UserLoginRequestDto</span> <span class="n">userLoginRequestDto</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
-        <span class="nc">String</span> <span class="n">username</span> <span class="o">=</span> <span class="n">userLoginRequestDto</span><span class="o">.</span><span class="na">getUsername</span><span class="o">();</span>
-        <span class="nc">String</span> <span class="n">password</span> <span class="o">=</span> <span class="n">userLoginRequestDto</span><span class="o">.</span><span class="na">getPassword</span><span class="o">();</span>
-
-        <span class="c1">// 사용자 확인</span>
-        <span class="nc">Optional</span><span class="o">&lt;</span><span class="nc">User</span><span class="o">&gt;</span> <span class="n">optionalUser</span> <span class="o">=</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findByUsername</span><span class="o">(</span><span class="n">username</span><span class="o">);</span>
-
-        <span class="k">if</span> <span class="o">(</span><span class="n">optionalUser</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="nf">UserLoginResponseDto</span><span class="o">(</span><span class="nc">StatusCode</span><span class="o">.</span><span class="na">BAD_REQUEST</span><span class="o">,</span>
-                    <span class="nc">ResponseMessage</span><span class="o">.</span><span class="na">LOGIN_FAIL</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
-        <span class="o">}</span>
-
-        <span class="nc">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">optionalUser</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>
-
-        <span class="c1">// 비밀번호 확인</span>
-        <span class="k">if</span><span class="o">(!</span><span class="n">user</span><span class="o">.</span><span class="na">getPassword</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">password</span><span class="o">)){</span>
-            <span class="k">return</span> <span class="k">new</span> <span class="nf">UserLoginResponseDto</span><span class="o">(</span><span class="nc">StatusCode</span><span class="o">.</span><span class="na">BAD_REQUEST</span><span class="o">,</span>
-                    <span class="nc">ResponseMessage</span><span class="o">.</span><span class="na">LOGIN_FAIL</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
-        <span class="o">}</span>
-
-        <span class="c1">// 유저 로그인 성공한 경우 HttpServletResponse response에 </span>
-        <span class="c1">// AUTHORIZATION_HEADER = "Authorization";</span>
-        <span class="c1">// 헤더 이름에 유저 네임을 담아 JWT 토큰 생성</span>
-        <span class="n">response</span><span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="nc">JwtUtil</span><span class="o">.</span><span class="na">AUTHORIZATION_HEADER</span><span class="o">,</span> <span class="n">jwtUtil</span><span class="o">.</span><span class="na">createToken</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getUsername</span><span class="o">()));</span>
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">UserLoginResponseDto</span><span class="o">(</span><span class="nc">StatusCode</span><span class="o">.</span><span class="na">OK</span><span class="o">,</span>
-                <span class="nc">ResponseMessage</span><span class="o">.</span><span class="na">LOGIN_SUCCESS</span><span class="o">,</span>
-                <span class="k">new</span> <span class="nf">UserJwtDto</span><span class="o">(</span><span class="n">user</span><span class="o">.</span><span class="na">getUsername</span><span class="o">(),</span><span class="n">response</span><span class="o">.</span><span class="na">getHeader</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">)));</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></div>    </div>
-
-    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Service</span>
-<span class="nd">@RequiredArgsConstructor</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostService</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">PostRepository</span> <span class="n">postRepository</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">UserRepository</span> <span class="n">userRepository</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">JwtUtil</span> <span class="n">jwtUtil</span><span class="o">;</span>
-
-
-    <span class="kd">public</span> <span class="nc">PostResponseDto</span> <span class="nf">createPost</span><span class="o">(</span><span class="nc">PostRequestDto</span> <span class="n">requestDto</span><span class="o">,</span> <span class="nc">HttpServletRequest</span> <span class="n">request</span><span class="o">)</span> <span class="o">{</span>
-
-                    <span class="c1">// request에서 토큰 값을 꺼내옴.</span>
-        <span class="nc">String</span> <span class="n">token</span> <span class="o">=</span> <span class="n">jwtUtil</span><span class="o">.</span><span class="na">resolveToken</span><span class="o">(</span><span class="n">request</span><span class="o">);</span>
-        <span class="nc">Claims</span> <span class="n">claims</span><span class="o">;</span>
-
-                    <span class="c1">// 토큰이 있다면 -&gt; 로그인 한 유저!</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">token</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-
-                    <span class="c1">// 토큰이 검증됐다면</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">jwtUtil</span><span class="o">.</span><span class="na">validateToken</span><span class="o">(</span><span class="n">token</span><span class="o">))</span> <span class="o">{</span>
-
-                    <span class="c1">// token 안의 유저 네임(id)를 가지고 온다.</span>
-                <span class="n">claims</span> <span class="o">=</span> <span class="n">jwtUtil</span><span class="o">.</span><span class="na">getUserInfoFromToken</span><span class="o">(</span><span class="n">token</span><span class="o">);</span>
-            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-                    <span class="c1">// 토큰이 있지만, 검증이 안된다면 에러 발생</span>
-                <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">(</span><span class="s">"Token Error"</span><span class="o">);</span>
-            <span class="o">}</span>
-
-                    <span class="c1">// 토큰에서 가지고 온 ID가 실제 DB에 존재하는지 확인</span>
-            <span class="nc">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findByUsername</span><span class="o">(</span><span class="n">claims</span><span class="o">.</span><span class="na">getSubject</span><span class="o">()).</span><span class="na">orElseThrow</span><span class="o">(</span>
-                    <span class="o">()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"사용자가 존재하지 않습니다."</span><span class="o">)</span>
-            <span class="o">);</span>
-
-                    <span class="c1">// 실제 유저 확인됐으므로 글쓰기 기능 허가.</span>
-            <span class="nc">Post</span> <span class="n">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Post</span><span class="o">(</span><span class="n">requestDto</span><span class="o">,</span> <span class="n">user</span><span class="o">);</span>
-            <span class="n">postRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">post</span><span class="o">);</span>
-            <span class="nc">PostResponseDto</span> <span class="n">postResponseDto</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PostResponseDto</span><span class="o">(</span><span class="n">post</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
-            <span class="k">return</span> <span class="n">postResponseDto</span><span class="o">;</span>
-
-        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>    <span class="c1">// 토큰이 존재하지 않음 -&gt; 로그인 안 한 유저!</span>
-
-            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="o">}</span>
-
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div>    </div>
-
-  </div>
-</details>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="Spring Boot JWT 인증/인가 구현" /><summary type="html"><![CDATA[JWT 개념 정리 포스팅]]></summary></entry></feed>
+</code></pre></div></div>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[현재 상황]]></summary></entry></feed>

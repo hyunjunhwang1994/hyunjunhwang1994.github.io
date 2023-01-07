@@ -581,14 +581,20 @@ var store = [{
         "url": "/spring/Spring17/",
         "teaser": null
       },{
-        "title": "주특기 심화 주 차 발제, 스프링 시큐리티",
-        "excerpt":"오늘은 주특기 심화 주 차 발제가 있었다. 주특기 심화 주 차 강의를 받았고, 아래와 같은 내용의 강의가 있었다. Spring Security OAuth2 Test AOP Exception Transaction 30%정도 달려온 이 시점, 이제부터 사실 상, 9to9을 주6일을 공부해도 시간이 모자른 것 같다.. 그래서 매 발제때 마다 일주일의 계획을 미리 짜고 공부를 해야겠다는 생각을...","categories": ["항해99"],
+        "title": "주특기 심화 주 차 발제, Spring Security",
+        "excerpt":"오늘은 주특기 심화 주 차 발제가 있었다. 주특기 심화 주 차 강의를 받았고, 아래와 같은 내용의 강의가 있었다. Spring Security OAuth2 Test AOP Exception Transaction 30% 정도 달려온 이 시점, 이제부터 사실상, 9to9을 주 6일을 공부해도 시간이 모자란 것 같다.. 그래서 매 발제 때마다 일주일의 계획을 미리 짜고 공부를 해야겠다는...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL29/",
         "teaser": null
       },{
+        "title": "인증 완료된 userDetails 객체를 Service로 넘길 때",
+        "excerpt":"이 글은, Spring Security 사용 중, 유저의 인증이 완료된 @AuthenticationPrincipal UserDetailsImpl userDetails를 컨트롤러 -&gt; 서비스로 넘겨 유저 정보를 활용하고, 다시 서비스 -&gt; 컨트롤러로 응답될 때 발생하는 아래의 에러로 인해 작성 하였습니다. 발생 워닝 2023-01-07 19:58:31.265 WARN 26751 — [nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: failed to lazily...","categories": ["Spring Security"],
+        "tags": ["Spring Security 기초"],
+        "url": "/spring%20security/Spring-Security02/",
+        "teaser": null
+      },{
         "title": "스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인",
-        "excerpt":"계획 변경!(우선순위는 앞에부터) 금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL 금 : 저번주와 내용이 많이 바뀌므로, 일단 1강만 완강 후 새롭게 알게된 내용들 정리. 토 : 7개중 3강완료, 내용을 정리하면서 가야 할 것 같아 강의 내용 정리. 일 : 키워드에 맞는 WIL작성, 개인과제 시작, 알고리즘 문제풀이. 월...","categories": ["항해99"],
+        "excerpt":"계획(우선순위는 앞에부터) 금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL 토 : 7개중 3강완료, 내용을 정리하면서 가야 할 것 같아 강의 내용 정리. 일 : 키워드에 맞는 WIL 작성, 알고리즘 문제풀이. 월 : 개인과제, 개인과제 피드백, 지난주의 JPA 영속성 관련 포스트 다시 정리하며 공부 화 : 개인과제, 지난주에서...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL30/",
         "teaser": null
