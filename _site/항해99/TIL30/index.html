@@ -1,0 +1,1448 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인 | 기술 블로그</title>
+<meta name="description" content="계획 변경!(우선순위는 앞에부터)    금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL   금 : 저번주와 내용이 많이 바뀌므로, 일단 1강만 완강 후 새롭게 알게된 내용들 정리.   토 : 7개중 3강완료, 내용을 정리하면서 가야 할 것 같아 강의 내용 정리.   일 : 키워드에 맞는 WIL작성, 개인과제 시작, 알고리즘 문제풀이.   월 : 개인과제, 개인과제 피드백, 저번주의 JPA 영속성 관련 포스트 다시 정리하며 공부   화 : 개인과제, 저번주에서 잘 이해가 안갔거나 정리못한것 정리   수 : 개인과제, 팀과제   목 : 개인과제, 개인과제 피드백, 팀과제, 과제 제출   금 : 스프링 프로젝트 주 차 시작">
+
+
+  <meta name="author" content="Hyun Jun">
+  
+  <meta property="article:author" content="Hyun Jun">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="기술 블로그">
+<meta property="og:title" content="스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인">
+<meta property="og:url" content="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30/">
+
+
+  <meta property="og:description" content="계획 변경!(우선순위는 앞에부터)    금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL   금 : 저번주와 내용이 많이 바뀌므로, 일단 1강만 완강 후 새롭게 알게된 내용들 정리.   토 : 7개중 3강완료, 내용을 정리하면서 가야 할 것 같아 강의 내용 정리.   일 : 키워드에 맞는 WIL작성, 개인과제 시작, 알고리즘 문제풀이.   월 : 개인과제, 개인과제 피드백, 저번주의 JPA 영속성 관련 포스트 다시 정리하며 공부   화 : 개인과제, 저번주에서 잘 이해가 안갔거나 정리못한것 정리   수 : 개인과제, 팀과제   목 : 개인과제, 개인과제 피드백, 팀과제, 과제 제출   금 : 스프링 프로젝트 주 차 시작">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2023-01-07T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Hyun Jun",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+  <meta name="naver-site-verification" content="843d72a8e4b20f1a8ae8e971f19c34cb128b6c8b">
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/favicon.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- end custom head snippets -->
+
+
+
+    <style> 
+    /*스크롤바 꾸며주는 코드*/
+      ::-webkit-scrollbar{width: 17px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: rgb(25, 56, 109);}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      
+      {
+        width:12px;height:12px;background:transparent;
+      }
+
+        /*사이드바에는 적용하지않는다.*/
+      .sidebar{ -ms-overflow-style: none; }
+      .sidebar::-webkit-scrollbar{ display:none; }
+
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          기술 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">Search</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+
+                <!-- 다크 모드 토글 버튼 -->
+                
+                <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+                <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+                
+                <button class="greedy-nav__toggle hidden" type="button">
+                    <span class="visually-hidden">카테고리👇</span>
+                    <div class="navicon"></div>
+                </button>
+
+
+                
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">카테고리👇</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+
+
+        
+        
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+  
+  
+    
+
+
+<!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">카테고리👇</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> <span style="font-family:'Coming Soon';">99</style> <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <span class="nav__sub-title">etc</span>
+            <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/hanghae99" class="">항해99 🚢(35)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            
+            <ul>
+                <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+                <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+                
+                    
+                
+                    
+                        <li><a href="/categories/jekyllblogdev" class="">Jekyll Blog Dev (11)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/cloudcomputingaws" class="">Cloud computing - AWS (4)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/git" class="">Git (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/jwt" class="">JWT (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/intellij" class="">IntelliJ (1)</a></li>
+                    
+                
+                    
+                
+            </ul>
+
+            
+
+
+
+        <span class="nav__sub-title">Programming language</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/java" class="">Java (12)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/html" class="">HTML (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/css" class="">CSS (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+        <span class="nav__sub-title">Database</span>   
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/sql" class="">SQL (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+
+   
+
+
+        <span class="nav__sub-title">Framework</span>   
+                
+                <ul>
+                    <li>Spring Framework</li>
+                </ul>
+
+                <ul>
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li style="padding-left: 5px;"><a href="/categories/spring" class="">Spring (17)</a></li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </ul>
+
+                <ul>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li style="padding-left: 5px;"><a href="/categories/springsecurity" class="">Spring Security (1)</a></li>
+                        
+                    
+                </ul>
+
+
+                <ul>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <li><a href="/categories/flask" class="">Flask (2)</a></li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </ul>
+
+
+            <span class="nav__sub-title">Algorithm</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmbasic" class="">Algorithm - Basic (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul> 
+
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/algorithmhanghae99" class="">Algorithm - Hanghae99🚢 (6)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul> 
+
+
+ 
+
+
+      </li>
+
+
+
+  </ul>
+</nav>
+
+  
+
+</div>
+
+
+
+
+
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인">
+    <meta itemprop="description" content="계획 변경!(우선순위는 앞에부터)  금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL  금 : 저번주와 내용이 많이 바뀌므로, 일단 1강만 완강 후 새롭게 알게된 내용들 정리.  토 : 7개중 3강완료, 내용을 정리하면서 가야 할 것 같아 강의 내용 정리.  일 : 키워드에 맞는 WIL작성, 개인과제 시작, 알고리즘 문제풀이.  월 : 개인과제, 개인과제 피드백, 저번주의 JPA 영속성 관련 포스트 다시 정리하며 공부  화 : 개인과제, 저번주에서 잘 이해가 안갔거나 정리못한것 정리  수 : 개인과제, 팀과제  목 : 개인과제, 개인과제 피드백, 팀과제, 과제 제출  금 : 스프링 프로젝트 주 차 시작">
+    <meta itemprop="datePublished" content="2023-01-07T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30/" class="u-url" itemprop="url">스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-07T00:00:00+09:00">2023-01-07</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#계획-변경우선순위는-앞에부터">계획 변경!(우선순위는 앞에부터)</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="계획-변경우선순위는-앞에부터">계획 변경!(우선순위는 앞에부터)</h1>
+<ul>
+  <li>금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL</li>
+  <li>금 : 저번주와 내용이 많이 바뀌므로, 일단 1강만 완강 후 새롭게 알게된 내용들 정리.</li>
+  <li>토 : 7개중 3강완료, 내용을 정리하면서 가야 할 것 같아 강의 내용 정리.</li>
+  <li>일 : 키워드에 맞는 WIL작성, 개인과제 시작, 알고리즘 문제풀이.</li>
+  <li>월 : 개인과제, 개인과제 피드백, 저번주의 JPA 영속성 관련 포스트 다시 정리하며 공부</li>
+  <li>화 : 개인과제, 저번주에서 잘 이해가 안갔거나 정리못한것 정리</li>
+  <li>수 : 개인과제, 팀과제</li>
+  <li>목 : 개인과제, 개인과제 피드백, 팀과제, 과제 제출</li>
+  <li>금 : 스프링 프로젝트 주 차 시작</li>
+</ul>
+
+<p>오늘은 일다 강의를 다 들었고 2강을 듣던중 흥미로운 문제? 과제?가 있어서 기록해본다.</p>
+
+<hr />
+
+<p>아래와 같이 1명의 user가 N개의 폴더를 추가하는 기능이 있었다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">원래의 부분을 주석으로 작성한 부분처럼 바꿨을때</code> 왜 동작이 안되는지 공부해보고, 동작시켜보라고 했다.</p>
+
+<p>시큐리티의 인증은 구현된 상태이다!</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@PostMapping</span><span class="o">(</span><span class="s">"/folders"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Folder</span><span class="o">&gt;</span> <span class="nf">addFolders</span><span class="o">(</span>
+            <span class="nd">@RequestBody</span> <span class="nc">FolderRequestDto</span> <span class="n">folderRequestDto</span><span class="o">,</span>
+            <span class="nd">@AuthenticationPrincipal</span> <span class="nc">UserDetailsImpl</span> <span class="n">userDetails</span>
+    <span class="o">)</span> <span class="o">{</span>
+
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">folderNames</span> <span class="o">=</span> <span class="n">folderRequestDto</span><span class="o">.</span><span class="na">getFolderNames</span><span class="o">();</span>
+
+                                                  <span class="c1">//userDetails.getUser() </span>
+        <span class="k">return</span> <span class="n">folderService</span><span class="o">.</span><span class="na">addFolders</span><span class="o">(</span><span class="n">folderNames</span><span class="o">,</span><span class="n">userDetails</span><span class="o">.</span><span class="na">getUsername</span><span class="o">());</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nd">@Transactional</span>                                            <span class="c1">// User user</span>
+    <span class="kd">public</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Folder</span><span class="o">&gt;</span> <span class="nf">addFolders</span><span class="o">(</span><span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">folderNames</span><span class="o">,</span> <span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="c1">// user는 Spring Security에서 인증을 걸쳐 들어온 유저이므로</span>
+        <span class="c1">// User user로 바꾼경우 아래 findByUsename 전체 삭제!!</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">userRepository</span><span class="o">.</span><span class="na">findByUsername</span><span class="o">(</span><span class="n">name</span><span class="o">).</span><span class="na">orElseThrow</span><span class="o">(</span>
+                <span class="o">()</span> <span class="o">-&gt;</span> <span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"사용자가 존재하지 않습니다."</span><span class="o">)</span>
+        <span class="o">);</span>
+
+       
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Folder</span><span class="o">&gt;</span> <span class="n">existFolderList</span> <span class="o">=</span> <span class="n">folderRepository</span><span class="o">.</span><span class="na">findAllByUserAndNameIn</span><span class="o">(</span><span class="n">user</span><span class="o">,</span> <span class="n">folderNames</span><span class="o">);</span>
+
+        <span class="nc">List</span><span class="o">&lt;</span><span class="nc">Folder</span><span class="o">&gt;</span> <span class="n">folderList</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="nc">String</span> <span class="n">folderName</span> <span class="o">:</span> <span class="n">folderNames</span><span class="o">)</span> <span class="o">{</span>
+         
+            <span class="k">if</span> <span class="o">(!</span><span class="n">isExistFolderName</span><span class="o">(</span><span class="n">folderName</span><span class="o">,</span> <span class="n">existFolderList</span><span class="o">))</span> <span class="o">{</span>
+                <span class="nc">Folder</span> <span class="n">folder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Folder</span><span class="o">(</span><span class="n">folderName</span><span class="o">,</span> <span class="n">user</span><span class="o">);</span>
+                <span class="n">folderList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">folder</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">folderRepository</span><span class="o">.</span><span class="na">saveAll</span><span class="o">(</span><span class="n">folderList</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>사실 userDetails에 이미 User가 담겨 있지만,<br />
+JPA, 영속성 관련해서 생각해 볼 문제를 던져주기 위해 위와같은 문제를 주신 것 같다.</p>
+
+<p>그래서, 일단 매개변수를 userDetails.getUser() 및 User user로 바꾸고,</p>
+
+<p>findByUsername()을 지워보니,</p>
+
+<p>로그인 후 폴더 추가 시 최종적으로 아래와 같은 워닝이 뜨면서 로그인 창으로 다시 넘어가게 된다.</p>
+
+<details>   
+<summary>발생 워닝</summary>
+<div>
+
+    <p>2023-01-07 19:58:31.265  WARN 26751 — [nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: failed to lazily initialize a collection of role: com.sparta.myselectshopsecurity.entity.User.folders, could not initialize proxy - no Session; nested exception is com.fasterxml.jackson.databind.JsonMappingException: failed to lazily initialize a collection of role: com.sparta.myselectshopsecurity.entity.User.folders, could not initialize proxy - no Session (through reference chain: java.util.ArrayList[0]-&gt;com.sparta.myselectshopsecurity.entity.Folder[“user”]-&gt;com.sparta.myselectshopsecurity.entity.User[“folders”])]</p>
+
+  </div>
+</details>
+
+<p><br /></p>
+
+<p>일단 로그를 보고 추측하여, 아래 처럼 FetchType.EAGER로 바꾸니<br />
+일단 폴더 추가 시 아까와 다르게 동작은 하는데..</p>
+
+<p><img src="../../images/2023-01-07-20-11-43.png" alt="" /></p>
+
+<p>이제부터는 왜 동작했는지 알아봐야겠다!</p>
+
+<p>검색 및 팀원들과 얘기해본 결과,</p>
+
+<ul>
+  <li>컨트롤러단(서비스 전 단)에서의 이미 생성된 User user를 서비스단까지 가지고와서,</li>
+  <li>해당 엔티티는 준영속 상태이므로, 변경감지및 지연로딩이 동작하지 않는다.</li>
+</ul>
+
+<p>fetch = FetchType.LAZY
+<img src="../../images/2023-01-07-21-13-51.png" alt="" /></p>
+
+<p>fetch = FetchType.EAGER
+<img src="../../images/2023-01-07-21-12-25.png" alt="" /></p>
+
+<p>하지만 이는 당장 동작은 할지 몰라도, 위와같이 N+1 문제를 발생시킨다.</p>
+
+<p>여러가지 방법이 있겠다</p>
+<ul>
+  <li>
+    <p>기존 코드처럼 user를 다시 불러와 사용한다 (Entity 다시 불러오기.)
+동작하는데는 문제없고 좋지만, 유저가 이미 있는데 다시불러오는것이
+서비스적으로 문제가 있어보인다.</p>
+  </li>
+  <li>
+    <p>OSIV라는 것을 이용해 해결하였다.
+필터단보다 먼저 아래의 필터를 적용시켜 동작하였다!
+```java
+@Component
+@Configuration
+public class OpenEntityManagerConfig {</p>
+
+    <p>@Bean
+  public FilterRegistrationBean<OpenEntityManagerInViewFilter> openEntityManagerInViewFilter() {
+      FilterRegistrationBean<OpenEntityManagerInViewFilter> filterFilterRegistrationBean = new FilterRegistrationBean&lt;&gt;();
+      filterFilterRegistrationBean.setFilter(new OpenEntityManagerInViewFilter());
+      filterFilterRegistrationBean.setOrder(Integer.MIN_VALUE); // 예시를 위해 최우선 순위로 Filter 등록
+      return filterFilterRegistrationBean;
+  }</OpenEntityManagerInViewFilter></OpenEntityManagerInViewFilter></p>
+  </li>
+</ul>
+
+<p>}
+```</p>
+
+<p><a href="https://tecoble.techcourse.co.kr/post/2020-08-31-entity-lifecycle-1/">추천 참조 글1</a>
+<a href="https://tecoble.techcourse.co.kr/post/2020-09-20-entity-lifecycle-2/">추천 참조 글2</a></p>
+
+<hr />
+
+<p>그리고 oAuth2를이용하여 카카오로그인을 로컬서버에 구현해보았다.</p>
+ <!--실제 페이지 글 부분-->
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#til" class="page__taxonomy-item p-category" rel="tag">TIL</a><span class="sep">, </span>
+    
+      <a href="/tags/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#%ED%95%AD%ED%95%B499" class="page__taxonomy-item p-category" rel="tag">항해99</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2023-01-07T00:00:00+09:00">2023-01-07</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EC%8A%A4%ED%94%84%EB%A7%81+%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0%2C+JWT+%EC%9D%B8%EC%A6%9D%2F%EC%9D%B8%EA%B0%80%2C+OAUTH+%EC%B9%B4%EC%B9%B4%EC%98%A4+%EB%A1%9C%EA%B7%B8%EC%9D%B8%20http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL30%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL30%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25ED%2595%25AD%25ED%2595%25B499%2FTIL30%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+
+
+  
+  	
+  	
+  	
+  	
+  	
+
+
+  <nav class="pagination_prev_next">
+    
+      <a href="/%ED%95%AD%ED%95%B499/TIL29/" class="pagination_prev_next--pager"><span class="prev_next">이전 글  &nbsp</span>주특기 심화 주 차 발제, 스프링 시큐리티</a>
+    
+    
+      <a href="#" class="pagination_prev_next--pager disabled">가장 최근 글입니다</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%ED%95%AD%ED%95%B499/TIL29/" rel="permalink">주특기 심화 주 차 발제, 스프링 시큐리티
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-06T00:00:00+09:00">2023-01-06</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring17/" rel="permalink">Devtools 코드 업데이트 시 자동 재시작
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-06T00:00:00+09:00">2023-01-06</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring/Spring16/" rel="permalink">JPA 연관관계 편의 메서드는 왜 사용할까
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-06T00:00:00+09:00">2023-01-06</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/spring%20security/Spring-Security01/" rel="permalink">(작성중)Spring Security
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+        
+        <time datetime="2023-01-06T00:00:00+09:00">2023-01-06</time>
+      </span>
+    
+
+                 
+                
+                
+                
+                 
+
+    <span class="page__meta-sep"></span>
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-fw fa-clock" aria-hidden="true"></i>
+        
+          12 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    
+    
+  </article>
+</div>
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/hyunjunhwang1994" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/hyunjuuuuun/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Hyun Jun. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <!-- start custom comments scripts -->
+
+<!-- end custom comments scripts -->
+
+<script>
+    'use strict';
+
+    window.customUtterances = {
+      theme: 'github-light',
+      darkTheme: 'github-dark',
+      onChange: (theme) => {
+        var commentContainer = document.querySelector('#utterances-comments');
+  
+        if (!commentContainer) {
+          return;
+        }
+  
+        while ( commentContainer.hasChildNodes() ) { 
+          commentContainer.removeChild( commentContainer.firstChild );
+        }
+  
+        var script = document.createElement('script');
+        script.setAttribute('src', 'https://utteranc.es/client.js');
+        script.setAttribute('repo', 'hyunjunhwang1994/Utterances-comments');
+        script.setAttribute('label', 'utterances');
+        script.setAttribute('issue-term', 'pathname');
+        script.setAttribute('theme', theme);
+        script.setAttribute('crossorigin', 'anonymous');
+  
+        commentContainer.appendChild(script);
+      }
+    };
+  </script>
+
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>

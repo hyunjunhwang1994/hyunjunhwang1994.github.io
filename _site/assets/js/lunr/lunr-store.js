@@ -564,7 +564,7 @@ var store = [{
         "teaser": null
       },{
         "title": "(작성중)Spring Security",
-        "excerpt":"  Spring Security란?   프로젝트 생성   Spring Boot Version : 2.7.7   Dependencies     Spring Security   Spring Web   Spring Data JPA   Lombok   H2 Database   Thymeleaf     ","categories": ["Spring Security"],
+        "excerpt":"목표 Spring Security란? Spring Security의 구조 Spring Security를 실제로 어떻게 적용 하는지. Spring Security를 왜써야 하는지(장점) Spring Security의 다양한 기능들 Spring Security란? Spring Security 프레임워크는, 스프링을 이용하여 서버를 만들 때 필요한 인증 및 인가를 위해 많은 기능을 제공해 주는 스프링 하위 프레임워크입니다. 아마 서비스 단의 기능기능마다 로그인 및 JWT라던지 인증...","categories": ["Spring Security"],
         "tags": ["Spring Security 기초"],
         "url": "/spring%20security/Spring-Security01/",
         "teaser": null
@@ -585,5 +585,11 @@ var store = [{
         "excerpt":"오늘은 주특기 심화 주 차 발제가 있었다. 주특기 심화 주 차 강의를 받았고, 아래와 같은 내용의 강의가 있었다. Spring Security OAuth2 Test AOP Exception Transaction 30%정도 달려온 이 시점, 이제부터 사실 상, 9to9을 주6일을 공부해도 시간이 모자른 것 같다.. 그래서 매 발제때 마다 일주일의 계획을 미리 짜고 공부를 해야겠다는 생각을...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL29/",
+        "teaser": null
+      },{
+        "title": "스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인",
+        "excerpt":"계획 변경!(우선순위는 앞에부터) 금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL 금 : 저번주와 내용이 많이 바뀌므로, 일단 1강만 완강 후 새롭게 알게된 내용들 정리. 토 : 7개중 3강완료, 내용을 정리하면서 가야 할 것 같아 강의 내용 정리. 일 : 키워드에 맞는 WIL작성, 개인과제 시작, 알고리즘 문제풀이. 월...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL30/",
         "teaser": null
       }]
