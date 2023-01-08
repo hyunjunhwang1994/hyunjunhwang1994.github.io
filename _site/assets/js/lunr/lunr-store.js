@@ -606,7 +606,7 @@ var store = [{
         "teaser": null
       },{
         "title": "ORM, SQL, MVC",
-        "excerpt":"이번주 배운 것 Validated Swagger JSON 직렬화 JPA 연관관계 맵핑 (Cascade, OrphanRemoval) AWS EC2, RDS 호스팅(+도메인 네임) Spring Security JWT, OAuth2 느낀것 원래의 기본 자바 바닐라 코드에서, 스프링을 이용하여 MVC Model을 구현하니, 많은 부분이 코드가 짧고 가독성이 좋아졌고, JPA구현체중 하나인 Hibernate를 사용하니 더욱더 편해졌고, Spring Security를 적용하면서 서비스단의 인증/인가 과정도...","categories": ["항해99"],
+        "excerpt":"계획(우선순위는 앞에부터) 금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL 일 : 키워드에 맞는 WIL 작성, 알고리즘 문제풀이. 월 : 개인과제, 개인과제 피드백, 지난주의 JPA 영속성 관련 포스트 다시 정리하며 공부 화 : 개인과제, 지난주에서 잘 이해가 안 갔거나 정리 못한 것 정리 수 : 개인과제, 팀 과제...","categories": ["항해99"],
         "tags": ["항해99","WIL"],
         "url": "/%ED%95%AD%ED%95%B499/WIL05/",
         "teaser": null
