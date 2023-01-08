@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-08T18:08:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">SQL과 ORM</title><link href="http://localhost:4000/spring%20jpa/Spring-JPA01/" rel="alternate" type="text/html" title="SQL과 ORM" /><published>2023-01-08T00:00:00+09:00</published><updated>2023-01-08T00:00:00+09:00</updated><id>http://localhost:4000/spring%20jpa/Spring-JPA01</id><content type="html" xml:base="http://localhost:4000/spring%20jpa/Spring-JPA01/"><![CDATA[<hr />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-08T18:11:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">SQL과 ORM</title><link href="http://localhost:4000/spring%20jpa/Spring-JPA01/" rel="alternate" type="text/html" title="SQL과 ORM" /><published>2023-01-08T00:00:00+09:00</published><updated>2023-01-08T00:00:00+09:00</updated><id>http://localhost:4000/spring%20jpa/Spring-JPA01</id><content type="html" xml:base="http://localhost:4000/spring%20jpa/Spring-JPA01/"><![CDATA[<hr />
 
 <h1 id="sql">SQL</h1>
 <p>SQL은 Structured Query Language (구조적 질의 언어)의 줄임말로,<br />
@@ -153,7 +153,9 @@ MyBatis는 SQL Builder 또는 SQL Mapper의 한 종류입니다.</p>
 <p>SQL Mapper의 한 종류인 Mybatis는 옛날부터 많이 사용 되어왔고, 지금도 사용하는 곳도 있지만,<br />
 현재는 JPA 구현체인 Hibernate가 더욱 많이 사용되고 있습니다.</p>
 
-<p><img src="../../images/2023-01-08-17-36-34.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring JPA" /><category term="SQL과 ORM" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">ORM, SQL, MVC</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL05/" rel="alternate" type="text/html" title="ORM, SQL, MVC" /><published>2023-01-08T00:00:00+09:00</published><updated>2023-01-08T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL05</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL05/"><![CDATA[<h1 id="이번주-배운-것">이번주 배운 것</h1>
+<p><img src="../../images/2023-01-08-17-36-34.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring JPA" /><category term="SQL과 ORM" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">ORM, SQL, MVC</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL05/" rel="alternate" type="text/html" title="ORM, SQL, MVC" /><published>2023-01-08T00:00:00+09:00</published><updated>2023-01-08T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/WIL05</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/WIL05/"><![CDATA[<hr />
+
+<h1 id="이번주-배운-것">이번주 배운 것</h1>
 <ul>
   <li>Validated</li>
   <li>Swagger</li>
@@ -163,6 +165,8 @@ MyBatis는 SQL Builder 또는 SQL Mapper의 한 종류입니다.</p>
   <li>Spring Security</li>
   <li>JWT, OAuth2</li>
 </ul>
+
+<hr />
 
 <h1 id="느낀것">느낀것</h1>
 <ul>
@@ -174,17 +178,19 @@ MyBatis는 SQL Builder 또는 SQL Mapper의 한 종류입니다.</p>
 할 것 같다.</li>
 </ul>
 
+<hr />
+
 <h1 id="내게-아쉬웠던-것">내게 아쉬웠던 것</h1>
 <ul>
   <li>저번주에 다른 사소한 것을 파보느라 많은 시간을 잡아먹어서, JPA 영속성이나 연관관계 매핑에대해서 깊이 공부를 못함.</li>
 </ul>
 
+<hr />
+
 <h1 id="이번-주-wil-키워드">이번 주 WIL 키워드</h1>
-<h2 id="orm">ORM</h2>
 
-<h2 id="sql">SQL</h2>
-
-<h2 id="mvc">MVC</h2>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="WIL" /><summary type="html"><![CDATA[이번주 배운 것 Validated Swagger JSON 직렬화 JPA 연관관계 맵핑 (Cascade, OrphanRemoval) AWS EC2, RDS 호스팅(+도메인 네임) Spring Security JWT, OAuth2]]></summary></entry><entry><title type="html">스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30/" rel="alternate" type="text/html" title="스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인" /><published>2023-01-07T00:00:00+09:00</published><updated>2023-01-07T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30/"><![CDATA[<h1 id="계획우선순위는-앞에부터">계획(우선순위는 앞에부터)</h1>
+<p><a href="https://hyunjunhwang1994.github.io/spring%20jpa/Spring-JPA01/">SQL, ORM</a><br />
+<a href="https://hyunjunhwang1994.github.io/spring/Spring4/">MVC</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="WIL" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30/" rel="alternate" type="text/html" title="스프링 시큐리티, JWT 인증/인가, OAUTH 카카오 로그인" /><published>2023-01-07T00:00:00+09:00</published><updated>2023-01-07T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL30/"><![CDATA[<h1 id="계획우선순위는-앞에부터">계획(우선순위는 앞에부터)</h1>
 <ul>
   <li>금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL</li>
   <li>토 : 7개중 3강완료, 내용을 정리하면서 가야 할 것 같아 강의 내용 정리.</li>
