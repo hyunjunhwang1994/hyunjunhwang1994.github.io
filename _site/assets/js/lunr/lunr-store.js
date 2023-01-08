@@ -599,6 +599,12 @@ var store = [{
         "url": "/%ED%95%AD%ED%95%B499/TIL30/",
         "teaser": null
       },{
+        "title": "잔디 먹는 뱀, Snake rendering Bug issue",
+        "excerpt":"어느 날부터 내 깃허브 프로필에 뱀들이 움직이지 않는다.. 공식 페이지를 확인해 보자 무언가 설정값이 바뀐 것 같습니다. 아래의 문서에서, 깃허브의 아이디만 입력하면 데모도 돌려볼 수 있는데요 돌려보니 잘 나옵니다. 공식 페이지 문서 무언가 제 설정값의 문제 같아서 더 찾아보니 아래처럼 최근에 깃허브 이슈가 올라왔네요. 이슈 그래서 해당 이슈에, 아래와 같이...","categories": ["Git"],
+        "tags": ["깃허브 잔디 먹는 뱀"],
+        "url": "/git/Git04/",
+        "teaser": null
+      },{
         "title": "SQL과 ORM",
         "excerpt":"SQL SQL은 Structured Query Language (구조적 질의 언어)의 줄임말로, 관계형 데이터베이스 시스템, RDBMS(Relational Database Management System)에서 자료를 관리 및 처리하기 위해 설계된 언어입니다. 1970년대 IBM에서 최초 개발 관계형 모델 이론에서 파생된 특징을 가지고 있음. 현재 SQL의 표준으로 ANSI SQL이 정립됨. 각 DBMS 프로그램에서 ANSI SQL을 기반으로 개발된 개별 SQL을 사용합니다....","categories": ["Spring JPA"],
         "tags": ["SQL과 ORM"],
