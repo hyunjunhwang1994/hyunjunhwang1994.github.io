@@ -297,6 +297,7 @@ defaults:
       related: true
       show_date: true
       sidebar_main: false   # 사이드바에 카테고리메뉴
+      classes: wide
   - 
     scope:
       path: "_posts"
@@ -310,6 +311,7 @@ defaults:
       toc: true
       toc_label: "목차"
       toc_sticky: true
+      classes: wide
   -
     scope:
       path: "_pages/categories"

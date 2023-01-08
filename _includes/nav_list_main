@@ -126,6 +126,14 @@
 
                 <ul>
                     {% for category in site.categories %}
+                        {% if category[0] == "Spring JPA" %}
+                            <li style="padding-left: 5px;"><a href="/categories/springjpa" class="">Spring JPA ({{category[1].size}})</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <ul>
+                    {% for category in site.categories %}
                         {% if category[0] == "Spring Security" %}
                             <li style="padding-left: 5px;"><a href="/categories/springsecurity" class="">Spring Security ({{category[1].size}})</a></li>
                         {% endif %}

@@ -4,7 +4,6 @@ title: "(작성중)Spring Security"
 categories: 
     - Spring Security
 tag: [Spring Security 기초]
-classes: wide
 ---
 
 <hr>

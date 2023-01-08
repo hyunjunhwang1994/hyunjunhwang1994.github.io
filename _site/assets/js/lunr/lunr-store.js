@@ -587,9 +587,9 @@ var store = [{
         "url": "/%ED%95%AD%ED%95%B499/TIL29/",
         "teaser": null
       },{
-        "title": "인증 완료된 userDetails 객체를 Service로 넘길 때",
-        "excerpt":"이 글은, Spring Security 사용 중, 유저의 인증이 완료된 @AuthenticationPrincipal UserDetailsImpl userDetails를 컨트롤러 -&gt; 서비스로 넘겨 유저 정보를 활용하고, 다시 서비스 -&gt; 컨트롤러로 응답될 때 발생하는 아래의 에러로 인해 작성 하였습니다. 발생 워닝 2023-01-07 19:58:31.265 WARN 26751 — [nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: failed to lazily...","categories": ["Spring Security"],
-        "tags": ["Spring Security 기초"],
+        "title": "userDetails, 영속화 관련 예외",
+        "excerpt":"이 글은, Spring Security 사용 중, 유저의 인증이 완료된 @AuthenticationPrincipal UserDetailsImpl userDetails를 컨트롤러 -&gt; 서비스로 넘겨 유저 정보를 활용하고, 다시 서비스 -&gt; 컨트롤러로 응답될 때 발생하는 아래의 에러로 인해 작성하였습니다. 발생 워닝 2023-01-07 19:58:31.265 WARN 26751 — [nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: failed to lazily initialize...","categories": ["Spring Security"],
+        "tags": ["Spring Security user 영속화 관련 예외"],
         "url": "/spring%20security/Spring-Security02/",
         "teaser": null
       },{
@@ -597,5 +597,17 @@ var store = [{
         "excerpt":"계획(우선순위는 앞에부터) 금 ~ 금 : 스프링 시큐리티 구조 이해하기, TIL, WIL 토 : 7개중 3강완료, 내용을 정리하면서 가야 할 것 같아 강의 내용 정리. 일 : 키워드에 맞는 WIL 작성, 알고리즘 문제풀이. 월 : 개인과제, 개인과제 피드백, 지난주의 JPA 영속성 관련 포스트 다시 정리하며 공부 화 : 개인과제, 지난주에서...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL30/",
+        "teaser": null
+      },{
+        "title": "SQL과 ORM",
+        "excerpt":"SQL SQL은 Structured Query Language (구조적 질의 언어)의 줄임말로, 관계형 데이터베이스 시스템, RDBMS(Relational Database Management System)에서 자료를 관리 및 처리하기 위해 설계된 언어입니다. 1970년대 IBM에서 최초 개발 관계형 모델 이론에서 파생된 특징을 가지고 있음. 현재 SQL의 표준으로 ANSI SQL이 정립됨. 각 DBMS 프로그램에서 ANSI SQL을 기반으로 개발된 개별 SQL을 사용합니다....","categories": ["Spring JPA"],
+        "tags": ["SQL과 ORM"],
+        "url": "/spring%20jpa/Spring-JPA01/",
+        "teaser": null
+      },{
+        "title": "ORM, SQL, MVC",
+        "excerpt":"이번주 배운 것 Validated Swagger JSON 직렬화 JPA 연관관계 맵핑 (Cascade, OrphanRemoval) AWS EC2, RDS 호스팅(+도메인 네임) Spring Security JWT, OAuth2 느낀것 원래의 기본 자바 바닐라 코드에서, 스프링을 이용하여 MVC Model을 구현하니, 많은 부분이 코드가 짧고 가독성이 좋아졌고, JPA구현체중 하나인 Hibernate를 사용하니 더욱더 편해졌고, Spring Security를 적용하면서 서비스단의 인증/인가 과정도...","categories": ["항해99"],
+        "tags": ["항해99","WIL"],
+        "url": "/%ED%95%AD%ED%95%B499/WIL05/",
         "teaser": null
       }]
