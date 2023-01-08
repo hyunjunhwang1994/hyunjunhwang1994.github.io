@@ -377,8 +377,8 @@ var store = [{
         "url": "/spring/Spring3/",
         "teaser": null
       },{
-        "title": "스프링 - 아키텍처, MVC Pattern과 패키지(파일) 구조",
-        "excerpt":"MVC 패턴 측면의 스프링 흐름도 사진 및 스프링 프레임 워크 구조 참조 블로그 사진 및 내용 참조 블로그 MVC MVC 패턴은 디자인 패턴 중 하나로써, 하나의 애플리케이션에서 Model, View, Controller의 역할로 구성요소를 구성한 것이 MVC 패턴입니다. Model : 애플리케이션의 정보, 데이터를 나타냅니다. View : input 텍스트, 체크박스 항목 등과 같은...","categories": ["Spring"],
+        "title": "architecture, MVC Pattern과 패키지(파일) 구조",
+        "excerpt":"MVC Pattern MVC 패턴은 디자인 패턴 중 하나로써, 하나의 애플리케이션에서 Model, View, Controller의 역할로 구성요소를 구성한 것이 MVC 패턴입니다. Model 애플리케이션의 정보, 데이터를 나타냅니다. View input 텍스트, 체크박스 항목 등과 같은 사용자 인터페이스 요소를 나타냅니다. 다시 말해 데이터 및 객체의 입력, 그리고 보여주는 출력을 담당합니다. 데이터를 기반으로 사용자들이 볼 수...","categories": ["Spring"],
         "tags": ["Spring MVC Pattern","DAO","DTO","Spring Repository","Spring Service","Spring Controller","Spring Entity"],
         "url": "/spring/Spring4/",
         "teaser": null
