@@ -563,8 +563,8 @@ var store = [{
         "url": "/%ED%95%AD%ED%95%B499/TIL28/",
         "teaser": null
       },{
-        "title": "(작성중)Spring Security",
-        "excerpt":"목표 Spring Security란? Spring Security의 구조 Spring Security를 실제로 어떻게 적용 하는지. Spring Security를 왜써야 하는지(장점) Spring Security의 다양한 기능들 Spring Security란? Spring Security 프레임워크는, 스프링을 이용하여 서버를 만들 때 필요한 인증 및 인가를 위해 많은 기능을 제공해 주는 스프링 하위 프레임워크입니다. 아마 서비스 단의 기능기능마다 로그인 및 JWT라던지 인증...","categories": ["Spring Security"],
+        "title": "Spring Security 이해",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.2 Spring-Boot 2.7.7 Spring Security 5.7.6 목표 Spring Security란? Spring Security의 구조 Spring Security를 실제로 어떻게 적용 하는지. Spring Security를 왜써야 하는지(장점) Spring Security의 다양한 기능들 Spring Security란? Spring Security 프레임워크는, 스프링을 이용하여 서버를 만들 때 필요한 인증...","categories": ["Spring Security"],
         "tags": ["Spring Security 기초"],
         "url": "/spring%20security/Spring-Security01/",
         "teaser": null
@@ -621,5 +621,23 @@ var store = [{
         "excerpt":"오늘 공부한 것 Test AOP Exception Transaction 개인과제 시작 개인과제는 저번 숙련 주 차의 과제에 여러가지 새로운 요구사항을 추가하는 문제로 나왔다. 새로운 요구사항 스프링 시큐리티 적용하기. 게시글 좋아요 API 추가하기. 댓글 좋아요 API 추가하기. 기본 적인 요구 사항은 위와 같고 일단 아래처럼 ERD를 수정해 보았다. 저번 과제와 비교했을 때 추가된...","categories": ["항해99"],
         "tags": ["항해99","TIL"],
         "url": "/%ED%95%AD%ED%95%B499/TIL31/",
+        "teaser": null
+      },{
+        "title": "IntelliJ 렉 걸릴 때 메모리 용량 늘리는 법",
+        "excerpt":"  인텔리제이 사용 시 렉이 걸리거나 버벅댈 때?      메모리 용량을 올린다.        2048 -&gt; 4096변경 -&gt; Save and Restart 클릭    Memory indecator  현재 사용 중인 메모리량/변경된 최대메모리량은 오른쪽 아래에서 확인 가능합니다.     안 보이실 경우 우측 하단 바에 우 클릭 후 설정해 주면 됩니다.     ","categories": ["IntelliJ"],
+        "tags": ["IntelliJ 렉 걸릴 때 메모리 용량 늘리는 법"],
+        "url": "/intellij/IntelliJ02/",
+        "teaser": null
+      },{
+        "title": "Spring Security Multi Filter Chain, Custom",
+        "excerpt":"           개발 환경            - 2021, 맥북 프로 M1 Pro 14인치 모델             - Ventura 13.2               Spring-Boot 2.7.7            Spring Security 5.7.6     ","categories": ["Spring Security"],
+        "tags": ["Spring Security Multi Filter Chain"],
+        "url": "/spring%20security/Spring-Security03/",
+        "teaser": null
+      },{
+        "title": "Spring Security, Multi Filter Chain, Swagger",
+        "excerpt":"오늘 한것 스프링 시큐리티 스웨거 추가, 설정 개인과제 진행 개인과제 요구사항 각 유저별 게시글 좋아요 스위칭. 각 유저별 댓글 좋아요 스위칭. 기능을 넣었다. AOP 활용하여 원래 코드 변경하기 그리고 13시30분 스프링 숙련주차는 끝나 지 않았지만 실전 프로젝트 팀빌딩 발제가 있었다. 잽에서 상당히 끊기는 ㄴ부분이 많아서 11기가 게더타운으로 이동했다!! AOP로 인증로직을...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL32/",
         "teaser": null
       }]

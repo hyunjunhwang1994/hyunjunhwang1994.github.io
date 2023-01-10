@@ -1,4 +1,180 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T01:49:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">Spring Security, Test, AOP, Exception, Transaction</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL31/" rel="alternate" type="text/html" title="Spring Security, Test, AOP, Exception, Transaction" /><published>2023-01-09T00:00:00+09:00</published><updated>2023-01-09T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL31</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL31/"><![CDATA[<hr />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T23:01:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">Spring Security Multi Filter Chain, Custom</title><link href="http://localhost:4000/spring%20security/Spring-Security03/" rel="alternate" type="text/html" title="Spring Security Multi Filter Chain, Custom" /><published>2023-01-10T00:00:00+09:00</published><updated>2023-01-10T00:00:00+09:00</updated><id>http://localhost:4000/spring%20security/Spring-Security03</id><content type="html" xml:base="http://localhost:4000/spring%20security/Spring-Security03/"><![CDATA[<div class="notice" style="text-align:center">
+          개발 환경<br />
+          - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
+          - Ventura 13.2
+</div>
+<hr />
+
+<div class="notice--info" style="text-align:center">
+          Spring-Boot 2.7.7<br />
+          Spring Security 5.7.6
+</div>
+
+<hr />]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring Security" /><category term="Spring Security Multi Filter Chain" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.2]]></summary></entry><entry><title type="html">IntelliJ 렉 걸릴 때 메모리 용량 늘리는 법</title><link href="http://localhost:4000/intellij/IntelliJ02/" rel="alternate" type="text/html" title="IntelliJ 렉 걸릴 때 메모리 용량 늘리는 법" /><published>2023-01-10T00:00:00+09:00</published><updated>2023-01-10T00:00:00+09:00</updated><id>http://localhost:4000/intellij/IntelliJ02</id><content type="html" xml:base="http://localhost:4000/intellij/IntelliJ02/"><![CDATA[<hr />
+
+<p>인텔리제이 사용 시 렉이 걸리거나 버벅댈 때?</p>
+
+<ul>
+  <li>메모리 용량을 올린다.</li>
+</ul>
+
+<hr />
+
+<p><img src="../../images/2023-01-10-17-04-40.png" alt="" /></p>
+
+<p>2048 -&gt; 4096변경 -&gt; Save and Restart 클릭
+<img src="../../images/2023-01-10-17-01-10.png" alt="" /></p>
+
+<h2 id="memory-indecator">Memory indecator</h2>
+<p>현재 사용 중인 메모리량/변경된 최대메모리량은 오른쪽 아래에서 확인 가능합니다.<br />
+<img src="../../images/2023-01-10-17-03-18.png" alt="" /></p>
+
+<p>안 보이실 경우 우측 하단 바에 우 클릭 후 설정해 주면 됩니다.<br />
+<img src="../../images/2023-01-10-17-04-13.png" alt="" /></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="IntelliJ" /><category term="IntelliJ 렉 걸릴 때 메모리 용량 늘리는 법" /><summary type="html"><![CDATA[인텔리제이 사용 시 렉이 걸리거나 버벅댈 때?]]></summary></entry><entry><title type="html">Spring Security, Multi Filter Chain, Swagger</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL32/" rel="alternate" type="text/html" title="Spring Security, Multi Filter Chain, Swagger" /><published>2023-01-10T00:00:00+09:00</published><updated>2023-01-10T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL32</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL32/"><![CDATA[<p>오늘 한것</p>
+<ul>
+  <li>스프링 시큐리티 스웨거 추가, 설정</li>
+  <li>개인과제 진행</li>
+</ul>
+
+<p>개인과제 요구사항</p>
+<ul>
+  <li>각 유저별 게시글 좋아요 스위칭.</li>
+  <li>각 유저별 댓글 좋아요 스위칭. 기능을 넣었다.</li>
+  <li>AOP 활용하여 원래 코드 변경하기</li>
+</ul>
+
+<p>그리고 13시30분
+스프링 숙련주차는 끝나 지 않았지만
+실전 프로젝트 팀빌딩 발제가 있었다.
+<img src="../../images/2023-01-10-13-25-43.png" alt="" /></p>
+
+<p>잽에서 상당히 끊기는 ㄴ부분이 많아서</p>
+
+<p>11기가 게더타운으로 이동했다!!</p>
+
+<p>AOP로 인증로직을 구현해주는 스프링에서 제공해주는 @validate를 이미 사용해놨</p>
+
+<p>알게모르게 AOP를 사용하고 있었다</p>
+
+<p>Va</p>
+
+<p>익셉션으로 상용해봥싿.</p>
+
+<p>오늘안에는 개인 과제를 꼭 끝내고 남은 공부 정리를 좀 해야겠다!</p>
+
+<h1 id="1일-1에러-1해결">1일 1에러 1해결</h1>
+<p>개인과제 코드를 정리 하던 중 딱히 건든게 없는데 아래와 같은 에러가 발생!</p>
+
+<details> 
+<summary>에러 보기</summary>
+<div>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-01-10 19:10:30.883 ERROR 7058 --- [  restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testDataRunner' defined in file [/Users/hyunjun/Library/Mobile Documents/com~apple~CloudDocs/IT/Spring_Deeping_Week_Assignment/build/classes/java/main/com/sparta/spring_deeping_week_assignment/TestDataRunner.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig' defined in file [/Users/hyunjun/Library/Mobile Documents/com~apple~CloudDocs/IT/Spring_Deeping_Week_Assignment/build/classes/java/main/com/sparta/spring_deeping_week_assignment/config/WebSecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwtUtil': Invocation of init method failed; nested exception is io.jsonwebtoken.security.WeakKeyException: The specified key byte array is 192 bits which is not secure enough for any JWT HMAC-SHA algorithm.  The JWT JWA Specification (RFC 7518, Section 3.2) states that keys used with HMAC-SHA algorithms MUST have a size &gt;= 256 bits (the key size must be greater than or equal to the hash output size).  Consider using the io.jsonwebtoken.security.Keys#secretKeyFor(SignatureAlgorithm) method to create a key guaranteed to be secure enough for your preferred HMAC-SHA algorithm.  See https://tools.ietf.org/html/rfc7518#section-3.2 for more information.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918) ~[spring-context-5.3.24.jar:5.3.24]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.24.jar:5.3.24]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.7.jar:2.7.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.7.jar:2.7.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.7.jar:2.7.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.7.jar:2.7.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.7.jar:2.7.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.7.jar:2.7.7]
+	at com.sparta.spring_deeping_week_assignment.SpringDeepingWeekAssignmentApplication.main(SpringDeepingWeekAssignmentApplication.java:14) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.7.7.jar:2.7.7]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig' defined in file [/Users/hyunjun/Library/Mobile Documents/com~apple~CloudDocs/IT/Spring_Deeping_Week_Assignment/build/classes/java/main/com/sparta/spring_deeping_week_assignment/config/WebSecurityConfig.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwtUtil': Invocation of init method failed; nested exception is io.jsonwebtoken.security.WeakKeyException: The specified key byte array is 192 bits which is not secure enough for any JWT HMAC-SHA algorithm.  The JWT JWA Specification (RFC 7518, Section 3.2) states that keys used with HMAC-SHA algorithms MUST have a size &gt;= 256 bits (the key size must be greater than or equal to the hash output size).  Consider using the io.jsonwebtoken.security.Keys#secretKeyFor(SignatureAlgorithm) method to create a key guaranteed to be secure enough for your preferred HMAC-SHA algorithm.  See https://tools.ietf.org/html/rfc7518#section-3.2 for more information.
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.24.jar:5.3.24]
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwtUtil': Invocation of init method failed; nested exception is io.jsonwebtoken.security.WeakKeyException: The specified key byte array is 192 bits which is not secure enough for any JWT HMAC-SHA algorithm.  The JWT JWA Specification (RFC 7518, Section 3.2) states that keys used with HMAC-SHA algorithms MUST have a size &gt;= 256 bits (the key size must be greater than or equal to the hash output size).  Consider using the io.jsonwebtoken.security.Keys#secretKeyFor(SignatureAlgorithm) method to create a key guaranteed to be secure enough for your preferred HMAC-SHA algorithm.  See https://tools.ietf.org/html/rfc7518#section-3.2 for more information.
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:160) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:440) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.24.jar:5.3.24]
+	... 47 common frames omitted
+Caused by: io.jsonwebtoken.security.WeakKeyException: The specified key byte array is 192 bits which is not secure enough for any JWT HMAC-SHA algorithm.  The JWT JWA Specification (RFC 7518, Section 3.2) states that keys used with HMAC-SHA algorithms MUST have a size &gt;= 256 bits (the key size must be greater than or equal to the hash output size).  Consider using the io.jsonwebtoken.security.Keys#secretKeyFor(SignatureAlgorithm) method to create a key guaranteed to be secure enough for your preferred HMAC-SHA algorithm.  See https://tools.ietf.org/html/rfc7518#section-3.2 for more information.
+	at io.jsonwebtoken.security.Keys.hmacShaKeyFor(Keys.java:96) ~[jjwt-api-0.11.2.jar:0.11.2]
+	at com.sparta.spring_deeping_week_assignment.jwt.JwtUtil.init(JwtUtil.java:43) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.3.24.jar:5.3.24]
+	... 60 common frames omitted
+</code></pre></div>    </div>
+
+  </div>
+</details>
+
+<p>안건들였는데 에러가 날리는 없지..</p>
+
+<p>최근에 건들인 것을 찾다가..</p>
+
+<p>Caused by: io.jsonwebtoken.security.WeakKeyException: The specified key byte array is 192 bits which is not secure enough for any JWT HMAC-SHA algorithm.  The JWT JWA Specification (RFC 7518, Section 3.2) states that keys used with HMAC-SHA algorithms MUST have a size &gt;= 256 bits (the key size must be greater than or equal to the hash output size).  Consider using the io.jsonwebtoken.security.Keys#secretKeyFor(SignatureAlgorithm) method to create a key guaranteed to be secure enough for your preferred HMAC-SHA algorithm.  See https://tools.ietf.org/html/rfc7518#section-3.2 for more information.</p>
+
+<p>에러메세지중 위의 글을 보니, 대충 json key가 사이즈가 작다? 이런느낌같에서</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jwt.secret.key=sqkodqkfoko2k9qwldaasldqw2102lqd 
+</code></pre></div></div>
+
+<p>에서 1.5배 정도 길게 바꿔주니 동작한다!</p>
+
+<p>아마 jsonwebtoken에서 &gt;= 256 bits으로 만들어야 만들어지게 해논것 같다!</p>
+
+<p>그리고, 스프링 시큐리티를 처음 배울때부터 멀티필터체인을 만들어보고싶었는데 적용이안되나싶어서 
+정말 처음으로 문제 해결하는데 4일 정도 걸린것같다</p>
+
+<p>문제는 체인이작동안하는게아닌 ADMIN을 안넣어줘서 동작이 안한겄!</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘 한것 스프링 시큐리티 스웨거 추가, 설정 개인과제 진행]]></summary></entry><entry><title type="html">Spring Security, Test, AOP, Exception, Transaction</title><link href="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL31/" rel="alternate" type="text/html" title="Spring Security, Test, AOP, Exception, Transaction" /><published>2023-01-09T00:00:00+09:00</published><updated>2023-01-09T00:00:00+09:00</updated><id>http://localhost:4000/%ED%95%AD%ED%95%B499/TIL31</id><content type="html" xml:base="http://localhost:4000/%ED%95%AD%ED%95%B499/TIL31/"><![CDATA[<hr />
 
 <h1 id="오늘-공부한-것">오늘 공부한 것</h1>
 <ul>
@@ -591,290 +767,4 @@ OSIV는 영속성 컨텍스트를 뷰까지 열어두는 기능입니다.
 
 <p>그래서, 마지막으로 자세한 스프링 시큐리티 관련 1강을 보고 정리해 보았다.<br />
 역시나 어려웠지만, 한번 공부한 내용들을 정리해 보았다.<br />
-<a href="https://hyunjunhwang1994.github.io/spring%20security/Spring-Security01/">스프링 시큐리티 간단 구조 정리</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 주특기 심화 주 차 발제가 있었다.]]></summary></entry><entry><title type="html">JPA 연관관계 편의 메서드는 왜 사용할까</title><link href="http://localhost:4000/spring/Spring16/" rel="alternate" type="text/html" title="JPA 연관관계 편의 메서드는 왜 사용할까" /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring16</id><content type="html" xml:base="http://localhost:4000/spring/Spring16/"><![CDATA[<p>연관관계 편의 메서드는 왜 필요할까?</p>
-
-<p><a href="https://okky.kr/articles/987954">편의 메서드 필요 이유 참조</a></p>
-
-<hr />
-
-<h1 id="why">Why?</h1>
-<p>Database에 flush 되기 전에 양방향으로 묶여있는 자료의 일관성을 지켜주기 위해 만듭니다.</p>
-
-<ul>
-  <li>트랜잭션이 끝나 DB에 flush되고 난 후 자료를 조회하면 문제가 없겟지만</li>
-  <li>한 트랜잭션이 끝나기 전에 자료를 조작할 시 한쪽에만 자료를 추가 하면 그건 아직 디비에 반영되어잇는</li>
-  <li>자료가 아니기때문에 추가한쪽에만 값이 들어있게되죠.</li>
-</ul>
-
-<hr />
-
-<p>멤버 와 팀의 관계를 예로들면</p>
-<ul>
-  <li>멤버와 팀을 생성 한 후 멤버에 팀을 넣습니다. 그리고 트랜잭션이 끝나서 디비에 플러쉬되고</li>
-  <li>
-    <p>멤버와 팀을 조회하면 정상적으로 멤버에도 팀이 들어가있고 팀에도 멤버가 들어가있을겁니다.</p>
-  </li>
-  <li>그런데 멤버와 팀을 생성 한후 멤버에 팀을 넣고 그 트랙잭션이 끝나기전에 팀에서 멤버를 찾아보면 없겟죠?</li>
-  <li>왜냐면 아직 디비에 반영되기 전 이거든요. 그런데 생각해보면 멤버가 팀에 들어갔으니 당연히 팀에서 멤버를 찾으면 있어야 된다는게 일반적인 생각이고,</li>
-  <li>이런 데이터의 오류를 방지하려면 어느 한쪽에 자료가 들어갈때 반대쪽에도 같이 넣어줘야 하는데</li>
-  <li>그 넣는 방법중 하나가 한쪽에 값을 넣을 때 다른쪽에도 넣어버리는겁니다.</li>
-</ul>
-
-<hr />
-
-<p><a href="https://velog.io/@songs4805/JPA-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91-%EA%B8%B0%EC%B4%88">순수한 객체까지 고려한 양방향 연관관계 참조 글</a><br />
-<a href="https://umanking.github.io/2020/10/26/jpa-mapping-2/">연관관계 편의 메서드 참조 글</a><br />
-<a href="https://ecsimsw.tistory.com/entry/JPA-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EA%B3%A0%EB%A0%A4%ED%95%9C-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84-%ED%8E%B8%EC%9D%98-%EB%A9%94%EC%86%8C%EB%93%9C">편의 메서드 이해가 쉬운 예제 참조</a></p>
-
-<p><a href="https://velog.io/@dhk22/JPA-%EC%96%91%EB%B0%A9%ED%96%A5-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84">참조</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="JPA 연관관계 편의 메서드" /><summary type="html"><![CDATA[연관관계 편의 메서드는 왜 필요할까?]]></summary></entry><entry><title type="html">(작성중)Spring Security</title><link href="http://localhost:4000/spring%20security/Spring-Security01/" rel="alternate" type="text/html" title="(작성중)Spring Security" /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/spring%20security/Spring-Security01</id><content type="html" xml:base="http://localhost:4000/spring%20security/Spring-Security01/"><![CDATA[<hr />
-
-<p>목표</p>
-<ul>
-  <li>Spring Security란?</li>
-  <li>Spring Security의 구조</li>
-  <li>Spring Security를 실제로 어떻게 적용 하는지.</li>
-  <li>Spring Security를 왜써야 하는지(장점)</li>
-  <li>Spring Security의 다양한 기능들</li>
-</ul>
-
-<hr />
-
-<h1 id="spring-security란">Spring Security란?</h1>
-<p><code class="language-plaintext highlighter-rouge">Spring Security</code> 프레임워크는, 스프링을 이용하여 서버를 만들 때<br />
-필요한 인증 및 인가를 위해 많은 기능을 제공해 주는 스프링 하위 프레임워크입니다.</p>
-
-<p>아마 서비스 단의 기능기능마다 로그인 및 JWT라던지 인증 기능이 반복된다면,
-이 코드를 하나로 줄일수 없을까?라는 생각은 해보았을것입니다.</p>
-
-<p>Spring Security를 공부하게 되면, 공부하는데 어려울 순 있겠지만,
-자유자재로 사용한다면 상당히 편리한 이점이 많아집니다.</p>
-
-<hr />
-
-<h1 id="구조-architecture">구조 (Architecture)</h1>
-<p>일단 Spring Security를 공부하고, 다루기 위해선, 구조를 먼저 알아야 한다고 생각듭니다.</p>
-
-<ul>
-  <li>Security는 MVC 패턴 이전에 <code class="language-plaintext highlighter-rouge">Filter</code>로서 동작합니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Filter</code>란 클라이언트의 요청이 서블릿으로 가기 전에 먼저 처리할 수 있도록
-톰캣(WAS)에서 지원해주는 기능입니다.</li>
-</ul>
-
-<h2 id="filter의-위치">Filter의 위치</h2>
-<p>Filter 구조를 설명하기전 이해하기 쉽게 아래의 기본적인 구조의 사진을 넣어놨습니다.</p>
-
-<p>Filter는 Dispatcher Servlet보다 앞단에서 실행 됩니다.</p>
-
-<p><img src="../../images/2023-01-07-10-11-16.png" alt="" />
-<img src="../../images/2023-01-07-10-11-09.png" alt="" /></p>
-
-<hr />
-
-<h2 id="filter-구조">Filter 구조</h2>
-
-<p>스프링 시큐리티의 서블릿 제공은 Servlet의 Filter에 기반합니다.<br />
-따라서 Servlet Filter의 역할을 먼저 살펴볼 필요가 있습니다.<br />
-다음 그림은 싱글 HTTP 요청이 들어왔을 때, 일반적인 핸들러 계층입니다.</p>
-
-<p><img src="../../images/2023-01-07-10-20-48.png" alt="" /></p>
-
-<p>클라이언트가 애플리케이션에 요청을 보내면,<br />
-컨테이너는 Filter와 Servlet을 포함하고 있는 FilterChain을 생성한다.</p>
-
-<p>보통 Servlet은 한 개의 HttpServletRequest와<br />
-HttpServletResponse를 다루지만, 한 개 이상의 필터도 사용되어질 수 있다.</p>
-
-<hr />
-
-<h3 id="delegatingfilterproxy">DelegatingFilterProxy</h3>
-<p>Servlet 컨테이너는 서로 다른 기준을 가진 Filter를 등록하는 것을 허용하지만,<br />
-스프링은 이를 Beans으로 인식하지 못합니다.</p>
-
-<p>스프링은 Servlet 컨테이너의 생명주기와 스프링의 ApplicationContext를 연결하기 위해서,<br />
-DelegatingFilterProxy라는 Filter implementation을 제공합니다.</p>
-
-<p>DelegatingFilterProxy는 표준 Servlet 컨테이너 메커니즘을 통해 등록되어지나,<br />
-모든 작업을 스프링 빈으로도 등록하기 때문에 스프링이 이를 인식할 수 있습니다.<br />
-<img src="../../images/2023-01-07-10-22-46.png" alt="" /></p>
-
-<p>DelegatingFilterProxy는 ApplicationContext로부터 Bean Filter_0을 찾은 다음, Bean Filter_0를 호출합니다.</p>
-
-<hr />
-
-<h3 id="filterchainproxy">FilterChainProxy</h3>
-<p>스프링 시큐리티의 서블릿은 FilterChainProxy안에서 지원을 받는다.<br />
-FilterChainProxy는 많은 필터 객체가 SecurityFilterChain으로 전파될 수 있도록 도와주는 특별한 필터이다.<br />
-FilterChainProxy가 bean이기 때문에, 전형적으로 DelegatingFilterProxy에 감싸져 있다.</p>
-
-<p><img src="../../images/2023-01-07-10-23-43.png" alt="" /></p>
-
-<hr />
-
-<h3 id="securityfilterchain">SecurityFilterChain</h3>
-<p>SecurityFilterChain은 어떤 스프링 시큐리티 필터를 사용할지 결정하기 위해 FilterChainProxy와 소통합니다. <br />
-SecurityFilterChain도 FilterChainProxy와 마찬가지로 빈이지만,<br />
-DelegatingFilterProxy가 아닌 FilterChainProxy와 함께 등록이 되어 있습니다.<br />
-<img src="../../images/2023-01-07-10-24-08.png" alt="" /></p>
-
-<hr />
-
-<p>FilterChainProxy는 많은 이점을 제공하고 있다.</p>
-
-<ol>
-  <li>모든 스프링 시큐리티의 서블릿 지원에게 시작점을 제공한다. (FilterChainProxy에 debug 포인트를 찍는 것은 디버깅을 쉽게 도와줄 것이다.)</li>
-  <li>FilterChainProxy가 스프링 시큐리티 사용의 중심에 있기 때문에, 메모리 유출을 피하는 등의 SecurityContext를 분명히 하는 역할을 한다.</li>
-  <li>SecurityFilterChain이 언제 호출되어야 하는지에 대한 부분에 있어 유연성을 제공한다. 필터에서는 URL에 기반해서 호출이 되지만, FilerChainProxy는 HttpServletRequest의 어떤 요소든지 기준점을 잡고 호출할 수 있다.</li>
-  <li>FilterChainProxy는 여러개의 SecurityFilterChain이 있을 때 어떤 SecurityFilterChain이 언제 사용되어져야하는지를 지정하는데 사용되어질 수 있으면 이는 큰 이점을 가진다.</li>
-</ol>
-
-<p><img src="../../images/2023-01-07-10-24-32.png" alt="" />
-만약에 URL로 /api/messages/가 요청으로 들어오면,<br />
-FilterChainProxy는 SecurityFilterChain_0을 먼저 매칭할 것이다.<br />
-그러면 SecurityFilterChain_n도 매칭이 됨에도 불구하고 _0번만 호출이 된다.</p>
-
-<hr />
-
-<p>Survlet Container의 Filter</p>
-<ul>
-  <li>서블릿 컨테이너의 Filter는 Dispatch Survlet으로 가기 전에 먼저 적용된다.</li>
-  <li>Filter들은 여러개가 연결되어 있어 Filter chain이라고 불린다.</li>
-  <li>모든 Request들은 Filter chain을 거쳐야지 Survlet에 도착하게 된다.</li>
-</ul>
-
-<p><img src="../../images/2023-01-07-10-14-56.png" alt="" /></p>
-
-<p><a href="https://velog.io/@seongwon97/Spring-Security-Filter%EB%9E%80">이미지 출처</a></p>
-
-<hr />
-
-<p>Security의 Filter</p>
-<ul>
-  <li>Spring Security는 DelegatingFilterProxy 라는 필터를 만들어 메인 Filter Chain에 끼워넣고, 그 아래 다시 SecurityFilterChain 그룹을 등록한다.</li>
-  <li>그렇게 하며 URL에 따라 적용되는 Filter Chain을 다르게 하는 방법을 사용한다.</li>
-  <li>어떠한 경우에는 해당 Filter를 무시하고 통과하게 할 수도 있다.</li>
-  <li>WebSecurityConfigurerAdapter는 Filter chian을 구성하는 Configuration클래스로 해당 클래스의 상속을 통해 Filter Chain을 구성할 수 있다.</li>
-  <li>configure(HttpSecurity http)를 override하며 filter들을 세팅한다.</li>
-</ul>
-
-<p><img src="../../images/2023-01-07-10-15-01.png" alt="" /></p>
-
-<hr />
-
-<p><img src="../../images/2023-01-08-22-31-38.png" alt="" /></p>
-
-<hr />
-
-<p><img src="../../images/2023-01-07-10-08-06.png" alt="" />
-<a href="https://gngsn.tistory.com/160">이미지 출처</a></p>
-
-<p><img src="../../images/2023-01-07-09-49-41.png" alt="" />
-<a href="https://kimchanjung.github.io/programming/2020/07/01/spring-security-01/">이미지 출처</a></p>
-
-<h2 id="spring-security와-filter">Spring Security와 Filter</h2>
-<p>Spring Security는 요청이 들어오면 Servlet FilterChain을 자동으로 구성한 후 거치게 합니다.</p>
-
-<p>FilterChain은 여러 Filter를 chain형태로 묶어놓은 것을 의미합니다.</p>
-
-<p>여기서 Filter 란,<br />
-톰캣과 같은 웹 컨테이너에서 관리되는 서블릿의 기술입니다.<br />
-Filter는 Client 요청이 전달되기 전후의 URL 패턴에 맞는 모든 요청에 필터링을 해줍니다.</p>
-
-<p>CSRF, XSS 등의 보안 검사를 통해 올바른 요청이 아닐 경우 이를 차단해 줍니다.
-따라서 Spring Security는 이런한 기능을 활용하기위해 Filter를 사용하여 인증/인가를 구현하고 있습니다.</p>
-
-<p><img src="../../images/2023-01-07-00-02-10.png" alt="" /></p>
-
-<hr />
-
-<h1 id="spring-security-적용하기">Spring Security 적용하기.</h1>
-
-<h2 id="프로젝트-생성">프로젝트 생성</h2>
-
-<p>Spring Boot Version : 2.7.7</p>
-
-<p>Dependencies</p>
-<ul>
-  <li>Spring Security</li>
-  <li>Spring Web</li>
-  <li>Spring Data JPA</li>
-  <li>Lombok</li>
-  <li>H2 Database</li>
-  <li>Thymeleaf</li>
-</ul>
-
-<hr />
-
-<p>build.gradle</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>implementation 'org.springframework.boot:spring-boot-starter-security'
-</code></pre></div></div>
-
-<h3 id="websecurityconfig">WebSecurityConfig</h3>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Configuration</span>
-<span class="nd">@EnableWebSecurity</span> <span class="c1">// 스프링 Security 지원을 가능하게 함</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebSecurityConfig</span> <span class="o">{</span>
-
-    <span class="nd">@Bean</span>
-    <span class="kd">public</span> <span class="nc">SecurityFilterChain</span> <span class="nf">securityFilterChain</span><span class="o">(</span><span class="nc">HttpSecurity</span> <span class="n">http</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
-        <span class="c1">// CSRF 설정</span>
-        <span class="n">http</span><span class="o">.</span><span class="na">csrf</span><span class="o">().</span><span class="na">disable</span><span class="o">();</span>
-        
-        <span class="n">http</span><span class="o">.</span><span class="na">authorizeRequests</span><span class="o">().</span><span class="na">anyRequest</span><span class="o">().</span><span class="na">authenticated</span><span class="o">();</span>
-        <span class="c1">//http.authorizeHttpRequests().anyRequest().authenticated();</span>
-        <span class="c1">//SpringBoot 3버전대 부터는 아래의 authorizeHttpRequests()으로 사용해야 합니다.</span>
-        
-        <span class="c1">// 로그인 사용</span>
-        <span class="n">http</span><span class="o">.</span><span class="na">formLogin</span><span class="o">();</span>
-        
-        <span class="k">return</span> <span class="n">http</span><span class="o">.</span><span class="na">build</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p>아까봤던 URL별로 필터체인이 각각 있는 그림을 구현하려면 어떻게 해야 할까 ?</p>
-
-<hr />
-
-<p><a href="https://kimchanjung.github.io/programming/2020/07/01/spring-security-01/">구조를 이해하는데 도움이 많이된 블로그</a><br />
-<a href="https://velog.io/@gmtmoney2357/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0-FilterChainProxy-%EB%8B%A4%EC%A4%91-%EC%84%A4%EC%A0%95-%ED%81%B4%EB%9E%98%EC%8A%A4">구조 이해하기 쉬운 블로그!!</a>
-<a href="https://catsbi.oopy.io/c0a4f395-24b2-44e5-8eeb-275d19e2a536">시큐리티 구조 참조 블로그 1</a><br />
-<a href="https://velog.io/@seongwon97/Spring-Security-Filter%EB%9E%80">참조 블로그 2</a><br />
-<a href="https://gngsn.tistory.com/160">참조 블로그 3</a><br />
-<a href="https://brightmango.tistory.com/360">참조 블로그 4</a><br />
-<a href="https://icthuman.tistory.com/entry/Spring-Security-%EA%B8%B0%EB%8A%A5-%ED%99%9C%EC%9A%A9-1-Filter-Chain">참조 블로그 5</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring Security" /><category term="Spring Security 기초" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Devtools 코드 업데이트 시 자동 재시작</title><link href="http://localhost:4000/spring/Spring17/" rel="alternate" type="text/html" title="Devtools 코드 업데이트 시 자동 재시작" /><published>2023-01-06T00:00:00+09:00</published><updated>2023-01-06T00:00:00+09:00</updated><id>http://localhost:4000/spring/Spring17</id><content type="html" xml:base="http://localhost:4000/spring/Spring17/"><![CDATA[<p>인텔리제이에서 스프링 부트로 작업을 하다 보면,<br />
-코드 변경 사항이 있을 때, 자동으로 재시작 해주면 좋지 않을까라는 생각이 듭니다.</p>
-
-<p>그래서 인텔리제이에서는 해당 기능을 제공합니다.</p>
-
-<hr />
-
-<h1 id="의존성-추가">의존성 추가</h1>
-
-<p>처음 SpringBoot 프로젝트 생성 시</p>
-
-<ul>
-  <li>Spring Boot DevTools를 추가하시거나,</li>
-</ul>
-
-<p>or</p>
-
-<ul>
-  <li>
-    <p>build.gradle에 아래의 코드를 추가해 주세요!</p>
-
-    <p>developmentOnly ‘org.springframework.boot:spring-boot-devtools’</p>
-  </li>
-</ul>
-
-<hr />
-
-<p>그 후, 아래의 설정을 진행해 주면 됩니다.</p>
-
-<p><img src="../../images/2022-12-24-19-59-39.png" alt="" /></p>
-
-<p>Modify options -&gt; On frame deactivation -&gt; Update classes….<br />
-<img src="../../images/2022-12-24-20-00-18.png" alt="" /></p>
-
-<p>이제 코드 프로젝트 상 코드에 변경이 생기면,
-스프링 부트를 재시작하지 않아도 자동으로 업데이트 시 재시작 시켜줍니다.</p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring" /><category term="SpringBoot Devtools 코드 업데이트 시 서버 자동 재시작" /><summary type="html"><![CDATA[인텔리제이에서 스프링 부트로 작업을 하다 보면, 코드 변경 사항이 있을 때, 자동으로 재시작 해주면 좋지 않을까라는 생각이 듭니다.]]></summary></entry></feed>
+<a href="https://hyunjunhwang1994.github.io/spring%20security/Spring-Security01/">스프링 시큐리티 간단 구조 정리</a></p>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="항해99" /><category term="항해99" /><category term="TIL" /><summary type="html"><![CDATA[오늘은 주특기 심화 주 차 발제가 있었다.]]></summary></entry></feed>
