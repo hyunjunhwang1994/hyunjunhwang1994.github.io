@@ -20,3 +20,11 @@ tag: [Spring Security Multi Filter Chain]
 </div>
 
 <hr>
+
+
+아래의 공식문서를 참고하여 정리했습니다.  
+[스프링 시큐리티 공식 문서 참고](https://docs.spring.io/spring-security/reference/5.7/servlet/configuration/java.html)
+
+
+이 글의 목표
+- /api, /test, /admin 등 N개의 URL을 따로따로 처리가능하게 필터 체인을 구성할 수 있도록 기술할 예정입니다.

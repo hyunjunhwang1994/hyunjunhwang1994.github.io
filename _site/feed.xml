@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T23:01:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">Spring Security Multi Filter Chain, Custom</title><link href="http://localhost:4000/spring%20security/Spring-Security03/" rel="alternate" type="text/html" title="Spring Security Multi Filter Chain, Custom" /><published>2023-01-10T00:00:00+09:00</published><updated>2023-01-10T00:00:00+09:00</updated><id>http://localhost:4000/spring%20security/Spring-Security03</id><content type="html" xml:base="http://localhost:4000/spring%20security/Spring-Security03/"><![CDATA[<div class="notice" style="text-align:center">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-10T23:23:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술 블로그</title><subtitle>공부한 것들을 정리하고, 소통하기 위한 기술 블로그입니다.</subtitle><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><entry><title type="html">Spring Security Multi Filter Chain, Custom</title><link href="http://localhost:4000/spring%20security/Spring-Security03/" rel="alternate" type="text/html" title="Spring Security Multi Filter Chain, Custom" /><published>2023-01-10T00:00:00+09:00</published><updated>2023-01-10T00:00:00+09:00</updated><id>http://localhost:4000/spring%20security/Spring-Security03</id><content type="html" xml:base="http://localhost:4000/spring%20security/Spring-Security03/"><![CDATA[<div class="notice" style="text-align:center">
           개발 환경<br />
           - 2021, 맥북 프로 M1 Pro 14인치 모델 <br />
           - Ventura 13.2
@@ -10,7 +10,15 @@
           Spring Security 5.7.6
 </div>
 
-<hr />]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring Security" /><category term="Spring Security Multi Filter Chain" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.2]]></summary></entry><entry><title type="html">IntelliJ 렉 걸릴 때 메모리 용량 늘리는 법</title><link href="http://localhost:4000/intellij/IntelliJ02/" rel="alternate" type="text/html" title="IntelliJ 렉 걸릴 때 메모리 용량 늘리는 법" /><published>2023-01-10T00:00:00+09:00</published><updated>2023-01-10T00:00:00+09:00</updated><id>http://localhost:4000/intellij/IntelliJ02</id><content type="html" xml:base="http://localhost:4000/intellij/IntelliJ02/"><![CDATA[<hr />
+<hr />
+
+<p>아래의 공식문서를 참고하여 정리했습니다.<br />
+<a href="https://docs.spring.io/spring-security/reference/5.7/servlet/configuration/java.html">스프링 시큐리티 공식 문서 참고</a></p>
+
+<p>이 글의 목표</p>
+<ul>
+  <li>/api, /test, /admin 등 N개의 URL을 따로따로 처리가능하게 필터 체인을 구성할 수 있도록 기술할 예정입니다.</li>
+</ul>]]></content><author><name>Hyun Jun</name><email>hyunjunhwang1994@gmail.com</email></author><category term="Spring Security" /><category term="Spring Security Multi Filter Chain" /><summary type="html"><![CDATA[개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.2]]></summary></entry><entry><title type="html">IntelliJ 렉 걸릴 때 메모리 용량 늘리는 법</title><link href="http://localhost:4000/intellij/IntelliJ02/" rel="alternate" type="text/html" title="IntelliJ 렉 걸릴 때 메모리 용량 늘리는 법" /><published>2023-01-10T00:00:00+09:00</published><updated>2023-01-10T00:00:00+09:00</updated><id>http://localhost:4000/intellij/IntelliJ02</id><content type="html" xml:base="http://localhost:4000/intellij/IntelliJ02/"><![CDATA[<hr />
 
 <p>인텔리제이 사용 시 렉이 걸리거나 버벅댈 때?</p>
 

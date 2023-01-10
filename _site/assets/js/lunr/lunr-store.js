@@ -563,9 +563,9 @@ var store = [{
         "url": "/%ED%95%AD%ED%95%B499/TIL28/",
         "teaser": null
       },{
-        "title": "Spring Security 이해",
-        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.2 Spring-Boot 2.7.7 Spring Security 5.7.6 목표 Spring Security란? Spring Security의 구조 Spring Security를 실제로 어떻게 적용 하는지. Spring Security를 왜써야 하는지(장점) Spring Security의 다양한 기능들 Spring Security란? Spring Security 프레임워크는, 스프링을 이용하여 서버를 만들 때 필요한 인증...","categories": ["Spring Security"],
-        "tags": ["Spring Security 기초"],
+        "title": "Spring Security 구조 이해",
+        "excerpt":"개발 환경 - 2021, 맥북 프로 M1 Pro 14인치 모델 - Ventura 13.2 Spring-Boot 2.7.7 Spring Security 5.7.6 Spring Security란? Spring Security 프레임워크는, 스프링을 이용하여 서버를 만들 때 필요한 인증 및 인가를 위해 많은 기능을 제공해 주는 스프링 하위 프레임워크입니다. 아마 서비스 단의 기능 기능마다 로그인 및 JWT라든지 인증 기능이...","categories": ["Spring Security"],
+        "tags": ["Spring Security 구조 이해"],
         "url": "/spring%20security/Spring-Security01/",
         "teaser": null
       },{
@@ -630,7 +630,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Spring Security Multi Filter Chain, Custom",
-        "excerpt":"           개발 환경            - 2021, 맥북 프로 M1 Pro 14인치 모델             - Ventura 13.2               Spring-Boot 2.7.7            Spring Security 5.7.6     ","categories": ["Spring Security"],
+        "excerpt":"           개발 환경            - 2021, 맥북 프로 M1 Pro 14인치 모델             - Ventura 13.2               Spring-Boot 2.7.7            Spring Security 5.7.6     아래의 공식문서를 참고하여 정리했습니다.  스프링 시큐리티 공식 문서 참고   이 글의 목표     /api, /test, /admin 등 N개의 URL을 따로따로 처리가능하게 필터 체인을 구성할 수 있도록 기술할 예정입니다.  ","categories": ["Spring Security"],
         "tags": ["Spring Security Multi Filter Chain"],
         "url": "/spring%20security/Spring-Security03/",
         "teaser": null
