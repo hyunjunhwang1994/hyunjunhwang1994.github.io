@@ -616,4 +616,10 @@ var store = [{
         "tags": ["항해99","WIL"],
         "url": "/%ED%95%AD%ED%95%B499/WIL05/",
         "teaser": null
+      },{
+        "title": "Spring Security, Test, AOP, Exception, Transaction",
+        "excerpt":"오늘 공부한 것 Test AOP Exception Transaction 개인과제 시작 개인과제는 저번 숙련 주 차의 과제에 여러가지 새로운 요구사항을 추가하는 문제로 나왔다. 새로운 요구사항 스프링 시큐리티 적용하기. 게시글 좋아요 API 추가하기. 댓글 좋아요 API 추가하기. 기본 적인 요구 사항은 위와 같고 일단 아래처럼 ERD를 수정해 보았다. 저번 과제와 비교했을 때 추가된...","categories": ["항해99"],
+        "tags": ["항해99","TIL"],
+        "url": "/%ED%95%AD%ED%95%B499/TIL31/",
+        "teaser": null
       }]
