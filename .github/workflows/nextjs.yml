@@ -82,6 +82,15 @@ jobs:
         with:
           path: ./out
 
+      - name: create env file
+        working-directory: ./
+        run: |
+          pwd
+          touch .env
+          echo NOTION_PAGE_ID=${{ secrets.NOTION_PAGE_ID }} >> .env
+          cat .env
+
+
   # Deployment job
   deploy:
     environment:
