@@ -28,6 +28,10 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+
+    env:
+      NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -81,14 +85,6 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./out
-
-      - name: create env file
-        working-directory: ./
-        run: |
-          pwd
-          touch .env
-          echo NOTION_PAGE_ID=${{ secrets.NOTION_PAGE_ID }} >> .env
-          cat .env
 
 
   # Deployment job
