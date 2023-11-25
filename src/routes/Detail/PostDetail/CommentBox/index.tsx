@@ -21,7 +21,7 @@ type Props = {
 
 const CommentBox: React.FC<Props> = ({ data }) => {
   return (
-    <div>
+    <div className="giscus">
       {CONFIG.utterances.enable && <UtterancesComponent issueTerm={data.id} />}
       {CONFIG.cusdis.enable && (
         <CusdisComponent id={data.id} slug={data.slug} title={data.title} />
