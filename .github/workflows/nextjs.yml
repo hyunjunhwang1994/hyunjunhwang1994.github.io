@@ -6,7 +6,7 @@ name: Deploy Next.js site to Pages
 
 on:
   schedule:
-    - cron: '0/10 * * * *' # 10분에 한 번 씩 실행
+    - cron: '0/10 * * * *' # 10분에 한 번씩 실행
 
   # Runs on pushes targeting the default branch
   push:
