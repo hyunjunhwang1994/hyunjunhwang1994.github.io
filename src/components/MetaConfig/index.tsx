@@ -36,6 +36,23 @@ const MetaConfig: React.FC<MetaConfigProps> = (props) => {
           <meta property="article:author" content={CONFIG.profile.name} />
         </>
       )}
+
+        <script src="https://giscus.app/client.js"
+                data-repo="hyunjunhwang1994/comments"
+                data-repo-id="R_kgDOKx06ig"
+                data-category="General"
+                data-category-id="DIC_kwDOKx06is4CbPGf"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="preferred_color_scheme"
+                data-lang="ko"
+                data-loading="lazy"
+                crossOrigin="anonymous"
+                async>
+        </script>
     </Head>
   )
 }
