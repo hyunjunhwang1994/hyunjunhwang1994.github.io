@@ -11,6 +11,8 @@ const Giscus: React.FC = () => {
     const router = useRouter()
 
     useEffect(() => {
+
+        const theme = scheme === "light" ? "light" : "dark"
         const script = document.createElement("script")
         const anchor = document.getElementById("comments")
         if (!anchor) return
@@ -25,7 +27,7 @@ const Giscus: React.FC = () => {
         script.setAttribute("data-reactions-enabled", "1")
         script.setAttribute("data-emit-metadata", "0")
         script.setAttribute("data-input-position", "top")
-        script.setAttribute("data-theme", "preferred_color_scheme")
+        script.setAttribute("data-theme", theme)
         script.setAttribute("data-lang", "ko")
         script.setAttribute("data-loading", "lazy")
         script.setAttribute("crossorigin", "anonymous")
