@@ -5,6 +5,9 @@
 name: Deploy Next.js site to Pages
 
 on:
+  schedule:
+    - cron: '*/10 * * * *' # 매 10분에 실행
+
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
@@ -85,7 +88,6 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           path: ./out
-
 
   # Deployment job
   deploy:
