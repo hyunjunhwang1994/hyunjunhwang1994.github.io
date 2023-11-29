@@ -6,15 +6,17 @@ import Category from "src/components/Category"
 import styled from "@emotion/styled"
 import NotionRenderer from "../components/NotionRenderer"
 import usePostQuery from "src/hooks/usePostQuery"
+import useMermaidEffect from "../hooks/useMermaidEffect";
 
 type Props = {}
 
 const PostDetail: React.FC<Props> = () => {
   const data = usePostQuery()
+  useMermaidEffect()
 
   if (!data) return null
-
   const category = (data.category && data.category?.[0]) || undefined
+
 
   return (
     <StyledWrapper>
