@@ -112,4 +112,9 @@ const StyledWrapper = styled.div`
   .notion-page {
     padding: 0;
   }
+  
+  .language-mermaid{
+    display: flex;
+    justify-content: center;
+  }
 `
