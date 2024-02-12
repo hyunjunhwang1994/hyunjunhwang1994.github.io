@@ -11,10 +11,10 @@ const CONFIG = {
     instagram: "hyunjuuuuun",
   },
   projects: [
-    // {
-    //   name: `dorundorun`,
-    //   href: "https://dorundorun.hyunjun.kr",
-    // },
+    {
+      name: `dorundorun`,
+      href: "https://dorundorun.hyunjun.kr",
+    },
   ],
   // blog setting (required)
   blog: {
