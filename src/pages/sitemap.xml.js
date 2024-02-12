@@ -4,7 +4,7 @@ const Sitemap = () => {
   return null
 }
 
-export const getServerSideProps = async ({ res }) => {
+export const getStaticProps = async () => {
   // get post url
   const posts = await getAllPosts({ includePages: true })
   const dynamicPaths = posts.map(post => {
@@ -42,12 +42,10 @@ export const getServerSideProps = async ({ res }) => {
     </urlset>
   `
 
-  res.setHeader('Content-Type', 'text/xml')
-  res.write(sitemap)
-  res.end()
-
   return {
-    props: {},
+    props: {
+      sitemap
+    },
   }
 }
 
