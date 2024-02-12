@@ -4,17 +4,17 @@ const CONFIG = {
     name: "hyunjun",
     image: "/avatar.svg ", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "fullstack developer",
-    bio: "node, spring, react 등 풀스택 개발자입니다.",
+    bio: "Node.js Next.js Nest.JS 풀스택 개발자입니다.",
     email: "hyunjunhwang1994@gmail.com",
     linkedin: "",
     github: "hyunjunhwang1994",
     instagram: "hyunjuuuuun",
   },
   projects: [
-    {
-      name: `dorundorun`,
-      href: "https://dorundorun.hyunjun.kr",
-    },
+    // {
+    //   name: `dorundorun`,
+    //   href: "https://dorundorun.hyunjun.kr",
+    // },
   ],
   // blog setting (required)
   blog: {
